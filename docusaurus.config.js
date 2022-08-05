@@ -65,11 +65,17 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'getting-started',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Getting Started',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          /*{
+            type: 'doc',
+            docId: 'docs',
+            position: 'left',
+            label: 'Documentation',
+          },*/
+          //{to: '/blog', label: 'Blog', position: 'left'},
           {
             href: monadaDocsRepoUrl,
             label: 'GitHub',
@@ -84,7 +90,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Docs',
                 to: '/docs/intro',
               },
             ],
