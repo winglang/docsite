@@ -4,9 +4,11 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const discordInviteUrl = 'https://discord.gg/HEKYFXm6U6';
 let monadaDocsRepoUrl = 'https://github.com/monadahq/docs';
 let winglangRepoUrl = 'https://github.com/monadahq/winglang';
-let discordInviteUrl = 'https://discordapp.com/invite/docusaurus';
+let twitterUrl = 'https://twitter.com/winglangio';
+let stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/wing';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Wing',
@@ -87,11 +89,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
-                label: 'Docs',
-                to: '/docs/intro',
+                label: 'Getting Started',
+                to: '/docs/getting-started',
               },
             ],
           },
@@ -100,7 +102,7 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/wing',
+                href: stackOverflowUrl,
               },
               {
                 label: 'Discord',
@@ -108,7 +110,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/winglang',
+                href: twitterUrl,
               },
             ],
           },
