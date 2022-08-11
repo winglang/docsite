@@ -30,6 +30,9 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+
+  ],
   presets: [
     [
       'classic',
