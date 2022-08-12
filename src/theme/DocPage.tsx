@@ -4,8 +4,9 @@ import '../css/login.css';
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "@theme/Loading";
 import DocPage from '@theme-original/DocPage';
-import InviteForm, { InviteOnly, LoginButton } from "@site/src/components/InviteForm";
+import { InviteOnly } from "@site/src/components/InviteForm";
 import Layout from "@theme/Layout";
+import InvitePage from "@site/src/components/InvitePage/InvitePage";
 
 const isAuthorized = (user) => {
   if (!user) {
@@ -33,16 +34,7 @@ export default function DocPageWrapper(props) {
       {isAuthenticated && userIsAuthorized ? (
         <DocPage {...props}/>
       ) : (
-        <Layout>
-          {!isAuthenticated ? (
-              <>
-                <InviteForm/>
-                <LoginButton/>
-              </>) :
-            <InviteOnly/>
-          }
-        </Layout>
-
+        <InvitePage/>
       )}
     </React.Fragment>
   );
