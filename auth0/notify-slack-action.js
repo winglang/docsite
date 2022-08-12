@@ -13,13 +13,13 @@ exports.onExecutePostLogin = async (event, api) => {
   console.info('user_id: ', event.user.user_id);
   console.info('client_id: ', event.client.client_id);
 
-  if (event.client.name !== 'Docs'){
+  if (event.client.name !== 'Docs') {
     console.info('Not logging into Docs, so not notifying anything');
     return;
   }
 
   const user = event.user;
-  if (dayjs(event.user.created_at) < dayjs().subtract(1, 'minute') || event.stats.logins_count > 1){
+  if (dayjs(event.user.created_at) < dayjs().subtract(1, 'minute') || event.stats.logins_count > 1) {
     return;
   }
 
@@ -45,18 +45,11 @@ exports.onExecutePostLogin = async (event, api) => {
         }
       },
       {
-        type: 'actions',
-        elements: [
-          {
-            type: 'button',
-            text: {
-              type: 'plain_text',
-              text: 'Edit User'
-            },
-            action_id: 'edit',
-            url: `https://manage.auth0.com/dashboard/us/dev-9zrd68w6/users/${encodedUserUri}`
-          }
-        ]
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `https://manage.auth0.com/dashboard/us/dev-9zrd68w6/users/${encodedUserUri}`
+        }
       }
     ]
   });
