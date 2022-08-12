@@ -1,0 +1,12 @@
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+.hero {
+    margin-top: 3rem;
+    max-width: 75%;
+}
+.hero p {
+    font-size: 1.5rem;
+}

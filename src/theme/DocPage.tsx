@@ -4,26 +4,45 @@ import '../css/login.css';
 import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "@theme/Loading";
 import DocPage from '@theme-original/DocPage';
-// Default implementation, that you can customize
+import InviteForm, { InviteOnly, LoginButton } from "@site/src/components/InviteForm";
+import Layout from "@theme/Layout";
+
+const isAuthorized = (user) => {
+  if (!user) {
+    return false;
+  }
+  let roles = user["https://winglang.io/roles"];
+  if (!roles) {
+    return false;
+  }
+
+  return roles[0] === 'WingAlpha';
+}
+
+
 export default function DocPageWrapper(props) {
 
-  const { loginWithRedirect, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading, user } = useAuth0();
   if (isLoading) {
     return <Loading></Loading>
   }
-  console.log({isLoading, isAuthenticated});
+  const userIsAuthorized = isAuthorized(user);
+
   return (
     <React.Fragment>
-      {isAuthenticated ? (
+      {isAuthenticated && userIsAuthorized ? (
         <DocPage {...props}/>
       ) : (
-        <div className="login">
-          <div className="login__container">
-            <button className="login__btn login__google" onClick={()=>loginWithRedirect({appState: window.location.href})}>
-              Login with GitHub
-            </button>
-          </div>
-        </div>
+        <Layout>
+          {!isAuthenticated ? (
+              <>
+                <InviteForm/>
+                <LoginButton/>
+              </>) :
+            <InviteOnly/>
+          }
+        </Layout>
+
       )}
     </React.Fragment>
   );
