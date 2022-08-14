@@ -8,15 +8,18 @@
     flex-direction: column;
     justify-content: center;
 }
-.loginContainer h1{
+
+.loginContainer h1 {
     text-align: center;
 }
+
 .loginContainer button {
     max-width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
-.loginButton{
+
+.loginButton {
     background-color: var(--ifm-color-primary);
     color: var(--ifm-heading-color);
 }
@@ -36,10 +39,20 @@
     width: 100%;
     flex-direction: column;
 }
+
+@media screen and (min-width: 1080px) {
+    .split {
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 @media screen and (min-width: 480px) {
     .split {
         flex-direction: row;
     }
+
     .split > * {
         width: 50%;
     }
