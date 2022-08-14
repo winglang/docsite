@@ -31,7 +31,7 @@ const config = {
   },
 
   plugins: [
-
+    'docusaurus-plugin-sass'
   ],
   presets: [
     [
@@ -72,7 +72,7 @@ const config = {
             type: 'doc',
             docId: 'getting-started',
             position: 'left',
-            label: 'Getting Started',
+            label: 'Docs',
           },
           /*{
             type: 'doc',
