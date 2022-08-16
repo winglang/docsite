@@ -14,9 +14,9 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Wing is built from day one with developers in mind with the goal of providing the best developer experience
-        possible for building cloud applications. A three pronged attack of the WingLang, WingSDK, and WingCLI
-        provides a complete solution that allows developers to be their most productive.
+        Wing is built with developers in mind to provide the best experience for building cloud applications. A three
+        pronged attack of the WingLang, WingSDK, and WingCLI provides a complete solution that allows cloud developers
+        to be their most productive.
       </>
     ),
   },
@@ -25,15 +25,11 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Good software design says to delay implementation details as last as possible. Design first your solution and
-        implement later. With the current state of the cloud, developers are required to choose their cloud provider
-        first, breaking this tenant and requiring implementation details to drive design.
+        Good design says you should delay implementation details as long as possible. With traditional cloud development
+        you have to pick your cloud provider first, choosing your implementation before you've design anything. With Wing
+        you get back to designing your solution before writing it.
 
-        Build your application using common cloud components and then decide which cloud, or all of the clouds, to
-        deploy to. Building off the years of experience with the Cloud Development Kit (CDK), Wing allows developers
-        to design their application first without having to choose specific implementation details like which public
-        cloud environment they're targeting. After the application is designed, built, and ready for testing you can
-        then choose which
+        Design first, build next, choose your cloud provider last. Get back to good system design.
       </>
     ),
   },
@@ -42,8 +38,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        The Wing language, or WingLang, was designed to maximize developer productivity. Similar to Typescript and other
-        C-style languages it is easy to learn, yet powerful for building cloud-based applications by treating the cloud
+        The Wing language, or WingLang, is designed to maximize developer productivity. Similar to Typescript and other
+        C-style languages, it is easy to learn, yet powerful for building cloud-based applications by treating the cloud
         as a first class citizen, re-integrating infrastructure and application back into one codebase.
       </>
     ),
@@ -53,16 +49,12 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        All applications work off of the same basic resources, like HTTP endpoints, functions, queues, key-value stores,
-        databases, and other basic primitives. The WingSDK enables developers to focus on the unique logic
-        of their application rather than having to worry about which specific API they want to work with or building
-        complex hexagonal architectures to support multiple cloud environments or writing "glue" code to wire all their
-        resources together.
+        The WingSDK enables developers to focus on the unique logic of their application rather than spending time
+        wiring together services.
 
         Building off the power of the CDK and construct-based APIs, combined with a standard library for interacting
         with their cloud resources, WingSDK allows developers to return their focus back to the unique problem they need
         to solve.
-
       </>
     ),
   },
@@ -71,11 +63,11 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Developing for the cloud often requires deploying to the cloud to do testing. This can drastically slow down
+        Developing for the cloud has required deploying to the cloud to do testing. This can drastically slow down
         developer productivity as it takes an order of magnitude more time to deploy and test applications in the
         cloud than it does to test locally. The WingCLI provides developers with a fully WingSDK-compliant local
         environment, testing, and monitoring tools for Wing applications. This allows developers to regain the speed
-        and productivity that was lost when applications shifted to cloud architectures.
+        and productivity that was lost when applications shifted to the cloud.
       </>
     ),
   },
