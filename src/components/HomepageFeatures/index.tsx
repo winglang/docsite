@@ -6,6 +6,7 @@ type FeatureItem = {
   title: string;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
+  direction?: 'left' | 'right';
 };
 
 const FeatureList: FeatureItem[] = [
@@ -26,7 +27,8 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Good design says you should delay implementation details as long as possible. With traditional cloud development
-        you have to pick your cloud provider first, choosing your implementation before you've design anything. With Wing
+        you have to pick your cloud provider first, choosing your implementation before you've design anything. With
+        Wing
         you get back to designing your solution before writing it.
 
         Design first, build next, choose your cloud provider last. Get back to good system design.
@@ -34,38 +36,39 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'WingLang',
+    title: 'Wing',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        The Wing language, or WingLang, is designed to maximize developer productivity. Similar to Typescript and other
+        The Wing language, or Wing, is designed to maximize developer productivity. Similar to Typescript and other
         C-style languages, it is easy to learn, yet powerful for building cloud-based applications by treating the cloud
         as a first class citizen, re-integrating infrastructure and application back into one codebase.
       </>
     ),
   },
   {
-    title: 'WingSDK',
+    title: 'Wing SDK',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
         The WingSDK enables developers to focus on the unique logic of their application rather than spending time
         wiring together services.
 
-        Building off the power of the CDK and construct-based APIs, combined with a standard library for interacting
+        Building off the power of the <a href="https://aws.amazon.com/cdk/" target="_blank">CDK</a> and construct-based
+        APIs, combined with a standard library for interacting
         with their cloud resources, WingSDK allows developers to return their focus back to the unique problem they need
         to solve.
       </>
     ),
   },
   {
-    title: 'WingCLI',
+    title: 'Wing Console',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
         Developing for the cloud has required deploying to the cloud to do testing. This can drastically slow down
         developer productivity as it takes an order of magnitude more time to deploy and test applications in the
-        cloud than it does to test locally. The WingCLI provides developers with a fully WingSDK-compliant local
+        cloud than it does to test locally. The Wing Console provides developers with a fully WingSDK-compliant local
         environment, testing, and monitoring tools for Wing applications. This allows developers to regain the speed
         and productivity that was lost when applications shifted to the cloud.
       </>
