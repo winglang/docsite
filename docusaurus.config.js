@@ -13,7 +13,7 @@ let stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/wing';
 const config = {
   title: 'Wing',
   tagline: 'Fly to a new kind of cloud!',
-  url: 'https://monadahq.github.io/',
+  url: 'https://monadahq.github.io',
   baseUrl: '/winglang-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
