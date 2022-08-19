@@ -16,7 +16,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Wing is built with developers in mind to provide the best experience for building cloud applications. A three
-        pronged attack of the WingLang, WingSDK, and WingCLI provides a complete solution that allows cloud developers
+        pronged attack of the WingLang, WingSDK, and Wing Console provides a complete solution that allows cloud developers
         to be their most productive.
       </>
     ),
