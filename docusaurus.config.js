@@ -5,7 +5,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const discordInviteUrl = 'https://discord.gg/HEKYFXm6U6';
-let monadaDocsRepoUrl = 'https://github.com/monadahq/docs';
+let monadaDocsRepoUrl = 'https://github.com/monadahq/winglang-docs';
 let winglangRepoUrl = 'https://github.com/monadahq/winglang';
 let twitterUrl = 'https://twitter.com/winglangio';
 let stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/wing';
@@ -20,7 +20,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   organizationName: 'monadahq',
-  projectName: 'docs',
+  projectName: 'winglang-docs',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want

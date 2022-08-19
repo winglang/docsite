@@ -5,7 +5,7 @@ import InviteForm from "@site/src/components/InvitePage/InviteForm";
 import { InviteOnly } from "@site/src/components/InvitePage/InviteOnly";
 import { LoginButton } from "@site/src/components/InvitePage/LoginButton";
 import styles from './styles.module.css';
-export default function InvitePage(props) {
+export function InvitePage(props) {
   const { isAuthenticated } = useAuth0();
 
   return (<Layout>

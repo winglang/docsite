@@ -11,6 +11,8 @@ $ yarn
 ### Local Development
 
 ```
+$ export DOCUSAURUS_URL="http://localhost:3000"
+$ export DOCUSAURUS_BASE_URL="/"
 $ yarn start
 ```
 
