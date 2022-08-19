@@ -9,7 +9,7 @@ export function InviteOnly() {
           Thank you for showing interest in Wing!
         </p>
         <p>
-          We will notify you when you've been giving access to the preview.
+          We will notify you when you've been given access to the preview.
         </p>
       </div>
     </div>
