@@ -9,6 +9,21 @@ let monadaDocsRepoUrl = 'https://github.com/monadahq/winglang-docs';
 let winglangRepoUrl = 'https://github.com/monadahq/winglang';
 let twitterUrl = 'https://twitter.com/winglangio';
 let stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/wing';
+
+
+function reverseSidebarItems(items) {
+  // Reverse items in categories
+  const result = items.map((item) => {
+    if (item.type === 'category') {
+      return {...item, items: reverseSidebarItems(item.items)};
+    }
+    return item;
+  });
+  // Reverse items at current level
+  result.reverse();
+  return result;
+}
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Wing',
@@ -26,116 +41,74 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'en', locales: ['en'],
   },
 
   plugins: [
-    'docusaurus-plugin-sass'
-  ],
-  presets: [
+    'docusaurus-plugin-sass',
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-          monadaDocsRepoUrl,
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: monadaDocsRepoUrl,
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      }),
-    ],
-  ],
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'reverse-previous-versions',
+        path: "./docs/reference/previous_versions/WingSDK",
+        async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+          const sidebarItems = await defaultSidebarItemsGenerator(args);
+          let reverseSidebarItems1 = reverseSidebarItems(sidebarItems);
+          console.log({reverseSidebarItems1})
 
-  themeConfig:
-  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+          return reverseSidebarItems1;
+        },
+      },
+    ]
+  ],
+  presets: [['classic', /** @type {import('@docusaurus/preset-classic').Options} */
+    ({
+      docs: {
+        sidebarPath: require.resolve('./sidebars.js'), // Please change this to your repo.
+        // Remove this to remove the "edit this page" links.
+        editUrl: monadaDocsRepoUrl,
+      }, blog: {
+        showReadingTime: true, // Please change this to your repo.
+        // Remove this to remove the "edit this page" links.
+        editUrl: monadaDocsRepoUrl,
+      }, theme: {
+        customCss: require.resolve('./src/css/custom.css'),
+      },
+    }),
+  ]],
+
+  themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Wing',
-        logo: {
-          alt: 'Wing Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'doc',
-            docId: 'getting-started',
-            position: 'left',
-            label: 'Docs',
-          },
-          /*{
-            type: 'doc',
-            docId: 'docs',
-            position: 'left',
-            label: 'Documentation',
-          },*/
-          //{to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: monadaDocsRepoUrl,
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Documentation',
-            items: [
-              {
-                label: 'Getting Started',
-                to: '/docs/getting-started',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: stackOverflowUrl,
-              },
-              {
-                label: 'Discord',
-                href: discordInviteUrl,
-              },
-              {
-                label: 'Twitter',
-                href: twitterUrl,
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: winglangRepoUrl,
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Monada, Inc. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        title: 'Wing', logo: {
+          alt: 'Wing Logo', src: 'img/logo.svg',
+        }, items: [{
+          type: 'doc', docId: 'getting-started', position: 'left', label: 'Docs',
+        }, {
+          href: monadaDocsRepoUrl, label: 'GitHub', position: 'right',
+        },],
+      }, footer: {
+        style: 'dark', links: [{
+          title: 'Documentation', items: [{
+            label: 'Getting Started', to: '/docs/getting-started',
+          },],
+        }, {
+          title: 'Community', items: [{
+            label: 'Stack Overflow', href: stackOverflowUrl,
+          }, {
+            label: 'Discord', href: discordInviteUrl,
+          }, {
+            label: 'Twitter', href: twitterUrl,
+          },],
+        }, {
+          title: 'More', items: [{
+            label: 'Blog', to: '/blog',
+          }, {
+            label: 'GitHub', href: winglangRepoUrl,
+          },],
+        },], copyright: `Copyright © ${new Date().getFullYear()} Monada, Inc. Built with Docusaurus.`,
+      }, prism: {
+        theme: lightCodeTheme, darkTheme: darkCodeTheme,
       },
     }),
 };
