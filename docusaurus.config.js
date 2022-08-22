@@ -47,7 +47,6 @@ const config = {
                                       ...args
                                     }) {
           const sidebarItems = await defaultSidebarItemsGenerator(args);
-          console.log('items:', JSON.stringify(sidebarItems));
           return reverseSidebarItems(sidebarItems);
         },
         editUrl: monadaDocsRepoUrl,
