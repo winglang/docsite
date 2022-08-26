@@ -32,7 +32,7 @@ const testItems = [{ "type": "doc", "id": "getting-started" }, {
 }, { "type": "doc", "id": "resources" }];
 
 describe('sidebar', () => {
-  it('reverses only the previous versions category', () => {
+  it('reverses only the previous versions category and removes the latest version of the docs', () => {
     const results = reverseSidebarItems(testItems);
     expect(results).toMatchSnapshot()
   });

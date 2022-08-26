@@ -8,7 +8,10 @@ function reverseSidebarItems(items, category = 'root') {
   });
   // Reverse items at current level
   if (/Previous Versions/.test(category)) {
-    result.reverse();
+    if (!result.find(x=>x.type !== 'doc')){
+      result.reverse();
+      result.shift();
+    }
   }
   return result;
 }
