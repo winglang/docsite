@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sidebar reverses only the previous versions category 1`] = `
+Array [
+  Object {
+    "id": "getting-started",
+    "type": "doc",
+  },
+  Object {
+    "id": "learning-winglang",
+    "type": "doc",
+  },
+  Object {
+    "items": Array [
+      Object {
+        "id": "reference/intro",
+        "type": "doc",
+      },
+      Object {
+        "id": "reference/WingSDK",
+        "type": "doc",
+      },
+      Object {
+        "id": "reference/WingConsole",
+        "type": "doc",
+      },
+      Object {
+        "items": Array [
+          Object {
+            "items": Array [
+              Object {
+                "id": "reference/previous_versions/WingSDK/1.2.0",
+                "label": "1.2.0",
+                "type": "doc",
+              },
+              Object {
+                "id": "reference/previous_versions/WingSDK/1.1.39",
+                "label": "1.1.39",
+                "type": "doc",
+              },
+              Object {
+                "id": "reference/previous_versions/WingSDK/0.0.40",
+                "label": "0.0.40",
+                "type": "doc",
+              },
+              Object {
+                "id": "reference/previous_versions/WingSDK/0.0.39",
+                "label": "0.0.39",
+                "type": "doc",
+              },
+            ],
+            "label": "WingSDK",
+            "link": Object {
+              "description": "Reference Documentation",
+              "type": "generated-index",
+            },
+            "type": "category",
+          },
+        ],
+        "label": "Previous Versions",
+        "link": Object {
+          "description": "Previous Versions",
+          "type": "generated-index",
+        },
+        "type": "category",
+      },
+    ],
+    "label": "Reference",
+    "link": Object {
+      "description": "Reference Documentation",
+      "type": "generated-index",
+    },
+    "type": "category",
+  },
+  Object {
+    "id": "resources",
+    "type": "doc",
+  },
+]
+`;
