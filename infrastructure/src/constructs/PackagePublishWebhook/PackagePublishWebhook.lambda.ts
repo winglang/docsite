@@ -97,30 +97,71 @@ async function getRepo() {
 
   const localClone = '/tmp/docs';
   const remoteRepo = 'git@github.com:monadahq/winglang-docs.git';
+  console.log('Cleaning up, in case...');
+  execSync(`rm -rf ${localClone}`);
+  console.log('Cloning...');
   execSync(`git clone --depth 1 ${remoteRepo} ${localClone}`, { encoding: 'utf8', stdio: 'inherit' });
-
+  console.log('Cloned!');
   execSync(`ls ${localClone}`, { encoding: 'utf8' }).split('\n');
   return localClone;
 }
 
 function copyDocsOver(releaseNumber: string, releaseAssetDir: string, docsCloneDir: string) {
   const apiDocFilename = `${releaseAssetDir}API.md`;
-  const newDocFilename = `${docsCloneDir}/docs/reference/previous_versions/WingSDK/${releaseNumber.replace('v', '')}.md`;
-  console.log(`Going to copy ${apiDocFilename} to ${newDocFilename}`);
-  execSync(`cp ${apiDocFilename} ${newDocFilename}`);
+  const stripedVersionNumber = releaseNumber.replace('v', '');
+  const previousVersionFilename = `${docsCloneDir}/docs/reference/previous_versions/WingSDK/${stripedVersionNumber}.md`;
+
+
+  // add headmatter to the previous versions file:
+  console.log('Writing headmatter to top of file');
+  const previousVersionHeadmatterFile = '/tmp/headmatter';
+  writeFileSync(previousVersionHeadmatterFile, `---
+title: ${stripedVersionNumber}
+---
+`);
+  execSync(`cat ${previousVersionHeadmatterFile} ${apiDocFilename} > ${previousVersionFilename}`);
   execSync(`ls ${docsCloneDir}/docs/reference/previous_versions/WingSDK/`);
+
+  // copy over to main location:
+  console.log('Copying to latest...');
+  const latestVersionHeadMatterFile = '/tmp/main-headmatter';
+  writeFileSync(latestVersionHeadMatterFile, `---
+title: WingSDK - ${stripedVersionNumber}
+sidebar_position: 2
+---
+`);
+  const latestVersionFilename = `${docsCloneDir}/docs/reference/WingSDK.md`;
+  execSync(`cat ${latestVersionHeadMatterFile} ${apiDocFilename} > ${latestVersionFilename}`);
+
 }
 
 function branchAndPush(releaseNumber: string, cloneDir: string) {
   const branchName = `docs/wingsdk-${releaseNumber}`;
   const { [USERNAME_KEY]: gitUsername, [EMAIL_KEY]: gitEmail } = secret;
-  let options = {
+  const options = {
     cwd: cloneDir,
   };
   execSync(`git checkout -b ${branchName}`, options);
   execSync('git add docs/reference/previous_versions/WingSDK/*', options);
   execSync(`git -c user.email=${gitEmail} -c user.name=${gitUsername} commit -m "Adding WingSDK Docs ${releaseNumber}"`, options);
   execSync(`git push -u origin ${branchName}`, options);
+  return branchName;
+}
+
+async function createPullRequest(branchName: string, releaseNumber: string) {
+  const { [PAT_KEY]: pat } = secret;
+  const results = await axios.post('https://api.github.com/repos/monadahq/winglang-docs/pulls', {
+    title: `docs: Adding WingSDK Reference docs for ${releaseNumber}`,
+    head: branchName,
+    base: 'main',
+    body: `This is an automated Pull Request created to incorporate the WingSDK reference docs for version ${releaseNumber}`,
+  }, {
+    headers: {
+      Authorization: `token ${pat}`,
+
+    },
+  });
+  console.log(results);
 }
 
 export const handler = async (event: GitHubWebhookEvent) => {
@@ -134,7 +175,8 @@ export const handler = async (event: GitHubWebhookEvent) => {
 
   const docsCloneDir = await getRepo();
 
-  let releaseNumber = body.release.name;
+  const releaseNumber = body.release.name;
   copyDocsOver(releaseNumber, releaseAssetDir, docsCloneDir);
-  branchAndPush(releaseNumber, docsCloneDir);
+  const branchName = branchAndPush(releaseNumber, docsCloneDir);
+  await createPullRequest(branchName, releaseNumber);
 };
