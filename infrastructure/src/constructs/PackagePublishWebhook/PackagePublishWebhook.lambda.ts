@@ -142,7 +142,7 @@ function branchAndPush(releaseNumber: string, cloneDir: string) {
     cwd: cloneDir,
   };
   execSync(`git checkout -b ${branchName}`, options);
-  execSync('git add docs/reference/previous_versions/WingSDK/*', options);
+  execSync('git add docs/reference/*', options);
   execSync(`git -c user.email=${gitEmail} -c user.name=${gitUsername} commit -m "Adding WingSDK Docs ${releaseNumber}"`, options);
   execSync(`git push -u origin ${branchName}`, options);
   return branchName;
@@ -158,10 +158,14 @@ async function createPullRequest(branchName: string, releaseNumber: string) {
   }, {
     headers: {
       Authorization: `token ${pat}`,
-
     },
   });
-  console.log(results);
+  if (results.status === 200) {
+    console.log('PR created.');
+  } else {
+    console.error('PR not created!');
+    console.error(results);
+  }
 }
 
 export const handler = async (event: GitHubWebhookEvent) => {
