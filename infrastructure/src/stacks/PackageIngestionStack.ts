@@ -5,10 +5,12 @@ import { ZipLayer } from 'cdk-lambda-layer-zip';
 import { Construct } from 'constructs';
 import { PackagePublishWebhookFunction } from '../constructs/PackagePublishWebhook/PackagePublishWebhook-function';
 import {
+  EMAIL_KEY,
   GITHUB_CONFIG_KEY,
   GITHUB_SSH_PRIVATE_KEY,
   KNOWN_HOSTS_KEY,
   PAT_KEY,
+  USERNAME_KEY,
 } from '../constructs/PackagePublishWebhook/PackagePublishWebhook.lambda';
 
 export class PackageIngestionStack extends Stack {
@@ -21,6 +23,8 @@ export class PackageIngestionStack extends Stack {
         secretStringTemplate: JSON.stringify({
           [PAT_KEY]: '',
           [KNOWN_HOSTS_KEY]: '',
+          [USERNAME_KEY]: '',
+          [EMAIL_KEY]: '',
         }),
         generateStringKey: PAT_KEY,
       },

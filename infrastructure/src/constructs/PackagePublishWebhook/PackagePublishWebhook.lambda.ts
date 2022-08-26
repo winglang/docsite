@@ -24,6 +24,8 @@ interface GithubRelease {
 export const GITHUB_CONFIG_KEY = 'GITHUB_CONFIG_SECRET_ARN';
 export const GITHUB_SSH_PRIVATE_KEY = 'GITHUB_SSH_PRIVATE_KEY_SECRET_ARN';
 export const KNOWN_HOSTS_KEY = 'known_hosts';
+export const USERNAME_KEY = 'username';
+export const EMAIL_KEY = 'email';
 export const ID_RSA_KEY = 'id_rsa';
 export const PAT_KEY = 'pat';
 
@@ -35,6 +37,8 @@ let secret: {
   [PAT_KEY]: string;
   [KNOWN_HOSTS_KEY]: string;
   [ID_RSA_KEY]: string;
+  [USERNAME_KEY]: string;
+  [EMAIL_KEY]: string;
 };
 
 async function getPat() {
@@ -79,10 +83,9 @@ async function getRepo() {
   if (!secret) {
     throw new Error("why don't we have a secret yet?");
   }
-  const { known_hosts } = secret;
   const id_rsa = await getPrivateKey();
   const known_hostsFilename = '/tmp/known_hosts';
-  writeFileSync(known_hostsFilename, known_hosts);
+  execSync(`ssh-keyscan -t rsa github.com >> ${known_hostsFilename}`);
 
   // Get this from a safe place, say SSM
   const id_rsaFilename = '/tmp/id_rsa';
@@ -101,11 +104,23 @@ async function getRepo() {
 }
 
 function copyDocsOver(releaseNumber: string, releaseAssetDir: string, docsCloneDir: string) {
-  console.log(`going to create a new branch for docs ${releaseNumber}`);
   const apiDocFilename = `${releaseAssetDir}API.md`;
   const newDocFilename = `${docsCloneDir}/docs/reference/previous_versions/WingSDK/${releaseNumber.replace('v', '')}.md`;
   console.log(`Going to copy ${apiDocFilename} to ${newDocFilename}`);
-  // execSync('');
+  execSync(`cp ${apiDocFilename} ${newDocFilename}`);
+  execSync(`ls ${docsCloneDir}/docs/reference/previous_versions/WingSDK/`);
+}
+
+function branchAndPush(releaseNumber: string, cloneDir: string) {
+  const branchName = `docs/wingsdk-${releaseNumber}`;
+  const { [USERNAME_KEY]: gitUsername, [EMAIL_KEY]: gitEmail } = secret;
+  let options = {
+    cwd: cloneDir,
+  };
+  execSync(`git checkout -b ${branchName}`, options);
+  execSync('git add docs/reference/previous_versions/WingSDK/*', options);
+  execSync(`git -c user.email=${gitEmail} -c user.name=${gitUsername} commit -m "Adding WingSDK Docs ${releaseNumber}"`, options);
+  execSync(`git push -u origin ${branchName}`, options);
 }
 
 export const handler = async (event: GitHubWebhookEvent) => {
@@ -119,6 +134,7 @@ export const handler = async (event: GitHubWebhookEvent) => {
 
   const docsCloneDir = await getRepo();
 
-  copyDocsOver(body.release.name, releaseAssetDir, docsCloneDir);
-
+  let releaseNumber = body.release.name;
+  copyDocsOver(releaseNumber, releaseAssetDir, docsCloneDir);
+  branchAndPush(releaseNumber, docsCloneDir);
 };
