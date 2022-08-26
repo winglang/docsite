@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sidebar reverses only the previous versions category 1`] = `
+exports[`sidebar reverses only the previous versions category and popping the top 1`] = `
 Array [
   Object {
     "id": "getting-started",
@@ -28,11 +28,6 @@ Array [
         "items": Array [
           Object {
             "items": Array [
-              Object {
-                "id": "reference/previous_versions/WingSDK/1.2.0",
-                "label": "1.2.0",
-                "type": "doc",
-              },
               Object {
                 "id": "reference/previous_versions/WingSDK/1.1.39",
                 "label": "1.1.39",

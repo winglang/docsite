@@ -8,7 +8,11 @@ function reverseSidebarItems(items, category = 'root') {
   });
   // Reverse items at current level
   if (/Previous Versions/.test(category)) {
-    result.reverse();
+    // are all the items in this category docs?
+    if (!result.find(x => x.type !== 'doc')) {
+      result.reverse();
+      result.shift(); // pop the top element off because it's the 'latest' version and we don't need to display that in the previous versions
+    }
   }
   return result;
 }
