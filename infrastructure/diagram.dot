@@ -1,0 +1,106 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "PackageIngestion" {
+    subgraph "cluster-SubGraph.PackageIngestion" {
+      graph [
+        label = "PackageIngestion",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
+      ];
+      "PackageIngestion/SSHConfigSecret" [
+        label = " SSHConfigSecret",
+        fontsize = 12,
+        image = "/home/matt/.nvm/versions/node/v16.16.0/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      "PackageIngestion/SSHSecret" [
+        label = " SSHSecret",
+        fontsize = 12,
+        image = "/home/matt/.nvm/versions/node/v16.16.0/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      "PackageIngestion/PackagePublishWebhook" [
+        label = "\nPackagePublishWebhook",
+        fontsize = 12,
+        image = "/home/matt/.nvm/versions/node/v16.16.0/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.4819999999999998,
+      ];
+      "PackageIngestion/ZipLayer" [
+        label = " ZipLayer",
+        fontsize = 12,
+        image = "/home/matt/.nvm/versions/node/v16.16.0/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+    }
+  }
+  "PackageIngestion/PackagePublishWebhook" -> "PackageIngestion/SSHConfigSecret" [
+    dir = "both",
+  ];
+  "PackageIngestion/PackagePublishWebhook" -> "PackageIngestion/SSHSecret" [
+    dir = "both",
+  ];
+  "PackageIngestion/PackagePublishWebhook" -> "PackageIngestion/ZipLayer" [
+    dir = "both",
+  ];
+}
