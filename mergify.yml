@@ -2,7 +2,6 @@
 queue_rules:
   - name: default
     conditions:
-      - "#approved-reviews-by>=1"
       - status-success=build
 pull_request_rules:
   - name: Automatic merge on approval and successful build
@@ -15,6 +14,8 @@ pull_request_rules:
           {{ title }} (#{{ number }})
           {{ body }}
     conditions:
-      - "#approved-reviews-by>=1"
-      - -label~=(do-not-merge)
+      - or:
+          - files~=docs/reference/WingSDK.md
+          - files~=docs/reference/WingConsole.md
+      - files~=docs/reference/previous_versions/(WingSDK|WingConsole)/
       - status-success=build
