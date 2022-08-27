@@ -23,7 +23,6 @@ interface GithubRelease {
 
 export const GITHUB_CONFIG_KEY = 'GITHUB_CONFIG_SECRET_ARN';
 export const GITHUB_SSH_PRIVATE_KEY = 'GITHUB_SSH_PRIVATE_KEY_SECRET_ARN';
-export const KNOWN_HOSTS_KEY = 'known_hosts';
 export const USERNAME_KEY = 'username';
 export const EMAIL_KEY = 'email';
 export const ID_RSA_KEY = 'id_rsa';
@@ -35,7 +34,6 @@ const client = new SecretsManagerClient({});
 
 let secret: {
   [PAT_KEY]: string;
-  [KNOWN_HOSTS_KEY]: string;
   [ID_RSA_KEY]: string;
   [USERNAME_KEY]: string;
   [EMAIL_KEY]: string;

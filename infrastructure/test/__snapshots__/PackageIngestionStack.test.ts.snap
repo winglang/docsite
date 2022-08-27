@@ -2,11 +2,191 @@
 
 exports[`Snapshot 1`] = `
 Object {
+  "Outputs": Object {
+    "PackagePublishWebhookUrl": Object {
+      "Value": Object {
+        "Fn::GetAtt": Array [
+          "PackagePublishWebhookFunctionUrl84512121",
+          "FunctionUrl",
+        ],
+      },
+    },
+  },
   "Parameters": Object {
     "BootstrapVersion": Object {
       "Default": "/cdk-bootstrap/hnb659fds/version",
       "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
       "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": Object {
+    "PackagePublishWebhook6B7154DE": Object {
+      "DependsOn": Array [
+        "PackagePublishWebhookServiceRoleDefaultPolicy2AEAE255",
+        "PackagePublishWebhookServiceRole35388276",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "ec4d27b1ae75a3615894f152cce283cbc8f0015c3bbdb9d75d844a7a14510e9b.zip",
+        },
+        "Description": "src/constructs/PackagePublishWebhook/PackagePublishWebhook.lambda.ts",
+        "Environment": Object {
+          "Variables": Object {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+            "GITHUB_CONFIG_SECRET_ARN": Object {
+              "Ref": "SSHConfigSecret56D90C4F",
+            },
+            "GITHUB_SSH_PRIVATE_KEY_SECRET_ARN": Object {
+              "Ref": "SSHSecret8CF72A3C",
+            },
+          },
+        },
+        "Handler": "index.handler",
+        "Layers": Array [
+          Object {
+            "Ref": "ZipLayerE3DD0845",
+          },
+          "arn:aws:lambda:us-east-1:553035198032:layer:git-lambda2:8",
+        ],
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "PackagePublishWebhookServiceRole35388276",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+        "Timeout": 300,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "PackagePublishWebhookFunctionUrl84512121": Object {
+      "Properties": Object {
+        "AuthType": "NONE",
+        "TargetFunctionArn": Object {
+          "Fn::GetAtt": Array [
+            "PackagePublishWebhook6B7154DE",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Url",
+    },
+    "PackagePublishWebhookServiceRole35388276": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "PackagePublishWebhookServiceRoleDefaultPolicy2AEAE255": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Ref": "SSHConfigSecret56D90C4F",
+              },
+            },
+            Object {
+              "Action": Array [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret",
+              ],
+              "Effect": "Allow",
+              "Resource": Object {
+                "Ref": "SSHSecret8CF72A3C",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "PackagePublishWebhookServiceRoleDefaultPolicy2AEAE255",
+        "Roles": Array [
+          Object {
+            "Ref": "PackagePublishWebhookServiceRole35388276",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "PackagePublishWebhookinvokefunctionurlFDBB91A0": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunctionUrl",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "PackagePublishWebhook6B7154DE",
+            "Arn",
+          ],
+        },
+        "FunctionUrlAuthType": "NONE",
+        "Principal": "*",
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "SSHConfigSecret56D90C4F": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "Description": "A secret to hold some SSH information for git",
+        "GenerateSecretString": Object {
+          "GenerateStringKey": "pat",
+          "SecretStringTemplate": "{\\"pat\\":\\"\\",\\"username\\":\\"monadabot\\",\\"email\\":\\"monadabot@monada.co\\"}",
+        },
+      },
+      "Type": "AWS::SecretsManager::Secret",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "SSHSecret8CF72A3C": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "Description": "An ssh private key for accessing GitHub",
+        "GenerateSecretString": Object {},
+      },
+      "Type": "AWS::SecretsManager::Secret",
+      "UpdateReplacePolicy": "Delete",
+    },
+    "ZipLayerE3DD0845": Object {
+      "Properties": Object {
+        "Content": Object {
+          "S3Bucket": Object {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "6efb8a60022dad0c01a996d01e3557afc6538cacab0a0739586c6c94266eb834.zip",
+        },
+        "Description": "/opt/zip",
+      },
+      "Type": "AWS::Lambda::LayerVersion",
     },
   },
   "Rules": Object {

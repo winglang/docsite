@@ -8,7 +8,6 @@ import {
   EMAIL_KEY,
   GITHUB_CONFIG_KEY,
   GITHUB_SSH_PRIVATE_KEY,
-  KNOWN_HOSTS_KEY,
   PAT_KEY,
   USERNAME_KEY,
 } from '../constructs/PackagePublishWebhook/PackagePublishWebhook.lambda';
@@ -22,9 +21,8 @@ export class PackageIngestionStack extends Stack {
       generateSecretString: {
         secretStringTemplate: JSON.stringify({
           [PAT_KEY]: '',
-          [KNOWN_HOSTS_KEY]: '',
-          [USERNAME_KEY]: '',
-          [EMAIL_KEY]: '',
+          [USERNAME_KEY]: 'monadabot',
+          [EMAIL_KEY]: 'monadabot@monada.co',
         }),
         generateStringKey: PAT_KEY,
       },
