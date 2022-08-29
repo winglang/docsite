@@ -170,9 +170,9 @@ export const handler = async (event: GitHubWebhookEvent) => {
   if (!secretArn) {
     throw new Error(`Please provide a GitHub PAT secret on the environment variable ${GITHUB_CONFIG_KEY}`);
   }
-  // console.log('Event:', JSON.stringify(event, null, 2));
+  console.log('Event:', JSON.stringify(event, null, 2));
   const body: GithubRelease = JSON.parse(event.body);
-  // console.log('Body:', JSON.stringify(body, null, 2));
+  console.log('Body:', JSON.stringify(body, null, 2));
   const releaseAssetDir = await getReleaseAssets(body);
 
   const docsCloneDir = await getRepo();
