@@ -13,6 +13,7 @@ interface GitHubWebhookEvent {
 }
 
 interface GithubRelease {
+  action: string;
   release: {
     name: string;
     assets_url: string;
@@ -173,6 +174,10 @@ export const handler = async (event: GitHubWebhookEvent) => {
   console.log('Event:', JSON.stringify(event, null, 2));
   const body: GithubRelease = JSON.parse(event.body);
   console.log('Body:', JSON.stringify(body, null, 2));
+  if (body.action !== 'released') {
+    console.info("Wasn't a release message, existing...");
+    return;
+  }
   const releaseAssetDir = await getReleaseAssets(body);
 
   const docsCloneDir = await getRepo();
