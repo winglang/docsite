@@ -18,7 +18,7 @@ pull_request_rules:
           {{ title }} (#{{ number }})
           {{ body }}
     conditions:
-      - author=dependabot[bot]
+      - author=monadabot
       - or:
           - files~=docs/reference/WingSDK.md
           - files~=docs/reference/WingConsole.md
