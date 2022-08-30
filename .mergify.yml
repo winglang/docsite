@@ -7,6 +7,9 @@ queue_rules:
 pull_request_rules:
   - name: Automatic merge on approval and successful build
     actions:
+      review:
+        type: APPROVE
+        message: Automatically approving reference docs
       delete_head_branch: {}
       queue:
         method: squash
@@ -15,6 +18,7 @@ pull_request_rules:
           {{ title }} (#{{ number }})
           {{ body }}
     conditions:
+      - author=dependabot[bot]
       - or:
           - files~=docs/reference/WingSDK.md
           - files~=docs/reference/WingConsole.md
