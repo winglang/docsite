@@ -12,13 +12,11 @@ const isAuthorized = (user) => {
   if (!roles) {
     return false;
   }
-
-  return roles[0] === 'WingAlpha';
+  return roles.includes('WingAlpha');
 }
 
 export function RequireAuth({ children }) {
   const { isAuthenticated, isLoading, user, error } = useAuth0();
-  console.log({ error, isLoading, isAuthenticated })
   const isAllowed = isAuthenticated && isAuthorized(user);
   if (isLoading) {
     return <Loading/>;
