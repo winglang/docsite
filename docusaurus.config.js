@@ -12,7 +12,6 @@ let twitterUrl = 'https://twitter.com/winglangio';
 let stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/wing';
 
 
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Wing',
@@ -50,10 +49,12 @@ const config = {
           return reverseSidebarItems(sidebarItems);
         },
         editUrl: monadaDocsRepoUrl,
-      }, blog: {
+      },
+      blog: {
         showReadingTime: true,
         editUrl: monadaDocsRepoUrl,
-      }, theme: {
+      },
+      theme: {
         customCss: require.resolve('./src/css/custom.css'),
       },
     }),
@@ -62,35 +63,59 @@ const config = {
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Wing', logo: {
+        title: 'Wing',
+        logo: {
           alt: 'Wing Logo', src: 'img/logo.svg',
-        }, items: [{
-          type: 'doc', docId: 'getting-started', position: 'left', label: 'Docs',
-        }, {
-          href: monadaDocsRepoUrl, label: 'GitHub', position: 'right',
-        },],
-      }, footer: {
-        style: 'dark', links: [{
-          title: 'Documentation', items: [{
-            label: 'Getting Started', to: '/docs/getting-started',
-          },],
-        }, {
-          title: 'Community', items: [{
-            label: 'Stack Overflow', href: stackOverflowUrl,
-          }, {
-            label: 'Discord', href: discordInviteUrl,
-          }, {
-            label: 'Twitter', href: twitterUrl,
-          },],
-        }, {
-          title: 'More', items: [{
-            label: 'Blog', to: '/blog',
-          }, {
-            label: 'GitHub', href: winglangRepoUrl,
-          },],
-        },], copyright: `Copyright © ${new Date().getFullYear()} Monada, Inc. Built with Docusaurus.`,
-      }, prism: {
-        theme: lightCodeTheme, darkTheme: darkCodeTheme,
+        },
+        items: [
+          {
+            type: 'doc', docId: 'getting-started', position: 'left', label: 'Docs',
+          },
+          {
+            href: monadaDocsRepoUrl, label: 'GitHub', position: 'right',
+          },
+        ],
+      },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Documentation',
+            items: [{
+              label: 'Getting Started', to: '/docs/getting-started',
+            }],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Stack Overflow', href: stackOverflowUrl,
+              },
+              {
+                label: 'Discord', href: discordInviteUrl,
+              },
+              {
+                label: 'Twitter', href: twitterUrl,
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Blog', to: '/blog',
+              },
+              {
+                label: 'GitHub', href: winglangRepoUrl,
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Monada, Inc. `,
+      },
+      prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
       },
     }),
 };
