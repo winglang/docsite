@@ -15,15 +15,36 @@ const testItems = [{ "type": "doc", "id": "getting-started" }, {
     "items": [{
       "type": "category",
       "label": "WingSDK",
-      "items": [{
-        "type": "doc",
-        "id": "reference/previous_versions/WingSDK/0.0.39",
-        "label": "0.0.39"
-      }, { "type": "doc", "id": "reference/previous_versions/WingSDK/0.0.40", "label": "0.0.40" }, {
-        "type": "doc",
-        "id": "reference/previous_versions/WingSDK/1.1.39",
-        "label": "1.1.39"
-      }, { "type": "doc", "id": "reference/previous_versions/WingSDK/1.2.0", "label": "1.2.0" }],
+      "items": [
+        {
+          "type": "doc",
+          "id": "reference/previous_versions/WingSDK/0.0.39",
+        },
+        {
+          "type": "doc",
+          "id": "reference/previous_versions/WingSDK/0.0.3",
+        },
+        {
+          "type": "doc",
+          "id": "reference/previous_versions/WingSDK/0.0.4",
+        },
+        {
+          "type": "doc",
+          "id": "reference/previous_versions/WingSDK/0.0.40",
+        },
+        {
+          "type": "doc",
+          "id": "reference/previous_versions/WingSDK/1.1.39",
+        },
+        {
+          "type": "doc",
+          "id": "reference/previous_versions/WingSDK/1.1.3",
+        },
+        {
+          "type": "doc",
+          "id": "reference/previous_versions/WingSDK/1.2.0",
+        }
+      ],
       "link": { "type": "generated-index", "description": "Reference Documentation" }
     }],
     "link": { "type": "generated-index", "description": "Previous Versions" }

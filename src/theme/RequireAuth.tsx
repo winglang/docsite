@@ -24,7 +24,7 @@ export function RequireAuth({ children }) {
       const interval = setInterval(async () => {
         console.log("checking access...");
         await loginWithRedirect();
-      }, 1000);
+      }, 60*1000);
       return () => {
         clearInterval(interval);
       };
@@ -35,7 +35,7 @@ export function RequireAuth({ children }) {
   if (isLoading) {
     return <Loading/>;
   }
-  
+
   if (!isAllowed) {
     return <InvitePage/>;
   }
