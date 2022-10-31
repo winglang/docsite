@@ -6,10 +6,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const {reverseSidebarItems} = require("./src/utils/sidebar");
 
 const discordInviteUrl = 'https://discord.gg/HEKYFXm6U6';
-let monadaDocsRepoUrl = 'https://github.com/monadahq/winglang-docs';
-let winglangRepoUrl = 'https://github.com/monadahq/winglang';
-let twitterUrl = 'https://twitter.com/winglangio';
-let stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/wing';
+const earlyAccessRequestUrl = 'https://monadahq.typeform.com/waitlist';
+const slackUrl = 'https://winglang.slack.com';
+
+const monadaBlogUrl = "https://blog.winglang.io"
+const monadaDocsRepoUrl = 'https://github.com/monadahq/winglang-docs';
+const winglangRepoUrl = 'https://github.com/monadahq/winglang';
+const twitterUrl = 'https://twitter.com/winglangio';
+const stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/wing';
 
 
 /** @type {import('@docusaurus/types').Config} */
@@ -34,7 +38,6 @@ const config = {
 
   plugins: [
     'docusaurus-plugin-sass',
-
   ],
   presets: [['classic', /** @type {import('@docusaurus/preset-classic').Options} */
     ({
@@ -69,10 +72,33 @@ const config = {
         },
         items: [
           {
+            type: 'doc', docId: 'tutorial', position: 'left', label: 'Tutorial',
+          },
+          {
+            href: monadaBlogUrl, position: 'left', label: 'Blog',
+          },
+          {
             type: 'doc', docId: 'getting-started', position: 'left', label: 'Docs',
           },
           {
-            href: monadaDocsRepoUrl, label: 'GitHub', position: 'right',
+            type: 'doc', docId: 'roadmap', position: 'left', label: 'Roadmap',
+          },
+          {
+            href: earlyAccessRequestUrl, label: 'Request Early Access', position: 'right',
+          },
+          {
+            href: slackUrl,
+            "aria-label": "Slack server",
+            label: ' ',
+            position: 'right',
+            className: 'header-slack-link'
+          },
+          {
+            href: monadaDocsRepoUrl,
+            "aria-label": "GitHub repository",
+            label: ' ',
+            position: 'right',
+            className: 'header-github-link'
           },
         ],
       },
@@ -92,7 +118,7 @@ const config = {
                 label: 'Stack Overflow', href: stackOverflowUrl,
               },
               {
-                label: 'Discord', href: discordInviteUrl,
+                label: 'Slack', href: slackUrl,
               },
               {
                 label: 'Twitter', href: twitterUrl,
