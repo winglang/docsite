@@ -6,7 +6,6 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
-import { RequireAuth } from "@site/src/theme/RequireAuth";
 
 let tagline = 'A purpose-built development experience for cloud based applications';
 
@@ -30,15 +29,14 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <RequireAuth>
-      <Layout
-        title={`${siteConfig.title}`}
-        description={tagline}>
-        <HomepageHeader/>
-        <main>
-          <HomepageFeatures/>
-        </main>
-      </Layout>
-    </RequireAuth>
+    <Layout
+      title={`${siteConfig.title}`}
+      description={tagline}>
+      <HomepageHeader/>
+      <main>
+        <HomepageFeatures/>
+      </main>
+    </Layout>
+
   );
 }
