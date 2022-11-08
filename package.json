@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "DOCUSAURUS_URL=http://localhost:3000  DOCUSAURUS_BASE_URL='/' docusaurus start",
+    "dev": "docusaurus start",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",

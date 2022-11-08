@@ -18,7 +18,7 @@ function HomepageHeader() {
         <p className="hero__subtitle">{tagline}</p>
         <div className={styles.buttons}>
           <CodeBlock>
-            $ npm i -g wing
+            $ npm install -g @monadahq/wing
           </CodeBlock>
         </div>
       </div>

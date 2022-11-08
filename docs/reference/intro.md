@@ -5,6 +5,6 @@ sidebar_position: 1
 
 These are the reference docs.
 
-[WingSDK](./WingSDK.md) ([Previous Versions](./previous_versions/WingSDK))
+[WingSDK](./WingSDK.md) ([Previous Versions](/docs/category/wingsdk))
 
 [WingConsole](./WingConsole.md)
