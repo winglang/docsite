@@ -21,7 +21,7 @@ const config = {
   title: 'Wing',
   tagline: 'Fly to a new kind of cloud!',
   url: process.env.DOCUSAURUS_URL || 'https://docs.winglang.io',
-  baseUrl: process.env.DOCUSAURUS_BASE_URL,
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
