@@ -5,29 +5,26 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const {reverseSidebarItems} = require("./src/utils/sidebar");
 
-const discordInviteUrl = 'https://discord.gg/HEKYFXm6U6';
 const earlyAccessRequestUrl = 'https://monadahq.typeform.com/waitlist';
 const slackUrl = 'https://winglang.slack.com';
 
-const monadaBlogUrl = "https://blog.winglang.io"
-const monadaDocsRepoUrl = 'https://github.com/monadahq/winglang-docs';
-const winglangRepoUrl = 'https://github.com/monadahq/winglang';
+const docsRepoUrl = 'https://github.com/winglang/docsite';
+const winglangRepoUrl = 'https://github.com/winglang/wing';
 const twitterUrl = 'https://twitter.com/winglangio';
-const stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/wing';
-
+const stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/winglang';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Wing',
-  tagline: 'Fly to a new kind of cloud!',
+  tagline: 'Maximum cloud, minimum DevOps',
   url: process.env.DOCUSAURUS_URL || 'https://docs.winglang.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
-  organizationName: 'monadahq',
-  projectName: 'winglang-docs',
+  organizationName: 'winglang',
+  projectName: 'docs',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -51,11 +48,11 @@ const config = {
           const sidebarItems = await defaultSidebarItemsGenerator(args);
           return reverseSidebarItems(sidebarItems);
         },
-        editUrl: monadaDocsRepoUrl,
+        editUrl: docsRepoUrl,
       },
       blog: {
         showReadingTime: true,
-        editUrl: monadaDocsRepoUrl,
+        editUrl: docsRepoUrl,
       },
       theme: {
         customCss: require.resolve('./src/css/custom.css'),
@@ -75,13 +72,13 @@ const config = {
             type: 'doc', docId: 'tutorial', position: 'left', label: 'Tutorial',
           },
           {
-            href: monadaBlogUrl, position: 'left', label: 'Blog',
+            to: 'blog', label: 'Blog', position: 'left',
           },
           {
             type: 'doc', docId: 'getting-started', position: 'left', label: 'Docs',
           },
           {
-            type: 'doc', docId: 'roadmap', position: 'left', label: 'Roadmap',
+            href: 'https://github.com/orgs/winglang/projects/1', docId: 'roadmap', position: 'left', label: 'Roadmap'
           },
           {
             href: earlyAccessRequestUrl, label: 'Request Early Access', position: 'right',
@@ -94,7 +91,7 @@ const config = {
             className: 'header-slack-link'
           },
           {
-            href: monadaDocsRepoUrl,
+            href: docsRepoUrl,
             "aria-label": "GitHub repository",
             label: ' ',
             position: 'right',

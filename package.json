@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "docusaurus start",
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "DOCUSAURUS_URL=http://localhost:3000 DOCUSAURUS_BASE_URL=/ docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
