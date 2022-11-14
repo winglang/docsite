@@ -49,15 +49,20 @@
 }
 
 .header-slack-link:before {
-  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-j7mis/Slack_Mark_Monochrome_White.svg?auto=webp&format=png&width=24&height=24")
-  no-repeat;
+  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-7i2nrx/Slack_Mark_Monochrome_Black.svg?auto=webp&format=png&width=24&height=24 ") no-repeat;
   content: "";
   display: flex;
   height: 24px;
   width: 24px;
 }
 
-
+html[data-theme='dark'] .header-slack-link:before {
+  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-j7mis/Slack_Mark_Monochrome_White.svg?auto=webp&format=png&width=24&height=24") no-repeat;
+  content: "";
+  display: flex;
+  height: 24px;
+  width: 24px;
+}
 
 .header-github-link {
   margin-right: 1rem;
