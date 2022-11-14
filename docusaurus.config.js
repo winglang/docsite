@@ -10,7 +10,6 @@ const slackUrl = 'https://winglang.slack.com';
 
 const docsRepoUrl = 'https://github.com/winglang/docsite';
 const winglangRepoUrl = 'https://github.com/winglang/wing';
-const twitterUrl = 'https://twitter.com/winglangio';
 const stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/winglang';
 
 /** @type {import('@docusaurus/types').Config} */
@@ -48,11 +47,11 @@ const config = {
           const sidebarItems = await defaultSidebarItemsGenerator(args);
           return reverseSidebarItems(sidebarItems);
         },
-        editUrl: docsRepoUrl,
+        editUrl: winglangRepoUrl,
       },
       blog: {
         showReadingTime: true,
-        editUrl: docsRepoUrl,
+        editUrl: winglangRepoUrl,
       },
       theme: {
         customCss: require.resolve('./src/css/custom.css'),
@@ -92,7 +91,7 @@ const config = {
             className: 'header-slack-link'
           },
           {
-            href: docsRepoUrl,
+            href: winglangRepoUrl,
             "aria-label": "GitHub repository",
             label: ' ',
             position: 'right',
@@ -117,9 +116,6 @@ const config = {
               },
               {
                 label: 'Slack', href: slackUrl,
-              },
-              {
-                label: 'Twitter', href: twitterUrl,
               },
             ],
           },

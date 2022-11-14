@@ -49,12 +49,12 @@
 }
 
 .header-slack-link:before {
-  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-f7789y/Slack_Mark_Monochrome_Black.png?auto=webp&format=png&width=40&height=40")
+  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-j7mis/Slack_Mark_Monochrome_White.svg?auto=webp&format=png&width=24&height=24")
   no-repeat;
   content: "";
   display: flex;
-  height: 40px;
-  width: 40px;
+  height: 24px;
+  width: 24px;
 }
 
 
