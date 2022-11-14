@@ -9,6 +9,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  font-family: 'Inter', 'Effra Trial', sans-serif;
   --ifm-color-primary: #1c273d;
   --ifm-color-primary-dark: #192337;
   --ifm-color-primary-darker: #182134;
@@ -27,6 +28,7 @@
   /*#47aca6*/
   /* 8bded9 */
   /* 8fece6 */
+  font-family: 'Inter', 'Effra Trial', sans-serif;
   --ifm-color-primary: #8fece6;
   --ifm-color-primary-dark: #23bab1;
   --ifm-color-primary-darker: #21b0a7;
@@ -34,6 +36,7 @@
   --ifm-color-primary-light: #36d9cf;
   --ifm-color-primary-lighter: #40dbd2;
   --ifm-color-primary-lightest: #5fe1d9;
+  --ifm-navbar-link-hover-color: #2ad5c1;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
