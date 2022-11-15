@@ -39,12 +39,6 @@ const config = {
       docs: {
         includeCurrentVersion: false,
         sidebarPath: require.resolve('./sidebars.js'),
-        async sidebarItemsGenerator({
-                                      defaultSidebarItemsGenerator,
-                                      ...args
-                                    }) {
-          return defaultSidebarItemsGenerator(args);
-        },
         editUrl: winglangRepoUrl,
       },
       blog: {
