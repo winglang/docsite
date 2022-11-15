@@ -9,6 +9,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  font-family: 'Inter', 'Effra Trial', sans-serif;
   --ifm-color-primary: #1c273d;
   --ifm-color-primary-dark: #192337;
   --ifm-color-primary-darker: #182134;
@@ -27,6 +28,7 @@
   /*#47aca6*/
   /* 8bded9 */
   /* 8fece6 */
+  font-family: 'Inter', 'Effra Trial', sans-serif;
   --ifm-color-primary: #8fece6;
   --ifm-color-primary-dark: #23bab1;
   --ifm-color-primary-darker: #21b0a7;
@@ -34,6 +36,7 @@
   --ifm-color-primary-light: #36d9cf;
   --ifm-color-primary-lighter: #40dbd2;
   --ifm-color-primary-lightest: #5fe1d9;
+  --ifm-navbar-link-hover-color: #2ad5c1;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -46,15 +49,20 @@
 }
 
 .header-slack-link:before {
-  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-f7789y/Slack_Mark_Monochrome_Black.png?auto=webp&format=png&width=40&height=40")
-  no-repeat;
+  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-7i2nrx/Slack_Mark_Monochrome_Black.svg?auto=webp&format=png&width=24&height=24 ") no-repeat;
   content: "";
   display: flex;
-  height: 40px;
-  width: 40px;
+  height: 24px;
+  width: 24px;
 }
 
-
+html[data-theme='dark'] .header-slack-link:before {
+  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-j7mis/Slack_Mark_Monochrome_White.svg?auto=webp&format=png&width=24&height=24") no-repeat;
+  content: "";
+  display: flex;
+  height: 24px;
+  width: 24px;
+}
 
 .header-github-link {
   margin-right: 1rem;

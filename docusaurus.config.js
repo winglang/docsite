@@ -10,14 +10,13 @@ const slackUrl = 'https://winglang.slack.com';
 
 const docsRepoUrl = 'https://github.com/winglang/docsite';
 const winglangRepoUrl = 'https://github.com/winglang/wing';
-const twitterUrl = 'https://twitter.com/winglangio';
 const stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/winglang';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Wing',
   tagline: 'Maximum cloud, minimum DevOps',
-  url: process.env.DOCUSAURUS_URL || 'https://docs.winglang.io',
+  url: process.env.DOCUSAURUS_URL || 'https://winglang.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -48,11 +47,11 @@ const config = {
           const sidebarItems = await defaultSidebarItemsGenerator(args);
           return reverseSidebarItems(sidebarItems);
         },
-        editUrl: docsRepoUrl,
+        editUrl: winglangRepoUrl,
       },
       blog: {
         showReadingTime: true,
-        editUrl: docsRepoUrl,
+        editUrl: winglangRepoUrl,
       },
       theme: {
         customCss: require.resolve('./src/css/custom.css'),
@@ -62,10 +61,11 @@ const config = {
 
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      defaultMode: 'dark',
       navbar: {
         title: 'Wing',
         logo: {
-          alt: 'Wing Logo', src: 'img/logo.svg',
+          alt: 'Wing Logo', src: 'img/logo.svg', srcDark: 'img/logo-dark.svg',
         },
         items: [
           {
@@ -91,7 +91,7 @@ const config = {
             className: 'header-slack-link'
           },
           {
-            href: docsRepoUrl,
+            href: winglangRepoUrl,
             "aria-label": "GitHub repository",
             label: ' ',
             position: 'right',
@@ -116,9 +116,6 @@ const config = {
               },
               {
                 label: 'Slack', href: slackUrl,
-              },
-              {
-                label: 'Twitter', href: twitterUrl,
               },
             ],
           },
