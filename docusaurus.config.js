@@ -32,7 +32,7 @@ const config = {
   },
 
   plugins: [
-    'docusaurus-plugin-sass',
+    'docusaurus-plugin-sass', 'docusaurus-plugin-segment'
   ],
   presets: [['classic', /** @type {import('@docusaurus/preset-classic').Options} */
     ({
@@ -137,7 +137,12 @@ const config = {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
         },
-      }),
+      segment: {
+        apiKey: 'MvkxDOKWzcs7MFrWu1UNaO2bGn1S2RvA',
+
+      },
+    }),
+
 };
 
 module.exports = config;
