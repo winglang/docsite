@@ -69,16 +69,18 @@ const config = {
         },
         items: [
           {
-            type: 'doc', docId: 'tutorial', position: 'left', label: 'Tutorial',
-          },
-          {
             to: 'blog', label: 'Blog', position: 'left',
           },
           {
-            type: 'doc', docId: 'getting-started', position: 'left', label: 'Docs',
+            type: 'doc', docId: 'Getting Started/Welcome', position: 'left', label: 'Docs',
           },
           {
             href: 'https://github.com/orgs/winglang/projects/1', docId: 'roadmap', position: 'left', label: 'Roadmap'
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
           },
           {
             href: earlyAccessRequestUrl, label: 'Request Early Access', position: 'right',
@@ -105,7 +107,7 @@ const config = {
           {
             title: 'Documentation',
             items: [{
-              label: 'Getting Started', to: '/docs/getting-started',
+              label: 'Getting Started', to: '/docs/Getting Started/Welcome',
             }],
           },
           {
