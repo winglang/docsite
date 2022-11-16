@@ -399,7 +399,7 @@ This project is licensed under the MIT License.
 [roadmap]: https://github.com/orgs/winglang/projects/1/views/1
 [Wing Slack]: https://join.slack.com/t/winglang/shared_invite/zt-1i7jb3pt3-lb0RKOSoLA1~pl6cBnP2tA
 [Terraform]: https://www.terraform.io/
-[AWS account]: portal.aws.amazon.com/billing/signup
+[AWS account]: https://portal.aws.amazon.com/billing/signup
 [AWS CLI]: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 [AWS credentials]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 [construct programming model]: https://github.com/aws/constructs
