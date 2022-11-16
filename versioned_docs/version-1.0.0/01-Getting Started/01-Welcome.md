@@ -148,8 +148,6 @@ with Wing applications on the local machine.
    The **Wing Console** will start and in the main view you'll see two resources: a **Queue** and a **Function**.
    You'll also notice that the function is connected to the queue through the `message` event.
 
-    <img src="./docs/assets/wing-console-view.png"/>
-
 
 3. Click on the queue resource, goto **queue contents** tab. Type `world` and hit
    **Send Message**.
@@ -378,9 +376,6 @@ run in a local simulator for testing and development.
 
 Now that you've written your first Wing program, what's next? Here are some
 resources to help you get started:
-
-- [Wing Language Specification](./docs/winglang-spec.md)
-- [Wing SDK Reference](./docs/wingsdk-api.md)
 
 ## Community
 
