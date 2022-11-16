@@ -57,7 +57,7 @@ const config = {
         navbar: {
           title: 'Wing',
           logo: {
-            alt: 'Wing Logo', src: 'img/logo.svg', srcDark: 'img/logo-dark.svg',
+            alt: 'Wing Logo', src: 'img/logo-black.png', srcDark: 'img/logo-turq.png',
           },
           items: [
             {
