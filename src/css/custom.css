@@ -32,6 +32,19 @@ h3 {
   font-weight: 600;
 }
 
+button.navbar__toggle {
+  width: 1.15rem;
+  align-items: center;
+}
+
+.navbar__title {
+  font-size: inherit;
+}
+
+.navbar__logo {
+  height: 1.5rem;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   /*#47aca6*/
