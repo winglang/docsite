@@ -51,7 +51,7 @@ you should consider Wing](#why-wing).
 This README is for *users* of the language. It contains information about how to
 install the toolchain, and how to build Wing applications. If you wish to
 *contribute* :pray: to the project, head over to our [contribution
-guide](./CONTRIBUTING.md).
+guide](www.google.com).
 
 ## Getting Started
 
@@ -388,13 +388,13 @@ Alternatively, post any question you have in [Wing Discussions](https://github.c
 ## Contributing
 
 We welcome and celebrate contributions from the community! Please see our
-[contribution guide](./CONTRIBUTING.md) for more information about setting up a
+[contribution guide](www.google.com) for more information about setting up a
 development environment, what we are working on, where we need help and other
 guidelines for contributing to the project.
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE.md).
+This project is licensed under the [MIT License](www.google.com).
 
 [roadmap]: https://github.com/orgs/winglang/projects/1/views/1
 [Wing Slack]: https://join.slack.com/t/winglang/shared_invite/zt-1i7jb3pt3-lb0RKOSoLA1~pl6cBnP2tA
