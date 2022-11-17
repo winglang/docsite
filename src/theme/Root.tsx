@@ -7,7 +7,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export default function Root({ children }) {
   const { siteConfig } = useDocusaurusContext();
-  let redirectUrl = `${siteConfig.url}${siteConfig.baseUrl}docs/getting-started`;
+  let redirectUrl = `${siteConfig.url}${siteConfig.baseUrl}Getting%20Started/Welcome`;
 
   return (
     <BrowserOnly>
