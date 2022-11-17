@@ -71,7 +71,8 @@ const config = {
               dropdownActiveClassDisabled: true,
             },
             {
-              href: earlyAccessRequestUrl, label: 'Request Early Access', position: 'right',
+              type: 'custom-invite-form-button',
+              position: 'right',
             },
             {
               href: slackUrl,
