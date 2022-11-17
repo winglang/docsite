@@ -28,6 +28,7 @@
 .hero {
     margin-top: 3rem;
     max-width: 75%;
+    text-align: center;
 }
 
 .hero p {

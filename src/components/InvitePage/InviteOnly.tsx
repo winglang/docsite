@@ -1,5 +1,6 @@
 import styles from "@site/src/components/InvitePage/styles.module.css";
 import React from "react";
+import { InviteFormButton } from "@site/src/components/InviteFormButton";
 
 export function InviteOnly() {
   return (
@@ -9,10 +10,9 @@ export function InviteOnly() {
           Thank you for showing interest in Wing!
         </p>
         <p>
-          We will notify you when you've been given access to the preview.
-          This page will refresh each minute to see if you have been given access.
-          You can keep the page open or just come back later.
+          Wing is currently in preview mode. If you'd like to get an early peek, please fill out an invite request using the button below.
         </p>
+        <InviteFormButton/>
       </div>
     </div>
   )
