@@ -15,7 +15,7 @@ const stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/winglang';
 const config = {
   title: 'Wing',
   tagline: 'Maximum cloud, minimum DevOps',
-  url: process.env.DOCUSAURUS_URL || 'https://winglang.io',
+  url: process.env.DOCUSAURUS_URL || 'https://docs.winglang.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -37,14 +37,13 @@ const config = {
   presets: [['classic', /** @type {import('@docusaurus/preset-classic').Options} */
     ({
       docs: {
+        routeBasePath: '/', // Serve the docs at the site's root
+        breadcrumbs: false,
         includeCurrentVersion: false,
         sidebarPath: require.resolve('./sidebars.js'),
         editUrl: winglangRepoUrl,
       },
-      blog: {
-        showReadingTime: true,
-        editUrl: winglangRepoUrl,
-      },
+      blog: false,
       theme: {
         customCss: require.resolve('./src/css/custom.css'),
       },
@@ -57,12 +56,9 @@ const config = {
         navbar: {
           title: 'Wing',
           logo: {
-            alt: 'Wing Logo', src: 'img/logo.svg', srcDark: 'img/logo-dark.svg',
+            alt: 'Wing Logo', src: 'img/logo-black.png', srcDark: 'img/logo-turq.png',
           },
           items: [
-            {
-              to: 'blog', label: 'Blog', position: 'left',
-            },
             {
               type: 'doc', docId: 'Getting Started/Welcome', position: 'left', label: 'Docs',
             },
@@ -99,7 +95,7 @@ const config = {
             {
               title: 'Documentation',
               items: [{
-                label: 'Getting Started', to: '/docs/Getting Started/Welcome',
+                label: 'Getting Started', to: 'Getting Started/Welcome',
               }],
             },
             {
@@ -116,9 +112,6 @@ const config = {
             {
               title: 'More',
               items: [
-                {
-                  label: 'Blog', to: '/blog',
-                },
                 {
                   label: 'GitHub', href: winglangRepoUrl,
                 },
