@@ -28,8 +28,46 @@
   margin-top: calc( var(--ifm-h1-vertical-rhythm-top) * var(--ifm-leading) );
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 h3 {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 1.12rem;
+}
+
+h5 {
+  font-weight: 800;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+a {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 button.navbar__toggle {
@@ -51,15 +89,26 @@ button.navbar__toggle {
   /* 8bded9 */
   /* 8fece6 */
   font-family: 'Inter', 'Effra Trial', sans-serif;
-  --ifm-color-primary: #8fece6;
+  --ifm-color-primary: #2ad5c1;
   --ifm-color-primary-dark: #23bab1;
   --ifm-color-primary-darker: #21b0a7;
   --ifm-color-primary-darkest: #1b918a;
   --ifm-color-primary-light: #36d9cf;
   --ifm-color-primary-lighter: #40dbd2;
-  --ifm-color-primary-lightest: #5fe1d9;
-  --ifm-navbar-link-hover-color: #2ad5c1;
+  --ifm-color-primary-lightest: #84e7e1;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.menu__link:hover {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.table-of-contents__link:hover {
+  color: var(--ifm-color-primary-lightest);
 }
 
 .header-slack-link svg[class^='iconExternalLink'] {
