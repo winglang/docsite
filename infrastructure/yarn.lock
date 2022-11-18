@@ -10,6 +10,21 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@aws-cdk/aws-apigatewayv2-alpha@^2.50.0-alpha.0", "@aws-cdk/aws-apigatewayv2-alpha@2.50.0-alpha.0":
+  "integrity" "sha512-dttWDqy+nTg/fD9y0egvj7/zdnOVEo0qyGsep1RV+p16R3F4ObMKyPVIg15fz57tK//Gp/i1QgXsZaSqbcWHOg=="
+  "resolved" "https://registry.npmjs.org/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.50.0-alpha.0.tgz"
+  "version" "2.50.0-alpha.0"
+
+"@aws-cdk/aws-apigatewayv2-authorizers-alpha@^2.50.0-alpha.0":
+  "integrity" "sha512-lMXnSpUSOYtCxoAxauNkGJZLsKMonHgd9rzlFUK2zxE7aC1lVwb4qYX4X9WJdvIExkFOHSZQzOTKM6SZqusssw=="
+  "resolved" "https://registry.npmjs.org/@aws-cdk/aws-apigatewayv2-authorizers-alpha/-/aws-apigatewayv2-authorizers-alpha-2.50.0-alpha.0.tgz"
+  "version" "2.50.0-alpha.0"
+
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.50.0-alpha.0":
+  "integrity" "sha512-XEhz4HsU0HtQJnbs9XSb/yPN/1EEYAOZthWRKyniS9IWeGruVjEhWndoXpu0S7w+M5Bni7D9wrCTkqTgmTEvlw=="
+  "resolved" "https://registry.npmjs.org/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.50.0-alpha.0.tgz"
+  "version" "2.50.0-alpha.0"
+
 "@aws-crypto/ie11-detection@^2.0.0":
   "integrity" "sha512-pkVXf/dq6PITJ0jzYZ69VhL8VFOFoPZLZqtU/12SGnzYuJOOGNfF41q9GxdI1yqC8R13Rq3jOLKDFpUJFT5eTA=="
   "resolved" "https://registry.npmjs.org/@aws-crypto/ie11-detection/-/ie11-detection-2.0.0.tgz"
@@ -1824,10 +1839,10 @@
   "resolved" "https://registry.npmjs.org/at-least-node/-/at-least-node-1.0.0.tgz"
   "version" "1.0.0"
 
-"aws-cdk-lib@^2.0.0", "aws-cdk-lib@^2.1.0", "aws-cdk-lib@^2.38.1":
-  "integrity" "sha512-vEgJBUzL1yqlSMYGjipl+eRwy900x3RmbVzTcxKdCZvhtBMQ1hqJAMgVswvoyA5EnvfELLlz9ufm+qdKGs9DxQ=="
-  "resolved" "https://registry.npmjs.org/aws-cdk-lib/-/aws-cdk-lib-2.38.1.tgz"
-  "version" "2.38.1"
+"aws-cdk-lib@^2.0.0", "aws-cdk-lib@^2.1.0", "aws-cdk-lib@^2.38.1", "aws-cdk-lib@^2.50.0":
+  "integrity" "sha512-deDbZTI7oyu3rqUyqjwhP6tnUO8MD70lE98yR65xiYty4yXBpsWKbeH3s1wNLpLAWS3hWJYyMtjZ4ZfC35NtVg=="
+  "resolved" "https://registry.npmjs.org/aws-cdk-lib/-/aws-cdk-lib-2.50.0.tgz"
+  "version" "2.50.0"
   dependencies:
     "@balena/dockerignore" "^1.0.2"
     "case" "1.6.3"
@@ -1836,7 +1851,7 @@
     "jsonschema" "^1.4.1"
     "minimatch" "^3.1.2"
     "punycode" "^2.1.1"
-    "semver" "^7.3.7"
+    "semver" "^7.3.8"
     "yaml" "1.10.2"
 
 "aws-cdk@^2.38.1":
@@ -5112,6 +5127,11 @@
   "integrity" "sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g=="
   "resolved" "https://registry.npmjs.org/semver/-/semver-7.3.7.tgz"
   "version" "7.3.7"
+  dependencies:
+    "lru-cache" "^6.0.0"
+
+"semver@^7.3.8":
+  "version" "7.3.8"
   dependencies:
     "lru-cache" "^6.0.0"
 

@@ -14,6 +14,7 @@
     ".projen/tasks.json",
     "cdk.json",
     "LICENSE",
+    "src/constructs/IsAuthorized/IsAuthorized-function.ts",
     "src/constructs/PackagePublishWebhook/PackagePublishWebhook-function.ts",
     "tsconfig.dev.json",
     "tsconfig.json"

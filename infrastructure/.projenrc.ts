@@ -6,8 +6,11 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   name: 'infrastructure',
   packageManager: NodePackageManager.NPM,
   deps: [
-    '@types/aws-lambda',
+    '@aws-cdk/aws-apigatewayv2-alpha',
+    '@aws-cdk/aws-apigatewayv2-authorizers-alpha',
+    '@aws-cdk/aws-apigatewayv2-integrations-alpha',
     '@aws-sdk/client-secrets-manager',
+    '@types/aws-lambda',
     'axios',
     'cdk-iam-floyd',
     'cdk-lambda-layer-zip',

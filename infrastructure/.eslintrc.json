@@ -151,6 +151,7 @@
           "**/projenrc/**",
           ".projenrc.ts",
           "projenrc/**/*.ts",
+          "src/constructs/IsAuthorized/IsAuthorized.lambda.ts",
           "src/constructs/PackagePublishWebhook/PackagePublishWebhook.lambda.ts"
         ],
         "optionalDependencies": false,

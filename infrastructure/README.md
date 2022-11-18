@@ -38,6 +38,16 @@ The GitHub PAT should have full access to the winglang-docs repo.
 The `SSHSecret` secret stored an SSH private key for use by the Lambda to authenticate against GitHub for SSH access.
 The public keys needs to be registered against a user that has full read/write access to the winglang-docs repo.
 
+## Auth0 isAuthorized API
+
+Auth0 needs a way to know if a user is authorized in the preview, so that the user can be granted access to the docs site.
+
+The flow is:
+
+User logs in -> Auth0 calls our /isAuthorized API providing the GH username -> Checks GitHub contributor team
+
+If the user is part of the contributor team in the winglang org, then auth0 will add the WingAlpha role to the user.
+This WingAlpha role is checked by the site to see if the user is authorized to view content.
 
 # Contributing
 

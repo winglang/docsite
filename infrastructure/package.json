@@ -3,6 +3,8 @@
   "scripts": {
     "build": "npx projen build",
     "bundle": "npx projen bundle",
+    "bundle:constructs/IsAuthorized/IsAuthorized.lambda": "npx projen bundle:constructs/IsAuthorized/IsAuthorized.lambda",
+    "bundle:constructs/IsAuthorized/IsAuthorized.lambda:watch": "npx projen bundle:constructs/IsAuthorized/IsAuthorized.lambda:watch",
     "bundle:constructs/PackagePublishWebhook/PackagePublishWebhook.lambda": "npx projen bundle:constructs/PackagePublishWebhook/PackagePublishWebhook.lambda",
     "bundle:constructs/PackagePublishWebhook/PackagePublishWebhook.lambda:watch": "npx projen bundle:constructs/PackagePublishWebhook/PackagePublishWebhook.lambda:watch",
     "clobber": "npx projen clobber",
@@ -47,6 +49,9 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.50.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-authorizers-alpha": "^2.50.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.50.0-alpha.0",
     "@aws-sdk/client-secrets-manager": "^3.154.0",
     "@types/aws-lambda": "^8.10.102",
     "aws-cdk-lib": "^2.38.1",

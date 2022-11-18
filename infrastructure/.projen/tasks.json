@@ -29,7 +29,28 @@
       "description": "Prepare assets",
       "steps": [
         {
+          "spawn": "bundle:constructs/IsAuthorized/IsAuthorized.lambda"
+        },
+        {
           "spawn": "bundle:constructs/PackagePublishWebhook/PackagePublishWebhook.lambda"
+        }
+      ]
+    },
+    "bundle:constructs/IsAuthorized/IsAuthorized.lambda": {
+      "name": "bundle:constructs/IsAuthorized/IsAuthorized.lambda",
+      "description": "Create a JavaScript bundle from src/constructs/IsAuthorized/IsAuthorized.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/constructs/IsAuthorized/IsAuthorized.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/constructs/IsAuthorized/IsAuthorized.lambda/index.js\" --external:aws-sdk"
+        }
+      ]
+    },
+    "bundle:constructs/IsAuthorized/IsAuthorized.lambda:watch": {
+      "name": "bundle:constructs/IsAuthorized/IsAuthorized.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src/constructs/IsAuthorized/IsAuthorized.lambda.ts",
+      "steps": [
+        {
+          "exec": "esbuild --bundle src/constructs/IsAuthorized/IsAuthorized.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets/constructs/IsAuthorized/IsAuthorized.lambda/index.js\" --external:aws-sdk --watch"
         }
       ]
     },

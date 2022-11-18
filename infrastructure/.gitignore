@@ -50,4 +50,5 @@ junit.xml
 /cdk.out/
 .cdk.staging/
 .parcel-cache/
+!/src/constructs/IsAuthorized/IsAuthorized-function.ts
 !/src/constructs/PackagePublishWebhook/PackagePublishWebhook-function.ts

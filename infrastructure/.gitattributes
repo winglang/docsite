@@ -18,6 +18,7 @@
 /LICENSE linguist-generated
 /package-lock.json linguist-generated
 /package.json linguist-generated
+/src/constructs/IsAuthorized/IsAuthorized-function.ts linguist-generated
 /src/constructs/PackagePublishWebhook/PackagePublishWebhook-function.ts linguist-generated
 /tsconfig.dev.json linguist-generated
 /tsconfig.json linguist-generated
