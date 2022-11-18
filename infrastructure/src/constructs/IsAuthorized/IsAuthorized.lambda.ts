@@ -20,9 +20,9 @@ async function getToken(): Promise<string> {
 }
 
 
-export const checkIfAuthorized = async (token: string, username: string): Promise<boolean> => {
+async function getGroupMembership(username: string, token: string, groupName: string) {
   const response = await axios.get(
-    `https://api.github.com/orgs/winglang/teams/contributors/memberships/${username}`,
+    `https://api.github.com/orgs/winglang/teams/${groupName}/memberships/${username}`,
     {
       headers: {
         authorization: `Bearer ${token}`,
@@ -35,6 +35,14 @@ export const checkIfAuthorized = async (token: string, username: string): Promis
   const { state } = response.data;
 
   return state === 'active';
+}
+
+export const checkIfAuthorized = async (token: string, username: string): Promise<boolean> => {
+  let isContributor = await getGroupMembership(username, token, 'contributors');
+  if (isContributor) {
+    return true;
+  }
+  return getGroupMembership(username, token, 'maintainers');
 };
 
 
