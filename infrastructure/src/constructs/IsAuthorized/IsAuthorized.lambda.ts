@@ -21,20 +21,25 @@ async function getToken(): Promise<string> {
 
 
 async function getGroupMembership(username: string, token: string, groupName: string) {
-  const response = await axios.get(
-    `https://api.github.com/orgs/winglang/teams/${groupName}/memberships/${username}`,
-    {
-      headers: {
-        authorization: `Bearer ${token}`,
-        accept: 'application/vnd.github+json',
+  try {
+    const response = await axios.get(
+      `https://api.github.com/orgs/winglang/teams/${groupName}/memberships/${username}`,
+      {
+        headers: {
+          authorization: `Bearer ${token}`,
+          accept: 'application/vnd.github+json',
+        },
       },
-    },
-  );
+    );
+    console.log('response: ', JSON.stringify(response.data, null, 2));
+    const { state } = response.data;
 
-  console.log('response: ', JSON.stringify(response.data, null, 2));
-  const { state } = response.data;
+    return state === 'active';
+  } catch (err) {
+    console.warn(`Ths user ${username} wasn't in the ${groupName}`);
+    return false;
+  }
 
-  return state === 'active';
 }
 
 export const checkIfAuthorized = async (token: string, username: string): Promise<boolean> => {
