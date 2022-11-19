@@ -24,7 +24,7 @@ export function RequireAuth({ children }) {
       const interval = setInterval(async () => {
         console.log("checking access...");
         await loginWithRedirect();
-      }, 60*1000);
+      }, 5_000);
       return () => {
         clearInterval(interval);
       };

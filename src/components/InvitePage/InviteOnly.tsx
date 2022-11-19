@@ -11,6 +11,7 @@ export function InviteOnly() {
         </p>
         <p>
           Wing is currently in preview mode. If you'd like to get an early peek, please fill out an invite request using the button below.
+          If you have, give us a few seconds while we check your invite status...
         </p>
         <InviteFormButton/>
       </div>
