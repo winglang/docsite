@@ -1,3 +1,6 @@
+---
+slug: /
+---
 <p align="center">
   <a href="https://winglang.io">
     <picture>

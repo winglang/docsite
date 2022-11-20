@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const sidebars = require('./sidebars');
 const earlyAccessRequestUrl = 'https://monadahq.typeform.com/waitlist';
 const slackUrl = 'https://winglang.slack.com';
 
@@ -40,7 +39,6 @@ const config = {
         routeBasePath: '/', // Serve the docs at the site's root
         breadcrumbs: false,
         includeCurrentVersion: false,
-        sidebarPath: require.resolve('./sidebars.js'),
         editUrl: winglangRepoUrl,
       },
       blog: false,
@@ -52,15 +50,20 @@ const config = {
 
   themeConfig: /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
-        defaultMode: 'dark',
+        colorMode: {
+          defaultMode: 'dark',
+        },
         navbar: {
           title: 'Wing',
           logo: {
-            alt: 'Wing Logo', src: 'img/logo-black.png', srcDark: 'img/logo-turq.png',
+            alt: 'Wing Logo', src: 'img/logo-black.png', srcDark: 'img/logo-turq.png', href:'https://winglang.io', target:'_self'
           },
           items: [
             {
               type: 'doc', docId: 'Getting Started/Welcome', position: 'left', label: 'Docs',
+            },
+            {
+              to: 'https://winglang.io/blog', position: 'left', label: 'Blog', target:'_self',
             },
             {
               href: 'https://github.com/orgs/winglang/projects/1', docId: 'roadmap', position: 'left', label: 'Roadmap'
