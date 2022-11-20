@@ -16,7 +16,7 @@ const config = {
   tagline: 'Maximum cloud, minimum DevOps',
   url: process.env.DOCUSAURUS_URL || 'https://docs.winglang.io',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
 
