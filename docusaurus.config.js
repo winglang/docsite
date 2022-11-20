@@ -41,7 +41,6 @@ const config = {
         breadcrumbs: false,
         includeCurrentVersion: false,
         sidebarPath: require.resolve('./sidebars.js'),
-        editUrl: winglangRepoUrl,
       },
       blog: false,
       theme: {
