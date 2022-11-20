@@ -56,11 +56,14 @@ const config = {
         navbar: {
           title: 'Wing',
           logo: {
-            alt: 'Wing Logo', src: 'img/logo-black.png', srcDark: 'img/logo-turq.png',
+            alt: 'Wing Logo', src: 'img/logo-black.png', srcDark: 'img/logo-turq.png', href:'https://winglang.io', target:'_self',
           },
           items: [
-            {
+	    {
               type: 'doc', docId: 'Getting Started/Welcome', position: 'left', label: 'Docs',
+            },
+            {
+              to: 'https://winglang.io/blog', position: 'left', label: 'Blog', target:'_self',
             },
             {
               href: 'https://github.com/orgs/winglang/projects/1', docId: 'roadmap', position: 'left', label: 'Roadmap'
@@ -69,9 +72,6 @@ const config = {
               type: 'docsVersionDropdown',
               position: 'right',
               dropdownActiveClassDisabled: true,
-            },
-            {
-              href: earlyAccessRequestUrl, label: 'Request Early Access', position: 'right',
             },
             {
               href: slackUrl,
