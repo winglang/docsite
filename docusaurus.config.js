@@ -38,8 +38,7 @@ const config = {
       docs: {
         routeBasePath: '/', // Serve the docs at the site's root
         breadcrumbs: false,
-        includeCurrentVersion: false,
-        editUrl: winglangRepoUrl,
+        includeCurrentVersion: false
       },
       blog: false,
       theme: {
