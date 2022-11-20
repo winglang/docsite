@@ -60,7 +60,7 @@ const config = {
           },
           items: [
 	    {
-              type: 'doc', docId: 'Getting Started/Welcome', position: 'left', label: 'Docs',
+              to: '/', position: 'left', label: 'Docs',
             },
             {
               to: 'https://winglang.io/blog', position: 'left', label: 'Blog', target:'_self',
@@ -95,7 +95,7 @@ const config = {
             {
               title: 'Documentation',
               items: [{
-                label: 'Getting Started', to: 'Getting Started/Welcome',
+                label: 'Getting Started', to: '/',
               }],
             },
             {
