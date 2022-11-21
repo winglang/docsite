@@ -6,8 +6,6 @@ export default function RequireAuth(props: PropsWithChildren) {
   const { loginWithRedirect, isAuthenticated, error, isLoading, user } =
     useAuth0();
 
-  // TODO: If error: redirect to auth0. If unauthorised: redirect.
-
   useEffect(() => {
     if (isLoading) {
       return;
@@ -15,22 +13,11 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (isAuthenticated) {
       return;
     }
-    if (error) {
-      return;
-    }
     loginWithRedirect();
   }, [isLoading, isAuthenticated, error]);
 
   return (
     <>
-      {error && (
-        <div>
-          {error?.name}, {error?.message}
-        </div>
-      )}
-
-      {JSON.stringify({ error, isLoading, user })}
-
       {isLoading && (
         <Loading
           isLoading={isLoading}
@@ -40,15 +27,6 @@ export default function RequireAuth(props: PropsWithChildren) {
           pastDelay={true}
         />
       )}
-
-      {/* <Loading
-        isLoading={true}
-        error={undefined}
-        timedOut={false}
-        retry={() => {}}
-        pastDelay={true}
-      /> */}
-
       {isAuthenticated && props.children}
     </>
   );
