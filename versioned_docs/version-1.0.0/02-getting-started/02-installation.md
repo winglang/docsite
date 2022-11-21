@@ -76,7 +76,7 @@ to indicate that you are looking for Windows Support.
 The Wing Console is a desktop application that allows you to interact with your
 Wing applications running locally on the cloud simulator.
 
-1. Download the **Wing-Console-VERSION.dmg** file from the [Wing Console GitHub Releases] page.
+1. [Download](https://wing-console.s3.amazonaws.com/wing-console.dmg)  the latest version of the **Wing Console**.
 2. Accept the license agreement and drag the Wing Console app into **Applications**:
 
 ![](./console-install.png)
@@ -87,4 +87,3 @@ Wing applications running locally on the cloud simulator.
 [AWS credentials]: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
 [personal access token]: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 [VSCode]: https://code.visualstudio.com/
-[Wing Console GitHub Releases]: https://github.com/winglang/wing-console/releases
