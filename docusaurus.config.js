@@ -10,11 +10,6 @@ const docsRepoUrl = "https://github.com/winglang/docsite";
 const winglangRepoUrl = "https://github.com/winglang/wing";
 const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
-console.log(
-  "!!!!",
-  process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`
-);
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Wing",
@@ -47,6 +42,7 @@ const config = {
           routeBasePath: "/", // Serve the docs at the site's root
           breadcrumbs: false,
           includeCurrentVersion: false,
+          editUrl: `${docsRepoUrl}/tree/main/`,
         },
         blog: false,
         theme: {
@@ -79,16 +75,10 @@ const config = {
             label: "Docs",
           },
           {
-            to: "https://winglang.io/blog",
-            position: "left",
-            label: "Blog",
-            target: "_self",
-          },
-          {
-            href: "https://github.com/orgs/winglang/projects/1",
-            docId: "roadmap",
-            position: "left",
-            label: "Roadmap",
+            type: 'doc',
+            docId: 'status',
+            position: 'left',
+            label: 'Roadmap'
           },
           {
             type: "docsVersionDropdown",
