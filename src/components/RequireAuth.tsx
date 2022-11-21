@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "@theme/Loading";
 
 export default function RequireAuth(props: PropsWithChildren) {
-  const { loginWithRedirect, isAuthenticated, error, isLoading, user } =
+  const { loginWithRedirect, isAuthenticated, error, isLoading } =
     useAuth0();
 
   useEffect(() => {
