@@ -14,8 +14,7 @@ const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
-  // url: process.env.DOCUSAURUS_URL || 'https://docs.winglang.io',
-  url: "http://localhost:3000",
+  url: process.env.DOCUSAURUS_URL || 'https://docs.winglang.io',
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
