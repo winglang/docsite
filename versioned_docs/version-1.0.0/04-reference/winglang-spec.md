@@ -1979,5 +1979,5 @@ Inspiration:
 - <https://github.com/thesephist/ink>
 - <https://github.com/vlang/v>
 
-[top]: #wing-language-specification
+[top]: #0-preface
 [rfc]: https://github.com/winglang/wing/blob/main/rfcs/winglang-reqs.md
