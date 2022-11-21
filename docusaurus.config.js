@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+require('dotenv').config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const earlyAccessRequestUrl = "https://monadahq.typeform.com/waitlist";
@@ -19,10 +19,8 @@ const config = {
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
-
   organizationName: "winglang",
   projectName: "docs",
-
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -30,7 +28,9 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  customFields: {
+    DEV_ENV: process.env.DEV_ENV,
+  },
   plugins: ["docusaurus-plugin-sass", "docusaurus-plugin-segment"],
   presets: [
     [
