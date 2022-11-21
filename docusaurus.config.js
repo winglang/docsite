@@ -1,7 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 require("dotenv").config();
-console.log(process.env.AUTH0_DOMAIN);
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const earlyAccessRequestUrl = "https://monadahq.typeform.com/waitlist";
@@ -15,7 +14,7 @@ const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
-  url: process.env.DOCUSAURUS_URL || "https://docs.winglang.io",
+  url: process.env.DOCUSAURUS_URL,
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
