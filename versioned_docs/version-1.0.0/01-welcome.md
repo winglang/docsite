@@ -5,7 +5,7 @@ slug: /
 hide_title: true
 ---
 
-**Howdy, and welcome!** :wave: 
+# Howdy, and welcome! :wave: 
 
 This handbook is your ultimate guide for learning about the Wing language.
 
