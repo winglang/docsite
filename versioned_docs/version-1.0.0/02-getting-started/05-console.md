@@ -12,7 +12,7 @@ Make sure you have [installed](./installation#wing-console) the Wing Console on 
 before getting started with this step.
 
 If you are unable to install the Console (e.g. you are running on Windows) or wish to skip
-this step, jump over to the [REPL](./06-repl.md) page.
+this step, jump over to the [testing programmatically](./simulator) page.
 
 :::
 

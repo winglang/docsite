@@ -225,7 +225,7 @@ Quite often, even changes that seem obvious and simple at first sight can be sig
 
 ## 🔬 What is the RFC process?
 
-See our dedicated [RFC process](./rfcs/rfc-process.md) page.
+See our dedicated [RFC process](https://github.com/winglang/wing/blob/main/rfcs/rfc-process.md) page.
 
 ## 🐞 How do I submit a bug report?
 
