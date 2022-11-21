@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-require('dotenv').config();
+require("dotenv").config();
+console.log(process.env.AUTH0_DOMAIN);
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const earlyAccessRequestUrl = "https://monadahq.typeform.com/waitlist";
@@ -14,7 +15,7 @@ const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
-  url: process.env.DOCUSAURUS_URL || 'https://docs.winglang.io',
+  url: process.env.DOCUSAURUS_URL || "https://docs.winglang.io",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -29,9 +30,8 @@ const config = {
     locales: ["en"],
   },
   customFields: {
-    DEV_ENV: process.env.DEV_ENV,
-    AUTH0_DOMAIN: process.env.DEV_ENV ? "dev-vw3zp0luf7vo4d8k.us.auth0.com" : "wingdocs.us.auth0.com",
-    AUTH0_CLIENT_ID: process.env.DEV_ENV ? "sy9hH8oeXyc6mdGIeD1zmfUtAPEtKtqN" : "fkBS9Y4FbIOg3UkYtUzxDIzE264IVBnG",
+    AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
+    AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
   },
   plugins: ["docusaurus-plugin-sass", "docusaurus-plugin-segment"],
   presets: [
