@@ -10,6 +10,8 @@ const docsRepoUrl = "https://github.com/winglang/docsite";
 const winglangRepoUrl = "https://github.com/winglang/wing";
 const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
+console.log("!!!!", process.env.DOCUSAURUS_URL ?? process.env.VERCEL_URL);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Wing",
