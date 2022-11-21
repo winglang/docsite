@@ -18,7 +18,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/favicon.png',
 
   organizationName: 'winglang',
   projectName: 'docs',
@@ -59,7 +59,7 @@ const config = {
           },
           items: [
             {
-              type: 'doc', docId: 'Getting Started/Welcome', position: 'left', label: 'Docs',
+              type: 'doc', docId: 'welcome', position: 'left', label: 'Docs',
             },
             {
               to: 'https://winglang.io/blog', position: 'left', label: 'Blog', target:'_self',
@@ -71,9 +71,6 @@ const config = {
               type: 'docsVersionDropdown',
               position: 'right',
               dropdownActiveClassDisabled: true,
-            },
-            {
-              href: earlyAccessRequestUrl, label: 'Request Early Access', position: 'right',
             },
             {
               href: slackUrl,
@@ -97,7 +94,7 @@ const config = {
             {
               title: 'Documentation',
               items: [{
-                label: 'Getting Started', to: 'Getting Started/Welcome',
+                label: 'Getting Started', to: 'getting-started',
               }],
             },
             {
