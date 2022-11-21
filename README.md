@@ -10,6 +10,14 @@ $ yarn
 
 ### Local Development
 
+Copy the `.env.example` to `.env`:
+
+```
+$ cp .env.example .env
+```
+
+And fill it with the proper values. Then:
+
 ```
 $ yarn start
 ```

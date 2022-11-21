@@ -9,8 +9,8 @@ export default function Root({ children }) {
 
   return (
     <Auth0Provider
-      domain="dev-vw3zp0luf7vo4d8k.us.auth0.com"
-      clientId="sy9hH8oeXyc6mdGIeD1zmfUtAPEtKtqN"
+      domain={siteConfig.customFields.AUTH0_DOMAIN as string}
+      clientId={siteConfig.customFields.AUTH0_CLIENT_ID as string}
       redirectUri={redirectUrl}
     >
       <RequireAuth>{children}</RequireAuth>
