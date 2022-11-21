@@ -6,6 +6,8 @@ export default function RequireAuth(props: PropsWithChildren) {
   const { loginWithRedirect, isAuthenticated, error, isLoading, user } =
     useAuth0();
 
+  // TODO: If error: redirect to auth0. If unauthorised: redirect.
+
   useEffect(() => {
     if (isLoading) {
       return;
