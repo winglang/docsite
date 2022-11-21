@@ -62,9 +62,6 @@ const config = {
               type: 'doc', docId: 'welcome', position: 'left', label: 'Docs',
             },
             {
-              to: 'https://winglang.io/blog', position: 'left', label: 'Blog', target:'_self',
-            },
-            {
               href: 'https://github.com/orgs/winglang/projects/1', docId: 'roadmap', position: 'left', label: 'Roadmap'
             },
             {
