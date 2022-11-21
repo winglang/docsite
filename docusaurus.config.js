@@ -10,13 +10,16 @@ const docsRepoUrl = "https://github.com/winglang/docsite";
 const winglangRepoUrl = "https://github.com/winglang/wing";
 const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
-console.log("!!!!", process.env.DOCUSAURUS_URL ?? process.env.VERCEL_URL);
+console.log(
+  "!!!!",
+  process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`
+);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
-  url: process.env.DOCUSAURUS_URL ?? process.env.VERCEL_URL,
+  url: process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`,
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
