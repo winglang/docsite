@@ -32,7 +32,26 @@ const config = {
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
   },
-  plugins: ["docusaurus-plugin-sass", "docusaurus-plugin-segment"],
+  plugins: [
+    "docusaurus-plugin-sass", 
+    "docusaurus-plugin-segment",
+
+    // this is needed in order to to support symlinked `docs/` directory
+    // which is the mechanism we use when we develop locally with the winglang repo.
+    // see https://github.com/facebook/docusaurus/issues/3272#issuecomment-876374383
+    function (context, options) {
+      return {
+        name: 'webpack-configuration-plugin',
+        configureWebpack(config, isServer, utils) {
+          return {
+            resolve: {
+              symlinks: false,
+            }
+          };
+        }
+      };
+    },
+  ],
   presets: [
     [
       "classic",
@@ -104,21 +123,54 @@ const config = {
       footer: {
         style: "dark",
         links: [
+          { 
+            title: "Getting Started",
+            items:[
+              {
+                label: "Installation",
+                to:"getting-started/installation"
+              },
+              {
+                label: "Hello Wing",
+                to: "getting-started/hello"
+              }
+            ]
+          },
           {
-            title: "Documentation",
+            title: "References",
             items: [
               {
-                label: "Getting Started",
-                to: "getting-started",
+                label: "Contributors Handbook",
+                to: "contributors/handbook",
               },
+              {
+                label: "Language Reference",
+                to: "reference/spec",
+              },
+              {
+                label: "SDK Reference",
+                to: "reference/sdk",
+              },
+              {
+                label: "Project Status",
+                to: "status"
+              }
             ],
           },
           {
-            title: "Community",
+            title: "Get Help",
             items: [
+              {
+                label:"Github Discussions",
+                href: `${winglangRepoUrl}/discussions`
+              },
               {
                 label: "Stack Overflow",
                 href: stackOverflowUrl,
+              },
+              {
+                label:"Github Issues",
+                href: `${winglangRepoUrl}/issues`
               },
               {
                 label: "Slack",
@@ -126,12 +178,18 @@ const config = {
               },
             ],
           },
-          {
-            title: "More",
+	        {
+            title: "Contributors Policies",
             items: [
               {
-                label: "GitHub",
-                href: winglangRepoUrl,
+                label: "Terms of Service",
+                href: "/terms-and-policies/contributors-terms-of-service.html",
+                target: "_blank"
+              },
+              {
+                label: "License",
+                href: "/terms-and-policies/contribution-license.html",
+                target: "_blank"
               },
             ],
           },
