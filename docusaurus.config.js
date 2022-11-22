@@ -105,37 +105,21 @@ const config = {
         style: "dark",
         links: [
           { 
-            title: "Core Concepts",
+            title: "Getting Started",
             items:[
               {
-                label: "Cloud Oriented Language",
-                to:"/#what-is-a-cloud-oriented-language"
+                label: "Installation",
+                to:"getting-started/installation"
               },
               {
-                label: "Wing",
-                to: "/#why-you-should-consider-wing"
-              },
-              { 
-                label: "Resources",
-                to: "concepts/resources"
-              },
-              {
-                label:"Inflights",
-                to: "concepts/inflights"
-              }, 
-              { 
-                label: "Simulator",
-                to: "concepts/simulator"
+                label: "Hello Wing",
+                to: "getting-started/hello"
               }
             ]
           },
           {
-            title: "Documentation",
+            title: "References",
             items: [
-              {
-                label: "Getting Started",
-                to: "getting-started",
-              },
               {
                 label: "Contributors Handbook",
                 to: "contributors/handbook",
@@ -148,6 +132,10 @@ const config = {
                 label: "SDK Reference",
                 to: "reference/sdk",
               },
+              {
+                label: "Project Status",
+                to: "status"
+              }
             ],
           },
           {
@@ -172,15 +160,17 @@ const config = {
             ],
           },
 	        {
-            title: "Terms and policies",
+            title: "Contributors Policies",
             items: [
               {
-                label: "Contributors terms of service",
-                href: "pathname://terms-and-policies/contributors-terms-of-service.html",
+                label: "Terms of Service",
+                href: "/terms-and-policies/contributors-terms-of-service.html",
+                target: "_blank"
               },
               {
-                label: "Contribution license",
-                href: "pathname://terms-and-policies/contribution-license.html"
+                label: "License",
+                href: "/terms-and-policies/contribution-license.html",
+                target: "_blank"
               },
             ],
           },
