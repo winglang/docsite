@@ -17,7 +17,7 @@ navigation bar. You know, the regular structure...
 You are invited to join the [Wing Community Slack]. We would love to get to know you!
 Come say hi, hang out, geek out, help friends and share your experience ❤️
 
-[Wing Community Slack]: http://t.winglang.io/slack
+[Wing Community Slack]: https://t.winglang.io/slack
 
 :::tip TL;DR
 

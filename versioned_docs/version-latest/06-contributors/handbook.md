@@ -37,7 +37,7 @@ If you aren't sure where to start, check out issues tagged with the [good first 
 [pull requests]: #-how-do-i-submit-a-pull-request
 [RFC]: #-what-is-an-rfc
 [good first issue]: https://github.com/winglang/wing/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+no%3Aassignee+sort%3Aupdated-desc+
-[Wing Slack]: http://t.winglang.io/slack
+[Wing Slack]: https://t.winglang.io/slack
 [Wing Discussions]: https://github.com/winglang/wing/discussions
 
 ## 🌳 How is this repository structured?

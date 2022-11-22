@@ -14,7 +14,7 @@ We want this guide to be really fun, easy to read and to offer exactly the
 confusing or overwhelming. Naturally, it will take us some time to make this an
 awesome experience, and we would love you feedback and help! :pray:
 
-New experiences are always better with friends and support, [join](http://t.winglang.io/slack) 
+New experiences are always better with friends and support, [join](https://t.winglang.io/slack) 
 the **Wing Community Slack** and jump right into the [#getting-started](https://winglang.slack.com/archives/C04BBDQUWQP) 
 channel. Say :wave: and feel free to ask questions, post rants and 
 offer advice to your fellow Wingians.
