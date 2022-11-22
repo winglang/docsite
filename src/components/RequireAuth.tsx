@@ -21,12 +21,14 @@ export default function RequireAuth(props: PropsWithChildren) {
       return;
     }
 
-    const githubUsername = user.nickname;
-    if (!githubUsername) {
+    if (!user.nickname) {
       return;
     }
-
-    console.log({ githubUsername });
+    window.analytics.identify(user.nickname, {
+      github_username: user.nickname,
+      email: user.email,
+      name: user.name
+    });
   }, [user]);
 
   return (
