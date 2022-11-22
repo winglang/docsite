@@ -32,7 +32,26 @@ const config = {
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
   },
-  plugins: ["docusaurus-plugin-sass", "docusaurus-plugin-segment"],
+  plugins: [
+    "docusaurus-plugin-sass", 
+    "docusaurus-plugin-segment",
+
+    // this is needed in order to to support symlinked `docs/` directory
+    // which is the mechanism we use when we develop locally with the winglang repo.
+    // see https://github.com/facebook/docusaurus/issues/3272#issuecomment-876374383
+    function (context, options) {
+      return {
+        name: 'webpack-configuration-plugin',
+        configureWebpack(config, isServer, utils) {
+          return {
+            resolve: {
+              symlinks: false,
+            }
+          };
+        }
+      };
+    },
+  ],
   presets: [
     [
       "classic",
