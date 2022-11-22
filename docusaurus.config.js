@@ -127,7 +127,7 @@ const config = {
             ],
           },
 	        {
-            title: "  Terms and policies",
+            title: "Terms and policies",
             items: [
               {
                 label: "Contributors terms of service",
