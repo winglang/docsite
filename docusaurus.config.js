@@ -104,6 +104,31 @@ const config = {
       footer: {
         style: "dark",
         links: [
+          { 
+            title: "Core Concepts",
+            items:[
+              {
+                label: "Cloud Oriented Language",
+                to:"/#what-is-a-cloud-oriented-language"
+              },
+              {
+                label: "Wing",
+                to: "/#why-you-should-consider-wing"
+              },
+              { 
+                label: "Resources",
+                to: "concepts/resources"
+              },
+              {
+                label:"Inflights",
+                to: "concepts/inflights"
+              }, 
+              { 
+                label: "Simulator",
+                to: "concepts/simulator"
+              }
+            ]
+          },
           {
             title: "Documentation",
             items: [
@@ -111,14 +136,34 @@ const config = {
                 label: "Getting Started",
                 to: "getting-started",
               },
+              {
+                label: "Contributors Handbook",
+                to: "contributors/handbook",
+              },
+              {
+                label: "Language Reference",
+                to: "reference/spec",
+              },
+              {
+                label: "SDK Reference",
+                to: "reference/sdk",
+              },
             ],
           },
           {
-            title: "Community",
+            title: "Get Help",
             items: [
+              {
+                label:"Github Discussions",
+                href: `${winglangRepoUrl}/discussions`
+              },
               {
                 label: "Stack Overflow",
                 href: stackOverflowUrl,
+              },
+              {
+                label:"Github Issues",
+                href: `${winglangRepoUrl}/issues`
               },
               {
                 label: "Slack",
@@ -136,15 +181,6 @@ const config = {
               {
                 label: "Contribution license",
                 href: "pathname://terms-and-policies/contribution-license.html"
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "GitHub",
-                href: winglangRepoUrl,
               },
             ],
           },
