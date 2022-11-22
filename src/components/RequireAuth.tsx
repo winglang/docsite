@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "@theme/Loading";
 
 export default function RequireAuth(props: PropsWithChildren) {
-  const { loginWithRedirect, isAuthenticated, error, isLoading } =
+  const { loginWithRedirect, isAuthenticated, error, isLoading, user } =
     useAuth0();
 
   useEffect(() => {
@@ -15,6 +15,21 @@ export default function RequireAuth(props: PropsWithChildren) {
     }
     loginWithRedirect();
   }, [isLoading, isAuthenticated, error]);
+
+  useEffect(() => {
+    if (!user) {
+      return;
+    }
+
+    if (!user.nickname) {
+      return;
+    }
+    window.analytics.identify(user.nickname, {
+      github_username: user.nickname,
+      email: user.email,
+      name: user.name
+    });
+  }, [user]);
 
   return (
     <>
