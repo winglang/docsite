@@ -104,21 +104,54 @@ const config = {
       footer: {
         style: "dark",
         links: [
+          { 
+            title: "Getting Started",
+            items:[
+              {
+                label: "Installation",
+                to:"getting-started/installation"
+              },
+              {
+                label: "Hello Wing",
+                to: "getting-started/hello"
+              }
+            ]
+          },
           {
-            title: "Documentation",
+            title: "References",
             items: [
               {
-                label: "Getting Started",
-                to: "getting-started",
+                label: "Contributors Handbook",
+                to: "contributors/handbook",
               },
+              {
+                label: "Language Reference",
+                to: "reference/spec",
+              },
+              {
+                label: "SDK Reference",
+                to: "reference/sdk",
+              },
+              {
+                label: "Project Status",
+                to: "status"
+              }
             ],
           },
           {
-            title: "Community",
+            title: "Get Help",
             items: [
+              {
+                label:"Github Discussions",
+                href: `${winglangRepoUrl}/discussions`
+              },
               {
                 label: "Stack Overflow",
                 href: stackOverflowUrl,
+              },
+              {
+                label:"Github Issues",
+                href: `${winglangRepoUrl}/issues`
               },
               {
                 label: "Slack",
@@ -127,24 +160,17 @@ const config = {
             ],
           },
 	        {
-            title: "Terms and policies",
+            title: "Contributors Policies",
             items: [
               {
-                label: "Contributors terms of service",
-                href: "pathname://terms-and-policies/contributors-terms-of-service.html",
+                label: "Terms of Service",
+                href: "/terms-and-policies/contributors-terms-of-service.html",
+                target: "_blank"
               },
               {
-                label: "Contribution license",
-                href: "pathname://terms-and-policies/contribution-license.html"
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "GitHub",
-                href: winglangRepoUrl,
+                label: "License",
+                href: "/terms-and-policies/contribution-license.html",
+                target: "_blank"
               },
             ],
           },
