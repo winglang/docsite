@@ -126,6 +126,19 @@ const config = {
               },
             ],
           },
+	        {
+            title: "Terms and policies",
+            items: [
+              {
+                label: "Contributors terms of service",
+                href: "pathname://terms-and-policies/contributors-terms-of-service.html",
+              },
+              {
+                label: "Contribution license",
+                href: "pathname://terms-and-policies/contribution-license.html"
+              },
+            ],
+          },
           {
             title: "More",
             items: [
