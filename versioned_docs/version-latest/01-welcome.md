@@ -14,6 +14,11 @@ book, so you can read it by going from top to bottom by clicking "Next" at the
 bottom of each page. Alternatively, you can browse topics through the left-hand
 navigation bar. You know, the regular structure...
 
+You are invited to join the [Wing Community Slack]. We would love to get to know you!
+Come say hi, hang out, geek out, help friends and share your experience ❤️
+
+[Wing Community Slack]: http://t.winglang.io/slack
+
 :::tip TL;DR
 
 If you are eager to get going and can't be bothered with all the philosophical
