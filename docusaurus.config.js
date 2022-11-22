@@ -127,15 +127,17 @@ const config = {
             ],
           },
 	        {
-            title: "Terms and policies",
+            title: "  Terms and policies",
             items: [
               {
                 label: "Contributors terms of service",
-                href: "pathname://terms-and-policies/contributors-terms-of-service.html",
+                href: "/terms-and-policies/contributors-terms-of-service.html",
+                target: "_blank"
               },
               {
                 label: "Contribution license",
-                href: "pathname://terms-and-policies/contribution-license.html"
+                href: "/terms-and-policies/contribution-license.html",
+                target: "_blank"
               },
             ],
           },
