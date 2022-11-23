@@ -810,7 +810,7 @@ let capture_metadata = core.CaptureMetadata{ ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@winglang/wingsdk.core.CaptureMetadata.property.methods">methods</a></code> | <code>MutArray<str></code> | Which methods are called on the captured resource. |
+| <code><a href="#@winglang/wingsdk.core.CaptureMetadata.property.methods">methods</a></code> | <code>MutArray\<str></code> | Which methods are called on the captured resource. |
 
 ---
 
@@ -926,7 +926,7 @@ let function_props = cloud.FunctionProps{ ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@winglang/wingsdk.cloud.FunctionProps.property.env">env</a></code> | <code>MutMap<str></code> | Environment variables to pass to the function. |
+| <code><a href="#@winglang/wingsdk.cloud.FunctionProps.property.env">env</a></code> | <code>MutMap\<str></code> | Environment variables to pass to the function. |
 
 ---
 
@@ -961,7 +961,7 @@ let inflight_bundle_options = core.InflightBundleOptions{ ... }
 | --- | --- | --- |
 | <code><a href="#@winglang/wingsdk.core.InflightBundleOptions.property.captureClients">captureClients</a></code> | <code>MutMap<core.Code></code> | A map of capture clients that can be bundled with the Inflight's code. |
 | <code><a href="#@winglang/wingsdk.core.InflightBundleOptions.property.captureScope">captureScope</a></code> | <code>constructs.IConstruct</code> | Associate the inflight bundle with a given capture scope. |
-| <code><a href="#@winglang/wingsdk.core.InflightBundleOptions.property.external">external</a></code> | <code>MutArray<str></code> | List of dependencies to exclude from the bundle. |
+| <code><a href="#@winglang/wingsdk.core.InflightBundleOptions.property.external">external</a></code> | <code>MutArray\<str></code> | List of dependencies to exclude from the bundle. |
 
 ---
 
@@ -1120,7 +1120,7 @@ let queue_on_message_props = cloud.QueueOnMessageProps{ ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@winglang/wingsdk.cloud.QueueOnMessageProps.property.env">env</a></code> | <code>MutMap<str></code> | Environment variables to pass to the function. |
+| <code><a href="#@winglang/wingsdk.cloud.QueueOnMessageProps.property.env">env</a></code> | <code>MutMap\<str></code> | Environment variables to pass to the function. |
 | <code><a href="#@winglang/wingsdk.cloud.QueueOnMessageProps.property.batchSize">batchSize</a></code> | <code>num</code> | The maximum number of messages to send to subscribers at once. |
 
 ---
@@ -1167,7 +1167,7 @@ let queue_props = cloud.QueueProps{ ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@winglang/wingsdk.cloud.QueueProps.property.initialMessages">initialMessages</a></code> | <code>MutArray<str></code> | Initialize the queue with a set of messages. |
+| <code><a href="#@winglang/wingsdk.cloud.QueueProps.property.initialMessages">initialMessages</a></code> | <code>MutArray\<str></code> | Initialize the queue with a set of messages. |
 | <code><a href="#@winglang/wingsdk.cloud.QueueProps.property.timeout">timeout</a></code> | <code>core.Duration</code> | How long a queue's consumers have to process a message. |
 
 ---
@@ -1214,7 +1214,7 @@ let text_file_props = fs.TextFileProps{ ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@winglang/wingsdk.fs.TextFileProps.property.lines">lines</a></code> | <code>MutArray<str></code> | The lines of text that will be serialized into the file during synthesis. |
+| <code><a href="#@winglang/wingsdk.fs.TextFileProps.property.lines">lines</a></code> | <code>MutArray\<str></code> | The lines of text that will be serialized into the file during synthesis. |
 
 ---
 
