@@ -13,7 +13,10 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (isAuthenticated) {
       return;
     }
-    loginWithRedirect();
+    localStorage.setItem("intendedURL", location.pathname);
+    loginWithRedirect({
+      redirectUri: `${location.protocol}//${location.host}/login/callback`,
+    });
   }, [isLoading, isAuthenticated, error]);
 
   useEffect(() => {
@@ -24,11 +27,12 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (!user.nickname) {
       return;
     }
+
     if (window.analytics) {
       window.analytics.identify(user.nickname, {
         github_username: user.nickname,
         email: user.email,
-        name: user.name
+        name: user.name,
       });
     }
   }, [user]);
@@ -40,7 +44,7 @@ export default function RequireAuth(props: PropsWithChildren) {
           isLoading={isLoading}
           error={error}
           timedOut={false}
-          retry={() => { }}
+          retry={() => {}}
           pastDelay={true}
         />
       )}
