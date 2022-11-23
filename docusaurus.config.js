@@ -3,10 +3,8 @@
 require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const earlyAccessRequestUrl = "https://monadahq.typeform.com/waitlist";
-const slackUrl = "https://winglang.slack.com";
+const slackUrl = "https://t.winglang.io/slack";
 
-const docsRepoUrl = "https://github.com/winglang/docsite";
 const winglangRepoUrl = "https://github.com/winglang/wing";
 const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
@@ -124,15 +122,19 @@ const config = {
         style: "dark",
         links: [
           { 
-            title: "Getting Started",
+            title: "Documentation",
             items:[
               {
                 label: "Installation",
                 to:"getting-started/installation"
               },
               {
-                label: "Hello Wing",
+                label: "Getting Started",
                 to: "getting-started/hello"
+              },
+              {
+                label: "Concepts",
+                to: "category/concepts"
               }
             ]
           },
@@ -140,28 +142,32 @@ const config = {
             title: "References",
             items: [
               {
-                label: "Contributors Handbook",
-                to: "contributors/handbook",
-              },
-              {
-                label: "Language Reference",
+                label: "Language Specification",
                 to: "reference/spec",
               },
               {
-                label: "SDK Reference",
+                label: "API Reference",
                 to: "reference/sdk",
               },
               {
-                label: "Project Status",
+                label: "Roadmap",
                 to: "status"
               }
             ],
           },
           {
-            title: "Get Help",
+            title: "Community",
             items: [
               {
-                label:"Github Discussions",
+                label:"GitHub",
+                href: `${winglangRepoUrl}`
+              },
+              {
+                label: "Slack",
+                href: slackUrl,
+              },
+              {
+                label: "GitHub Discussions",
                 href: `${winglangRepoUrl}/discussions`
               },
               {
@@ -169,26 +175,31 @@ const config = {
                 href: stackOverflowUrl,
               },
               {
-                label:"Github Issues",
-                href: `${winglangRepoUrl}/issues`
+                label:"Report an Issue",
+                href: `${winglangRepoUrl}/issues/new/choose`
               },
               {
-                label: "Slack",
-                href: slackUrl,
+                label:"Contributor's Handbook",
+                to: "contributors/handbook"
               },
             ],
           },
 	        {
-            title: "Contributors Policies",
+            title: "Terms and policies",
             items: [
               {
-                label: "Terms of Service",
-                href: "/terms-and-policies/contributors-terms-of-service.html",
+                label: "Code of Conduct",
+                href: "https://github.com/winglang/wing/blob/main/CODE_OF_CONDUCT.md",
                 target: "_blank"
               },
               {
-                label: "License",
-                href: "/terms-and-policies/contribution-license.html",
+                label: "MIT License",
+                href: "https://github.com/winglang/wing/blob/main/LICENSE.md",
+                target: "_blank"
+              },
+              {
+                label: "Contribution Policy",
+                href: "/terms-and-policies/contributors-terms-of-service.html",
                 target: "_blank"
               },
             ],
