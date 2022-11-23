@@ -10,9 +10,13 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (isLoading) {
       return;
     }
+
     if (isAuthenticated) {
       return;
     }
+
+    localStorage.setItem("intendedURL", `${location.pathname}${location.hash}`);
+
     loginWithRedirect();
   }, [isLoading, isAuthenticated, error]);
 
@@ -24,12 +28,21 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (!user.nickname) {
       return;
     }
+
     if (window.analytics) {
       window.analytics.identify(user.nickname, {
         github_username: user.nickname,
         email: user.email,
-        name: user.name
+        name: user.name,
       });
+    }
+  }, [user]);
+
+  useEffect(() => {
+    // Since we don't render the docs until auth0 retrieves the user info,
+    // we have to explicitely jump to the DOM contents with `location.assign`.
+    if (location.hash) {
+      location.assign(location.hash);
     }
   }, [user]);
 
@@ -40,7 +53,7 @@ export default function RequireAuth(props: PropsWithChildren) {
           isLoading={isLoading}
           error={error}
           timedOut={false}
-          retry={() => { }}
+          retry={() => {}}
           pastDelay={true}
         />
       )}
