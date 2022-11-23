@@ -5,7 +5,7 @@ import RequireAuth from "../components/RequireAuth";
 
 export default function Root({ children }) {
   const { siteConfig } = useDocusaurusContext();
-  const redirectUrl = `${siteConfig.url}${siteConfig.baseUrl}`;
+  const redirectUrl = `${siteConfig.url}${siteConfig.baseUrl}login/callback`;
 
   return (
     <Auth0Provider
