@@ -13,7 +13,7 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (isAuthenticated) {
       return;
     }
-    localStorage.setItem("intendedURL", location.pathname);
+    localStorage.setItem("intendedURL", `${location.pathname}${location.hash}`);
     loginWithRedirect({
       redirectUri: `${location.protocol}//${location.host}/login/callback`,
     });
