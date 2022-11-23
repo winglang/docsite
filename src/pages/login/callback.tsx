@@ -4,6 +4,7 @@ import Loading from "@theme/Loading";
 
 export default function () {
   const { user } = useAuth0();
+
   useEffect(() => {
     if (!user) {
       return;

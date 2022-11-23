@@ -10,13 +10,14 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (isLoading) {
       return;
     }
+
     if (isAuthenticated) {
       return;
     }
+
     localStorage.setItem("intendedURL", `${location.pathname}${location.hash}`);
-    loginWithRedirect({
-      redirectUri: `${location.protocol}//${location.host}/login/callback`,
-    });
+
+    loginWithRedirect();
   }, [isLoading, isAuthenticated, error]);
 
   useEffect(() => {
@@ -34,6 +35,14 @@ export default function RequireAuth(props: PropsWithChildren) {
         email: user.email,
         name: user.name,
       });
+    }
+  }, [user]);
+
+  useEffect(() => {
+    // Since we don't render the docs until auth0 retrieves the user info,
+    // we have to explicitely jump to the DOM contents with `location.assign`.
+    if (location.hash) {
+      location.assign(location.hash);
     }
   }, [user]);
 
