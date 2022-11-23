@@ -764,7 +764,7 @@ let capture = core.Capture{ ... }
 methods: MutArray<str>;
 ```
 
-- *Type:* MutArray<str>
+- *Type:* MutArray&lt;str>
 
 Which methods are called on the captured resource.
 
@@ -820,7 +820,7 @@ let capture_metadata = core.CaptureMetadata{ ... }
 methods: MutArray<str>;
 ```
 
-- *Type:* MutArray<str>
+- *Type:* MutArray&lt;str>
 
 Which methods are called on the captured resource.
 
@@ -936,7 +936,7 @@ let function_props = cloud.FunctionProps{ ... }
 env: MutMap<str>;
 ```
 
-- *Type:* MutMap<str>
+- *Type:* MutMap&lt;str>
 - *Default:* No environment variables.
 
 Environment variables to pass to the function.
@@ -959,7 +959,7 @@ let inflight_bundle_options = core.InflightBundleOptions{ ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@winglang/wingsdk.core.InflightBundleOptions.property.captureClients">captureClients</a></code> | <code>MutMap<core.Code></code> | A map of capture clients that can be bundled with the Inflight's code. |
+| <code><a href="#@winglang/wingsdk.core.InflightBundleOptions.property.captureClients">captureClients</a></code> | <code>MutMap&lt;core.Code></code> | A map of capture clients that can be bundled with the Inflight's code. |
 | <code><a href="#@winglang/wingsdk.core.InflightBundleOptions.property.captureScope">captureScope</a></code> | <code>constructs.IConstruct</code> | Associate the inflight bundle with a given capture scope. |
 | <code><a href="#@winglang/wingsdk.core.InflightBundleOptions.property.external">external</a></code> | <code>MutArray&lt;str></code> | List of dependencies to exclude from the bundle. |
 
@@ -971,7 +971,7 @@ let inflight_bundle_options = core.InflightBundleOptions{ ... }
 capture_clients: MutMap<Code>;
 ```
 
-- *Type:* MutMap<core.Code>
+- *Type:* MutMap&lt;core.Code>
 
 A map of capture clients that can be bundled with the Inflight's code.
 
@@ -995,7 +995,7 @@ Associate the inflight bundle with a given capture scope.
 external: MutArray<str>;
 ```
 
-- *Type:* MutArray<str>
+- *Type:* MutArray&lt;str>
 
 List of dependencies to exclude from the bundle.
 
@@ -1019,7 +1019,7 @@ let inflight_props = core.InflightProps{ ... }
 | --- | --- | --- |
 | <code><a href="#@winglang/wingsdk.core.InflightProps.property.code">code</a></code> | <code>core.Code</code> | Reference to code containing the entrypoint function. |
 | <code><a href="#@winglang/wingsdk.core.InflightProps.property.entrypoint">entrypoint</a></code> | <code>str</code> | Name of the exported function to run. |
-| <code><a href="#@winglang/wingsdk.core.InflightProps.property.captures">captures</a></code> | <code>MutMap<core.Capture></code> | Capture information. |
+| <code><a href="#@winglang/wingsdk.core.InflightProps.property.captures">captures</a></code> | <code>MutMap&lt;core.Capture></code> | Capture information. |
 
 ---
 
@@ -1060,7 +1060,7 @@ Name of the exported function to run.
 captures: MutMap<Capture>;
 ```
 
-- *Type:* MutMap<core.Capture>
+- *Type:* MutMap&lt;core.Capture>
 - *Default:* No captures
 
 Capture information.
@@ -1131,7 +1131,7 @@ let queue_on_message_props = cloud.QueueOnMessageProps{ ... }
 env: MutMap<str>;
 ```
 
-- *Type:* MutMap<str>
+- *Type:* MutMap&lt;str>
 - *Default:* No environment variables.
 
 Environment variables to pass to the function.
@@ -1178,7 +1178,7 @@ let queue_props = cloud.QueueProps{ ... }
 initial_messages: MutArray<str>;
 ```
 
-- *Type:* MutArray<str>
+- *Type:* MutArray&lt;str>
 - *Default:* []
 
 Initialize the queue with a set of messages.
@@ -1224,7 +1224,7 @@ let text_file_props = fs.TextFileProps{ ... }
 lines: MutArray<str>;
 ```
 
-- *Type:* MutArray<str>
+- *Type:* MutArray&lt;str>
 - *Default:* []
 
 The lines of text that will be serialized into the file during synthesis.
@@ -1377,8 +1377,8 @@ Returns a topologically sorted array of the constructs in the sub-graph.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@winglang/wingsdk.core.DependencyVertex.property.inbound">inbound</a></code> | <code>MutArray<core.DependencyVertex></code> | Returns the parents of the vertex (i.e dependants). |
-| <code><a href="#@winglang/wingsdk.core.DependencyVertex.property.outbound">outbound</a></code> | <code>MutArray<core.DependencyVertex></code> | Returns the children of the vertex (i.e dependencies). |
+| <code><a href="#@winglang/wingsdk.core.DependencyVertex.property.inbound">inbound</a></code> | <code>MutArray&lt;core.DependencyVertex></code> | Returns the parents of the vertex (i.e dependants). |
+| <code><a href="#@winglang/wingsdk.core.DependencyVertex.property.outbound">outbound</a></code> | <code>MutArray&lt;core.DependencyVertex></code> | Returns the children of the vertex (i.e dependencies). |
 | <code><a href="#@winglang/wingsdk.core.DependencyVertex.property.value">value</a></code> | <code>constructs.IConstruct</code> | Returns the IConstruct this graph vertex represents. |
 
 ---
@@ -1389,7 +1389,7 @@ Returns a topologically sorted array of the constructs in the sub-graph.
 inbound: MutArray<DependencyVertex>;
 ```
 
-- *Type:* MutArray<core.DependencyVertex>
+- *Type:* MutArray&lt;core.DependencyVertex>
 
 Returns the parents of the vertex (i.e dependants).
 
@@ -1401,7 +1401,7 @@ Returns the parents of the vertex (i.e dependants).
 outbound: MutArray<DependencyVertex>;
 ```
 
-- *Type:* MutArray<core.DependencyVertex>
+- *Type:* MutArray&lt;core.DependencyVertex>
 
 Returns the children of the vertex (i.e dependencies).
 
@@ -1691,7 +1691,7 @@ Resolve this inflight's captured objects into a map of clients that be safely re
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@winglang/wingsdk.core.Inflight.property.captures">captures</a></code> | <code>MutMap<core.Capture></code> | Capture information. |
+| <code><a href="#@winglang/wingsdk.core.Inflight.property.captures">captures</a></code> | <code>MutMap&lt;core.Capture></code> | Capture information. |
 | <code><a href="#@winglang/wingsdk.core.Inflight.property.code">code</a></code> | <code>core.Code</code> | Reference to code containing the entrypoint function. |
 | <code><a href="#@winglang/wingsdk.core.Inflight.property.entrypoint">entrypoint</a></code> | <code>str</code> | Name of the exported function which will be run. |
 
@@ -1703,7 +1703,7 @@ Resolve this inflight's captured objects into a map of clients that be safely re
 captures: MutMap<Capture>;
 ```
 
-- *Type:* MutMap<core.Capture>
+- *Type:* MutMap&lt;core.Capture>
 
 Capture information.
 
@@ -1776,7 +1776,7 @@ Creates a `Code` instance with code for creating an inflight client.
 
 ###### `args`<sup>Required</sup> <a name="args" id="@winglang/wingsdk.core.InflightClient.for.parameter.args"></a>
 
-- *Type:* MutArray<str>
+- *Type:* MutArray&lt;str>
 
 ---
 
