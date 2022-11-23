@@ -7,24 +7,25 @@ hide_title: true
 
 # Howdy, and welcome! :wave: 
 
-This handbook is your ultimate guide for learning about the Wing language.
+:::caution This is Alpha
 
-The handbook is intended to be a comprehensive document. It is organized like a
-book, so you can read it by going from top to bottom by clicking "Next" at the
-bottom of each page. Alternatively, you can browse topics through the left-hand
-navigation bar. You know, the regular structure...
+Wing is in very early stages of development and not recommended for production
+use. Many features are still missing, and APIs will dramatically evolve in the
+coming months. We are excited for anyone to take part in influencing the
+direction of every part of this project.
 
-You are invited to join the [Wing Community Slack]. We would love to get to know you!
-Come say hi, hang out, geek out, help friends and share your experience ❤️
-
-[Wing Community Slack]: https://t.winglang.io/slack
-
-:::tip TL;DR
-
-If you are eager to get going and can't be bothered with all the philosophical
-blabber, feel free to jump right in and **[get started](./getting-started)**.
+Our <a href="https://docs.winglang.io/status">Project Status</a> page includes
+more information about stability and roadmap 👷‍♀️ 
 
 :::
+
+This handbook is your ultimate guide for learning about the Wing language. It is
+organized like a book, so you can read it by going from top to bottom by
+clicking "Next" at the bottom of each page. Alternatively, you can browse topics
+through the left-hand navigation bar. You know, the regular structure...
+
+TL;DR: if you can't be bothered with all the philosophical blabber, feel free to
+jump right in and [get started](./getting-started).
 
 ## What is a cloud-oriented language?
 
@@ -43,19 +44,11 @@ let counter = new cloud.Counter(initial_value: 100);
 let queue = new cloud.Queue(timeout: 10s);
 
 queue.on_message((body: str) ~> {
-  let next = counter.increment();
+  let next = counter.inc();
   let key = "myfile-${next}.txt";
   bucket.put(key, body);
 });
 ```
-
-:::caution WIP
-
-Sorry but this example is not working yet. The counter resource is still
-being developed. Check out [this pull request](https://github.com/winglang/wing/pull/375).
-
-:::
-
 
 In this simple application, every message that goes into the queue is written to
 a new object inside a cloud bucket. An atomic counter is used to generate an
