@@ -1,0 +1,96 @@
+name: Update Wing Docs
+on:
+  pull_request: {}
+  # workflow_dispatch: {}
+jobs:
+  update_docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      patch_created: ${{ steps.create_patch.outputs.patch_created }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Login to private npm registry
+        env:
+          PROJEN_GITHUB_TOKEN: ${{ secrets.PROJEN_GITHUB_TOKEN }}
+        run: npm config set @winglang:registry https://npm.pkg.github.com && npm set //npm.pkg.github.com/:_authToken $PROJEN_GITHUB_TOKEN
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm install
+      - name: Update docs
+        run: npx tsx scripts/updateDocs.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROJEN_GITHUB_TOKEN }}
+      - name: Find mutations
+        id: create_patch
+        run: |-
+          git add .
+          git diff --staged --patch --exit-code > .repo.patch || echo "patch_created=true" >> $GITHUB_OUTPUT
+      - name: Upload patch
+        if: steps.create_patch.outputs.patch_created
+        uses: actions/upload-artifact@v3
+        with:
+          name: .repo.patch
+          path: .repo.patch
+  pr:
+    name: Create Pull Request
+    needs: update_docs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    if: ${{ needs.update_docs.outputs.patch_created }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
+          ref: main
+      - name: Download patch
+        uses: actions/download-artifact@v3
+        with:
+          name: .repo.patch
+          path: ${{ runner.temp }}
+      - name: Apply patch
+        run: '[ -s ${{ runner.temp }}/.repo.patch ] && git apply ${{ runner.temp }}/.repo.patch || echo "Empty patch. Skipping."'
+      - name: Set git identity
+        run: |-
+          git config user.name "monabot"
+          git config user.email "monabot@monada.co"
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
+          commit-message: |-
+            feat(docs): update docs
+
+            Updates the Wing docs. See details in [workflow run].
+
+            [Workflow Run]: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            ------
+
+            *Automatically created via the "update-docs" workflow*
+          branch: github-actions/update-docs
+          title: "feat(docs): update docs"
+          body: |-
+            feat(docs): update docs
+
+            Updates the Wing docs. See details in [workflow run].
+
+            [Workflow Run]: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            ------
+
+            *Automatically created via the "update-docs" workflow*
+          author: monabot <monabot@monada.co>
+          committer: monabot <monabot@monada.co>
+          signoff: true
