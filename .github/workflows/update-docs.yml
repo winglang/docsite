@@ -66,6 +66,7 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v3
         with:
+          token: ${{ secrets.WING_GITHUB_TOKEN }}
           commit-message: |-
             feat(docs): update docs
 
