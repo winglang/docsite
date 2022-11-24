@@ -24,13 +24,12 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (!user.nickname) {
       return;
     }
-    if (window.analytics) {
-      window.analytics.identify(user.nickname, {
-        github_username: user.nickname,
-        email: user.email,
-        name: user.name
-      });
-    }
+
+    window.analytics?.identify(user.nickname, {
+      github_username: user.nickname,
+      email: user.email,
+      name: user.name,
+    });
   }, [user]);
 
   return (
@@ -40,7 +39,7 @@ export default function RequireAuth(props: PropsWithChildren) {
           isLoading={isLoading}
           error={error}
           timedOut={false}
-          retry={() => { }}
+          retry={() => {}}
           pastDelay={true}
         />
       )}
