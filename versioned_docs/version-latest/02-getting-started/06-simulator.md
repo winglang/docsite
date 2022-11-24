@@ -11,7 +11,11 @@ application directly from the Node.js CLI.
 :::info Prerequisite
 
 If you are using the Wing CLI through a global installation, you'll need to
-install the Wing SDK library locally using `npm i @winglang/wingsdk`.
+install the Wing SDK library locally using:
+
+```sh
+npm i @winglang/wingsdk
+```
 
 :::
 
@@ -32,10 +36,10 @@ const sdk = require("@winglang/wingsdk");
 ```
 
 Next, we create an instance of the `Simulator` class and point it to our
-`app.wx` file, and start the simulator.
+`hello.wx` file, and start the simulator.
 
 ```js
-const simulator = new sdk.testing.Simulator({ simfile : "./target/app.wx"});
+const simulator = new sdk.testing.Simulator({ simfile : "./target/hello.wx"});
 await simulator.start();
 ```
 

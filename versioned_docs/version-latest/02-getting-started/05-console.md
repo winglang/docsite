@@ -21,7 +21,7 @@ this step, jump over to the [testing programmatically](./simulator) page.
 We can use the Wing CLI to start the console with our newly created app file:
 
 ```sh
-wing run target/app.wx
+wing run target/hello.wx
 ```
 
 This will start the Wing Console desktop application with the following view:
@@ -58,9 +58,9 @@ Now, take a look at the bottom pane which says "LOGS". You should be able to
 see the `print` statement produced by your function when it processed the message
 you sent to the queue.
 
-## Congrats! :rocket:
+## Congrats! :clap:
 
-:clap: You have just written and tested your first Wing program :rocket:
+You have just written and tested your first Wing program!
 
 
 ---
