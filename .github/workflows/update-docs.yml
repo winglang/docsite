@@ -1,7 +1,6 @@
 name: Update Wing Docs
 on:
-  pull_request: {}
-  # workflow_dispatch: {}
+  workflow_dispatch: {}
 jobs:
   update_docs:
     runs-on: ubuntu-latest
@@ -12,11 +11,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        # with:
-        #   ref: main
+        with:
+          ref: main
       - name: Login to private npm registry
         env:
-          PROJEN_GITHUB_TOKEN: ${{ secrets.PROJEN_GITHUB_TOKEN }}
+          PROJEN_GITHUB_TOKEN: ${{ secrets.WING_GITHUB_TOKEN }}
         run: npm config set @winglang:registry https://npm.pkg.github.com && npm set //npm.pkg.github.com/:_authToken $PROJEN_GITHUB_TOKEN
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -51,7 +50,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
           ref: main
       - name: Download patch
         uses: actions/download-artifact@v3
@@ -68,7 +66,6 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
           commit-message: |-
             feat(docs): update docs
 
