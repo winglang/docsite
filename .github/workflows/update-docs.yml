@@ -27,7 +27,7 @@ jobs:
       - name: Update docs
         run: npx tsx scripts/updateDocs.ts
         env:
-          GITHUB_TOKEN: ${{ secrets.PROJEN_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.WING_GITHUB_TOKEN }}
       - name: Find mutations
         id: create_patch
         run: |-
