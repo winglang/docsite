@@ -92,3 +92,5 @@ jobs:
           author: monabot <monabot@monada.co>
           committer: monabot <monabot@monada.co>
           signoff: true
+          labels: documentation
+          delete-branch: true
