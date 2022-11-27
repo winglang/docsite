@@ -6,10 +6,6 @@ export default function RequireAuth(props: PropsWithChildren) {
   const { loginWithRedirect, logout, isAuthenticated, error, isLoading, user } =
     useAuth();
 
-  useEffect(() => {
-    Object.assign(window, { logout });
-  }, [logout]);
-
   // Keep track of the previous "isLoading" status so we can identify
   // when it changes from true to false.
   const [wasLoading, setWasLoading] = useState(false);
