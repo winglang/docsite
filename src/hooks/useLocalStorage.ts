@@ -12,7 +12,11 @@ function getLocalStorageJsonItem<S>(key: string): S | undefined {
 export function useLocalStorage<S>(
   key: string
 ): [S, Dispatch<SetStateAction<S>>] {
-  const [value, setValue] = useState<S>(getLocalStorageJsonItem(key));
+  const [value, setValue] = useState<S>();
+
+  useEffect(() => {
+    setValue(getLocalStorageJsonItem(key));
+  }, []);
 
   return [
     value,
