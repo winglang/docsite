@@ -1,24 +1,38 @@
-import React, { PropsWithChildren, useEffect } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import Loading from "@theme/Loading";
+import { useAuth } from "../hooks/useAuth";
 
 export default function RequireAuth(props: PropsWithChildren) {
-  const { loginWithRedirect, isAuthenticated, error, isLoading, user } =
-    useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated, error, isLoading, user } =
+    useAuth();
 
   useEffect(() => {
-    if (isLoading) {
-      return;
-    }
+    Object.assign(window, { logout });
+  }, [logout]);
 
+  // Keep track of the previous "isLoading" status so we can identify
+  // when it changes from true to false.
+  const [wasLoading, setWasLoading] = useState(false);
+  useEffect(() => {
+    if (isLoading) {
+      setWasLoading(true);
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
     if (isAuthenticated) {
       return;
     }
 
-    localStorage.setItem("intendedURL", `${location.pathname}${location.hash}`);
-
-    loginWithRedirect();
-  }, [isLoading, isAuthenticated, error]);
+    // Once it stops loading, handle the auth redirect.
+    if (wasLoading && !isLoading) {
+      const intendedURL = `${location.pathname}${location.hash}`;
+      if (!intendedURL.startsWith("/login/callback")) {
+        localStorage.setItem("intendedURL", intendedURL);
+      }
+      loginWithRedirect();
+    }
+  }, [wasLoading, isLoading, isAuthenticated, error]);
 
   useEffect(() => {
     if (!user) {
@@ -44,7 +58,7 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (location.hash) {
       location.assign(location.hash);
     }
-  }, [user]);
+  }, [user, isLoading]);
 
   return (
     <>
@@ -57,7 +71,7 @@ export default function RequireAuth(props: PropsWithChildren) {
           pastDelay={true}
         />
       )}
-      {isAuthenticated && props.children}
+      {!isLoading && isAuthenticated && props.children}
     </>
   );
 }

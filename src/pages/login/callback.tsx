@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import Loading from "@theme/Loading";
+import { useAuth } from "@site/src/hooks/useAuth";
 
 export default function () {
-  const { user } = useAuth0();
+  const { user } = useAuth();
 
   useEffect(() => {
     if (!user) {
@@ -11,8 +11,6 @@ export default function () {
     }
 
     const intendedURL = localStorage.getItem("intendedURL");
-
-    localStorage.removeItem("intendedURL");
 
     location.assign(intendedURL ?? "/");
   }, [user]);
