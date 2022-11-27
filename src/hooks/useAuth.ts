@@ -16,7 +16,6 @@ export function useAuth() {
 
   const loginWithRedirect = useCallback(
     (options?: RedirectLoginOptions) => {
-      console.log("loginWithRedirect", { user });
       if (user) {
         return;
       }
