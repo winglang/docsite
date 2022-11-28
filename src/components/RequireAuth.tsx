@@ -54,7 +54,7 @@ export default function RequireAuth(props: PropsWithChildren) {
     if (location.hash) {
       location.assign(location.hash);
     }
-  }, [user, isLoading]);
+  }, [isAuthenticated, isLoading]);
 
   return (
     <>
