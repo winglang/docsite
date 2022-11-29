@@ -9,10 +9,6 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - name: Set git identity
-        run: |-
-          git config user.name "monabot"
-          git config user.email "monabot@monada.co"
       - name: Checkout
         uses: actions/checkout@v3
         with:
