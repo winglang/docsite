@@ -373,7 +373,7 @@ Mixing `protected` and `internal` is not allowed.
 
 Re-assignment to variables that are defined with `let` is not allowed in Wing.
 
-Re-assignment to class fields is allowed if field is marked with `readwrite`.
+Re-assignment to class fields is allowed if the field is marked with `readwrite`.
 Examples in the class section below.
 
 `readwrite` is available in the body of class declarations.  
