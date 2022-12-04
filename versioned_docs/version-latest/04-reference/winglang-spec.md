@@ -279,7 +279,7 @@ that executes after the application has been deployed by referring to them as
 **preflight** and **inflight** code respectively.
 
 The default (and implicit) execution context in Wing is preflight. This is
-because in cloud applications, the entrypoint is definition of the app's cloud
+because in cloud applications, the entrypoint is the definition of the app's cloud
 infrastructure (and not the code that runs within a specific machine within this
 cloud infrastructure).
 
