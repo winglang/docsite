@@ -16,7 +16,6 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^1.10.2",
     "@docusaurus/core": "2.0.1",
     "@docusaurus/preset-classic": "2.0.1",
     "@mdx-js/react": "^1.6.22",
