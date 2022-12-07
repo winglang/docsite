@@ -57,11 +57,16 @@ const config = {
       ({
         docs: {
           routeBasePath: "/", // Serve the docs at the site's root
-          breadcrumbs: false,
+          breadcrumbs: true,
           includeCurrentVersion: false,
           editUrl: (params) => `${winglangRepoUrl}/tree/main/docs/${params.docPath}`,
         },
-        blog: false,
+        blog: {
+          blogTitle: 'What\'s up? The Wing Blog',
+          blogDescription: 'The latest news and updates from the Wing team',
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: 'Posts',
+        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -92,10 +97,9 @@ const config = {
             label: "Docs",
           },
           {
-            type: 'doc',
-            docId: 'status',
+            to: 'blog',
+            label: 'Blog',
             position: 'left',
-            label: 'Roadmap'
           },
           {
             type: "docsVersionDropdown",
