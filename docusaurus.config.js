@@ -5,7 +5,7 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const slackUrl = "https://t.winglang.io/slack";
 
-const winglangRepoUrl = "https://github.com/winglang/wing";
+const winglangRepoUrl = "https://github.com/winglang";
 const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
 /** @type {import('@docusaurus/types').Config} */
@@ -164,23 +164,15 @@ const config = {
             items: [
               {
                 label:"GitHub",
-                href: `${winglangRepoUrl}`
+                href: winglangRepoUrl,
               },
               {
                 label: "Slack",
                 href: slackUrl,
               },
               {
-                label: "GitHub Discussions",
-                href: `${winglangRepoUrl}/discussions`
-              },
-              {
                 label: "Stack Overflow",
                 href: stackOverflowUrl,
-              },
-              {
-                label:"Report an Issue",
-                href: `${winglangRepoUrl}/issues/new/choose`
               },
               {
                 label:"Contributor's Handbook",
