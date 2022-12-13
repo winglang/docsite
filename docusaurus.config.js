@@ -77,6 +77,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [{ name: "keywords", content: "Monada, wing, winglang" }],
       colorMode: {
         defaultMode: "dark",
       },
