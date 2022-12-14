@@ -8,6 +8,28 @@ const slackUrl = "https://t.winglang.io/slack";
 const winglangRepoUrl = "https://github.com/winglang";
 const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
+const keywords = [
+  "Wing language",
+  "Wing for cloud",
+  "Wing compiler",
+  "Wing cloud-oriented programming",
+  "cloud-oriented programming",
+  "Wing for serverless",
+  "Wing programming language",
+  "Wing cloud computing",
+  "Wing cloud application development",
+  "Wing cloud-native",
+  "infrastructure from code",
+  "Cloud programming language",
+  "Cloud application development",
+  "Glue logic reduction",
+  "Boilerplate code elimination",
+  "Serverless computing",
+  "Cloud-native languages",
+  "Cloud-oriented languages",
+  "Cloud programming languages",
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Wing",
@@ -77,7 +99,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{ name: "keywords", content: "Monada, wing, winglang" }],
+      metadata: [{ name: "keywords", content: keywords.join(", ") }],
       colorMode: {
         defaultMode: "dark",
       },
