@@ -5,7 +5,7 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const slackUrl = "https://t.winglang.io/slack";
 
-const winglangRepoUrl = "https://github.com/winglang";
+const winglangOrgUrl = "https://github.com/winglang";
 const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
 const keywords = [
@@ -81,7 +81,7 @@ const config = {
           routeBasePath: "/", // Serve the docs at the site's root
           breadcrumbs: true,
           includeCurrentVersion: false,
-          editUrl: (params) => `${winglangRepoUrl}/tree/main/docs/${params.docPath}`,
+          editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
         },
         blog: {
           blogTitle: 'What\'s up? The Wing Blog',
@@ -137,8 +137,8 @@ const config = {
             className: "header-slack-link",
           },
           {
-            href: winglangRepoUrl,
-            "aria-label": "GitHub repository",
+            href: winglangOrgUrl,
+            "aria-label": "GitHub Organization",
             label: " ",
             position: "right",
             className: "header-github-link",
