@@ -187,7 +187,7 @@ const config = {
             items: [
               {
                 label:"GitHub",
-                href: winglangRepoUrl,
+                href: winglangOrgUrl,
               },
               {
                 label: "Slack",
