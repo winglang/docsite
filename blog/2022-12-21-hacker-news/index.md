@@ -40,15 +40,207 @@ interesting and thoughtful comments, as well as a few snarky, conspiratorial
 remarks, we'd like to take the opportunity to address some of the common
 questions and thoughts.
 
-### Why is this a language?
+### Why is this a language? Couldn't you build this as a library?
 
-> Why is this a language, not just a framework for JavaScript or whatever?
+Cloud applications are distributed systems, composed by integrating
+infrastructure resources together with business logic. Cloud developers need a
+way to treat both infrastructure ***and*** code as first-class citizens in order
+to effectively leverage the full power of the cloud. This is something that
+cannot be achieved with mainstream programming languages, which are designed
+with the assumption that all code runs inside a single machine.
+
+Our experience building the CDK showed us that using the full power of a
+programming language is a force-multiplier for capturing the complexity of
+infrastructure required to build real-world cloud applications. However,
+solutions like the CDK fall short when it comes to the integration between
+infrastructure and application logic, leading to friction and boilerplate.
+
+That's why we believe that a new programming language is necessary if we want to
+democratize cloud-oriented programming. We need a language that allows us to
+define both infrastructure and code in the same place and interact naturally
+across these boundaries. Wing is designed to be easy to learn and approachable,
+with first-class interoperability with the JavaScript, Terraform, and CDK
+ecosystems. It is shipped with a local cloud simulator, which can be easily
+extended to support any cloud service you need in your app either through a
+local simulation or by proxing to a remote service. It doesn't have any runtime
+footprint, and we are building a best-in-class, "batteries included", toolchain.
+
+Our mission is to create the best developer experience for the cloud, and we
+refuse to compromise. We believe that this programming paradigm has matured and
+that we will be building applications for the cloud in the foreseeable future.
+We need a solid foundation for cloud programming, and we want to use tools that
+deeply understand the cloud.
+
 > https://news.ycombinator.com/item?id=34051472
 
-This is likely the most common question that we get asked, and that we've been
-asking ourselves from day one. Is it possible to create the developer experience
-we need through a library? And if not a library, maybe some fancy compiler
-annotations or extensions? Do we really need to create a whole new language?
+
+
+
+We didn't take the decision to build a new language lightly. We know that
+adopting a new language is a major barrier, and we are doing everything we can
+to reduce it. Wing is designed to be easy to learn, approachable and familiar.
+It will have first-class interoperability with the JavaScript, Terraform and CDK
+ecosystems. It compiles to JS and Terraform and doesn't have any runtime
+footprint, and we are creating a best-in-class "batteries included" toolchain
+for it.
+
+Our mission is to create the best developer experience for the cloud. We believe
+that this programming paradigm ([cloud-oriented programming]) has matured, and
+that we are going to be building applications for the cloud in the foreseeable
+future. We need a solid foundation for cloud programming, and we want to use
+tools that deeply understand the cloud. We refuse to compromise.
+
+[cloud-oriented programming]: https://docs.winglang.io/blog/2022/11/23/manifesto 
+
+#### Infrastructure *and* code instead of infrastructure *or* code
+
+All mainstream languages are designed with a fundamental assumption that all
+code runs inside a single machine. Some languages have a way to express ideas
+like asynchronous programming
+
+
+---
+
+We believe that in order to be able to capture the full and magnificent power of
+the cloud, we need fully fledged programming language tools both for
+infrastructure *and* for code.
+
+We don't need to convince anyone that we need programming languages to write
+business logic, right? But do we need the a programming language for
+infrastructure? **We believe the answer is yes.**
+
+Our experience [building the CDK] proves that being able to use the full power
+of a programming language is a force-multiplier for capturing the ever-growing
+complexity of the infrastructure required to build real-world cloud
+applications. We saw that teams that use the CDK were able to leverage the cloud
+much more effectively and to its full extent.
+
+
+
+As responsibilities shift from application code to infrastructure, so does the
+coupling between them *increases*. This is where we believe solutions like the
+CDK fall short. Working in isolation on either infrastructure or application
+logic means the glue between them becomes friction and boilerplate. Our
+[previous post] describes why we believe this is a major source of pain in cloud
+development today.
+
+[previous post]: https://docs.winglang.io/blog/2022/11/23/manifesto 
+
+
+
+
+
+
+
+
+
+
+
+So if we accept the fact that cloud applications today are essentially
+distributed systems that are composed from many tightly-integrated
+infrastructure resources and application code, and that we need the full
+power of programming to be able to express all aspects of these systems,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+So we are looking for a solution that will allow us to define both
+infrastructure *and* code in the same language, and interact naturally across
+these boundaries. We want both to be first-class citizens of the codebase, and
+that's something we can't achieve with existing programming languages because
+these aspects of the application operate at completely different dimensions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+complexity was transferred from the application code (which was able to ) to infrastructure
+services
+ 
+The value of the cloud is to transfer responsibilities from application code to
+managed services. In its early days, it was basically about hosting VMs in
+someone else's data center. As the cloud evolved, and the SaaS industry emerged,
+more responsibilities could be handed off to managed services (still weirdly
+called "infrastructure"). This allowed teams to deliver more reliable, scalable
+and robust solutions and much faster.
+
+This process moved complexity from my application code to the architecture. And
+as this architectural complexity grew, we needed more powerful techniques to
+model and manage these resources. A new technology stack had started to evolve
+to support this complexity: at its base we see how infrastructure-as-code
+deployment engines such as Terraform, Pulumi, CloudFormation and Kubernetes
+improved our ability to streamline the ongoing provisioning of all these
+resources. The next layer was what we
+
+
+
+We call
+this "cloud-oriented programming". In our [previous post], we described the
+current state of cloud development, and how shifting to this new paradigm can
+address the friction and remove the barriers for widespread adoption of the
+cloud by developers.
+
+
+
+
+
+
+
+There are beautiful solutions that prioritize one over the other (infra-as-code
+=> infra-as-software => infra-from-annotations => infra-from-code), but 
+
+but they will
+always be limited to certain use cases.
+
+
+
+
+
+
+ of these aspects, we would
+have to compromise on the other because existing languages are intrinsically not
+designed to be able to express programs that run in two different
+
+
+
+
+
+
+
+
+
 
 The TL;DR is that we've realized it won't be possible to create a developer
 experience that treats both cloud infrastructure and application code as
@@ -63,33 +255,10 @@ Before we dive into the language question, let's first tend to a deeper and
 perhaps philosophical question: *What is the cloud?* Why is it useful? Where is
 its value?
 
-The way we see it, the value of the cloud is to be able to *transfer
-responsibilities* of various aspects of my application from my *code* to managed
-*infrastructure* services. In its early days, the cloud was mostly about hosting
-my VMs in someone else's data center, so I didn't have to take care of *actual*
-infrastructure like power, cooling, networking and hardware maintenance. But as
-the cloud evolved, and the SaaS industry emerged, more and more responsibilities
-could be handed off from my code to managed services (still weirdly called
-"infrastructure"). This allowed teams to deliver more reliable, scalable and
-robust solutions and much faster.
-
-Cloud applications today are essentially distributed systems composed from
-tightly-integrated infrastructure services ***and*** application code. We call
-this "cloud-oriented programming". In our [previous post], we described the
-current state of cloud development, and how shifting to this new paradigm can
-address the friction and remove the barriers for widespread adoption of the
-cloud by developers.
 
 [previous post]: https://docs.winglang.io/blog/2022/11/23/manifesto
 
 #### Infrastructure *and* code?
-
-So we are looking for a solution that will allow us to define both
-infrastructure *and* code in the same language, and interact naturally across
-these boundaries. We want both infrastructure and code to be first-class
-citizens of the code base, and that's something we can't achieve with existing
-programming languages because these aspects of the application operate at
-completely different dimensions.
 
 In my last 5 years at Amazon Web Services, I've been working on the AWS CDK. The CDK basically makes 
 
