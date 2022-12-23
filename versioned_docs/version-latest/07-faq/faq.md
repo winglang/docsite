@@ -93,5 +93,7 @@ like it used to be back when everything ran on single machines. We do that throu
 * A console which allows you to see and simulate your cloud resources locally, so you don't have to deploy to test.
 
 We firmly believe that Wing will provide the best experience for developing applications for the cloud that 
-no infrastructure-from-code solution can match.
+no infrastructure-from-code solution can match. You can read the 
+[blog](https://medium.com/@hackingonstuff/cloud-why-so-difficult-%EF%B8%8F-4e9ef1446a64) from our founder 
+[Elad](https://www.linkedin.com/in/hackingonstuff/) to learn more.
 
