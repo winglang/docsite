@@ -12,7 +12,7 @@ We get a lot of questions about Wing. We're collecting them here and answering t
 We get this one a lot. I mean,a LOT! There are a few reasons we decided to write a new language for Wing:
 
 * All popular general purpose languages are designed to be run on a single machine. The cloud is not a single machine. 
-There is a friction that there we'd never be able to overcome and a new language built from the ground up to be
+There is a friction there that we'd never be able to overcome and a new language built from the ground up to be
 cloud-focused was the best way forward. By owning the language from day one we can always drive towards the best 
 possible developer experience without being constrained by existing language features.
 * We can build a lot of intelligence into the compiler. While a lot of this could probably be done through clever
