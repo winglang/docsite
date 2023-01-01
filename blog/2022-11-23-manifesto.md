@@ -2,11 +2,7 @@
 title: Cloud, why so difficult? 🤷‍♀️
 description: A manifesto for cloud-oriented programming
 image: https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png
-authors:
-  - name: Elad Ben-Israel
-    title: Co-Founder & CEO at Monada
-    url: https://github.com/eladb
-    image_url: https://avatars.githubusercontent.com/u/598796?v=4
+authors: eladb
 tags: [cloud-oriented programming, winglang]
 hide_table_of_contents: true
 ---
