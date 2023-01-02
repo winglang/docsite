@@ -4,8 +4,7 @@ This repository hosts the documentation website for Wing ([docs.winglang.io](htt
 
 ## Development Environment
 
-It is built using [Docusaurus 2](https://docusaurus.io/), a modern and awesome
-static website generator.
+It is built using [Docusaurus 2](https://docusaurus.io/), a modern and awesome static website generator.
 
 ### Installation
 
