@@ -35,6 +35,8 @@ pull_request_rules:
 
           {{ body }}
     conditions:
+      - "title=feat(docs): update docs"
+      - "#commits=1"
       - -label~=(do-not-merge)
       - status-success=build
       - status-success=Vercel
@@ -42,4 +44,4 @@ pull_request_rules:
       - -merged
       - -closed
       - "#changes-requested-reviews-by=0"
-      - "#review-threads-unresolved=0"
+      - "#review-threads-unresolved=0
