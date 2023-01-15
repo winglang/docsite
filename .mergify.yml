@@ -44,4 +44,4 @@ pull_request_rules:
       - -merged
       - -closed
       - "#changes-requested-reviews-by=0"
-      - "#review-threads-unresolved=0
+      - "#review-threads-unresolved=0"
