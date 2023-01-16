@@ -1,8 +1,8 @@
 queue_rules:
   - name: default
     conditions:
-      - "#approved-reviews-by>=1"
-      - check-success=build
+      - status-success=build
+      - status-success=Vercel
       - -label~=(do-not-merge)
 pull_request_rules:
   - name: Automatic merge on approval and successful build
@@ -19,3 +19,29 @@ pull_request_rules:
       - "#approved-reviews-by>=1"
       - -label~=(do-not-merge)
       - status-success=build
+      - status-success=Vercel
+      - -merged
+      - -closed
+      - "#changes-requested-reviews-by=0"
+      - "#review-threads-unresolved=0"
+  - name: Automatic merge on successful docsite update from bot
+    actions:
+      delete_head_branch: {}
+      queue:
+        method: squash
+        name: default
+        commit_message_template: |-
+          {{ title }} (#{{ number }})
+
+          {{ body }}
+    conditions:
+      - "title=feat(docs): update docs"
+      - "#commits=1"
+      - -label~=(do-not-merge)
+      - status-success=build
+      - status-success=Vercel
+      - author=monadabot
+      - -merged
+      - -closed
+      - "#changes-requested-reviews-by=0"
+      - "#review-threads-unresolved=0"
