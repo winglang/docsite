@@ -99,7 +99,18 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{ name: "keywords", content: keywords.join(", ") }],
+      metadata: [
+        { name: "keywords", content: keywords.join(", ")},
+        { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.",  name: "description" },
+        { content: "Wing Programming Language", property: "og:title" },
+        { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.", property: "og:description" },
+        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "og:image" },
+        { content: "Wing Programming Language", property: "twitter:title" },
+        { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.", property: "twitter:description" },
+        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "twitter:image" },
+        { content: "website", property: "og:type" },
+        { content: "summary_large_image", name: "twitter:card" }
+      ],
       colorMode: {
         defaultMode: "dark",
       },
