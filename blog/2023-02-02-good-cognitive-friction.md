@@ -11,11 +11,14 @@ hide_table_of_contents: true
 the [pull request](https://github.com/winglang/wing/pull/1180)), and I thought it might be a good
 opportunity to share our thoughts on the topic of immutability in Wing.
 
-One of Wing's design goals is to help developers write safer code. Change in _state_ is a major
-source of complexity (and bugs) in software. I love Eric Elliott's [Dao of
-Immutability](https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd#.9g51h5stk).
-Furthermore, having a strong assurance that state cannot change offers opportunities for
-optimizations and enables things like lock-free distributed computation, caching, and more.
+One of Wing's design goals is to help developers write safer code. Change in state is a major source
+of complexity (and bugs) in software. Eric Elliott's [Dao of Immutability](https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd#.9g51h5stk) describes it beautifully:
+
+> "The true constant is change. Mutation hides change. Hidden change manifests chaos. Therefore, the
+> wise embrace history"
+
+A language-level guarantee that state cannot change offers opportunities for caching, runtime
+optimizations and lock-free concurrency. Those attributes are very useful in distributed systems.
 
 ## Immutable by default
 
@@ -160,7 +163,7 @@ Going back to this concept of "good cognitive friction". If you need to type a f
 order to make a variable reassignable (`let var` versus `let`), you will likely just use `let` most
 of the time, and the world will be a better place with less bugs and happier developers.
 
-## The inflight Connection
+## The Inflight Connection
 
 So how is all this related to cloud development?
 
@@ -223,12 +226,12 @@ new cloud.Function(inflight (_: str) => {
 In this case as well, the compiler won't allow us to reference a mutable object within an inflight
 context, because it won't be able to guarantee correctness.
 
-Unsupported yet, but we will also have `freeze()` to cover you in case you want to reference a
-snapshot of a mutable collection:
+Unsupported yet, but we will also have `clone()` to cover you in case you want to reference a
+snapshot of a mutable collection (`clone_mut()` returns a mutable clone):
 
 ```js
 let mut_arr = MutArray<num>[1,2,3];
-let arr = mut_arr.freeze();
+let arr = mut_arr.clone();
 
 new cloud.Function(inflight () => {
   assert(arr.length == 3);
