@@ -240,7 +240,7 @@ new cloud.Function(inflight () => {
 
 ## Summary
 
-There are endless ways to express ideas using code and We think a programming language should be
+There are endless ways to express ideas using code and we believe a programming language should be
 designed to make it intuitive for developers to write better, safer and more robust code. We use
 "good cognitive friction" such as `let var` and `MutXxx` to get our brain to spare another cognitive
 cycle on choosing some programming approach.
