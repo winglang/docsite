@@ -7,7 +7,7 @@ tags: [cloud-oriented programming, winglang, immutability, let, var, inflights, 
 hide_table_of_contents: true
 ---
 
-[Chris Rybicki](https://twitter.com/rybickic) have recently added support for `let var` to Wing (see
+[Chris Rybicki](https://twitter.com/rybickic) has recently added support for `let var` to Wing (see
 the [pull request](https://github.com/winglang/wing/pull/1180)), and I thought it might be a good
 opportunity to share our thoughts on the topic of immutability in Wing.
 
@@ -105,7 +105,7 @@ failed compilation:
 OK, now we can relax. The Wing compiler tells us that `i` is not reassignable.
 
 Reassignability is a form of immutability (it is mutating the reference) and most modern programming
-languages are trying to encourage single assignment. `let` in Rust, `:=` in Go using `const`
+languages are trying to encourage single assignment. `let` in Rust, `:=` in Go, and `const`
 everywhere in JavaScript.
 
 So how do you make something reassignable? You can use `let var`:
@@ -115,7 +115,7 @@ let var s = "hello";
 s = "world";
 ```
 
-You can also use `var` in class/resource declarations:
+You can also use `var` in class and resource declarations:
 
 ```js
 class Foo {
