@@ -241,6 +241,16 @@ new cloud.Function(inflight () => {
 > See [this pull request](https://github.com/winglang/wing/pull/1247) if you are curious how
 > immutable capturing works in Wing (for the time being).
 
+## What about user-defined types?
+
+In the current revision of the language specification, we still haven't covered the idea of
+immutable user-defined types (its on our [roadmap](https://github.com/winglang/wing/issues/1369)).
+
+This means that the compiler only allows capturing primitives, `Array`, `Map`, `Set`, `Json` (coming
+soon) and structs (coming soon). Any other type cannot be captured directly. This means you will
+likely need to extract any information from the object in order to reference it within an inflight
+context.
+
 ## Summary
 
 There are endless ways to express ideas using code and we believe a programming language should be
