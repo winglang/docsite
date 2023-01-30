@@ -115,6 +115,24 @@ const config = {
       colorMode: {
         defaultMode: "dark",
       },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '1LUMAGAJDN',
+
+        // Public API key: it is safe to commit it
+        apiKey: '1928419050bbd42a73be0c8548b60507',
+
+        indexName: 'winglang',
+
+        // Optional: see doc section below
+        contextualSearch: true,
+
+        // Optional: Algolia search parameters
+        searchParameters: {},
+
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+      },
       navbar: {
         title: "Wing",
         logo: {
