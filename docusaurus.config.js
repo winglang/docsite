@@ -105,26 +105,21 @@ const config = {
       },
       algolia: {
         // The application ID provided by Algolia
-        appId: 'YOUR_APP_ID',
+        appId: '1LUMAGAJDN',
 
         // Public API key: it is safe to commit it
-        apiKey: 'YOUR_SEARCH_API_KEY',
+        apiKey: '1928419050bbd42a73be0c8548b60507',
 
-        indexName: 'YOUR_INDEX_NAME',
+        indexName: 'winglang',
 
         // Optional: see doc section below
         contextualSearch: true,
-
-        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-        externalUrlRegex: 'external\\.com|domain\\.com',
 
         // Optional: Algolia search parameters
         searchParameters: {},
 
         // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
-
-        //... other Algolia params
       },
       navbar: {
         title: "Wing",
