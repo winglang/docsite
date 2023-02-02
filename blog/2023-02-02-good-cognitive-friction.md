@@ -1,6 +1,6 @@
 ---
 title: Introducing `let var` and good cognitive friction
-description: Why we are making Wing immutable by default?
+description: Why we are making Wing immutable by default
 authors: 
   - eladb
 tags: [cloud-oriented programming, winglang, immutability, let, var, inflights, community]
@@ -40,6 +40,10 @@ So if we try to add an item:
 my_array.push(5);
 //       ^^^^ Unknown symbol "push"
 ```
+
+> Eventually we would want this error to be something like `Operation "push" is only available on
+> mutable arrays. Did you mean to declare the array with MutArray<num>?`, but [bear with
+> us](https://github.com/winglang/wing/issues/1428)...
 
 This is because the type of `my_array` is `Array<num>`, which represents an immutable array, it
 simply doesn't have any methods that will cause it to change. In Wing, the following types are
@@ -107,7 +111,7 @@ failed compilation:
 
 OK, now we can relax. The Wing compiler tells us that `i` is not reassignable.
 
-Reassignability is a form of immutability (it is mutating the reference) and most modern programming
+Reassignability is a form of mutability (it is mutating the reference) and most modern programming
 languages are trying to encourage single assignment. `let` in Rust, `:=` in Go, and `const`
 everywhere in JavaScript.
 
@@ -155,9 +159,9 @@ let handler = inflight (var x: str) => {
 ## Why `let var`?
 
 We originally [considered](https://github.com/winglang/wing/pull/1180) using `var` instead of `let
-var`, but we realized this is making it too easy to folks to for the wrong thing. Entire code bases
-will be written with just `var` and mountains of linters will be written to protect you from
-shooting yourself in the foot.
+var`, but we realized this is making it too easy to do the wrong thing. Entire code bases will be
+written with just `var` and mountains of linters will be written to protect you from shooting
+yourself in the foot.
 
 Going back to this concept of "good cognitive friction". If you need to type a few more characters in
 order to make a variable reassignable (`let var` versus `let`), you will likely just use `let` most
