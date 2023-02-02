@@ -99,9 +99,39 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{ name: "keywords", content: keywords.join(", ") }],
+      metadata: [
+        { name: "keywords", content: keywords.join(", ")},
+        { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.",  name: "description" },
+        { content: "Wing Programming Language", property: "og:title" },
+        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "og:image" },
+        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "og:image:secure_url" },
+        { content: "Wing Programming Language", property: "twitter:title" },
+        { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.", property: "twitter:description" },
+        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "twitter:image" },
+        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "twitter:image:source_url" },
+        { content: "website", property: "og:type" },
+        { content: "summary_large_image", name: "twitter:card" }
+      ],
       colorMode: {
         defaultMode: "dark",
+      },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '1LUMAGAJDN',
+
+        // Public API key: it is safe to commit it
+        apiKey: '1928419050bbd42a73be0c8548b60507',
+
+        indexName: 'winglang',
+
+        // Optional: see doc section below
+        contextualSearch: true,
+
+        // Optional: Algolia search parameters
+        searchParameters: {},
+
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
       },
       navbar: {
         title: "Wing",

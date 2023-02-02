@@ -1,4 +1,14 @@
-# Wing SDK
+---
+title: SDK Spec
+description: Specification for the Wing SDK
+---
+
+:::caution Not fully implemented yet
+
+This document is a *specification* of the Wing SDK, and many features
+are still not implemented (see [project board](https://github.com/orgs/winglang/projects/3)).
+ 
+:::
 
 ## Overview
 
@@ -174,7 +184,7 @@ resource CounterWithThreshold extends cloud.Counter {
 
   // or: on_threshold(handler: EventHandler<ThresholdReachedEvent>)
   on_threshold(handler: inflight (event: ThresholdReachedEvent) => void) {
-    return this._topic.on_event(handler);
+    return this._topic.on_message(handler);
   }
 }
 
@@ -193,11 +203,12 @@ struct ThresholdReachedEvent {
 * Logger (P1) - a log aggregator
 * Counter (P1) - an atomic counter
 * Schedule (P1) - a cron job / scheduled task trigger
-* Website (P1) - a CDN-backed static website
 * Api (P1) - a REST API
-* Metric (P1) - a metric for monitoring system performance
-* Alarm (P1) - an alarm that triggers when a metric crosses a threshold
 * Service (P1) - a long-running service, similar to AWS ECS, Azure Container Instances, GCP Cloud Run
+* SqlDatabase (P1) - a relational database that lets you execute arbitrary SQL queries, similar to AWS RDS, Azure SQL Database, GCP Cloud SQL
+* Website (P2) - a CDN-backed static website
+* Metric (P2) - a metric for monitoring system performance
+* Alarm (P2) - an alarm that triggers when a metric crosses a threshold
 * Table (P2) - a NoSQL database table
 * Key-value store (P2) - a lightweight key-value store, similar to Redis or Memcached
 * Job (P2) - a long-running compute workload that can be run on demand
@@ -206,12 +217,11 @@ struct ThresholdReachedEvent {
 * Stream (P2) - a stream of events, similar to AWS Kinesis, Azure Event Hubs, GCP Pub/Sub and Dataflow
 * OnDeploy (P2) - a variation of Function that runs every time the app is deployed
 * GraphQLApi (P2) - a GraphQL API, similar to AWS AppSync
-* SqlDatabase (P2) - a relational database that lets you execute arbitrary SQL queries, similar to AWS RDS, Azure SQL Database, GCP Cloud SQL
 
 ### Resources planned as third party libraries
 
+* Redis (P1)
 * DynamoDBTable
-* Redis
 * MongoDB
 * GithubRepo
 * Authorization/authentication related resources
@@ -630,22 +640,17 @@ resource Topic {
   init(props: TopicProps = {});
 
   /**
-   * Run an inflight whenever an event is published to the topic.
+   * Run an inflight whenever a message is published to the topic.
    */
-  on_event(fn: inflight (event: Json) => void, opts: TopicOnPublishProps?): void;
+  on_message(fn: inflight (message: Json) => void, opts: TopicOnPublishProps?): void;
 
   /**
-   * Alias for `Topic.on_event`.
+   * Publish a message to the topic.
    */
-  subscribe(fn: inflight (event: Json) => void, opts: TopicOnPublishProps?): void;
-
-  /**
-   * Publish an event to the topic.
-   */
-  inflight publish(event: Json): void;
+  inflight publish(message: Json): void;
 }
 
-struct TopicOnPublishProps { /* elided */ }
+struct TopicOnMessageProps { /* elided */ }
 ```
 
 ## Schedule
