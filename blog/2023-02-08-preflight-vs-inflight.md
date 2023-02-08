@@ -11,19 +11,19 @@ Wing is a cloud-oriented programming language we’re building that aims to brea
 down the barriers that get in the way of building applications using cloud
 services, and bring back the flow for developers.
 
-One of the main features Wing is that it distinguishes between "preflight code"
-(code that defines your cloud infrastructure, and runs as part of compilation) –
-and "inflight code" (code that runs in the cloud, at runtime). We believe this
-distinction – and the ability to write code that reaches across the
-preflight-inflight boundary using safe abstractions – makes it easier to build
+One of the main features of Wing is that it distinguishes between "preflight
+code" (code that defines your cloud infrastructure, and runs as part of
+compilation) and "inflight code" (code that runs in the cloud, at runtime). We
+believe this distinction –- and the ability to write code that reaches across the
+preflight-inflight boundary using safe abstractions –- makes it easier to build
 scalable cloud applications, both by encouraging best practices, and helping
 developers avoid common pitfalls.
 
-One of the important differences between preflight and inflight is that
-resources can only be created in preflight. For example, if you try creating a
-`new cloud.Bucket()` or `new cloud.Counter()` inside of an inflight method,
-you’ll get a compiler error message: `Cannot create the resource "Bucket" in
-inflight phase`.
+An important difference between preflight and inflight is that resources can
+only be created in preflight. For example, if you try creating a `new
+cloud.Bucket()` or `new cloud.Counter()` inside of an inflight method, you’ll
+get a compiler error message: `Cannot create the resource "Bucket" in inflight
+phase`.
 
 **So why doesn’t Wing let you create resources while inflight?**
 
@@ -92,7 +92,7 @@ new code), the data plane can continue running with the last known
 configuration, even as servers come in and out of service. This property, called
 static stability, is a desirable attribute in distributed systems.
 
-## Dynamic resource creation requires dynamic security permissions
+## Dynamic resource creation requires looser security permissions
 
 Lastly, dynamic resource creation means your code needs to have admin-like
 permissions, which dramatically increases the attack surface for bad actors. In
