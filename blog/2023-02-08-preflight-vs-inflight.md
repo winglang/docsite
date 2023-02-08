@@ -22,8 +22,11 @@ developers avoid common pitfalls.
 An important difference between preflight and inflight is that resources can
 only be created in preflight. For example, if you try creating a `new
 cloud.Bucket()` or `new cloud.Counter()` inside of an inflight method, you’ll
-get a compiler error message: `Cannot create the resource "Bucket" in inflight
-phase`.
+get a compiler error message:
+
+```
+Error: Cannot create the resource "Bucket" in inflight phase.
+```
 
 **So why doesn’t Wing let you create resources while inflight?**
 
