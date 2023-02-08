@@ -1,5 +1,5 @@
 ---
-title: "The Great Divide: Preflight vs Inflight Resource Creation"
+title: "The Great Divide: Preflight vs Inflight Resource Creation ⚔️"
 description: Why does Wing only let you create resources in preflight?
 authors: 
   - rybickic
