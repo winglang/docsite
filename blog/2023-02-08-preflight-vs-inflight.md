@@ -116,9 +116,9 @@ friction](./2023-02-02-good-cognitive-friction.md). Since Wing will let you make
 network requests or make calls into JavaScript or TypeScript libraries in
 inflight code, you can still directly make calls to a cloud provider (like Azure
 or AWS) to request resources to be created in your application logic if you so
-choose. But in these scenarios, Wing doesn’t provide any safety or resource
-management capabilities for you, so it's your responsibility to manage the
-resource and ensure it gets cleaned up.
+choose. But in these scenarios, Wing doesn’t provide resource management
+capabilities or security permission generation for you, so it's your
+responsibility to manage the resource and ensure it gets cleaned up.
 
 With these caveats in mind, we would love to hear your feedback about this
 design -- and if you have a use case where dynamically creating resources would
