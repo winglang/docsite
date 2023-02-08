@@ -122,5 +122,6 @@ resource and ensure it gets cleaned up.
 
 With these caveats in mind, we would love to hear your feedback about this
 design -- and if you have a use case where dynamically creating resources would
-be useful, please share it with us! Here is a GitHub discussion for this blog
-post: [https://github.com/winglang/wing/discussions/1490]
+be useful, please share it with us through a [GitHub
+issue](https://github.com/winglang/wing/issues/new/choose) or on this blog's
+[discussion post](https://github.com/winglang/wing/discussions/1490)!
