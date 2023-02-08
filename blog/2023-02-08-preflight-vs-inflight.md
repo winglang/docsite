@@ -70,10 +70,11 @@ using tools like [infracost](https://www.infracost.io).
 * It's more straightforward to clean up / spin down your application -- all of
 the resources you need to delete are listed in the file.
 
-If resources were created, updated, and deleted dynamically based on app
-business logic, we would lose many of these benefits. I’ve heard many cases
-where an application created resources dynamically, and entire projects and
-teams were dedicated to garbage collecting these resources.
+If resources were created, updated, and deleted dynamically as part of an
+application's data path data path, we would lose many of these benefits. I’ve
+heard many cases where an application was designed around creating resources
+dynamically, and entire projects and teams had to be dedicated to garbage
+collecting these resources.
 
 Applications depending on dynamic resource creation are needed in some cases of
 course (like applications that provision cloud resources on behalf of a user),
