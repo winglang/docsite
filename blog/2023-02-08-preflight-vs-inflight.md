@@ -82,11 +82,10 @@ but these tend to be the exception to the rule.
 
 ## Static app architectures are more resistant to network changes
 
-Second, dynamic resource creation can make your application less stable – or in
-other words, more likely to encounter runtime errors in production. Resource
-creation and deletion typically performs control plane operations on the
-underlying cloud provider, while most inflight operations only perform data
-plane operations.
+Second, dynamic resource creation can make your application more likely to
+encounter runtime errors in production. Resource creation and deletion typically
+requires performing control plane operations on the underlying cloud provider,
+while most inflight operations only require data plane operations.
 
 Cloud services are more fault tolerant when they only depend on data plane
 operations as part of the business logic's critical path. This is because even
