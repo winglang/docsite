@@ -48,9 +48,9 @@ harder to maintain.** Let’s dive into why this is.
 
 First, dynamic resource creation introduces enormous complexity from a resource
 management perspective. This is part of the reason why the IaC (infrastructure
-as code) tools were created. Not only was it too cumbersome and error-prone to
-create large numbers of cloud resources by clicking on buttons in your web
-browser, but it also became very difficult to reliably maintain and update the
+as code) tools were created. Not only is it too cumbersome and error-prone to
+create large numbers of cloud resources by clicking buttons in your web browser,
+but it also becomes difficult to reliably maintain and update the
 infrastructure.
 
 When you use tools like Terraform or CloudFormation, you typically create a YAML
