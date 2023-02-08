@@ -8,8 +8,8 @@ hide_table_of_contents: true
 ---
 
 Wing is a cloud-oriented programming language we’re building that aims to break
-down boundaries that get in the way of building applications using cloud
-services.
+down the barriers that get in the way of building applications using cloud
+services, and bring back the flow for developers.
 
 One of the main features Wing is that it distinguishes between "preflight code"
 (code that defines your cloud infrastructure, and runs as part of compilation) –
