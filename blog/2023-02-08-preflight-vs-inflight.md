@@ -28,7 +28,7 @@ In general, there are two places you can create resources:
 
 In the context of the _cloud_, we find it helpful to imagine our applications as
 software that "take flight" through the cloud. Hence, we like to call these two
-part's of the app's lifecycle **preflight** and **inflight**. Clever, right? 😎
+part's of the app's lifecycle **preflight** and **inflight**. Clever, ha?
 
 When you look at the cloud ecosystem, you’ll notice that most cloud services
 don't make a hard distinction between APIs that manage resources and APIs that
@@ -109,78 +109,34 @@ to define which resources are exposed to the public, which resources can call
 which endpoints, and even which teams can view sensitive data (and how data
 accesses are logged and audited).
 
-## How do you follow best practices... in practice?
+## How do you follow best practices... in practice? 🤔
 
-We think the best way to write code that works with cloud resources is to create
-your resources in preflight, and then use those resources in inflight.
+We think the best way to write applications for the cloud is to create your
+resources in preflight, and then use those resources in inflight. That's why the
+design of [Wing](https://www.winglang.io/), the programming language we're
+building, encourages developers to create resources in preflight as the path of
+[least friction](./2023-02-02-good-cognitive-friction.md). In fact, we think the
+distinction between preflight and inflight is so important that we've [built it
+into the language](https://docs.winglang.io/concepts/inflights). If you try to
+create a resource in a block of code that is labeled with an _inflight_ scope,
+Wing will throw a compiler error:
 
-That's why the design of Wing, the programming language we are building,
-encourages developers to create resources in preflight as the path of [least
-friction](./2023-02-02-good-cognitive-friction.md). In fact, we think the
-distinction between preflight and inflight is so important that we've built it
-into the language.
-
-Using Wing, you can create resources in preflight by simply initializing one
-of the batteries-included resources, like `Bucket` or `Queue` or `Topic`. Then,
-you can use those resources in inflight by referencing them like any other
-code:
-
-```js
-bring cloud;
-
-let queue = new cloud.Queue(timeout: 2m);
-let bucket = new cloud.Bucket();
-let counter = new cloud.Counter(initial: 100);
-
-queue.on_message(inflight (body: str): str => {
-  let next = counter.inc();
-  let key = "myfile-${next}.txt";
-  bucket.put(key, body);
-});
+```
+Error: Cannot create the resource "Bucket" in inflight phase.
 ```
 
-In this example, a set of resources are created, and a remote function is
-defined to listen to messages from a message queue that will increment an
-distributed counter, and then upload the message body to a file in a cloud
-object store.
-
-The `inflight` keyword is something new that we've added to Wing. It's similar
-to `async` in JavaScript, but it's used to mark functions that can be bundled
-and then executed in the cloud.
-
->
-> Remember what we said about dynamic resource creation being dangerous? If you
-> try creating a `new cloud.Bucket()` or `new cloud.Counter()` inside of an
-> inflight code block, you’ll get a compiler error in Wing:
->
-> ```
-> Error: Cannot create the resource "Bucket" in inflight phase.
-> ```
->
-> That's static analysis in action!
->
-
-When a Wing compiles your program, it will generate the necessary infrastructure
-to run the program in your target cloud (like AWS or Azure) in the form of
-Terraform code[^1]. This means that you can use Wing to create cloud
-applications end-to-end without having to write any YAML or JSON templates
-yourself.
-
-In the future, Wing will let you make network requests or call into JavaScript
-and TypeScript libraries in inflight code, so you can still directly make API
-calls to a cloud provider (like Azure or AWS) to create resources dynamically if
-you want to. But in these scenarios, Wing won't provide resource management
+Wing is intended to be a general purpose language, so you'll still be able to
+make API calls to a cloud providers (through network requests or
+JavaScript/TypeScript libraries) to dynamically create resources if you really
+want to. But in these scenarios, Wing won't provide resource management
 capabilities or generate resource permissions for you, so it would be your
 responsibility to manage the resource and ensure it gets cleaned up.
 
-[^1]: Other provisioning engines to be supported in the future, based on community interest!
-
-## Closing thoughts
-
-Wing is still early in development, but if you're curious to learn more, check
-out our [getting started guide](https://docs.winglang.io/getting-started) or
-join us on our [community slack](https://t.winglang.io/slack)! We would love to
-hear your feedback about this design -- and if you have a use case where
-dynamically creating resources would be useful, please share it with us through
-a [GitHub issue](https://github.com/winglang/wing/issues/new/choose) or on this
-blog's [discussion post](https://github.com/winglang/wing/discussions/1490)! ❤️
+If you're curious to learn more, check out our [getting started
+guide](https://docs.winglang.io/getting-started) or join us on our [community
+slack](https://t.winglang.io/slack) and share with us what kinds of applications
+you're building in the cloud! We would love to hear your feedback about this
+design -- and if you have use case where dynamically creating resources would be
+helpful, please share it with us through a [GitHub
+issue](https://github.com/winglang/wing/issues/new/choose) or on this blog's
+[discussion post](https://github.com/winglang/wing/discussions/1490)! ❤️
