@@ -12,14 +12,14 @@ applications that scale to meet demand. But as the cloud has become more
 ubiquitous, it’s also become more complex.
 
 One of the important questions you'll have to answer in order to build an
-application on top of AWS, Azure, or Google Cloud is: how should I be creating
-cloud resources for my application?
+application with AWS, Azure, or Google Cloud is: how should I create the cloud
+resources for my application?
 
-For very simple applications, you can get away with creating resources by clicking
-in the cloud console. But as your application grows, you'll need to start
-thinking about how to manage your resources in a more structured way. This is
-where infrastructure as code (IaC) tools like Terraform and CloudFormation have
-become popular.
+For very simple applications, you can get away with creating resources by
+clicking around in the cloud console. But as your application grows, you'll need
+to start thinking about how to manage your resources in a more structured way.
+This is where infrastructure as code (IaC) tools like Terraform and
+CloudFormation have become popular.
 
 In general, there are two places you can create resources:
 
@@ -27,7 +27,7 @@ In general, there are two places you can create resources:
 * While your application is running, as part of your app's data path.
 
 In the context of the _cloud_, we find it helpful to imagine our applications as
-software that "take flight" through the cloud. Hence, we like to call these two
+software that "takes flight" through the cloud. Hence, we like to call these two
 part's of the app's lifecycle **preflight** and **inflight**. Clever, ha?
 
 When you look at the cloud ecosystem, you’ll notice that most cloud services
@@ -109,13 +109,13 @@ to define which resources are exposed to the public, which resources can call
 which endpoints, and even which teams can view sensitive data (and how data
 accesses are logged and audited).
 
-## How do you follow best practices... in practice? 🤔
+## How to follow best practices... in practice?
 
 We think the best way to write applications for the cloud is to create your
-resources in preflight, and then use those resources in inflight. That's why the
-design of [Wing](https://www.winglang.io/), the programming language we're
-building, encourages developers to create resources in preflight as the path of
-[least friction](./2023-02-02-good-cognitive-friction.md). In fact, we think the
+resources in preflight, and then use those resources in inflight. That's why
+[Wing](https://www.winglang.io/), the programming language we're building,
+encourages developers to create resources in preflight as the path of [least
+friction](./2023-02-02-good-cognitive-friction.md). In fact, we think the
 distinction between preflight and inflight is so important that we've [built it
 into the language](https://docs.winglang.io/concepts/inflights). If you try to
 create a resource in a block of code that is labeled with an _inflight_ scope,
