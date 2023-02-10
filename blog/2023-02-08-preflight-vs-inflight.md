@@ -9,8 +9,7 @@ hide_table_of_contents: true
 
 Today, the cloud computing revolution has made it easier than ever to build
 applications that scale to meet demand. But as the cloud has become more
-ubiquitous, it’s also become more complex. The cloud is a vast, sprawling
-ecosystem of services, and it’s easy to get lost in the weeds.
+ubiquitous, it’s also become more complex.
 
 One of the important questions you'll have to answer in order to build an
 application on top of AWS, Azure, or Google Cloud is: how should I be creating
