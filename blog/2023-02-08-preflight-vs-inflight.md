@@ -139,12 +139,13 @@ queue.on_message(inflight (body: str): str => {
 });
 ```
 
-In this example, a set of resources are created, and remote function is defined to
-listen to messages from a message queue that will increment an distributed
-counter, and then upload the message body to a file in a cloud object store.
+In this example, a set of resources are created, and a remote function is
+defined to listen to messages from a message queue that will increment an
+distributed counter, and then upload the message body to a file in a cloud
+object store.
 
-The `inflight` keyword is a new keyword that we've added to Wing. It's similar
-to `async` in JavaScript, but it's used to mark functions that can be bundled,
+The `inflight` keyword is something new that we've added to Wing. It's similar
+to `async` in JavaScript, but it's used to mark functions that can be bundled
 and then executed in the cloud.
 
 >
@@ -159,10 +160,10 @@ and then executed in the cloud.
 > That's static analysis in action!
 >
 
-When a Wing program is compiled, the compiler will automatically generate the
-necessary infrastructure to run the program in your target cloud (like AWS or
-Azure) in the form of Terraform code. This means that you can use Wing to create
-cloud applications end-to-end without having to write any Terraform code
+When a Wing compiles your program, it will generate the necessary infrastructure
+to run the program in your target cloud (like AWS or Azure) in the form of
+Terraform code[^1]. This means that you can use Wing to create cloud
+applications end-to-end without having to write any YAML or JSON templates
 yourself.
 
 In the future, Wing will let you make network requests or call into JavaScript
@@ -171,6 +172,8 @@ calls to a cloud provider (like Azure or AWS) to create resources dynamically if
 you want to. But in these scenarios, Wing won't provide resource management
 capabilities or generate resource permissions for you, so it would be your
 responsibility to manage the resource and ensure it gets cleaned up.
+
+[^1]: Other provisioning engines to be supported in the future, based on community interest!
 
 ## Closing thoughts
 
