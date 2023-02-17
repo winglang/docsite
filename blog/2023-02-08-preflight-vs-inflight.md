@@ -1,60 +1,56 @@
 ---
 title: "The Great Divide: Preflight vs Inflight Resource Creation ⚔️"
-description: Why does Wing only let you create resources in preflight?
+description: Why does Wing let you only create resources in preflight?
 authors: 
   - rybickic
 tags: [cloud-oriented programming, winglang, resources, preflight, inflight, iac, security]
 hide_table_of_contents: true
 ---
 
+There are two ways to create resources in the cloud: in preflight, or in
+inflight. In this post, I'll explore what these terms mean, and why I think
+most cloud applications should avoid dynamically creating resources in inflight
+and instead stick to managing resources in preflight using tools like IaC.
+
 Today, the cloud computing revolution has made it easier than ever to build
-applications that scale to meet demand. But as the cloud has become more
-ubiquitous, it’s also become more complex.
+applications that scale to meet the demands of users. However, as the cloud has become more prevalent, it has also become more complex.
 
 One of the important questions you'll have to answer in order to build an
 application with AWS, Azure, or Google Cloud is: how should I create the cloud
 resources for my application?
 
-For very simple applications, you can get away with creating resources by
-clicking around in the cloud console. But as your application grows, you'll need
-to start thinking about how to manage your resources in a more structured way.
-This is where infrastructure as code (IaC) tools like Terraform and
-CloudFormation have become popular.
+For simple applications, you can get away with creating resources by clicking
+around in the cloud console. But as your application grows, a more structured
+approach is necessary. Infrastructure as code (IaC) tools like Terraform and
+CloudFormation have become popular for this purpose.
 
-In general, there are two places you can create resources:
+In general, there are two ways to create cloud resources for an application:
+before the application starts running, as part of the deployment process, and
+while the application is running, as part of the data path. We refer to these
+two phases of the application's lifecycle as **preflight** and **inflight**.
+Clever, ha?
 
-* Before your application starts running, as part your app's deployment.
-* While your application is running, as part of your app's data path.
+In the cloud ecosystem, many cloud services do not make a hard distinction
+between APIs that manage resources and APIs that use those resources. For
+example, in AWS's documentation for SQS, operations like `CreateQueue` and
+`SendMessage` are listed [side by
+side](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_Operations.html).
+The same goes for Google Cloud's [Pub/Sub
+service](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics).
 
-In the context of the _cloud_, we find it helpful to imagine our applications as
-software that "takes flight" through the cloud. Hence, we like to call these two
-part's of the app's lifecycle **preflight** and **inflight**. Clever, ha?
-
-When you look at the cloud ecosystem, you’ll notice that most cloud services
-don't make a hard distinction between APIs that manage resources and APIs that
-use those resources. For example, in [AWS's documentation for
-SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_AddPermission.html)
-(Amazon's distributed queue service), you can see that operations like
-`CreateQueue` and `SendMessage` are listed side by side. In Google Cloud's
-documentation for their Pub/Sub service, we see the [same
-thing](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics)
--- creating topics and publishing to topics are serviced as part of a single set
-of APIs.
-
-But in practice, there are important differences between these two kinds of
-APIs. In this post, we'll explore why we think most cloud applications should
-avoid dynamically creating resources in inflight, and instead stick to managing
+However, there are significant differences between these two types of APIs in
+practice. This post will explore why I believe most cloud applications should
+avoid dynamically creating resources in inflight and, instead, focus on managing
 resources in preflight using tools like IaC.
 
 ## Resource management is hard
 
 First, dynamic resource creation introduces enormous complexity from a resource
-management perspective. This is a large part of the reason why the IaC tools
-were created. Not only is it too cumbersome and error-prone to create large
-numbers of cloud resources by clicking buttons in your web browser, but it also
-becomes difficult to reliably maintain, update, and track the infrastructure.
-This becomes increasingly true as you start to pay attention to the cost of your
-application.
+management perspective. This is the main reason why the IaC tools were created.
+Not only is it too cumbersome and error-prone to create large numbers of cloud
+resources by clicking buttons in your web browser, but it also becomes difficult
+to reliably maintain, update, and track the infrastructure. This is especially
+true as you start to pay attention to the cost of your application.
 
 When you use tools like Terraform or CloudFormation, you typically create a YAML
 file or JSON file that describes resources in a declarative format. These
@@ -67,8 +63,8 @@ apps and teams).
 configuration of a resource differs from the desired configuration).
 * You can estimate the cost of your workload based on the list of resources
 using tools like [infracost](https://www.infracost.io).
-* It's more straightforward to clean up / spin down your application -- all of
-the resources you need to delete are listed in the file.
+* It's more straightforward to clean up / spin down your application, since all of
+the resources in your app are tracked in the file.
 
 When resources are created, updated, and deleted dynamically as part of an
 application's data path, we lose many of these benefits. I’ve heard of many
@@ -93,7 +89,8 @@ if the control plane of a cloud service has a partial outage (for example, if
 AWS Lambda functions could not be updated with new code), the data plane can
 continue running with the last known configuration, even as servers come in and
 out of service. This property, called static stability, is a desirable attribute
-in distributed systems.
+in distributed systems, and most cloud platforms are designed around these
+tradeoffs.
 
 ## Dynamic resource creation requires broader security permissions
 
@@ -111,18 +108,24 @@ accesses are logged and audited).
 
 ## How to follow best practices... in practice?
 
-We think the best way to write applications for the cloud is to create your
-resources in preflight, and then use those resources in inflight. That's why
-[Wing](https://www.winglang.io/), the programming language we're building,
-encourages developers to create resources in preflight as the path of [least
-friction](./2023-02-02-good-cognitive-friction.md). In fact, we think the
-distinction between preflight and inflight is so important that we've [built it
-into the language](https://docs.winglang.io/concepts/inflights). If you try to
+I believe the best way to write applications for the cloud is to define your
+resources in preflight, and then use them in inflight. That's why
+[Wing](https://www.winglang.io/), the programming language my team and I are building,
+encourages developers to create resources in preflight as the easiest path to follow.
+We think the
+distinction between preflight and inflight is critical, which is why we've [built it
+into the language itself](https://docs.winglang.io/concepts/inflights). For example, if you try to
 create a resource in a block of code that is labeled with an _inflight_ scope,
-Wing will throw a compiler error:
+Wing will produce a compiler error:
 
-```
-Error: Cannot create the resource "Bucket" in inflight phase.
+```js
+bring cloud;
+
+let queue = new cloud.Queue();
+queue.on_message(inflight (message: str) => {
+  // error: Cannot create the resource "Bucket" in inflight phase.
+  new cloud.Bucket();
+});
 ```
 
 Wing is intended to be a general purpose language, so you'll still be able to
