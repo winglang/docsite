@@ -36,7 +36,7 @@ const config = {
   tagline: "Maximum cloud, minimum DevOps",
   url: process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`,
   baseUrl: "/",
-  onBrokenLinks: "warn",
+  onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
   organizationName: "winglang",
@@ -229,7 +229,7 @@ const config = {
               },
               {
                 label:"Contributor's Handbook",
-                to: "contributors/handbook"
+                to: "contributors/"
               },
             ],
           },
