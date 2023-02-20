@@ -264,5 +264,5 @@ cycle on choosing some programming approach.
 
 Making Wing "immutable by default" is designed to encourage developers to write more functional and
 immutable code. We continue to think of how to do it in elegant, simple, and not annoying ways, and
-we would love your feedback and suggestions on [Wing Slack](t.winglang.io/slack).
+we would love your feedback and suggestions on [Wing Slack](https://t.winglang.io/slack).
 
