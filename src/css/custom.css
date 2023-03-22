@@ -9,7 +9,7 @@
 /* You can override the default Infima variables here. */
 :root {
   font-family: 'IBM Plex Sans', sans-serif;
-  --ifm-color-primary: red;
+  --ifm-color-primary: #1c273d;
   --ifm-color-primary-dark: #192337;
   --ifm-color-primary-darker: #182134;
   --ifm-color-primary-darkest: #141b2b;
