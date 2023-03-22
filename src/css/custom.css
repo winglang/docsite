@@ -29,44 +29,44 @@
 
 h1 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h2 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h3 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.5rem;
 }
 
 h4 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.12rem;
 }
 
 h5 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1rem;
   font-style: italic;
 }
 
 h6 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.5rem;
   font-style: italic;
 }
 
 p {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 a {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--ifm-color-primary-lighter);
 }
 

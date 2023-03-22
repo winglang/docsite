@@ -79,7 +79,7 @@ const config = {
       ({
         docs: {
           routeBasePath: "/", // Serve the docs at the site's root
-          breadcrumbs: true,
+          breadcrumbs: false,
           includeCurrentVersion: false,
           editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
         },
