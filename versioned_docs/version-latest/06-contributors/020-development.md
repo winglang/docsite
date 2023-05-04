@@ -14,12 +14,13 @@ environment:
 * [Node.js] v18 and npm v8
   * We recommend [volta] to manage node tools
 * [Rust]
+  * We recommend using [rustup] to manage your Rust installation
 * [AWS CLI]
   * Only needed for integration tests - make sure to do the setup part to create credentials
 * [Terraform CLI]
   * Only needed for integration tests
-* [Docker] or [emscripten]
-  * Only needed for to build the grammar as WASM for the web-based playground
+* [Docker]
+  * Needed to build the grammar as WASM for the web-based playground and to run unit tests
 
 Installation:
 
@@ -36,7 +37,6 @@ npm install
 npx nx <target> <project>
 # or
 npx nx <target> <project> -- <args>
-
 ```
 
 - `npx` can be omitted if [Nx] is installed globally
@@ -47,12 +47,24 @@ npx nx <target> <project> -- <args>
 
 [Nx]: https://nx.dev/
 [Node.js]: https://nodejs.org/en/
-[Rust]: https://www.rust-lang.org/tools/install
+[Rust]: https://www.rust-lang.org/
+[rustup]: https://rustup.rs/
 [AWS CLI]: https://aws.amazon.com/cli/
 [Terraform CLI]: https://learn.hashicorp.com/terraform/getting-started/install.html
 [volta]: https://volta.sh
 [Docker]: https://docs.docker.com/get-docker/
 [emscripten]: https://emscripten.org/docs/getting_started/downloads.html
+
+## Full build
+
+If you wish to perform a full build (similar to the one CI is running), just run this from the root:
+
+```sh
+npm run build
+```
+
+It will run the `build`, `test` and `package` targets on all modules.
+
 
 ## 🏠 What's the recommended development workflow?
 
@@ -94,8 +106,8 @@ separately).
 
 :::note
 
-The first time you run `npm install` you may be asked to enter your system password, this is because
-it's taking care of installing the [wasi-sdk](https://github.com/WebAssembly/wasi-sdk) for you.
+The first time you run `npm install` it may take extra time to install the
+ [wasi-sdk](https://github.com/WebAssembly/wasi-sdk) for you. This is needed to compile Wing for WASM.
 
 If you wish to install it manually, you may do so by running `scripts/setup_wasi.sh`
 
@@ -112,6 +124,49 @@ To run the tests (and update snapshots), run the following command from anywhere
 npx nx test hangar
 ```
 
+### Test Meta-Comments
+
+In your wing files in `examples/tests/valid`, you can add a specially formatted comment to add additional information for hangar.
+Inside this comment, a yaml block will be read and used for serveral purposes.
+
+Example:
+
+```ts
+/*\
+skipPlatforms:
+  - win32
+  - darwin
+\*/
+```
+
+Currently, the only supported meta-comment for regular tests is `skipPlatforms`.
+This will skip the test on the given platforms when when running on CI. The current supported platforms are `win32`, `darwin`, and `linux`.
+This is useful if, for example, the test requires docker. In our CI only linux supports docker.
+
+### Benchmarks
+
+Benchmark files are located in `examples/tests/valid/benchmarks`. To run the benchmarks, run the following command from anywhere in the monorepo:
+
+```sh
+npx nx bench hangar
+```
+
+Benchmark files should ideally have a meta-comment with the `cases` key. For example:
+
+```ts
+/*\
+cases:
+  - target: sim
+    maxMeanTime: 900
+  - target: tf-aws
+    maxMeanTime: 1000
+\*/
+```
+
+Given each of these cases, the current purpose is to provide a maxMeanTime (milliseconds) per compilation target. 
+If the average time for compiling to this target takes longer than the maxMeanTime, the test will fail.
+Note: In CI, tests likely run much slower than on your local machine, so you may need to observe the CI results to determine the correct maxMeanTime.
+
 ## How do I work only on the compiler?
 
 The following command runs the cargo tests, currently just ensures the valid examples compile and the
@@ -127,7 +182,16 @@ The following command runs `wingc` on a file. This performs all the compilation 
 npx nx wing -- compile <path to a .w file (full path, or relative to the location of the apps/wing folder)>
 ```
 
-You can find the compilation artifacts in the apps/wing/targets folder
+You can find the compilation artifacts in the apps/wing/targets folder.
+
+To check that your code passes all the lints, run:
+
+```sh
+npx nx lint wingc
+```
+
+If you are using VS Code, you can show clippy errors in your IDE by installing the rust-analyzer extension and setting the option "Rust-analyzer › Check: Command" to "clippy" instead of "check".
+
 
 ## How do I make changes to the Wing grammar?
 
@@ -161,11 +225,36 @@ Make sure to also run `build-wasm` before each time the grammar changes
 
 ## 🔨 How do I build the VSCode extension?
 
-The VSCode extension is located in `apps/vscode-wing`. Most of the logic is in the language server, which
-is located in `apps/vscode-wing`. Running `npx nx build vscode-wing` will ensure the
-language server is built first and the binary is available. This creates an installable VSIX file.
+The VSCode extension is located in `apps/vscode-wing`. Most of the "logic" is in the language server, which
+is located in the Wing CLI at `apps/wing/src/commands/lsp.ts`. 
 
-A VSCode launch configuration is available to open a VSCode with a development version of the
-extension.
+To build the extension (also creates an installable `.vsix` file):
 
-To modify the package.json, please edit `.projenrc.ts` and run `npx projen`.
+```sh
+npx nx build vscode-wing
+```
+
+To run a new isolated VSCode instance with the extension installed:
+
+```sh
+npx nx dev vscode-wing
+```
+
+To modify the package.json, make sure to edit `.projenrc.ts` and rebuild.
+
+## 🧹 How do I lint my code?
+
+To lint Rust code, you can run the `lint` target on the `wingc` or `wingii` projects:
+
+```sh
+npx nx lint wingc
+```
+
+It's also possible to lint by running `cargo clippy` directly.
+
+Lastly you can show linting errors in your IDE by enabling the following setting in the rust-analyzer extension:
+
+```json
+// in your VS Code settings
+"rust-analyzer.check.command": "clippy",
+```

@@ -18,6 +18,9 @@ The SDK is built using a couple of extra libraries and tools:
 
 Everything in the SDK can be built by running `npm run build` from `libs/wingsdk`. You can also run `npm run test` to just run tests.
 
+In order to work on the source code, you will need to the build at least once so that TypeScript bindings for Terraform resources will be automatically generated.
+These files are not checked in because they are quite large.
+
 (If you have any issues building the package, please open an issue and let us know!)
 
 [CDK for Terraform]: https://github.com/hashicorp/terraform-cdk
@@ -44,6 +47,16 @@ Here is an example of adding a package named "fast-json-stringify" pinned to maj
 ```
 
 > [2] JSII libraries are npm packages that are compiled with JSII. They are usually published to npm with the `cdk` keyword, and they will have a `.jsii` file at their root.
+
+## 🧱 How do I add a new Terraform provider for use in the SDK?
+
+The SDK uses [CDK for Terraform] to generate Terraform files.
+This means that you can generate bindings for any Terraform provider and reference in in the SDK using TypeScript.
+
+To add a new provider, go to `libs/wingsdk/.projenrc.ts` and edit the section
+that says "CDKTF_BINDINGS" to add the new provider.
+Then, run `npx projen` to update the project.
+One that has finished, you can run `npm run build` and the new bindings should be generated inside `libs/wingsdk/src/.gen`.
 
 ## 🧩 How do I add a resource to the SDK?
 
@@ -93,10 +106,10 @@ During development, you might find it useful to watch for changes and automatica
 npm run test:watch
 ```
 
-To re-run individual tests, you can directly use the `jest` command -- for example:
+To re-run individual tests, you can directly use the `vitest` command -- for example:
 
 ```sh
-npx jest test/tf-aws/bucket.test.ts
+npx vitest run test/target-tf-aws/bucket.test.ts
 ```
 
 ## What is the architecture of the Wing SDK?
@@ -192,7 +205,7 @@ new sdk.cloud.Function(this, "Function", handler);
 ```
 
 Every resource added to the `bindings` field is implicitly added as a dependency of the inflight, and is made available to the inflight code through a field with the same name.
-(Hence the API calls to `this.message_count.print` and `this.my_queue.push` passed in the `code` field above.)
+(Hence the API calls to `this.message_count.inc` and `this.my_queue.push` passed in the `code` field above.)
 
 The `bindings` field requires a `resource` field with a reference to the original resource object, and an `ops` field that specifies the operations that the inflight code will use on the resource.
 

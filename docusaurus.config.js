@@ -52,6 +52,17 @@ const config = {
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
   },
+  // This is needed to supress minification of JS files that screws up display of
+  // code samples
+  configureWebpack: (config, isServer, utils) => {
+    const { getCacheLoader } = utils;
+    return {
+      optimization: {
+        ...config.optimization,
+        minimize: false, // Disables JavaScript minification
+      },
+    };
+  },
   plugins: [
     "docusaurus-plugin-sass", 
     "docusaurus-plugin-segment",
@@ -79,7 +90,7 @@ const config = {
       ({
         docs: {
           routeBasePath: "/", // Serve the docs at the site's root
-          breadcrumbs: true,
+          breadcrumbs: false,
           includeCurrentVersion: false,
           editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
         },
@@ -103,12 +114,12 @@ const config = {
         { name: "keywords", content: keywords.join(", ")},
         { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.",  name: "description" },
         { content: "Wing Programming Language", property: "og:title" },
-        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "og:image" },
-        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "og:image:secure_url" },
+        { content: "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png", property: "og:image" },
+        { content: "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png", property: "og:image:secure_url" },
         { content: "Wing Programming Language", property: "twitter:title" },
         { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.", property: "twitter:description" },
-        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "twitter:image" },
-        { content: "https://assets.website-files.com/63720940a94e098b4e2a542b/637e2d5495f59f7654160773_Social%20thumbnail.png", property: "twitter:image:source_url" },
+        { content: "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png", property: "twitter:image" },
+        { content: "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png", property: "twitter:image:source_url" },
         { content: "website", property: "og:type" },
         { content: "summary_large_image", name: "twitter:card" }
       ],

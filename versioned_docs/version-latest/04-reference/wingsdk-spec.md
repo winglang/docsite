@@ -5,9 +5,9 @@ description: Specification for the Wing SDK
 
 :::caution Not fully implemented yet
 
-This document is a *specification* of the Wing SDK, and many features
+This document is a _specification_ of the Wing SDK, and many features
 are still not implemented (see [project board](https://github.com/orgs/winglang/projects/3)).
- 
+
 :::
 
 ## Overview
@@ -23,32 +23,32 @@ In writing this, we are hoping to provide a jumping-off point for contributors l
 When designing APIs for Wing, we try to follow these tenets:
 
 - **Focused on functional behavior**: our APIs are designed around the functional aspects that developers care about for building and testing their applications.
-Implementations of resources in the SDK are guaranteed to be scalable, highly-available, and fault tolerant by default, so that developers do not need to customize security policies or scaling configuration within their application code.
-Operational aspects of resources should not leak into the core API surface area, except when they are essential to the functional behavior of the resource and the user's mental model.
-For example, while the timeout of a serverless function can be considered an operational detail, it is essential to the user's mental model of functions as an ephemeral, stateless resource that should not be used for long-running or stateful workloads.
+  Implementations of resources in the SDK are guaranteed to be scalable, highly-available, and fault tolerant by default, so that developers do not need to customize security policies or scaling configuration within their application code.
+  Operational aspects of resources should not leak into the core API surface area, except when they are essential to the functional behavior of the resource and the user's mental model.
+  For example, while the timeout of a serverless function can be considered an operational detail, it is essential to the user's mental model of functions as an ephemeral, stateless resource that should not be used for long-running or stateful workloads.
 
 - **Easy to understand, with sensible defaults**: our APIs are based on the mental model of the user, and not the mental model of cloud service APIs, which are frequently designed against the constraints of the backend system and the fact that these APIs are used through network requests.
-It's okay to enable multiple ways to achieve the same thing, in order to make it more natural for users who come from different mental models.
-APIs should have sensible defaults, and should be easy to use correctly.
-APIs should make it easy to do the right thing, and hard to do the wrong thing.
+  It's okay to enable multiple ways to achieve the same thing, in order to make it more natural for users who come from different mental models.
+  APIs should have sensible defaults, and should be easy to use correctly.
+  APIs should make it easy to do the right thing, and hard to do the wrong thing.
 
 - **All clouds are equal**: our APIs and their documentation should not have any assumptions about where resources are being deployed.
-When possible, prefer mental models and terminology that are natural for operating with data structures for code running on your own machine (eg., choose "push" and "pop" over "send" and "receive").
-Avoid APIs and options that may only be supported on one or two major cloud providers.
-In the case that an essential option or method is not available on a given cloud provider, then the resource's concrete implementation should throw when the option or method is used.
-Resources that are difficult to abstract across cloud providers should be implemented as third party Wing libraries.
+  When possible, prefer mental models and terminology that are natural for operating with data structures for code running on your own machine (eg., choose "push" and "pop" over "send" and "receive").
+  Avoid APIs and options that may only be supported on one or two major cloud providers.
+  In the case that an essential option or method is not available on a given cloud provider, then the resource's concrete implementation should throw when the option or method is used.
+  Resources that are difficult to abstract across cloud providers should be implemented as third party Wing libraries.
 
 - **Open**: The Wing SDK is an extensible framework.
-It is also open source, and designed to be easy to contribute to.
-It heavily relies on interfaces to allow developers to extend its behavior and provide their own custom implementations targeting new cloud providers, or allow more customized behavior.
+  It is also open source, and designed to be easy to contribute to.
+  It heavily relies on interfaces to allow developers to extend its behavior and provide their own custom implementations targeting new cloud providers, or allow more customized behavior.
 
 - **Deterministic**: The same code should always produce the same result.
-Any non-determinism should be minimized and scoped to inputs provided by the user (e.g. by letting the user provide file sources or environment variables).
-Non-determistic information can also be managed by the provisioning engine (for example, in Terraform state) in the form of late-bound values.
+  Any non-determinism should be minimized and scoped to inputs provided by the user (e.g. by letting the user provide file sources or environment variables).
+  Non-determistic information can also be managed by the provisioning engine (for example, in Terraform state) in the form of late-bound values.
 
 - **Built with jsii, designed for Wing**: The Wing SDK is designed first and foremost for the Wing language, but it is compiled with jsii to allow resources to be created as (preflight) CDK constructs in all jsii-supported programming languages.
-jsii poses restrictions on language features that cannot be idiomatically represented in target languages, and encourages good practices for object-oriented design.
-Features that are specific to Wing (such as inflight functions) may not be supported in other jsii languages.
+  jsii poses restrictions on language features that cannot be idiomatically represented in target languages, and encourages good practices for object-oriented design.
+  Features that are specific to Wing (such as inflight functions) may not be supported in other jsii languages.
 
 ## Concepts used throughout the SDK
 
@@ -67,8 +67,7 @@ See [this issue](https://github.com/winglang/wing/discussions/1054) for more det
 
 ### Serializing data
 
-> Reqtag: `sdk:serializable`
-<span id="sdk:serializable"/>
+> Reqtag: `sdk:serializable` > <span id="sdk:serializable"/>
 
 Several APIs in the SDK accept or return values that need to be serialized and sent over the wire, and deserialized on the other side.
 
@@ -78,8 +77,7 @@ The SDK specification currently models these APIs using the `Json` or `Blob` typ
 
 ### Paginated APIs
 
-> Reqtag: `sdk:pagination`
-<span id="sdk:pagination"/>
+> Reqtag: `sdk:pagination` > <span id="sdk:pagination"/>
 
 Some APIs return a list of results that may be too large to fit in memory, or too large to fetch from the cloud all at once.
 In these cases, APIs can return an `Iterator` object.
@@ -93,8 +91,7 @@ These events are "fire-and-forget" notifications which may not always be deliver
 
 Resources that emit events in a "fire-and-forget" fashion should make their events listenable through a method named `on_<event>`.
 
-> Reqtag: `sdk:on-event-name`
-<span id="sdk:on-event-name"/>
+> Reqtag: `sdk:on-event-name` > <span id="sdk:on-event-name"/>
 
 For example, a `cloud.Bucket` can emit events whenever an object is uploaded, and these events can be listened to by calling `on_upload` on the bucket:
 
@@ -135,8 +132,7 @@ resource X implements IMyEventHandler {
 let x2 = new X();
 ```
 
-> Reqtag: `sdk:event-handler-conversion`
-<span id="sdk:event-handler-conversion"/>
+> Reqtag: `sdk:event-handler-conversion` > <span id="sdk:event-handler-conversion"/>
 
 In the example with `bucket.on_upload` from earlier this section, when the method is called, cloud infrastructure is automatically added to invoke the event handler's `handle` method whenever an object is added to the bucket.
 
@@ -196,35 +192,34 @@ struct ThresholdReachedEvent {
 
 ## Planned resources
 
-* Bucket (P1) - object storage, similar to AWS S3, Azure Blob Storage, GCP Storage
-* Queue (P1) - a message queue, similar to AWS SQS, Azure Storage Queues
-* Function (P1) - a serverless function, similar to AWS Lambda, Azure Functions, GCP Cloud Functions
-* Topic (P1) - a pub/sub topic, similar to AWS SNS, Azure Event Grid, GCP Pub/Sub
-* Logger (P1) - a log aggregator
-* Counter (P1) - an atomic counter
-* Schedule (P1) - a cron job / scheduled task trigger
-* Api (P1) - a REST API
-* Service (P1) - a long-running service, similar to AWS ECS, Azure Container Instances, GCP Cloud Run
-* SqlDatabase (P1) - a relational database that lets you execute arbitrary SQL queries, similar to AWS RDS, Azure SQL Database, GCP Cloud SQL
-* Website (P2) - a CDN-backed static website
-* Metric (P2) - a metric for monitoring system performance
-* Alarm (P2) - an alarm that triggers when a metric crosses a threshold
-* Table (P2) - a NoSQL database table
-* Key-value store (P2) - a lightweight key-value store, similar to Redis or Memcached
-* Job (P2) - a long-running compute workload that can be run on demand
-* Workflow (P2) - a task orchestration engine, similar to AWS Step Functions, Azure Logic Apps, GCP Workflows
-* Secret (P2) - a secret value, similar to AWS Secrets Manager, Azure Key Vault, GCP Secret Manager
-* Stream (P2) - a stream of events, similar to AWS Kinesis, Azure Event Hubs, GCP Pub/Sub and Dataflow
-* OnDeploy (P2) - a variation of Function that runs every time the app is deployed
-* GraphQLApi (P2) - a GraphQL API, similar to AWS AppSync
+- Bucket (P1) [[issue](https://github.com/winglang/wing/issues/600)] - object storage, similar to AWS S3, Azure Blob Storage, GCP Storage
+- Queue (P1) [[issue](https://github.com/winglang/wing/issues/604)] - a message queue, similar to AWS SQS, Azure Storage Queues
+- Function (P1) [[issue](https://github.com/winglang/wing/issues/602)] - a serverless function, similar to AWS Lambda, Azure Functions, GCP Cloud Functions
+- Topic (P1) [[issue](https://github.com/winglang/wing/issues/592)] - a pub/sub topic, similar to AWS SNS, Azure Event Grid, GCP Pub/Sub
+- Counter (P1) [[issue](https://github.com/winglang/wing/issues/609)] - an atomic counter
+- Schedule (P1) [[issue](https://github.com/winglang/wing/issues/1289)] - a cron job / scheduled task trigger
+- Api (P1) [[issue](https://github.com/winglang/wing/issues/623)] - a REST API
+- Service (P1) [[issue](https://github.com/winglang/wing/issues/1305)] - a long-running service, similar to AWS ECS, Azure Container Instances, GCP Cloud Run
+- SqlDatabase (P1) [[issue](https://github.com/winglang/wing/issues/1309)] - a relational database that lets you execute arbitrary SQL queries, similar to AWS RDS, Azure SQL Database, GCP Cloud SQL
+- Website (P2) [[issue](https://github.com/winglang/wing/issues/1293)] - a CDN-backed static website
+- Metric (P2) [[issue](https://github.com/winglang/wing/issues/1297)] - a metric for monitoring system performance
+- Alarm (P2) [[issue](https://github.com/winglang/wing/issues/1301)] - an alarm that triggers when a metric crosses a threshold
+- Table (P2) [[issue](https://github.com/winglang/wing/issues/1314)] - a NoSQL database table
+- Key-value store (P2) [[issue](https://github.com/winglang/wing/issues/1317)] - a lightweight key-value store, similar to Redis or Memcached
+- Job (P2) [[issue](https://github.com/winglang/wing/issues/1321)] - a long-running compute workload that can be run on demand
+- Workflow (P2) [[issue](https://github.com/winglang/wing/issues/1325)] - a task orchestration engine, similar to AWS Step Functions, Azure Logic Apps, GCP Workflows
+- Secret (P2) [[issue](https://github.com/winglang/wing/issues/1329)] - a secret value, similar to AWS Secrets Manager, Azure Key Vault, GCP Secret Manager
+- Stream (P2) [[issue](https://github.com/winglang/wing/issues/1333)] - a stream of events, similar to AWS Kinesis, Azure Event Hubs, GCP Pub/Sub and Dataflow
+- OnDeploy (P2) [[issue](https://github.com/winglang/wing/issues/1337)] - a variation of Function that runs every time the app is deployed
+- GraphQLApi (P2) [[issue](https://github.com/winglang/wing/issues/1341)] - a GraphQL API, similar to AWS AppSync
 
 ### Resources planned as third party libraries
 
-* Redis (P1)
-* DynamoDBTable
-* MongoDB
-* GithubRepo
-* Authorization/authentication related resources
+- Redis (P1) [[issue](https://github.com/winglang/wing/issues/611)]
+- DynamoDBTable [[issue](https://github.com/winglang/wing/issues/1345)]
+- MongoDB [[issue](https://github.com/winglang/wing/issues/1349)]
+- GithubRepo [[issue](https://github.com/winglang/wing/issues/1353)]
+- Authorization/authentication related resources [[issue](https://github.com/winglang/wing/issues/1216)]
 
 ## Bucket
 
@@ -256,32 +251,32 @@ resource Bucket {
   get public(): bool;
 
   /**
-   * Run an inflight whenever a file is uploaded to the bucket.
+   * Run an inflight whenever an object is uploaded to the bucket.
    */
   on_upload(fn: inflight (key: str) => void, opts: BucketOnUploadProps?): void;
 
   /**
-   * Run an inflight whenever a file is deleted from the bucket.
+   * Run an inflight whenever an object is deleted from the bucket.
    */
   on_delete(fn: inflight (key: str) => void, opts: BucketOnDeleteProps?): void;
 
   /**
-   * Run an inflight whenever a file is updated in the bucket.
+   * Run an inflight whenever an object is updated in the bucket.
    */
   on_update(fn: inflight (key: str) => void, opts: BucketOnUpdateProps?): void;
 
   /**
-   * Run an inflight whenever a file is uploaded, modified, or deleted from the bucket.
+   * Run an inflight whenever an object is uploaded, modified, or deleted from the bucket.
    */
   on_event(fn: inflight (event: BucketEvent) => void, opts: BucketOnEventProps?): void;
 
   /**
-   * Add a file to the bucket that is uploaded when the app is deployed.
+   * Add an object to the bucket that is uploaded when the app is deployed.
    */
   add_object(key: str, value: Blob): void;
 
   /**
-   * Upload a file to the bucket.
+   * Upload an object to the bucket.
    */
   inflight put(key: str, value: Blob): void;
 
@@ -291,31 +286,81 @@ resource Bucket {
   inflight put_json(key: str, value: Json): void;
 
   /**
-   * Get a file from the bucket.
+   * Get an object from the bucket.
+   *
+   * @throws Will throw if the object doesn't exist.
    */
   inflight get(key: str): Blob;
 
   /**
-   * Delete a file from the bucket.
+   * Get an object from the bucket if it exists.
+   */
+  inflight try_get(key: str): Blob?;
+
+  /**
+   * Delete an object from the bucket.
+   *
+   * @throws Will throw if the object doesn't exist.
    */
   inflight delete(key: str): void;
 
   /**
-   * List all files in the bucket with the given prefix.
+   * Delete an object from the bucket if it exists.
+   */
+  inflight try_delete(key: str): bool;
+
+  /**
+   * Check if an object exists in the bucket.
+   */
+  inflight exists(key: str): bool;
+
+  /**
+   * Get the metadata of an object in the bucket.
+   */
+  inflight metadata(key: str): ObjectMetadata;
+
+  /**
+   * Move an object to a new location in the bucket. If an object already exists
+   * at the destination key, it will be overwritten.
+   *
+   * @throws Will throw if the `src` object doesn't exist.
+   */
+  inflight rename(src: str, dst: str): void;
+
+  /**
+   * Copy an object to a new location in the bucket. If the destination object
+   * already exists, it will be overwritten.
+   *
+   * @throws Will throw if the `src` object doesn't exist.
+   */
+  inflight copy(src: str, dst: str): void;
+
+  /**
+   * List all objects in the bucket with the given prefix.
    */
   inflight list(prefix: str?): Iterator<str>;
 
   /**
-   * Returns a url to the given file.
-   * @throws Will throw if the file is not public.
+   * Returns a url to the given object key. Does not check if the object exists.
+   *
+   * @throws Will throw if the bucket is not public.
    */
   inflight public_url(key: str): str;
 
   /**
-   * Returns a signed url to the given file. This URL can be used by anyone to
-   * access the file until theh link expires (defaults to 24 hours).
+   * Returns a signed url to the given object. This URL can be used by anyone to
+   * access the object until the link expires (defaults to 24 hours).
    */
   inflight signed_url(key: str, duration?: duration): str;
+}
+
+struct ObjectMetadata {
+  /** The size of the object in bytes. */
+  size: Size;
+  /** The time the object was last modified. */
+  last_modified: Date; // or an ISO timestamp `str` until we have Date API support
+  /** The content type of the object, if it is known. */
+  content_type: str?;
 }
 
 struct BucketOnUploadProps { /* elided */ }
@@ -336,12 +381,14 @@ enum BucketEventType {
 ```
 
 Future extensions:
+
 - `versioned` constructor property for object versioning
 
 ## Queue
 
 > Note: this API is WIP, and needs more research for multi-cloud support.
 > Open questions:
+>
 > - How are messages acknowledged?
 > - What is the API for FIFO queues?
 > - What is the API for dead-letter queues?
@@ -369,6 +416,17 @@ struct QueueProps {
    * @default 30s
    */
   timeout: duration?;
+   /**
+   * How long a queue retains a message.
+   * @default undefined
+   */
+   retentionPeriod?: duration;
+
+  /**
+   * Initialize the queue with a set of messages.
+   * @default []
+   */
+   initialMessages?: string[];
 }
 
 resource Queue {
@@ -381,7 +439,7 @@ resource Queue {
   get timeout(): duration;
 
   /**
-   * Run an inflight in a cloud function whenever a message is pushed to the queue. 
+   * Run an inflight in a cloud function whenever a message is pushed to the queue.
    */
   add_consumer(fn: inflight (message: Json) => void, opts: QueueAddConsumerProps?): void;
 
@@ -410,6 +468,7 @@ struct QueueAddConsumerProps { /* elided */ }
 ```
 
 Future extensions:
+
 - automatic dead-letter queue configuration
 
 ## Function
@@ -451,7 +510,7 @@ struct FunctionProps {
    * The environment variables to pass to the function.
    * @default {}
    */
-  env: Map<str, str>?;
+  env: Map<str>?;
 }
 
 resource Function {
@@ -491,84 +550,9 @@ resource Function {
 ```
 
 Future extensions:
+
 - `on_invoke(fn: inflight (payload: Json) => void): cloud.Function`
 - `on_resolve(fn: inflight(result: Json) => void): cloud.Function`
-
-## Logger
-
-The logger resource represents a service that can be used to log messages to a central location.
-
-**Stateful:** No
-
-```ts
-struct LoggerProps {}
-
-resource Logger {
-  init(props: LoggerProps = {});
-
-  /**
-   * Log a message at the given level. The default level is "info".
-   */
-  log(message: str, level?: LogLevel): void;
-
-  /**
-   * Log a message at the debug level.
-   */
-  debug(message: str): void;
-
-  /**
-   * Log a message at the info level.
-   */
-  info(message: str): void;
-
-  /**
-   * Log a message at the warn level.
-   */
-  warn(message: str): void;
-
-  /**
-   * Log a message at the error level.
-   */
-  error(message: str): void;
-
-  /**
-   * Log a message at the given level. The default level is "info".
-   */
-  inflight log(message: str, level?: LogLevel): void;
-
-  /**
-   * Log a message at the debug level.
-   */
-  inflight debug(message: str): void;
-
-  /**
-   * Log a message at the info level.
-   */
-  inflight info(message: str): void;
-
-  /**
-   * Log a message at the warn level.
-   */
-  inflight warn(message: str): void;
-
-  /**
-   * Log a message at the error level.
-   */
-  inflight error(message: str): void;
-}
-
-enum LogLevel {
-  TRACE,
-  INFO,
-  WARN,
-  ERROR,
-}
-```
-
-Future extensions:
-- log severity options?
-- APIs for scanning/filtering logs?
-- tracing options
 
 ## Counter
 
@@ -612,6 +596,12 @@ resource Counter {
    * @default - key: "default"
    */
   inflight peek(key: string?): number;
+
+  /**
+   * Reset a counter to a given value.
+   * @default - value: 0, key: "default"
+   */
+  inflight reset(value?: num, key: string?): void;
 }
 ```
 
@@ -629,6 +619,7 @@ assert(counter.peek("bar") == 2);
 ```
 
 Future extensions:
+
 - `on_change(fn: inflight (delta: num, new_value: num) => void): cloud.Function`
 
 ## Topic
@@ -671,13 +662,13 @@ resource Schedule {
    * Trigger events according to a cron schedule.
    * @example "0 0 * * *" - midnight every day
    */
-  static fromCron(cron: str): Schedule;
+  static from_cron(cron: str): Schedule;
 
   /**
    * Trigger events at a periodic rate.
    * @example 1 hour
    */
-  static fromRate(rate: duration): Schedule;
+  static from_rate(rate: duration): Schedule;
 
   private init(/* elided */): Schedule;
 
@@ -727,6 +718,14 @@ struct WebsiteProps {
    * @default - a domain is generated by the cloud provider
    */
   domain: str?;
+
+  /**
+   * used for adding dynamic content to the website after deployment
+   * @param file_path the bucket key to add
+   * @param obj the object to write to the key
+   * @returns the json file path
+   */
+  add_json(file_path: str, obj: Json): str;
 }
 
 resource Website {
@@ -778,37 +777,37 @@ resource Api {
   cors: ApiCorsProps;
 
   /**
-   * Run an inflight whenever a GET request is made to the specified route.
+   * Run an inflight whenever a GET request is made to the specified path.
    */
-  get(route: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnGetProps?): void;
+  get(path: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnGetProps?): void;
 
   /**
-   * Run an inflight whenever a POST request is made to the specified route.
+   * Run an inflight whenever a POST request is made to the specified path.
    */
-  post(route: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnPostProps?): void;
+  post(path: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnPostProps?): void;
 
   /**
-   * Run an inflight whenever a PUT request is made to the specified route.
+   * Run an inflight whenever a PUT request is made to the specified path.
    */
-  put(route: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnPutProps?): void;
+  put(path: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnPutProps?): void;
 
   /**
-   * Run an inflight whenever a DELETE request is made to the specified route.
+   * Run an inflight whenever a DELETE request is made to the specified path.
    */
-  delete(route: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnDeleteProps?): void;
+  delete(path: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnDeleteProps?): void;
 
   /**
-   * Run an inflight whenever a PATCH request is made to the specified route.
+   * Run an inflight whenever a PATCH request is made to the specified path.
    */
-  patch(route: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnPatchProps?): void;
+  patch(path: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnPatchProps?): void;
 
   /**
-   * Run an inflight whenever any request is made to the specified route.
+   * Run an inflight whenever any request is made to the specified path.
    */
-  any(route: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnAnyProps?): void;
+  any(path: str, fn: inflight (req: ApiRequest) => ApiResponse, opts: cloud.ApiOnAnyProps?): void;
 
   /**
-   * Make a request to the specified route. Throws if the route hasn't been
+   * Make a request to the specified path. Throws if the path hasn't been
    * defined.
    */
   inflight request(req: ApiRequest): ApiResponse;
@@ -857,14 +856,14 @@ struct ApiRequest {
   method: HttpMethod;
   /** The request's path. */
   path: str;
-  /** The request's query string. */
-  query: str?;
+  /** The request's query parameters. */
+  query: Map<str>?;
   /** The path variables. */
-  vars: Map<str, str>?;
+  vars: Map<str>?;
   /** The request's body. */
   body: Json?;
   /** The request's headers. */
-  headers: Map<str, str>;
+  headers: Map<str>?;
 }
 
 struct ApiResponse {
@@ -873,7 +872,7 @@ struct ApiResponse {
   /** The response's body. */
   body: Json?;
   /** The response's headers. */
-  headers: Map<str, str>;
+  headers: Map<str>?;
 }
 
 enum HttpMethod {
@@ -894,16 +893,16 @@ Example:
 // wing
 let api = new cloud.Api();
 
-api.get("/hello", inflight (req: cloud.ApiRequest) => {
+api.get("/hello", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
   return cloud.ApiResponse {
-    status_code: 200,
+    status: 200,
     body: "Hello, world!"
   };
 });
 
-api.post("/hello", inflight (req: cloud.ApiRequest) => {
+api.post("/hello", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
   return cloud.ApiResponse {
-    status_code: 200,
+    status: 200,
     body: "Hello, " + req.body + "!"
   };
 });
@@ -917,6 +916,7 @@ Hello, world!
 ```
 
 Future extensions:
+
 - endpoint authorization?
 - APIs for creating paginated APIs / responses?
 
@@ -1014,7 +1014,74 @@ enum ComparisonOperator {
 ```
 
 Future extensions:
+
 - support for derived metrics? (e.g. `metric1 + metric2`)
+
+## Secret
+
+Secret represents a securely stored value that is encrypted at rest.
+Secrets are useful for storing sensitive information, like API keys and passwords, and are usually preferable over storing them in environment variables or hardcoding them in code, since they can be rotated and revoked.
+
+When using a secret in Wing's simulator, a secrets file is generated in your home directory at `~/.wing/secrets.json`. Here, your secrets should be saved in the JSON format:
+
+```json
+// secrets.json
+{
+  "my-api-key": "1234567890"
+}
+```
+
+Then, you can access the secrets in Wing like so:
+
+```js
+bring cloud;
+
+let secret = new cloud.Secret(name: "my-api-key");
+
+new cloud.Function(inflight () => {
+  // securely retrieve key value at runtime
+  let api_key = secret.value();
+});
+```
+
+When the `Secret` is compiled to a cloud provider, it is provisioned using the provider's native secret management service.
+For example, on AWS, this would be AWS Secrets Manager.
+To use it, you must manually create a secret with a matching name on the provider before deploying your application.
+
+**Stateful:** Yes
+
+```ts
+struct SecretProps {
+  /**
+   * The secret's name.
+   *
+   * If no name is provided then a new secret is provisioned in the target.
+   * If a name is provided then the resource will reference an existing
+   * secret in the target.
+   *
+   * @default - a new secret is provisioned with a generated name
+   */
+  name: str;
+
+  /**
+   * Retrieve the value of the secret.
+   * @throws if the secret doesn't exist.
+   * @returns the secret value as string.
+   */
+  inflight value(): str;
+
+  /**
+   * Retrieve the value of the secret and parse it as JSON.
+   * @throws if the secret doesn't exist or cannot be parsed as JSON
+   * @returns the secret value parsed as JSON
+   */
+  value_json(options?: GetSecretValueOptions): Promise<Json>;
+}
+```
+
+Future extensions:
+
+- support for secret rotation?
 
 ## Service
 
@@ -1049,10 +1116,7 @@ source code and without a Dockerfile.
 > would be used to create a service.
 >
 > Links:
-> https://aws.amazon.com/blogs/containers/creating-container-images-with-cloud-native-buildpacks-using-aws-codebuild-and-aws-codepipeline/
-> https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apprunner_service#image-repository
-> https://github.com/buildpacks/community/blob/main/ADOPTERS.md
-> https://cloud.google.com/blog/products/containers-kubernetes/google-cloud-now-supports-buildpacks
+> https://aws.amazon.com/blogs/containers/creating-container-images-with-cloud-native-buildpacks-using-aws-codebuild-and-aws-codepipeline/ > https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/apprunner_service#image-repository > https://github.com/buildpacks/community/blob/main/ADOPTERS.md > https://cloud.google.com/blog/products/containers-kubernetes/google-cloud-now-supports-buildpacks
 
 TODO: How should autoscaling be configured?
 
@@ -1068,7 +1132,7 @@ struct ServiceProps {
    * The service's environment variables.
    * @default {}
    */
-  env: Map<str, str>;
+  env: Map<str>;
 
   /**
    * The service's command.
@@ -1159,7 +1223,7 @@ struct ServiceRequestOptions {
    * The request's headers.
    * @default {}
    */
-  headers: Map<str, str>;
+  headers: Map<str>;
 
   /**
    * The request's body.
@@ -1177,7 +1241,7 @@ struct ServiceResponse {
   /**
    * The response's headers.
    */
-  headers: Map<str, str>;
+  headers: Map<str>;
 
   /**
    * The response's body.
@@ -1210,7 +1274,7 @@ struct TableProps {
   /**
    * The table's columns.
    */
-  columns: Map<str, ColumnType>;
+  columns: Map<ColumnType>;
 
   /**
    * The table's primary key. No two rows can have the same value for the
@@ -1238,7 +1302,7 @@ resource Table {
   /**
    * The table's columns.
    */
-  columns: Map<str, ColumnType>;
+  columns: Map<ColumnType>;
 
   /**
    * The table's primary key.
@@ -1248,31 +1312,32 @@ resource Table {
   /**
    * Insert a row into the table.
    */
-  inflight insert(row: Map<str, Json>): void;
+  inflight insert(key: str, row: Json): void;
 
   /**
    * Update a row in the table.
    */
-  inflight update(row: Map<str, Json>): void;
+  inflight update(key: str, row: Json): void;
 
   /**
-   * Delete a row from the table.
+   * Delete a row from the table, by primary key.
    */
-  inflight delete(row: Map<str, Json>): void;
+  inflight delete(key: str): void;
 
   /**
    * Get a row from the table, by primary key.
    */
-  inflight get(key: str): Map<str, Json>;
+  inflight get(key: str): Json;
 
   /**
    * List all rows in the table.
    */
-  inflight list(): Iterator<Map<str, Json>>;
+  inflight list(): Iterator<Json>;
 }
 ```
 
 Future extensions:
-- `on_insert(fn: inflight (row: Map<str, Json>) => void): cloud.Function;`
-- `on_update(fn: inflight (row: Map<str, Json>) => void): cloud.Function;`
-- `on_delete(fn: inflight (row: Map<str, Json>) => void): cloud.Function;`
+
+- `on_insert(fn: inflight (row: Map<Json>) => void): cloud.Function;`
+- `on_update(fn: inflight (row: Map<Json>) => void): cloud.Function;`
+- `on_delete(fn: inflight (row: Map<Json>) => void): cloud.Function;`
