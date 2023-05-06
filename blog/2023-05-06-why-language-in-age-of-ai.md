@@ -9,38 +9,37 @@ hide_table_of_contents: true
 
 # As long as AI is our co-pilot and not an auto-pilot, we can collaborate with it much more effectively if we reduce our code base by 90-95% and iterate on it 100 times faster. AI can also greatly lower the barriers to adopting a new language.
 
-AI is increasingly integrated into our development processes, making developers more and more efficient.
+AI is becoming increasingly integrated into our development processes, enhancing developers' efficiency.
 
-Some people believe that the time when AI can replace human coders is near, others think it's very far. But there is no doubt that we are already in the middle of a gradual process in which AI writes more and more code, and humans are still in the loop - writing some code themselves, directing the AI to write other parts of it, reviewing the code, and maintaining it.
+While some believe AI will soon replace human coders, others think it's far off. Regardless, we're in the midst of a gradual process where AI writes more and more code, and humans continue to play a vital role — writing some code, directing AI to write other parts, reviewing the code, and maintaining it.
 
-If we can make it easier for both humans and AI to write good code more quickly, collaborate on it more efficiently, and test it faster, then we can improve the quality and speed of delivery of the applications we write.
+If we can make it easier for both humans and AI to write good code more quickly, collaborate efficiently, and test it faster, we can improve the quality and speed of delivery of our applications.
 
 ## The Key: Reducing Cognitive Load and Accelerating Iteration
 
-It doesn't matter if you're an AI or a human; if we reduce your cognitive load and allow you to iterate faster, then you will write better code, more quickly.
+Whether you're an AI or a human, reducing cognitive load and iterating faster will result in better apps that are developed more quickly.
 
-What can be used to make these improvements:
-
+What can be used to make these improvements?
 ### Working at a Higher Level of Abstraction
 
 It has the following benefits for both human and AI coders:
 
-1. **Reduces cognitive load** by focusing on the business logic of the app instead of the implementation details. This allows developers to learn less and reduces the surface area for errors. The first is more important for human coders, but the latter is equally important to both because AI is fallible, as anyone who has witnessed AI hallucinated interfaces and disconnected code parts has seen.
-2. **Accelerates iteration speed** by writing less code. Less code means less time to write it, and it is also easier and faster to maintain and iterate on. This is equally important for both AI and human coders. While it may not sound correct at first read, when you think about it, AI doesn't produce code in large chunks, but it too writes it one token at a time, very similar to how a human writes. The time it takes the AI to generate code is linearly correlated to the amount of code it writes.
-3. **Reduces AI’s limitations.** At least in the foreseeable future, AI is limited by the amount of code it can generate before it loses context. Therefore, by writing less code, AI coders can create larger and more complex applications.
-4. **Improves collaboration between human and AI codes.** Having a smaller code base that is written at a higher level of abstraction would allow human developers to get into AI-generated code and modify and maintain it much more quickly and easily.
+1. **Reduces cognitive load** by focusing on the app's business logic instead of implementation details, enabling developers to learn less and minimizing the potential for errors. The first point is more critical for human coders, while the latter is equally important for both, as AI can make mistakes like hallucinating interfaces and generating disconnected code parts.
+2. **Accelerates iteration speed** by writing less code. Less code means it takes less time to write, maintain, and iterate. This is equally important for both AI and human coders. Although it may not seem intuitive, AI generates code one token at a time, similar to how a human writes. The time it takes the AI to generate code is linearly correlated to the amount of code it writes.
+3. **Reduces AI’s limitations.** In the foreseeable future, AI is limited by the amount of code it can generate before losing context. Writing less code enables AI coders to create larger and more complex applications.
+4. **Improves collaboration between human and AI codes.** A smaller code base written at a higher level of abstraction allows human developers to modify and maintain AI-generated code more quickly and easily.
 
 ### Faster Deployment and Testing
 
-Today, it can take many minutes to deploy and test cloud applications. Multiply this by many iteration cycles, and there is much room for improvement.
+Currently, deploying and testing cloud applications can take several minutes. Multiply this by numerous iteration cycles, and there's significant room for improvement.
 
-Running tests locally is also not easy since it requires mocking the cloud around the tested component.
+Running tests locally is also challenging, as it requires mocking the cloud environment around the tested component.
 
-It is also not possible to use the same tests locally and in the cloud.
+Moreover, it's impossible to use the same tests locally and in the cloud.
 
-If we can write tests that would run both locally and in the cloud and be able to run them quickly, it would vastly improve our iteration speeds, regardless of whether the code is written by an AI, a human, or a collaboration between them.
+By writing tests that can run both locally and in the cloud, and executing them quickly, we can vastly improve iteration speeds, regardless of whether the code is written by an AI, a human, or a collaboration between them.
 
-I guess all of the above sounds good, but how do we make it happen?
+So, how can we make this happen?
 
 ## Enter Winglang
 
@@ -52,12 +51,12 @@ I guess all of the above sounds good, but how do we make it happen?
 
 ### Let's See Some Code
 
-Look at the below code example of a small app that uploads a file to a bucket using a cloud function.
+Here's an example of a small app that uploads a file to a bucket using a cloud function.
 
 This is the code in Wing:
 <Wing code here>
 
-As you can see, either a human or an AI coder that writes Wing code is working at a high level of abstraction, letting the wing compiler take care of the underlying cloud mechanics, such as IAM policies and networking (don't worry, it is customizable and extensible, so you don't lose control when needed).
+As you can see, either a human or an AI coder that writes Wing code is working at a high level of abstraction, letting the Wing compiler take care of the underlying cloud mechanics, such as IAM policies and networking (don't worry, it is customizable and extensible, so you don't lose control when needed).
 
 BTW, the code can be compiled to any cloud provider, and its output is Terraform and JavaScript, which can be deployed with existing tools.
 
