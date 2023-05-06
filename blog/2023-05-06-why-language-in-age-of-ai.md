@@ -7,7 +7,7 @@ tags: [winglang, ai]
 hide_table_of_contents: true
 ---
 
-# As long as AI is our co-pilot and not an auto-pilot, we can collaborate with it much more effectively if we reduce our code base by 90-95% and iterate on it 100 times faster. AI can also greatly lower the barriers to adopting a new language.
+# As long as AI is our co-pilot and not an auto-pilot, we can enhance collaboration with it by reducing our code base by 90-95% and testing it 100x faster. AI also eases adopting new languages.
 
 As AI becomes an increasingly integral part of our development processes, it enhances developers' efficiency and capabilities. 
 
@@ -85,9 +85,9 @@ Although Wing introduces significant improvements in cloud development, we under
 We’ve gone to great lengths to make adopting the language as easy as possible with the following features:
 
 - Easy to learn because it is similar to other languages.
-- Works seamlessly with your existing stack and tools (especially deployment and management)
-- Mature ecosystem - import any NPM module or Terraform resource into your code
-- Integrates into existing code bases - write runtime code in other languages and reference it with Wing
+- Works seamlessly with your existing stack and tools (especially deployment and management).
+- Mature ecosystem - import any NPM module or Terraform resource into your code.
+- Integrates into existing code bases - write runtime code in other languages and reference it with Wing.
 
 Furthermore, we believe that in the era of AI, adopting a new language like Winglang is easier for humans as AI assists in writing code in unfamiliar languages and frameworks and simplifies the migration of existing code to new languages.
 
