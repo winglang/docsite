@@ -25,10 +25,10 @@ So, what can be done to make these improvements?
 
 Utilizing a higher level of abstraction offers the following benefits for both human and AI coders:
 
-1. **Reduces cognitive load** by focusing on the app's business logic instead of implementation details, enabling developers to learn less and minimizing the potential for errors. The first point is more critical for human coders, while the second is equally important for both, as AI can make mistakes like hallucinating interfaces and generating disconnected code parts.
-2. **Accelerates iteration speed** by writing less code, reducing the time it takes to write and maintain it. While it may not sound intuitive, it is equally important for both human and AI as AI generates code one token at a time, similar to how a human writes.
-3. **Reduces AI’s limitations.** AI is limited by the amount of code it can generate before losing context. Writing less code enables AI coders to create larger and more complex applications.
-4. **Improves collaboration between human and AI coders.** A smaller code base written at a higher level of abstraction allows human developers to modify and maintain AI-generated code more quickly and easily.
+1. **Reduces cognitive load for human developers** by focusing on the app's business logic instead of implementation details. This enables developers to concentrate on a smaller problem (e.g., instructing a car to turn right, rather than teaching it how to do so), deal with fewer levels of the stack, write less code, and minimize the surface area for errors.
+2. **Reduces cognitive load for AI**. This concept may need further clarification. AI systems come pre-trained with knowledge of all levels of the stack, so knowing less is not a significant advantage. Focusing on a smaller problem is also not a substantial benefit because, as long as the AI knows how to instruct the car to turn, it shouldn't have an issue teaching it how to do so instead of just telling it to turn. However, allowing the AI to write less code and reducing the chance for it to make mistakes is highly beneficial, as AI is far from infallible. Anyone who has witnessed it hallucinate interfaces or generate disconnected code can attest to this. Furthermore, AI is constrained by the amount of code it can generate before losing context. So writing less code enables AI coders to create larger and more complex parts of applications.
+3. **Accelerates iteration speed** because it requires writing less code, reducing the time it takes to write and maintain it. While it might not seem intuitive, this is equally important for both human and AI coders, as AI generates code one token at a time, similar to how a human writes.
+4. **Improves collaboration between human and AI coders.** A smaller code base written at a higher level of abstraction allows human developers to understand, modify and maintain AI-generated code more quickly and easily, resulting in higher quality code that is developed faster.
 
 ### Faster Deployment and Testing
 
@@ -57,7 +57,7 @@ Here's an example of a small app that uploads a file to a bucket using a cloud f
 This is the code in Wing:
 <Wing code here>
 
-As you can see, either a human or an AI coder that writes Wing code is working at a high level of abstraction, letting the Wing compiler take care of the underlying cloud mechanics, such as IAM policies and networking (don't worry, it is customizable and extensible, so you don't lose control when needed).
+As you can see, either a human or an AI coder that writes Wing code is working at a high level of abstraction, letting the Wing compiler take care of the underlying cloud mechanics, such as IAM policies and networking (don't worry, it is customizable and extensible, so you don't lose control when needed). Unlike human and AI coders, the compiler cannot make mistakes. It is also faster, deterministic and doesn't lose context after a while. So the more work we delegate to it over either human or even AI the better.
 
 By the way, the code can be compiled to any cloud provider, and its output is Terraform and JavaScript, which can be deployed with existing tools.
 
