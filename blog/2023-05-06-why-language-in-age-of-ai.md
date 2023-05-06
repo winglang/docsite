@@ -55,16 +55,156 @@ We're talking about a 90%-95% reduction in code and a 100X increase in testing s
 Here's an example of a small app that uploads a file to a bucket using a cloud function.
 
 This is the code in Wing:
-<Wing code here>
 
-As you can see, either a human or an AI coder that writes Wing code is working at a high level of abstraction, letting the Wing compiler take care of the underlying cloud mechanics, such as IAM policies and networking (don't worry, it is customizable and extensible, so you don't lose control when needed). Unlike human and AI coders, the compiler cannot make mistakes. It is also faster, deterministic and doesn't lose context after a while. So the more work we delegate to it over either human or even AI the better.
+```ts
+bring cloud;
+
+let bucket = new cloud.Bucket();
+        
+new cloud.Function(inflight () => {
+  bucket.put("hello.txt", "world!");
+});
+```
+
+As you can see, either a human or an AI coder that writes Wing code is working at a high level of abstraction, letting the Wing compiler take care of the underlying cloud mechanics, such as IAM policies and networking (don't worry, it is [customizable](https://docs.winglang.io/blog/2023/02/17/plugins) and extensible, so you don't lose control when needed). Unlike human and AI coders, the compiler cannot make mistakes. It is also faster, deterministic and doesn't lose context after a while. So the more work we delegate to it over either human or even AI the better.
 
 By the way, the code can be compiled to any cloud provider, and its output is Terraform and JavaScript, which can be deployed with existing tools.
 
 Now let's take a look at the same code in the leading cloud development stack today - Terraform + JavaScript.
-<Terraform code here>
 
-As you can see, we have to write 15X more code and dive deeply into lower layers of the cloud stack.
+`main.tf`:
+
+```js
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = "us-west-2"
+}
+
+locals {
+  lambda_function_name = "upload_hello_txt_lambda"
+}
+
+resource "aws_s3_bucket" "this" {
+  bucket = "my-s3-bucket"
+  acl    = "private"
+}
+
+data "archive_file" "lambda_zip" {
+  type        = "zip"
+  source_file = "index.js"
+  output_path = "${path.module}/lambda.zip"
+}
+
+resource "aws_lambda_function" "this" {
+  function_name = local.lambda_function_name
+  role          = aws_iam_role.lambda_role.arn
+  handler       = "index.handler"
+  runtime       = "nodejs14.x"
+  filename      = data.archive_file.lambda_zip.output_path
+  timeout       = 10
+
+  environment {
+    variables = {
+      BUCKET_NAME = aws_s3_bucket.this.bucket
+    }
+  }
+}
+
+resource "aws_iam_role" "lambda_role" {
+  name = "lambda_role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy" "lambda_policy" {
+  name = "lambda_policy"
+  role = aws_iam_role.lambda_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Effect   = "Allow"
+        Resource = "arn:aws:logs:*:*:*"
+      },
+      {
+        Action = [
+          "s3:PutObject"
+        ]
+        Effect   = "Allow"
+        Resource = "${aws_s3_bucket.this.arn}/*"
+      }
+    ]
+  })
+}
+
+output "bucket_name" {
+  value = aws_s3_bucket.this.bucket
+}
+
+output "lambda_function_name" {
+  value = aws_lambda_function.this.function_name
+}
+```
+
+`index.js`:
+
+```js
+const AWS = require('aws-sdk');
+const S3 = new AWS.S3();
+
+exports.handler = async (event) => {
+  const bucketName = process.env.BUCKET_NAME;
+  const key = 'hello.txt';
+  const content = 'Hello world!';
+
+  const params = {
+    Bucket: bucketName,
+    Key: key,
+    Body: content,
+  };
+
+  try {
+    await S3.putObject(params).promise();
+    return {
+      statusCode: 200,
+      body: JSON.stringify('File uploaded successfully.'),
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify('Error uploading the file.'),
+    };
+  }
+};
+```
+
+As you can see, we have to write 17X more code and dive deeply into lower layers of the cloud stack.
 
 You might be wondering if there are newer solutions against which Wing's gains are less significant, or if the same results can be achieved through a library or a language extension. You can see how Wing compares to other solutions and why it's a new language rather than some another solution [here](https://docs.winglang.io/faq/why-a-language).
 
