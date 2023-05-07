@@ -7,21 +7,24 @@ tags: [winglang, ai]
 hide_table_of_contents: true
 ---
 
-# As long as AI is our co-pilot and not an auto-pilot, there is room for a language that makes it easier for humans and AI to collaborate effectively by reducing cognitive load and allowing to test more rapidly, thereby slashing iteration times. AI also eases adopting new languages.
+# As long as AI serves as a co-pilot rather than an auto-pilot, there's room for a language that facilitates effective collaboration between humans and AI by reducing cognitive load and enabling rapid testing, thus significantly cutting iteration times. Moreover, AI simplifies the adoption of new languages.
 
 Why should we invest in developing a new programming language (for humans) today, when AI is rapidly advancing and taking over more coding tasks? 
 
-I often get asked this question in various forms:
+I often encounter this question in various forms:
 
 1. Won't AI eventually write machine code directly, rendering programming languages obsolete?
 2. Can a new language introduce features or capabilities that AI cannot achieve using existing languages? (e.g., why create a cloud-portable language when AI can write code for a specific cloud and then rewrite it for another?).
 3. Is it worthwhile to create tools for developers who might soon be replaced by AI?
 
-First, let me say that I cannot foresee the pace of AI advancement. Reputable experts hold differing opinions on when, or if, AI will replace human developers.
+Firstly, I must admit that I cannot predict the pace of AI advancement. Reputable experts hold differing opinions on when, or if, AI will replace human developers.
 
 However, even if AI does eventually replace human developers, it may not necessarily write machine code directly. There's no need to burden AI with larger, more complex tasks when smaller, simpler ones can yield faster, higher-quality results. Thus, it could be more practical for AI to rely on proven abstraction layers and compilers, allowing it to efficiently focus on the unique aspects of the business it serves rather than reinventing the wheel for each app.
 
-Now that we've covered the more distant future, I want to focus on the more immediate future in the rest of this post because I think it's reasonable to expect a significant transitional period in which humans are still in the loop. Regardless of AI's rapid progress, change is likely to be gradual, with humans remaining involved in some capacity for the foreseeable future.
+Having covered the more distant future, I now want to focus on the more immediate future in the remainder of this post. 
+
+I believe that Regardless of AI's rapid progress, due to human limitations and psychology, it's reasonable to expect change to be gradual and to to have a significant transitional period during which humans are still kept in the loop. 
+For example, I find it hard to imagine that organizations will not want to have a human accountable for what the AI produces. And that human will probably want to be able to jump into the code if things break and the AI cannot fix it automatically.
 
 By making it easier for both humans and AI to write quality code swiftly, collaborate effectively, and test more rapidly, we can enhance the quality and speed of our application delivery.
 
