@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 # As long as AI serves as a co-pilot rather than an auto-pilot, there's room for a language that facilitates effective collaboration between humans and AI by reducing cognitive load and enabling rapid testing, thus significantly cutting iteration times. Moreover, AI simplifies the adoption of new languages.
 
-Why should we invest in developing a new programming language (for humans) today, when AI is rapidly advancing and taking over more coding tasks? 
+Why should we invest in developing a new programming language (for humans) today, when AI is rapidly advancing and taking over more coding tasks?
 
 I often encounter this question in various forms:
 
@@ -21,13 +21,13 @@ Firstly, I must admit that I cannot predict the pace of AI advancement. Reputabl
 
 However, even if AI does eventually replace human developers, it may not necessarily write machine code directly. There's no need to burden AI with larger, more complex tasks when smaller, simpler ones can yield faster, higher-quality results. Thus, it could be more practical for AI to rely on proven abstraction layers and compilers, allowing it to efficiently focus on the unique aspects of the business it serves rather than reinventing the wheel for each app.
 
-Having covered the more distant future, I now want to focus on the more immediate future in the remainder of this post. 
+Having covered the more distant future, I now want to focus on the more immediate future in the remainder of this post.
 
 I believe that, given human limitations and psychology, change will likely be gradual despite AI's rapid progress, leading to a significant transitional period with humans remaining in the loop. For instance, it's hard to imagine organizations not desiring a human to be accountable for the AI's output. In cases where things go awry and the AI cannot automatically resolve the issue, that human will probably want the ability to dive into the code.
 
-Additionally, while it is true that AI is an equalizer between tools to some degree it still doesn't completely solve the problem. Let's take the cloud portability example from above, even if the AI can port my code between clouds, I still want to be able to read and modify it and so now I also must become an expert in all these clouds at the level of abstraction the AI used. If a new language allows it to write at a higher level of abstraction, it will be easier for me to understand and modify it too.
+Additionally, while it is true that AI is an equalizer between tools to some degree, it still doesn't completely solve the problem. Let's take the cloud portability example from above: even if the AI can port my code between clouds, I still want to be able to read and modify it. As a result, I must become an expert in all these clouds at the level of abstraction the AI used. If a new language allows it to write at a higher level of abstraction, it will be easier for me to understand and modify it too.
 
-Therefore, I believe that for the forseeable future there is room for tools that make it easier for both humans and AI to write quality code swiftly, collaborate effectively, and test more rapidly. Such tools will allow us to enhance the quality and speed of our application delivery.
+Therefore, I believe that for the foreseeable future there is room for tools that make it easier for both humans and AI to write quality code swiftly, collaborate effectively, and test more rapidly. Such tools will allow us to enhance the quality and speed of our application delivery.
 
 ## The Key: Reducing Cognitive Load and Accelerating Iteration
 
