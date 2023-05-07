@@ -1,6 +1,6 @@
 ---
 title: "Why We're Building a Programming Language for Cloud Development in the AI Era"
-description: Discover why we're building a programming language for cloud development in the era of generative AI.
+description: Discover why we're building a programming language for cloud development when some believe that AI will soon replace developers.
 authors: 
   - shaiber
 tags: [winglang, ai]
@@ -8,7 +8,7 @@ hide_table_of_contents: true
 ---
 
 ## Abstract
-As long as AI serves as a co-pilot rather than an auto-pilot, there's room for a language that facilitates effective collaboration between humans and AI by reducing cognitive load and enabling rapid testing, thus significantly cutting iteration times. Moreover, AI simplifies the adoption of new languages.
+As long as AI serves as a co-pilot rather than an auto-pilot, there's room for a language that facilitates effective collaboration between humans and AI. This can be achieved by reducing cognitive load and enabling rapid testing, significantly cutting iteration times. Moreover, AI simplifies the adoption of new languages.
 
 <!--truncate-->
 ## Introduction
@@ -22,12 +22,12 @@ I often encounter this question in various forms:
 
 Firstly, I must admit that I cannot predict the pace of AI advancement. Reputable experts hold [differing opinions](https://fortune.com/2022/06/03/elon-musk-artificial-intelligence-agi-tesla-500k-bet/) on when, or if, AI will replace human developers.
 
-However, even if AI does eventually replace human developers, it may not necessarily write machine code directly. Why would an AI choose to re-invent the wheel for each app by writing machine code directly when it can rely on proven abstraction layers and compilers, allowing it to efficiently focus on the unique aspects of the business it serves. By building on existing work and focusing on smaller, simpler tasks, the AI  can yield faster, higher-quality results.
+However, even if AI does eventually replace human developers, it may not necessarily write machine code directly. Why would an AI choose to re-invent the wheel for each app by writing machine code directly when it can rely on proven abstraction layers and compilers, allowing it to efficiently focus on the unique aspects of the business it serves? By building on existing work and focusing on smaller, simpler tasks, the AI can yield faster, higher-quality results.
 
 Having covered the more distant future, I now want to focus on the more immediate future in the remainder of this post.
 
-I believe that, given human limitations and psychology, change will likely be gradual despite AI's rapid progress, leading to a significant transitional period with humans remaining in the loop. For instance, it's hard to imagine organizations not desiring a human to be accountable for the AI's output. That human would be very reluctant to let the AI do its work in a way that the human cannot understand, modify and maintain. Think about it, would you let ChatGPT write a professional article to your peers, in your name, in a language you don't speak? Would you publish it without being able to read it? Probably not :)
-Similarly, would an engineering manager release a mission critical app to production knowing that it was written by AI in a way that would make it hard for humans to step in if something goes wrong?
+I believe that, given human limitations and psychology, change will likely be gradual despite AI's rapid progress, leading to a significant transitional period with humans remaining in the loop. For instance, it's hard to imagine organizations not desiring a human to be accountable for the AI's output. That human would be very reluctant to let the AI do its work in a way that the human cannot understand, modify, and maintain. Think about it, would you let ChatGPT write a professional article for your peers, in your name, in a language you don't speak? Would you publish it without being able to read it? Probably not..
+Similarly, would an engineering manager release a mission-critical app to production knowing that it was written by AI in a way that would make it hard for humans to step in if something goes wrong?
 
 Additionally, while it is true that AI is an equalizer between tools to some degree, it still doesn't completely solve the problem. Let's take the cloud portability example from above: even if the AI can port my code between clouds, I still want to be able to read and modify it. As a result, I must become an expert in all these clouds at the level of abstraction the AI used. If a new language allows it to write at a higher level of abstraction, it will be easier for me to understand and modify it too.
 
@@ -46,7 +46,7 @@ Utilizing a higher level of abstraction offers the following benefits for both h
 1. **Reduces cognitive load for human developers** by focusing on the app's business logic instead of implementation details. This enables developers to concentrate on a smaller problem (e.g., instructing a car to turn right, rather than teaching it how to do so), deal with fewer levels of the stack, write less code, and minimize the surface area for errors.
 2. **Reduces cognitive load for AI**. This concept may need further clarification. AI systems come pre-trained with knowledge of all levels of the stack, so knowing less is not a significant advantage. Focusing on a smaller problem is also not as beneficial as it would be for a human, because as long as the AI knows how to instruct the car to turn, it shouldn't have an issue teaching it how to do so instead of just telling it to turn. But it's still advantageous, as explained above, since it reduces the problem surface, allowing the AI to generate the code faster and at a higher quality. However, allowing the AI to write less code and reducing the chance for it to make mistakes is highly beneficial, as AI is far from infallible. Anyone who has witnessed it hallucinate interfaces or generate disconnected code can attest to this. Furthermore, AI is constrained by the amount of code it can generate before losing context. So writing less code enables AI coders to create larger and more complex parts of applications.
 3. **Accelerates iteration speed** because it requires writing less code, reducing the time it takes to write and maintain it. While it might not seem intuitive, this is equally important for both human and AI coders, as AI generates code one token at a time, similar to how a human writes.
-4. **Improves collaboration between human and AI coders.** A smaller code base written at a higher level of abstraction allows human developers to understand, modify and maintain AI-generated code more quickly and easily, resulting in higher quality code that is developed faster.
+4. **Improves collaboration between human and AI coders.** A smaller code base written at a higher level of abstraction allows human developers to understand, modify, and maintain AI-generated code more quickly and easily, resulting in higher quality code that is developed faster.
 
 ### Faster Deployment and Testing
 
@@ -86,7 +86,7 @@ new cloud.Function(inflight () => {
 
 As you can see, either a human or an AI coder that writes Wing code is working at a high level of abstraction, letting the Wing compiler take care of the underlying cloud mechanics, such as IAM policies and networking (don't worry, it is [customizable](https://docs.winglang.io/blog/2023/02/17/plugins) and extensible, so you don't lose control when needed). 
 
-Unlike human and AI coders, the compiler cannot make mistakes. It is also faster, deterministic and doesn't lose context after a while. So the more work we delegate to it over either human or even AI the better.
+Unlike human and AI coders, the compiler cannot make mistakes. It is also faster, deterministic, and doesn't lose context after a while. So the more work we delegate to it over either human or even AI the better.
 
 By the way, the code can be compiled to any cloud provider, and its output is Terraform and JavaScript, which can be deployed with existing tools.
 
@@ -234,11 +234,11 @@ Wing comes out of the box with a local simulator and a visualization and debuggi
 
 These tools enable developers to work on their code with near-instant hot-reloading and test cloud applications very easily without having to mock the cloud around them.
 
-In the example of our very simple app above, deploying to any cloud provider in order to run tests would take close to a minute, wheres with the Wing Simulator it takes less than a second - or 2 orders of magnitudes less. Moreover, with Wing, you can write tests without mocking the cloud and run the same ones on the simulator and in the cloud.
+In the example of our very simple app above, deploying to any cloud provider in order to run tests would take close to a minute, whereas with the Wing Simulator it takes less than a second - or 2 orders of magnitudes less. Moreover, with Wing, you can write tests without mocking the cloud and run the same ones on the simulator and in the cloud.
 
 This is a short [video](https://www.youtube.com/watch?v=vHy1TM2JzUQ) of the experience.
 
-You can get a first hand sense of it in the [Wing Playground](https://play.winglang.io/).
+You can get a first-hand sense of it in the [Wing Playground](https://play.winglang.io/).
 
 ## Conclusion
 
