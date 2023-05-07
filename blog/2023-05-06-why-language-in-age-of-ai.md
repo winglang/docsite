@@ -7,8 +7,11 @@ tags: [winglang, ai]
 hide_table_of_contents: true
 ---
 
-# As long as AI serves as a co-pilot rather than an auto-pilot, there's room for a language that facilitates effective collaboration between humans and AI by reducing cognitive load and enabling rapid testing, thus significantly cutting iteration times. Moreover, AI simplifies the adoption of new languages.
+## Abstract
+As long as AI serves as a co-pilot rather than an auto-pilot, there's room for a language that facilitates effective collaboration between humans and AI by reducing cognitive load and enabling rapid testing, thus significantly cutting iteration times. Moreover, AI simplifies the adoption of new languages.
 
+<!--truncate-->
+## Introduction
 Why should we invest in developing a new programming language (for humans) today, when AI is rapidly advancing and taking over more coding tasks?
 
 I often encounter this question in various forms:
