@@ -12,7 +12,7 @@ As long as AI serves as a co-pilot rather than an auto-pilot, there's room for a
 
 <!--truncate-->
 ## Introduction
-Why should we invest in developing a new programming language (for humans) today, when AI is rapidly advancing and taking over more coding tasks?
+Why am I investing time and effort in the development of a new programming language (for humans) today, when AI is rapidly advancing and taking over more coding tasks?
 
 I often encounter this question in various forms:
 
@@ -20,13 +20,14 @@ I often encounter this question in various forms:
 2. Can a new language introduce features or capabilities that AI cannot achieve using existing languages? (e.g., why create a cloud-portable language when AI can write code for a specific cloud and then rewrite it for another?).
 3. Is it worthwhile to create tools for developers who might soon be replaced by AI?
 
-Firstly, I must admit that I cannot predict the pace of AI advancement. Reputable experts hold differing opinions on when, or if, AI will replace human developers.
+Firstly, I must admit that I cannot predict the pace of AI advancement. Reputable experts hold [differing opinions](https://fortune.com/2022/06/03/elon-musk-artificial-intelligence-agi-tesla-500k-bet/) on when, or if, AI will replace human developers.
 
-However, even if AI does eventually replace human developers, it may not necessarily write machine code directly. There's no need to burden AI with larger, more complex tasks when smaller, simpler ones can yield faster, higher-quality results. Thus, it could be more practical for AI to rely on proven abstraction layers and compilers, allowing it to efficiently focus on the unique aspects of the business it serves rather than reinventing the wheel for each app.
+However, even if AI does eventually replace human developers, it may not necessarily write machine code directly. Why would an AI choose to re-invent the wheel for each app by writing machine code directly when it can rely on proven abstraction layers and compilers, allowing it to efficiently focus on the unique aspects of the business it serves. By building on existing work and focusing on smaller, simpler tasks, the AI  can yield faster, higher-quality results.
 
 Having covered the more distant future, I now want to focus on the more immediate future in the remainder of this post.
 
-I believe that, given human limitations and psychology, change will likely be gradual despite AI's rapid progress, leading to a significant transitional period with humans remaining in the loop. For instance, it's hard to imagine organizations not desiring a human to be accountable for the AI's output. In cases where things go awry and the AI cannot automatically resolve the issue, that human will probably want the ability to dive into the code.
+I believe that, given human limitations and psychology, change will likely be gradual despite AI's rapid progress, leading to a significant transitional period with humans remaining in the loop. For instance, it's hard to imagine organizations not desiring a human to be accountable for the AI's output. That human would be very reluctant to let the AI do its work in a way that the human cannot understand, modify and maintain. Think about it, would you let ChatGPT write a professional article to your peers, in your name, in a language you don't speak? Would you publish it without being able to read it? Probably not :)
+Similarly, would an engineering manager release a mission critical app to production knowing that it was written by AI in a way that would make it hard for humans to step in if something goes wrong?
 
 Additionally, while it is true that AI is an equalizer between tools to some degree, it still doesn't completely solve the problem. Let's take the cloud portability example from above: even if the AI can port my code between clouds, I still want to be able to read and modify it. As a result, I must become an expert in all these clouds at the level of abstraction the AI used. If a new language allows it to write at a higher level of abstraction, it will be easier for me to understand and modify it too.
 
@@ -34,7 +35,7 @@ Therefore, I believe that for the foreseeable future there is room for tools tha
 
 ## The Key: Reducing Cognitive Load and Accelerating Iteration
 
-Whether you're an AI or a human developer, reducing cognitive load and iterating faster will result in better applications developed more quickly.
+Whether you're an AI or a human developer, reducing complexity and iterating faster will result in better applications developed more quickly.
 
 So, what can be done to make these improvements?
 
@@ -43,7 +44,7 @@ So, what can be done to make these improvements?
 Utilizing a higher level of abstraction offers the following benefits for both human and AI coders:
 
 1. **Reduces cognitive load for human developers** by focusing on the app's business logic instead of implementation details. This enables developers to concentrate on a smaller problem (e.g., instructing a car to turn right, rather than teaching it how to do so), deal with fewer levels of the stack, write less code, and minimize the surface area for errors.
-2. **Reduces cognitive load for AI**. This concept may need further clarification. AI systems come pre-trained with knowledge of all levels of the stack, so knowing less is not a significant advantage. Focusing on a smaller problem is also not a substantial benefit because, as long as the AI knows how to instruct the car to turn, it shouldn't have an issue teaching it how to do so instead of just telling it to turn. However, allowing the AI to write less code and reducing the chance for it to make mistakes is highly beneficial, as AI is far from infallible. Anyone who has witnessed it hallucinate interfaces or generate disconnected code can attest to this. Furthermore, AI is constrained by the amount of code it can generate before losing context. So writing less code enables AI coders to create larger and more complex parts of applications.
+2. **Reduces cognitive load for AI**. This concept may need further clarification. AI systems come pre-trained with knowledge of all levels of the stack, so knowing less is not a significant advantage. Focusing on a smaller problem is also not as beneficial as it would be for a human, because as long as the AI knows how to instruct the car to turn, it shouldn't have an issue teaching it how to do so instead of just telling it to turn. But it's still advantageous, as explained above, since it reduces the problem surface, allowing the AI to generate the code faster and at a higher quality. However, allowing the AI to write less code and reducing the chance for it to make mistakes is highly beneficial, as AI is far from infallible. Anyone who has witnessed it hallucinate interfaces or generate disconnected code can attest to this. Furthermore, AI is constrained by the amount of code it can generate before losing context. So writing less code enables AI coders to create larger and more complex parts of applications.
 3. **Accelerates iteration speed** because it requires writing less code, reducing the time it takes to write and maintain it. While it might not seem intuitive, this is equally important for both human and AI coders, as AI generates code one token at a time, similar to how a human writes.
 4. **Improves collaboration between human and AI coders.** A smaller code base written at a higher level of abstraction allows human developers to understand, modify and maintain AI-generated code more quickly and easily, resulting in higher quality code that is developed faster.
 
@@ -65,11 +66,11 @@ So, how can we make this happen?
 
 ### Quantifying the Improvement
 
-We're talking about a 90%-95% reduction in code and a 100X increase in testing speeds.
+As we'll demonstrate below, we're talking about a 90%-95% reduction in code and orders of magnitude increase in testing speeds.
 
 ### Let's See Some Code
 
-Here's an example of a small app that uploads a file to a bucket using a cloud function.
+Here's an example of a small app that uploads a file to a bucket (think AWS S3, Azure Blob Storage, or GCP Bucket) using a cloud function (AWS Lambda, Azure Function, or GCP Cloud Function).
 
 This is the code in Wing:
 
@@ -89,7 +90,7 @@ Unlike human and AI coders, the compiler cannot make mistakes. It is also faster
 
 By the way, the code can be compiled to any cloud provider, and its output is Terraform and JavaScript, which can be deployed with existing tools.
 
-Now let's take a look at the same code in the leading cloud development stack today - Terraform + JavaScript.
+Now let's take a look at the same code in one of the leading cloud development stacks today - Terraform + JavaScript.
 
 `main.tf`:
 
@@ -223,7 +224,7 @@ exports.handler = async (event) => {
 };
 ```
 
-As you can see, we have to write 17X more code and dive deeply into lower layers of the cloud stack.
+As you can see, the Wing code is 7 lines long, while the Terraform and JavaScript code is 122 lines, or ±17X more code. Not only that, it dives deeply into lower layers of the cloud stack.
 
 You might be wondering if there are newer solutions against which Wing's gains are less significant, or if the same results can be achieved through a library or a language extension. You can see how Wing compares to other solutions and why it's a new language rather than some another solution [here](https://docs.winglang.io/faq/why-a-language).
 
@@ -233,9 +234,11 @@ Wing comes out of the box with a local simulator and a visualization and debuggi
 
 These tools enable developers to work on their code with near-instant hot-reloading and test cloud applications very easily without having to mock the cloud around them.
 
+In the example of our very simple app above, deploying to any cloud provider in order to run tests would take close to a minute, wheres with the Wing Simulator it takes less than a second - or 2 orders of magnitudes less. Moreover, with Wing, you can write tests without mocking the cloud and run the same ones on the simulator and in the cloud.
+
 This is a short [video](https://www.youtube.com/watch?v=vHy1TM2JzUQ) of the experience.
 
-You can play with it yourself with zero friction in the [Wing Playground](https://play.winglang.io/).
+You can get a first hand sense of it in the [Wing Playground](https://play.winglang.io/).
 
 ## Conclusion
 
