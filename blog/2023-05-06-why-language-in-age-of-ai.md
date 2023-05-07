@@ -23,8 +23,7 @@ However, even if AI does eventually replace human developers, it may not necessa
 
 Having covered the more distant future, I now want to focus on the more immediate future in the remainder of this post. 
 
-I believe that Regardless of AI's rapid progress, due to human limitations and psychology, it's reasonable to expect change to be gradual and to to have a significant transitional period during which humans are still kept in the loop. 
-For example, I find it hard to imagine that organizations will not want to have a human accountable for what the AI produces. And that human will probably want to be able to jump into the code if things break and the AI cannot fix it automatically.
+I believe that regardless of AI's rapid progress, due to human limitations and psychology, it's reasonable to expect change to be gradual and to experience a significant transitional period during which humans are still kept in the loop. For instance, I find it difficult to envision organizations not wanting a human to be accountable for the AI's output. That human will likely want to be able to dive into the code if things go awry and the AI cannot automatically resolve the issue.
 
 By making it easier for both humans and AI to write quality code swiftly, collaborate effectively, and test more rapidly, we can enhance the quality and speed of our application delivery.
 
