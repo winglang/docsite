@@ -7,23 +7,23 @@ tags: [winglang, ai]
 hide_table_of_contents: true
 ---
 
-# As long as AI is our co-pilot and not an auto-pilot, there is room for a language that enhances our collaboration with it by reducing cognitive load and slashing iteration times. AI also eases adopting new languages.
+# As long as AI is our co-pilot and not an auto-pilot, there is room for a language that makes it easier for humans and AI to collaborate effectively by reducing cognitive load and allowing to test more rapidly, thereby slashing iteration times. AI also eases adopting new languages.
 
-Why should we develop new programming languages (for humans) today, when AI is rapidly advancing and taking over more coding tasks? 
+Why should we invest in developing a new programming language (for humans) today, when AI is rapidly advancing and taking over more coding tasks? 
 
 I often get asked this question in various forms:
-- Won't AI eventually just write machine code, eliminating the need for programming languages?
-- Isn't AI the great equalizer, can a new language introduce features or capabilities that AI cannot perform for us with existing languages? (e.g., why create a cloud-portable language when AI can write code for a specific cloud and then rewrite it for another?)
-- Why bother building tools for developers when they might all be out of a job soon?
 
-I want to start off by saying that I am not a prophet and cannot predict the pace of AI advancement. Reputable experts have varying estimates on when AI will replace human developers, ranging from tomorrow to never. 
+1. Won't AI eventually write machine code directly, rendering programming languages obsolete?
+2. Can a new language introduce features or capabilities that AI cannot achieve using existing languages? (e.g., why create a cloud-portable language when AI can write code for a specific cloud and then rewrite it for another?).
+3. Is it worthwhile to create tools for developers who might soon be replaced by AI?
 
-But I think that if and when AI does replace human developers it still might not write machine code directly, as there is no reason to burden it with larger, more complex tasks than necessary when assigning it with smaller tasks allow it to complete them faster and at a higher quality.
-It might therefor still be logical for it to rely on tried-and-tested abstraction layers and compilers that allow it to focus on the unique aspects of the business it serves more efficiently rather than handle menial details and re-inventing the wheel each time it develops an app.
+First, let me say that I cannot foresee the pace of AI advancement. Reputable experts hold differing opinions on when, or if, AI will replace human developers.
 
-Now that we've covered the more distant future, I want to focus on the more immediate future in the rest of this post because I think it is safe to assume that the transitory period will be significant since, due to human limitations and psychology, however fast AI advances, change will likely be gradual, with humans remaining involved in some capacity for the foreseeable future.
+However, even if AI does eventually replace human developers, it may not necessarily write machine code directly. There's no need to burden AI with larger, more complex tasks when smaller, simpler ones can yield faster, higher-quality results. Thus, it could be more practical for AI to rely on proven abstraction layers and compilers, allowing it to efficiently focus on the unique aspects of the business it serves rather than reinventing the wheel for each app.
 
-If we can make it easier for both humans and AI to write good code more quickly, collaborate efficiently, and test it faster, we can improve the quality and speed of our application delivery.
+Now that we've covered the more distant future, I want to focus on the more immediate future in the rest of this post because I think it's reasonable to expect a significant transitional period in which humans are still in the loop. Regardless of AI's rapid progress, change is likely to be gradual, with humans remaining involved in some capacity for the foreseeable future.
+
+By making it easier for both humans and AI to write quality code swiftly, collaborate effectively, and test more rapidly, we can enhance the quality and speed of our application delivery.
 
 ## The Key: Reducing Cognitive Load and Accelerating Iteration
 
