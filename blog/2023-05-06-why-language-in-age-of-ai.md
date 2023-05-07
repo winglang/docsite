@@ -25,6 +25,8 @@ Having covered the more distant future, I now want to focus on the more immediat
 
 I believe that, given human limitations and psychology, change will likely be gradual despite AI's rapid progress, leading to a significant transitional period with humans remaining in the loop. For instance, it's hard to imagine organizations not desiring a human to be accountable for the AI's output. In cases where things go awry and the AI cannot automatically resolve the issue, that human will probably want the ability to dive into the code.
 
+Additionally, while it is true that AI is an equalizer between tools to some degree it still doesn't completely solve the problem. Let's take the cloud portability example from above, even if the AI can port my code between clouds, I still want to be able to read and modify it and so now I also must become an expert in all these clouds at the level of abstraction the AI used. If a new language allows it to write at a higher level of abstraction, it will be easier for me to understand and modify it too.
+
 Therefore, I believe that for the forseeable future there is room for tools that make it easier for both humans and AI to write quality code swiftly, collaborate effectively, and test more rapidly. Such tools will allow us to enhance the quality and speed of our application delivery.
 
 ## The Key: Reducing Cognitive Load and Accelerating Iteration
