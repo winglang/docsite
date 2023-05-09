@@ -226,7 +226,7 @@ exports.handler = async (event) => {
 
 As you can see, the Wing code is 7 lines long, while the Terraform and JavaScript code is 122 lines, or ±17X more code. Not only that, it dives deeply into lower layers of the cloud stack.
 
-You might be wondering if there are newer solutions against which Wing's gains are less significant, or if the same results can be achieved through a library or a language extension. You can see how Wing compares to other solutions and why it's a new language rather than some another solution [here](https://docs.winglang.io/faq/why-a-language).
+You might be wondering if there are newer solutions against which Wing's gains are less significant, or if the same results can be achieved through a library or a language extension. You can see how Wing compares to other solutions and why it's a new language rather than some other solution [here](https://docs.winglang.io/faq/why-a-language).
 
 ### Testing with Wing
 
