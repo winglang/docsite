@@ -31,7 +31,9 @@ Similarly, would an engineering manager release a mission-critical app to produc
 
 Additionally, while it is true that AI is an equalizer between tools to some degree, it still doesn't completely solve the problem. Let's take the cloud portability example from above: even if the AI can port my code between clouds, I still want to be able to read and modify it. As a result, I must become an expert in all these clouds at the level of abstraction the AI used. If a new language allows it to write at a higher level of abstraction, it will be easier for me to understand and modify it too.
 
-Assuming that AI allows us to write a lot of code really fast, the bottleneck then moves to the testing and validation phase. After all, AI cannot generate perfect apps on the first try, not only because of its limitations, but mainly due to ours. We humans are not perfect, and we cannot specify our requirements perfectly. We need to see a version of the finished product, play with it, see if it meets our needs or if we forgot some edge cases, and then iterate. Over and over again, until our creation is perfect. In a world where this testing and validation phase takes most of the software delivery time, there is room for tools that will enable us to significantly shorten it by reducing the time it takes to deploy and test an application in a development environment.
+Assuming AI empowers us to rapidly generate vast amounts of code, the bottleneck inevitably shifts to the testing and validation phase. This occurs not solely due to AI's inherent limitations, but primarily because of our own imperfections as humans. We are incapable of flawlessly articulating our requirements, which necessitates experiencing a working version of the end product, interacting with it, and determining whether it fulfills our needs or if we've overlooked any edge cases. This iterative process continues until our creation reaches perfection.
+
+In a landscape where testing and validation consume the majority of software delivery time, there is ample opportunity for tools that significantly streamline this phase. By reducing the time required to deploy and evaluate an application within a development environment, these tools can greatly enhance overall efficiency.
 
 Therefore, I believe that for the foreseeable future there is room for tools that make it easier for both humans and AI to write quality code swiftly, collaborate effectively, and test more rapidly. Such tools will allow us to enhance the quality and speed of our application delivery.
 
@@ -52,18 +54,17 @@ Utilizing a higher level of abstraction offers the following benefits for both h
 
 ### Faster Deployment and Testing
 
-Currently, deploying and testing cloud applications can take several minutes. Multiply this by numerous iteration cycles, and there's significant room for improvement. Especially when due to the help of our AI friends in writing code faster, the proportion of time we spend in then testing and validation part of each iteration cycle gets more and more significant relative to the time we spend writing code.
+Presently, deploying and testing cloud applications can take several minutes. When multiplied by numerous iteration cycles, there's substantial potential for improvement. Particularly, as our AI friends assist us to accelerate code writing, the proportion of time spent on testing and validation within each iteration cycle becomes increasingly significant compared to code writing.
 
-A common mitigation for this is to run tests locally, without actually deploying to the cloud. But this is also challenging today because writing these tests requires mocking the cloud environment around the tested components. A by-product of this is that these tests are limited in what they actually test, and we need to write additional ones that test the same things, but run in the cloud to ensure that the code works as expected in the actual environment.
+A prevalent workaround is running tests locally, bypassing cloud deployment. However, this approach presents its own challenges, as it necessitates simulating the cloud environment surrounding the tested components. Consequently, these tests are constrained in their scope, often requiring supplementary tests that run in the cloud to confirm code functionality within the actual environment.
 
-This is still not the end of the story though, as such solutions only cover automatic tests whereas we often want to be able to manually interact with our application during development, or get it to the hands of other people (product, sales, management, potential users, etc.) to get feedback. This cannot be done locally without deploying to the cloud and the time penalties that come with it.
+Yet, this is not the end of the journey. Such solutions primarily cater to automatic tests, while developers frequently desire manual interaction with applications during development or seek feedback from various stakeholders (product, sales, management, potential users, etc.). Achieving this without cloud deployment and its associated time penalties remains a challenge.
 
-We therefore, need to be able to write tests that can run both locally and in the cloud, and be able to run them quickly.
-We also need to be able to deploy our cloud applications very quickly and get them into the hands of others for validation.
+Hence, we need to be able to generate tests that can operate both locally and in the cloud, and be executed  swiftly. Additionally, we must enable rapid deployment of cloud applications and facilitate easy access for stakeholder validation.
 
-By doing so, we can vastly improve iteration speeds, regardless of whether the code is written by an AI, a human, or a collaboration between them.
+By achieving this, we can significantly enhance iteration speeds, irrespective of whether the code is authored by AI, humans, or a collaborative effort.
 
-So, how can we make this happen?
+So, how do we bring this vision to life?
 
 ## Introducing Winglang
 
