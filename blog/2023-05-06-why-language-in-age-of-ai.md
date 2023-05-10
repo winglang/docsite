@@ -93,8 +93,7 @@ new cloud.Function(inflight () => {
 As you can see, either a human or an AI coder that writes Wing code is working at a high level of abstraction, letting the Wing compiler take care of the underlying cloud mechanics, such as IAM policies and networking (don't worry, it is [customizable](https://docs.winglang.io/blog/2023/02/17/plugins) and extensible, so you don't lose control when needed). 
 
 Unlike human and AI coders, the compiler cannot make mistakes. It is also faster, deterministic, and doesn't lose context after a while. So the more work we delegate to it over either human or even AI the better.
-
-By the way, the code can be compiled to any cloud provider, and its output is Terraform and JavaScript, which can be deployed with existing tools.
+It can compile the code to any cloud provider in a way that would not necessitate the human to have to need to dive into that code and have to be able to maintain it. The compilation artifacts are Terraform and JavaScript, which can be deployed with existing tried and tested tools.
 
 Now let's take a look at the same code in one of the leading cloud development stacks today - Terraform + JavaScript.
 
