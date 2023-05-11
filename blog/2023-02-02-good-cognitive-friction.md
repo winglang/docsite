@@ -28,16 +28,16 @@ Wing to be *immutable by default*.
 Let's look at an example:
 
 ```js
-let my_array = [1,2,3,4];
+let myArray = [1,2,3,4];
 ```
 
 The above code defines an *immutable* array with the contents `[1,2,3,4]` and assigns it to
-`my_array`. Immutability means that the contents of the object cannot be modified.
+`myArray`. Immutability means that the contents of the object cannot be modified.
 
 So if we try to add an item:
 
 ```js
-my_array.push(5);
+myArray.push(5);
 //       ^^^^ Unknown symbol "push"
 ```
 
@@ -45,31 +45,31 @@ my_array.push(5);
 > mutable arrays. Did you mean to declare the array with MutArray<num>?`, but [bear with
 > us](https://github.com/winglang/wing/issues/1428)...
 
-This is because the type of `my_array` is `Array<num>`, which represents an immutable array, it
+This is because the type of `myArray` is `Array<num>`, which represents an immutable array, it
 simply doesn't have any methods that will cause it to change. In Wing, the following types are
 immutable: `str`, `num`, `bool`, `Array<T>`, `Set<T>` and `Map<T>`.
 
 If I wanted to define it as a mutable array, I will need to be explicit:
 
 ```js
-let my_mut_array = MutArray<str>["hello", "world"];
+let myMutArray = MutArray<str>["hello", "world"];
 ```
 
 And now we can go wild:
 
 ```js
-my_mut_array.push("go wild!"); // OK!
+myMutArray.push("go wild!"); // OK!
 ```
 
 Similarly, we can define other mutable collection types:
 
 ```js
-let my_set = MutSet<str>{"hello", "world"};
-let my_map = MutMap<bool>{"dog": true, "cat": false};
+let mySet = MutSet<str>{"hello", "world"};
+let myMap = MutMap<bool>{"dog": true, "cat": false};
 ```
 
 > By the way: we are still debating if the standard types should be pascal-cased (e.g. `Array<T>`,
-> `MutArray<T>`) or snake (`array<T>`, `mut_array<T>`). Let us know what you think!
+> `MutArray<T>`) or snake (`array<T>`, `mutArray<T>`). Let us know what you think!
 
 Yes! We are going to make this *slightly* harder to define mutable collections. 
 
@@ -85,8 +85,8 @@ best practices.
 
 ## Reassignability
 
-But immutability is not enough! Since we reference our array through `my_array`, the compiler also
-needs to guarantee that `my_array` will always point to the same object.
+But immutability is not enough! Since we reference our array through `myArray`, the compiler also
+needs to guarantee that `myArray` will always point to the same object.
 
 Let's look at a hypothetic example:
 
@@ -183,24 +183,24 @@ Let's look at a very simple example just to explain the idea:
 ```js
 bring cloud;
 
-let my_array = ["hello", "world"];
+let myArray = ["hello", "world"];
 
 new cloud.Function(inflight (_: str) => { 
-  assert(my_array.length == 2); 
+  assert(myArray.length == 2); 
 }) as "test";
 ```
 
-So what's going on here? We have defined a cloud function that simply references `my_array`. As much
+So what's going on here? We have defined a cloud function that simply references `myArray`. As much
 as this looks simple and intuitive, the compiler actually had to do a bit of work to make this
 happen. As a reminder, a `cloud.Function` represents a cloud compute platform (such as AWS Lambda).
 This means that the code inside the `inflight` block is going to be executed sometime in the future,
-on some other machine. Completely isolated from the original memory space in which `my_array` was
+on some other machine. Completely isolated from the original memory space in which `myArray` was
 defined.
 
 Since our array is immutable, the compiler can safely clone it and bundle it together with the code
 that runs inside the cloud function.
 
-> In the future, the compiler will be able to identify that `my_array.length` itself is immutable,
+> In the future, the compiler will be able to identify that `myArray.length` itself is immutable,
 > and will only copy its value (see [#1251](https://github.com/winglang/wing/issues/1251)).
 
 If we try to reference a reassignable variable from inflight code:
@@ -219,11 +219,11 @@ If we try to reference a mutable collection from inflight code:
 ```js
 bring cloud;
 
-let my_array = MutArray<num>[1,2,3,4];
+let myArray = MutArray<num>[1,2,3,4];
 
 new cloud.Function(inflight (_: str) => {
-  assert(my_array.length == 4);
-  //     ^^^^^^^^ Cannot reference 'my_array' of type 'MutArray<num>' from an inflight context
+  assert(myArray.length == 4);
+  //     ^^^^^^^^ Cannot reference 'myArray' of type 'MutArray<num>' from an inflight context
 });
 ```
 
@@ -231,11 +231,11 @@ In this case as well, the compiler won't allow us to reference a mutable object 
 context, because it won't be able to guarantee correctness.
 
 Unsupported yet, but we will also have `clone()` to cover you in case you want to reference a
-snapshot of a mutable collection (`clone_mut()` returns a mutable clone):
+snapshot of a mutable collection (`cloneMut()` returns a mutable clone):
 
 ```js
-let mut_arr = MutArray<num>[1,2,3];
-let arr = mut_arr.clone();
+let mutArr = MutArray<num>[1,2,3];
+let arr = mutArr.clone();
 
 new cloud.Function(inflight () => {
   assert(arr.length == 3);

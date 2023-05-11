@@ -122,7 +122,7 @@ Wing will produce a compiler error:
 bring cloud;
 
 let queue = new cloud.Queue();
-queue.on_message(inflight (message: str) => {
+queue.addConsumer(inflight (message: str) => {
   // error: Cannot create the resource "Bucket" in inflight phase.
   new cloud.Bucket();
 });
