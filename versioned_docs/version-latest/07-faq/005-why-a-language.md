@@ -1,5 +1,6 @@
 ---
 title: Why is Wing a language, not just another library or framework? 🤔
+sidebar_label: Why is Wing a language? 🤔
 id: why-a-language
 keywords: [faq, why language, library, winglang, Wing programming language, Wing language]
 ---
@@ -21,13 +22,13 @@ let queue = new cloud.Queue();
 let counter = new cloud.Counter();
 let bucket = new cloud.Bucket();
 
-queue.add_consumer(inflight (message: str) => {
+queue.addConsumer(inflight (message: str) => {
   let i = counter.inc();
   bucket.put("file-${i}.txt", message);
 });
 ```
 
-`cloud.Queue`, `cloud.Counter`, and `cloud.Bucket` are *preflight objects*. They represent cloud infrastructure resources. When compiled to a specific cloud provider, such as AWS, a Terraform file will be produced with the provider's implementation of these resources. The `queue.add_consumer()` method is a *preflight method* that configures the infrastructure to invoke a particular *inflight function* for each message in the queue.
+`cloud.Queue`, `cloud.Counter`, and `cloud.Bucket` are *preflight objects*. They represent cloud infrastructure resources. When compiled to a specific cloud provider, such as AWS, a Terraform file will be produced with the provider's implementation of these resources. The `queue.addConsumer()` method is a *preflight method* that configures the infrastructure to invoke a particular *inflight function* for each message in the queue.
 
 **Now comes the cool part**: the code that runs inside the inflight function interacts with the `counter` and the `bucket` objects through their *inflight methods* (`counter.inc()` and `bucket.put()`). These methods can only be called from inflight scopes.
 
@@ -47,7 +48,10 @@ Below we've written the same simple demo app in Wing and other solutions. This s
 
 import CodeComparison from '../src/components/CodeComparison';
 
-<CodeComparison />
+<CodeComparison 
+  exampleName="function-upload-to-bucket"
+  desiredPlatformLabels="['Pulumi', 'Terraform', 'AWSCDK', 'CDKTF', 'CFN']"
+/>
 <br/>
 
 **The below table contains the main differences that you can see in the code examples:**

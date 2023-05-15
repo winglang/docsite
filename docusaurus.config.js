@@ -52,17 +52,6 @@ const config = {
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
   },
-  // This is needed to supress minification of JS files that screws up display of
-  // code samples
-  configureWebpack: (config, isServer, utils) => {
-    const { getCacheLoader } = utils;
-    return {
-      optimization: {
-        ...config.optimization,
-        minimize: false, // Disables JavaScript minification
-      },
-    };
-  },
   plugins: [
     "docusaurus-plugin-sass", 
     "docusaurus-plugin-segment",
