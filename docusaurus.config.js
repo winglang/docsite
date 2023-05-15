@@ -229,7 +229,7 @@ const config = {
               },
               {
                 label:"Contributor's Handbook",
-                to: "contributors/handbook"
+                to: "contributors/"
               },
             ],
           },
