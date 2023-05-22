@@ -18,6 +18,9 @@ The SDK is built using a couple of extra libraries and tools:
 
 Everything in the SDK can be built by running `npm run build` from `libs/wingsdk`. You can also run `npm run test` to just run tests.
 
+In order to work on the source code, you will need to the build at least once so that TypeScript bindings for Terraform resources will be automatically generated.
+These files are not checked in because they are quite large.
+
 (If you have any issues building the package, please open an issue and let us know!)
 
 [CDK for Terraform]: https://github.com/hashicorp/terraform-cdk
@@ -44,6 +47,16 @@ Here is an example of adding a package named "fast-json-stringify" pinned to maj
 ```
 
 > [2] JSII libraries are npm packages that are compiled with JSII. They are usually published to npm with the `cdk` keyword, and they will have a `.jsii` file at their root.
+
+## 🧱 How do I add a new Terraform provider for use in the SDK?
+
+The SDK uses [CDK for Terraform] to generate Terraform files.
+This means that you can generate bindings for any Terraform provider and reference in in the SDK using TypeScript.
+
+To add a new provider, go to `libs/wingsdk/.projenrc.ts` and edit the section
+that says "CDKTF_BINDINGS" to add the new provider.
+Then, run `npx projen` to update the project.
+One that has finished, you can run `npm run build` and the new bindings should be generated inside `libs/wingsdk/src/.gen`.
 
 ## 🧩 How do I add a resource to the SDK?
 
@@ -173,16 +186,16 @@ const counter = new sdk.cloud.Counter(this, "Counter");
 const handler = new sdk.core.Inflight(this, "Inflight", {
   code: sdk.core.NodeJsCode.fromInline(
     `async handle(event) {
-      await this.message_count.inc();
-      await this.my_queue.push(event);
+      await this.messageCount.inc();
+      await this.myQueue.push(event);
     }`
   ),
   bindings: {
-    message_count: {
+    messageCount: {
       resource: counter,
       ops: ["inc"],
     },
-    my_queue: {
+    myQueue: {
       resource: queue,
       ops: ["push"],
     },
@@ -192,7 +205,7 @@ new sdk.cloud.Function(this, "Function", handler);
 ```
 
 Every resource added to the `bindings` field is implicitly added as a dependency of the inflight, and is made available to the inflight code through a field with the same name.
-(Hence the API calls to `this.message_count.inc` and `this.my_queue.push` passed in the `code` field above.)
+(Hence the API calls to `this.messageCount.inc` and `this.myQueue.push` passed in the `code` field above.)
 
 The `bindings` field requires a `resource` field with a reference to the original resource object, and an `ops` field that specifies the operations that the inflight code will use on the resource.
 
@@ -208,8 +221,8 @@ The referenced resource can then perform any necessary setup to allow the host t
 For example, when compiling to AWS, the queue can create an IAM role that allows the function to execute `sqs:SendMessage` API calls on the queue.
 
 In more complex resources, the `_bind` method will automatically call `_bind` on any sub-resources based on the operations that the host expects to use.
-For example, suppose the user defines a `TaskList` resource with a method named `add_task`, and `add_task` calls `put` on a `cloud.Bucket` (a child resource).
-Then whenever `TaskList` is bound to a host and `add_task` is one of the operations the inflight code expects to call, then the `cloud.Bucket` will automatically be bound to the host as well.
+For example, suppose the user defines a `TaskList` resource with a method named `addTask`, and `addTask` calls `put` on a `cloud.Bucket` (a child resource).
+Then whenever `TaskList` is bound to a host and `addTask` is one of the operations the inflight code expects to call, then the `cloud.Bucket` will automatically be bound to the host as well.
 
 #### 2. Inflight code bundling
 

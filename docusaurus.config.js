@@ -167,8 +167,8 @@ const config = {
             className: "header-slack-link",
           },
           {
-            href: winglangOrgUrl,
-            "aria-label": "GitHub Organization",
+            href: `${winglangOrgUrl}/wing/`,
+            "aria-label": "Winglang Repo",
             label: " ",
             position: "right",
             className: "header-github-link",
@@ -229,7 +229,7 @@ const config = {
               },
               {
                 label:"Contributor's Handbook",
-                to: "contributors/handbook"
+                to: "contributors/"
               },
             ],
           },
