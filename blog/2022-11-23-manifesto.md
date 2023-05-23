@@ -226,12 +226,12 @@ would expect from a modern, object-oriented, strongly-typed and general-purpose
 language, but it also includes a few additional primitives designed to support
 the distributed and service-based nature of the cloud as first-class citizens.
 
-### Apply for early access if you dare
+### Check it out
 
-I can't be more excited to share that after six months of development, we are
-finally ready to invite some folks to check it out. It's absolutely and
-definitely not ready for real usage. We have a long way to go, but we feel we've
-got enough of the architectural framework and design in place, so it's not just
-a wild idea by a group of nostalgic programmers.
+We have been working on Wing for almost a year now, and I am excited to invite you to 
+check it out and let me know what you think. 
 
-Go to https://winglang.io to request alpha access.
+While still in Alpha and not yet ready for production use, it's already possible to
+build some [real applications](https://github.com/winglang/research/tree/main/dogfooding) with it.
+
+Check out https://github.com/winglang/wing for more details.
