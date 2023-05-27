@@ -1,7 +1,7 @@
 ---
 title: Evaluation of Winglang's approach to enhancing DevEx
 description: Evaluation of Winglang's approach for enhancing the Developer Experience (DevEx) of coding cloud applications using principles presented in a cited academic paper.
-authors: shaib
+authors: shaiber
 tags: [cloud-oriented programming, Winglang, developer experience, DevEx]
 hide_table_of_contents: true
 ---
