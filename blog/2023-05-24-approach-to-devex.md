@@ -1,5 +1,3 @@
-# DevEx: What Actually Drives Productivity 
-
 ---
 title: DevEx: What Actually Drives Productivity - How does Winglan'gs approach measure up?
 description: Evaluation of Winglang's approach for enhancing the Developer Experience (DevEx) of coding cloud applications using principles presented in an academic paper.
