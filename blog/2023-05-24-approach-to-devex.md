@@ -1,6 +1,6 @@
 ---
-title: DevEx: What Actually Drives Productivity - How does Winglan'gs approach measure up?
-description: Evaluation of Winglang's approach for enhancing the Developer Experience (DevEx) of coding cloud applications using principles presented in an academic paper.
+title: DevEx: Evaluation of Winglang's approach to enhancing DevEx
+description: Evaluation of Winglang's approach for enhancing the Developer Experience (DevEx) of coding cloud applications using principles presented in a cited academic paper.
 authors: shaib
 tags: [cloud-oriented programming, Winglang, developer experience, DevEx]
 hide_table_of_contents: true
