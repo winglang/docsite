@@ -1,3 +1,5 @@
+# DevEx: What Actually Drives Productivity 
+
 ---
 title: DevEx: What Actually Drives Productivity - How does Winglan'gs approach measure up?
 description: Evaluation of Winglang's approach for enhancing the Developer Experience (DevEx) of coding cloud applications using principles presented in an academic paper.
@@ -35,13 +37,13 @@ The authors present a framework that condenses the developer experience into thr
 
 ## Winglang's Approach Against These Parameters
 
-Now that we have the dimentions by which to view DevEx, let's analyse Winglang's efforts according to them. Again, these are Winglang's attributes that are supposed to improve DevEx according to these dimetions. I'm not trying to evaluate whether these attributes do improve DevEx, but rather how they align with the three primary dimensions presented in the academic paper.
+Now that we have the dimensions by which to view DevEx, let's analyze Winglang's efforts according to them. Again, these are Winglang's attributes that are supposed to improve DevEx according to these dimensions. I'm not trying to evaluate whether these attributes do improve DevEx, but rather how they align with the three primary dimensions presented in the academic paper.
 
 ### Feedback Loops
-Winglang comes with a local simulator and a visualization and debugging console that support instant hot reloading. These tools empower developers to iterate more swiftly with immediate feedback on code modifications, visualizing, interacting, and debugging their code locally via the Wing Console. By minimizing the delay in feedback, developers can promptly rectify errors and enhance their solutions. This approach to improving feedback loops aligns with the first dimension identified in the academic paper. It supports more rapid feedback from tools and also from people since the simulator can be used to create fast and cheap to deploy preview environments to be sent for review by other people.
+Winglang comes with a local simulator and a visualization and debugging console that support instant hot reloading. These tools empower developers to iterate more swiftly with immediate feedback on code modifications, visualizing, interacting, and debugging their code locally via the Wing Console. By minimizing the delay in feedback, developers can promptly rectify errors and enhance their solutions. This approach to improving feedback loops aligns with the first dimension identified in the academic paper. It supports more rapid feedback from tools and also from people since the simulator can be used to create fast and cheap-to-deploy preview environments to be sent for review by other people.
 
 ### Cognitive Load
-Winglang aims to lighten developers’ cognitive load by representing abstract cloud resources as native language elements. This strategy diminishes the need for developers to manually control these resources or deeply understand numerous layers of the cloud stack. Instead, they can focus their efforts on crafting application code, while Winglang's compiler handles the cloud mechanics, including the automated generation of Identity and Access Management (IAM) policies. Winglang also introduces features such as implicit await for asynchronous calls, further alleviating developers' cognitive burden. If we can make this work well' it seems that it would align with the second dimension identified in the academic paper well. The challenge is to make sure that the abstractions are not leaky on one hand and that they don't oversimplify to the degree of diminishing control on the other hand. It's a tough one, and we are definitely not there yet, although I feel like we're on the right path to get there.
+Winglang aims to lighten developers’ cognitive load by representing abstract cloud resources as native language elements. This strategy diminishes the need for developers to manually control these resources or deeply understand numerous layers of the cloud stack. Instead, they can focus their efforts on crafting application code, while Winglang's compiler handles the cloud mechanics, including the automated generation of Identity and Access Management (IAM) policies. Winglang also introduces features such as implicit await for asynchronous calls, further alleviating developers' cognitive burden. If we can make this work well' it seems that it would align with the second dimension identified in the academic paper well. The challenge is to make sure that the abstractions are not leaky on the one hand and that they don't oversimplify to the degree of diminishing control on the other hand. It's a tough one, and we are not there yet, although I feel like we're on the right path to get there.
 
 ### Flow State
 Winglang aims to keep developers immersed in their tasks by:
@@ -50,14 +52,14 @@ Winglang aims to keep developers immersed in their tasks by:
 3. **Fulfilling Challenges:** By abstracting cloud mechanics, developers should be able to focus more on addressing business needs instead of writing glue logic or boilerplate code. This would allow them to grapple with meaningful challenges, keeping them engaged and productive in their flow state. This too is a big challenge, but I feel we're on the right path to make progress there :)
 
 ## Conclusion
-It seems like we are attempting to add significant improvements in all three DevEx dimentions coined in the research paper. It is very fulfilling for me to see because it is nice to learn that something you felt intuitively holds against a more formal inspection. 
+It seems like we are attempting to add significant improvements in all three DevEx dimensions coined in the research paper. It is very fulfilling for me to see because it is nice to learn that something you felt intuitively holds against a more formal inspection. 
 
-But obviousely attempting somehthing is not enough. While it seems there could be potential in our approach, it is also evident that we face very big challenges. I blieve the main one is around our attempt at abstracting the cloud. We need to succeed in making the abstraction non-leaky, or mostly non-leaky, on one hand, while allowing developers to maintain control when needed on the other hand. Unlike with single machines, this has not been attempted successfully in the cloud yet. I think that the other main area of innovation in Wing, the local simulation, is less challenging to get right, but still not trivial.
+But attempting something is not enough. While it seems there could be potential in our approach, it is also evident that we face very big challenges. I believe the main one is our attempt at abstracting the cloud. We need to succeed in making the abstraction non-leaky, or mostly non-leaky, on the one hand, while allowing developers to maintain control when needed on the other hand. Unlike with single machines, this has not been attempted successfully in the cloud yet. I think that the other main area of innovation in Wing, the local simulation, is less challenging to get right, but still not trivial.
 
 In both cases, even if we are successful, it remains to be seen how much of an impact on DevEx Winglang's innovations would make in the real world.
 I can't wait to get to a point in the future when Wing is mature enough and we can make a proper study with real developers to measure the actual impact of our approach on their productivity, creativity and autonomy.
  
-I hope this journey into Wing's approach to improving DevEx of coding cloud apps was enjoyable for you. I'm sure I speak on behalf of everyone on the team when I say that I'd love to get any feedback on our approch in general and our execution of it.
+I hope this journey into Wing's approach to improving DevEx of coding cloud apps was enjoyable for you. I'm sure I speak on behalf of everyone on the team when I say that I'd love to get any feedback on our approach in general and our execution of it.
 
 Please check our [docs](https://docs.winglang.io) to learn more or our [playground](https://play.winglang.io) to "experience the experience".
-You are also welcome to [join our Slack](https://t.winglang.io/slack) and our DevEx related discussions there. 
+You are also welcome to [join our Slack](https://t.winglang.io/slack) and our DevEx-related discussions there.
