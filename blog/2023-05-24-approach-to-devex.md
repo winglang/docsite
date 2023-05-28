@@ -8,26 +8,26 @@ hide_table_of_contents: true
 
 > *"A 2020 [McKinsey study](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/developer-velocity-how-software-excellence-fuels-business-performance) found that companies with better work environments for their developers achieved revenue growth four to five times greater than that of their competitors."*
 
-This quote is taken from an insightful [article](https://queue.acm.org/detail.cfm?id=3595878) I recently came across, authored by researchers from DX, the University of Victoria, and Microsoft.
+This quote is from an insightful [article](https://queue.acm.org/detail.cfm?id=3595878) I recently came across, authored by researchers from DX, the University of Victoria, and Microsoft.
 
-The article explores the concept of Developer Experience (DevEx) and its significant impact on developer productivity.
+The article delves into the concept of Developer Experience (DevEx) and its profound impact on developer productivity.
 
-As a developer, I am delighted to see that a leading consulting firm is using empirical evidence to show companies just how important enhancing my working conditions should be for them :)
+As a developer, I am delighted to see that a leading consulting firm is using empirical evidence to demonstrate to companies just how important improving my working conditions can be for them :)
 
-As a co-creator of Winglang, which aims to improve the DevEx of cloud applications, I am happy to find research-backed validation to what we [felt instinctively](https://docs.winglang.io/blog/2022/11/23/manifesto) when we set out on our journey: that our success could profoundly impact productivity.
+As a co-creator of Winglang, which aims to enhance the DevEx of cloud applications, I am happy to find research-backed validation for what we [intuitively felt](https://docs.winglang.io/blog/2022/11/23/manifesto) when we embarked on our journey: that our success could could boost productivity by unlocking the cloud for developers.
 
 However thrilling it is to have my beliefs validated and to see powerful organizations promoting these ideas, that's not the focus of this post.
 
-Instead, I want to focus on another aspect of the paper: its introduction of structured definitions of DevEx and suggestions on how to evaluate it.
+Instead, I want to focus on another aspect of the paper: its introduction of structured definitions of DevEx and methods for its evaluation.
 
-I believe it's crucial for us, as developers of a language intended to enhance DevEx, to possess a framework for discussing our approach to improving DevEx. This is particularly critical when our project is open-source, and we hope to involve the community in these discussions.
+I believe it's crucial for us, as developers of a language designed to enhance DevEx, to establish a framework for discussing our approach to improving DevEx. This becomes especially vital when our project is open-source, and we aim to involve the community in these discussions.
 
-Therefore, this post will examine Winglang's approach to improving DevEx for cloud apps through the lens of the structured definitions provided in the paper.
+So, this post will examine Winglang's approach to improving DevEx for cloud apps, through the lens of the structured definitions given in the paper.
 
-This isn't an assessment of whether we manage to achieve our goals. To do that, we'd need to conduct a study on actual developers using a more mature version of Wing. 
-Instead, it serves as a status check to understand how we are striving to improve DevEx and how our methods align with those presented in the article.
+This isn't an evaluation of whether we have met our goals. To make that assessment, we'd need to conduct a study involving actual developers using a more mature version of Wing. 
+Instead, it serves as a status check to understand how we are aiming to improve DevEx and how our approaches align with those outlined in the article.
 
-I hope this post will pique your interest, and that you will participate in the ensuing discussion.
+I hope this post will spark your interest, and that you will join us in the subsequent discussion.
 
 <!--truncate-->
 
