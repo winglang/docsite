@@ -38,26 +38,53 @@ The authors present a framework that condenses the developer experience into thr
 Now that we have the dimensions by which to view DevEx, let's analyze Winglang's efforts according to them. Again, these are Winglang's attributes that are supposed to improve DevEx according to these dimensions. I'm not trying to evaluate whether these attributes do improve DevEx, but rather how they align with the three primary dimensions presented in the academic paper.
 
 ### Feedback Loops
-Winglang comes with a local simulator and a visualization and debugging console that support instant hot reloading. These tools empower developers to iterate more swiftly with immediate feedback on code modifications, visualizing, interacting, and debugging their code locally via the Wing Console. By minimizing the delay in feedback, developers can promptly rectify errors and enhance their solutions. This approach to improving feedback loops aligns with the first dimension identified in the academic paper. It supports more rapid feedback from tools and also from people since the simulator can be used to create fast and cheap-to-deploy preview environments to be sent for review by other people.
+Winglang comes with a local simulator and a visualization and debugging console that support instant hot reloading. 
+These tools empower developers to iterate more swiftly with immediate feedback on code modifications, visualizing, interacting, and debugging their code locally via the Wing Console. 
+By minimizing the delay in feedback, developers can promptly rectify errors and enhance their solutions. 
+
+This approach to improving feedback loops aligns with the first dimension identified in the academic paper. 
+It supports more rapid feedback from tools and also from people since the simulator can be used to create fast and cheap-to-deploy preview environments to be sent for review by other people.
 
 ### Cognitive Load
-Winglang aims to lighten developers’ cognitive load by representing abstract cloud resources as native language elements. This strategy diminishes the need for developers to manually control these resources or deeply understand numerous layers of the cloud stack. Instead, they can focus their efforts on crafting application code, while Winglang's compiler handles the cloud mechanics, including the automated generation of Identity and Access Management (IAM) policies. Winglang also introduces features such as implicit await for asynchronous calls, further alleviating developers' cognitive burden. If we can make this work well' it seems that it would align with the second dimension identified in the academic paper well. The challenge is to make sure that the abstractions are not leaky on the one hand and that they don't oversimplify to the degree of diminishing control on the other hand. It's a tough one, and we are not there yet, although I feel like we're on the right path to get there.
+Winglang aims to lighten developers’ cognitive load by representing abstract cloud resources as native language elements. 
+This strategy diminishes the need for developers to manually control these resources or deeply understand numerous layers of the cloud stack. 
+Instead, they can focus their efforts on crafting application code, while Winglang's compiler handles the cloud mechanics, including the automated generation of Identity and Access Management (IAM) policies. 
+
+Winglang also introduces features such as implicit await for asynchronous calls, further alleviating developers' cognitive burden. 
+
+These cognitive load reducing attributes seem to align well with the second dimension identified in the academic paper. 
+The challenge is to make sure that the abstractions are not leaky on the one hand and that they don't oversimplify to the degree of diminishing control on the other hand. 
+It's a tough one, and we are not there yet, although I feel like we're on the right path to get there.
 
 ### Flow State
 Winglang aims to keep developers immersed in their tasks by:
-1. **Minimizing Disruptions:** It offers an integrated development environment where both application and infrastructure code are composed in the same language and follow the same programming model. This reduces context switching, whether between languages, tools, or infra and application code. If different developers are handling infra and app code, it mitigates the context switches associated with communication between them (typically application developers and DevOps).
-2. **Providing Autonomy:** Winglang handles cloud mechanics, enabling developers to focus more on the business logic of their applications and less on infrastructure. If we succeed in doing it well, it should lessen dependence on DevOps and boost autonomy, stimulating a creative flow state.
-3. **Fulfilling Challenges:** By abstracting cloud mechanics, developers should be able to focus more on addressing business needs instead of writing glue logic or boilerplate code. This would allow them to grapple with meaningful challenges, keeping them engaged and productive in their flow state. This too is a big challenge, but I feel we're on the right path to make progress there :)
+
+1. **Providing Autonomy:** Winglang handles cloud mechanics, enabling developers to focus more on the business logic of their applications and less on infrastructure.
+Our goal is to reach a point where they can create entire applications in dev environments without needing much intervention from DevOps.
+On the other hand, Winglang also aims to promote the autonomy of DevOps engineers. [Compiler plugins](https://docs.winglang.io/blog/2023/02/17/plugins) are a way for them to apply non-functional concerns to the application in the form of policies, without having to communicate with the pplication developers much, or to know each and every resource being used by them. 
+If we succeed in separating the functional and non-functional concers well, and allow both application developers and DevOps engineers to be more autonomous,it should help induce a creative flow state for both.
+2. **Minimizing Disruptions:** In Winglang both application and infrastructure code are composed in the same way and using the same programming model and tools. 
+This reduces context switching, whether between languages, tools, or infra and application code. 
+If different developers are handling infra and app code, Winglang reduces the number of context switches associated with communication between them of the separation of concerns and increased autonomy for both disciplines described above. 
+3. **Fulfilling Challenges:** By abstracting cloud mechanics, developers should be able to focus more on addressing business needs instead of writing glue logic or boilerplate code. This would allow them to grapple with meaningful challenges, keeping them engaged and productive in their flow state. 
+This too is a big challenge, but I feel we're on the right path to make progress there :)
 
 ## Conclusion
-It seems like we are attempting to add significant improvements in all three DevEx dimensions coined in the research paper. It is very fulfilling for me to see because it is nice to learn that something you felt intuitively holds against a more formal inspection. 
+It seems like we are attempting to add significant improvements in all three DevEx dimensions coined in the research paper. 
+It is very fulfilling for me to see because it is nice to learn that something you felt intuitively holds against a more formal inspection. 
 
-But attempting something is not enough. While it seems there could be potential in our approach, it is also evident that we face very big challenges. I believe the main one is our attempt at abstracting the cloud. We need to succeed in making the abstraction non-leaky, or mostly non-leaky, on the one hand, while allowing developers to maintain control when needed on the other hand. Unlike with single machines, this has not been attempted successfully in the cloud yet. I think that the other main area of innovation in Wing, the local simulation, is less challenging to get right, but still not trivial.
+But attempting something is not enough. 
+While it seems there could be potential in our approach, it is also evident that we face very big challenges. 
+I believe the main one is our attempt at abstracting the cloud. 
+We need to succeed in making the abstraction non-leaky, or mostly non-leaky, on the one hand, while allowing developers to maintain control when needed on the other hand. 
+Unlike with single machines, this has not been attempted successfully in the cloud yet. 
+I think that the other main area of innovation in Wing, the local simulation, is less challenging to get right, but still not trivial.
 
 In both cases, even if we are successful, it remains to be seen how much of an impact on DevEx Winglang's innovations would make in the real world.
 I can't wait to get to a point in the future when Wing is mature enough and we can make a proper study with real developers to measure the actual impact of our approach on their productivity, creativity and autonomy.
  
-I hope this journey into Wing's approach to improving DevEx of coding cloud apps was enjoyable for you. I'm sure I speak on behalf of everyone on the team when I say that I'd love to get any feedback on our approach in general and our execution of it.
+I hope this journey into Wing's approach to improving DevEx of coding cloud apps was enjoyable for you. 
+I'm sure I speak on behalf of everyone on the team when I say that I'd love to get any feedback on our approach in general and our execution of it.
 
 Please check our [docs](https://docs.winglang.io) to learn more or our [playground](https://play.winglang.io) to "experience the experience".
 You are also welcome to [join our Slack](https://t.winglang.io/slack) and our DevEx-related discussions there.
