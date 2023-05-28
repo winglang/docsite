@@ -6,29 +6,28 @@ tags: [cloud-oriented programming, Winglang, developer experience, DevEx]
 hide_table_of_contents: true
 ---
 
-> "A 2020 [McKinsey study](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/developer-velocity-how-software-excellence-fuels-business-performance) found that companies with better work environments for their developers achieved revenue growth four to five times greater than that of their competitors".
+> *"A 2020 [McKinsey study](https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/developer-velocity-how-software-excellence-fuels-business-performance) found that companies with better work environments for their developers achieved revenue growth four to five times greater than that of their competitors."*
 
-This quote is taken from an enlightening [article](https://queue.acm.org/detail.cfm?id=3595878) by researchers from DX, the University of Victoria, and Microsoft, which I stumbled upon recently.
+This quote is taken from an insightful [article](https://queue.acm.org/detail.cfm?id=3595878) I recently came across, authored by researchers from DX, the University of Victoria, and Microsoft.
 
-The article delves into the concept of Developer Experience (DevEx) and its profound influence on developer productivity.
+The article explores the concept of Developer Experience (DevEx) and its significant impact on developer productivity.
 
-As a developer, I am delighted to see that a leading consulting company is using empirical evidence to evangelize to companies that it is in their best interest to make my life easier :)
+As a developer, I am delighted to see that a leading consulting firm is using empirical evidence to show companies just how important enhancing my working conditions should be for them :)
 
-As one of the creators of Winglang, whose goal is to improve the DevEx of cloud applications, I am happy to see research-backed validation to what we [felt instinctively](https://docs.winglang.io/blog/2022/11/23/manifesto) when we embarked on our journey: that succeeding in our mission can result in a big positive impact on productivity.
+As a co-creator of Winglang, which aims to improve the DevEx of cloud applications, I am happy to find research-backed validation to what we [felt instinctively](https://docs.winglang.io/blog/2022/11/23/manifesto) when we set out on our journey: that our success could profoundly impact productivity.
 
-But as exciting as it is to get validation to my beliefs and to see that powerful organizations are pushing these ideas, it is not the subject of this post.
+However thrilling it is to have my beliefs validated and to see powerful organizations promoting these ideas, that's not the focus of this post.
 
-Instead, I want to focus on another aspect of the paper: its introduction of structured definitions of DevEx and how to evaluate it. 
+Instead, I want to focus on another aspect of the paper: its introduction of structured definitions of DevEx and suggestions on how to evaluate it.
 
-I think that it is important for us, as developers of a language that is supposed to improve DevEx, to have a framework for discussing our approach to improving DevEx.
-This is even more important when our project is open-source and we'd like to involve the community in those discussions.
+I believe it's crucial for us, as developers of a language intended to enhance DevEx, to possess a framework for discussing our approach to improving DevEx. This is particularly critical when our project is open-source, and we hope to involve the community in these discussions.
 
-So this post will evaluate Winglang's approach to improving DevEx for cloud apps through the prism of the structured definitions in the paper.
+Therefore, this post will examine Winglang's approach to improving DevEx for cloud apps through the lens of the structured definitions provided in the paper.
 
-It is not an evaluation of whether we achieve our goals. Such an evaluation would have to be conducted by a study on actual developers in with a more mature version of Wing. 
-But it is a status check to see in what ways we are attempting to improve DevEx and how these ways are related to those presented in the article.
+This isn't an assessment of whether we manage to achieve our goals. To do that, we'd need to conduct a study on actual developers using a more mature version of Wing. 
+Instead, it serves as a status check to understand how we are striving to improve DevEx and how our methods align with those presented in the article.
 
-I hope it will be an interesting read for you, the readers of this post, and that you will participate in the discussion with us.
+I hope this post will pique your interest, and that you will participate in the ensuing discussion.
 
 <!--truncate-->
 
