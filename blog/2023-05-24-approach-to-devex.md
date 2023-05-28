@@ -14,12 +14,21 @@ The article delves into the concept of Developer Experience (DevEx) and its prof
 
 As a developer, I am delighted to see that a leading consulting company is using empirical evidence to evangelize to companies that it is in their best interest to make my life easier :)
 
-While we didn't know about this study when we started working on Winglang, we did instinctively realize that the existing cloud development experience is very frustrating and wanted to enhance it to unlock the cloud for developers. Elad dedicated an entire [blog post](https://docs.winglang.io/blog/2022/11/23/manifesto) to this issue.
+As one of the creators of Winglang, whose goal is to improve the DevEx of cloud applications, I am happy to see research-backed validation to what we [felt instinctively](https://docs.winglang.io/blog/2022/11/23/manifesto) when we embarked on our journey: that succeeding in our mission can result in a big positive impact on productivity.
 
-Now, with a research paper that officially defines DevEx, I find it intriguing to evaluate Winglang's approach to improving DevEx for cloud apps through the prism of these structured definitions.
-This is not an evaluation of whether we achieve our goals. Such an evaluation would have to be conducted on actual developers with a more mature version of Wing. But it is a status check to see in what ways we are attempting to improve DevEx and how these ways are related to those presented in the article.
+But as exciting as it is to get validation to my beliefs and to see that powerful organizations are pushing these ideas, it is not the subject of this post.
 
-I think it is valuable for us as the developers of Wing to hold such discussions in a structured way based on well-defined criteria, such as those in the cited article, and I hope it will be an interesting read for readers of this post and that you will participate in the discussion with us.
+Instead, I want to focus on another aspect of the paper: its introduction of structured definitions of DevEx and how to evaluate it. 
+
+I think that it is important for us, as developers of a language that is supposed to improve DevEx, to have a framework for discussing our approach to improving DevEx.
+This is even more important when our project is open-source and we'd like to involve the community in those discussions.
+
+So this post will evaluate Winglang's approach to improving DevEx for cloud apps through the prism of the structured definitions in the paper.
+
+It is not an evaluation of whether we achieve our goals. Such an evaluation would have to be conducted by a study on actual developers in with a more mature version of Wing. 
+But it is a status check to see in what ways we are attempting to improve DevEx and how these ways are related to those presented in the article.
+
+I hope it will be an interesting read for you, the readers of this post, and that you will participate in the discussion with us.
 
 <!--truncate-->
 
