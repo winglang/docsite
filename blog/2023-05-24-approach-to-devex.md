@@ -71,8 +71,9 @@ Winglang aims to keep developers immersed in their tasks by:
 
 **Providing Autonomy:** Winglang handles cloud mechanics, enabling developers to focus more on the business logic of their applications and less on infrastructure.
 Our goal is to reach a point where they can create entire applications in dev environments without needing much intervention from DevOps.
-On the other hand, Winglang also aims to promote the autonomy of DevOps engineers. [Compiler plugins](https://docs.winglang.io/blog/2023/02/17/plugins) are a way for them to apply non-functional concerns to the application in the form of policies, without having to communicate with the application developers much or to know every resource being used by them. 
-If we succeed in separating the functional and non-functional concerns well, and allow both application developers and DevOps engineers to be more autonomous, it should help induce a creative flow state for both.
+On the other hand, Winglang also aims to promote the autonomy of DevOps engineers. [Compiler plugins](https://docs.winglang.io/blog/2023/02/17/plugins) are a way for them to apply non-functional concerns to the application in the form of policies, without having to communicate with the application developers much or to know every resource being used by them.
+ 
+If we succeed in making developers and DevOps engineers more autonomous, we will be able to reduce the number of context switches and hand-offs between them. This should help induce a flow state in both.
 
 **Minimizing Disruptions:** In Winglang both application and infrastructure code are composed in the same way and using the same programming model and tools. 
 This reduces context switching, whether between languages, tools, or infra and application code. 
