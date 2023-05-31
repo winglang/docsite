@@ -56,13 +56,15 @@ It supports more rapid feedback from tools and also from people since the simula
 ### Cognitive Load
 Winglang aims to lighten developers’ cognitive load by representing abstract cloud resources as native language elements. 
 This strategy diminishes the need for developers to manually control these resources or deeply understand numerous layers of the cloud stack. 
-Instead, they can focus their efforts on crafting application code, while Winglang's compiler handles the cloud mechanics. For example, the automated generation of Identity and Access Management (IAM) policies. 
+Instead, they can focus their efforts on crafting application code, while Winglang's compiler handles the cloud mechanics. For example, the automated generation of Identity and Access Management (IAM) policies.
+
+Another key aspect of Winglang's approach to reducing cognitive load is its introduction of [inflights](https://docs.winglang.io/concepts/inflights). They allow developers to write distributed code that looks and feels almost like that of a monolith, with all the cognitive benefits that come with it: code that is easier to follow, test and debug.
 
 Winglang also introduces features such as implicit await for asynchronous calls, further alleviating developers' cognitive burden. 
 
 These cognitive load-reducing attributes seem to align well with the second dimension identified in the academic paper. 
 The challenge is to make sure that the abstractions are not leaky on the one hand and that they don't oversimplify to the degree of diminishing control on the other hand. 
-It's a tough one, and we are not there yet, although I feel like we're on the right path to get there.
+It's a tough one, and we are not there yet, although I feel like we're on the right path to get there. For example, by supporting import of any Terraform module directly, Wing doesn't restrict developers to using abstractions. There are also many ways to customize and extend Wing, including custom resources and [compiler plugins](https://docs.winglang.io/blog/2023/02/17/plugins) to modify the Terraform output directly.
 
 ### Flow State
 Winglang aims to keep developers immersed in their tasks by:
@@ -85,7 +87,7 @@ It is very fulfilling for me to see because it is nice to learn that something y
 
 But attempting something is not enough. 
 While it seems there could be potential in our approach, it is also evident that we face very big challenges. 
-I believe the main one is our attempt at abstracting the cloud. 
+Apart from the obvious one of driving adoption of a new language, I believe our main challenge is our attempt at abstracting the cloud. 
 We need to succeed in making the abstraction non-leaky, or mostly non-leaky, on the one hand, while allowing developers to maintain control when needed on the other hand. 
 Unlike with single machines, this has not been attempted successfully in the cloud yet. 
 I think that the other main area of innovation in Wing, the local simulation, is less challenging to get right, but still not trivial.
