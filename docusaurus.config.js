@@ -6,7 +6,6 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const slackUrl = "https://t.winglang.io/slack";
 
 const winglangOrgUrl = "https://github.com/winglang";
-const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
 const keywords = [
   "Wing language",
@@ -222,10 +221,6 @@ const config = {
               {
                 label: "Slack",
                 href: slackUrl,
-              },
-              {
-                label: "Stack Overflow",
-                href: stackOverflowUrl,
               },
               {
                 label:"Contributor's Handbook",
