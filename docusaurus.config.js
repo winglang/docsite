@@ -144,8 +144,7 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "welcome",
+            to: "/",
             position: "left",
             label: "Docs",
           },
