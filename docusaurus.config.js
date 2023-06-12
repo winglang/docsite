@@ -152,11 +152,11 @@ const config = {
             label: 'Blog',
             position: 'left',
           },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
-          },
+          // {
+          //   type: "docsVersionDropdown",
+          //   position: "right",
+          //   dropdownActiveClassDisabled: true,
+          // },
           {
             href: slackUrl,
             "aria-label": "Slack server",
