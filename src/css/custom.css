@@ -20,8 +20,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-family-base: 'IBM Plex Sans', sans-serif;
   --ifm-h1-vertical-rhythm-top: 2;
-  --ifm-menu-link-padding-vertical: 0.35rem;
-  --ifm-menu-link-padding-horizontal: 0.4rem;
+  /* --ifm-menu-link-padding-vertical: 0.35rem;
+  --ifm-menu-link-padding-horizontal: 0.4rem; */
   --doc-sidebar-width: 230px !important;
 }
 
@@ -55,10 +55,17 @@ html[data-theme='dark'] {
 .menu__list-item-collapsible > a {
   font-weight: 600;
 }
-.theme-doc-sidebar-item-category {
+
+.theme-doc-sidebar-item-category-level-1 {
   margin-bottom: 15px;
   font-weight: 700;
 }
+
+.theme-doc-sidebar-item-link-level-1 {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
 /* custom html elements styling  */
 .markdown h1:first-child {
   margin-top: calc( var(--ifm-h1-vertical-rhythm-top) * var(--ifm-leading) );
