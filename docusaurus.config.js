@@ -73,7 +73,7 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'community',
+        id: 'contributing',
         path: 'contributing',
         routeBasePath: 'contributing',
         breadcrumbs: true,

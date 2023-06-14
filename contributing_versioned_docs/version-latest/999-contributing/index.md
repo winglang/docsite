@@ -2,6 +2,7 @@
 title: Contributing to Wing
 id: index
 keywords: [Wing contributors, contributors]
+slug: /
 ---
 
 Thank you for your interest in contributing to Wing! ❤️ This document describes everything you need
