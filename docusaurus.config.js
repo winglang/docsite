@@ -34,7 +34,7 @@ const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
   url: process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`,
-  baseUrl: "/",
+  baseUrl: "/docs/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
@@ -77,7 +77,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "/", // Serve the docs at the site's root
+          routeBasePath: "/",
           breadcrumbs: true,
           includeCurrentVersion: false,
           editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
@@ -136,8 +136,8 @@ const config = {
         title: "Wing",
         logo: {
           alt: "Wing Logo",
-          src: "img/logo-black.png",
-          srcDark: "img/logo-turq.png",
+          src: "../img/logo-black.png",
+          srcDark: "../img/logo-turq.png",
           href: "https://winglang.io",
           target: "_self",
         },
