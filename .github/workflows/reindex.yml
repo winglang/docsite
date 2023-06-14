@@ -4,12 +4,15 @@ on:
   deployment_status:
 jobs:
   console:
-    name: echo
+    name: display deployment url
     runs-on: ubuntu-latest
     steps:
-      - name: Echo github deployment_status
+      - name: deployment_status deployment_url
         run: echo ${{ github.event.deployment_status.deployment_url }}
+      - name: deployment_status status
+        run: echo ${{ github.event.deployment_status.status }}
   reindex:
+    name: reindex only when deployment is successful on our main branch
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment_status.deployment_url == 'https://wing-docs-git-main-monada.vercel.app'
     runs-on: ubuntu-latest
     steps:
