@@ -78,7 +78,7 @@ const config = {
       ({
         docs: {
           routeBasePath: "/", // Serve the docs at the site's root
-          breadcrumbs: false,
+          breadcrumbs: true,
           includeCurrentVersion: false,
           editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
         },
@@ -143,8 +143,7 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "welcome",
+            to: "/",
             position: "left",
             label: "Docs",
           },
@@ -153,11 +152,11 @@ const config = {
             label: 'Blog',
             position: 'left',
           },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
-          },
+          // {
+          //   type: "docsVersionDropdown",
+          //   position: "right",
+          //   dropdownActiveClassDisabled: true,
+          // },
           {
             href: slackUrl,
             "aria-label": "Slack server",
@@ -182,15 +181,15 @@ const config = {
             items:[
               {
                 label: "Installation",
-                to:"getting-started/installation"
+                to:"start-here/installation"
               },
               {
                 label: "Getting Started",
-                to: "getting-started/hello"
+                to: "/"
               },
               {
                 label: "Concepts",
-                to: "category/concepts"
+                to: "core-concepts/inflights"
               }
             ]
           },
