@@ -12,6 +12,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: main
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: run reindex
         run: npm run reindex
         env:
