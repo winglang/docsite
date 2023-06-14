@@ -181,15 +181,15 @@ const config = {
             items:[
               {
                 label: "Installation",
-                to:"getting-started/installation"
+                to:"start-here/installation"
               },
               {
                 label: "Getting Started",
-                to: "getting-started/hello"
+                to: "/"
               },
               {
                 label: "Concepts",
-                to: "category/concepts"
+                to: "core-concepts/inflights"
               }
             ]
           },
