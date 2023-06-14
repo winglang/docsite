@@ -3,23 +3,25 @@ name: Reindex Wing Docs
 on:
   deployment_status:
 jobs:
-  console:
-    name: display target url
-    runs-on: ubuntu-latest
-    steps:
-      - name: deployment_status target_url
-        run: echo ${{ github.event.deployment_status.target_url }}
-      - name: deployment_status status
-        run: echo ${{ github.event.deployment_status.state }}
   reindex:
-    name: reindex only when deployment is successful on our main branch
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment_status.target_url == 'https://wing-docs-git-main-monada.vercel.app'
+    name: reindex only when deployment is successful
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           ref: main
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Login to private npm registry
+        env:
+          GITHUB_TOKEN: ${{ secrets.WING_GITHUB_TOKEN }}
+        run: npm config set @winglang:registry https://npm.pkg.github.com && npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+      - name: Install dependencies
+        run: npm install
       - name: run reindex
         run: npm run reindex
         env:
