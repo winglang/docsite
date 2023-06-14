@@ -3,8 +3,11 @@ name: Reindex Wing Docs
 on:
   deployment_status:
 jobs:
+  console:
+    - name: Echo github deployment_status
+      run: echo ${{ toJson(github.event.deployment_status) }}
   reindex:
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment_status.deployment_url == 'https://wing-docs-git-main-monada.vercel.app/'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
