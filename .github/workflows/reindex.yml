@@ -16,6 +16,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: Login to private npm registry
+        env:
+          GITHUB_TOKEN: ${{ secrets.WING_GITHUB_TOKEN }}
+        run: npm config set @winglang:registry https://npm.pkg.github.com && npm set //npm.pkg.github.com/:_authToken $GITHUB_TOKEN
+      - name: Install dependencies
+        run: npm install
       - name: run reindex
         run: npm run reindex
         env:
