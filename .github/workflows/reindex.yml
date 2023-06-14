@@ -1,7 +1,9 @@
+name: Reindex Wing Docs
+
 on:
   deployment_status:
-
-  run-reindex:
+jobs:
+  reindex:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
