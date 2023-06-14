@@ -76,6 +76,7 @@ const config = {
         id: 'contributing',
         path: 'contributing',
         routeBasePath: 'contributing',
+        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
         breadcrumbs: true,
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
