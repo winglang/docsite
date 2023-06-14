@@ -70,6 +70,18 @@ const config = {
         }
       };
     },
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        routeBasePath: 'community',
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      },
+    ],
   ],
   presets: [
     [
@@ -151,6 +163,11 @@ const config = {
             to: 'blog',
             label: 'Blog',
             position: 'left',
+          },
+          {
+            to: "community",
+            label: "Community",
+            position: "left",
           },
           // {
           //   type: "docsVersionDropdown",
