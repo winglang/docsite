@@ -74,8 +74,8 @@ const config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'community',
-        path: 'community',
-        routeBasePath: 'community',
+        path: 'contributing',
+        routeBasePath: 'contributing',
         breadcrumbs: true,
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
@@ -165,8 +165,8 @@ const config = {
             position: 'left',
           },
           {
-            to: "community",
-            label: "Community",
+            to: "contributing",
+            label: "Contributing",
             position: "left",
           },
           // {
