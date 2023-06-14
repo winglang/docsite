@@ -1,0 +1,21 @@
+name: Reindex Wing Docs
+
+on:
+  deployment_status:
+jobs:
+  reindex:
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: run reindex
+        run: npm run reindex
+        env:
+          CRAWLER_API_KEY: ${{ secrets.CRAWLER_API_KEY }}
+          CRAWLER_USER_ID: ${{ secrets.CRAWLER_USER_ID }}
+          CRAWLER_ID: ${{ secrets.CRAWLER_ID }}
+          CRAWLER_API_BASE_URL: https://crawler.algolia.com/api/1
+
