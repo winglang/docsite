@@ -4,12 +4,13 @@ on:
   deployment_status:
 jobs:
   console:
+    name: echo
     runs-on: ubuntu-latest
     steps:
       - name: Echo github deployment_status
-        run: echo ${{ toJson(github.event.deployment_status) }}
+        run: echo ${{ github.event.deployment_status.deployment_url }}
   reindex:
-    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment_status.deployment_url == 'https://wing-docs-git-main-monada.vercel.app/'
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success' && github.event.deployment_status.deployment_url == 'https://wing-docs-git-main-monada.vercel.app'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
