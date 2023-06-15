@@ -34,7 +34,7 @@ const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
   url: process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`,
-  baseUrl: "/",
+  baseUrl: "/foo/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
