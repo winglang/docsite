@@ -36,6 +36,19 @@ $ npm run build
 
 This command generates static content into the `build` directory and can be served using any static content hosting service.
 
+### Index new content
+
+We have an automated crawler (by Algolia) every day at 15:00 UTC that indexes the documentation website.
+
+Every merge to the `main` branch triggers a new crawler indexing.
+
+If for some reason there is a need to trigger the crawler manually, follow these steps:
+1. update the local .env file with the proper values (see in 1Password "Algolia Crawler")
+2. run the following command:
+```
+npm run reindex
+```
+
 ## License
 
 This repository is licensed under the [MIT License](./LICENSE.md).
