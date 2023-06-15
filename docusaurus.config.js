@@ -77,7 +77,6 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "/",
           breadcrumbs: true,
           includeCurrentVersion: false,
           editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
