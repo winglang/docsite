@@ -33,7 +33,7 @@ const keywords = [
 const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
-  url: process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}/docs/`,
+  url: process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`,
   baseUrl: "/docs/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
