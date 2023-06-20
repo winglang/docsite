@@ -129,7 +129,12 @@ button.navbar__toggle {
 
 .menu__link {
   font-size: 0.9rem;
-  line-height: 0.9rem;
+  line-height: 0.7rem;
+}
+
+.table-of-contents__link {
+  font-size: 1.0rem;
+  line-height: 1.5rem;
 }
 
 .menu__link:hover {
