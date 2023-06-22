@@ -268,7 +268,7 @@ resource Bucket {
   /**
    * Run an inflight whenever an object is uploaded, modified, or deleted from the bucket.
    */
-  onEvent(fn: inflight (event: BucketEvent) => void, opts: BucketOnEventProps?): void;
+  onEvent(fn: inflight (key: str, event: BucketEvent) => void, opts: BucketOnEventProps?): void;
 
   /**
    * Add an object to the bucket that is uploaded when the app is deployed.
@@ -411,7 +411,7 @@ A Queue represents a data structure that holds a list of items. Using a queue, y
 
 Any number of producers can push messages to the queue, and a single consumer can pop messages from the queue.
 
-**Scalability and Simultaneous Runs**: The Queue is built for scalability and supports the simultaneous execution of multiple instances of the same consumer service. This means that multiple instances of the same consumer service can run concurrently, each one processing items from the Queue independently. This setup ensures efficient and scalable data processing. It's crucial to understand that each item in the queue is processed by exactly one instance of the consumer. 
+**Scalability and Simultaneous Runs**: The Queue is built for scalability and supports the simultaneous execution of multiple instances of the same consumer service. This means that multiple instances of the same consumer service can run concurrently, each one processing items from the Queue independently. This setup ensures efficient and scalable data processing. It's crucial to understand that each item in the queue is processed by exactly one instance of the consumer.
 
 **Stateful:** Yes
 
@@ -448,7 +448,7 @@ resource Queue {
   /**
    * Run an inflight in a cloud function whenever a message is pushed to the queue.
    */
-  setConsumer(fn: inflight (message: Json) => void, opts: QueueAddConsumerProps?): void;
+  setConsumer(fn: inflight (message: Json) => void, opts: QueueSetConsumerProps?): void;
 
   /**
    * Return the approximate message count of the queue.
@@ -471,7 +471,7 @@ resource Queue {
   inflight purge(): void;
 }
 
-struct QueueAddConsumerProps { /* elided */ }
+struct QueueSetConsumerProps { /* elided */ }
 ```
 
 Future extensions:

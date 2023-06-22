@@ -60,7 +60,7 @@ Wing is designed around this new programming paradigm, which we call
 
 > Taken from [Inflight Magazine](https://docs.winglang.io/blog/2022/12/28/magazine-001#diving-deeper-into-inflight-functions)
 
-[Inflight functions](https://docs.winglang.io/concepts/inflights) are likely Wing's most significant
+Inflight functions are likely Wing's most significant
 language innovation. Since cloud applications are distributed systems and code is executed on
 multiple machines across various compute platforms, our language needs first-class support for this
 idea: code that executes in the cloud and interacts with managed services around it. This is where
@@ -179,7 +179,7 @@ class SafeQueue extends cloud.Queue {
   init() {
     let dlq = new cloud.Queue();
 
-    dlq.addConsumer(inflight (m: str) => {
+    dlq.setConsumer(inflight (m: str) => {
       log.error("dead-letter: ${m}");
     });
 

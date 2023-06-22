@@ -197,16 +197,12 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "reference/spec",
+                to: "contributors/rfcs/language-spec",
               },
               {
                 label: "API Reference",
-                to: "reference/sdk",
+                to: "contributors/rfcs/2023-01-20-wingsdk-spec",
               },
-              {
-                label: "Roadmap",
-                to: "status"
-              }
             ],
           },
           {
