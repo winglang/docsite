@@ -22,7 +22,7 @@ Several capabilities aren't implemented yet, so I've marked them with an asteris
 
 There's also a second caveat, which is that a language is only one piece of the puzzle.
 In order to fully realize the benefits of a cloud-oriented language, we think it's necessary to build a robust ecosystem of tools and libraries that support all aspects of the development process.
-I think Wing's [standard library](https://docs.winglang.io/standard-library/) and [development console] will be key parts of this story, but I'm also excited to see what the community will build and how it will shape the future of Wing.
+I think Wing's [standard library] and [development console] will be key parts of this story, but I'm also excited to see what the community will build and how it will shape the future of Wing.
 
 So, join me as we take a tour of some of Winglang's most distinctive design choices!
 
