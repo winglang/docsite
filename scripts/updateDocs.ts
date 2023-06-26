@@ -40,22 +40,18 @@ const authorization = `token ${process.env.GITHUB_TOKEN}`;
     force: true,
     recursive: true,
   });
-  await fs.rename("docs", "versioned_docs/version-latest");
+  await fs.cp("docs/docs", "versioned_docs/version-latest", {recursive: true});
 
   console.log("contributing_versioned_docs/version-latest...");
   await fs.rm("contributing_versioned_docs/version-latest", {
     force: true,
     recursive: true,
   });
-  await fs.rename("contributing", "contributing_versioned_docs/version-latest");
+  await fs.cp("docs/contributing", "contributing_versioned_docs/version-latest", {recursive: true});
 
   console.log("Cleaning up...");
   await fs.rm("docs.tgz");
   await fs.rm("docs", {
-    force: true,
-    recursive: true,
-  });
-  await fs.rm("contributing", {
     force: true,
     recursive: true,
   });
