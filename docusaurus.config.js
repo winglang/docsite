@@ -68,7 +68,7 @@ const config = {
               symlinks: false,
             },
             plugins: [
-                new NodePolyfillPlugin(),
+              new NodePolyfillPlugin(),
             ],
           };
         }
@@ -83,6 +83,8 @@ const config = {
         editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/999-contributors/${params.docPath}`,
         breadcrumbs: true,
         includeCurrentVersion: false,
+        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
       },
     ],
   ],
