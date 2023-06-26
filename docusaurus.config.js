@@ -3,6 +3,7 @@
 require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const slackUrl = "https://t.winglang.io/slack";
 
 const winglangOrgUrl = "https://github.com/winglang";
@@ -65,11 +66,25 @@ const config = {
           return {
             resolve: {
               symlinks: false,
-            }
+            },
+            plugins: [
+                new NodePolyfillPlugin(),
+            ],
           };
         }
       };
     },
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'contributing',
+        path: 'contributing',
+        routeBasePath: 'contributing',
+        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/999-contributors/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+      },
+    ],
   ],
   presets: [
     [
@@ -150,6 +165,11 @@ const config = {
             to: 'blog',
             label: 'Blog',
             position: 'left',
+          },
+          {
+            to: "contributing",
+            label: "Contributing",
+            position: "left",
           },
           // {
           //   type: "docsVersionDropdown",
