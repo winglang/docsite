@@ -90,7 +90,6 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "/", // Serve the docs at the site's root
           breadcrumbs: true,
           includeCurrentVersion: false,
           editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
@@ -149,14 +148,14 @@ const config = {
         title: "Wing",
         logo: {
           alt: "Wing Logo",
-          src: "img/logo-black.png",
-          srcDark: "img/logo-turq.png",
+          src: "../img/logo-black.png",
+          srcDark: "../img/logo-turq.png",
           href: "https://winglang.io",
           target: "_self",
         },
         items: [
           {
-            to: "/",
+            to: "docs",
             position: "left",
             label: "Docs",
           },
@@ -216,16 +215,12 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "reference/spec",
+                to: "contributors/rfcs/language-spec",
               },
               {
                 label: "API Reference",
-                to: "reference/sdk",
+                to: "contributors/rfcs/2023-01-20-wingsdk-spec",
               },
-              {
-                label: "Roadmap",
-                to: "status"
-              }
             ],
           },
           {
