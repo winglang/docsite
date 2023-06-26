@@ -1,6 +1,6 @@
 label: Contributing
 collapsible: true
-collapsed: false
+collapsed: true
 link:
   type: doc
   id: index

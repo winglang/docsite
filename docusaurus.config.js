@@ -80,7 +80,7 @@ const config = {
         id: 'contributing',
         path: 'contributing',
         routeBasePath: 'contributing',
-        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/999-contributors/${params.docPath}`,
+        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/contributing/${params.docPath}`,
         breadcrumbs: true,
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
@@ -219,11 +219,11 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "contributors/rfcs/language-spec",
+                to: "contributing/rfcs/language-spec",
               },
               {
                 label: "API Reference",
-                to: "contributors/rfcs/2023-01-20-wingsdk-spec",
+                to: "contributing/rfcs/2023-01-20-wingsdk-spec",
               },
             ],
           },
@@ -240,7 +240,7 @@ const config = {
               },
               {
                 label:"Contributor's Handbook",
-                to: "contributors/"
+                to: "contributing/"
               },
             ],
           },

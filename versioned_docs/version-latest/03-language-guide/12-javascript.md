@@ -3,4 +3,4 @@ title: JavaScript interoperability
 id: javascript-interop
 ---
 
-TODO (for now, see the [language spec RFC](../999-contributors/999-rfcs/2023-06-12-language-spec.md))
+TODO (for now, see the [language spec RFC](../../../contributing_versioned_docs/version-latest/999-rfcs/2023-06-12-language-spec.md))
