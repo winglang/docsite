@@ -10,7 +10,7 @@ to know to help out with the Wing project.
 There are many ways to contribute to Wing:
 
 * Reporting bugs through a [GitHub issue](https://github.com/winglang/wing/issues)
-* Writing [documentation and guides](https://github.com/winglang/wing/issues?q=is:issue+is:open+sort:updated-desc+label:documentation) or adding [examples](./docs)
+* Writing [documentation and guides](https://github.com/winglang/wing/issues?q=is:issue+is:open+sort:updated-desc+label:documentation) or adding [examples](docs)
 * Setting up your [development environment](./development) and working on the code
 * Submitting [pull requests](./pull_requests) for new features or helping with [reviews](https://github.com/winglang/wing/pulls)
 * Picking up a [good first issue](https://github.com/winglang/wing/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+no%3Aassignee+sort%3Aupdated-desc+) to work on
@@ -21,4 +21,4 @@ There are many ways to contribute to Wing:
 * Asking and answering questions in the [Wing Slack](https://t.winglang.io/slack)
 * Posting or answering questions in [Wing Discussions](https://github.com/winglang/wing/discussions)
 
-![](./giphy.webp)
+![](docs/contributing/giphy.webp)
