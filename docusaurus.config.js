@@ -3,6 +3,7 @@
 require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const slackUrl = "https://t.winglang.io/slack";
 
 const winglangOrgUrl = "https://github.com/winglang";
@@ -65,11 +66,27 @@ const config = {
           return {
             resolve: {
               symlinks: false,
-            }
+            },
+            plugins: [
+              new NodePolyfillPlugin(),
+            ],
           };
         }
       };
     },
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'contributing',
+        path: 'contributing',
+        routeBasePath: 'contributing',
+        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/contributing/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      },
+    ],
   ],
   presets: [
     [
@@ -151,6 +168,11 @@ const config = {
             label: 'Blog',
             position: 'left',
           },
+          {
+            to: "contributing",
+            label: "Contributing",
+            position: "left",
+          },
           // {
           //   type: "docsVersionDropdown",
           //   position: "right",
@@ -197,11 +219,11 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "contributors/rfcs/language-spec",
+                to: "contributing/rfcs/language-spec",
               },
               {
                 label: "API Reference",
-                to: "contributors/rfcs/2023-01-20-wingsdk-spec",
+                to: "contributing/rfcs/2023-01-20-wingsdk-spec",
               },
             ],
           },
@@ -218,7 +240,7 @@ const config = {
               },
               {
                 label:"Contributor's Handbook",
-                to: "contributors/"
+                to: "contributing/"
               },
             ],
           },

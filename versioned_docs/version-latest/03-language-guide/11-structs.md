@@ -3,4 +3,4 @@ title: Structs
 id: structs
 ---
 
-TODO (for now, see the [language spec RFC](../999-contributors/999-rfcs/2023-06-12-language-spec.md))
+TODO (for now, see the [language spec RFC](../../contributing/rfcs/language-spec))
