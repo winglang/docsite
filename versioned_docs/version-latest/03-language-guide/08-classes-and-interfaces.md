@@ -3,4 +3,4 @@ title: Classes and interfaces
 id: classes-and-interfaces
 ---
 
-TODO (for now, see the [language spec RFC](../../contributing/rfcs/language-spec))
+TODO (for now, see the [language spec RFC](rfcs/language-spec))
