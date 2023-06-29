@@ -124,7 +124,7 @@ button.navbar__toggle {
 }
 
 .navbar__brand {
-  margin-right: 2.5rem;
+  margin-right: 2rem;
 }
 
 .navbar--fixed-top {
@@ -132,11 +132,16 @@ button.navbar__toggle {
   padding: 0px 32px;
 }
 
+.header-text-link svg[class^='iconExternalLink'] {
+  display: none;
+}
+
 .header-text-link {
   padding: 8px 24px;
   font-size: 17px;
   line-height: 20px;
 }
+
 html[data-theme='dark'] .header-text-link {
   color: #f1f0f1;
 }

@@ -155,13 +155,13 @@ const config = {
         },
         items: [
           {
-            to: "docs",
+            href: "https://www.winglang.io/docs/start-here/installation",
             position: "left",
             label: "Install",
             className: "header-text-link",
           },
           {
-            to: "docs",
+            href: "https://play.winglang.io/",
             position: "left",
             label: "Playground",
             className: "header-text-link",
