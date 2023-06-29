@@ -140,10 +140,12 @@ button.navbar__toggle {
   padding: 8px 24px;
   font-size: 17px;
   line-height: 20px;
+  font-weight: 500;
 }
 
 html[data-theme='dark'] .header-text-link {
   color: #f1f0f1;
+  font-weight: 400;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {

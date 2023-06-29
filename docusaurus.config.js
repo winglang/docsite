@@ -173,15 +173,21 @@ const config = {
             className: "header-text-link",
           },
           {
+            to: "contributing",
+            label: "Contributing",
+            position: "left",
+            className: "header-text-link",
+          },
+          {
             to: 'blog',
             label: 'Blog',
             position: 'left',
             className: "header-text-link",
           },
           {
-            to: "contributing",
-            label: "Contributing",
-            position: "left",
+            href: "https://www.winglang.io/contact",
+            label: 'Contact',
+            position: 'left',
             className: "header-text-link",
           },
           // {
