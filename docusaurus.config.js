@@ -145,11 +145,11 @@ const config = {
         searchPagePath: 'search',
       },
       navbar: {
-        title: "Wing",
+        title: "",
         logo: {
           alt: "Wing Logo",
-          src: "../img/logo-black.png",
-          srcDark: "../img/logo-turq.png",
+          src: "../img/wing-logo.svg",
+          srcDark: "../img/wing-logo-dark.svg",
           href: "https://winglang.io",
           target: "_self",
         },
@@ -157,17 +157,32 @@ const config = {
           {
             to: "docs",
             position: "left",
+            label: "Install",
+            className: "header-text-link",
+          },
+          {
+            to: "docs",
+            position: "left",
+            label: "Playground",
+            className: "header-text-link",
+          },
+          {
+            to: "docs",
+            position: "left",
             label: "Docs",
+            className: "header-text-link",
           },
           {
             to: 'blog',
             label: 'Blog',
             position: 'left',
+            className: "header-text-link",
           },
           {
             to: "contributing",
             label: "Contributing",
             position: "left",
+            className: "header-text-link",
           },
           // {
           //   type: "docsVersionDropdown",
