@@ -179,6 +179,12 @@ const config = {
             className: "header-text-link",
           },
           {
+            to: "contributing",
+            label: "Contributing",
+            position: "left",
+            className: "header-text-link",
+          },
+          {
             to: 'blog',
             label: 'Blog',
             position: 'left',
