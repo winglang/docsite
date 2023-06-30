@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 const GithubIcon = () => {
   return (  
@@ -8,17 +8,35 @@ const GithubIcon = () => {
   );
 }
 
-const GitHubButton = () => {
-  const stars = "1.2";
+export const GitHubButton = () => {
+  const [stars, setStars] = useState('0');
+  const [watchersCount, setWatchersCount] = useState(0);
+
+  useEffect(() => {
+    const getStarsCount = async () => {
+      const res = await fetch('https://api.github.com/repos/winglang/wing');
+      const data = await res.json();
+      setWatchersCount(data.watchers_count);
+    };
+    getStarsCount();
+  }, []);
+
+  useEffect(() => {
+      const stars = watchersCount.toString();
+      const starsK = stars.length > 3 ?
+        `${stars.slice(0, -3)}.${stars.slice(-3, -2)}k` : stars;
+      setStars(starsK);
+  }, [watchersCount]);
+
   return (
-    <a href="https://github.com/winglang/wing" target="_blank" className="navbar__item nav-git-button">
-      <div className="nav-git">
+    <div className="navbar__item nav-git-button">
+      <a href="https://github.com/winglang/wing" target="_blank" className="nav-git">
         <GithubIcon />
         <div>Star us</div>
         <div className="line-sep"></div>
-        <div>⭐️ {stars}k</div>
-      </div>
-    </a>
+        <div>⭐️ {stars}</div>
+      </a>
+    </div>
   );
 }
 

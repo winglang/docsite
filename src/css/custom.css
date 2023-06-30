@@ -246,7 +246,6 @@ html[data-theme='dark'] .header-github-link:before {
   align-items: center;
   padding: 8px 16px;
   font-size: 15px;
-  text-decoration: none;
   display: flex;
   color: #1C1E21;
   border: 1px solid #cbd5e1;
@@ -266,9 +265,8 @@ html[data-theme='dark'] .header-github-link:before {
 }
 
 .nav-git:hover {
-  color: #fff;
-  background-color: #2bd5c1;
-  border: 1px solid #2bd5c1;
+  color: #1f70bf;
+  text-decoration: none;
 }
 
 html[data-theme='dark'] .nav-git {
