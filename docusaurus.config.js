@@ -173,8 +173,8 @@ const config = {
             className: "header-text-link",
           },
           {
-            to: "contributing",
-            label: "Contributing",
+            href: "https://www.winglang.io/community",
+            label: "Community",
             position: "left",
             className: "header-text-link",
           },
