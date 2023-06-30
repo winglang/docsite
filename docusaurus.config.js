@@ -190,11 +190,6 @@ const config = {
             position: 'left',
             className: "header-text-link",
           },
-          // {
-          //   type: "docsVersionDropdown",
-          //   position: "right",
-          //   dropdownActiveClassDisabled: true,
-          // },
           {
             href: slackUrl,
             "aria-label": "Slack server",
@@ -207,7 +202,11 @@ const config = {
             "aria-label": "Winglang Repo",
             label: " ",
             position: "right",
-            className: "header-github-link",
+            className: "header-github-link nav-git-mobile",
+          },
+          {
+            type: "custom-GitHubButton",
+            position: "right",
           },
         ],
       },
