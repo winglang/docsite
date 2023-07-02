@@ -20,6 +20,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-family-base: 'IBM Plex Sans', sans-serif;
   --doc-sidebar-width: 250px !important;
+  --ifm-navbar-height: 80px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -117,14 +118,60 @@ button.navbar__toggle {
 }
 
 .navbar__logo {
-  height: 1.5rem;
-  margin-right: 0.25rem;
+  height: 24px;
+  width: 88px;
+  margin-right: 0px;
 }
 
+.navbar__brand {
+  margin-right: 40px;
+}
 
+.navbar--fixed-top {
+  align-items: center;
+  padding: 0px 32px;
+  background-color: white;
+}
+html[data-theme='dark'] .navbar--fixed-top {
+  background-color: #121414;
+}
 
-.navbar__link:hover {
+.header-text-link svg[class^='iconExternalLink'] {
+  display: none;
+}
+
+.header-text-link {
+  padding: 8px 24px;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 400;
+  align-items: center;
+}
+
+html[data-theme='dark'] .header-text-link {
+  color: #f1f0f1;
+}
+
+@media (min-width: 992px) and (max-width: 1380px) {
+  .header-text-link {
+      padding: 8px 12px;
+      font-size: 16px;
+  }
+  .navbar__brand {
+    margin-right: 16px;
+  }
+}
+
+.header-text-link:hover {
   color: var(--ifm-color-primary-lightest);
+  background-color: #f2f2f2;
+  border-radius: 8px;
+}
+
+html[data-theme='dark'] .header-text-link:hover {
+  color: var(--ifm-color-primary-lightest);
+  background-color: #272828;
+  border-radius: 8px;
 }
 
 .menu__link {
@@ -149,27 +196,21 @@ button.navbar__toggle {
 }
 
 .header-slack-link:before {
-  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-7i2nrx/Slack_Mark_Monochrome_Black.svg?auto=webp&format=png&width=24&height=24 ") no-repeat;
+  background: url("../../static/img/slack.svg") no-repeat;
   content: "";
   display: flex;
-  height: 24px;
+  height: 26px;
   width: 24px;
+  color: #334155;
 }
 
 html[data-theme='dark'] .header-slack-link:before {
-  background: url("https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-j7mis/Slack_Mark_Monochrome_White.svg?auto=webp&format=png&width=24&height=24") no-repeat;
-  content: "";
-  display: flex;
-  height: 24px;
-  width: 24px;
+  background: url("../../static/img/slack-dark.svg") no-repeat;
+  color: #2bd5c1;
 }
 
 html[data-theme='dark'] .navbar__title {
   color: #2ad5c1;
-}
-
-.header-github-link {
-  margin-right: 1rem;
 }
 
 .header-github-link svg[class^='iconExternalLink'] {
@@ -185,15 +226,63 @@ html[data-theme='dark'] .navbar__title {
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-  no-repeat;
+  background: url("../../static/img/github-logo.svg") no-repeat;
 }
 
 html[data-theme='dark'] .header-github-link:before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-  no-repeat;
+  background: url("../../static/img/github-logo-dark.svg") no-repeat;
 }
 
 .footer--dark {
   --ifm-footer-background-color: #212627;
+}
+
+.nav-git {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  white-space: nowrap;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  font-size: 15px;
+  display: flex;
+  color: #1C1E21;
+  border: 1px solid #cbd5e1;
+}
+
+.nav-git-mobile {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .nav-git-button {
+    display: none;
+  }
+}
+
+@media (min-width: 1040px) and (max-width: 1200px) {
+  .nav-git-mobile {
+    display: flex;
+  }
+}
+
+.nav-git:hover {
+  color: #1f70bf;
+  text-decoration: none;
+}
+
+html[data-theme='dark'] .nav-git {
+  color: #f1f0f1;
+  border: 1px solid #475569;
+}
+
+html[data-theme='dark'] .nav-git:hover {
+  color: #1f70bf;
+}
+
+.line-sep {
+  width: 1px;
+  height: 1.5em;
+  border-right: 1px solid #26413c
 }
