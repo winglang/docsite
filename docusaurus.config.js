@@ -76,7 +76,7 @@ const config = {
         id: 'contributing',
         path: 'contributing',
         routeBasePath: 'contributing',
-        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/contributing/${params.docPath}`,
+        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/contributing/${params.docPath}`,
         breadcrumbs: true,
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
@@ -92,7 +92,7 @@ const config = {
         docs: {
           breadcrumbs: true,
           includeCurrentVersion: false,
-          editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
+          editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`,
         },
         blog: {
           blogTitle: 'What\'s up? The Wing Blog',
