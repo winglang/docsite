@@ -92,7 +92,12 @@ const config = {
         docs: {
           breadcrumbs: true,
           includeCurrentVersion: false,
-          editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`,
+          editUrl: (params) => {
+            if (/\d+-standard-library\/\d+-cloud/.test(params.docPath)) {
+              return `${winglangOrgUrl}/wing/tree/main/libs/wingsdk/src/cloud/${params.docPath.split("/").pop()}`
+            }
+            return `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`
+          },
         },
         blog: {
           blogTitle: 'What\'s up? The Wing Blog',
