@@ -3,6 +3,7 @@
 require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const slackUrl = "https://t.winglang.io/slack";
 
 const winglangOrgUrl = "https://github.com/winglang";
@@ -65,7 +66,10 @@ const config = {
           return {
             resolve: {
               symlinks: false,
-            }
+            },
+            plugins: [
+              new NodePolyfillPlugin(),
+            ],
           };
         }
       };
