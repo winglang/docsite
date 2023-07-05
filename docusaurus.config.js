@@ -229,15 +229,15 @@ const config = {
             items:[
               {
                 label: "Installation",
-                to:"start-here/installation"
+                to:"/docs/start-here/installation"
               },
               {
                 label: "Getting Started",
-                to: "/"
+                to: "/docs"
               },
               {
                 label: "Concepts",
-                to: "core-concepts/inflights"
+                to: "/docs/concepts/inflights"
               }
             ]
           },
@@ -246,11 +246,11 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "contributing/rfcs/language-spec",
+                to: "/docs/language-guide/language-reference",
               },
               {
                 label: "API Reference",
-                to: "contributing/rfcs/2023-01-20-wingsdk-spec",
+                to: "/docs/category/standard-library",
               },
             ],
           },
