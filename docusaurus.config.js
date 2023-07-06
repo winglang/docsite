@@ -64,21 +64,6 @@ const config = {
         name: 'webpack-configuration-plugin',
         configureWebpack(config, isServer, utils) {
           return {
-            module: {
-              rules: [
-                {
-                  test: /\.(txt|ts|yaml|w)$/,
-                  use: [
-                    {
-                      loader: 'file-loader',
-                      options: {
-                        outputPath: 'docs',
-                      },
-                    },
-                  ],
-                },
-              ],
-            },
             resolve: {
               symlinks: false,
             },
