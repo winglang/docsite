@@ -61,6 +61,10 @@ html[data-theme='dark'] {
   font-weight: 700;
 }
 
+.theme-doc-sidebar-item-link-level-1 > a {
+  font-weight: 600;
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 600;
