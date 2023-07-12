@@ -75,9 +75,9 @@ On the other hand, Winglang also aims to promote the autonomy of DevOps engineer
  
 If we succeed in making developers and DevOps engineers more autonomous, we will be able to reduce the number of context switches and hand-offs between them. This should help induce a flow state in both.
 
-**Minimizing Disruptions:** In Winglang both application and infrastructure code are composed in the same way and using the same programming model and tools. 
+**Minimizing Disruptions:** In Winglang both application and infrastructure code are composed in the same way and use the same programming model and tools. 
 This reduces context switching, whether between languages, tools, or infra and application code. 
-If different developers are handling infra and app code, Winglang reduces the number of context switches associated with communication between them of the separation of concerns and increased autonomy for both disciplines described above. 
+If different developers are handling infra and app code, Winglang reduces the number of context switches associated with communication between them because of the separation of concerns and increased autonomy for both disciplines described above. 
 
 **Fulfilling Challenges:** By abstracting cloud mechanics, developers should be able to focus more on addressing business needs instead of writing glue logic or boilerplate code. This would allow them to grapple with meaningful challenges, keeping them engaged and productive in their flow state. 
 This too is a big challenge, but I feel we're on the right path to make progress there :)
