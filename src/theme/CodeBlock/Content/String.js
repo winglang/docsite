@@ -91,7 +91,7 @@ export default function CodeBlockString({
             />
           )}
           
-          {(metastring ?? "").includes("playground") && <button className={clsx('clean-btn')} onClick={ () => window.open(`https://play.winglang.io?code=(${encodeURIComponent(Buffer.from(code).toString('base64'))})`) }>Play</button>}
+          {(metastring ?? "").includes("playground") && <button className={clsx('clean-btn')} onClick={ () => window.open(`https://www.winglang.io/play/?code=(${encodeURIComponent(Buffer.from(code).toString('base64'))})`) }>Play</button>}
           <CopyButton className={styles.codeButton} code={code} />
         </div>
       </div>
