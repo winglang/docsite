@@ -39,4 +39,4 @@ import CodeComparison from '../../src/components/CodeComparison';
 | Provisioning engine                             | Same code compiles to Terraform and AWS-CDK (CloudFormation) | Terraform (AWS-CDK is used for Cloudformation, but you cannot compile the same code to different engines) |
 | Testing                                         | Same tests run on local simulator and cloud, without mocks | Need mocks for local testing                |
 
-You can get a sense of the development experience with Wing in our [playground](https://www.winglang.io/play/).
+You can get a sense of the development experience with Wing in our [playground](https://play.winglang.io/).
