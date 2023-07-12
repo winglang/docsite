@@ -40,4 +40,4 @@ import CodeComparison from '../../src/components/CodeComparison';
 | Testing                                         | Same tests run on local simulator and cloud, without mocks | Need mocks for local testing                 |
 
 
-You can get a sense of the development experience with Wing in our [playground](https://play.winglang.io/).
+You can get a sense of the development experience with Wing in our [playground](https://www.winglang.io/play/).
