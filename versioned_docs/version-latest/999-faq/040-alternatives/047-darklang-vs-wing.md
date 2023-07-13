@@ -9,4 +9,4 @@ There are several differences between Wing and Darklang, with the main distincti
 
 With Wing, you can write code that is interoperable with JavaScript, allowing you to leverage the extensive NPM ecosystem. When you compile your code, it is transformed into JavaScript and Terraform, ensuring that your downstream tools remain the same as before. This approach helps developers to adopt Wing more easily and integrate it into their existing workflows.
 
-To get a feel for the development experience with Wing, try our [playground](https://www.winglang.io/play/).
+To get a feel for the development experience with Wing, try our [playground](https://play.winglang.io/).
