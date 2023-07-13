@@ -257,7 +257,7 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "/docs/language-guide/language-reference",
+                to: "/docs/language-reference",
               },
               {
                 label: "API Reference",
