@@ -171,7 +171,7 @@ const config = {
             target: "_self",
           },
           {
-            href: "https://play.winglang.io/",
+            href: "https://www.winglang.io/play/",
             position: "left",
             label: "Playground",
             className: "header-text-link",
