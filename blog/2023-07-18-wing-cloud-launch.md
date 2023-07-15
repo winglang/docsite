@@ -185,7 +185,7 @@ and with other pieces of my system.
 To that end, the Wing language, the SDK and the Wing Console all work together to offer first-class
 support for [cloud testing](https://www.winglang.io/docs/concepts/tests).
 
-![screenshot]()
+<!--![screenshot]()-->
 
 Tests in Wing are multi-cloud by default and can all run in parallel because they use cloud
 functions as their compute resource. Every test you write can be execute locally in the cloud
@@ -201,7 +201,7 @@ applications. It displays a visual diagram of your application which shows the h
 of your system as well as the relationships between resources. In the future, it will show Open
 Telemetry events as the system is activated.
 
-![screenshot]()
+<!--![screenshot]()-->
 
 In the console, each resource also has dedicated UI which can be used to interact with the resource.
 You can invoke functions, push messages to the queue, download and upload files to a bucket and even
@@ -214,7 +214,7 @@ will also watch for any file changes, recompile and reload as needed. Batteries 
 **We are planning to offer Wing Console for production**. This means that users will be able to
 connect to a deployed system and operate their production systems through Wing Console. 
 
-[Join the waiting list]()
+<!--[Join the waiting list]()-->
 
 We believe this addresses a major pain when operating cloud applications today. Today, when we
 manage applications "from the bottom", from the resources up. I go to my cloud provider's
