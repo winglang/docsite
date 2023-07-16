@@ -7,7 +7,6 @@ hide_table_of_contents: true
 ---
 
 In this video from the Wingly Update #10, Elad and Eyal show a demo of new syntax we added to Wing to support writing tests. This new language feature allows developers to define tests that are designed to run in isolated environments across all cloud targets, empowering developers with first-class support for testing. 
-To learn more about how Winglang is created to elevate the developer’s experience, make sure to visit us here: https://www.winglang.io/
 
 <!--truncate-->
 
