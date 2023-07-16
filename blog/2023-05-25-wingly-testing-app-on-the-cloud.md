@@ -6,7 +6,7 @@ tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---
 
-In this short video, Eyal and Shai present how Winglang tests can now run on the cloud by showing off a live demo on the Wingly Update. If you're interested in learning about how Wing is working towards enabling developers to stay in their creative flow, make sure to visit us here: https://www.winglang.io/
+In this short video, Eyal and Shai present how Winglang tests can now run on the cloud by showing off a live demo on the Wingly Update.
 
 <!--truncate-->
 
