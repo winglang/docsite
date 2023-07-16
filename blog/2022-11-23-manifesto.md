@@ -132,14 +132,14 @@ have been building tools for over a million years.
 And I am not happy with my tools.
 
 In March 2022, I joined forces with [Shai Ber], a good friend and a former
-Microsoft colleague, and we founded [Monada] with the mission to ***unlock the
+Microsoft colleague, and we founded [Wing Cloud] with the mission to ***unlock the
 cloud for developers***. We've assembled an incredible crew of beautiful geeks
 that share our passion for developer experience and open-source, and started our
 journey to empower developers (i.e. ourselves) to solve these fundamental
 problems.
 
 [Shai Ber]: https://www.linkedin.com/in/shai-ber-245b1226/
-[Monada]: https://monada.co/
+[Wing Cloud]: https://wing.cloud/
 
 ### Compilers to the rescue
 
