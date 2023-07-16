@@ -1,5 +1,5 @@
 ---
-title: "Multi-target compilation in Winglang (video)"
+title: "Video: Multi-target compilation in Winglang"
 authors: 
   - team
 tags: [wingly, winglang, video]

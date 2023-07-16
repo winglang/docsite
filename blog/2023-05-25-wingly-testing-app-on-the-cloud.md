@@ -1,5 +1,5 @@
 ---
-title: "Testing apps on the cloud"
+title: "Video: Testing apps on the cloud"
 authors: 
   - team
 tags: [wingly, winglang, video]

@@ -1,5 +1,5 @@
 ---
-title: "New utility functions: fetch, sleep, and waitUntil (video)"
+title: "Video: `fetch`, `sleep`, and `waitUntil`"
 authors: 
   - team
 tags: [wingly, winglang, video]

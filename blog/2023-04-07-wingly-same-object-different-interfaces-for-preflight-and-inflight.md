@@ -1,5 +1,5 @@
 ---
-title: "Preflight and inflight APIs in Winglang (video)"
+title: "Video: Preflight and inflight APIs in Winglang"
 authors: 
   - team
 tags: [wingly, winglang, video]

@@ -1,5 +1,5 @@
 ---
-title: "The Counter Resource (video)"
+title: "Video: The Counter Resource"
 authors: 
   - team
 tags: [wingly, winglang, video]

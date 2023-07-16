@@ -1,5 +1,5 @@
 ---
-title: "How do we manage the Winglang Project? (video)"
+title: "Video: How do we manage the Winglang Project?"
 authors: 
   - team
 tags: [wingly, winglang, video]

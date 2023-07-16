@@ -1,5 +1,5 @@
 ---
-title: "Sebastian Korfmann visits the Wingly Show (video)"
+title: "Video: Sebastian Korfmann visits the Wingly Show"
 authors: 
   - team
 tags: [wingly, winglang, video]

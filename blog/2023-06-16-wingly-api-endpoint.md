@@ -1,5 +1,5 @@
 ---
-title: "The API Resource (video)"
+title: "Video: The API Resource"
 authors: 
   - team
 tags: [wingly, winglang, video]

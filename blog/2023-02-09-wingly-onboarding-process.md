@@ -1,5 +1,5 @@
 ---
-title: "Introducing Inflight Classes"
+title: "Video: Introducing Inflight Classes"
 authors: 
   - team
 tags: [wingly, winglang, video]
