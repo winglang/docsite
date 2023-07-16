@@ -8,7 +8,6 @@ hide_table_of_contents: true
 
 In this video from the Wingly Update, showing compilation to JS + Terraform for different clouds (AWS, GCP, Azure).
 The compiler generates least privilege IAM policies and other cloud mechanics.
-More details in our Github repo: https://github.com/winglang/wing
 
 <!--truncate-->
 
