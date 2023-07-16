@@ -16,4 +16,10 @@ hasanaburayyan:
   url: https://github.com/hasanaburayyan
   image_url: https://avatars.githubusercontent.com/u/45375125?v=4
   email: hasana@monada.co
+team:
+  name: The Wing Team
+  url: https://github.com/winglang
+  image_url: https://github.com/winglang/wing/blob/dev/logo/3x/SymbolPadded-Black-White@3x.png?raw=true
+  email: ping@wing.cloud
+
 
