@@ -81,10 +81,10 @@ experience and engineering practices.
 So, what does that look like in practice? Our vision for Wing Cloud consists of three main
 components:
 
-1. **Winglang** - A programming language for the cloud which unifies infrastructure and runtime code
+ * **Winglang** - A programming language for the cloud which unifies infrastructure and runtime code
    under a single programming model.
-2. **Wing Cloud Library** - A high-level SDK for writing cloud applications above the clouds.
-3. **Wing Console** - An application-centric operational console.
+ * **Wing Cloud Library** - A high-level SDK for writing cloud applications above the clouds.
+ * **Wing Console** - An application-centric operational console.
 
 ### Why are we building a programming language?
 
@@ -215,9 +215,6 @@ support for [cloud testing](https://www.winglang.io/docs/concepts/tests).
 Tests in Wing are multi-cloud by default and can all run in parallel because they use cloud
 functions as their compute resource. Every test you write can be executed locally in the cloud
 simulator and can also be deployed and executed across all supported cloud providers.
-
-We believe that being able to run and test cloud applications locally is a game changer for
-developers. It's definitely a game changer for us!
 
 ### Stack traces for the cloud
 
