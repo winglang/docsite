@@ -8,7 +8,7 @@ hide_table_of_contents: true
 ---
 
 All comedowns are painful, and it seems like our come down from the cloud's [hype
-cycle](https://en.wikipedia.org/wiki/Gartner_hype_cycle) is no different. When
+curve](https://en.wikipedia.org/wiki/Gartner_hype_cycle) is no different. When
 [@dhh](https://twitter.com/dhh) writes about ["Why we're leaving the
 cloud"](https://world.hey.com/dhh/why-we-re-leaving-the-cloud-654b47e0) and Prime Video are
 [mourning the unexpected costs of
@@ -17,36 +17,34 @@ it's not easy to read, especially for a cloud believer like myself.
 
 And even if companies are not stocking up on server racks, there's a strong sentiment of compromise.
 The complexity is overwhelming and teams are struggling to set up reasonable development
-environments, test their systems or deploy them across stages, let alone across multiple public
-providers or private clouds. 
+environments, test their systems or deploy them across multiple public providers or private clouds. 
 
-I don't think I've ever talked to a platform team that feels like they got it right. or to a DevOps
-engineer with a manageable ticket queue. I hear frustration and apologies "I know this is not ideal,
-but we got to give developers a way to develop". When I talk to enterprises, many of them are in
-“analysis paralysis”. “Which cloud provider do we sell our souls to?” “Are we a serverless shop or a
-Kubernetes shop?” “Do we need to teach all developers how to configure a VPC?”.
+I don't think I've ever talked to a platform team that feels like they got it right, or to a DevOps
+engineer that didn't feel they are a bottleneck. I hear frustration and apologies "I know this is
+not ideal, but we've got to give developers a way to develop". When I talk to enterprises, many of
+them are in “analysis paralysis”. Which cloud provider do we sell our souls to? Are we a serverless
+shop or a Kubernetes shop? Do we now need to teach all developers how to configure a VPC?.
 
-“Use Kubernetes,” you say. But when you ask Kubernetes shops about other cloud resources they use, I
-hear denial. It always starts with "everything is in our Kubernetes", and then, "oh, yes, we have
-these couple of queues, and a CDN, and a DynamoDB table, and a few Lambda functions, and just last
-week, the dev team needed a bucket for something, which reminds me, we only provisioned the staging
-one, but not the one in production".
+When I talk to Kubernetes shops, I hear denial. It usually starts with "everything is in our
+Kubernetes", and then, "Oh, yes, we have these couple of queues, and a CDN, and a DynamoDB table,
+and a few Lambda functions, and just last week, the dev team needed a bucket for something, which
+reminds me, we only provisioned the staging one, but not the one in production".
 
 On the outset, the idea of the cloud makes total economic sense. It's the classic
-TCO/buy-versus-build enabler. You walk into a huge candy store and pick and choose the building
-blocks for your application. All these cool managed services at the palm of your hand, so you can
-focus on creating value to *your* users.
+total-cost/buy-versus-build enabler. You step into a huge candy store and pick-and-choose the
+building blocks for your application. All these managed services at the palm of your hand, so you
+can focus on creating value to your users.
 
-But in reality, transferring some of these aspects of your application to cloud services also means
-that now these aspects move from the category of "application" and become "infrastructure". In
-practice, it means that your code now treats these services as some external entities, and managing
-them happens in separate tools, workflows and oftentimes, on separate teams.
+But in reality, transferring aspects of your application to cloud services also means that now these
+aspects move from the category of "application" and become "infrastructure". In practice, it means
+that your code now treats these services as external entities, and managing them happens in separate
+tools, workflows, and oftentimes, in separate teams.
 
-So now, in order to add a route to my API gateway, I need to submit a ticket to my DevOps team, or
-update some YAML in some repo that I don't fully understand. And now I can only test this new route
-in a shared staging environment? That's not good.
+So now, in order to add a route to my API gateway, I need to submit a ticket. or I have to update
+some YAML in some repo that I don't fully understand. And now, I can only test this change when my
+code reaches the shared staging environment? That's not good.
 
-So how can we realize the potential of the cloud, but also not be buried in complexity? As a
+So how can we realize the potential of the cloud, but also not be buried by its complexity? As a
 software developer, I'm sorry but I would have to say *abstractions*.
 
 One of my favorite historians, [Yuval Noah-Harari](https://en.wikipedia.org/wiki/Yuval_Noah_Harari)
@@ -54,37 +52,33 @@ talks about how language’s ability to abstract and assign meaning enabled huma
 understandings and cooperative behaviors. Abstractions in software are no different.
 
 We believe that with the right abstractions, the cloud can fulfill its true potential. We believe it
-is possible to establish a better model for building and operating systems on top of this powerful
-computing platform through new common understandings and better collaboration within engineering
-organizations.
-
-We believe that with the right abstractions, the cloud will be able to fullfil its true potential.
-We believe it is possible to establish a better model for building and operating systems on top of
-this powerful computing platform through new common understandings and better collaboration within
+is possible to establish a better model for building and operating software on top of this powerful
+computing platform by establishing new common understandings and better collaboration within
 engineering organizations.
 
 ### Introducing Wing Cloud
 
-We call this abstraction **Wing Cloud**, and we are excited to share that we've partnered with an
-amazing group of investors such as [Battery Ventures](https://www.battery.com/), [Grove
-Ventures](https://www.grovevc.com) and [StageOne Ventures](https://stageonevc.com/) as well as an
-incredible crew of [funds and angels](TBD) from across the industry on the journey to turn this idea
-into a reality.
+We call this new abstraction **Wing Cloud**, and we are excited to share that we've partnered with
+an amazing group of investors such as [Battery Ventures](https://www.battery.com), [Grove
+Ventures](https://www.grovevc.com) and [StageOne Ventures](https://stageonevc.com/), as well as an
+incredible crew of [funds and angels](https://wing.cloud/about#backed-by) from across the industry
+on the journey to turn this idea into a reality.
 
-*So what is Wing Cloud*? It is a new kind of *abstract cloud*. It doesn’t involve data centers,
-machines, or provisioning engines. Instead, it’s a layer that enables builders to utilize the cloud
-as a general-purpose computing platform. It does that through a programming and operational model
-that unifies both infrastructure and application and works across all cloud providers and services.
-It celebrates the choice and flexibility the cloud has to offer without compromising the developer
-experience and engineering practices.
+**So what is Wing Cloud?** It is a new kind of *abstract cloud*. It doesn’t involve data centers,
+machines, or provisioning engines. Instead, it’s a layer that enables builders to harness this
+general-purpose computing platform through a programming and operational model that unifies both
+infrastructure and application, and works across all cloud providers and services. It celebrates the
+choice and flexibility the cloud has to offer without compromising the developer experience and
+engineering practices.
 
 So, what does that look like in practice? Our vision for Wing Cloud consists of three main
 components:
 
  * **Winglang** - A programming language for the cloud which unifies infrastructure and runtime code
-   under a single programming model.
- * **Wing Cloud Library** - A high-level SDK for writing cloud applications above the clouds.
- * **Wing Console** - An application-centric operational console.
+   under a single model.
+ * **Wing Cloud Library** - A high-level SDK for writing cloud applications that can be deployed to
+   all providers and run locally in a simulator
+ * **Wing Console** - A visual application-centric operations and management console.
 
 ### Why are we building a programming language?
 
@@ -98,34 +92,20 @@ code can interact with this resource at runtime.
 You might be wondering why this couldn't be implemented as a library within an existing language.
 This is because existing languages don't have primitives that can naturally express the distributed
 nature of cloud applications. To support this, Winglang has two execution phases: *preflight* and
-*inflight*. The preflight phase defines your application's infrastructure and the inflight phase
+*inflight*. The preflight phase defines your application's infrastructure while the inflight phase
 defines its runtime behavior.
 
-Another way to think about it is *space* versus *time*. I sometimes think about programming
-languages as storytelling devices. Existing languages are designed to tell a linear story: first
-this happened, then that, and so on. Basically the traditional purpose of programming languages is
-to describe a sequence of instructions for the CPU. They tells the story of a program over **time**.
-
-But when it comes to cloud applications, the story is not linear anymore. There are multiple
-storylines running together and interacting with each other. It's not just about what happens
-*when*, but also *where*. There's a *spatial dimension* to account for, and it's a dimension our
-current languages are just not designed to express.
-
-```js
-bring cloud;
-
-let b = new cloud.Bucket();
-
-new cloud.Function(inflight () => {
-  b.put("hello.txt", "world")
-});
-```
+Winglang's two-phase model belongs to a long and honorable list of programming language innovation
+which deals with concurrency and parallelism. From
+[`fork()`](https://en.wikipedia.org/wiki/Fork_(system_call)) to multi-threading, to
+[Goroutines](https://go.dev/tour/concurrency/1) to
+[async/await](https://en.wikipedia.org/wiki/Async/await), we have been exploring better ways to
+express non-linear programming. 
 
 But preflights and inflights are just the tip of the iceberg in terms of what a language for the
 cloud can offer. Think about API endpoints and clients, telemetry, metrics, alarms, data schemas. We
 have plans to bake many of these capabilities into the language and the standard library so that
 developers can truly focus on building their applications.
-
 
 ### A standard library for the cloud
 
