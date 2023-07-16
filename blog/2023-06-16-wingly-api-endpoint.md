@@ -6,7 +6,7 @@ tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---
 
-In this video from the Wingly Update, Eyal and Shai introduce an API gateway resource that lets you create HTTP endpoints for your Wing app. If you're interested in learning about how Wing enables developers to stay in their creative flow, make sure to visit us here: https://www.winglang.io/
+In this video from the Wingly Update, Eyal and Shai introduce an API gateway resource that lets you create HTTP endpoints for your Wing app. 
 
 <!--truncate-->
 
