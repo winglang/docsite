@@ -1,5 +1,5 @@
 ---
-title: "Built-in syntax for tests in Winglang"
+title: "Built-in syntax for tests (video)"
 authors: 
   - team
 tags: [wingly, winglang, video]

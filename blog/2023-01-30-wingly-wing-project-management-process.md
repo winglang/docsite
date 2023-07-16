@@ -1,5 +1,5 @@
 ---
-title: "Wing Project Management Process with Uri and Eyal"
+title: "How do we manage the Winglang Project? (video)"
 authors: 
   - team
 tags: [wingly, winglang, video]

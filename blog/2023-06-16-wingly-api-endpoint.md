@@ -1,5 +1,5 @@
 ---
-title: "Brand New - API Endpoints in Wing"
+title: "The API Resource (video)"
 authors: 
   - team
 tags: [wingly, winglang, video]

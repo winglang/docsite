@@ -1,5 +1,5 @@
 ---
-title: Demo of compiling winglang to different clouds"
+title: "Multi-target compilation in Winglang (video)"
 authors: 
   - team
 tags: [wingly, winglang, video]

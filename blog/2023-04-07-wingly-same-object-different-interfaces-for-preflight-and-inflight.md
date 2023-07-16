@@ -1,5 +1,5 @@
 ---
-title: "Same object different interfaces for preflight and inflight"
+title: "Preflight and inflight APIs in Winglang (video)"
 authors: 
   - team
 tags: [wingly, winglang, video]

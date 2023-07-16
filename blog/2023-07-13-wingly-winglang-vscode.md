@@ -1,5 +1,5 @@
 ---
-title: "Latest Updates with Winglang’s VScode"
+title: "Latest VSCode Extension Updates (video)"
 authors: 
   - team
 tags: [wingly, winglang, video]

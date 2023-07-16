@@ -1,5 +1,5 @@
 ---
-title: "Testing with Winglang"
+title: "Sebastian Korfmann visits the Wingly Show (video)"
 authors: 
   - team
 tags: [wingly, winglang, video]
