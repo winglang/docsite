@@ -8,7 +8,6 @@ hide_table_of_contents: true
 
 In this video from the Wingly Update #11, Elad Ben-Israel and Shai Ber host Sebastian Korfmann, ex-Hashicorp and creator of CDK for Terraform. Sebastian talks about his journey, the inception of CDK for Terraform and his passion for the cloud. He shows off the shiny new Winglang Examples Repository with fancy multi-cloud CI/CD.
 
-To learn more about how Winglang elevates the cloud developer experience, make sure to visit us here: https://www.winglang.io/
 
 <!--truncate-->
 
