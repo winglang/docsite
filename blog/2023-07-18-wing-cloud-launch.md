@@ -7,9 +7,9 @@ tags: [wing cloud, funding, seed, press release]
 hide_table_of_contents: true
 ---
 
-> We share our vision for Wing Cloud, and updates about our recent funding round led by [Battery
-> Ventures](https://www.battery.com), [Grove Ventures](https://www.grovevc.com) and [StageOne
-> Ventures](https://stageonevc.com/).
+> We share our vision for [Wing Cloud](https://wing.cloud), and updates about our recent funding
+> round led by [Battery Ventures](https://www.battery.com), [Grove
+> Ventures](https://www.grovevc.com) and [StageOne Ventures](https://stageonevc.com/).
 
 <!--truncate-->
 
@@ -64,11 +64,12 @@ engineering organizations.
 
 ### Introducing Wing Cloud
 
-We call this new abstraction **Wing Cloud**, and we are excited to share that we've partnered with
-an amazing group of investors such as [Battery Ventures](https://www.battery.com), [Grove
-Ventures](https://www.grovevc.com) and [StageOne Ventures](https://stageonevc.com/), as well as an
-incredible crew of [funds and angels](https://wing.cloud/about#backed-by) from across the industry
-on the journey to turn this idea into a reality.
+We call this new abstraction [Wing Cloud](https://wing.cloud), and we are excited to share that
+we've partnered with an amazing group of investors such as [Battery
+Ventures](https://www.battery.com), [Grove Ventures](https://www.grovevc.com) and [StageOne
+Ventures](https://stageonevc.com/), as well as an incredible crew of [funds and
+angels](https://wing.cloud/about#backed-by) from across the industry on the journey to turn this
+idea into a reality.
 
 **So what is Wing Cloud?** It is a new kind of *abstract cloud*. It doesn’t involve data centers,
 machines, or provisioning engines. Instead, it’s a layer that enables builders to harness this
