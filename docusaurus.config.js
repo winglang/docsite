@@ -303,7 +303,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Monada, Inc. `,
+        copyright: `Copyright © ${new Date().getFullYear()} Wing Cloud, Inc. `,
       },
       prism: {
         theme: lightCodeTheme,
