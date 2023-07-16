@@ -1,7 +1,9 @@
 ---
 title: "Video: Sebastian Korfmann visits the Wingly Show"
 authors: 
-  - team
+  - eladb
+  - shaib
+  - skorfmann
 tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---

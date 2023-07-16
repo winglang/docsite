@@ -2,7 +2,7 @@
 title: "Video: Preflight and inflight APIs in Winglang"
 authors: 
   - team
-tags: [wingly, winglang, video]
+tags: [winglang, video]
 hide_table_of_contents: true
 ---
 

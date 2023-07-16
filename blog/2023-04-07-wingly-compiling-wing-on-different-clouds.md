@@ -6,7 +6,8 @@ tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---
 
-In this video from the Wingly Update, showing compilation to JS + Terraform for different clouds (AWS, GCP, Azure).
+A video showing compilation to JavaScript and Terraform for different clouds (AWS, GCP, Azure).
+
 The compiler generates least privilege IAM policies and other cloud mechanics.
 
 <!--truncate-->

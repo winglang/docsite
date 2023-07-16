@@ -1,7 +1,8 @@
 ---
 title: "Video: Latest VSCode Extension Updates"
 authors: 
-  - team
+  - markm
+  - eyalk
 tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---

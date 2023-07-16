@@ -1,7 +1,8 @@
 ---
 title: "Video: New utils - fetch, sleep, and waitUntil"
 authors: 
-  - team
+  - eyalk
+  - shaib
 tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---

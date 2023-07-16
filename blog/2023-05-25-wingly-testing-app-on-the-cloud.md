@@ -1,7 +1,8 @@
 ---
 title: "Video: Testing apps on the cloud"
 authors: 
-  - team
+  - eyalk
+  - shaib
 tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---

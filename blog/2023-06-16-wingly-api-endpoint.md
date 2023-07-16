@@ -1,7 +1,8 @@
 ---
 title: "Video: The API Resource"
 authors: 
-  - team
+  - eyalk
+  - shaib
 tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---

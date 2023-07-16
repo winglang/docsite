@@ -1,7 +1,9 @@
 ---
 title: "Video: The Counter Resource"
 authors: 
-  - team
+  - eladb
+  - shaib
+  - markm
 tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---

@@ -1,7 +1,8 @@
 ---
 title: "Video: Introducing Inflight Classes"
 authors: 
-  - team
+  - eyalk
+  - shaib
 tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---

@@ -1,7 +1,8 @@
 ---
 title: "Video: Built-in syntax for tests"
 authors: 
-  - team
+  - eladb
+  - eyalk
 tags: [wingly, winglang, video]
 hide_table_of_contents: true
 ---
