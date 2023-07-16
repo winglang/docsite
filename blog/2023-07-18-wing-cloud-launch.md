@@ -28,7 +28,7 @@ environments, test their systems or deploy them across multiple public providers
 I don't think I've ever talked to a platform team that feels like they got it right, or to a DevOps
 engineer that didn't feel they are a bottleneck. I hear frustration and apologies "I know this is
 not ideal, but we've got to give developers a way to develop". When I talk to enterprises, many of
-them are in “analysis paralysis”. Which cloud provider do we sell our souls to? Are we a serverless
+them are in "analysis paralysis." Which cloud provider do we sell our souls to? Are we a serverless
 shop or a Kubernetes shop? Do we now need to teach all developers how to configure a VPC?.
 
 When I talk to Kubernetes shops, I hear denial. It usually starts with "everything is in our
@@ -181,7 +181,6 @@ mechanism we have for portability across clouds is used to implement a local clo
 for each resource in the WCL. This means that my entire Wing application can run in a local machine
 and be functionally tested.
 
-
 ### Tests as first-class citizens
 
 I love tests. I believe that tests are the most important asset a software team builds. My code can
@@ -200,7 +199,6 @@ and with other pieces of my system.
 
 To that end, the Wing language, the SDK and the Wing Console all work together to offer first-class
 support for [cloud testing](https://www.winglang.io/docs/concepts/tests).
-
 
 Tests in Wing are multi-cloud by default and can all run in parallel because they use cloud
 functions as their compute resource. Every test you write can be executed locally in the cloud
@@ -226,8 +224,6 @@ will also watch for any file changes, recompile and reload as needed. Batteries 
 **We are planning to offer Wing Console for production**. This means that users will be able to
 connect to a deployed system and operate their production systems through Wing Console. 
 
-<!--[Join the waiting list]()-->
-
 We believe this addresses a major pain when operating cloud applications. Today, we manage
 applications "from the bottom", i.e. from the resources up. I go to my cloud provider's
 administration console and what I see is a bunch of low-level resources - queues or buckets or
@@ -249,11 +245,11 @@ The solution, today, is dashboards. I have to manually craft these views to repr
 model of my system. I take the red and green and blue pieces and arrange them together under the
 title "Gate", and now if there's an error, I can tell where it belongs.
 
-It goes back to the *space and time* analogy. The operational experience of Wing Console is based on
-Wing's *spacial view* of the system. Every resource or event can be *traced back* to the logical
-unit it belongs to, based on your source code. This is basically the purpose of stack traces in
-traditional languages - an exception is thrown and the stack trace helps me trace back from
-low-level to high-level so I can diagnose the problem.
+The operational experience of Wing Console is based on Wing's preflight structure of the system.
+Every resource or event can be *traced back* to the logical unit it belongs to, based on your source
+code. This is basically the purpose of stack traces in traditional languages - an exception is
+thrown and the stack trace helps me trace back from low-level to high-level so I can diagnose the
+problem.
 
 
 ### Fully customizable below the abstraction
