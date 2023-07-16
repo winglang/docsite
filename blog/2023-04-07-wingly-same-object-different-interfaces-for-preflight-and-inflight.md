@@ -7,7 +7,6 @@ hide_table_of_contents: true
 ---
 
 The same bucket object has two different interfaces, one for the compile time (preflight phase) and the other for runtime (inflight phase).
-Check out our GitHub repo for more details: https://github.com/winglang/wing
 
 <!--truncate-->
 
