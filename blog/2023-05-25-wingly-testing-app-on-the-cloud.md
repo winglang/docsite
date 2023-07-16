@@ -1,5 +1,5 @@
 ---
-title: "Testing Apps on the Cloud Just Got a Lot Easier"
+title: "Testing apps on the cloud"
 authors: 
   - team
 tags: [wingly, winglang, video]
