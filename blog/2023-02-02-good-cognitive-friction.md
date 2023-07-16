@@ -7,6 +7,10 @@ tags: [cloud-oriented programming, winglang, immutability, let, var, inflights, 
 hide_table_of_contents: true
 ---
 
+> Why we are making Wing immutable by default.
+
+<!--truncate-->
+
 [Chris Rybicki](https://twitter.com/rybickic) has recently added support for `let var` to Wing (see
 the [pull request](https://github.com/winglang/wing/pull/1180)), and I thought it might be a good
 opportunity to share our thoughts on the topic of immutability in Wing.

@@ -1,11 +1,17 @@
 ---
-title: We are not giving up on the cloud!
-description: Announcing our seed funding round for Wing Cloud
+title: Announcing Wing Cloud
+description: We are not giving up on the cloud
 authors: 
   - eladb
 tags: [wing cloud, funding, seed, press release]
 hide_table_of_contents: true
 ---
+
+> We share our vision for Wing Cloud, and updates about our recent funding round led by [Battery
+> Ventures](https://www.battery.com), [Grove Ventures](https://www.grovevc.com) and [StageOne
+> Ventures](https://stageonevc.com/).
+
+<!--truncate-->
 
 All comedowns are painful, and it seems like our come down from the cloud's [hype
 curve](https://en.wikipedia.org/wiki/Gartner_hype_cycle) is no different. When
@@ -89,6 +95,9 @@ objects in traditional languages. The compiler takes care of the mechanics requi
 resource, configure the minimal IAM permissions and wire up the infrastructure configuration so your
 code can interact with this resource at runtime.
 
+![](./assets/wing-code.png)
+
+
 You might be wondering why this couldn't be implemented as a library within an existing language.
 This is because existing languages don't have primitives that can naturally express the distributed
 nature of cloud applications. To support this, Winglang has two execution phases: *preflight* and
@@ -137,6 +146,8 @@ The WCL is a major project and in its early days. You can see the coverage of re
 through this [compatibility
 matrix](https://www.winglang.io/docs/standard-library/compatibility-matrix) and make sure to "+1"
 the relevant issue if coverage is missing.
+
+![](./assets/matrix.png)
 
 Currently, WCL only supports Winglang, but we are interested in offering it in other languages as
 well. The library is built using CDK technologies such as [JSII](https://github.com/aws/jsii) and
@@ -190,7 +201,6 @@ and with other pieces of my system.
 To that end, the Wing language, the SDK and the Wing Console all work together to offer first-class
 support for [cloud testing](https://www.winglang.io/docs/concepts/tests).
 
-<!--![screenshot]()-->
 
 Tests in Wing are multi-cloud by default and can all run in parallel because they use cloud
 functions as their compute resource. Every test you write can be executed locally in the cloud
@@ -203,7 +213,7 @@ applications. It displays a visual diagram of your application which shows the h
 structure of your system as well as the relationships between resources. In the future, it will show
 Open Telemetry events as the system is activated.
 
-<!--![screenshot]()-->
+![](./assets/console-2.png)
 
 In the console, each resource also has a dedicated UI which can be used to interact with the
 resource. You can invoke functions, push messages to the queue, download and upload files to a
@@ -270,15 +280,15 @@ within a company in a streamlined way for developers.
 
 
 ### We are just getting started
-We believe in the cloud. We believe in its economic sense and in its diversity which enables choice.
-We believe we'll be building stuff on the cloud for the foreseeable future - even with AI around. We
-think our industry is ready for a model that transcends specific providers or stacks and gives
-developers the right tools to build.
 
-We know it's a big journey, and we couldn't be more excited to embark on it with these incredible
-partners, and the amazing team and community that's forming around this vision.
+We believe in the cloud. We believe in its economic sense and in its diversity, flexibility and
+choice. We believe we will be building stuff on the cloud for the foreseeable future, even with AI
+around. We think our industry is ready for a model that transcends specific providers or technology
+and gives builders the right tools to build.
 
-We hope to make the cloud a better place to build software, so don't give up on it. We are certainly
-not.
+We know it's a big journey, and we couldn't be more excited to partner with these incredible
+investors, amazing team and the awesome community forming around this vision.
 
-Welcome to Wing Cloud!
+We are here to make the cloud a better place to build software.
+
+**Welcome to Wing Cloud! :wave:**

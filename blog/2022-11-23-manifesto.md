@@ -9,6 +9,8 @@ hide_table_of_contents: true
 
 > A manifesto for cloud-oriented programming.
 
+<!--truncate-->
+
 Don't get me wrong, I love the cloud! It has empowered me to build amazing
 things, and completely changed the way I use software to innovate and solve
 problems.
@@ -22,8 +24,6 @@ applications for the cloud in the next decade. As the cloud evolved from "I
 don't want servers under my desk" to "my app needs 30 different managed services
 to perform its tasks", we kind of lost track of what a great developer
 experience looks like.
-
-<!--truncate-->
 
 Building applications for the cloud sometimes feels like spilling my kids' bag
 of unused Lego blocks all over the living room floor, and trying to build a
