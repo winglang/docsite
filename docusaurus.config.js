@@ -297,7 +297,7 @@ const config = {
               },
               {
                 label: "Contribution Policy",
-                href: "/terms-and-policies/contributors-terms-of-service.html",
+                href: "https://github.com/winglang/wing/blob/main/CONTRIBUTION_LICENSE.md",
                 target: "_blank"
               },
             ],
