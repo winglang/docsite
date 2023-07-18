@@ -67,7 +67,7 @@ engineering organizations.
 ### Introducing Wing Cloud
 
 We call this new abstraction [Wing Cloud](https://wing.cloud), and we are excited to share that
-we've partnered with an amazing group of investors such as [Battery
+we've [raised $20m seed round](https://techcrunch.com/2023/07/18/wing-cloud-is-building-an-open-source-unified-cloud-programming-language/) with an amazing group of investors such as [Battery
 Ventures](https://www.battery.com), [Grove Ventures](https://www.grovevc.com) and [StageOne
 Ventures](https://stageonevc.com/), as well as an incredible crew of [funds and
 angels](https://wing.cloud/about#backed-by) from across the industry on the journey to turn this
