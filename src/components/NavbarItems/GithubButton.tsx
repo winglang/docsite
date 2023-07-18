@@ -22,7 +22,7 @@ export const GitHubButton = () => {
   }, []);
 
   useEffect(() => {
-      const stars = watchersCount.toString();
+      const stars = watchersCount?.toString() || '-1';
       const starsK = stars.length > 3 ?
         `${stars.slice(0, -3)}.${stars.slice(-3, -2)}k` : stars;
       setStars(starsK);
@@ -33,8 +33,11 @@ export const GitHubButton = () => {
       <a href="https://github.com/winglang/wing" target="_blank" className="nav-git">
         <GithubIcon />
         <div>Star us</div>
-        <div className="line-sep"></div>
-        <div>⭐️ {stars}</div>
+        {stars !== '-1' && (
+        <>
+         <div className="line-sep"></div>
+         <div>⭐️ {stars}</div>
+        </>)}
       </a>
     </div>
   );
