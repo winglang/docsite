@@ -1,15 +1,19 @@
 ---
 title: Announcing Wing Cloud
 description: We are not giving up on the cloud
+image: https://dy50dv1hy25ns.cloudfront.net/blogbanner1.png
 authors: 
   - eladb
 tags: [wing cloud, funding, seed, press release]
 hide_table_of_contents: true
 ---
 
-> We share our vision for [Wing Cloud](https://wing.cloud), and updates about our recent funding
-> round led by [Battery Ventures](https://www.battery.com), [Grove
-> Ventures](https://www.grovevc.com) and [StageOne Ventures](https://stageonevc.com/).
+
+![](./assets/blogbanner1.png)
+
+> We share our vision for [Wing Cloud](https://wing.cloud), a unified programming and operational
+> experience that works across all cloud providers and services.
+
 
 <!--truncate-->
 
@@ -46,7 +50,7 @@ aspects move from the category of "application" and become "infrastructure". In 
 that your code now treats these services as external entities, and managing them happens in separate
 tools, workflows, and oftentimes, in separate teams.
 
-So now, in order to add a route to my API gateway, I need to submit a ticket. or I have to update
+So now, in order to add a route to my API gateway, I need to submit a ticket, or I have to update
 some YAML in some repo that I don't fully understand. And now, I can only test this change when my
 code reaches the shared staging environment? That's not good.
 
@@ -96,7 +100,7 @@ objects in traditional languages. The compiler takes care of the mechanics requi
 resource, configure the minimal IAM permissions and wire up the infrastructure configuration so your
 code can interact with this resource at runtime.
 
-![](./assets/wing-code.png)
+![](./assets/wing-code.png) <center>A little piece of cloud</center>
 
 
 You might be wondering why this couldn't be implemented as a library within an existing language.
@@ -116,6 +120,17 @@ But preflights and inflights are just the tip of the iceberg in terms of what a 
 cloud can offer. Think about API endpoints and clients, telemetry, metrics, alarms, data schemas. We
 have plans to bake many of these capabilities into the language and the standard library so that
 developers can truly focus on building their applications.
+
+<br/>
+
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5_RhWwgGue0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
+
+A quick introduction to Winglang
+
+</center>
 
 ### A standard library for the cloud
 
@@ -148,7 +163,9 @@ through this [compatibility
 matrix](https://www.winglang.io/docs/standard-library/compatibility-matrix) and make sure to "+1"
 the relevant GitHub issue if coverage is missing.
 
-![](./assets/matrix.png)
+<br/>
+
+![](./assets/matrix.png)  <center>Resource compatibility matrix across providers</center>
 
 Currently, WCL only supports Winglang, but we are interested in offering it in other languages as
 well. The library is built using CDK technologies such as [JSII](https://github.com/aws/jsii) and
@@ -212,7 +229,7 @@ applications. It displays a visual diagram of your application which shows the h
 structure of your system as well as the relationships between resources. In the future, it will show
 Open Telemetry events as the system is activated.
 
-![](./assets/console-2.png)
+![](./assets/wing-console.png) <center>Manage complete applications, not just a bunch of resources</center>
 
 In the console, each resource also has a dedicated UI which can be used to interact with the
 resource. You can invoke functions, push messages to the queue, download and upload files to a
@@ -262,10 +279,10 @@ diversity* and includes multiple levels of extensibility and customizability.
 One dimension of extensibility is support for any resource from the IAC ecosystem of the target as
 first-class citizens. For example, if you compile your code to a Terraform target, you can use any
 resource in the [Terraform Registry](https://registry.terraform.io). If you compile to AWS
-CDK/CloudFormation, you can use any [AWS CDK construct](https://docs.aws.amazon.com/cdk/api/v2/) in
-your code (L1s, L2s and any construct library from the [Construct Hub](https://constructs.dev/)).
-Naturally, if you use any of these resources, they will only work when deploying to the cloud, but
-there is built-in support in Wing for providing a local implementation for them.
+CDK/CloudFormation, you can use any [AWS CDK construct](https://docs.aws.amazon.com/cdk/api/v2/) or
+construct library from the [Construct Hub](https://constructs.dev/). Naturally, if you use any of
+these resources, they will only work when deploying to the cloud, but there is built-in support in
+Wing for providing a local implementation for them.
 
 Another dimension is what we call [Wing Compiler
 Plugins](https://www.winglang.io/docs/tools/compiler-plugins). Those are hooks implemented through
