@@ -1,6 +1,6 @@
 ---
 title: Announcing Wing Cloud
-description: We are not giving up on the cloud
+description: Sharing our vision for Wing Cloud
 image: https://dy50dv1hy25ns.cloudfront.net/blogbanner1.png
 authors: 
   - eladb
@@ -8,12 +8,10 @@ tags: [wing cloud, funding, seed, press release]
 hide_table_of_contents: true
 ---
 
-
 ![](./assets/blogbanner1.png)
 
 > We share our vision for [Wing Cloud](https://wing.cloud), a unified programming and operational
 > experience that works across all cloud providers and services.
-
 
 <!--truncate-->
 
@@ -90,6 +88,8 @@ components:
  * **Wing Cloud Library** - A high-level SDK for writing cloud applications that can be deployed to
    all providers and run locally in a simulator
  * **Wing Console** - A visual application-centric operations and management console.
+ * **Wing Developer Tools** - A set of tools for testing, debugging, visualizing and interacting
+   with cloud applications in your development environment.
 
 ### Why are we building a programming language?
 
