@@ -31,7 +31,7 @@ I don't think I've ever talked to a platform team that feels like they got it ri
 engineer that didn't feel they are a bottleneck. I hear frustration and apologies "I know this is
 not ideal, but we've got to give developers a way to develop". When I talk to enterprises, many of
 them are in "analysis paralysis." Which cloud provider do we sell our souls to? Are we a serverless
-shop or a Kubernetes shop? Do we now need to teach all developers how to configure a VPC?.
+shop or a Kubernetes shop? Do we now need to teach all developers how to configure a VPC?
 
 When I talk to Kubernetes shops, I hear denial. It usually starts with "everything is in our
 Kubernetes", and then, "Oh, yes, we have these couple of queues, and a CDN, and a DynamoDB table,
@@ -89,13 +89,13 @@ components:
    all providers and run locally in a simulator
  * **Wing Console** - A visual application-centric operations and management console.
  * **Wing Developer Tools** - A set of tools for testing, debugging, visualizing and interacting
-   with cloud applications in your development environment.
+   with cloud applications locally.
 
 ### Why are we building a programming language?
 
-The **Wing Programming Language** (or, in short, **Winglang**) enables developers to write code that
-includes both infrastructure and runtime code. This means that when a cloud resource is needed, I
-can just add it to my code and interact with it in the same way I would interact with in-memory
+The [Wing Programming Language](https://winglang.io) (*winglang*) enables developers to write code
+that includes both infrastructure and runtime code. This means that when a cloud resource is needed,
+I can just add it to my code and interact with it in the same way I would interact with in-memory
 objects in traditional languages. The compiler takes care of the mechanics required to provision the
 resource, configure the minimal IAM permissions and wire up the infrastructure configuration so your
 code can interact with this resource at runtime.
@@ -109,12 +109,15 @@ nature of cloud applications. To support this, Winglang has two execution phases
 *inflight*. The preflight phase defines your application's infrastructure while the inflight phase
 defines its runtime behavior.
 
-Winglang's two-phase model belongs to a long and honorable list of programming language innovation
-which deals with concurrency and parallelism. From
+Winglang's two-phase execution model follows the long and honorable list of programming language
+innovation which deals with concurrency and parallelism. From
 [`fork()`](https://en.wikipedia.org/wiki/Fork_(system_call)) to multi-threading, to
 [Goroutines](https://go.dev/tour/concurrency/1) to
 [async/await](https://en.wikipedia.org/wiki/Async/await), we have been exploring better ways to
 express non-linear programming. 
+
+For more details and examples about Wing's execution model, check out our doc topic about [preflight
+and inflight](https://www.winglang.io/docs/concepts/inflights).
 
 But preflights and inflights are just the tip of the iceberg in terms of what a language for the
 cloud can offer. Think about API endpoints and clients, telemetry, metrics, alarms, data schemas. We
@@ -126,7 +129,7 @@ developers can truly focus on building their applications.
 
 <center>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5_RhWwgGue0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
+<iframe  src="https://www.youtube.com/embed/5_RhWwgGue0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
 
 A quick introduction to Winglang
 
