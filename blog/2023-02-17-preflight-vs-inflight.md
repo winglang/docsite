@@ -7,6 +7,10 @@ tags: [cloud-oriented programming, winglang, resources, preflight, inflight, iac
 hide_table_of_contents: true
 ---
 
+> Why does Wing let you only create resources in preflight?
+
+<!--truncate-->
+
 There are two ways to create resources in the cloud: in preflight, or in
 inflight. In this post, I'll explore what these terms mean, and why I think
 most cloud applications should avoid dynamically creating resources in inflight
