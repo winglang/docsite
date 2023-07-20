@@ -22,7 +22,15 @@ export const GitHubButton = () => {
   }, []);
 
   useEffect(() => {
-      const stars = watchersCount?.toString() || '-1';
+
+      const round = (number: number): string => {
+          if(!number) {
+              return "-1";
+          }
+          return (Math.round(number / 100) * 100).toString();
+      }
+
+      const stars = watchersCount ? round(Number(watchersCount)) : "-1";
       const starsK = stars.length > 3 ?
         `${stars.slice(0, -3)}.${stars.slice(-3, -2)}k` : stars;
       setStars(starsK);
