@@ -56,7 +56,7 @@ const config = {
     "docusaurus-plugin-sass", 
     "docusaurus-plugin-segment",
 
-    // this is needed in order to support symlinked `docs/` directory
+    // this is needed in order to to support symlinked `docs/` directory
     // which is the mechanism we use when we develop locally with the winglang repo.
     // see https://github.com/facebook/docusaurus/issues/3272#issuecomment-876374383
     function (context, options) {
@@ -80,7 +80,7 @@ const config = {
         id: 'contributing',
         path: 'contributing',
         routeBasePath: 'contributing',
-        editUrl: (params) => `${winglangOrgUrl}/wing/tree/dev/docs/contributing/${params.docPath}`,
+        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/contributing/${params.docPath}`,
         breadcrumbs: true,
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
@@ -98,9 +98,9 @@ const config = {
           includeCurrentVersion: false,
           editUrl: (params) => {
             if (/\d+-standard-library\/\d+-cloud/.test(params.docPath)) {
-              return `${winglangOrgUrl}/wing/tree/dev/libs/wingsdk/src/cloud/${params.docPath.split("/").pop()}`
+              return `${winglangOrgUrl}/wing/tree/main/libs/wingsdk/src/cloud/${params.docPath.split("/").pop()}`
             }
-            return `${winglangOrgUrl}/wing/tree/dev/docs/docs/${params.docPath}`
+            return `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`
           },
         },
         blog: {
