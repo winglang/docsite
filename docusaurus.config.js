@@ -80,7 +80,7 @@ const config = {
         id: 'contributing',
         path: 'contributing',
         routeBasePath: 'contributing',
-        editUrl: (params) => `${winglangOrgUrl}/wing/tree/dev/docs/contributing/${params.docPath}`,
+        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/contributing/${params.docPath}`,
         breadcrumbs: true,
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
@@ -98,9 +98,9 @@ const config = {
           includeCurrentVersion: false,
           editUrl: (params) => {
             if (/\d+-standard-library\/\d+-cloud/.test(params.docPath)) {
-              return `${winglangOrgUrl}/wing/tree/dev/libs/wingsdk/src/cloud/${params.docPath.split("/").pop()}`
+              return `${winglangOrgUrl}/wing/tree/main/libs/wingsdk/src/cloud/${params.docPath.split("/").pop()}`
             }
-            return `${winglangOrgUrl}/wing/tree/dev/docs/docs/${params.docPath}`
+            return `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`
           },
         },
         blog: {
