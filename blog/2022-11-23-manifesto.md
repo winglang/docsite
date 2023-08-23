@@ -9,6 +9,8 @@ hide_table_of_contents: true
 
 > A manifesto for cloud-oriented programming.
 
+<!--truncate-->
+
 Don't get me wrong, I love the cloud! It has empowered me to build amazing
 things, and completely changed the way I use software to innovate and solve
 problems.
@@ -22,8 +24,6 @@ applications for the cloud in the next decade. As the cloud evolved from "I
 don't want servers under my desk" to "my app needs 30 different managed services
 to perform its tasks", we kind of lost track of what a great developer
 experience looks like.
-
-<!--truncate-->
 
 Building applications for the cloud sometimes feels like spilling my kids' bag
 of unused Lego blocks all over the living room floor, and trying to build a
@@ -132,14 +132,14 @@ have been building tools for over a million years.
 And I am not happy with my tools.
 
 In March 2022, I joined forces with [Shai Ber], a good friend and a former
-Microsoft colleague, and we founded [Monada] with the mission to ***unlock the
+Microsoft colleague, and we founded [Wing Cloud] with the mission to ***unlock the
 cloud for developers***. We've assembled an incredible crew of beautiful geeks
 that share our passion for developer experience and open-source, and started our
 journey to empower developers (i.e. ourselves) to solve these fundamental
 problems.
 
 [Shai Ber]: https://www.linkedin.com/in/shai-ber-245b1226/
-[Monada]: https://monada.co/
+[Wing Cloud]: https://wing.cloud/
 
 ### Compilers to the rescue
 
@@ -226,12 +226,12 @@ would expect from a modern, object-oriented, strongly-typed and general-purpose
 language, but it also includes a few additional primitives designed to support
 the distributed and service-based nature of the cloud as first-class citizens.
 
-### Apply for early access if you dare
+### Check it out
 
-I can't be more excited to share that after six months of development, we are
-finally ready to invite some folks to check it out. It's absolutely and
-definitely not ready for real usage. We have a long way to go, but we feel we've
-got enough of the architectural framework and design in place, so it's not just
-a wild idea by a group of nostalgic programmers.
+We have been working on Wing for almost a year now, and I am excited to invite you to 
+check it out and let me know what you think. 
 
-Go to https://winglang.io to request alpha access.
+While still in Alpha and not yet ready for production use, it's already possible to
+build some [real applications](https://github.com/winglang/research/tree/main/dogfooding) with it.
+
+Check out https://github.com/winglang/wing for more details.
