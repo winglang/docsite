@@ -1,5 +1,5 @@
 ---
-title: Adding a new method to an existing resource
+title: Adding purge & aproxSize to the queue resource
 description: 
 authors: 
   - revitalb
@@ -7,41 +7,81 @@ tags: [cloud-oriented programming, winglang, community]
 hide_table_of_contents: true
 ---
  
-When working with Wing, extending the functionality of existing resources is basic operation, as Wing supports multiple clouds. This guide will walk you through the process of adding a method to an existing resource, using the example of adding a method to a cloud resource within the simulator.
+I love working with the Wing community, and one of my favorite ways to engage is by publishing good first issues that serve as a simple entry point to Wing! I was looking for an issue that could serve as a friendly introduction to Wing's various layers, without overwhelming complexity! Adding a new method to a resource seemed to be a perfect match for these criteria. I posted, as a good first issue, the implementation of the `Queue.Purge` method, and within just 5 minutes I decided to take on the task myself. This felt like the perfect opportunity to dive into the heart of Wing's mechanics and explore how things work behind the scenes.
 
-## Step 1: Understanding the Resource Specification
+## Getting Started
 
-Before we dive into the implementation, it's crucial to understand the specification of the resource you'll be working with. You can find in the [Wing spec](https://www.winglang.io/docs/standard-library/cloud/bucket) the method signature, return type, and arguments.
+Before diving into implementation, it was crucial for me to go through the specifications of the resource I was about to work on. I found all the necessary details in the [Wing spec](https://www.winglang.io/docs/standard-library/cloud/bucket), outlining the method's signature, return type, and arguments. 
 
-## Step 2: Adding cloud-agnostic Interfaces and Abstract Classes
+## Adding Cloud-Agnostic Interfaces
 
-To add a method to an existing resource, you'll need to modify the implementation files of the resource. Navigate to the `wingsdk/src/cloud` folder. The `cloud` folder contains cloud-agnostic code, ensuring that implementations are not tied to any specific cloud provider. Here, you'll find an abstract class or interface that defines the high-level abstraction for all cloud resources.
-Under the `cloud` folder, navigate to *resource*.ts, this file houses the cloud-agnostic implementation. This is where you will add your 
-new method using TypeScript, of course.
-When adding the new method, it's essential to provide clear comments and documentation to help others understand its purpose and functionality. You can also make use of code suggestions from **co-pilot** to ensure your comments are comprehensive.
+To add a method to an existing resource, I needed to modify the implementation files of the resource that are located in `wingsdk/src/cloud` folder. The `cloud` folder contains cloud-agnostic code, ensuring that implementations are not tied to any specific cloud provider.
+Under the `cloud` folder, I navigated to `queue.ts` file that contains the cloud-agnostic implementation, added the relevant methods as well as comments and documentations using code suggestions from **co-pilot**!
 
+## Cloud-Specific Implementations
 
-## Step 3: Updating Cloud-Specific Implementations
+Wing's support for multiple cloud providers means that each new method must be implemented for every supported provider. Now it's time to change folders like `target-awscdk`, `target-sim`, and others, each contain cloud-specific implementation files. 
+Let me give you an example, for cloud provider `target-sim`, I set the length of the `mesages` array to zero:
 
-Since **Wing** supports multiple cloud providers, you'll need to implement the new method for each provider. These implementations are found in folders like `target-awscdk`, `target-sim`, `target-tf-aws`, etc. In these folders, you'll find cloud-specific implementation files.
-For instance, if you're adding the method to the simulator, navigate to the  `target-sim` folder. Another important concept that will determine which file will be changed, is whether the method is an inflight method or a preflight one. To learn more about preflight and inflight concepts, refer to the following [article](https://www.winglang.io/docs/concepts/inflights).
-Subsequently, if adding an inflight method, you should make adjustments in the `resource.inflight.ts` file; otherwise, in the `resource.ts` file. This is where the specialized implementation for the cloud provider is located.
+```js
+public async purge(): Promise<void> {
+     return this.context.withTrace({
+       message: `Purge ().`,
+       activity: async () => {
+         this.messages.length = 0;
+       }
+     }
+}
+```
+While for the `tf-aws` implementation, I implemented the following:
+```js
+public async purge(): Promise<void> {
+     const command = new PurgeQueueCommand({
+       QueueUrl: this.queueUrl,
+     });
+     await this.client.send(command);
+}
+```
 
+I adjusted the code in `queue.inflight.ts` as `Purge` method is part of the inflight API. As you can see, these implementations tailored to different cloud providers were where the real magic happened.
 
-## Step 4: Writing Tests
+## Ensuring Quality: Writing Tests
 
-Quality assurance is vital when adding new functionality. Inside the project's `test` folder, you'll find tests for each cloud provider. Locate the relevant provider's `resource.test.ts` file and add tests for the new method you've implemented. This ensures that your method works as expected and maintains functionality across different cloud environments.
+No new functionality is complete without testing right? So I located the appropriate provider's `queue.test.ts` and reallized that `Purge` cannot be tested unless I have a way to get the size of the `Queue`. So I went back to step #1 and added `Queue.approxSize` as well:
+For cloud provider `target-sim`:
 
-## Step 5: Auto generate documentation
+```js
+ public async approxSize(): Promise<number> {
+     return this.context.withTrace({
+       message: `ApproxSize ().`,
+       activity: async () => {
+         return this.messages.length;
+       },
+     });
+}
+```
+While for the `tf-aws` implementation:
+```js
+public async purge(): Promise<void> {
+     return this.context.withTrace({
+       message: `Purge ().`,
+       activity: async () => {
+         this.messages.length = 0;
+       }
+     }
+}
+```
 
-After completing the coding and testing processes, it's essential to ensure that our documentation aligns with the newly incorporated API. Execute the command `pnpm turbo build` to integrate the added comments into the build procedure. This will allow the comments associated with these modifications to be automatically utilized for generating documentation within our [API-Reference section](https://www.winglang.io/docs/standard-library/std/api-reference).
+## Seamlessly Integrating Documentation
 
+With coding and testing behind me, the final step was to align the documentation with the newly introduced API. By executing the `pnpm turbo build` command, I integrated my comments into the documentation build process. This ensured that the documentation accurately reflected the changes I'd made and would be readily accessible in the API-Reference section.
 
-For a comprehensive example of how to incorporate a new method, feel free to explore this (example)[https://github.com/winglang/wing/pull/1160] on how to extend the `Queue` resource with the `Purge()` method. Additionally, you can gain insights from a brief video that illustrates the changes made to the files:
+## A Glimpse into the Journey
+
+For the actual code, feel free to explore this (example)[https://github.com/winglang/wing/pull/1160]. Additionally, you can gain insights from a brief video that illustrates the changes made to the files:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y0jG_YKjxPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 we would love your feedback and suggestions on [Wing Slack](https://t.winglang.io/slack).
 
-Happy coding!
-
+Let's Connect!
