@@ -7,7 +7,7 @@ tags: [cloud-oriented programming, winglang, community]
 hide_table_of_contents: true
 ---
  
-I love working with the Wing community, and one of my favorite ways to engage is by publishing good first issues that serve as a simple entry point to Wing! I was looking for an issue that could serve as a friendly introduction to Wing's various layers, without overwhelming complexity! Adding a new method to a resource seemed to be a perfect match for these criteria. I posted, as a good first issue, the implementation of the `Queue.Purge` method, and within just 5 minutes I decided to take on the task myself. This felt like the perfect opportunity to dive into the heart of Wing's mechanics and explore how things work behind the scenes.
+I love working with the Wing community, and one of my favorite ways to engage is by publishing good first issues which serve as approachable gateways for newcomers to get involved in developing Wing! Recently, I was looking for an issue that could serve as a friendly introduction to Wing's various layers, without being overly complex! Adding a new method to a resource seemed to be a perfect match for these criteria. I posted, as a good first issue, the implementation of the `Queue.Purge` method, and within just 5 minutes I decided to take on the task myself. This felt like the perfect opportunity to dive into the heart of Wing's mechanics and explore how things work behind the scenes.
 
 ## Getting Started
 
