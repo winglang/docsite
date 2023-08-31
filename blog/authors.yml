@@ -15,7 +15,7 @@ hasanaburayyan:
   title: Software Engineer at Wing Cloud
   url: https://github.com/hasanaburayyan
   image_url: https://avatars.githubusercontent.com/u/45375125?v=4
-  email: hasana@monada.co  
+  email: hasana@wing.cloud  
 team:
   name: The Wing Team
   url: https://github.com/winglang
@@ -26,19 +26,19 @@ eyalk:
   title: Chief Product Officer at Wing Cloud
   url: https://github.com/ekeren
   image_url: https://avatars.githubusercontent.com/u/1727147?v=4
-  email: eyalk@monada.co
+  email: eyalk@wing.cloud
 urib:
   name: Uri Bar
   title: Director of Engineering
   url: https://github.com/staycoolcall911
   image_url: https://avatars.githubusercontent.com/u/106860404?v=4
-  email: urib@monada.co
+  email: urib@wing.cloud
 shaib:
   name: Shai Ber
   title: Co-Founder and COO
   url: https://github.com/ShaiBer
   image_url: https://avatars.githubusercontent.com/u/1729376?v=4
-  email: shaib@monada.co
+  email: shaib@wing.cloud
 skorfmann:
   name: Sebastian Korfmann
   title: Winglang Trailblazer
@@ -50,4 +50,10 @@ markm:
   title: Senior Software Engineer
   url: https://github.com/MarkMcCulloh
   image_url: https://avatars.githubusercontent.com/u/1237390?v=4
-  email: markm@monada.co
+  email: markm@wing.cloud
+dcahana2:
+  name: Danna Cahana
+  title: Head of Marketing
+  url: https://github.com/dcahana2
+  image_url: https://ca.slack-edge.com/T047MKK5ZHT-U04JPR14144-4a917932ee08-192
+  email: dannac@wing.cloud
