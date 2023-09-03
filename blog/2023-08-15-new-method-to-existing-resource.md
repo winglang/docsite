@@ -21,7 +21,7 @@ Under the `cloud` folder, I navigated to `queue.ts` file that contains the cloud
 ## Cloud-Specific Implementations
 
 Wing's support for multiple cloud providers means that each new method must be implemented for every supported provider. Now it's time to change folders like `target-awscdk`, `target-sim`, and others, each contain cloud-specific implementation files. I will say that `target-sim` is not really a cloud provider, but it is our local simulator that runs locally and allows us to code, test, and debug very fast.
-Let me give you an example, for cloud provider `target-sim`, I set the length of the `mesages` array to zero:
+Let me give you an example. For cloud provider `target-sim`, I set the length of the `mesages` array to zero:
 
 ```js
 public async purge(): Promise<void> {
