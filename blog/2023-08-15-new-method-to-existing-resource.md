@@ -11,7 +11,7 @@ I love working with the Wing community, and one of my favorite ways to engage is
 
 ## Getting Started
 
-Before diving into implementation, it was crucial for me to go through the specifications of the resource I was about to work on. I found all the necessary details in the [Wing spec](https://www.winglang.io/docs/standard-library/cloud/bucket), outlining the method's signature, return type, and arguments. 
+Before diving into implementation, it was crucial for me to go through the specifications of the resource I was about to work on. I found all the necessary details in the [Wing spec](https://www.winglang.io/docs/standard-library/cloud/queue), outlining the method's signature, return type, and arguments. 
 
 ## Adding Cloud-Agnostic Interfaces
 
