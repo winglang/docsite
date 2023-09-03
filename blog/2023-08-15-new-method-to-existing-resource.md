@@ -1,5 +1,5 @@
 ---
-title: Adding purge & aproxSize to the queue resource
+title: Adding purge & approxSize to the queue resource
 description: In this post, I am explaining how I added a method to the an existing resource.
 authors: 
   - revitalb
