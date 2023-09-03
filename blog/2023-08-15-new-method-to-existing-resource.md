@@ -62,13 +62,13 @@ For cloud provider `target-sim`:
 ```
 While for the `tf-aws` implementation:
 ```js
-public async purge(): Promise<void> {
-     return this.context.withTrace({
-       message: `Purge ().`,
-       activity: async () => {
-         this.messages.length = 0;
-       }
-     }
+public async approxSize(): Promise<number> {
+    const command = new GetQueueAttributesCommand({
+      QueueUrl: this.queueUrl,
+      AttributeNames: ["ApproximateNumberOfMessages"],
+    });
+    const data = await this.client.send(command);
+    return Number.parseInt(data.Attributes?.ApproximateNumberOfMessages ?? "0");
 }
 ```
 
