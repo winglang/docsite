@@ -47,7 +47,7 @@ I adjusted the code in `queue.inflight.ts` as `purge` is part of the inflight AP
 
 ## Ensuring Quality: Writing Tests
 
-No new functionality is complete without testing right? So I located the appropriate provider's `queue.test.ts` and reallized that `Purge` cannot be tested unless I have a way to get the size of the `Queue`. So I went back to step #1 and added `Queue.approxSize` as well:
+No new functionality is complete without testing right? So I located the appropriate provider's `queue.test.ts` and reallized that `Purge` cannot be tested unless I have a way to get the number of messages in the `Queue`. So I went back to step #1 and added `Queue.approxSize` as well:
 For cloud provider `target-sim`:
 
 ```js
