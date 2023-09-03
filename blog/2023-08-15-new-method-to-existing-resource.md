@@ -16,7 +16,7 @@ Before diving into implementation, it was crucial for me to go through the speci
 ## Adding Cloud-Agnostic Interfaces
 
 To add a method to an existing resource, I needed to modify the implementation files of the resource that are located in `wingsdk/src/cloud` folder. The `cloud` folder contains cloud-agnostic code, ensuring that implementations are not tied to any specific cloud provider.
-Under the `cloud` folder, I navigated to `queue.ts` file that contains the cloud-agnostic implementation, added the relevant methods as well as comments and documentations using code suggestions from **co-pilot**!
+Under the `cloud` folder, I navigated to `queue.ts` file that contains the cloud-agnostic implementation, added the relevant methods as well as comments and documentation using code suggestions from **GitHub Copilot**!
 
 ## Cloud-Specific Implementations
 
