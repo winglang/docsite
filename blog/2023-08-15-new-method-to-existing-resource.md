@@ -43,7 +43,7 @@ public async purge(): Promise<void> {
 }
 ```
 
-I adjusted the code in `queue.inflight.ts` as `Purge` method is part of the inflight API. As you can see, these implementations tailored to different cloud providers were where the real magic happened.
+I adjusted the code in `queue.inflight.ts` as `purge` is part of the inflight API. As you can see, these implementations tailored to different cloud providers were where the real magic happened.
 
 ## Ensuring Quality: Writing Tests
 
