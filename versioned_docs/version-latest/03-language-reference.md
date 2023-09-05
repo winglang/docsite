@@ -259,16 +259,27 @@ let jsonObj = Json {
 
 ##### 1.1.4.4 Assignment to native types
 
-We only allow implicit assignment from *safe* to *unsafe* types because otherwise we cannot
-guarantee safety (e.g. from `str` to `Json` but not from `Json` to `str`), so this won't work:
+If the `Json` object is statically known to structurally match a certain type, it is possible 
+to assign it to a variable of that type with no runtime cost:
 
 ```TS
 let j = Json "hello";
 let s: str = j;
+
+struct J2 { a: num; }
+let j2: J2 = { a: 2 }
+```
+
+This can only be done when the `Json` literal is present in the program. Otherwise, we cannot
+guarantee safety.
+
+```TS
+let response = http.get("/employees");
+let s: str = response;
 //           ^ cannot assign `Json` to `str`.
 ```
 
-To assign a `Json` to a strong-type variable, use the `fromJson()` static method on the target
+To dynamically assign a `Json` to a strong-type variable, use the `fromJson()` static method on the target
 type:
 
 ```TS
@@ -505,18 +516,10 @@ log("UTC: ${t1.utc.toIso())}");            // output: 2023-02-09T06:21:03.000Z
 | Name     | Extra information                                        |
 | -------- | -------------------------------------------------------- |
 | `log`    | logs str                                                 |
-| `throw`  | creates and throws an instance of an exception           |
-| `panic`  | exits with a serializable, dumps the trace + a core dump |
-| `assert` | checks a condition and _panics_ if evaluated to false    |
-
-`panic` is a fatal call by design. If the intention is error handling, panic is the
-last resort. Exceptions are non fatal and should be used instead for effectively
-communicating errors to the user.
+| `assert` | checks a condition and _throws_ if evaluated to false    |
 
 > ```TS
 > log("Hello ${name}");
-> throw("a recoverable error occurred");
-> panic("a fatal error encountered");
 > assert(x > 0);
 > ```
 
@@ -863,8 +866,8 @@ if myPerson.address == nil {
 
 #### 1.6.3 Unwrapping using `if let`
 
-The `if let` statement can be used to test if an optional is defined and *unwrap* it into a
-non-optional variable defined inside the block:
+The `if let` statement (or `if let var` for a reassignable variable) can be used to test if an 
+optional is defined and *unwrap* it into a non-optional variable defined inside the block:
 
 ```TS
 if let address = myPerson.address {
@@ -958,12 +961,7 @@ translate to JavaScript. You can create a new exception with a `throw` call.
 In the presence of `try`, both `catch` and `finally` are optional but at least one of them must be present.
 In the presence of `catch` the variable holding the exception (`e` in the example below) is optional.
 
-`panic` is meant to be fatal error handling.  
 `throw` is meant to be recoverable error handling.
-
-An uncaught exception is considered user error but a panic call is not. Compiler
-guarantees exception safety by throwing a compile error if an exception is
-expected from a call and it is not being caught.
 
 > ```TS
 > try {
@@ -1173,7 +1171,7 @@ The loop invariant in for loops is implicitly re-assignable (`var`).
 
 ### 2.7 while
 
-**while** statement is used to execute a block of code while a condition is true.  
+The **while** statement evaluates a condition, and if it is true, a set of statements is repeated until the condition is false.
 
 > ```TS
 > // Wing program:
@@ -1185,6 +1183,20 @@ The loop invariant in for loops is implicitly re-assignable (`var`).
 [`▲ top`][top]
 
 ---
+
+### 2.8 throw
+
+The **throw** statement raises a user-defined exception, which must be a string expression.
+Execution of the current function will stop (the statements after throw won't be executed), and control will be passed to the first catch block in the call stack.
+If no catch block exists among caller functions, the program will terminate.
+(An uncaught exception in preflight causes a compilation error, while an uncaught exception in inflight causes a runtime error.)
+
+> ```TS
+> // Wing program:
+> throw "Username must be at least 3 characters long.";
+> ```
+
+[`▲ top`][top]
 
 ## 3. Declarations
 
@@ -1511,10 +1523,17 @@ let [var] <name>[: <type>] = [<type>] <value>;
 Assignment operator is `=`.  
 Assignment declaration keyword is `let`.  
 Type annotation is optional if a default value is given.  
+`var` keyword after `let` makes a variable mutable.
 
 > ```TS
 > let n = 10;
 > let s: str = "hello";
+> s = "world"; // error: Variable is not reassignable
+> ```
+
+> ```TS
+> let var s = "hello";
+> s = "hello world"; // compiles
 > ```
 
 [`▲ top`][top]
@@ -1743,6 +1762,8 @@ exports.makeId = function () {
 Given a method of name X, the compiler will map the method to the JavaScript export with the 
 matching name (without any case conversion).
 
+Extern methods do not support access to class's members through `this`, so they must be declared `static`.
+
 ### 5.2.1 TypeScript
 
 It is possible to use TypeScript to write helpers, but at the moment this is not
@@ -1945,7 +1966,7 @@ assert(cat1 != dog); // compile time error (can't compare different types)
 
 ### 6.2 Strings
 
-String reference doc is available [here](https://www.winglang.io/docs/language-guide/language-reference#61-strings).
+String reference doc is available [here](https://www.winglang.io/docs/standard-library/std/api-reference#string-).
 Type of string is UTF-16 internally.  
 All string declaration variants are multi-line.  
 
