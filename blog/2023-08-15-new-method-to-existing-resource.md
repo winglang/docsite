@@ -74,7 +74,7 @@ public async approxSize(): Promise<number> {
 
 ## Seamlessly Integrating Documentation
 
-With coding and testing behind me, the final step was to align the documentation with the newly introduced API. By executing the `pnpm turbo build` command, the build process integrated my comments into the documentation. This ensured that the documentation accurately reflected the changes I'd made and would be readily accessible in the [API Reference section](https://www.winglang.io/docs/standard-library/cloud/queue).
+Okay, coding and testing behind me, now to the final step which is to align the documentation with the new method. By executing the `pnpm turbo build` command, the build process integrated my comments into the documentation. This ensures that the documentation reflects the changes I have made and would appear in the [API Reference section](https://www.winglang.io/docs/standard-library/cloud/queue).
 
 ## A Glimpse into the Journey
 
