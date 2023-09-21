@@ -199,6 +199,12 @@ html[data-theme="dark"] .header-text-link:hover {
   color: var(--ifm-color-primary-lightest);
 }
 
+@media (max-width: 1040px) {
+  .header-slack-link {
+    display: none;
+  }
+}
+
 .header-slack-link svg[class^="iconExternalLink"] {
   display: none;
 }
