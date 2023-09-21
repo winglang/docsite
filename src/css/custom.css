@@ -312,17 +312,13 @@ html[data-theme="dark"] .nav-git:hover {
 @media (min-width: 997px) {
   .container {
     max-width: 100% !important;
-    padding: 0px 2.4rem !important;
+    padding-left: 2.4rem !important;
+    padding-right: 2.4rem !important;
   }
-}
-
-.container.margin-vert--lg {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-}
-
-article[itemprop="blogPost"] {
-  margin-top: 3.5rem !important;
+  .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 h2[itemprop="headline"] a {
