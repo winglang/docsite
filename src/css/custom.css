@@ -303,20 +303,25 @@ html[data-theme="dark"] .nav-git:hover {
   * Custom CSS for the Blog
   */
 
-*/ article h2 a {
-  font-size: 3rem;
-  font-weight: 600;
-}
-
 @media (min-width: 1440px) {
   .container {
     max-width: 1500px;
   }
 }
 
-.margin-vert--lg {
+.container.margin-vert--lg {
   margin-top: 0px !important;
   margin-bottom: 0px !important;
+}
+
+article[itemprop="blogPost"] {
+  margin-top: 3.5rem !important;
+}
+
+.title_node_modules-\@docusaurus-theme-classic-lib-theme-BlogPostItem-Header-Title-styles-module
+  a {
+  font-size: 3rem;
+  font-weight: 600;
 }
 
 .sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module {
