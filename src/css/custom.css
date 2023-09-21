@@ -298,3 +298,27 @@ html[data-theme="dark"] .nav-git:hover {
   height: 1.5em;
   border-right: 1px solid #26413c;
 }
+
+/**
+  * Custom CSS for the Blog
+  */
+
+*/ article h2 a {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1500px;
+  }
+}
+
+.margin-vert--lg {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module {
+  top: 0px !important;
+}
