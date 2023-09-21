@@ -280,7 +280,7 @@ html[data-theme="dark"] .header-github-link:before {
 }
 
 .nav-git:hover {
-  background-color: var(--ifm-color-emphasis-200);
+  background-color: #ebedf0;
   text-decoration: none;
 }
 
@@ -290,7 +290,7 @@ html[data-theme="dark"] .nav-git {
 }
 
 html[data-theme="dark"] .nav-git:hover {
-  background-color: var(--ifm-color-emphasis-200);
+  background-color: #444950;
 }
 
 .line-sep {
