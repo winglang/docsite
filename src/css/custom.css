@@ -314,7 +314,8 @@ html[data-theme="dark"] .nav-git:hover {
     padding-left: 2.4rem !important;
     padding-right: 2.4rem !important;
   }
-  .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+  .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module,
+  .docPage__5DB {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
