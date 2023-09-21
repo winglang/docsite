@@ -127,7 +127,6 @@ button.navbar__toggle {
   height: 24px;
   width: 139px;
   margin-right: 0px;
-  margin-bottom: 5px;
   padding-top: 0.2px;
   padding-left: 5px;
   padding-bottom: 0.8px;
@@ -199,6 +198,12 @@ html[data-theme="dark"] .header-text-link:hover {
   color: var(--ifm-color-primary-lightest);
 }
 
+@media (max-width: 1040px) {
+  .header-slack-link {
+    display: none;
+  }
+}
+
 .header-slack-link svg[class^="iconExternalLink"] {
   display: none;
 }
@@ -259,8 +264,8 @@ html[data-theme="dark"] .header-github-link:before {
   padding: 8px 16px;
   font-size: 15px;
   display: flex;
-  color: #1c1e21;
-  border: 1px solid #cbd5e1;
+  color: #2a3434;
+  background-color: #aef8ec;
 }
 
 .nav-git-mobile {
@@ -280,21 +285,52 @@ html[data-theme="dark"] .header-github-link:before {
 }
 
 .nav-git:hover {
-  color: #1f70bf;
+  background-color: #ebedf0;
   text-decoration: none;
 }
 
 html[data-theme="dark"] .nav-git {
   color: #f1f0f1;
-  border: 1px solid #475569;
+  background-color: #03120e;
 }
 
 html[data-theme="dark"] .nav-git:hover {
-  color: #1f70bf;
+  background-color: #444950;
 }
 
 .line-sep {
   width: 1px;
   height: 1.5em;
   border-right: 1px solid #26413c;
+}
+
+/**
+  * Custom CSS for the Blog
+  */
+
+@media (min-width: 997px) {
+  .container {
+    max-width: 100% !important;
+    padding-left: 2.4rem !important;
+    padding-right: 2.4rem !important;
+  }
+  .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module,
+  .docPage__5DB {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+h2[itemprop="headline"] a {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1c1e21;
+}
+html[data-theme="dark"] h2[itemprop="headline"] a {
+  color: #f1f0f1;
+}
+
+.sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module,
+.sidebar_re4s {
+  top: 0px !important;
 }
