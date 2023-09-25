@@ -1,5 +1,5 @@
 ---
-title: Designing programmatic APIs for cloud infrastructure using constructs
+title: Designing programmatic APIs for cloud infrastructure using constructs (part 1)
 description: Technical deep dive on some of the challenges of designing ergonomic APIs using the constructs framework
 authors: 
   - rybickic
@@ -192,7 +192,7 @@ class PurplePatch extends Construct {
   }
 }
 
-const garden = new Garden(undefined, "root");
+const garden = new Garden();
 const rose = new Flower(garden, "rose", {
   kind: "rose",
   color: "red",
