@@ -231,7 +231,7 @@ bucket.addObject("hello.txt", "cool beans");
 
 Under the hood, `addObject` creates a new construct representing a bucket object, and that gets translated into IaC configuration separately from the actual bucket.
 
-### Rule 2: Document mutating APIs
+### Rule 2: Document destructive APIs
 
 While methods that destroy existing state are worth avoiding, if there's a need for them, document the APIs accordingly.
 
