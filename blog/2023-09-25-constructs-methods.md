@@ -206,7 +206,7 @@ Uh oh!
 
 To avoid these kinds of issues, we usually follow these two rules when designing the methods of constructs.
 
-### Rule 1: Only add state
+### Rule 1: Only add state, never subtract or update
 
 Methods should add state, not update or subtract state. If you're always adding state, then state that was configured or added earlier in the application won't get removed or overridden. The additions should also be [commutative](https://en.wikipedia.org/wiki/Commutative_property) - which means re-ordering them should not change the application's functional behavior.
 
