@@ -7,7 +7,7 @@ tags: [winglang, cdk, constructs, api design, jsii, AWS CDK]
 hide_table_of_contents: true
 ---
 
-At Wing Cloud, we're building a programming language named Winglang that makes it easier to build robust cloud applications.
+At Wing Cloud, we're building a programming language named Winglang that makes it easier to build cloud applications.
 One of the main features of Winglang is that it lets you model the cloud resources alongside your application code.
 Every cloud resource in Winglang is modeled as a **construct**, similar to the [AWS CDK] and [CDKTF] infrastructure-as-code frameworks.
 In the Wing application below, the classes named `Bucket` and `Function` are both constructs:
