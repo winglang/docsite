@@ -197,7 +197,7 @@ new PurplePatch(garden, "purple-patch", { flower: rose });
 Since they both set the color of `rose`, one of them is going to override the decision of the other (in this case, the final rose will be purple).
 Uh oh!
 
-To avoid these kinds of issues, we usually follow these two rules when designing the methods of constructs.
+To avoid these kinds of issues, I recommend following these two rules when designing methods on constructs:
 
 ### Rule 1: Only add state, never subtract or update
 
