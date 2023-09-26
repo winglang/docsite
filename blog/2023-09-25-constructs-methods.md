@@ -1,6 +1,6 @@
 ---
-title: Designing programmatic APIs for cloud infrastructure using constructs (part 1)
-description: Technical deep dive on some of the challenges of designing ergonomic APIs using the constructs framework
+title: "Avoiding mutability pitfalls in constructs-based API design"
+description: A technical deep dive on some of the challenges of designing mutation APIs using the constructs framework
 authors: 
   - rybickic
 tags: [winglang, cdk, constructs, api design, jsii, AWS CDK]
@@ -48,9 +48,9 @@ In this blog post I'll highlight some of these challenges, and explain several o
 [CDKTF]: https://github.com/hashicorp/terraform-cdk
 [cdk8s]: https://github.com/cdk8s-team/cdk8s
 
-## What is `constructs`?
+## What are constructs?
 
-First, let's familiarize ourselves with `constructs` to get an idea of how it works.
+First, let's familiarize ourselves with constructs to get an idea of how they works.
 
 `constructs` at its core is a JavaScript library that provides a set of APIs for organizing classes into trees.
 A construct is created in JavaScript by writing a class that extends the `Construct` class, with a signature of `(scope, id, props)`.
@@ -76,7 +76,7 @@ class Flower extends Construct {
     this.color = props.color;
   }
 
-  synth() {
+  toJson() {
     return {
       id: this.node.path,
       kind: this.kind,
@@ -93,7 +93,7 @@ class Garden extends Construct {
   synth() {
     const isFlower = (node) => node instanceof Flower;
     // every construct class has a `.node` field for accessing construct-related APIs
-    const flowers = this.node.findAll().filter(isFlower).map((c) => c.synth());
+    const flowers = this.node.findAll().filter(isFlower).map((c) => c.toJson());
     writeFileSync("garden.json", JSON.stringify(flowers, null, 2));
   }
 }
@@ -151,7 +151,7 @@ By running `node garden.js`, we produce a `garden.json`, which looks like:
 
 When you create an app in Wing and compile it to a target like `tf-azure`, instead of creating `garden.json`, it creates a Terraform JSON file that describes all of the resources in your app -- but the essential structure is the same.
 
-## Using methods to change state
+## Using methods to mutate state
 
 The default way to configure a construct is to provide a list of properties (sometimes called "props") during initialization.
 We saw this in the previous example when creating new flowers:
@@ -220,17 +220,6 @@ fn.addEnvironment("DB_NAME", "orders");
 If you try calling `addEnvironment` with the same string twice, it throws an error.
 Since environment variables can only be added, you can pass around `fn` throughout your codebase - including to third party libraries! - without worrying about environment variables being removed or changed.
 
-Besides changing internal state on a construct, methods can also create new auxiliary constructs, which is another way to safely add state. For example, in Wing it's possible to add objects to a bucket during deployment like so:
-
-```js
-bring cloud;
-
-let bucket = new cloud.Bucket();
-bucket.addObject("hello.txt", "cool beans");
-```
-
-Under the hood, `addObject` creates a new construct representing a bucket object, and that gets translated into IaC configuration separately from the actual bucket.
-
 ### Rule 2: Document destructive APIs
 
 While methods that destroy existing state are worth avoiding, if there's a need for them, document the APIs accordingly.
@@ -240,8 +229,8 @@ For example, if changing a flower's color is truly necessary, it's a good practi
 Another common use case for mutating APIs are to provide [escape hatches](https://docs.aws.amazon.com/cdk/v2/guide/cfn_layer.html#cfn_layer_raw) for when an abstraction doesn't expose all of the capabilities you need.
 You shouldn't need them often, but when you do, you're usually glad they're available.
 
-## To be continued
+## Summary
 
-By following the rules above, you'll find it easier to design more safer APIs like the classes in the AWS CDK and Wing's standard library that lead to fewer surprises when they're used by other developers.
+By following the rules above, you'll design safer APIs like the classes in the AWS CDK and Wing's standard library, that lead to fewer mutation surprises when they're used by other developers.
 
-In the next post, we'll explore more design patterns in the constructs ecosystem, including how to safely design "getters" on constructs in the face of mutations.
+If you're interested in learning more about constructs, check out the [constructs documentation](https://docs.aws.amazon.com/cdk/v2/guide/constructs.html) on the AWS CDK website.
