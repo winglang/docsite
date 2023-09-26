@@ -8,7 +8,7 @@ hide_table_of_contents: true
 ---
 
 At Wing Cloud, we're building a programming language named Winglang that makes it easier to build cloud applications.
-One of the main features of Winglang is that it lets you model the cloud resources alongside your application code.
+One of the main features of Winglang is that it lets you model an app's cloud resources alongside its application code.
 Every cloud resource in Winglang is modeled as a **construct**, similar to the [AWS CDK] and [CDKTF] infrastructure-as-code frameworks.
 In the Wing application below, the classes named `Bucket` and `Function` are both constructs:
 
@@ -30,12 +30,12 @@ let fn = new cloud.Function(
   env: { DB_HOST: "af43b12" }
 );
 
-// ... some more code
+// ...later
 
 fn.addEnvironment("DB_NAME", "orders");
 ```
 
-However, this extra flexibility introduces some challenges once we try to compose constructs together.
+However, the flexibility to mutate constructs introduces some challenges once we try to compose them together.
 In this blog post I'll highlight some of these challenges, and explain several of the best practices for designing APIs that avoid these pitfalls.
 
 [AWS CDK]: https://github.com/aws/aws-cdk
