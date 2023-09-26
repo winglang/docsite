@@ -1,5 +1,5 @@
 ---
-title: "Avoiding mutability pitfalls in construct API design"
+title: "Avoiding mutability pitfalls in constructs-based API design"
 description: A technical deep dive on some of the challenges of designing mutation APIs using the constructs framework
 authors: 
   - rybickic
