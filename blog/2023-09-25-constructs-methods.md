@@ -7,11 +7,9 @@ tags: [winglang, cdk, constructs, api design, jsii, AWS CDK]
 hide_table_of_contents: true
 ---
 
-One of the essential features of Winglang is being able to use familiar programming language tools like variables, for loops, and classes to describe the cloud resources that are part of your application.
-For example, cloud applications may rely on databases, queues, storage buckets, API endpoints, as well as compute platforms such as Kubernetes clusters or AWS Lambda.
-
-Today, Winglang uses **constructs**, a foundational framework that underpins several infrastructure-as-code libraries such as [AWS CDK], [CDKTF], and [cdk8s], to allow cloud components to be expressed and composed together into higher level abstractions.
-
+At Wing Cloud, we're building a programming language named Winglang that makes it easier to build robust cloud applications.
+One of the main features of Winglang is that it lets you model the cloud resources alongside your application code.
+Every cloud resource in Winglang is modeled as a **construct**, similar to the [AWS CDK] and [CDKTF] infrastructure-as-code frameworks.
 In the Wing application below, the classes named `Bucket` and `Function` are both constructs:
 
 ```js
@@ -23,10 +21,7 @@ new cloud.Function(inflight () => {
 });
 ```
 
-Each class in Winglang's standard library representing a cloud component is a construct.
-When an application is compiled, a construct is converted into one or more pieces of declarative [IaC] configuration (such as Terraform or CloudFormation).
-
-One superpower of constructs is that their properties can be configured after initialization, through methods.
+One of the cooler capabilities of constructs is that their properties can be configured after they have been initialized, through methods.
 For example, environment variables can be added to a serverless function during or after initialization:
 
 ```js
@@ -40,19 +35,17 @@ let fn = new cloud.Function(
 fn.addEnvironment("DB_NAME", "orders");
 ```
 
-However, this extra expressiveness introduces some challenges once we try to compose constructs together.
+However, this extra flexibility introduces some challenges once we try to compose constructs together.
 In this blog post I'll highlight some of these challenges, and explain several of the best practices for designing APIs that avoid these pitfalls.
 
-[IaC]: https://en.wikipedia.org/wiki/Infrastructure_as_code
 [AWS CDK]: https://github.com/aws/aws-cdk
 [CDKTF]: https://github.com/hashicorp/terraform-cdk
-[cdk8s]: https://github.com/cdk8s-team/cdk8s
 
 ## What are constructs?
 
 First, let's familiarize ourselves with constructs to get an idea of how they works.
 
-`constructs` at its core is a JavaScript library that provides a set of APIs for organizing classes into trees.
+`constructs` is a JavaScript library that provides an API for organizing classes into trees.
 A construct is created in JavaScript by writing a class that extends the `Construct` class, with a signature of `(scope, id, props)`.
 Constructs are always created in the scope of another construct[^1] and must always have an identifier which must be unique within the scope it’s created.
 A construct's identifier is used to generate a unique names for every cloud component.
