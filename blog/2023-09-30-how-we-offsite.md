@@ -20,10 +20,11 @@ couple of rascals as oppose to the hilly, chilly and far away SF (it turned out 
 decision given we have three sets of fully functional and incredible grandparents).
 
 So when I accepted the offer to move from Amazon to AWS, it was already clear that the CDK team is
-going to be a distributed team. We have already started chatting with [Romain Muller] and [Rico
-Huijbers], both based in Europe. This was actually a very uncommon model for Amazon teams, but I
-felt it made a lot of sense given the AWS CDK was going to be an open-source project, and we would
-have contributors from around the world anyway.
+going to be a distributed team. We have already started chatting with [Romain
+Marcadier](https://www.linkedin.com/in/romainmuller/) and [Rico
+Huijbers](https://twitter.com/rix0rrr), both based in Europe. This was
+actually a very uncommon model for Amazon teams, but I felt it made a lot of sense given the AWS CDK
+was going to be an open-source project, and we would have contributors from around the world anyway.
 
 During COVID, many teams around the world discovered the awesome potential of distributed teams.
 Besides more flexibility, more work/life balance and ability to bring talent from around the world,
@@ -95,8 +96,10 @@ souls are in a different mental state when we all sit down with drinks over a po
 view.
 
 We've been conducting our offsites in a few amazing locations around Israel. Our team is small
-enough to be able to rent out one or two very comfortable villas with [amazing views] of the Sea of
-Galilee, a shared living area with a big kitchen, BBQ and pool.
+enough to be able to rent out one or two very comfortable villas with of the Sea of Galilee, a
+shared living area with a big kitchen, BBQ and pool.
+
+![](./assets/offsite-view-1.jpg)
 
 ## Day 1: Aligning frequencies
 
@@ -113,12 +116,15 @@ Here's the high level schedule:
 * **8pm-10pm**: Dinner + **story time**.
 
 The **communal dinner** has been one of the most fun parts of these offsites for me. This is
-inspired from the first offsite [Jason Fulghum] and I organized for the CDK team and has proven to
-be an amazing way to bond and connect and make something together as a team. Before the event, each
-team member signs up for a dish and the ingredients they need. Then, we all prepare dinner together
-and help each other. Some people mix drinks, some people make their favorite desert, and some show
-off with crazy cooking skills that no one expected. It always turns out super tasty and diverse and
-colorful and a really fun team activity.
+inspired from the first offsite [Jason Fulghum](https://twitter.com/jason_fulghum)
+and I organized for the CDK team and has proven to be an amazing way to bond and connect and make
+something together as a team. Before the event, each team member signs up for a dish and the
+ingredients they need. Then, we all prepare dinner together and help each other. Some people mix
+drinks, some people make their favorite desert, and some show off with crazy cooking skills that no
+one expected. It always turns out super tasty and diverse and colorful and a really fun team
+activity.
+
+![](./assets/offsite-cooking.png)
 
 At dinner, we all sit down and praise each others dishes and at some point we have a tradition where
 offsite "virgins" take the stage and **share stories** from their personal journey. It's a kind of
@@ -155,6 +161,8 @@ In these days, we usually eat leftovers from dinner during the day and order in 
 Drinks and pool and music are always welcome and we try to be sensitive to each other about taking
 breaks and shifting energy.
 
+![](./assets/offsite-work.jpg)
+
 These days oftentimes go on until very late at night. Some people would keep hacking at 2am and get
 reminded that tomorrow is another day of messing up with each other.
 
@@ -168,6 +176,8 @@ We get back to Tel-Aviv in the afternoon with our bodies tanned, bellies full an
 fried. Communicating with the entire team at full bandwidth is not something we are used to doing,
 and as much as it's incredibly fun and fulfilling, it's also exhausting. Luckily, it's the weekend.
 
+![](./assets/offsite-nature.png)
+
 ### Summary
 
 I hope that sharing this would help other distributed teams like ours become better teams by simply
@@ -176,3 +186,5 @@ approaches, there's a sentiment that "it's about time" and mild signs of "remote
 
 Then, we all get meet up, hug each other, smile, cook, drink, dance, geek out, hack, be foolish
 together and remember how awesome this gang is.
+
+![](./assets/offsite-group.png)
