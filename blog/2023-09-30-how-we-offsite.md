@@ -99,7 +99,7 @@ We've been conducting our offsites in a few amazing locations around Israel. Our
 enough to be able to rent out one or two very comfortable villas with of the Sea of Galilee, a
 shared living area with a big kitchen, BBQ and pool.
 
-<img src="./assets/offsite-view-1.jpg" width="50%">
+<img src="./assets/offsite-view-1.jpg" width="50%" />
 
 ## Day 1: Aligning frequencies
 
@@ -124,7 +124,7 @@ drinks, some people make their favorite desert, and some show off with crazy coo
 one expected. It always turns out super tasty and diverse and colorful and a really fun team
 activity.
 
-<img src="./assets/offsite-cooking.png" width="50%">
+<img src="./assets/offsite-cooking.png" width="50%" />
 
 At dinner, we all sit down and praise each others dishes and at some point we have a tradition where
 offsite "virgins" take the stage and **share stories** from their personal journey. It's a kind of
@@ -161,7 +161,7 @@ In these days, we usually eat leftovers from dinner during the day and order in 
 Drinks and pool and music are always welcome and we try to be sensitive to each other about taking
 breaks and shifting energy.
 
-<img src="./assets/offsite-work.jpg" width="50%">
+<img src="./assets/offsite-work.jpg" width="50%" />
 
 These days oftentimes go on until very late at night. Some people would keep hacking at 2am and get
 reminded that tomorrow is another day of messing up with each other.
@@ -176,7 +176,7 @@ We get back to Tel-Aviv in the afternoon with our bodies tanned, bellies full an
 fried. Communicating with the entire team at full bandwidth is not something we are used to doing,
 and as much as it's incredibly fun and fulfilling, it's also exhausting. Luckily, it's the weekend.
 
-<img src="./assets/offsite-nature.png" width="50%">
+<img src="./assets/offsite-nature.png" width="50%" />
 
 ### Summary
 
@@ -187,4 +187,4 @@ approaches, there's a sentiment that "it's about time" and mild signs of "remote
 Then, we all get meet up, hug each other, smile, cook, drink, dance, geek out, hack, be foolish
 together and remember how awesome this gang is.
 
-<img src="./assets/offsite-group.png" width="50%">
+<img src="./assets/offsite-group.png" width="50%" />
