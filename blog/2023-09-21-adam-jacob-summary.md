@@ -26,12 +26,14 @@ This commitment to understanding the foundations is clear in his work at Chef an
 ### Bridging the divide between software engineering and DevOps
 
 From Adam's perspective, the distinction between software engineering and what's now labeled as “DevOps” is artificial. For example, he recalls the days of wrestling with the notoriously intricate configurations of Sendmail, an email routing software. 
+
 Mastering its complex syntax was as challenging as learning programming in C. This challenges the preconceived notion: Which of these tasks qualifies as “programming”?
 According to Adam, the industry historically placed an artificial divide between system administrators and software developers, often placing the latter on a pedestal. <br>
 In fact, both groups are essentially programmers, with their primary difference lying in the languages they use and the problems they tackle. It was this very realization that drove him to develop tools for systems experts. 
+
 From Elad’s POV, while all elements in this space are fundamentally software, different layers and roles tackle varying problem domains. Developers focused on building applications predominantly engage with the business's problem domain. 
 In contrast, those who work on infrastructure, operations, or the platform side grapple with a distinct set of issues, however, both groups, regardless of their domain, are integral in the larger software ecosystem.
-<Lisa’s note: not sure if we need to include this highlighted section>
+
 
 ### Reassessing the DevOps paradigm: The shortcomings
 
