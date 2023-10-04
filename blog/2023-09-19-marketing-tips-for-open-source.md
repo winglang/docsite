@@ -11,7 +11,7 @@ hide_table_of_contents: true
 
 Hey there! As a marketer with nearly a decade of experience in the fields of FinTech, MedTech, AI, and Cybersecurity, this was my first time working on an open source project. Turns out, gaining devs' trust is like playing a whole new game. So, I decided to share what I have learned so far in the world of marketing an open source project. 
 
-### Elevate Your Documentation: 
+### Elevate Your Documentation
 Okay, I can't stress this enough. Open source thrives on community contributions. If they can't understand your project, they can't contribute. This is probably one of the biggest lessons I have learned so far. And the best method to succeed? Ensure your documentation is clear, engaging, and transparent. Think of it as a user manual that constantly needs to be maintained. 
 
 ### Engage Where the Devs Roam: 
