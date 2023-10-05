@@ -1,24 +1,71 @@
 eladb:
   name: Elad Ben-Israel
-  title: Co-Founder & CEO at Monada
+  title: Co-Founder & CEO at Wing Cloud
   url: https://github.com/eladb
   image_url: https://avatars.githubusercontent.com/u/598796?v=4
-  email: eladb@monada.co
+  email: eladb@wing.cloud
 rybickic:
   name: Chris Rybicki
-  title: Software Engineer at Monada
+  title: Software Engineer at Wing Cloud
   url: https://github.com/Chriscbr
   image_url: https://avatars.githubusercontent.com/u/5008987?v=4
-  email: chrisr@monada.co
+  email: chrisr@wing.cloud
 hasanaburayyan:
   name: Hasan Abu-Rayyan
-  title: Software Engineer at Monada
+  title: Software Engineer at Wing Cloud
   url: https://github.com/hasanaburayyan
   image_url: https://avatars.githubusercontent.com/u/45375125?v=4
-  email: hasana@monada.co
+  email: hasana@wing.cloud  
 shaiber:
   name: Shai Ber
   title: Co-Founder & COO at Wing Cloud
   url: https://github.com/ShaiBer
   image_url: https://avatars.githubusercontent.com/u/1729376?v=4
   email: shaib@wing.cloud
+team:
+  name: The Wing Team
+  url: https://github.com/winglang
+  image_url: https://github.com/winglang/wing/blob/dev/logo/3x/SymbolPadded-Black-White@3x.png?raw=true
+  email: ping@wing.cloud
+eyalk:
+  name: Eyal Keren
+  title: Chief Product Officer at Wing Cloud
+  url: https://github.com/ekeren
+  image_url: https://avatars.githubusercontent.com/u/1727147?v=4
+  email: eyalk@wing.cloud
+urib:
+  name: Uri Bar
+  title: Director of Engineering
+  url: https://github.com/staycoolcall911
+  image_url: https://avatars.githubusercontent.com/u/106860404?v=4
+  email: urib@wing.cloud
+shaib:
+  name: Shai Ber
+  title: Co-Founder and COO
+  url: https://github.com/ShaiBer
+  image_url: https://avatars.githubusercontent.com/u/1729376?v=4
+  email: shaib@wing.cloud
+skorfmann:
+  name: Sebastian Korfmann
+  title: Winglang Trailblazer
+  url: https://github.com/skorfmann
+  image_url: https://avatars.githubusercontent.com/u/136789?v=4
+  email: sebastian@korfmann.net
+markm:
+  name: Mark McCulloh
+  title: Senior Software Engineer
+  url: https://github.com/MarkMcCulloh
+  image_url: https://avatars.githubusercontent.com/u/1237390?v=4
+  email: markm@wing.cloud
+dcahana2:
+  name: Danna Cahana
+  title: Head of Marketing
+  url: https://github.com/dcahana2
+  image_url: https://ca.slack-edge.com/T047MKK5ZHT-U04JPR14144-4a917932ee08-192
+  email: dannac@wing.cloud
+revitalb:
+  name: Revital Barletz
+  title: Head of Community
+  url: https://github.com/revitalbarletz
+  image_url: https://avatars.githubusercontent.com/u/2212620?s=400
+  email: revitalb@wing.cloud

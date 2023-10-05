@@ -3,10 +3,10 @@
 require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const slackUrl = "https://t.winglang.io/slack";
 
 const winglangOrgUrl = "https://github.com/winglang";
-const stackOverflowUrl = "https://stackoverflow.com/questions/tagged/winglang";
 
 const keywords = [
   "Wing language",
@@ -38,7 +38,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.png",
+  favicon: "img/favicon.svg",
   organizationName: "winglang",
   projectName: "docs",
   // Even if you don't use internalization, you can use this field to set useful
@@ -56,7 +56,7 @@ const config = {
     "docusaurus-plugin-sass", 
     "docusaurus-plugin-segment",
 
-    // this is needed in order to to support symlinked `docs/` directory
+    // this is needed in order to support symlinked `docs/` directory
     // which is the mechanism we use when we develop locally with the winglang repo.
     // see https://github.com/facebook/docusaurus/issues/3272#issuecomment-876374383
     function (context, options) {
@@ -66,11 +66,27 @@ const config = {
           return {
             resolve: {
               symlinks: false,
-            }
+            },
+            plugins: [
+              new NodePolyfillPlugin(),
+            ],
           };
         }
       };
     },
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'contributing',
+        path: 'contributing',
+        routeBasePath: 'contributing',
+        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/contributing/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      },
+    ],
   ],
   presets: [
     [
@@ -78,10 +94,14 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "/", // Serve the docs at the site's root
-          breadcrumbs: false,
+          breadcrumbs: true,
           includeCurrentVersion: false,
-          editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/${params.docPath}`,
+          editUrl: (params) => {
+            if (/\d+-standard-library\/\d+-cloud/.test(params.docPath)) {
+              return `${winglangOrgUrl}/wing/tree/main/libs/wingsdk/src/cloud/${params.docPath.split("/").pop()}`
+            }
+            return `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`
+          },
         },
         blog: {
           blogTitle: 'What\'s up? The Wing Blog',
@@ -131,39 +151,73 @@ const config = {
         searchParameters: {},
 
         // Optional: path for search page that enabled by default (`false` to disable it)
-        searchPagePath: 'search',
+        searchPagePath: "search",
       },
       navbar: {
-        title: "Wing",
+        title: "",
         logo: {
           alt: "Wing Logo",
-          src: "img/logo-black.png",
-          srcDark: "img/logo-turq.png",
+          src: "../img/winglang-logo-dark.svg",
+          srcDark: "../img/winglang-logo-light.svg",
           href: "https://winglang.io",
           target: "_self",
         },
         items: [
           {
-            type: "doc",
-            docId: "welcome",
+            href: "https://www.winglang.io/docs/start-here/installation",
+            position: "left",
+            label: "Install",
+            className: "header-text-link",
+            target: "_self",
+          },
+          {
+            href: "https://www.winglang.io/play/",
+            position: "left",
+            label: "Playground",
+            className: "header-text-link",
+            target: "_self",
+          },
+          {
+            to: "docs",
             position: "left",
             label: "Docs",
+            className: "header-text-link",
+            target: "_self",
+          },
+          {
+            href: "https://www.winglang.io/community",
+            label: "Community",
+            position: "left",
+            className: "header-text-link",
+            target: "_self",
+          },
+          {
+            to: "contributing",
+            label: "Contributing",
+            position: "left",
+            target: "_self",
+            className: "header-text-link",
           },
           {
             to: 'blog',
             label: 'Blog',
+            target: "_self",
             position: 'left',
+            className: "header-text-link",
           },
           {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
+            href: "https://www.winglang.io/contact",
+            label: 'Contact',
+            position: 'left',
+            target: "_self",
+            className: "header-text-link",
           },
           {
             href: slackUrl,
             "aria-label": "Slack server",
             label: " ",
             position: "right",
+            target: "_self",
             className: "header-slack-link",
           },
           {
@@ -171,27 +225,30 @@ const config = {
             "aria-label": "Winglang Repo",
             label: " ",
             position: "right",
-            className: "header-github-link",
+            className: "header-github-link nav-git-mobile",
+          },
+          {
+            type: "custom-GitHubButton",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: "dark",
         links: [
           { 
             title: "Documentation",
             items:[
               {
                 label: "Installation",
-                to:"getting-started/installation"
+                to:"/docs/start-here/installation"
               },
               {
                 label: "Getting Started",
-                to: "getting-started/hello"
+                to: "/docs"
               },
               {
                 label: "Concepts",
-                to: "category/concepts"
+                to: "/docs/concepts/inflights"
               }
             ]
           },
@@ -200,16 +257,12 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "reference/spec",
+                to: "/docs/language-reference",
               },
               {
                 label: "API Reference",
-                to: "reference/sdk",
+                to: "/docs/category/standard-library",
               },
-              {
-                label: "Roadmap",
-                to: "status"
-              }
             ],
           },
           {
@@ -224,12 +277,8 @@ const config = {
                 href: slackUrl,
               },
               {
-                label: "Stack Overflow",
-                href: stackOverflowUrl,
-              },
-              {
                 label:"Contributor's Handbook",
-                to: "contributors/"
+                to: "contributing/"
               },
             ],
           },
@@ -248,13 +297,13 @@ const config = {
               },
               {
                 label: "Contribution Policy",
-                href: "/terms-and-policies/contributors-terms-of-service.html",
+                href: "https://github.com/winglang/wing/blob/main/CONTRIBUTORS_TERMS_OF_SERVICE.md",
                 target: "_blank"
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Monada, Inc. `,
+        copyright: `Copyright © ${new Date().getFullYear()} Wing Cloud, Inc. `,
       },
       prism: {
         theme: lightCodeTheme,

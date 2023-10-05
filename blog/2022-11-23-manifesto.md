@@ -9,6 +9,8 @@ hide_table_of_contents: true
 
 > A manifesto for cloud-oriented programming.
 
+<!--truncate-->
+
 Don't get me wrong, I love the cloud! It has empowered me to build amazing
 things, and completely changed the way I use software to innovate and solve
 problems.
@@ -22,8 +24,6 @@ applications for the cloud in the next decade. As the cloud evolved from "I
 don't want servers under my desk" to "my app needs 30 different managed services
 to perform its tasks", we kind of lost track of what a great developer
 experience looks like.
-
-<!--truncate-->
 
 Building applications for the cloud sometimes feels like spilling my kids' bag
 of unused Lego blocks all over the living room floor, and trying to build a
@@ -132,14 +132,14 @@ have been building tools for over a million years.
 And I am not happy with my tools.
 
 In March 2022, I joined forces with [Shai Ber], a good friend and a former
-Microsoft colleague, and we founded [Monada] with the mission to ***unlock the
+Microsoft colleague, and we founded [Wing Cloud] with the mission to ***unlock the
 cloud for developers***. We've assembled an incredible crew of beautiful geeks
 that share our passion for developer experience and open-source, and started our
 journey to empower developers (i.e. ourselves) to solve these fundamental
 problems.
 
 [Shai Ber]: https://www.linkedin.com/in/shai-ber-245b1226/
-[Monada]: https://monada.co/
+[Wing Cloud]: https://wing.cloud/
 
 ### Compilers to the rescue
 
