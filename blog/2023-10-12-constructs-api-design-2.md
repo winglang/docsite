@@ -169,7 +169,7 @@ garden.synth();
 ```
 
 When I synthesize my garden with `node garden.js`, I'm expecting the signpost to have a message like "Welcome to Tulip Trove, home to flowers from: Denmark, Turkey, Greece".
-But when I check `garden.json`, I find instead it only lists Denmark:
+But when I check `garden.json`, I find the signpost message only mentions Denmark:
 
 ```json
 [
