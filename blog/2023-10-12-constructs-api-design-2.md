@@ -289,6 +289,7 @@ class Flower {
   // ...
 
   get nativeRegions(): Lazy<Array<str>> {
+    // easier syntax!
     return lazy { this._nativeRegions.copy() };
   }
 }
