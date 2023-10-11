@@ -280,7 +280,7 @@ But perhaps... there's a better way?
 
 It turns out the issues I've described above (like checking for errors in your code, and automatically generating code for you) are the kinds of problems that **compilers** are perfect for!
 
-We don't have a proposal available yet, but it's possible in a future version of Wing, the language could have built-in support for safe and easy `Lazy` usage:
+We don't have an RFC available yet, but it's possible in a future version of Wing, the language could have built-in support for safe and easy `Lazy` usage:
 
 ```js
 // in Wing...
