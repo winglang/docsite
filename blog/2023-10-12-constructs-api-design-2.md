@@ -258,7 +258,7 @@ But if you're curious, the code from this post in its entirety is available as a
 
 ## Thoughts for the future
 
-`Lazy` values can be pretty powerful -- the one thing holding them back is the ergonomics of using them.
+`Lazy` values can be pretty powerful -- but one thing holding them back is the ergonomics of using them.
 In our example, we see that in order to create a `Lazy`, you need to wrap it in this function literal syntax `new Lazy(() => { ... })`.
 
 But even with that aside, we have also potentially introduced new issues, because of this fact:
