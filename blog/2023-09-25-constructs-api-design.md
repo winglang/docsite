@@ -45,7 +45,7 @@ In this blog post I'll highlight some of these challenges, and explain several o
 
 First, let's familiarize ourselves with constructs to get an idea of how they works.
 
-`constructs` is a JavaScript library that provides an API for organizing classes into trees.
+[`constructs`](https://github.com/aws/constructs) is a JavaScript library that provides an API for organizing classes into trees.
 A construct is created in JavaScript by writing a class that extends the `Construct` class, with a signature of `(scope, id, props)`.
 Constructs are always created in the scope of another construct[^1] and must always have an identifier which must be unique within the scope it’s created.
 A construct's identifier is used to generate a unique names for every cloud component.
