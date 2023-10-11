@@ -7,6 +7,10 @@ tags: [winglang, cdk, constructs, api design, jsii, AWS CDK, mutability]
 hide_table_of_contents: true
 ---
 
+Hey there! 👋
+My name's Chris and I'm a software engineer on the Wing Cloud team.
+Lately I've been helping out building Wing's compiler, and the design of APIs in Wing's standard library.
+
 In the [first post](./2023-09-25-constructs-api-design.md) in this series, I introduced some of the challenges of designing APIs for [constructs](https://github.com/aws/constructs) and frameworks like AWS CDK, CDKTF, and cdk8s when mutation is involved.
 
 To recap, a construct can have public methods that mutate the objects' private state.
