@@ -269,7 +269,7 @@ In the code above, we saw that in order to create a `Lazy`, the code for produci
 
 But even with that aside, we have also potentially introduced new issues, because of this fact:
 
-> `produce` should only be called on a `Lazy` value within another `Lazy` definition
+> `Lazy.produce()` should only be called inside of other `Lazy` definitions
 
 If we tried calling `f.nativeRegions.produce()` directly inside of `Signpost`'s constructor, we'd obtain a list of native regions that would still get stale, putting us back at square one.
 The only way to guarantee we're using `Lazy` properly is if it's only evaluated at the end of our app, when we call `garden.synth()`.
