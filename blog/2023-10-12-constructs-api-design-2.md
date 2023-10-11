@@ -79,7 +79,7 @@ class Flower extends Construct {
 }
 ```
 
-I've prefixed the instance fields with underscores to indicate that they're not meant to be directly accessed outside of the class's implementation.
+I've prefixed the instance fields with underscores to indicate that they're not meant to be accessed outside of the class's implementation.
 JavaScript does support private class members now, but it's a somewhat recent addition, so you don't find them in the wild too often.[^1]
 
 [^1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
