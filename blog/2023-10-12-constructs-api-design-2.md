@@ -14,7 +14,7 @@ Lately I've been helping out building Wing's compiler, and the design of APIs in
 In the [first post](./2023-09-25-constructs-api-design.md) in this series, I introduced some of the challenges of designing APIs for [constructs](https://github.com/aws/constructs) and frameworks like AWS CDK, CDKTF, and cdk8s when mutation is involved.
 
 To recap, a construct can have public methods that mutate the objects' private state.
-But if this state is replaced or destroyed, then application code becomes more sensitive to the order in which methods are called.
+But if this state is replaced or destroyed, then application code becomes more sensitive to the order of statements and method calls.
 This is usually undesirable when our constructs are modeling declarative information, like infrastructure configuration.
 
 To that end, we proposed two solutions for designing construct methods:
