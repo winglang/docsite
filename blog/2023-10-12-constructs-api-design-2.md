@@ -58,8 +58,10 @@ But, as we've mentioned before, it's also possible for construct state to change
 
 Uh oh - this smells like a recipe for problems.
 
-Let's see how properties can conflict with mutating methods through an example.
-I'll start by taking my `Flower` class from the previous post and adding options to specify its native regions:
+## When properties get stale
+
+Let's understand what causes properties to not play well with mutating methods through an example.
+I'll start by taking my `Flower` class from the previous post and adding options to specify the regions in the world where it's natively found:
 
 ```js
 class Flower extends Construct {
