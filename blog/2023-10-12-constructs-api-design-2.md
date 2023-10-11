@@ -262,7 +262,7 @@ The main change is that we also have to call `produce` on the lazy value in orde
 The core implementation of `Lazy` requires some changes to `Garden` as well, but they're not too interesting to look at.
 But if you're curious, the code from this post in its entirety is available as a gist [here](https://gist.github.com/Chriscbr/58384bdd7b8ce5e8fedf24ddba55e103) for your perusal.
 
-## Thoughts for the future
+## Ideas for making `Lazy` less complicated
 
 `Lazy` values can be pretty powerful -- but one thing holding them back is the ergonomics of using them.
 In our example, we see that in order to create a `Lazy`, you need to wrap it in this function literal syntax `new Lazy(() => { ... })`.
