@@ -313,7 +313,14 @@ For each `fromJson()`, there is a `tryFromJson()` method which returns an option
 indicates if parsing was successful or not:
 ```js
 let s = str.tryFromJson(myJson) ?? "invalid string";
-``````
+```
+
+Use `unsafe: true` to disable this check at your own risk:
+```js
+let trustMe = 123;
+let x = num.fromJson(trustMe, unsafe: true);
+assert(x == 123);
+```
 
 ##### 1.1.4.6 Mutability
 
@@ -386,6 +393,13 @@ Contact.fromJson(p);
 // RUNTIME ERROR: unable to parse Contact:
 // - field "last" is required and missing
 // - field "phone" is expected to be a string, got number.
+```
+
+Same as with primitives, it is possible to opt-out of validation using `unsafe: true`:
+```js
+let p = Json { first: "Wing", phone: 1234 };
+let x = Contact.fromJson(p, unsafe: true);
+assert(x.last.len > 0); // RUNTIME ERROR
 ```
 
 ##### 1.1.4.8 Serialization
@@ -524,10 +538,11 @@ log("UTC: ${t1.utc.toIso())}");            // output: 2023-02-09T06:21:03.000Z
 
 ### 1.2 Utility Functions
 
-| Name     | Extra information                                     |
-| -------- | ----------------------------------------------------- |
-| `log`    | logs str                                              |
-| `assert` | checks a condition and _throws_ if evaluated to false |
+| Name         | Extra information                                     |
+| ------------ | ----------------------------------------------------- |
+| `log`        | logs str                                              |
+| `assert`     | checks a condition and _throws_ if evaluated to false |
+| `unsafeCast` | cast a value into a different type                    |
 
 > ```TS
 > log("Hello ${name}");
