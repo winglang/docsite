@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 Hey there! 👋
 My name's Chris and I'm a software engineer on the Wing Cloud team.
-Lately I've been helping out building Wing's compiler, and the design of APIs in Wing's standard library.
+Lately I've been helping out building Wing's compiler, and designing APIs for Wing's standard library.
 
 In the [first post](./2023-09-25-constructs-api-design.md) in this series, I introduced some of the challenges of designing APIs for [constructs](https://github.com/aws/constructs) and frameworks like AWS CDK, CDKTF, and cdk8s when mutation is involved.
 
@@ -86,7 +86,7 @@ class Flower extends Construct {
 ```
 
 I've prefixed the instance fields with underscores to indicate that they're not meant to be accessed outside of the class's implementation.
-JavaScript does support private class members now, but it's a somewhat recent addition, so you don't find them in the wild too often.[^1]
+(JavaScript technically supports private class members, but it's a somewhat recent addition, so you don't find them in the wild too often.[^1])
 
 [^1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
 
@@ -116,6 +116,7 @@ If we try synthesizing a `garden.json` file with the new Flower, it will output 
   // ... rest of the garden data
 ]
 ```
+
 Now let's say we add the capability for users to _get_ the native regions of a flower.
 I'll also add a construct for representing a signpost in front of our garden.
 
@@ -147,7 +148,7 @@ class Signpost extends Construct {
 }
 ```
 
-Inside `Signpost`, we're collecting and de-deplicating all of the native regions of the flowers passed to the signpost, and embedding them into a friendly message.
+Inside `Signpost`, I'm all of the native regions of the flowers passed to the signpost, de-duplicating them, and embedding them into a friendly message.
 
 Finally, I'll write some client code that tries using the signpost with some flowers:
 
@@ -169,7 +170,7 @@ garden.synth();
 ```
 
 When I synthesize my garden with `node garden.js`, I'm expecting the signpost to have a message like "Welcome to Tulip Trove, home to flowers from: Denmark, Turkey, Greece".
-But when I check `garden.json`, I find the signpost message only mentions Denmark:
+But when I check `garden.json`, I find the **signpost message only mentions Denmark**:
 
 ```json
 [
@@ -228,7 +229,7 @@ class Flower extends Construct {
 ```
 
 Representing delayed values with lazy values (sometimes called "[thunks](https://en.wikipedia.org/wiki/Thunk)") is a well-trodden path in the history of computer science, which sees popular use all kinds of frameworks.
-React's [`useEffect`](https://legacy.reactjs.org/docs/hooks-effect.html) hook is a good example of where this pattern in the real world.
+React's [`useEffect`](https://legacy.reactjs.org/docs/hooks-effect.html) hook is a good example of this pattern being used in one of the most popular web frameworks.
 
 If we were using TypeScript for these examples, we would also model this with a different type.
 Instead of the `nativeRegions` getter returning `Array<string>`, it will return `Lazy<Array<string>>`.
@@ -255,9 +256,9 @@ class Signpost extends Construct {
 }
 ```
 
-As you can see, since `nativeRegions` is a `Lazy` value, it's clear that `_message` also needs to be a lazy value.
-It's not a public property of `Signpost`, but we could expose it with type `Lazy<string>` if we wanted now.
-The main change is that we also have to call `produce` on the lazy value in order to unwrap its actual value (in the example above, `f.nativeRegions` has become `f.nativeRegions.produce()`).
+Since `nativeRegions` is a `Lazy` value, and the message depends on `nativeRegions`, it's clear that the message also needs to be a `Lazy` value -- so in the code above, we've wrapped it in `new Lazy(() => { ... })`.
+
+Besides that, we also have to call `produce()` on the `Lazy` in order to force its value to be computed. In the example above, I've replaced `f.nativeRegions` with `f.nativeRegions.produce()`.
 
 The core implementation of `Lazy` requires some changes to `Garden` as well, but they're not too interesting to look at.
 But if you're curious, the code from this post in its entirety is available as a gist [here](https://gist.github.com/Chriscbr/58384bdd7b8ce5e8fedf24ddba55e103) for your perusal.
@@ -265,13 +266,13 @@ But if you're curious, the code from this post in its entirety is available as a
 ## Ideas for making `Lazy` less complicated
 
 `Lazy` values can be pretty powerful -- but one thing holding them back is the ergonomics of using them.
-In the code above, we saw that in order to create a `Lazy`, the code for producing the value had to be wrapped in `new Lazy(() => { ... })`.
+In the code above, we saw that in order to create a `Lazy`, the code for producing the value had to be wrapped in this clunky `new Lazy(() => { ... })` syntax.
 
 But even with that aside, we have also potentially introduced new issues, because of this fact:
 
 > `Lazy.produce()` should only be called inside of other `Lazy` definitions
 
-If we tried calling `f.nativeRegions.produce()` directly inside of `Signpost`'s constructor, we'd obtain a list of native regions that would still get stale, putting us back at square one.
+If we tried calling `f.nativeRegions.produce()` directly inside of `Signpost`'s constructor, we'd obtain a list of native regions that could get stale, putting us back at square one.
 The only way to guarantee we're using `Lazy` properly is if it's only evaluated at the end of our app, when we call `garden.synth()`.
 
 In addition, having to call `produce()` on each `Lazy` is tedious and it's easy to forget.
@@ -312,4 +313,4 @@ class Signpost {
 ```
 
 What do you think?
-Let us know on our [GitHub](https://github.com/winglang/wing) or [Slack](https://t.winglang.io/slack) if you have any thoughts or feedback on this post, or just the language in general.
+Let us know on our [GitHub](https://github.com/winglang/wing) or [Slack](https://t.winglang.io/slack) if you have any thoughts or feedback about the ideas in this post, or if you have suggestions for new topics!
