@@ -16,6 +16,12 @@ hasanaburayyan:
   url: https://github.com/hasanaburayyan
   image_url: https://avatars.githubusercontent.com/u/45375125?v=4
   email: hasana@wing.cloud  
+shaiber:
+  name: Shai Ber
+  title: Co-Founder & COO at Wing Cloud
+  url: https://github.com/ShaiBer
+  image_url: https://avatars.githubusercontent.com/u/1729376?v=4
+  email: shaib@wing.cloud
 team:
   name: The Wing Team
   url: https://github.com/winglang
@@ -63,3 +69,10 @@ revitalb:
   url: https://github.com/revitalbarletz
   image_url: https://avatars.githubusercontent.com/u/2212620?s=400
   email: revitalb@wing.cloud
+amielpb:
+  name: Amiel Preiss-Bloom
+  title: Design Lead
+  url: https://github.com/amielpb
+  image_url: https://avatars.githubusercontent.com/u/95175829?v=4
+  email: amielpb@wing.cloud
+
