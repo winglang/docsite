@@ -297,7 +297,8 @@ class Signpost {
   constructor(props) {
     this._message = lazy {
       let allRegions = Set<string>.from(
-        // no need to call .produce() - it's automatically handled by `lazy { ... }`
+        // no need to call .produce() manually - it's automatically called
+        // since this code is inside a `lazy { ... }` block
         props.flowers.flatMap((f) => f.nativeRegions)
       );
   
