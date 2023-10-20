@@ -194,7 +194,7 @@ But when I check `garden.json`, I find the **signpost message only mentions Denm
 Aw shucks.
 
 The problem, as you may have guessed, is that the state read by `Signpost` was stale.
-Since the signpost's message was calculated immediately, it wasn't changed when the rose's native regions was added to.
+Since the signpost's message was calculated immediately, it wasn't changed when the rose's native regions were added to.
 
 But in some sense, it's not entirely `Signpost`'s fault - how was it supposed to know the field could change?
 It doesn't seem right that to have to look at the implementation of `Flower` in order to determine whether the data will be calculated later or not.
