@@ -148,7 +148,7 @@ class Signpost extends Construct {
 }
 ```
 
-Inside `Signpost`, I'm all of the native regions of the flowers passed to the signpost, de-duplicating them, and embedding them into a friendly message.
+Inside `Signpost`, I'm collecting all of the native regions of the flowers passed to the signpost, de-duplicating them, and embedding them into a friendly message.
 
 Finally, I'll write some client code that tries using the signpost with some flowers:
 
