@@ -228,7 +228,7 @@ class Flower extends Construct {
 }
 ```
 
-Representing delayed values with lazy values (sometimes called "[thunks](https://en.wikipedia.org/wiki/Thunk)") is a well-trodden path in the history of computer science, which sees popular use all kinds of frameworks.
+Representing delayed values with lazy values (sometimes called "[thunks](https://en.wikipedia.org/wiki/Thunk)") is a well-trodden path in the history of computer science, which sees popular use in all kinds of frameworks.
 React's [`useEffect`](https://legacy.reactjs.org/docs/hooks-effect.html) hook is a good example of this pattern being used in one of the most popular web frameworks.
 
 If we were using TypeScript for these examples, we would also model this with a different type.
