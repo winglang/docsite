@@ -88,8 +88,6 @@ class Flower extends Construct {
 I've prefixed the instance fields with underscores to indicate that they're not meant to be accessed outside of the class's implementation.
 (JavaScript technically supports private class members, but it's a somewhat recent addition, so you don't find them in the wild too often.[^1])
 
-[^1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
-
 Here's how the updated construct is used:
 
 ```js
@@ -261,7 +259,7 @@ Since `nativeRegions` is a `Lazy` value, and the message depends on `nativeRegio
 Besides that, we also have to call `produce()` on the `Lazy` in order to force its value to be computed. In the example above, I've replaced `f.nativeRegions` with `f.nativeRegions.produce()`.
 
 The core implementation of `Lazy` requires some changes to `Garden` as well, but they're not too interesting to look at.
-But if you're curious, the code from this post in its entirety is available as a gist [here](https://gist.github.com/Chriscbr/58384bdd7b8ce5e8fedf24ddba55e103) for your perusal.
+But if you're curious, the code from this post in its entirety is available as a gist here[^2] for your perusal.
 
 ## Ideas for making `Lazy` less complicated
 
@@ -314,3 +312,6 @@ class Signpost {
 
 What do you think?
 Let us know on our [GitHub](https://github.com/winglang/wing) or [Slack](https://t.winglang.io/slack) if you have any thoughts or feedback about the ideas in this post, or if you have suggestions for new topics!
+
+[^1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
+[^2]: https://gist.github.com/Chriscbr/58384bdd7b8ce5e8fedf24ddba55e103
