@@ -51,7 +51,7 @@ let handler = new cdk.aws_lambda.Function(
 ```
 
 The construct named `Table` has a public property named `tableName` that stores the table's physical name for identifying it on AWS.
-The table's `tableName` passed as the value of the `HITS_TABLE_NAME` environment variable so that the AWS Lambda function can use the table's dynamic name at runtime -- for example, to query the table (not shown).
+The table's property `tableName` is passed as the `HITS_TABLE_NAME` environment variable so that the AWS Lambda function can use the table's dynamic name at runtime -- for example, to query the table (not shown).
 
 Any construct state that isn't meant to be a private implementation detail can be made public.
 But, as we've mentioned before, it's also possible for construct state to change after it was first initialized in the code.
