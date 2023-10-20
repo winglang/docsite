@@ -204,7 +204,7 @@ We need a better way.
 
 The approach we're going to take to solve this problem is to add support for a way of modeling values that aren't available yet, called `Lazy` values.
 
-Each constructs framework has a slightly different way of doing this, but the general idea is that instead of returning some state that could become stale, as we did here in `Flower`:
+Each construct framework has a slightly different way of doing this, but the general idea is that instead of returning some state that could become stale, as we did here in `Flower`:
 
 ```js
 class Flower extends Construct {
