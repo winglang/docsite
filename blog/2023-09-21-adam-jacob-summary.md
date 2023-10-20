@@ -1,7 +1,7 @@
 ---
 title: "Wingly In Depth: Exploring the evolution of DevOps- A conversation with Adam Jacob"
 authors: 
-  - dannac2
+  - dcahana2
 tags: [wingly, winglang, interview,recap]
 hide_table_of_contents: true
 ---
