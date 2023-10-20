@@ -197,7 +197,7 @@ The problem, as you may have guessed, is that the state read by `Signpost` was s
 Since the signpost's message was calculated immediately, it wasn't changed when the rose's native regions were added to.
 
 But in some sense, it's not entirely `Signpost`'s fault - how was it supposed to know the field could change?
-It doesn't seem right that to have to look at the implementation of `Flower` in order to determine whether the data will be calculated later or not.
+It doesn't seem right to have to look at the implementation of `Flower` in order to determine whether the data will be calculated later or not.
 We need a better way.
 
 ## Laziness is a virtue
