@@ -1,0 +1,13 @@
+title: "Video: Harmonizing Json’s Inherently Loosely Typed Nature With Winglang"
+authors: 
+  - team
+tags: [winglang, video]
+hide_table_of_contents: true
+---
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W5wxdu0DQno?si=e5vEMHrbUizl6pj7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+>  Hasan dives deep into the intricacies of JSON in Winglang. Discover how Wing harmonizes JSON's attributes with its own strongly-typed ecosystem, including converting JSON to Wing Structs. 
+
+<!--truncate-->
