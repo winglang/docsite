@@ -200,7 +200,7 @@ But in some sense, it's not entirely `Signpost`'s fault - how was it supposed to
 It doesn't seem right that to have to look at the implementation of `Flower` in order to determine whether the data will be calculated later or not.
 We need a better way.
 
-## "Lazy" values to the rescue
+## Laziness is a virtue
 
 The approach we're going to take to solve this problem is to add support for a way of modeling values that aren't available yet, called `Lazy` values.
 
