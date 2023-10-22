@@ -5,7 +5,7 @@ authors:
   - dannac2
 tags: [cloud-oriented programming, winglang, marketing]
 hide_table_of_contents: true
----\
+---
 
 ## Marketing Tips an Open Source Project: Tips from a First-Timer
 
