@@ -151,14 +151,14 @@ const config = {
         searchParameters: {},
 
         // Optional: path for search page that enabled by default (`false` to disable it)
-        searchPagePath: 'search',
+        searchPagePath: "search",
       },
       navbar: {
         title: "",
         logo: {
           alt: "Wing Logo",
-          src: "../img/wing-logo.svg",
-          srcDark: "../img/wing-logo-dark.svg",
+          src: "../img/winglang-logo-dark.svg",
+          srcDark: "../img/winglang-logo-light.svg",
           href: "https://winglang.io",
           target: "_self",
         },
