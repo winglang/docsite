@@ -1,7 +1,7 @@
 ---
 title: "Wingly In Depth: Exploring the evolution of DevOps- A conversation with Adam Jacob"
 authors: 
-  - dannac2
+  - dcahana2
 tags: [wingly, winglang, interview,recap]
 hide_table_of_contents: true
 ---
@@ -12,9 +12,9 @@ hide_table_of_contents: true
 <!--truncate-->
 ## Exploring the evolution of DevOps: A conversation with Adam Jacob
 
-In this Wingly update, Elad and Shai sit down with Adam Jacob, CEO and Co-Founder of [System Initiative](https://www.systeminit.com/). <br>
+In this Wingly update, Elad and Shai sit down with Adam Jacob, CEO and Co-Founder of [System Initiative](https://www.systeminit.com/). <br />
 
-This blog post summarizes their enlightening discussion on the shared vision, challenges, and the organic evolution of design processes in the industry. <br> <br>
+This blog post summarizes their enlightening discussion on the shared vision, challenges, and the organic evolution of design processes in the industry. <br /> <br />
 
 ### A career journey that follows the Internet's evolution
 
@@ -28,7 +28,7 @@ This commitment to understanding the foundations is clear in his work at Chef an
 From Adam's perspective, the distinction between software engineering and what's now labeled as “DevOps” is artificial. For example, he recalls the days of wrestling with the notoriously intricate configurations of Sendmail, an email routing software. 
 
 Mastering its complex syntax was as challenging as learning programming in C. This challenges the preconceived notion: Which of these tasks qualifies as “programming”?
-According to Adam, the industry historically placed an artificial divide between system administrators and software developers, often placing the latter on a pedestal. <br>
+According to Adam, the industry historically placed an artificial divide between system administrators and software developers, often placing the latter on a pedestal. <br />
 In fact, both groups are essentially programmers, with their primary difference lying in the languages they use and the problems they tackle. It was this very realization that drove him to develop tools for systems experts. 
 
 From Elad’s POV, while all elements in this space are fundamentally software, different layers and roles tackle varying problem domains. Developers focused on building applications predominantly engage with the business's problem domain. 
