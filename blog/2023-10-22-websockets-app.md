@@ -302,6 +302,36 @@ struct WebSocketRequest {
 }
 ```
 
+In order to implement the `send` method, we need to use AWS SDK to send messages to a connection:
+
+```js
+pub inflight send(connectionId: str, message: str) {
+  WebSocketApi.postToConnection(this.apiEndpoint, connectionId, message);
+}
+```
+
+The `postToConnection` method is implemented with `extern` JS:
+
+```js
+const { ApiGatewayManagementApiClient, PostToConnectionCommand, } = require("@aws-sdk/client-apigatewaymanagementapi");
+
+module.exports.postToConnection = async (endpoint, connectionId, data) => {
+  const apiGatewayManagementApi = new ApiGatewayManagementApiClient({
+    apiVersion: "2018-11-29",
+    endpoint
+  });
+  
+  await apiGatewayManagementApi.send(
+    new PostToConnectionCommand({
+      Data: data,
+      ConnectionId: connectionId,
+    })
+  );
+};
+```
+
+Note: make sure to install the `@aws-sdk/client-apigatewaymanagementapi` NPM library first. 
+
 For any cloud resource we create, we also have to make sure we are giving it the right set of permssions. Anyone who wants to call `send` wiil have to have access to our API Gateway. In Winglang we can do it straight from our class code by implementing the `onLift` method:
 
 ```js
@@ -449,6 +479,6 @@ test "can send and recieve messages" {
 
 ## Summary
 
-In this tutorial we have created a full Websockets server ready to be deployed on the cloud but can also be debugged and tested locally. We created all of our infrastructure straight from our code which also seamlessly include our custom logic.
+In this tutorial we have created a full Websockets server ready to be deployed on the cloud but can also be debugged and tested locally. We created all of our infrastructure straight from our code which also seamlessly include our custom logic. See the full code here https://github.com/eladcon/wing-websockets.
 
 Winglang is stil growing as a language and it's eco system is developing rapidly. Make sure to follow us on https://winglang.io. 
