@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 > Why does Wing let you only create resources in preflight?
 
-![constructs-api-blog-banner](./assets/assets/constructs_api_blog_banner.png)
+![constructs-api-blog-banner](./assets/constructs_api_blog_banner.png)
 
 <!--truncate-->
 
