@@ -9,6 +9,8 @@ hide_table_of_contents: true
 
 > Why does Wing let you only create resources in preflight?
 
+![constructs-api-blog-banner](https://github.com/winglang/docsite/assets/2212620/dc35043b-4dca-4591-93f7-03c74c0f2876)
+
 <!--truncate-->
 
 There are two ways to create resources in the cloud: in preflight, or in
