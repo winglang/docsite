@@ -1,5 +1,5 @@
 ---
-title: Marketing Tips an Open Source Project - Tips from a First-Timer
+title: Marketing an Open Source Project - Tips from a First-Timer
 description: In this post, I share tips about my learning experience marketing an open source projects.
 authors: 
   - dcahana2
