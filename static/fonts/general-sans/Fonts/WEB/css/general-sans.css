@@ -41,7 +41,7 @@
   src: url('../fonts/GeneralSans-Variable.woff2') format('woff2'),
        url('../fonts/GeneralSans-Variable.woff') format('woff'),
        url('../fonts/GeneralSans-Variable.ttf') format('truetype');
-       font-weight: 200 700;
+       font-weight: 500;
        font-display: swap;
        font-style: normal;
 }
@@ -173,7 +173,7 @@
   src: url('../fonts/GeneralSans-SemiboldItalic.woff2') format('woff2'),
        url('../fonts/GeneralSans-SemiboldItalic.woff') format('woff'),
        url('../fonts/GeneralSans-SemiboldItalic.ttf') format('truetype');
-       font-weight: 500;
+       font-weight: 600;
        font-display: swap;
        font-style: italic;
 }
