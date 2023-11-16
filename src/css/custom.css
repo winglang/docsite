@@ -51,7 +51,7 @@ html[data-theme="dark"] {
 }
 
 .menu__list-item-collapsible > a {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .theme-doc-sidebar-item-category-level-1 {
@@ -102,7 +102,7 @@ h6 {
 
 p {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 a {
