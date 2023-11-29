@@ -2170,7 +2170,7 @@ Invokes the `validate()` method on all validations added through
 | <code><a href="#@winglang/sdk.std.Node.property.locked">locked</a></code> | <code>bool</code> | Returns true if this construct or the scopes in which it is defined are locked. |
 | <code><a href="#@winglang/sdk.std.Node.property.metadata">metadata</a></code> | <code>MutArray&lt;constructs.MetadataEntry&gt;</code> | An immutable array of metadata objects associated with this construct. |
 | <code><a href="#@winglang/sdk.std.Node.property.path">path</a></code> | <code>str</code> | The full, absolute path of this construct in the tree. |
-| <code><a href="#@winglang/sdk.std.Node.property.root">root</a></code> | <code><a href="#@winglang/sdk.std.IApp">IApp</a></code> | Returns the root of the construct tree (the `cloud.App` object). |
+| <code><a href="#@winglang/sdk.std.Node.property.root">root</a></code> | <code>constructs.IConstruct</code> | Returns the root of the construct tree (the `cloud.App` object). |
 | <code><a href="#@winglang/sdk.std.Node.property.scopes">scopes</a></code> | <code>MutArray&lt;constructs.IConstruct&gt;</code> | All parent scopes of this construct. |
 | <code><a href="#@winglang/sdk.std.Node.property.scope">scope</a></code> | <code>constructs.IConstruct</code> | Returns the scope in which this construct is defined. |
 | <code><a href="#@winglang/sdk.std.Node.property.defaultChild">defaultChild</a></code> | <code>constructs.IConstruct</code> | Returns the child construct that has the id `Default` or `Resource"`. |
@@ -2305,10 +2305,10 @@ Components are separated by '/'.
 ##### `root`<sup>Required</sup> <a name="root" id="@winglang/sdk.std.Node.property.root"></a>
 
 ```wing
-root: IApp;
+root: IConstruct;
 ```
 
-- *Type:* <a href="#@winglang/sdk.std.IApp">IApp</a>
+- *Type:* constructs.IConstruct
 
 Returns the root of the construct tree (the `cloud.App` object).
 
@@ -3187,17 +3187,30 @@ Represents a Wing application.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@winglang/sdk.std.IApp.tryFindChild">tryFindChild</a></code> | Looks up a node with a given id in under the application (non-recursively). |
+| <code><a href="#@winglang/sdk.std.IApp.makeId">makeId</a></code> | Generate a unique ID for the given scope and prefix. |
 
 ---
 
-##### `tryFindChild` <a name="tryFindChild" id="@winglang/sdk.std.IApp.tryFindChild"></a>
+##### `makeId` <a name="makeId" id="@winglang/sdk.std.IApp.makeId"></a>
 
 ```wing
-tryFindChild(): IConstruct
+makeId(prefix?: str): str
 ```
 
-Looks up a node with a given id in under the application (non-recursively).
+Generate a unique ID for the given scope and prefix.
+
+The newly generated ID is
+guaranteed to be unique within the given scope.
+It will have the form '{prefix}{n}', where '{prefix}' is the given prefix and '{n}' is an
+ascending sequence of integers starting from '0'.
+
+###### `prefix`<sup>Optional</sup> <a name="prefix" id="@winglang/sdk.std.IApp.makeId.parameter.prefix"></a>
+
+- *Type:* str
+
+prepended to the unique identifier.
+
+---
 
 #### Properties <a name="Properties" id="Properties"></a>
 
