@@ -38,7 +38,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.svg",
+  favicon: "img/favicon.ico",
   organizationName: "winglang",
   projectName: "docs",
   // Even if you don't use internalization, you can use this field to set useful
