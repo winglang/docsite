@@ -4,8 +4,10 @@ description: A technical deep dive on some of the challenges of designing mutati
 authors: 
   - rybickic
 tags: [winglang, cdk, constructs, api design, jsii, AWS CDK]
+image: https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/653fbf0e427627f6648c8c32_opengraph1.png
 hide_table_of_contents: true
 ---
+![constructs-api-blog-banner](./assets/constructs_api_blog_banner.png)
 
 At Wing Cloud, we're building a programming language named Winglang that makes it easier to build cloud applications.
 One of the main features of Winglang is that it lets you model an app's cloud resources alongside its application code.
