@@ -61,7 +61,8 @@ Uh oh - this smells like a recipe for problems.
 ## When properties get stale
 
 Let's understand what causes properties to not play well with mutating methods through an example.
-I'll start by taking my `Flower` class from the previous post and adding options to specify the regions in the world where it's natively found:
+I'll start by taking my `Flower` class from the previous post and adding options to specify the regions in the world where it's natively found.
+(Note that most of the code snippets here on out are in TypeScript.)
 
 ```js
 class Flower extends Construct {
