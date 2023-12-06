@@ -295,7 +295,7 @@ class Flower {
 }
 
 class Signpost {
-  constructor(props) {
+  new(props) {
     this._message = lazy {
       let allRegions = Set<string>.from(
         // no need to call .produce() manually - it's automatically called
