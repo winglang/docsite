@@ -256,7 +256,7 @@ class Signpost extends Construct {
 
 Since `nativeRegions` is a `Lazy` value, and the message depends on `nativeRegions`, it's clear that the message also needs to be a `Lazy` value -- so in the code above, we've wrapped it in `new Lazy(() => { ... })`.
 
-Besides that, we also have to call `produce()` on the `Lazy` in order to force its value to be computed. In the example above, I've replaced `f.nativeRegions` with `f.nativeRegions.produce()`.
+Besides that, we also have to call `produce()` on the `Lazy` value in order to force its value to be computed. In the example above, I've replaced `f.nativeRegions` with `f.nativeRegions.produce()`.
 
 The core implementation of `Lazy` requires some changes to `Garden` as well, but they're not too interesting to look at.
 But if you're curious, the code from this post in its entirety is available as a gist here[^2] for your perusal.
