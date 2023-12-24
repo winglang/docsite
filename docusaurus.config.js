@@ -53,7 +53,7 @@ const config = {
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
   },
   plugins: [
-    "docusaurus-plugin-sass", 
+    "docusaurus-plugin-sass",
     "docusaurus-plugin-segment",
 
     // this is needed in order to support symlinked `docs/` directory
@@ -113,6 +113,12 @@ const config = {
             }
             return `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`
           },
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: '/docs/sitemap.xml',
         },
         blog: {
           blogTitle: 'What\'s up? The Wing Blog',
@@ -246,7 +252,7 @@ const config = {
       },
       footer: {
         links: [
-          { 
+          {
             title: "Documentation",
             items:[
               {
