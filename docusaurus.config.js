@@ -79,8 +79,8 @@ const config = {
       {  
         redirects: [
           {
-            to: '/docs/',
-            from: ['/docs/start-here/installation'],  
+            from: '/docs/',
+            to: '/docs/start-here/installation',
           }
         ]
       }
