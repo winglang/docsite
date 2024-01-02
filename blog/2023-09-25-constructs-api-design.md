@@ -45,12 +45,12 @@ In this blog post I'll highlight some of these challenges, and explain several o
 
 ## What are constructs?
 
-First, let's familiarize ourselves with constructs to get an idea of how they works.
+First, let's familiarize ourselves with constructs to get an idea of how they work.
 
 [`constructs`](https://github.com/aws/constructs) is a JavaScript library that provides an API for organizing classes into trees.
 A construct is created in JavaScript by writing a class that extends the `Construct` class, with a signature of `(scope, id, props)`.
 Constructs are always created in the scope of another construct[^1] and must always have an identifier which must be unique within the scope it’s created.
-A construct's identifier is used to generate a unique names for every cloud component.
+A construct's identifier is used to generate unique names for every cloud component.
 
 [^1]: An exception is the "root" construct, often named `App` or something similar.
 
@@ -110,7 +110,7 @@ Above, we have two constructs: `Flower` and `Garden`.
 `Flower` represents a single flower, with two pieces of state (its kind and color).
 
 `Garden` is the root of our garden application, and it will contain all of the flower constructs.
-It will also be responsible for finding all flowers in the constructs tree, converting them to JSON, and writing the `garden.json` file.
+It will also be responsible for finding all flowers in the constructs tree, converting them to JSON, and writing the `garden.json` file. 
 
 By running `node garden.js`, we produce a `garden.json`, which looks like:
 
@@ -158,7 +158,7 @@ let flower = new Flower(garden, `tulip${i}`, {
 });
 ```
 
-But as we saw in the introduction, it's also possible to for methods to change a construct's properties.
+But as we saw in the introduction, it's also possible for methods to change a construct's properties.
 For example, we could add a method that changes the flower's color:
 
 ```js
@@ -168,7 +168,7 @@ flower.setColor("blue");
 This works like you'd imagine - and it's easy to implement.
 However, it's not without drawbacks.
 
-By making the construct's state *mutable*, it's possible for it to be changed in more than one place. can lead to surprising behavior.
+By making the construct's state *mutable*, it's possible for it to be changed in more than one place. This can lead to surprising behavior.
 
 For example, take the following code where I've defined two new constructs, an `OrangePatch` and `PurplePatch`, both accepting a flower in its `props`:
 
@@ -213,7 +213,7 @@ fn.addEnvironment("DB_NAME", "orders");
 ```
 
 If you try calling `addEnvironment` with the same string twice, it throws an error.
-Since environment variables can only be added, you can pass around `fn` throughout your codebase - including to third party libraries! - without worrying about environment variables being removed or changed.
+Since environment variables can only be added, you can pass around `fn` throughout your codebase - including third party libraries! - without worrying about environment variables being removed or changed.
 
 ### Rule 2: Document destructive APIs
 
