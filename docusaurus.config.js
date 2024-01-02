@@ -75,6 +75,17 @@ const config = {
       };
     },
     [
+      '@docusaurus/plugin-client-redirects',
+      {  
+        redirects: [
+          {
+            to: '/docs/',
+            from: ['/docs/start-here/installation'],
+          }
+        ]
+      }
+    ],
+    [
       '@docusaurus/plugin-content-docs',
       {
         id: 'contributing',
