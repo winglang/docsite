@@ -36,7 +36,7 @@ The specific enhancement is we want to add is the functionality to configure how
 
 Build and publish a Wing Custom Platform that provides a way to configure your Terraform backend state management. 
 
-For the purpose of brevity we will focus on 4 backend types, `local`, `s3`, `azurerm`, and `gcs`
+For the purpose of brevity we will focus on 3 backend types, `s3`, `azurerm`, and `gcs`
 
 ### Required Materials
 
@@ -606,3 +606,5 @@ Now that we have built and published our first Wing Custom Platform, the sky is 
 In the meantime make sure you to join the Wing Slack community: https://t.winglang.io/slack and share what you are working on, or any issues you run into.
 
 Want to read more about Wing Platforms? Check out the [Wing Platform Docs](https://www.winglang.io/docs/concepts/platforms)
+
+Feel free to checkout the full source code at: https://github.com/hasanaburayyan/wing-tf-backends
