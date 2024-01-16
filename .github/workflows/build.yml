@@ -15,4 +15,4 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          DOCUSAURUS_URL: https://www.winglang.io/docs/
+          DOCUSAURUS_URL: https://www.winglang.io
