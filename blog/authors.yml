@@ -15,7 +15,7 @@ hasanaburayyan:
   title: Software Engineer at Wing Cloud
   url: https://github.com/hasanaburayyan
   image_url: https://avatars.githubusercontent.com/u/45375125?v=4
-  email: hasana@wing.cloud  
+  email: hasana@wing.cloud
 shaiber:
   name: Shai Ber
   title: Co-Founder & COO at Wing Cloud
@@ -75,4 +75,9 @@ amielpb:
   url: https://github.com/amielpb
   image_url: https://avatars.githubusercontent.com/u/95175829?v=4
   email: amielpb@wing.cloud
-
+ashersterkin:
+  name: Asher Sterkin
+  title: Technical Writer
+  url: https://asher-sterkin.medium.com/
+  image_url: https://avatars.githubusercontent.com/u/6297664?v=4
+  email: asher.sterkin@gmail.com
