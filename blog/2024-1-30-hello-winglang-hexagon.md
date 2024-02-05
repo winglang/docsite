@@ -11,7 +11,7 @@ hide_table_of_contents: true
 
 As I argued [elsewhere](https://medium.com/@asher-sterkin/cloud-application-infrastructure-from-code-ifc-398140babf13), automatically generating cloud infrastructure specifications directly from application code represents “The Next Logical Step in Cloud Automation.” This approach, sometimes referred to as “Infrastructure From Code” (IfC), aims to:
 
-> ensure automatic coordination of four types of interactions with cloud services: life cycle management, pre- and post-configuration, consumption, and operation, while making pragmatic choices of the most appropriate levels of API abstraction for each cloud service and leaving enough control to the end-user for choosing the most suitable vendor, based on personal preferences, regulations or brownfield deployment constraints
+> Ensure automatic coordination of four types of interactions with cloud services: life cycle management, pre- and post-configuration, consumption, and operation, while making pragmatic choices of the most appropriate levels of API abstraction for each cloud service and leaving enough control to the end-user for choosing the most suitable vendor, based on personal preferences, regulations or brownfield deployment constraints
 
 While analyzing the [IfC Technology Landscape](https://medium.com/@asher-sterkin/ifc-2023-technology-landscape-91e11934f7ab) a year ago, I identified five attributes essential for analyzing major offerings in this space:
 
@@ -103,7 +103,7 @@ By typing wing it in the [VSCode Terminal](https://code.visualstudio.com/docs/te
 
 This is pretty cool and [Winglang](https://github.com/winglang/wing) definitely passes the initial smoke test.
 
-## Step Two: Generalizing Functionality by Accepting the `name`` Argument
+## Step Two: Generalizing Functionality by Accepting the `name` Argument
 
 To move beyond simply printing static text, we’re going to slightly modify our initial function to return the greeting “Hello,`<name>!`”, where `<name>` is the function’s argument. The updated code, along with the simulator’s output, will look something like this:
 
