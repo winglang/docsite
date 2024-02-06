@@ -8,9 +8,11 @@
 
 @import url("../../static/fonts/general-sans/Fonts/WEB/css/general-sans.css");
 
+@import url("../../static/fonts/tasaOrbiter/tasa-orbiter.css");
+
 /* You can override the default Infima variables here. */
 :root {
-  font-family: "GeneralSans-Variable", sans-serif;
+  font-family: "TasaOrbiterText-Regular";
   --ifm-color-primary: #1c273d;
   --ifm-color-primary-dark: #192337;
   --ifm-color-primary-darker: #182134;
@@ -20,7 +22,7 @@
   --ifm-color-primary-lightest: #24334f;
   --ifm-code-font-size: 100%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: "GeneralSans-Variable", sans-serif;
+  --ifm-font-family-base: "TasaOrbiterText-Regular";
   --doc-sidebar-width: 250px !important;
   --ifm-navbar-height: 80px;
 }
@@ -30,7 +32,7 @@ html[data-theme="dark"] {
   /*#47aca6*/
   /* 8bded9 */
   /* 8fece6 */
-  font-family: "GeneralSans-Variable", sans-serif;
+  font-family: "TasaOrbiterText-Regular";
   --ifm-color-primary: #2ad5c1;
   --ifm-color-primary-dark: #23bab1;
   --ifm-color-primary-darker: #21b0a7;
@@ -69,6 +71,7 @@ html[data-theme="dark"] {
 }
 
 h1 {
+  font-family: "TasaOrbiterDisplay-SemiBold";
   font-size: 3rem;
   font-weight: 600;
 }
@@ -101,6 +104,7 @@ h6 {
 }
 
 p {
+  font-family: "TasaOrbiterText-Regular";
   font-size: 1rem;
   font-weight: 500;
 }
@@ -151,6 +155,7 @@ html[data-theme="dark"] .navbar--fixed-top {
 }
 
 .header-text-link {
+  font-family: "TasaOrbiterDisplay-SemiBold";
   padding: 20px 24px;
   font-size: 14px;
   font-weight: 600;
