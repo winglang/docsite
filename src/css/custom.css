@@ -77,27 +77,32 @@ h1 {
 }
 
 h2 {
+  font-family: "TasaOrbiterDisplay-SemiBold";
   font-size: 2rem;
   font-weight: 600;
 }
 
 h3 {
+  font-family: "TASAOrbiterText-Semibold";
   font-weight: 600;
   font-size: 1.5rem;
 }
 
 h4 {
+  font-family: "TASAOrbiterText-Semibold";
   font-weight: 600;
   font-size: 1.12rem;
 }
 
 h5 {
+  font-family: "TASAOrbiterText-Semibold";
   font-weight: 600;
   font-size: 1rem;
   font-style: italic;
 }
 
 h6 {
+  font-family: "TASAOrbiterText-Semibold";
   font-weight: 600;
   font-size: 1.5rem;
   font-style: italic;
@@ -110,6 +115,7 @@ p {
 }
 
 a {
+  font-family: "TasaOrbiterText-Regular";
   font-weight: 600;
   color: var(--ifm-color-primary-lighter);
 }
@@ -270,7 +276,6 @@ html[data-theme="dark"] .header-github-link:before {
   font-size: 15px;
   display: flex;
   color: #2a3434;
-  background-color: #aef8ec;
 }
 
 .nav-git-mobile {
@@ -296,7 +301,6 @@ html[data-theme="dark"] .header-github-link:before {
 
 html[data-theme="dark"] .nav-git {
   color: #f1f0f1;
-  background-color: #03120e;
 }
 
 html[data-theme="dark"] .nav-git:hover {
