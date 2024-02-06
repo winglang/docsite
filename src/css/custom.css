@@ -8,9 +8,11 @@
 
 @import url("../../static/fonts/general-sans/Fonts/WEB/css/general-sans.css");
 
+@import url("../../static/fonts/TasaOrbiter/tasa-orbiter.css");
+
 /* You can override the default Infima variables here. */
 :root {
-  font-family: "GeneralSans-Variable", sans-serif;
+  font-family: "TasaOrbiterText-Regular";
   --ifm-color-primary: #1c273d;
   --ifm-color-primary-dark: #192337;
   --ifm-color-primary-darker: #182134;
@@ -20,7 +22,7 @@
   --ifm-color-primary-lightest: #24334f;
   --ifm-code-font-size: 100%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: "GeneralSans-Variable", sans-serif;
+  --ifm-font-family-base: "TasaOrbiterText-Regular";
   --doc-sidebar-width: 250px !important;
   --ifm-navbar-height: 80px;
 }
@@ -30,7 +32,7 @@ html[data-theme="dark"] {
   /*#47aca6*/
   /* 8bded9 */
   /* 8fece6 */
-  font-family: "GeneralSans-Variable", sans-serif;
+  font-family: "TasaOrbiterText-Regular";
   --ifm-color-primary: #2ad5c1;
   --ifm-color-primary-dark: #23bab1;
   --ifm-color-primary-darker: #21b0a7;
@@ -69,43 +71,51 @@ html[data-theme="dark"] {
 }
 
 h1 {
+  font-family: "TasaOrbiterDisplay-SemiBold";
   font-size: 3rem;
   font-weight: 600;
 }
 
 h2 {
+  font-family: "TasaOrbiterDisplay-SemiBold";
   font-size: 2rem;
   font-weight: 600;
 }
 
 h3 {
+  font-family: "TASAOrbiterText-Semibold";
   font-weight: 600;
   font-size: 1.5rem;
 }
 
 h4 {
+  font-family: "TASAOrbiterText-Semibold";
   font-weight: 600;
   font-size: 1.12rem;
 }
 
 h5 {
+  font-family: "TASAOrbiterText-Semibold";
   font-weight: 600;
   font-size: 1rem;
   font-style: italic;
 }
 
 h6 {
+  font-family: "TASAOrbiterText-Semibold";
   font-weight: 600;
   font-size: 1.5rem;
   font-style: italic;
 }
 
 p {
+  font-family: "TasaOrbiterText-Regular";
   font-size: 1rem;
   font-weight: 500;
 }
 
 a {
+  font-family: "TasaOrbiterText-Regular";
   font-weight: 600;
   color: var(--ifm-color-primary-lighter);
 }
@@ -151,6 +161,7 @@ html[data-theme="dark"] .navbar--fixed-top {
 }
 
 .header-text-link {
+  font-family: "TasaOrbiterDisplay-SemiBold";
   padding: 20px 24px;
   font-size: 14px;
   font-weight: 600;
@@ -265,7 +276,6 @@ html[data-theme="dark"] .header-github-link:before {
   font-size: 15px;
   display: flex;
   color: #2a3434;
-  background-color: #aef8ec;
 }
 
 .nav-git-mobile {
@@ -291,7 +301,6 @@ html[data-theme="dark"] .header-github-link:before {
 
 html[data-theme="dark"] .nav-git {
   color: #f1f0f1;
-  background-color: #03120e;
 }
 
 html[data-theme="dark"] .nav-git:hover {
