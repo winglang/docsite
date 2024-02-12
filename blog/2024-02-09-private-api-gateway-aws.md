@@ -105,7 +105,8 @@ But what if I wanted to deploy my app into an existing VPC? It's very common for
 [tf-aws]
 vpc = "existing"
 vpc_id = "vpc-288494x"
-vpc_private_subnets = [ "subnet-a112", "subnet-a2x1" ]
+private_subnet_id =  "subnet-a112"
+public_subnet_id = "subnet-a2x1"
 vpc_apigateway = true
 vpc_lambda = true
 ```
