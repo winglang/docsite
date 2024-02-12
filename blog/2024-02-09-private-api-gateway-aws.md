@@ -22,18 +22,18 @@ You can check the CLI version like this:
 
 ```bash
 wing --version
-0.57.16
+0.57.22
 ```
 
 > As you can see, Wing is still in pre-release, so expect some hiccups and don't be shy reporting issues or get help from the awesome people hanging out on the [Wing slack](https://t.winglang.io/slack).
 >
 
-Ok, now that we have the Wing CLI installed, let's create a new project using the `http-api` quickstart:
+Ok, now that we have the Wing CLI installed, let's create a new project using the `private-api` quickstart:
 
 ```bash
 $ mkdir my-api
 $ cd my-api
-$ wing new http-api
+$ wing new private-api
 ```
 
 ---
@@ -43,6 +43,7 @@ Let's check out what we now have in our project directory:
 ```bash
 main.w
 wing.toml
+package-lock.json
 package.json
 ```
 
@@ -50,6 +51,7 @@ If we look at the `main.w` file, we'll see:
 
 ```jsx
 bring cloud;
+bring http;
 
 let api = new cloud.Api();
 api.get("/", inflight () => {
@@ -58,6 +60,16 @@ api.get("/", inflight () => {
     body: "hello, from within the VPC!"
   };
 });
+
+
+let url = api.url;
+
+new cloud.Function(inflight () => {
+  let res = http.get("{url}/");
+  log("status = {res.status}");
+  log("body = {res.body}");
+  return res.body;
+}) as "consumer";
 ```
 
 You'll notice, there's nothing in this Wing code that implies that the API needs to be inside the VPC. This is because in Wing, this type of configuration happens at that *platform level* and not at the *application level*.
@@ -65,10 +77,10 @@ You'll notice, there's nothing in this Wing code that implies that the API needs
 Your platform configuration happens inside `wing.toml`:
 
 ```toml
-[tf-aws]
+[ tf-aws ]
 vpc = "new"
-vpc_apigateway = true
 vpc_lambda = true
+vpc_api_gateway = true
 ```
 
 This `wing.toml` file sets configuration options for the `tf-aws` platform. The quickstart configures the platform to create a new VPC for this app and put Amazon API Gateways and AWS Lambda functions inside that VPC.
@@ -89,13 +101,13 @@ Once the Wing Simulator is running, you'll be able to see your API endpoint, inv
 
 Next, let's deploy this to the cloud:
 
+> Make sure to have [Terraform](https://developer.hashicorp.com/terraform/install) installed. The `terraform init` step is only required for the initial deployment.
+
 ```
 wing compile -t tf-aws
 terraform -chdir=./target/main.tfaws init
 terraform -chdir=./target/main.tfaws apply
 ```
-
-> Make sure to have [Terraform](https://developer.hashicorp.com/terraform/install) installed. The `terraform init` step is only required for the initial deployment.
 
 This command will compile and deploy your Wing application to the AWS account configured in your environment. You'll notice that it will create a new VPC for you with all the desired setup.
 
