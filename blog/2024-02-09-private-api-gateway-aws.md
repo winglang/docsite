@@ -104,7 +104,7 @@ Next, let's deploy this to the cloud:
 > Make sure to have [Terraform](https://developer.hashicorp.com/terraform/install) installed. The `terraform init` step is only required for the initial deployment.
 
 ```
-wing compile -t tf-aws
+wing compile -t tf-aws --values wing.toml
 terraform -chdir=./target/main.tfaws init
 terraform -chdir=./target/main.tfaws apply -auto-approve
 ```
