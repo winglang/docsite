@@ -106,7 +106,7 @@ Next, let's deploy this to the cloud:
 ```
 wing compile -t tf-aws
 terraform -chdir=./target/main.tfaws init
-terraform -chdir=./target/main.tfaws apply
+terraform -chdir=./target/main.tfaws apply -auto-approve
 ```
 
 This command will compile and deploy your Wing application to the AWS account configured in your environment. You'll notice that it will create a new VPC for you with all the desired setup.
