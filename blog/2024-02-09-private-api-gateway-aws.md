@@ -8,6 +8,8 @@ tags: [aws, api-gateway, vpc]
 hide_table_of_contents: false
 ---
 
+![gateway](assets/private-api-gateway.jpg)
+
 This tutorial is a guide for creating a [secure](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-private-apis.html) [API Gateway](https://aws.amazon.com/api-gateway/) inside an AWS Virtual Private Cloud (VPC) using Winglang. A private API Gateway in AWS is used when you need to expose APIs that are only accessible within your Virtual Private Cloud (VPC) or through specific endpoints that you define. This setup is essential for internal or private applications where security and controlled access are crucial.
 
 Wing currently supports two programming languages: TypeScript and [Winglang](https://winglang.io). For the purposes of this tutorial, we'll use Winglang.
