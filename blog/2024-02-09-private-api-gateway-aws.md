@@ -24,7 +24,7 @@ You can check the CLI version like this:
 
 ```bash
 wing --version
-0.57.22
+0.58.10
 ```
 
 > Before we get going it would be great if you joined the awesome people hanging out on the [Wing slack](https://t.winglang.io/slack).
@@ -48,7 +48,7 @@ my-api/
 └── package.json
 ```
 
-If we look at the `main.w` file, we'll see:
+If we look at the `main.w` file, we'll see a code template for a simple note-taking app:
 
 ```jsx
 bring cloud;
@@ -158,7 +158,6 @@ vpc_api_gateway = true
 This `wing.toml` file sets configuration options for the `tf-aws` platform. The quickstart configures the platform to create a new VPC for this app and put Amazon API Gateways and AWS Lambda functions inside that VPC.
 
 > Built-in Wing platforms such as tf-aws support certain common configuration options (such as private APIs). If you need additional customization, you can always create your own custom platforms and have complete control over how your app is deployed to the cloud.
->
 
 Before we deploy our app to AWS, let's first check it out in the Wing Simulator:
 
@@ -166,22 +165,156 @@ Before we deploy our app to AWS, let's first check it out in the Wing Simulator:
 wing it
 ```
 
-> If this is the first time you are running the Wing Simulator on your machine, you'll need to sign up with your GitHub credentials so that you can later on setup your app for Wing Previews and use cloud-based development tools like webhook forwarding and app sharing.
->
+> If this is the first time you are running the Wing Simulator on your machine, you'll need to sign up with your GitHub credentials.
 
-Once the Wing Simulator is running, you'll be able to see your API endpoint, invoke it and see the response.
+Once the Wing Simulator is running, you'll be able to see your API endpoint, invoke it and see the response. Note that the consumer functions are not required for the app to work, and really are not useful in the simulator,
+their usefulness is shown when the app is deployed to AWS. For now we will ignore them.
 
-Next, let's deploy this to the cloud:
+![app-in-sim](assets/private-api-gateway/private-api-app-sim.png)
+
+You can go ahead and test the functionality of the api by selecting `cloud.Api` resources and interacting with it using the tool panel on the right. A first fun interaction might be just saving a note using the `PUT /note/:name` endpoint:
+
+![save-note](assets/private-api-gateway/private-api-save-note.png)
+
+Once the note is saved we can take a look into the bucket resource and see that the note is there:
+
+![read-note](assets/private-api-gateway/private-api-read-note.png)
+
+Lastly, lets see about using the API to read back the note's contents, just as we used the simulator to interact with the API and save the note, we can read it back using the `GET /note?name=NAME` endpoint:
+
+![retrieve-note](assets/private-api-gateway/private-api-retrieve-note.png)
+
+Wonderful! Our API is working as expected in the simulator. Next, let's deploy this to the cloud!
 
 > Make sure to have [Terraform](https://developer.hashicorp.com/terraform/install) installed. The `terraform init` step is only required for the initial deployment.
+> Also ensure you have your own AWS credentials set up in your environment.
 
+In order to compile our code for deployment to AWS we will use the `tf-aws` platform with the `wing compile` command. This will generate the necessary Terraform files for deploying our app to AWS. 
+
+Before we compile though, lets see what how differently the deployment would look without the `vpc_api_gateway` and `vpc_lambda` options set to `true` in the `wing.toml` file. 
+
+In your `wing.toml` file, comment out the `vpc_api_gateway` and `vpc_lambda` options, to make your file look like this:
+
+```toml
+[ tf-aws ]
+# vpc can be set to "new" or "existing"
+vpc = "new"
+# vpc_lambda will ensure that lambda functions are created within the vpc on the private subnet
+# vpc_lambda = true
+# vpc_api_gateway will ensure that the api gateway is created within the vpc on the private subnet
+# vpc_api_gateway = true
+# The following parameters will be required if using "existing" vpc
+# vpc_id = "vpc-123xyz"
+# private_subnet_id = ["subnet-123xyz"]
+# public_subnet_id = ["subnet-123xyz"]
 ```
+We can leave `vpc = "new"` as is, since the `tf-aws` target only ever creates a vpc if a resource needs it. Now lets run:
+
+```bash
 wing compile -t tf-aws
 terraform -chdir=./target/main.tfaws init
 terraform -chdir=./target/main.tfaws apply -auto-approve
 ```
 
-This command will compile and deploy your Wing application to the AWS account configured in your environment. You'll notice that it will create a new VPC for you with all the desired setup.
+Once the deployment is complete, you should see something like this:
+```bash
+Apply complete! Resources: 31 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+cloudApi_Endpoint_Url_CD8AC9A6 = "https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod"
+```
+
+Your Endpoint URL will be different, but you now since you have it, you will be able to interact with your API using any HTTP client you prefer. To see the API in action, lets just use `curl` to save a note:
+
+> Remember to replace the URL with your own.
+
+```bash
+curl -X PUT -d "This is my note" https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod/note/n1
+```
+
+You should see a response like this:
+
+```bash
+note: n1 saved!
+```
+
+To verify getting the note back also works, lets use `curl` again to read the note:
+
+```bash
+curl "https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod/note?name=n1"
+```
+
+And you should see the note you saved:
+
+```bash 
+{"This is my note"}
+```
+
+Wonderful, so now we have deployed our note taking app into our AWS account and we can interact with it using the API Gateway endpoint. However, the point of this tutorial is to show how to deploy this api into a private VPC,
+so lets go back to our `wing.toml` file and uncomment `vpc_api_gateway` and `vpc_lambda` options.
+
+So our `wing.toml` file should look like this again:
+
+```toml
+[ tf-aws ]
+# vpc can be set to "new" or "existing"
+vpc = "new"
+# vpc_lambda will ensure that lambda functions are created within the vpc on the private subnet
+vpc_lambda = true
+# vpc_api_gateway will ensure that the api gateway is created within the vpc on the private subnet
+vpc_api_gateway = true
+# The following parameters will be required if using "existing" vpc
+# vpc_id = "vpc-123xyz"
+# private_subnet_id = ["subnet-123xyz"]
+# public_subnet_id = ["subnet-123xyz"]
+```
+
+Once you have saved those changes, lets recompile and redeploy our app:
+
+```bash
+wing compile -t tf-aws
+terraform -chdir=./target/main.tfaws apply -auto-approve
+```
+
+The terraform apply will take a few minutes to complete, as now its reconfiguring the API Gateway to be private and only accessible from within the VPC. As well as reconfiguring our Lambda consumer functions to be in the same VPC (this is where the consumer functions come in handy finally).
+
+> Note: As of this writing, there is a bug in the terraform provider for AWS that may cause an error that reads: `Provider produced inconsistent final plan` if you see this error, just run the `terraform apply` command again and it should work.
+
+Once the deployment is complete, try re-running the `curl` command to get the note back. You should see a response like this:
+
+```bash
+curl "https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod/note?name=n1"
+curl: (6) Could not resolve host: ac3f2dvk1h.execute-api.us-east-1.amazonaws.com
+```
+
+This is because the API Gateway is now private and only accessible from within the VPC. Before we test the API using the consumer functions, lets take a peek at the AWS console to see the API Gateway settings.
+
+Below we can see that the newly created API Gateway is now private and configured to be accessible withing a VPC Endpoint:
+
+![private-api-gateway](assets/private-api-gateway/private-api-settings.png)
+
+Lastly lets test that the API is working as expected by using the consumer functions. In order to do so we can use the AWS CLI, but we will need the names of the consumer functions, which can be found running the commands given in the comments of the `main.w` file. 
+
+```bash
+aws lambda list-functions --query "Functions[?starts_with(FunctionName, 'Consumer')].FunctionName"
+[
+  "Consumer-PUT-c8756be1",
+  "Consumer-GET-c8d6f858"
+]
+```
+First we will use the `Consumer-PUT` function to save a note:
+
+> Be sure to replace the function name with your own.
+
+```bash
+aws lambda invoke --cli-binary-format raw-in-base64-out --function-name Consumer-PUT-c8756be1 --payload "\"n1:this is my note\"" response.json
+cat response.json
+```
+
+```bash
+aws lambda invoke --cli-binary-format raw-in-base64-out --function-name Consumer-GET-c8d6f858 --payload "\"n1\"" response.json
+```
 
 But what if I wanted to deploy my app into an existing VPC? It's very common for a VPC to be shared across multiple applications. This can be done by editing your `wing.toml` file like this:
 
