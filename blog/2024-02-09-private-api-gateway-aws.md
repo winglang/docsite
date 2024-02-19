@@ -14,6 +14,9 @@ This tutorial is a guide for creating a [secure](https://docs.aws.amazon.com/api
 
 Wing currently supports two programming languages: TypeScript and [Winglang](https://winglang.io). For the purposes of this tutorial, we'll use Winglang.
 
+> Its recommended to use VSCode to follow along with this tutorial, as it has a Winglang extension that provides syntax highlighting and code completion. You can install the Winglang extension from the [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=Monada.vscode-wing).
+
+
 Let's start by installing the Wing CLI (you'll need Node.js >= 20.x installed):
 
 ```bash
@@ -157,7 +160,7 @@ vpc_api_gateway = true
 
 This `wing.toml` file sets configuration options for the `tf-aws` platform. The quickstart configures the platform to create a new VPC for this app and put Amazon API Gateways and AWS Lambda functions inside that VPC.
 
-> Built-in Wing platforms such as tf-aws support certain common configuration options (such as private APIs). If you need additional customization, you can always create your own custom platforms and have complete control over how your app is deployed to the cloud.
+> Built-in Wing platforms such as tf-aws support certain common configuration options (such as private APIs). If you need additional customization, you can always create your own custom platforms and have complete control over how your app is deployed to the cloud. To read more about creating your own custom platform checkout our [custom platforms documentation](https://www.winglang.io/docs/concepts/platforms#custom-platforms).
 
 Before we deploy our app to AWS, let's first check it out in the Wing Simulator:
 
@@ -310,22 +313,17 @@ First we will use the `Consumer-PUT` function to save a note:
 ```bash
 aws lambda invoke --cli-binary-format raw-in-base64-out --function-name Consumer-PUT-c8756be1 --payload "\"n1:this is my note\"" response.json
 cat response.json
+
+"note: n1 saved!"
 ```
+
+And then we can use the `Consumer-GET` function to read the note back:
 
 ```bash
 aws lambda invoke --cli-binary-format raw-in-base64-out --function-name Consumer-GET-c8d6f858 --payload "\"n1\"" response.json
+cat response.json
+
+"this is my note"
 ```
 
-But what if I wanted to deploy my app into an existing VPC? It's very common for a VPC to be shared across multiple applications. This can be done by editing your `wing.toml` file like this:
-
-```toml
-[tf-aws]
-vpc = "existing"
-vpc_id = "vpc-288494x"
-private_subnet_id =  "subnet-a112"
-public_subnet_id = "subnet-a2x1"
-vpc_apigateway = true
-vpc_lambda = true
-```
-
-That's it, by setting `vpc` to `existing` and by adding the relevant private subnets Wing won't create a new VPC but rather add the application resources to an existing VPC in your account.
+And there you have it! You have successfully deployed a private API Gateway in AWS using Winglang. You can be confident that your API is secure and only accessible from within your VPC.
