@@ -125,6 +125,7 @@ const config = {
           blogDescription: 'The latest news and updates from the Wing team',
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'Posts',
+          postsPerPage: 'ALL',
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
