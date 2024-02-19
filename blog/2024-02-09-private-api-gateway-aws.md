@@ -23,7 +23,7 @@ Let's start by installing the Wing CLI (you'll need Node.js >= 20.x installed):
 npm i -g winglang
 ```
 
-You can check the CLI version like this:
+You can check the CLI version like this (the minimum version required by this tutorial is 0.58.10):
 
 ```bash
 wing --version
