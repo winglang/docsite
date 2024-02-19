@@ -9,7 +9,7 @@ const ListItem = ({ content }) => {
 
   const {authors} = metadata;
 
-  const imageUrl = frontMatter.image ?? '/img/default-blog-post-banner.png';
+  const imageUrl = frontMatter.image ?? 'https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/65d32406856a3e7dd9629299_blog-banner-default2.png';
 
   return (
     <div className="col col--4" style={{ marginBottom: '20px' }}>
