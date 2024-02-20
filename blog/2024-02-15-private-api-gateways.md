@@ -29,15 +29,19 @@ When your API gateway is located within a VPC, you have a private API gateway. U
 Let's take a look at three common use cases.
 
 ### Improved security:
+
 By confining your API within a private network, you minimize exposure to potential security threats originating from a public API over the internet. For the security conscious, VPCs provide a much saner starting point for securing your application since private compute resources can simply say “allow any traffic from our private network,” reducing the need to manually manage firewalls and IP tables. In this scenario, it doesn’t really matter what you’re building - you just don’t want the public internet messing around with it!
 
 ### Compliance:
+
 Some compliance standards or organizational policies mandate the use of VPCs to ensure that sensitive data remains within controlled environments. For example, with regulations like [HIPAA](https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html) in the United States, [deploying applications within VPCs is a common strategy](https://blog.scottlogic.com/2021/10/11/vpcs-aws.html) to ensure the confidentiality and security of patient data. In these situations, cloud architectures that are designed around API endpoint usage will benefit from being able to use private API gateways.
 
 ### Hybrid cloud environments:
+
 For companies that operate in a [hybrid cloud environment](https://docs.aws.amazon.com/whitepapers/latest/public-sector-cloud-transformation/selecting-the-right-cloud-for-workloads-differences-between-public-private-and-hybrid.html) (a mix of public cloud and on-premises data centers), a private API gateway can manage and route traffic within the private network. This is essential for sensitive data that cannot be transferred to public clouds due to policy or regulatory reasons. Migrating applications to the cloud is made easier by the fact that modern cloud providers like AWS [allow application code running within VPCs to have secure access to the common services](https://docs.aws.amazon.com/AmazonECS/latest/bestpracticesguide/networking-connecting-vpc.html) like S3, DynamoDB, and IAM - all routed through the backbone of Amazon’s networking infrastructure.
 
 ## Challenges
+
 While setting up cloud applications in private networks has many security benefits, accessing a private API from external environments, such as during development or testing phases, can be cumbersome. [VPCs typically add complexity to serverless applications](https://medium.com/@robertcurran5635/dragging-serverless-web-apps-into-the-vpc-d97cabd47e79) by increasing the amount of infrastructure that needs to be managed through tools like Terraform and CloudFormation, and may require [setting up bastion hosts for debugging applications](https://dev.to/aws-builders/bastion-host-in-aws-vpc-2i63) in production.
 
 Furthermore, establishing secure connections to any networks outside of the VPC may require setting up Virtual Private Networks (VPNs) or using services like Amazon Direct Connect, which introduces extra complexity.
@@ -48,4 +52,4 @@ In the [Wing Slack](https://t.winglang.io/slack) community, we’ve seen many de
 
 One of the biggest pains people have when using serverless is that they constantly have to wait for deployments to finish in order to test changes to their code. This is where Winglang and it's cloud simulator rocks - it allows you to develop your entire serverless application without having to deploy anything on the cloud, letting you iterate in milliseconds instead of minutes.
 
-If you’re curious to learn more, check out our docs (link) where it will walk you step-by-step through how to build a simple application with a private API gateway and deploy it to your own AWS account. If you have feedback or any other questions, let us know by dropping a comment in our [community slack](https://t.winglang.io/slack). Don’t be shy!
+If you’re curious to learn more, check out our [tutorial](./2024-02-09-private-api-gateway-aws.md) that walks you step-by-step through building a simple application with a private API gateway and deploy it to your own AWS account. If you have feedback or any other questions, let us know by dropping a comment in our [community slack](https://t.winglang.io/slack). Don’t be shy!
