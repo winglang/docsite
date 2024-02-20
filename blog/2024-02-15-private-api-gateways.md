@@ -1,5 +1,5 @@
 ---
-title: Understanding Private API Gateways
+title: Why are Private API Gateways so hard?
 description: Exploring what private API gateways are and why they're used in the context of the serverless architecture landscape.
 authors:
   - rybickic
