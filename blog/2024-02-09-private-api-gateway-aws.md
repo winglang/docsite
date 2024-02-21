@@ -213,7 +213,7 @@ Outputs:
 cloudApi_Endpoint_Url_CD8AC9A6 = "https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod"
 ```
 
-Your Endpoint URL will be different, but you now since you have it, try running this `curl` command to get a note back. You should see a response like this:
+Your Endpoint URL will be different, but now since you have it, try running this `curl` command to get a note back. You should see a response like this:
 
 ```bash
 curl "https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod/note?name=n1"
