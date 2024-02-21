@@ -162,15 +162,15 @@ This `wing.toml` file sets configuration options for the `tf-aws` platform. The 
 
 > Built-in Wing platforms such as tf-aws support certain common configuration options (such as private APIs). If you need additional customization, you can always create your own custom platforms and have complete control over how your app is deployed to the cloud. To read more about creating your own custom platform checkout our [custom platforms documentation](https://www.winglang.io/docs/concepts/platforms#custom-platforms).
 
-Before we deploy our app to AWS, let's first check it out in the Wing Simulator:
+Before we deploy our app to AWS, let's first check it out in the Wing Console:
 
 ```bash
 wing it
 ```
 
-> If this is the first time you are running the Wing Simulator on your machine, you'll need to sign up with your GitHub credentials.
+> If this is the first time you are running the Wing Console on your machine, you'll need to sign up with your GitHub credentials.
 
-Once the Wing Simulator is running, you'll be able to see your API endpoint, invoke it and see the response. Note that the consumer functions are not required for the app to work, and really are not useful in the simulator,
+Once the Wing Console is running, you'll be able to see your API endpoint, invoke it and see the response. Note that the consumer functions are not required for the app to work, and really are not useful in the simulator,
 their usefulness is shown when the app is deployed to AWS. For now we will ignore them.
 
 ![app-in-sim](assets/private-api-gateway/private-api-app-sim.png)
