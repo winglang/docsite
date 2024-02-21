@@ -5,6 +5,7 @@ authors:
   - skorfmann
   - hasanaburayyan
 tags: [aws, api-gateway, vpc]
+image: https://www.winglang.io/assets/images/private-api-gateway-a08f1e4cf02c6d3a98ce7e813fd5685c.jpg
 hide_table_of_contents: false
 ---
 
