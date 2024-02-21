@@ -194,30 +194,15 @@ Wonderful! Our API is working as expected in the simulator. Next, let's deploy t
 
 In order to compile our code for deployment to AWS we will use the `tf-aws` platform with the `wing compile` command. This will generate the necessary Terraform files for deploying our app to AWS. 
 
-Before we compile though, lets see what how differently the deployment would look without the `vpc_api_gateway` and `vpc_lambda` options set to `true` in the `wing.toml` file. 
-
-In your `wing.toml` file, comment out the `vpc_api_gateway` and `vpc_lambda` options, to make your file look like this:
-
-```toml
-[ tf-aws ]
-# vpc can be set to "new" or "existing"
-vpc = "new"
-# vpc_lambda will ensure that lambda functions are created within the vpc on the private subnet
-# vpc_lambda = true
-# vpc_api_gateway will ensure that the api gateway is created within the vpc on the private subnet
-# vpc_api_gateway = true
-# The following parameters will be required if using "existing" vpc
-# vpc_id = "vpc-123xyz"
-# private_subnet_id = ["subnet-123xyz"]
-# public_subnet_id = ["subnet-123xyz"]
-```
-We can leave `vpc = "new"` as is, since the `tf-aws` target only ever creates a vpc if a resource needs it. Now lets run:
+The following commands will compile the code and deploy it to AWS:
 
 ```bash
 wing compile -t tf-aws
 terraform -chdir=./target/main.tfaws init
 terraform -chdir=./target/main.tfaws apply -auto-approve
 ```
+
+The terraform apply will take a few minutes to complete, as its configuring the API Gateway to be private and only accessible from within the VPC. As well as configuring our Lambda consumer functions to be in the same VPC (this is where the consumer functions come in handy finally).
 
 Once the deployment is complete, you should see something like this:
 ```bash
@@ -228,63 +213,7 @@ Outputs:
 cloudApi_Endpoint_Url_CD8AC9A6 = "https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod"
 ```
 
-Your Endpoint URL will be different, but you now since you have it, you will be able to interact with your API using any HTTP client you prefer. To see the API in action, lets just use `curl` to save a note:
-
-> Remember to replace the URL with your own.
-
-```bash
-curl -X PUT -d "This is my note" https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod/note/n1
-```
-
-You should see a response like this:
-
-```bash
-note: n1 saved!
-```
-
-To verify getting the note back also works, lets use `curl` again to read the note:
-
-```bash
-curl "https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod/note?name=n1"
-```
-
-And you should see the note you saved:
-
-```bash 
-{"This is my note"}
-```
-
-Wonderful, so now we have deployed our note taking app into our AWS account and we can interact with it using the API Gateway endpoint. However, the point of this tutorial is to show how to deploy this api into a private VPC,
-so lets go back to our `wing.toml` file and uncomment `vpc_api_gateway` and `vpc_lambda` options.
-
-So our `wing.toml` file should look like this again:
-
-```toml
-[ tf-aws ]
-# vpc can be set to "new" or "existing"
-vpc = "new"
-# vpc_lambda will ensure that lambda functions are created within the vpc on the private subnet
-vpc_lambda = true
-# vpc_api_gateway will ensure that the api gateway is created within the vpc on the private subnet
-vpc_api_gateway = true
-# The following parameters will be required if using "existing" vpc
-# vpc_id = "vpc-123xyz"
-# private_subnet_id = ["subnet-123xyz"]
-# public_subnet_id = ["subnet-123xyz"]
-```
-
-Once you have saved those changes, lets recompile and redeploy our app:
-
-```bash
-wing compile -t tf-aws
-terraform -chdir=./target/main.tfaws apply -auto-approve
-```
-
-The terraform apply will take a few minutes to complete, as now its reconfiguring the API Gateway to be private and only accessible from within the VPC. As well as reconfiguring our Lambda consumer functions to be in the same VPC (this is where the consumer functions come in handy finally).
-
-> Note: As of this writing, there is a bug in the terraform provider for AWS that may cause an error that reads: `Provider produced inconsistent final plan` if you see this error, just run the `terraform apply` command again and it should work.
-
-Once the deployment is complete, try re-running the `curl` command to get the note back. You should see a response like this:
+Your Endpoint URL will be different, but you now since you have it, try running this `curl` command to get a note back. You should see a response like this:
 
 ```bash
 curl "https://ac3f2dvk1h.execute-api.us-east-1.amazonaws.com/prod/note?name=n1"
@@ -327,3 +256,11 @@ cat response.json
 ```
 
 And there you have it! You have successfully deployed a private API Gateway in AWS using Winglang. You can be confident that your API is secure and only accessible from within your VPC.
+
+Once you are ready to cleanup the resources out of your account you can just run the following command:
+
+> You will need to empty the s3 bucket used for storing notes before you can delete it.
+
+```bash
+terraform -chdir=./target/main.tfaws destroy -auto-approve
+```
