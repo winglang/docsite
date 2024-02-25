@@ -4,6 +4,7 @@ description: Contemplating on a discussion with another PM who challenged Wing's
 authors:
   - eyalk
 tags: [platform engineering, templates, terraform modules, winglang, wing cloud]
+image: https://github.com/winglang/docsite/assets/1727147/7c395c6f-9cf2-43c6-b4b1-6a5ba4d058bb
 hide_table_of_contents: true
 ---
 
