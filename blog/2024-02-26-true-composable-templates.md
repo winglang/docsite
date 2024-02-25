@@ -2,7 +2,7 @@
 title: True Composable Templates
 description: Contemplating on a discussion with another PM who challenged Wing's value proposition versus templates
 authors:
-  - ekeren
+  - eyalk
 tags: [platform engineering, templates, terraform modules, winglang, wing cloud]
 hide_table_of_contents: true
 ---
