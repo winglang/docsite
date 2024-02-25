@@ -1,7 +1,6 @@
 ---
 title: True Composable Templates
-description: Contemplating on a discussion with another PM who challenged Wing's value proposition 
-versus templates
+description: Contemplating on a discussion with another PM who challenged Wing's value proposition versus templates
 authors:
   - ekeren
 tags: [platform engineering, templates, terraform modules, winglang, wing cloud]
@@ -80,28 +79,25 @@ class BedrockModel {
 }
 ```
 
-This code snippet illustrates how Wing enables developers to concentrate on what their code is
-meant to do, rather than getting entangled in the operational details. It’s about ensuring all
-parts of the application can communicate andoperate without the developer needing to intervene manually. In the above example the developer of
-the bedrock resource, doesn’t know of the callee that is going to use it. It does know what is
-required in order to use itself with other resources. The system identified this indirect
-composition of resource and call the onLift method of the Bedrock model with the callee as the host.
+This code snippet illustrates how Wing enables developers to concentrate on what their code is meant to do, 
+rather than getting entangled in the operational details. 
+It’s about ensuring all parts of the application can communicate and operate without the developer needing to intervene manually. 
+In the above example the developer of the bedrock resource, doesn’t know of the callee that is going to use it. 
+It does know what is required in order to use itself with other resources. 
+The system identified this indirect composition of resource and call the onLift method of the Bedrock model with the callee as the host.
 
 #### The Real Value of Using Wing
-The conversation highlighted an important aspect of using templates — the potential for
-customization to make them fit for any project. Yet, Wing's true value lies in its foundational
-approach to building applications. It's designed for developers who want to go beyond the
-limitations of templates, offering a platform where components not only fit together by design but
-also adapt and evolve as the project grows. When a project grows, they grow outside the boundaries
-of what we initially thought should be the template version, the project setup and architecture
-needs to allow developers to modify their architecture by allowing developers to refactor and
-change patterns in the way that fits the current business requirements.
+The conversation highlighted an important aspect of using templates — the potential for customization to make them fit for any project. 
+Yet, Wing's true value lies in its foundational approach to building applications. 
+It's designed for developers who want to go beyond the limitations of templates, 
+offering a platform where components not only fit together by design but also adapt and evolve as the project grows. 
+When a project grows, they grow outside the boundaries of what we initially thought should be the template version, 
+the project setup and architecture needs to allow developers to modify their architecture by allowing developers to refactor and change patterns in the way that fits the current business requirements.
 
 ## Conclusion
-The Product Manager’s insights brought an important dimension to the discussion about Wing versus
-templates. While templates, even with customization options, offer a quick start, Wing provides a
-deeper level of integration and flexibility. It fosters an environment where development is not
-just about adapting a template to fit but about creating a tailored, efficient, and scalable
-solution from the outset. Wing represents a shift towards more dynamic and adaptable cloud
-development, where the focus is on innovation, scalability, and the seamless integration of diverse
-components.
+The Product Manager’s insights brought an important dimension to the discussion about Wing versus templates. 
+While templates, even with customization options, offer a quick start, Wing provides a deeper level of integration and flexibility. 
+It fosters an environment where development is not just about adapting a template to fit but about creating a tailored, 
+efficient, and scalable solution from the outset. 
+Wing represents a shift towards more dynamic and adaptable cloud development, 
+where the focus is on innovation, scalability, and the seamless integration of diverse components.
