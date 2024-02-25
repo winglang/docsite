@@ -7,6 +7,9 @@ tags: [platform engineering, templates, terraform modules, winglang, wing cloud]
 hide_table_of_contents: true
 ---
 
+![composition](https://github.com/winglang/docsite/assets/1727147/f970e7dc-53c3-4909-8dab-afa7dd766fe8)
+
+
 # True Composable Templates
 
 In the journey of software development, particularly for cloud-based projects, templates often 
