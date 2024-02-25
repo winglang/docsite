@@ -7,7 +7,7 @@ tags: [platform engineering, templates, terraform modules, winglang, wing cloud]
 hide_table_of_contents: true
 ---
 
-![composition](https://github.com/winglang/docsite/assets/1727147/f970e7dc-53c3-4909-8dab-afa7dd766fe8)
+![Composable Templates](https://github.com/winglang/docsite/assets/1727147/7c395c6f-9cf2-43c6-b4b1-6a5ba4d058bb)
 
 
 # True Composable Templates
