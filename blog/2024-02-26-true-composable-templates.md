@@ -10,9 +10,6 @@ hide_table_of_contents: true
 
 ![Composable Templates](https://github.com/winglang/docsite/assets/1727147/7c395c6f-9cf2-43c6-b4b1-6a5ba4d058bb)
 
-
-# True Composable Templates
-
 In the journey of software development, particularly for cloud-based projects, templates often 
 seem like the go-to solution for their promise of speed and simplicity. This notion was at the 
 forefront of a conversation I had with a Product Manager who doesn’t delve into coding. I had 
