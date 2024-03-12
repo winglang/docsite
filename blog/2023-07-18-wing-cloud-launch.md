@@ -117,7 +117,7 @@ innovation which deals with concurrency and parallelism. From
 express non-linear programming. 
 
 For more details and examples about Wing's execution model, check out our doc topic about [preflight
-and inflight](https://www.winglang.io/docs/concepts/inflights).
+ and inflight](https://www.winglang.io/docs/concepts/inflights).
 
 But preflights and inflights are just the tip of the iceberg in terms of what a language for the
 cloud can offer. Think about API endpoints and clients, telemetry, metrics, alarms, data schemas. We

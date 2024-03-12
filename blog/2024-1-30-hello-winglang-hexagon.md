@@ -5,6 +5,9 @@ authors:
   - ashersterkin
 tags: [cloud-oriented, programming, winglang, platforms]
 hide_table_of_contents: true
+link:
+  - rel: canonical
+    href: https://itnext.io/hello-winglang-hexagon-6f2bdb550f37
 ---
 
 ## Exploring Cloud Hexagonal Design with Winglang, TypeScript, and Ports & Adapters
