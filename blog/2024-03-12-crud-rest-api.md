@@ -1,13 +1,11 @@
 ---
-title: Implementing Production-grade CRUD REST API in Winglang
+title: Implementing a Production-Grade CRUD REST API with Winglang
 description: Impementing a CRUD REST API using Winglang
 authors:
   - ashersterkin
 tags: [cloud-oriented, programming, winglang, platforms]
-hide_table_of_contents: false
-link:
-  - rel: canonical
-    href: https://asher-sterkin.medium.com/implementing-production-grade-crud-rest-api-in-winglang-7b8f6917efc2
+hide_table_of_contents: true
+
 ---
 
 ## Abstract
