@@ -5,8 +5,10 @@ authors:
   - ashersterkin
 tags: [cloud-oriented, programming, winglang, platforms]
 hide_table_of_contents: true
-
+image: /img/asher-blog2-cover-art.png
 ---
+
+![Cover Art](../static/img/asher-blog2-cover-art.png)
 
 ## Abstract
 
