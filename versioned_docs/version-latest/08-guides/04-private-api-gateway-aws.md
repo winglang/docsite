@@ -9,7 +9,7 @@ image: https://www.winglang.io/assets/images/private-api-gateway-a08f1e4cf02c6d3
 hide_table_of_contents: false
 ---
 
-![gateway](assets/private-api-gateway.jpg)
+![gateway](private-api-gateway.jpg)
 
 This tutorial is a guide for creating a [secure](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-private-apis.html) [API Gateway](https://aws.amazon.com/api-gateway/) inside an AWS Virtual Private Cloud (VPC) using Winglang. A private API Gateway in AWS is used when you need to expose APIs that are only accessible within your Virtual Private Cloud (VPC) or through specific endpoints that you define. This setup is essential for internal or private applications where security and controlled access are crucial.
 
@@ -174,19 +174,19 @@ wing it
 Once the Wing Console is running, you'll be able to see your API endpoint, invoke it and see the response. Note that the consumer functions are not required for the app to work, and really are not useful in the simulator,
 their usefulness is shown when the app is deployed to AWS. For now we will ignore them.
 
-![app-in-sim](assets/private-api-gateway/private-api-app-sim.png)
+![app-in-sim](private-api-app-sim.png)
 
 You can go ahead and test the functionality of the api by selecting `cloud.Api` resources and interacting with it using the tool panel on the right. A first fun interaction might be just saving a note using the `PUT /note/:name` endpoint:
 
-![save-note](assets/private-api-gateway/private-api-save-note.png)
+![save-note](private-api-save-note.png)
 
 Once the note is saved we can take a look into the bucket resource and see that the note is there:
 
-![read-note](assets/private-api-gateway/private-api-read-note.png)
+![read-note](private-api-read-note.png)
 
 Lastly, lets see about using the API to read back the note's contents, just as we used the simulator to interact with the API and save the note, we can read it back using the `GET /note?name=NAME` endpoint:
 
-![retrieve-note](assets/private-api-gateway/private-api-retrieve-note.png)
+![retrieve-note](private-api-retrieve-note.png)
 
 Wonderful! Our API is working as expected in the simulator. Next, let's deploy this to the cloud!
 
@@ -225,7 +225,7 @@ This is because the API Gateway is now private and only accessible from within t
 
 Below we can see that the newly created API Gateway is now private and configured to be accessible withing a VPC Endpoint:
 
-![private-api-gateway](assets/private-api-gateway/private-api-settings.png)
+![private-api-gateway](private-api-settings.png)
 
 Lastly lets test that the API is working as expected by using the consumer functions. In order to do so we can use the AWS CLI, but we will need the names of the consumer functions, which can be found running the commands given in the comments of the `main.w` file. 
 
