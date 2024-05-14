@@ -7,7 +7,9 @@ tags: [cloud-oriented, programming, middleware, platforms]
 hide_table_of_contents: true
 image: ../img/ashers-blog-middleware-pt-two.jpg
 ---
+
 <div style={{color: "#E2EAEB", fontSize: "2rem" }}>Part Two: Pipeline Formation with Template Method </div>
+
 ![Asher's blog cover art](./assets/ashers-blog-middleware-pt-two.jpg)
 
 [Winglang's](https://github.com/winglang/wing) unique capability to uniformly handle both [preflight](https://www.winglang.io/docs/concepts/inflights#preflight-code) (cloud resource configuration) and [inflight](https://www.winglang.io/docs/concepts/inflights#inflight-code) (cloud events processing) logic opens up meta-programming possibilities akin to [Lisp macros](https://lispcookbook.github.io/cl-cookbook/macros.html). This allows for the dynamic adjustment of service configurations to various deployment targets—such as DEV, TEST, STAGE, and PROD—at the build stage. By doing so, it optimizes cost, security, and performance without compromising the integrity of the core service logic, which remains largely insulated from middleware framework details. This level of flexibility is unmatched by more traditional cloud middleware libraries, such as [PowerTools for AWS Lambda](https://github.com/aws-powertools), which I explored in the [first part](https://medium.com/itnext/in-search-for-winglang-middleware-9d1be0782108) of this series.
