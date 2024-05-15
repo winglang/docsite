@@ -82,6 +82,6 @@ For the actual code, feel free to explore this (example)[https://github.com/wing
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y0jG_YKjxPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-We would love your feedback and suggestions on [Wing Slack](https://t.winglang.io/slack).
+We would love your feedback and suggestions on [Wing Discord](https://t.winglang.io/discord).
 
 Let's connect!

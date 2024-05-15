@@ -654,7 +654,7 @@ Now we should be able to see that the generated Terraform config is using the co
 
 Now that we have built and published our first Wing Custom Platform, the sky is the limit! Get out there and start building the Custom Platforms to your hearts content <3 and keep a look out for the next addition to this series on Platform building!
 
-In the meantime make sure you to join the Wing Slack community: https://t.winglang.io/slack and share what you are working on, or any issues you run into.
+In the meantime make sure you to join the Wing Discord community: https://t.winglang.io/discord and share what you are working on, or any issues you run into.
 
 Want to read more about Wing Platforms? Check out the [Wing Platform Docs](https://www.winglang.io/docs/concepts/platforms)
 

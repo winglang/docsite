@@ -313,7 +313,7 @@ class Signpost {
 ```
 
 What do you think?
-Let us know on our [GitHub](https://github.com/winglang/wing) or [Slack](https://t.winglang.io/slack) if you have any thoughts or feedback about the ideas in this post, or if you have suggestions for new topics!
+Let us know on our [GitHub](https://github.com/winglang/wing) or [Discord](https://t.winglang.io/discord) if you have any thoughts or feedback about the ideas in this post, or if you have suggestions for new topics!
 
 [^1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields
 [^2]: https://gist.github.com/Chriscbr/58384bdd7b8ce5e8fedf24ddba55e103

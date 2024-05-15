@@ -622,4 +622,4 @@ I hope you enjoyed this comparison of five simple ways to write a function in ou
 
 As you can see, most of the code becomes very complex, except for Wing.
 
-> If you are intrigued about Wing and like how we are simplifying the process of cloud development, please join our [community](https://t.winglang.io/slack) and reach out to us on [Twitter](https://twitter.com/winglangio).
+> If you are intrigued about Wing and like how we are simplifying the process of cloud development, please join our [community](https://t.winglang.io/discord) and reach out to us on [Twitter](https://twitter.com/winglangio).
