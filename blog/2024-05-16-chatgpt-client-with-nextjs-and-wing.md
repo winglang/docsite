@@ -498,7 +498,7 @@ npm run dev
 Let’s take a look at our application. 
 
 
-![Chat App](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/joyeu9mr1udn9lj3bkbt.png)
+![Chat App](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/97g8kikxfwwb7ephfdni.png)
 
 
 
