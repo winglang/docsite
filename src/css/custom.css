@@ -224,7 +224,7 @@ html[data-theme="dark"] .header-text-link:hover {
 }
 
 .header-discord-link:before {
-  background: url("../../static/img/slack.svg") no-repeat;
+  background: url("../../static/img/discord.svg") no-repeat;
   content: "";
   display: flex;
   height: 24px;
@@ -233,7 +233,7 @@ html[data-theme="dark"] .header-text-link:hover {
 }
 
 html[data-theme="dark"] .header-discord-link:before {
-  background: url("../../static/img/slack-dark.svg") no-repeat;
+  background: url("../../static/img/discord-dark.svg") no-repeat;
   color: #2bd5c1;
 }
 
