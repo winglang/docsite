@@ -113,6 +113,8 @@ bring http
 
 ## Get Your OpenAI API Key
 
+We will use `gpt-4-turbo` for our app but you can use any OpenAI model.
+
 - Create an [OpenAI](https://platform.openai.com/signup) account if you don’t have one yet. To create a new API key, Go to [platform.openai.com/api-keys](http://platform.openai.com/api-keys) and select **Create new secret key.**
 
 
@@ -126,6 +128,8 @@ bring http
 ## Initializing OpenAI
 
 Create a `Class` to initialize your OpenAI API. We want this to be reusable.
+
+We will add a `personality` to our `Assistant` class so that we can dictate the personality of our AI assistant when passing a prompt to it. 
 
 ```jsx
 let apiKeySecret = new cloud.Secret(name: "OAIAPIKey") as "OpenAI Secret";
@@ -146,6 +150,7 @@ class Assistant {
     }
 }
 ```
+
 
 Wing unifies infrastructure definition and application logic using the `preflight` and `inflight` concepts respectively. 
 
@@ -192,14 +197,8 @@ We have stored our API key in a cloud secret named `OAIAPIKey`. Copy your key an
 wing secrets
 ```
 
-Now paste in your API Key as the value in the terminal.
+Now paste in your API Key as the value in the terminal. Your keys are now properly stored and we can start interacting with our app. 
 
-There is a second option if you will not be deploying to the cloud and we can store our API key locally. 
-
-
-We added personality to our Assistant class so that we can dictate the personality of our AI assistant when passing a prompt to it. 
-
-In the above code, we are using `gpt-4-turbo` but you can use any OpenAI model.
 
 ---
 
