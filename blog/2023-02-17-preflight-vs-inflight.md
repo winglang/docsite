@@ -141,7 +141,7 @@ responsibility to manage the resource and ensure they get cleaned up.
 
 If you're curious to learn more, check out our [getting started
 guide](https://docs.winglang.io/) or join us on our [community
-slack](https://t.winglang.io/slack) and share what kinds of applications you're
+discord](https://t.winglang.io/discord) and share what kinds of applications you're
 building in the cloud! We would love to hear your feedback about this design --
 and if you have use case where dynamically creating resources would be helpful,
 please share it with us through a [GitHub

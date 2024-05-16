@@ -4,7 +4,7 @@ require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
-const slackUrl = "https://t.winglang.io/slack";
+const discordUrl = "https://t.winglang.io/discord";
 
 const winglangOrgUrl = "https://github.com/winglang";
 
@@ -256,12 +256,12 @@ const config = {
             className: "header-text-link",
           },
           {
-            href: slackUrl,
-            "aria-label": "Slack server",
+            href: discordUrl,
+            "aria-label": "Discord server",
             label: " ",
             position: "right",
             target: "_self",
-            className: "header-slack-link",
+            className: "header-discord-link",
           },
           {
             href: `${winglangOrgUrl}/wing/`,
@@ -316,8 +316,8 @@ const config = {
                 href: winglangOrgUrl,
               },
               {
-                label: "Slack",
-                href: slackUrl,
+                label: "Discord",
+                href: discordUrl,
               },
               {
                 label: "Contributor's Handbook",

@@ -100,4 +100,4 @@ I hope this journey into Wing's approach to improving DevEx of coding cloud apps
 I'm sure I speak on behalf of everyone on the team when I say that I'd love to get any feedback on our approach in general and our execution of it.
 
 Please check our [docs](https://docs.winglang.io) to learn more or our [playground](https://play.winglang.io) to "experience the experience".
-You are also welcome to [join our Slack](https://t.winglang.io/slack) and our DevEx-related discussions there.
+You are also welcome to [join our Discord](https://t.winglang.io/discord) and our DevEx-related discussions there.

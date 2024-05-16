@@ -210,30 +210,30 @@ html[data-theme="dark"] .header-text-link:hover {
 }
 
 @media (max-width: 1040px) {
-  .header-slack-link {
+  .header-discord-link {
     display: none;
   }
 }
 
-.header-slack-link svg[class^="iconExternalLink"] {
+.header-discord-link svg[class^="iconExternalLink"] {
   display: none;
 }
 
-.header-slack-link:hover {
+.header-discord-link:hover {
   opacity: 0.6;
 }
 
-.header-slack-link:before {
-  background: url("../../static/img/slack.svg") no-repeat;
+.header-discord-link:before {
+  background: url("../../static/img/discord.svg") no-repeat;
   content: "";
   display: flex;
-  height: 26px;
-  width: 24px;
+  height: 24px;
+  width: 30px;
   color: #334155;
 }
 
-html[data-theme="dark"] .header-slack-link:before {
-  background: url("../../static/img/slack-dark.svg") no-repeat;
+html[data-theme="dark"] .header-discord-link:before {
+  background: url("../../static/img/discord-dark.svg") no-repeat;
   color: #2bd5c1;
 }
 
