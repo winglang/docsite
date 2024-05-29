@@ -1,5 +1,5 @@
 ---
-title: "Building your own ChatGPT Graphical Client with NextJS and Wing"
+title: "QA Bot for your documentation with Langchain"
 description: A ChatGPT client app built with Winglang and NextJS
 authors:
   - nathantarbert
