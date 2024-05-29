@@ -575,9 +575,9 @@ Here is a brief demo of the application:
 
 ## Wrapping It Up
 
-So far, we went over the following:
+So far, we have gone over the following:
 
-- What is Wing?,
+- What is Wing?
 - How to use Wing to create a powerful cloud applications,
 - How to connect it to a Next.js application,
 - How to send data between a Next.js frontend and a Wing backend.
