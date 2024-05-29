@@ -24,7 +24,7 @@ We'll use Next.js for the frontend, LangChain for processing users' queries with
 
 Wing gives you complete control over how your application's infrastructure is configured. In addition to its easy-to-learn [programming language](https://www.winglang.io/docs/language-reference), Wing also supports Typescript.
 
-First, create a folder containing two sub-folders - `frontend` and `backend`. The `frontend` folder contains the Next.js app, and the `backend` folder will contain Wing.
+In this tutorial, we'll use TypeScript. So, don't worry—your JavaScript and React knowledge is more than enough to understand this tutorial.
 
 ![Wing Landing Page](./assets/qa-bot-winglang-langing-page.png)
 
@@ -176,7 +176,9 @@ return (
 );
 ```
 
+
 ![Input](./assets/wing-qa-bot-input.gif)
+
 
 Since we need to fetch a website's sitemap from another server, this can cause CORS issues. Therefore, let's create a dummy website sitemap within a Next.js API route.
 
