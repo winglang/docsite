@@ -10,9 +10,13 @@ image: ../img/qa-bot-cover-art.png
 
 ## TL;DR
 
-In this tutorial, we will walk through how to build an AI-powered Q&A bot for your websites and documentation. It fetches all your website's content via sitemaps, accepts user's queries, and provides answers based on the data provided.
+In this tutorial, we will walk through: 
 
-We'll use Next.js for the frontend, LangChain for processing users' queries with LLMs, such as GPT-4, and Wing will power the entire backend of the application.
+- How to build an AI-powered Q&A bot for your websites and documentation. 
+
+- Fetch your website's content via sitemaps, accept user's queries, and provide answers based on the data provided.
+
+We'll use Next.js for the frontend, LangChain for processing users' queries with LLMs, such as GPT-4, and Wing will power the backend of the application.
 
 ## What is Wing?
 
@@ -20,7 +24,7 @@ We'll use Next.js for the frontend, LangChain for processing users' queries with
 
 Wing gives you complete control over how your application's infrastructure is configured. In addition to its easy-to-learn [programming language](https://www.winglang.io/docs/language-reference), Wing also supports Typescript.
 
-In this tutorial, we'll use TypeScript. So, don't worry—your JavaScript and React knowledge is more than enough to understand this tutorial.
+First, create a folder containing two sub-folders - `frontend` and `backend`. The `frontend` folder contains the Next.js app, and the `backend` folder will contain Wing.
 
 ![Wing Landing Page](./assets/qa-bot-winglang-langing-page.png)
 
