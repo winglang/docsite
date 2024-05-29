@@ -1,5 +1,5 @@
 ---
-title: "QA Bot for your documentation with Langchain"
+title: "Build a QA Bot for your documentation with Langchain"
 description: A ChatGPT client app built with Winglang and NextJS
 authors:
   - nathantarbert
