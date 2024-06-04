@@ -152,7 +152,7 @@ So now we can click on the `Add File` function and interact with it in the right
 
 ![Invoke Function](assets/2024-05-25-bring-slack/invoke-function.png)
 
-And BAM!! You should now be seeing messages in your slack channel every time you invoke the function!
+And BAM!! You should now be seeing messages in your Slack channel every time you invoke the function!
 
 ![Slack Messages](assets/2024-05-25-bring-slack/slack-messages.png)
 
@@ -163,7 +163,7 @@ One thing we will notice is the Slack application is supposed to support the abi
 
 If you try this now you will see absolutely nothing happens :) —— this is because we need to enable events in our slack app.
 
-To do this head over to the `Event Subscriptions` section in the slack API dashboard and enable events. You will need to provide a URL for the slack API to send events to. Luckily Wing makes providing this URL easy with builtin support for tunneling.
+To do this head over to the `Event Subscriptions` section in the Slack API dashboard and enable events. You will need to provide a URL for the Slack API to send events to. Luckily Wing makes providing this URL easy with builtin support for tunneling.
 
 To get the tunnel URL go back to the Wing Console and `Open a tunnel for this endpoint`
 
@@ -251,7 +251,7 @@ You should see the URL verified in a few seconds.
 
 Let's first test adding a file to the inbox, which in AWS is an s3 bucket. Navigate to the S3 console in AWS and find the bucket with the name that contains `file-process-inbox` there will be some unique hashing to the end of it. For example, my bucket was named: `file-process-inbox-c8419ccc-20240530151737187700000004`
 
-Upload any file on your machine to this bucket, and you should see a message in your slack channel!
+Upload any file on your machine to this bucket, and you should see a message in your Slack channel!
 
 ![AWS Upload Slack Messages](assets/2024-05-25-bring-slack/aws-upload.png)
 
