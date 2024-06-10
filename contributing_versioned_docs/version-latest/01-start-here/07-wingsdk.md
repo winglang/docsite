@@ -54,7 +54,7 @@ Here is an example of adding a package named "fast-json-stringify" pinned to maj
 ## 🧱 How do I add a new Terraform provider for use in the SDK?
 
 The SDK uses [CDK for Terraform] to generate Terraform files.
-This means that you can generate bindings for any Terraform provider and reference in in the SDK using TypeScript.
+This means that you can generate bindings for any Terraform provider and reference it in the SDK using TypeScript.
 
 To add a new provider, go to `libs/wingsdk/.projenrc.ts` and edit the section
 that says "CDKTF_BINDINGS" to add the new provider.
@@ -67,23 +67,23 @@ A resource in the SDK has several parts:
 
 * A set of base APIs that must be implemented by all cloud targets. Typically the resource's preflight APIs correspond to a base class in TypeScript, and the resource's inflight APIs correspond to an interface in TypeScript. These are defined in `src/cloud` or `src/ex`. For example, [`src/cloud/bucket.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/cloud/bucket.ts).
 * An interface representing the inflight API common across all cloud targets. By convention, if the resource is named like `Gizmo`, the inflight interface should be named `IGizmoClient`. This is usually in the same file as the preflight API.
-* A simulator implementation in `src/sim`. This includes:
-  * A schema with information to simulate the resource and display the resource in the Wing console. Currently these are in [`src/sim/schema-resources.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/sim/schema-resources.ts).
-  * A class that implements the polycon API and can produce the resource's simulation schema. For example, [`src/sim/bucket.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/sim/bucket.ts).
-  * An class that implements the inflight API and can simulate the resource. For example, [`src/sim/bucket.sim.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/sim/bucket.sim.ts).
-  * Unit tests for the simulator implementation. For example, [`test/sim/bucket.test.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/test/sim/bucket.test.ts).
+* A simulator implementation in `src/target-sim`. This includes:
+  * A schema with information to simulate the resource and display the resource in the Wing console. Currently these are in [`src/target-sim/schema-resources.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/target-sim/schema-resources.ts).
+  * A class that implements the polycon API and can produce the resource's simulation schema. For example, [`src/target-sim/bucket.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/target-sim/bucket.ts).
+  * An class that implements the inflight API and can simulate the resource. For example, [`src/target-sim/bucket.inflight.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/target-sim/bucket.inflight.ts).
+  * Unit tests for the simulator implementation. For example, [`test/target-sim/bucket.test.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/test/target-sim/bucket.test.ts).
 * An implementation for each target cloud (currently just AWS). This includes:
-  * A class that implements the polycon API and creates all of the required terraform resources. For example, [`src/tf-aws/bucket.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/tf-aws/bucket.ts).
-  * A class that implements the inflight API that interacts with the cloud resource. For example, [`src/tf-aws/bucket.inflight.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/tf-aws/bucket.inflight.ts).
-  * Unit tests for the cloud infrastructure. For example, [`test/tf-aws/bucket.test.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/test/tf-aws/bucket.test.ts).
-  * End-to-end tests. These are added to the "examples" directory at the root of the repository. For example, [`examples/tests/sdk_tests/bucket/bucket_list.w`](https://github.com/winglang/wing/blob/main/examples/tests/sdk_tests/bucket/bucket_list.w).
+  * A class that implements the polycon API and creates all of the required terraform resources. For example, [`src/shared-aws/bucket.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/shared-aws/bucket.ts).
+  * A class that implements the inflight API that interacts with the cloud resource. For example, [`src/shared-aws/bucket.inflight.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/src/shared-aws/bucket.inflight.ts).
+  * Unit tests for the cloud infrastructure. For example, [`test/target-tf-aws/bucket.test.ts`](https://github.com/winglang/wing/tree/main/libs/wingsdk/test/target-tf-aws/bucket.test.ts).
+  * End-to-end tests. These are added to the "examples" directory at the root of the repository. For example, [`examples/tests/sdk_tests/bucket/bucket_list.test.w`](https://github.com/winglang/wing/blob/main/examples/tests/sdk_tests/bucket/bucket_list.test.w).
 
 If you are implementing a new resource, or implementing an existing resource for a new cloud provider, try to take a look at code for existing resources (`Bucket`, `Function`, `Queue`) to see how to structure your code.
 
 Feel free to create an issue if you have questions about how to implement a resource or want to discuss the design of a resource.
-You can also join us on our [Wing Slack] to ask questions (or just say hi)!
+You can also join us on our [Wing Discord] to ask questions (or just say hi)!
 
-[Wing Slack]: https://t.winglang.io/slack
+[Wing Discord]: https://t.winglang.io/discord
 
 ## 🏁 How do I add and run tests to the SDK?
 
@@ -126,7 +126,7 @@ The SDK resources are written using the Constructs Programming Model.
 constructs serves as the low-level foundation of several other infrastructure-as-code frameworks, such as the [AWS CDK](https://github.com/aws/aws-cdk), [cdk8s](https://github.com/cdk8s-team/cdk8s), and [cdktf](https://github.com/hashicorp/terraform-cdk).
 
 Conceptually, constructs are ordinary classes that additionally have a unique **scope** (parent construct) and **id**.
-By adding constructs as children of other constructs, they can form in-memory trees, where each construct is uniquely addressible based on its location within the tree.
+By adding constructs as children of other constructs, they can form in-memory trees, where each construct is uniquely addressable based on its location within the tree.
 
 A construct's **path** is obtained by joining the sequence of construct ids from the tree root to the construct, with the "/" character.
 For example, if a construct with no parent is declared the root with an id "root", and it has a child named "Child1", the child has a path of "root/Child1".
@@ -199,14 +199,14 @@ Under the hood, two main functions are performed by the SDK with this informatio
 
 #### 1. Resource binding
 
-First, each referenced resource is "bound" to the inflight host through a `_bind` method that is defined on all resources.
+First, each referenced resource is "bound" to the inflight host through an `onLift` method that is defined on all resources.
 In the example above, `cloud.Function` is the host, and `cloud.Queue` is a referenced resource.
-The function would call `queue._bind(this, ["push"])` to bind the queue to the function host, providing information about the methods it expects to use on the queue.
+The function would call `queue.onLift(this, ["push"])` to bind the queue to the function host, providing information about the methods it expects to use on the queue.
 
 The referenced resource can then perform any necessary setup to allow the host to referenced it during runtime, such as setting up least privilege permissions.
 For example, when compiling to AWS, the queue can create an IAM role that allows the function to execute `sqs:SendMessage` API calls on the queue.
 
-In more complex resources, the `_bind` method will automatically call `_bind` on any sub-resources based on the operations that the host expects to use.
+In more complex resources, the `onLift` method will automatically call `onLift` on any sub-resources based on the operations that the host expects to use.
 For example, suppose the user defines a `TaskList` resource with a method named `addTask`, and `addTask` calls `put` on a `cloud.Bucket` (a child resource).
 Then whenever `TaskList` is bound to a host and `addTask` is one of the operations the inflight code expects to call, then the `cloud.Bucket` will automatically be bound to the host as well.
 

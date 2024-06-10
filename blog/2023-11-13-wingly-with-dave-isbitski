@@ -1,0 +1,93 @@
+---
+title: "Finding the balance between craftsmanship and ease-of-use in software development: A conversation with Dave Isbitski"
+authors: 
+  - dcahana2
+tags: [wingly, winglang, interview,recap]
+hide_table_of_contents: true
+---
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4sIPqVif09U?si=T0Lmm6-urtLkViNj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!--truncate-->
+
+## Finding the balance between craftsmanship and ease-of-use in software development: A conversation with Dave Isbitski
+
+In this Wingly update, Elad and Shai chat with Dave Isbitski, Principal Developer Advocate at Amazon Web Services.
+
+This blog post summarizes their discussion on the evolving landscape of software development, from the rise of serverless computing to the intricacies of coding in Rust.
+
+### A lifelong love for technology shapes a dynamic career
+
+From a young age, Dave was captivated by technology despite coming from a lower-middle-class background. Defying the odds, he managed to buy his first computer—a Commodore—by saving up from his paper route. Dave became the first in his family to go to college, thanks to a scholarship, and initially pursued a degree in computer engineering. 
+
+However, he soon realized that he enjoyed the intersection of technology and human interaction more, prompting him to switch to Information Systems. 
+
+During the rise of the internet in the late '90s, Dave was busy building websites and serving as a Microsoft solutions provider. When the dot-com bubble burst, he transitioned to a stable nine-to-five IT job at a large pharmaceutical company in New Jersey. Despite the stability, Dave found himself yearning for something more exciting and ended up landing a role as a Developer Evangelist back at Microsoft in 2005. 
+
+His journey at Microsoft allowed him to dig deep into enterprise software and become an integral part of the early developer relations (devrel) sector. Dave had a knack for combining industry experience with software solutions, which led him to work on Microsoft's financial services and Health and Life Sciences projects. During his tenure, he witnessed the evolution of developer tools and even contributed to Microsoft Developer Network, which was a precursor to platforms like [Stack Overflow](https://stackoverflow.com/).
+
+In 2013, Dave was hired by Amazon to help launch their App Store. He quickly rose through the ranks, participating in the launches of various products like Kindle, Fire TV, and even becoming the first employee for Alexa. 
+
+Over six years, he served as the chief evangelist for Alexa, helping grow the team from one to 2,000 people. Eventually, feeling the need for a new challenge—something he describes as "Bitsky burnout"—Dave transitioned to developer tools within Amazon. His career at Amazon recently hit the ten-year mark, and he continues to be passionate about the ever-changing world of technology.
+
+## Tech careers in the age of AI and cloud computing
+
+The way that Dave sees it, for anyone interested in entering the tech world, there's never been a better time. 
+
+Advancements in cloud computing and generative AI aren’t just job titles - they’re tools that can seriously amplify your capabilities. It's no longer just about coding; it's also about managing and scaling your own set of generative tools. 
+
+Dave suggests thinking of yourself as a one-person startup or a manager of a virtual development team powered by AI. For practical experience, if you’re looking to create your own tech product or service, you can try diving into creative platforms like Adobe Creative Cloud or specialized AI tools like Firefly, which can act as a virtual marketing department. 
+
+According to Dave, this autonomy in development and design is facilitating an explosion of creativity and efficiency! So, while he encourages working in an established company to get your bearings, it’s important not to lose sight of your individual dreams and projects. 
+
+### Balancing developer productivity and cost in a serverless world
+
+In the evolving landscape of cloud computing, the juxtaposition of Kubernetes and serverless technologies centers around enhancing developer experience and productivity. 
+
+Dave believes that the low code/no code advantage in a serverless architecture can help to reduce the cost of ownership and management hassles. Rather than viewing serverless as a solution devoid of servers, he frames it as a way to leverage someone else's infrastructure securely and cost-effectively. 
+
+This approach allows for easy scalability and focuses on what truly matters—developing efficient, effective solutions without being bogged down by the nitty-gritty of infrastructure management.
+
+On the other hand, the term "low code, no code" can have a somewhat polarizing effect, especially among those who find joy in the intricacies of coding, like Elad.
+
+That said, Wing’s approach resonates well with current industry conversations, emphasizing the need for developers to define their own infrastructure and work at a higher level of abstraction. 
+
+Interestingly, the choice to use Kubernetes in many companies seems less about its actual merits and more about its prevalent use across the industry. For startups, understanding this landscape is crucial, as AWS and other platforms cannot be ignored given their ubiquity.
+
+### Dave's perspective on the role of AI in developer productivity
+
+Dave envisions a future where AI plays an increasingly significant role in streamlining the development process. 
+
+Tasks that typically require manual intervention, like choosing between serverless and Kubernetes, could soon be automated by AI. AI can be integrated into many areas that developers still have to manually navigate - such as the AWS console - enabling people to build applications without having to understand every underlying layer of the technology. 
+
+This will not only speed up the prototyping phase but also allows for greater accessibility in tech development.
+
+### The balance between automation and craftsmanship in software development
+
+There’s an intricate balance that needs to be maintained between embracing higher-level abstractions, such as Kubernetes and AI tools, and preserving the craftsmanship inherent in coding.
+
+As Elad pointed out, while platform teams have significant responsibilities in guiding an application to production, decisions like using Kubernetes often follow industry trends rather than rational evaluation. This could be a risky architectural constraint. 
+
+For many developers coding is an art-form, and high-level abstractions can sometimes create a disconnect with their sense of craftsmanship. While tools like Copilot and Code Whisperer offer convenience, it’s still important for developers to maintain some level of control. Dave refers to these tools as an additional "pair of eyes," helping to generate new ideas rather than replace the developer's skills. 
+
+Taking all of the above into account, everyone agreed that automation should complement, not replace, the craftsmanship that developers take pride in.
+
+### The rewards and challenges of coding in Rust
+
+Dave credits Tim Mcnamara's episode for sparking his interest in Rust, highlighting the language's stringent requirements for error prevention. 
+
+Unlike other languages that allow for more flexibility, Rust forces the programmer to adhere to best practices from the get-go, resulting in fewer errors in the long term. So in many ways, Rust's demanding nature actually serves as both a disciplinary tool and a source of deep satisfaction for developers.
+
+### Finding the balance 
+
+This Wingly update clearly underscored the evolving landscape of software development. 
+
+From the ongoing debate between serverless and Kubernetes to the meticulous nature of programming in Rust, what remains constant is the craftsmanship involved. This craftsmanship isn't just about writing lines of code; it's about embracing the journey, the struggles, and the small victories that come with it.
+
+As technology races forward, the balance between ease of use and the joy of overcoming challenges becomes ever more important. 
+
+Whether you're a Kubernetes craftsman or a Rust aficionado, the key is to find the tools and methods that empower you while respecting the craft itself.
+
+
+
+

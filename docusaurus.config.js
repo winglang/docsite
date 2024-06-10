@@ -3,8 +3,8 @@
 require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
-const slackUrl = "https://t.winglang.io/slack";
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const discordUrl = "https://t.winglang.io/discord";
 
 const winglangOrgUrl = "https://github.com/winglang";
 
@@ -38,7 +38,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.svg",
+  favicon: "img/favicon.ico",
   organizationName: "winglang",
   projectName: "docs",
   // Even if you don't use internalization, you can use this field to set useful
@@ -53,7 +53,7 @@ const config = {
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
   },
   plugins: [
-    "docusaurus-plugin-sass", 
+    "docusaurus-plugin-sass",
     "docusaurus-plugin-segment",
 
     // this is needed in order to support symlinked `docs/` directory
@@ -61,26 +61,36 @@ const config = {
     // see https://github.com/facebook/docusaurus/issues/3272#issuecomment-876374383
     function (context, options) {
       return {
-        name: 'webpack-configuration-plugin',
+        name: "webpack-configuration-plugin",
         configureWebpack(config, isServer, utils) {
           return {
             resolve: {
               symlinks: false,
             },
-            plugins: [
-              new NodePolyfillPlugin(),
-            ],
+            plugins: [new NodePolyfillPlugin()],
           };
-        }
+        },
       };
     },
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-client-redirects",
       {
-        id: 'contributing',
-        path: 'contributing',
-        routeBasePath: 'contributing',
-        editUrl: (params) => `${winglangOrgUrl}/wing/tree/main/docs/contributing/${params.docPath}`,
+        redirects: [
+          {
+            to: "/docs/",
+            from: ["/docs/start-here/installation"],
+          },
+        ],
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "contributing",
+        path: "contributing",
+        routeBasePath: "contributing",
+        editUrl: (params) =>
+          `${winglangOrgUrl}/wing/tree/main/docs/contributing/${params.docPath}`,
         breadcrumbs: true,
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
@@ -98,16 +108,25 @@ const config = {
           includeCurrentVersion: false,
           editUrl: (params) => {
             if (/\d+-standard-library\/\d+-cloud/.test(params.docPath)) {
-              return `${winglangOrgUrl}/wing/tree/main/libs/wingsdk/src/cloud/${params.docPath.split("/").pop()}`
+              return `${winglangOrgUrl}/wing/tree/main/libs/wingsdk/src/cloud/${params.docPath
+                .split("/")
+                .pop()}`;
             }
-            return `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`
+            return `${winglangOrgUrl}/wing/tree/main/docs/docs/${params.docPath}`;
           },
         },
+        sitemap: {
+          changefreq: "weekly",
+          priority: 0.5,
+          ignorePatterns: ["/tags/**"],
+          filename: "/docs/sitemap.xml",
+        },
         blog: {
-          blogTitle: 'What\'s up? The Wing Blog',
-          blogDescription: 'The latest news and updates from the Wing team',
-          blogSidebarCount: 'ALL',
-          blogSidebarTitle: 'Posts',
+          blogTitle: "What's up? The Wing Blog",
+          blogDescription: "The latest news and updates from the Wing team",
+          blogSidebarCount: "ALL",
+          blogSidebarTitle: "Posts",
+          postsPerPage: "ALL",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -120,29 +139,53 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [
-        { name: "keywords", content: keywords.join(", ")},
-        { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.",  name: "description" },
+        { name: "keywords", content: keywords.join(", ") },
+        {
+          content:
+            "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.",
+          name: "description",
+        },
         { content: "Wing Programming Language", property: "og:title" },
-        { content: "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png", property: "og:image" },
-        { content: "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png", property: "og:image:secure_url" },
+        {
+          content:
+            "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png",
+          property: "og:image",
+        },
+        {
+          content:
+            "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png",
+          property: "og:image:secure_url",
+        },
         { content: "Wing Programming Language", property: "twitter:title" },
-        { content: "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.", property: "twitter:description" },
-        { content: "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png", property: "twitter:image" },
-        { content: "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png", property: "twitter:image:source_url" },
+        {
+          content:
+            "Wing is a cloud-oriented programming language. Most programming languages think about computers as individual machines. In Wing, the cloud is the computer.",
+          property: "twitter:description",
+        },
+        {
+          content:
+            "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png",
+          property: "twitter:image",
+        },
+        {
+          content:
+            "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png",
+          property: "twitter:image:source_url",
+        },
         { content: "website", property: "og:type" },
-        { content: "summary_large_image", name: "twitter:card" }
+        { content: "summary_large_image", name: "twitter:card" },
       ],
       colorMode: {
         defaultMode: "dark",
       },
       algolia: {
         // The application ID provided by Algolia
-        appId: '1LUMAGAJDN',
+        appId: "1LUMAGAJDN",
 
         // Public API key: it is safe to commit it
-        apiKey: '1928419050bbd42a73be0c8548b60507',
+        apiKey: "1928419050bbd42a73be0c8548b60507",
 
-        indexName: 'winglang',
+        indexName: "winglang",
 
         // Optional: see doc section below
         contextualSearch: true,
@@ -199,26 +242,26 @@ const config = {
             className: "header-text-link",
           },
           {
-            to: 'blog',
-            label: 'Blog',
+            to: "blog",
+            label: "Blog",
             target: "_self",
-            position: 'left',
+            position: "left",
             className: "header-text-link",
           },
           {
             href: "https://www.winglang.io/contact",
-            label: 'Contact',
-            position: 'left',
+            label: "Contact",
+            position: "left",
             target: "_self",
             className: "header-text-link",
           },
           {
-            href: slackUrl,
-            "aria-label": "Slack server",
+            href: discordUrl,
+            "aria-label": "Discord server",
             label: " ",
             position: "right",
             target: "_self",
-            className: "header-slack-link",
+            className: "header-discord-link",
           },
           {
             href: `${winglangOrgUrl}/wing/`,
@@ -235,22 +278,22 @@ const config = {
       },
       footer: {
         links: [
-          { 
+          {
             title: "Documentation",
-            items:[
+            items: [
               {
                 label: "Installation",
-                to:"/docs/start-here/installation"
+                to: "/docs/start-here/installation",
               },
               {
                 label: "Getting Started",
-                to: "/docs"
+                to: "/docs",
               },
               {
                 label: "Concepts",
-                to: "/docs/concepts/inflights"
-              }
-            ]
+                to: "/docs/concepts/inflights",
+              },
+            ],
           },
           {
             title: "References",
@@ -269,36 +312,36 @@ const config = {
             title: "Community",
             items: [
               {
-                label:"GitHub",
+                label: "GitHub",
                 href: winglangOrgUrl,
               },
               {
-                label: "Slack",
-                href: slackUrl,
+                label: "Discord",
+                href: discordUrl,
               },
               {
-                label:"Contributor's Handbook",
-                to: "contributing/"
+                label: "Contributor's Handbook",
+                to: "contributing/",
               },
             ],
           },
-	        {
+          {
             title: "Terms and policies",
             items: [
               {
                 label: "Code of Conduct",
                 href: "https://github.com/winglang/wing/blob/main/CODE_OF_CONDUCT.md",
-                target: "_blank"
+                target: "_blank",
               },
               {
                 label: "MIT License",
                 href: "https://github.com/winglang/wing/blob/main/LICENSE.md",
-                target: "_blank"
+                target: "_blank",
               },
               {
                 label: "Contribution Policy",
                 href: "https://github.com/winglang/wing/blob/main/CONTRIBUTORS_TERMS_OF_SERVICE.md",
-                target: "_blank"
+                target: "_blank",
               },
             ],
           },

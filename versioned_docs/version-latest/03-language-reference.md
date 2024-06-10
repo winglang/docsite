@@ -74,28 +74,37 @@ import TOCInline from '@theme/TOCInline';
 > let q: num? = nil;          // q is an optional num
 > ```
 
+Numeric literals can be formatted and padded with extra zeroes or underscores to make them easier to read in source code.
+These don't affect the value of the number or how they are printed:
+
+> ```TS
+> let price = 0012.34;
+> let twentyThousand = 20_000;
+> let aBitMore = 20_000.000_1;
+> ```
+
 [`▲ top`][top]
 
 ---
 
 #### 1.1.2 Container Types
 
-| Name          | Extra information                     |
-| ------------- | ------------------------------------- |
-| `Set<T>`      | set type (set of unique items)        |
-| `Map<T>`      | map type (key-value with string keys) |
-| `Array<T>`    | variable size array of a certain type |
-| `MutSet<T>`   | mutable set type                      |
-| `MutMap<T>`   | mutable map type                      |
-| `MutArray<T>` | mutable array type                    |
+| Name          | Extra information                               |
+| ------------- | ----------------------------------------------- |
+| `Array<T>`    | variable size array of a certain type           |
+| `Map<T>`      | map type (key-value with string keys, keys may be any expression evaluating to a string)|
+| `Set<T>`      | set type (unordered collection of unique items) |
+| `MutArray<T>` | mutable array type                              |
+| `MutMap<T>`   | mutable map type                                |
+| `MutSet<T>`   | mutable set type                                |
 
 > ```TS
-> let z = {1, 2, 3};               // immutable set, Set<Num> is inferred
-> let zm = MutSet<num>{};          // mutable set
-> let y = {"a" => 1, "b" => 2};    // immutable map, Map<num> is inferred
-> let ym = MutMap<num>{};          // mutable map
-> let x = [1, 2, 3];               // immutable array, Array<num> is inferred
-> let xm = MutArray<num>[];        // mutable array
+> let y = [1, 2, 3];               // immutable array, Array<num> is inferred
+> let ym = MutArray<num>[1, 2, 3]; // mutable array
+> let x = {"a" => 1, "b" => 2};    // immutable map, Map<num> is inferred
+> let xm = MutMap<num>{};          // mutable map
+> let z = Set<num>[1, 2, 3];       // immutable set
+> let zm = MutSet<num>[1, 2, 3];   // mutable set
 > let w = new SampleClass();       // class instance (mutability unknown)
 > ```
 
@@ -148,7 +157,7 @@ Return type is optional for closures.
 
 Wing has a primitive data type called `Json`. This type represents an immutable untyped [JSON
 value](https://www.json.org/json-en.html), including JSON primitives (`string`, `number`,
-`boolean`), arrays (both heterogenous and homogenous) and objects (key-value maps where keys are
+`boolean`), arrays (both heterogenous and homogeneous) and objects (key-value maps where keys are
 strings and values can be any other JSON value).
 
 `Json` objects are immutable and can be referenced across inflight context.
@@ -170,7 +179,7 @@ let response = http.get("/employees");
 let employees = Array<Employee>.fromJson(response.get("items")); //NOTE: Array.fromJson is currently not implemented
 
 for e in employees {
-  log("hello, ${e.name}, your employee id is ${e.id}");
+  log("hello, {e.name}, your employee id is {e.id}");
 }
 ```
 In the above example, the `http.get` function returns a `Json` object from the server that has a
@@ -217,7 +226,7 @@ let boom: Json = jsonObj.get("boom");
 Trying to access a non-existent field will fail at runtime. For example:
 
 ```TS
-log("${jsonObj.get("boom").get("dude").get("world")}");
+log("{jsonObj.get("boom").get("dude").get("world")}");
 // ERROR: Cannot read properties of undefined (reading 'world')
 ```
 
@@ -432,9 +441,9 @@ let o = Json.tryParse("xxx") ?? Json [1,2,3];
 A `Json` value can be logged using `log()`, in which case it will be pretty-formatted:
 
 ```TS
-log("my object is: ${jsonObj}");
+log("my object is: {jsonObj}");
 // is equivalent to
-log("my object is: ${Json.stringify(jsonObj)}");
+log("my object is: {Json.stringify(jsonObj)}");
 ```
 
 This will output:
@@ -527,25 +536,63 @@ A few examples:
 
 ```TS
 let now = Datetime.utcNow();
-log("It is now ${now.month}/${now.dayOfMonth}/${now.year} at ${now.hours}:${now.min}:${now.sec})");
+log("It is now {now.month}/{now.dayOfMonth}/{now.year} at {now.hours}:{now.min}:{now.sec})");
 assert(now.timezone == 0); // UTC
 
 let t1 = DateTime.fromIso("2023-02-09T06:20:17.573Z");
-log("Timezone is GMT${d.timezone() / 60}"); // output: Timezone is GMT-2
-log("UTC: ${t1.utc.toIso())}");            // output: 2023-02-09T06:21:03.000Z
+log("Timezone is GMT{d.timezone() / 60}"); // output: Timezone is GMT-2
+log("UTC: {t1.utc.toIso())}");            // output: 2023-02-09T06:21:03.000Z
 ```
 
+####  1.1.7 Indexing
 
-### 1.2 Utility Functions
+The `obj[index]` syntax can be used to index into arrays and objects. For example:
 
-| Name     | Extra information                                     |
-| -------- | ----------------------------------------------------- |
-| `log`    | logs str                                              |
-| `assert` | checks a condition and _throws_ if evaluated to false |
+```TS
+let arr = MutArray<num>[3, 5];
+assert(arr[0] == 3);
+assert(arr[1] == 5);
+assert(arr[-1] == 5);
+assert(arr[-2] == 3);
+
+arr[42]; // throws an index out of bounds error
+
+arr[0] = 42;
+arr[1] += 3.5;
+```
+
+Negative indices are supported and are counted from the end of the array.
+
+The following is a list of supported indexable types:
+
+* `Array` and `MutArray` - accepts a `num` index
+* `Map` and `MutMap` - accepts a `str` index
+* `Json` and `MutJson` - accepts `num` and `str` index values
+* `str` - accepts a `num` index
+
+[`▲ top`][top]
+
+### 1.2 Intrinsic Functions
+
+Intrinsic functions are a special call-like expressions built into the Wing compiler with
+the following properties (given an example intrinsic `@x`):
+- `x` is not automatically a symbol that can be referenced
+- The arguments/return types must be representable Wing types, but can be more dynamic than user-defined functions
+  - For example, the return type may change between inflight and preflight
+
+| Name            | Extra information                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `@log()`        | logs str                                                                                                                  |
+| `@assert()`     | checks a condition and _throws_ if evaluated to false                                                                     |
+| `@dirname`      | current source directory                                                                                                  |
+| `@unsafeCast()` | cast a value into a different type                                                                                        |
+| `@nodeof()`     | obtain the [tree node](./02-concepts/02-application-tree.md) of a preflight object                                        |
+| `@lift()`       | explicitly qualify a [lift](./02-concepts/01-preflight-and-inflight.md#explicit-lift-qualification) of a preflight object |
 
 > ```TS
-> log("Hello ${name}");
-> assert(x > 0);
+> @log("Hello {name}");
+> @assert(x > 0);
+> @assert(x > 0, "x should be positive");
 > ```
 
 [`▲ top`][top]
@@ -629,7 +676,7 @@ let handler2 = inflight() => {
 Bridge between preflight and inflight is crossed with the help of immutable data
 structures, "structs" (user definable and `Struct`), and the capture mechanism.
 
-Preflight class methods and initializers can receive an inflight function as an argument. This
+Preflight class methods and constructors can receive an inflight function as an argument. This
 enables preflight classes to define code that will be executed on a cloud compute platform such as
 lambda functions, docker, virtual machines etc.
 
@@ -676,7 +723,7 @@ Inner classes or closures can access private members of their containing class.
 class Foo {
   private_field: num; // This is private by default
   
-  init() {this.private_field = 1;}
+  new() {this.private_field = 1;}
   
   method() {
     log(this.private_field); // We can access `private_field` since we're in Foo
@@ -710,7 +757,7 @@ interface FooInterface {
 }
 
 class Foo impl FooInterface {
-  pub public_method() {} // This can be accessed from outside of the class implemenetation
+  pub public_method() {} // This can be accessed from outside of the class implementation
   pub interface_method() {} // This must be explicitly defined as `pub` since it's an interface implementation
 }
 let f = new Foo();
@@ -721,15 +768,15 @@ Access modifier rules apply for both fields and methods of a class.
 Struct fields are always public and do not have access modifiers.
 
 #### 1.5.1 Method overriding and access modifiers
-Private methods cannot be overriden. 
+Private methods cannot be overridden. 
 Overriding a method of a parent class requires the parent class's method to be either `pub` or `protected`.
 The overriding method can have either the same access modifier as the original method or a more permissive one.
-You cannot "decrease" the access level down the inheritence hierarchy, only "increase" it. 
+You cannot "decrease" the access level down the inheritance hierarchy, only "increase" it. 
 In practice this means:
-* `protected` methods can be overidden by either a `protected` or a `pub` method.
-* `pub` methods can be overriden by a `pub` method.
+* `protected` methods can be overridden by either a `protected` or a `pub` method.
+* `pub` methods can be overridden by a `pub` method.
 
-Note that method overriding only applies to instance methods. `static` methods are not treated as part of the inheritence hierarcy.
+Note that method overriding only applies to instance methods. `static` methods are not treated as part of the inheritance hierarchy.
 
 [`▲ top`][top]
 
@@ -797,11 +844,17 @@ Here's a quick summary of how optionality works in Wing:
   otherwise.
 * `if let y = x { } else { }` is a special control flow statement which binds `y` inside the first
   block only if `x` has a value. Otherwise, the `else` block will be executed.
+* The `x!` notation will return the value in `x` if there is one, otherwise it will throw an error.
 * The `x?.y?.z` notation can be used to access fields only if they have a value. The type of this
   expression is `Z?` (an optional based on the type of the last component).
 * The `x ?? y` notation will return the value in `x` if there is one, `y` otherwise.
 * The keyword `nil` can be used in assignment scenarios to indicate that an optional doesn't have a
   value. It cannot be used to test if an optional has a value or not.
+* A type annotation in Wing can always be enclosed in parentheses: `num` and `(num)` are the same type.
+  This is useful when you want to denote an optional function type. For example `((str):num)?` means
+  an **optional function** receiving a `str` and returning a `num`, while the similarly written 
+  `(str):num?` means a function receiving a `str` and returning an **optional `num`**.
+
 
 #### 1.7.1 Declaration
 
@@ -853,7 +906,7 @@ class Foo {
   myOpt: num?;
   var myVar: str?;
 
-  init(opt: num?) {
+  new(opt: num?) {
     this.myOpt = opt;
     this.myVar = nil; // everything must be initialized, so you can use `nil` to indicate that there is no value
   }
@@ -906,6 +959,20 @@ f(myRequired: "hello");
 f(myOptional: 12, myRequired: "dang");
 ```
 
+A method implementation can omit any number of arguments from the end of an argument list when implementing an interface method. This is useful when you want to implement an interface method but don't need all of its arguments.
+
+```TS
+interface MyInterface {
+  myMethod(a: num, b: str, c: bool): void;
+}
+
+class MyClass impl MyInterface {
+  myMethod(a: num, b: str): void {
+    // This is a valid implementation of MyInterface.myMethod
+  }
+}
+```
+
 ##### 1.7.1.5 Function return types
 
 If a function returns an optional type, use the `return nil;` statement to indicate that the value
@@ -928,7 +995,7 @@ let tryParseName = (fullName: str): Name? => {
 
 // since result is optional, it needs to be unwrapped in order to be used
 if let name = tryParseName("Neo Matrix") {
-  log("Hello, ${name.first}!");
+  log("Hello, {name.first}!");
 }
 ```
 
@@ -970,7 +1037,7 @@ optional is defined and *unwrap* it into a non-optional variable defined inside 
 
 ```TS
 if let address = myPerson.address {
-  log("${address.length}");
+  log("{address.length}");
   log(address); // type of address is `str`
 }
 ```
@@ -997,7 +1064,7 @@ which must be unwrapped in order to be used.
 let ipAddress: str? = options.networking?.ipAddress;
 
 if let ip = ipAddress {
-  log("the ip address is defined and it is: ${ip}");
+  log("the ip address is defined and it is: {ip}");
 }
 ```
 
@@ -1145,14 +1212,13 @@ The following features are not yet implemented, but we are planning to add them 
 
 ### 1.14 Roadmap
 
-* Module type visibility (exports/`pub` types) is not implemented yet - see https://github.com/winglang/wing/issues/130 to track.
 * `internal` access modifier is not yet implemented - see https://github.com/winglang/wing/issues/4156 to track.
 
 ## 2. Statements
 
 ### 2.1 bring
 
-**bring** statement can be used to import and reuse code from
+**bring** statement can be used to import and reuse code from Wing and
 other JSII supported languages. The statement is detailed in its own section in
 this document: [Module System](#4-module-system).
 
@@ -1170,7 +1236,7 @@ this document: [Module System](#4-module-system).
 >   if i > 5 {
 >     break;
 >   }
->   log("${i}");
+>   log("{i}");
 > }
 > ```
 
@@ -1188,7 +1254,7 @@ includes for and while loops currently.
 >   if i > 5 {
 >     continue;
 >   }
->   log("${i}");
+>   log("{i}");
 > }
 > ```
 
@@ -1244,15 +1310,15 @@ The loop invariant in for loops is implicitly re-assignable (`var`).
 > ```TS
 > // Wing program:
 > let arr = [1, 2, 3];
-> let set = {1, 2, 3};
+> let items = Set<num>[1, 2, 3];
 > for item in arr {
->   log("${item}");
+>   log("{item}");
 > }
-> for item in set {
->   log("${item}");
+> for item in items {
+>   log("{item}");
 > }
 > for item in 0..100 {
->   log("${item}"); // prints 0 to 99
+>   log("{item}"); // prints 0 to 99
 > }
 > ```
 
@@ -1349,8 +1415,8 @@ scope in which it is declared. This implies that, if a class is declared at the 
 program's entrypoint), it will be a *preflight class*. If a class is declared within an inflight
 scope, it will be implicitly an inflight class.
 
-A method that has the name **init** is considered to be a class
-constructor (or initializer).
+A method that has the name **new** is considered to be a class
+constructor.
 
 ```TS
 inflight class Name extends Base impl IMyInterface1, IMyInterface2 {
@@ -1358,7 +1424,7 @@ inflight class Name extends Base impl IMyInterface1, IMyInterface2 {
   _field1: num;
   _field2: str;
   
-  init() {
+  new() {
     // constructor implementation
     // order is up to user
     this._field1 = 1;
@@ -1371,7 +1437,7 @@ inflight class Name extends Base impl IMyInterface1, IMyInterface2 {
   publicMethod(arg:type, arg:type, ...) { /* impl */ }
 }
 ```
-If no `init()` is defined, the class will have a default constructor that does nothing.
+If no `new()` is defined, the class will have a default constructor that does nothing.
 
 Implicit default field initialization does not exist in Wing. All member fields must be
 initialized in the constructor. Absent initialization is a compile error. All
@@ -1380,18 +1446,18 @@ field types, including the optional types must be initialized.
 ```TS
 class Foo {
   x: num;
-  init() { this.x = 1; }
+  new() { this.x = 1; }
 }
 class Bar {
   y: num;
   z: Foo;
-  init() {
+  new() {
     this.y = 1;
     this.z = new Foo();
     this.log(); // OK to call here
   }
   pub log() {
-    log("${this.y}");
+    log("{this.y}");
   }
 }
 let a = new Bar();
@@ -1410,11 +1476,11 @@ their "strict" mode.
 ```TS
 class Foo {
   x: num;
-  init() { this.x = 0; }
+  new() { this.x = 0; }
   pub method() { }
 }
 class Boo extends Foo {
-  init() {
+  new() {
     // this.x = 10; // compile error
     super();
     this.x = 10; // OK
@@ -1423,16 +1489,20 @@ class Boo extends Foo {
 ```
 
 Classes can inherit and extend other classes using the `extends` keyword.  
-Classes can implement interfaces iff the interfaces do not contain `inflight`.
+Classes can implement multiple interfaces using the `impl` keyword. 
+Inflight classes may only implement inflight interfaces.
 
 ```TS
-class Foo {
+interface IFoo {
+  method(): void;
+}
+class Foo impl IFoo {
   x: num;
-  init() { this.x = 0; }
+  new() { this.x = 0; }
   pub method() { }
 }
 class Boo extends Foo {
-  init() { super(); this.x = 10; }
+  new() { super(); this.x = 10; }
 }
 
 ```
@@ -1483,7 +1553,7 @@ class Foo {
   inflight field8: bool;
 
   // preflight constructor
-  init(field1: num, field2: str, field3: bool, field4: num, field5: str) { 
+  new(field1: num, field2: str, field3: bool, field4: num, field5: str) { 
     /* initialize preflight fields */
     this.field1 = field1;
     this.field2 = field2;
@@ -1493,7 +1563,7 @@ class Foo {
   } 
 
   // inflight constructor
-  inflight init() { 
+  inflight new() { 
     /* initialize inflight fields */
     this.field6 = 123;
     this.field7 = "hello";
@@ -1559,7 +1629,12 @@ of methods with different phases is not allowed as well.
 
 Interfaces represent a contract that a class must fulfill.
 Interfaces are defined with the `interface` keyword.
-Currently, preflight interfaces are allowed, while inflight interfaces are not supported yet (see https://github.com/winglang/wing/issues/1961).
+Interfaces may be either preflight interfaces or inflight interfaces.
+Preflight interfaces are defined in preflight scope and can contain both preflight and inflight methods.
+Only preflight classes may implement preflight interfaces.
+Inflight interfaces are either defined with the `inflight` modifier in preflight scope or simply defined in inflight scope.
+All methods of inflight interfaces are implicitly inflight (no need to use the `inflight` keyword).
+Since both preflight and inflight classes can have inflight methods defined inside them, they are both capable of implementing inflight interfaces.
 `impl` keyword is used to implement an interface or multiple interfaces that are
 separated with commas.
 
@@ -1576,7 +1651,7 @@ Interface fields are not supported.
 >   inflight method3(): void;
 > }
 >
-> interface IMyInterface2 {
+> inflight interface IMyInterface2 {
 >   method2(): str; 
 > }
 >
@@ -1584,15 +1659,15 @@ Interface fields are not supported.
 >   field1: num;
 >   field2: str;
 >
->   init(x: num) {
+>   new(x: num) {
 >     this.field1 = x;
 >     this.field2 = "sample";
 >   }
 >   method1(x: num): str {
->     return "sample: ${x}";
+>     return "sample: {x}";
 >   }
 >   inflight method3(): void { }
->   method2(): str {
+>   inflight method2(): str {
 >     return this.field2;
 >   }
 > }
@@ -1641,14 +1716,14 @@ However, it is possible to create anonymous closures and assign to variables
 
 > ```TS
 > // preflight closure:
-> let f1 = (a: num, b: num) => { log("${a + b}"); };
+> let f1 = (a: num, b: num) => { log("{a + b}"); };
 > // inflight closure:
-> let f2 = inflight (a: num, b: num) => { log("${a + b}"); };
+> let f2 = inflight (a: num, b: num) => { log("{a + b}"); };
 > // OR:
 > // preflight closure:
-> let f4 = (a: num, b: num): void => { log("${a + b}"); };
+> let f4 = (a: num, b: num): void => { log("{a + b}"); };
 > // inflight closure:
-> let f5 = inflight (a: num, b: num): void => { log("${a + b}"); };
+> let f5 = inflight (a: num, b: num): void => { log("{a + b}"); };
 > ```
 
 [`▲ top`][top]
@@ -1675,7 +1750,7 @@ struct MyStruct {
   field2: num;
 }
 let f = (x: num, y: num, z: MyStruct) => {
-  log("${x + y + z.field1 + z.field2}");
+  log("{x + y + z.field1 + z.field2}");
 };
 // last arguments are expanded into their struct
 f(1, 2, field1: 3, field2: 4);
@@ -1689,7 +1764,7 @@ Inside the function, these arguments can be accessed using the designated variab
 just as you would with a regular array instance.
 ```TS
 let f = (x: num, ...args: Array<num>) => {
-  log("${x + args.length}");
+  log("{x + args.length}");
 };
 // last arguments are expanded into their array
 f(4, 8, 15, 16, 23, 42); // logs 9
@@ -1709,7 +1784,7 @@ Arrays are similar to dynamically sized arrays or vectors in other languages.
 > let arr1 = [1, 2, 3];
 > let arr2 = ["a", "b", "c"];
 > let arr3 = MutArray<str>["a1", "b2", "c3"];
-> let l = arr1.length + arr2.length + arr3.length + arr1.at(0);
+> let l = arr1.length + arr2.length + arr3.length + arr1[0];
 > ```
 
 [`▲ top`][top]
@@ -1776,12 +1851,20 @@ code. Comments before the first bring expression are valid.
 
 ### 4.1 Imports
 
-To import a JSII package under a named import, you may use the following
+To import a built-in module or trusted Wing library, you can use the following syntax:
+
+```TS
+bring util; // import types from the built-in "util" module
+bring cloud; // import types from the built-in "cloud" module
+bring containers; // import types from the `@winglibs/containers` trusted library
+```
+
+To use a trusted library, you must install the relevant npm package with `npm i @winglibs/containers`.
+
+To import a Wing or JSII library under a named import, you may use the following
 syntax:
 
 ```TS
-bring util; // from util bring * as util;
-bring cloud; // from cloud bring * as cloud;
 bring "cdktf" as cdktf; // from "cdktf" bring * as cdktf;
 ```
 
@@ -1805,7 +1888,7 @@ new myModule.submodule.MyClass();
 
 The following features are not yet implemented, but we are planning to add them in the future:
 
-* Specify types as public using `pub` - see https://github.com/winglang/wing/issues/4294 to track.
+* Install trusted libraries using `wing install containers` - see https://github.com/winglang/wing/issues/1037 to track.
 * Specify types as public within the current project or library, and private outside, using `internal` - see https://github.com/winglang/wing/issues/4156 to track.
 
 [`▲ top`][top]
@@ -1837,9 +1920,21 @@ let bucket = new awscdk.aws_s3.Bucket(
 );
 ```
 
+### 5.1.2 Type System
+
+Mapping JSII types to Wing types:
+
+| **JSII Type** |  **Wing Type** |
+|---------------|--------------------|
+| [class](https://aws.github.io/jsii/user-guides/language-support/assembly/#classes) | A [Wing class](#32-classes).<br/> The [phase](#13-phase-modifiers) of the class will be `preflight` if the imported class is a [construct](https://github.com/aws/constructs) (derived from `constructs.Construct`). Otherwise the class will be phase independent.<br/> By convention construct constructors have a `scope` and `id` as their first parameters. These will be used by Wing to define the default scope and id for new instances of this [preflight class](#33-preflight-classes) or explicit scope and id using the `in` and `as` keywords. |
+| [interface](https://aws.github.io/jsii/user-guides/language-support/assembly/#interfaces) | A [Wing interface](#34-interfaces). All imported interfaces are `preflight` interfaces.<br/> JSII library authors may annotate their interface with a docstring tag like `@inflight IMyClient` to indicate a second interface that'll be used to import inflight methods **into** this Wing interface. |
+| [struct (a.k.a. data-type)](https://aws.github.io/jsii/user-guides/language-support/assembly/#structs-aka-data-types) | A [Wing struct](#31-structs). Always phase independent. |
+| [enum](https://aws.github.io/jsii/user-guides/language-support/assembly/#enums) | A [Wing enum](#38-enumeration). |
+
 ## 5.2 JavaScript
 
-The `extern "<commonjs module path or name>"` modifier can be used on method declarations in classes to indicate that a method is backed by an implementation imported from a JavaScript module. The module can either be a relative path or a name and will be loaded via [require()](https://nodejs.org/api/modules.html#requireid).
+The `extern "<javascript module path>"` modifier can be used on method declarations in classes to indicate that a method is backed by an implementation imported from a JavaScript module. The module must be a relative path and will be loaded via [require()](https://nodejs.org/api/modules.html#requireid).
+This module can be either CJS or ESM and may be written in JavaScript or TypeScript.
 
 In the following example, the static inflight method `makeId` is implemented
 in `helper.js`:
@@ -1858,10 +1953,7 @@ class TaskList {
   }
 
   // Load js helper file
-  extern "./helpers.js" static inflight makeId(): str;
-
-  // Alternatively, you can use a module name
-  extern "uuid" static inflight v4(): str;
+  pub extern "./helpers.js" static inflight makeId(): str;
 } 
 
 // helpers.js
@@ -1877,13 +1969,7 @@ matching name (without any case conversion).
 
 Extern methods do not support access to class's members through `this`, so they must be declared `static`.
 
-### 5.2.1 TypeScript
-
-It is possible to use TypeScript to write helpers, but at the moment this is not
-directly supported by Wing. This means that you will need to setup the TypeScript toolchain
-to compile your code to JavaScript and then use `extern` against the JavaScript file.
-
-### 5.2.2 Type model
+### 5.2.1 Type model
 
 The table below shows the mapping between Wing types and JavaScript values, shown with TypeScript types.
 When calling **extern** function, the parameter and return types are **assumed** to be satisfied by the called function.
@@ -1958,11 +2044,11 @@ assert(Array<num>[1, 2, 3] == Array<num>[1, 2, 3]);
 assert(Array<num>[1, 2, 3] != Array<num>[3, 2, 1]);
 assert(MutArray<num>[1, 2, 3] == Array<num>[1, 2, 3]);
 
-assert(Map<str>{"a": "1", "b": "2"} == Map<str>{"a": "1", "b": "2"});
-assert(Map<str>{"a": "1", "b": "2"} == Map<str>{"b": "2", "a": "1"});
+assert(Map<str>{"a" => "1", "b" => "2"} == Map<str>{"a" => "1", "b" => "2"});
+assert(Map<str>{"a" => "1", "b" => "2"} == Map<str>{"b" => "2", "a" => "1"});
 
-assert(Set<num>{1, 2, 3} == Set<num>{1, 2, 3});
-assert(Set<num>{1, 2, 3} == Set<num>{3, 2, 1});
+assert(Set<num>[1, 2, 3] == Set<num>[1, 2, 3]);
+assert(Set<num>[1, 2, 3] == Set<num>[3, 2, 1]);
 ```
 
 > *Note*: Collection type equality checking is not fully implemented. See [#2867](https://github.com/winglang/wing/issues/2867), [#2940](https://github.com/winglang/wing/issues/2940).
@@ -2015,7 +2101,7 @@ Two class instances or interface-satisfying objects are equal if they are the sa
 ```js
 class Shop {
   hats: num;
-  init(hats: num) {
+  new(hats: num) {
     this.hats = hats;
   }
 }
@@ -2049,8 +2135,6 @@ assert(Json [1, 2, 3] == Json [1, 2, 3]);
 assert(Json { "foo": 1, "bar": 2 } == Json { "foo": 1, "bar": 2 });
 ```
 
-> *Note*: `Json` equality is not fully implemented. See [#2938](https://github.com/winglang/wing/issues/2938), [#2937](https://github.com/winglang/wing/issues/2937).
-
 #### 6.1.7 Structs
 
 Two structs are equal if they have the same type and all of their fields are equal (based on rules of equality of their type).
@@ -2079,7 +2163,7 @@ assert(cat1 != dog); // compile time error (can't compare different types)
 
 ### 6.2 Strings
 
-String reference doc is available [here](https://www.winglang.io/docs/standard-library/std/api-reference#string-).
+String reference doc is available [here](https://www.winglang.io/docs/standard-library/std/string).
 Type of string is UTF-16 internally.  
 All string declaration variants are multi-line.  
 
@@ -2090,14 +2174,14 @@ All string declaration variants are multi-line.
 #### 6.2.1 Normal strings "..."
 
 The string inside the double quotes is processed, and all notations of form
-`${<expression>}` are substituted from their respective scopes. The behavior is
+`{<expression>}` are substituted from their respective scopes. The behavior is
 similar to `` `text ${sub.prop}` `` notation in JavaScript.  
 Processing unicode escape sequences happens in these strings.  
-`"` can be escaped with backslash `\` inside string substitutions.
+`"` and `{` can be escaped with backslash `\` inside string substitutions.
 
 > ```TS
 > let name = "World";
-> let s = "Hello, ${name}!";
+> let s = "Hello, {name}!";
 > let l = s.length;
 > ```
 

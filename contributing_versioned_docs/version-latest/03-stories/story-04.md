@@ -203,7 +203,7 @@ guidelines for contributing to the project.
 
 ## Community
 
-We all hang out at the [Wing Slack](https://t.winglang.io/slack). Come as you are, say hi, ask
+We all hang out at the [Wing Discord](https://t.winglang.io/discord). Come as you are, say hi, ask
 questions, help friends, geek out!
 
 ## License
@@ -224,7 +224,7 @@ As such, our focus for this sprint is:
   - The [language spec](https://github.com/monadahq/winglang-spec) - should go under `docs/winglang-spec.md`
   - The [language requirements RFC](https://www.winglang.io/contributing/rfcs/2022-05-28-winglang-reqs) - 
     should go under `rfcs/winglang-reqs.md`
-  - All issues should also be transfered into this repository.
+  - All issues should also be transferred into this repository.
 - Updating the main README file to match this RFC as close as possible.
 - Update CONTRIBUTING.md to provide step-by-step instructions on how to setup a development environment, compile the toolchain, etc.
 - Set up the workflows required for **continuous releases** - every commit to `main` should result in a full 

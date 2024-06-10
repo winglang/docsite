@@ -1,0 +1,55 @@
+/**
+ * @license
+ *
+ * Font Family: General Sans
+ * Designed by: Frode Helland
+ * URL: https://www.fontshare.com/fonts/general-sans
+ * © 2023 Indian Type Foundry
+ *
+ * Font Styles:
+ * TASA Orbiter Display SemiBold
+ * TASA Orbiter Text Bold
+ * TASA Orbiter Text Medium
+ * TASA Orbiter Text Regular
+ * TASA Orbiter Text SemiBold
+*/
+
+@font-face {
+  font-family: "TASAOrbiterDisplay-SemiBold";
+  src: url("./TASAOrbiterDisplay-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TASAOrbiterText-Bold";
+  src: url("./TASAOrbiterText-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TASAOrbiterText-Semibold";
+  src: url("./TASAOrbiterDisplay-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TASAOrbiterText-Medium";
+  src: url("./TASAOrbiterText-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TASAOrbiterText-Regular";
+  src: url("./TASAOrbiterText-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}

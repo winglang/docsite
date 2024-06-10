@@ -4,7 +4,7 @@ id: ci-cd
 keywords: [CICD, Continuous Integration, Continuous Deployment, Deployment, GitHub Actions]
 ---
 
-Wing supports compilation to various targets including `tf-aws`, `tf-azure`, `tf-gcp`, and `awscdk`. After compilation, Wing does not impose a specific deployment method for your infrastructure. Its Terraform target compatibility ensures that nearly all existing services can be utilized for deployment, offering considerable flexibility to choose the approach best aligned with your organizational needs or preferences.
+Wing supports compilation to various targets including `tf-aws`, `tf-azure`, and `tf-gcp`. After compilation, Wing does not impose a specific deployment method for your infrastructure. Its Terraform target compatibility ensures that nearly all existing services can be utilized for deployment, offering considerable flexibility to choose the approach best aligned with your organizational needs or preferences.
 
 This guide will detail the complete deployment lifecycle of a Wing application using GitHub Actions and the `tf-aws` target.
 
@@ -65,9 +65,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           role-session-name: gh-actions-winglang # makes it easy to identify, e.g. in AWS Cloudtrail
@@ -101,9 +101,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           role-session-name: gh-actions-winglang
@@ -149,7 +149,7 @@ exports.postSynth = function(config) {
 This workflow:
 
 - Checks out the code.
-- Installs Node.js v18.
+- Installs Node.js v20.
 - Installs the winglang CLI with the latest version.
 - Installs npm dependencies (this step can be skipped if not necessary).
 - Retrieves short-lived credentials for AWS via OIDC.
@@ -192,7 +192,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Node.js v18
         uses: actions/setup-node@v3
         with:
@@ -204,7 +204,7 @@ jobs:
       - name: Compile
         run: wing compile -t tf-aws --plugins=plugin.s3-backend.js main.w
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           role-session-name: gh-actions-winglang-website-proxy

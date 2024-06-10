@@ -43,7 +43,7 @@ We have an automated crawler (by Algolia) every day at 15:00 UTC that indexes th
 Every merge to the `main` branch triggers a new crawler indexing.
 
 If for some reason there is a need to trigger the crawler manually, follow these steps:
-1. update the local .env file with the proper values (see in 1Password "Algolia Crawler")
+1. update the local .env file with the proper values (see in 1Password "Algolia Crawler").
 2. run the following command:
 ```
 npm run reindex
