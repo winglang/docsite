@@ -40,8 +40,6 @@ In this tutorial, we'll use TypeScript. So, don't worry—your JavaScript and Re
 
 ![Wing Landing Page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/u366v255drbwqmcoagrz.png)
 
-{% cta https://wingla.ng/github %} Check out Wing ⭐️ {% endcta %}
-
 
 ---
 
@@ -511,9 +509,9 @@ Finally, save the OpenAI API key as a secret by running this command in your ter
 
 ![Wing Secrets](https://www.winglang.io/assets/images/qa-bot-wing-secrets-883db5e81515894ae280d77b7f72bb25.gif)
 
-Congratulations! You've successfully completed the project for this tutorial.
+Great, now our secrets are stored and we can interact with our application. Let's take a look at it in action!
 
-Here is a brief demo of the application:
+Here is a brief demo:
 
 
 
