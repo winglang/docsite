@@ -12,15 +12,15 @@ image: ../img/qa-bot-cover-art.png
 
 ## TL;DR
 
-In this tutorial, we build an AI-powered Q&A bot for your website documentation. 
+In this tutorial, we will build an AI-powered Q&A bot for your website documentation. 
 
-- 🌐 Create a user-friendly Next.js app to accept questions and URLs.
+- 🌐 Create a user-friendly Next.js app to accept questions and URLs
 
 - 🔧 Set up a Wing backend to handle all the requests
 
-- 💡 Incorporate @langchain for AI-driven answers by scraping and analyzing documentation using RAG
+- 💡 Incorporate Langchain for AI-driven answers by scraping and analyzing documentation using RAG
 
-- 🔄 Complete connection between frontend input and AI-processed responses.
+- 🔄 Complete the connection between the frontend input and AI-processed responses.
 
 <div style={{ textAlign: "center" }}>
 <img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ykw5f2sos4fdhj8akowt.gif"/>
@@ -43,7 +43,7 @@ In this tutorial, we'll use TypeScript. So, don't worry—your JavaScript and Re
 
 ---
 
-## Building the front end with Next.js
+## Building the frontend with Next.js
 
 Here, you’ll create a simple form that accepts the documentation URL and the user’s question and then returns a response based on the data available on the website.
 
@@ -132,7 +132,7 @@ export default function Home() {
 }
 ```
 
-The code snippet above displays a form that accepts the user’s question and the documentation URL and logs them to the console for now.
+The code snippet above displays a form that accepts the user’s question and the documentation URL, and logs them to the console for now.
 
 
 
@@ -144,9 +144,9 @@ Perfect! 🎉You’ve completed the application's user interface. Next, let’s 
 
 ___
 
-## How to set up Winglang on your computer
+## How to set up Wing on your computer
 
-Winglang provides a CLI that enables you to perform various Wing actions within your projects. 
+Wing provides a CLI that enables you to perform various actions within your projects. 
 
 It also provides [VSCode](https://marketplace.visualstudio.com/items?itemName=Monada.vscode-wing) and [IntelliJ](https://plugins.jetbrains.com/plugin/22353-wing) extensions that enhance the developer experience with features like syntax highlighting, compiler diagnostics, code completion and snippets, and many others.
 
@@ -205,7 +205,7 @@ wing it
 ![Wing TS minimul console](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z1ejobkm0dq5akhut732.png)
 
 
-You've successfully installed Winglang on your computer.
+You've successfully installed Wing on your computer.
 
 ---
 
@@ -251,7 +251,7 @@ main((root, test) => {
 });
 ```
 
-The code snippet above creates an API endpoint (`/test`) that accepts GET requests and returns a `Hello world` text. The `main` function also connects to the Next.js project and adds the API url as an environment variable.
+The code snippet above creates an API endpoint (`/test`) that accepts GET requests and returns a `Hello world` text. The `main` function also connects to the Next.js project and adds the `api_url` as an environment variable.
 
 The API URL contained in the environment variable enables us to send requests to the Wing API route. Now, how do we retrieve the API URL within the Next.js app and make these requests?
 
