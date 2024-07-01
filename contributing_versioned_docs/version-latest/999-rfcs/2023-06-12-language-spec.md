@@ -89,7 +89,8 @@ Almost all types can be implicitly resolved by the compiler except for "any".
 > let q: num? = nil;          // q is an optional num
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const x: number = 1;
@@ -130,7 +131,8 @@ Almost all types can be implicitly resolved by the compiler except for "any".
 > let w = new SampleClass();       // class instance (mutability unknown)
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const z: Set<number> = Object.freeze(new Set([1, 2, 3]));
@@ -679,7 +681,8 @@ communicating errors to the user.
 > assert(x > 0, x < 10);
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > console.log(23, "Hello", true, Object.freeze(new Map([["a", 1], ["b", 2]])));
@@ -1191,7 +1194,8 @@ type is inferred iff a default value is provided.
 > let i2: num? = i;
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const i: number = 5;
@@ -1235,7 +1239,8 @@ expected from a call and it is not being caught.
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > try {
@@ -1304,7 +1309,8 @@ AWS CDK or `TerraformApp` in case of CDK for Terraform target.
 > let b = MyResource() be "my-resource";
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > (new class extends cdk.Stack {
@@ -1369,7 +1375,8 @@ while loops currently.
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > for (let i = 1; i < 10; i++) {
@@ -1400,7 +1407,8 @@ includes for and while loops currently.
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > for (let i = 1; i < 10; i++) {
@@ -1430,7 +1438,8 @@ includes for and while loops currently.
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > class MyClass {
@@ -1473,7 +1482,8 @@ Awaiting non promises in Wing is a no-op just like in JavaScript.
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > class MyClass {
@@ -1513,7 +1523,8 @@ The **if** statement is optionally followed by **elif** and **else**.
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const x: number = 1;
@@ -1554,7 +1565,8 @@ The loop invariant in for loops is implicitly re-assignable (`var`).
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const arr: number[] = Object.freeze([1, 2, 3]);
@@ -1594,7 +1606,8 @@ The loop invariant in for loops is implicitly re-assignable (`var`).
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > while (callSomeFunction()) {
@@ -1647,7 +1660,8 @@ Structs can inherit from multiple other structs.
 > };
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > interface MyDataModel1 {
@@ -1959,7 +1973,8 @@ Interface fields are not supported.
 > };
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > interface IMyInterface1 {
@@ -2012,7 +2027,8 @@ Type annotation is optional if a default value is given.
 > let s: str = "hello";
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const n: number = 10;
@@ -2061,7 +2077,8 @@ All `inflight` functions implicitly wrap their return type in `Promise<T>`.
 > }
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const schema = async (): Promise<Struct> => {
@@ -2138,7 +2155,8 @@ Arrays are similar to dynamically sized arrays or vectors in other languages.
 > let l = arr1.len + arr2.len + arr3.len + arr1[0];
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const arr1: number[] = Object.freeze([1, 2, 3]);
@@ -2172,7 +2190,8 @@ Naming convention for enums is to use "TitleCase" for name and ALL_CAPS for memb
 > let y = x; // type is MyFoo
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > enum SomeEnum { ONE, TWO, THREE };
@@ -2264,7 +2283,8 @@ class Rect {
 }
 ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 ```TS
 interface Vec2 { x: number; y: number; }
@@ -2483,7 +2503,8 @@ Processing unicode escape sequences happens in these strings.
 > let l = s.len;
 > ```
 
-<details><summary>Equivalent TypeScript Code</summary>
+<details>
+<summary>Equivalent TypeScript Code</summary>
 
 > ```TS
 > const name = "World";
@@ -2595,7 +2616,7 @@ Ternary or conditional operators are not supported.
 | -x                   | Unary minus                                       |
 | \*, /, \\, %         | Multiplication, Division, Floor division, Modulus |
 | +, -                 | Addition, Subtraction                             |
-| ==, !=, >, >=, <, <= | Comparisons, Identity, operators                  |
+| ==, !=, >, >=, \<, \<= | Comparisons, Identity, operators                  |
 | !                    | Logical NOT                                       |
 | &&                   | Logical AND                                       |
 | \|\|                 | Logical OR                                        |
@@ -2789,14 +2810,14 @@ queue.setConsumer(filter);
   * Uri B. ([@staycoolcall911](https://github.com/staycoolcall911))
   * Yoav S. ([@yoav-steinberg](https://github.com/yoav-steinberg))  
 
-Inspiration:
+<!-- Inspiration:
   
 - <https://github.com/WheretIB/nullc>
 - <https://github.com/chaos-lang/chaos>
 - <https://github.com/BlazifyOrg/blazex>
 - <https://github.com/YorickPeterse/inko>
 - <https://github.com/thesephist/ink>
-- <https://github.com/vlang/v>
+- <https://github.com/vlang/v> -->
 
 [top]: #0-preface
 
