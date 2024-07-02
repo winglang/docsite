@@ -9,7 +9,7 @@ keywords: [Inflights, Inflight functions, Preflight, Preflight code]
 
 <div style={{ textAlign: "center" }}>
   <img
-    src={require('./preflight-inflight-visual.png').default}
+    src="/img/preflight-inflight-visual.png"
     width="500"
   />
 </div>
