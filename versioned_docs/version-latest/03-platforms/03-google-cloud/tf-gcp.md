@@ -1,7 +1,7 @@
 ---
 title: Terraform/GCP
 id: tf-gcp
-sidebar_label: tf-gcp
+sidebar_label: Terraform (tf-gcp)
 description: Terraform/GCP platform
 keywords: [Wing reference, Wing language, language, Wing language spec, Wing programming language, cli, terraform, tf-gcp, gcp, google cloud platform, platform]
 ---

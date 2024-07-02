@@ -83,6 +83,90 @@ const config = {
             to: "/docs/",
             from: ["/docs/start-here/installation"],
           },
+          {
+            to: "/api/cli/",
+            from: ["/docs/tools/cli"],
+          },
+          {
+            to: "/api/language/variable-declaration",
+            from: ["/docs/examples/variable-declaration"],
+          },
+          {
+            to: "/api/language/primitives",
+            from: ["/docs/examples/primitives"],
+          },
+          {
+            to: "/api/language/functions-example",
+            from: ["/docs/examples/functions-example"],
+          },
+          {
+            to: "/api/language/flow-control",
+            from: ["/docs/examples/flow-control"],
+          },
+          {
+            to: "/api/language/optionality",
+            from: ["/docs/examples/optionality"],
+          },
+          {
+            to: "/api/language/json",
+            from: ["/docs/examples/json"],
+          },
+          {
+            to: "/api/language/structs",
+            from: ["/docs/examples/structs"],
+          },
+          {
+            to: "/api/language/classes",
+            from: ["/docs/examples/classes"],
+          },
+          {
+            to: "/api/language/using-javascript",
+            from: ["/docs/examples/using-javascript"],
+          },
+          {
+            to: "/api/language/api-gateway",
+            from: ["/docs/examples/api-gateway"],
+          },
+          {
+            to: "/api/language/singletons",
+            from: ["/docs/examples/singletons"],
+          },
+          {
+            to: "https://github.com/winglang/examples",
+            from: ["/docs/examples/examples-repository"],
+          },
+          {
+            to: "/api/language-reference",
+            from: ["/docs/language-reference"],
+          },
+          {
+            to: "/docs/why-wing",
+            from: ["/docs/concepts/why-wing"],
+          },
+          {
+            to: "/docs/platforms/AWS/awscdk",
+            from: ["/docs/platforms/awscdk"],
+          },
+          {
+            to: "/docs/platforms/AWS/tf-aws",
+            from: ["/docs/platforms/tf-aws"],
+          },
+          {
+            to: "/docs/platforms/google-cloud/tf-gcp",
+            from: ["/docs/platforms/tf-gcp"],
+          },
+          {
+            to: "/docs/platforms/microsoft-azure/tf-azure",
+            from: ["/docs/platforms/tf-azure"],
+          },
+          {
+            to: "/docs/winglibs/what-are-winglibs",
+            from: ["/docs/libraries"],
+          },
+          {
+            to: "/api/analytics",
+            from: ["/docs/analytics"],
+          },
         ],
       },
     ],
@@ -98,7 +182,21 @@ const config = {
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
         // ... other options
-      },
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "api",
+        path: "api",
+        routeBasePath: "api",
+        editUrl: (params) =>
+          `${winglangOrgUrl}/wing/tree/main/docs/api/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      }
     ],
   ],
   presets: [
@@ -217,16 +315,30 @@ const config = {
             target: "_self",
           },
           {
-            href: "https://www.winglang.io/play/",
+            to: "docs/why-wing",
             position: "left",
-            label: "Playground",
+            label: "Learn",
             className: "header-text-link",
             target: "_self",
           },
           {
-            to: "docs",
+            to: "api",
             position: "left",
-            label: "Docs",
+            label: "API",
+            className: "header-text-link",
+            target: "_self",
+          },
+          {
+            href: "https://github.com/winglang/examples",
+            position: "left",
+            label: "Examples",
+            className: "header-text-link",
+            target: "_blank",
+          },
+          {
+            href: "https://www.winglang.io/play/",
+            position: "left",
+            label: "Playground",
             className: "header-text-link",
             target: "_self",
           },

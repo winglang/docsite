@@ -1,7 +1,7 @@
 ---
 title: Terraform/Azure
 id: tf-azure
-sidebar_label: tf-azure
+sidebar_label: Terraform (tf-azure)
 description: Terraform/Azure platform
 keywords: [Wing reference, Wing language, language, Wing language spec, Wing programming language, cli, terraform, tf-azure, azure, microsoft azure, platform]
 ---
