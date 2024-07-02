@@ -48,6 +48,9 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
+  markdown: {
+    format: "detect"
+  },
   customFields: {
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
@@ -207,7 +210,7 @@ const config = {
         },
         items: [
           {
-            href: "https://www.winglang.io/docs/start-here/installation",
+            to: "docs",
             position: "left",
             label: "Install",
             className: "header-text-link",
@@ -283,7 +286,7 @@ const config = {
             items: [
               {
                 label: "Installation",
-                to: "/docs/start-here/installation",
+                to: "/docs",
               },
               {
                 label: "Getting Started",

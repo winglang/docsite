@@ -114,8 +114,7 @@ The preliminary use case model resulting from this analysis is presented below:
 <div style={{ textAlign: "center" }}>
 <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*UPfGJ7n8hRu_N7YRTOWt8w.png" />
 
-<p>
-Fig 3: “Blues Zone” Application Use Case Mode</p>
+<p>Fig 3: “Blues Zone” Application Use Case Mode</p>
 </div>
 
 
@@ -1028,8 +1027,7 @@ Depicting all “Blue Zone” application elements in a single UML Class Diagram
 <div style={{ textAlign: "center" }}>
 <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*cNjyYYT451PkmTSDqLBnew.png" />
 
-<p>
-Fig 5: `src/application` Class Diagram</p>
+<p>Fig 5: `src/application` Class Diagram</p>
 </div>
 
 
@@ -1085,8 +1083,7 @@ This is also not a mistake. The concrete connection between the **Primary Interf
 <div style={{ textAlign: "center" }}>
 <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*H21ofXTPkgZ0UwkcvZkrOQ.png" />
 
-<p>
-Fig 6: Configurator Class Diagram (”Buy Ticket” Use Case only)</p>
+<p>Fig 6: Configurator Class Diagram (”Buy Ticket” Use Case only)</p>
 </div>
 
 
@@ -1135,8 +1132,7 @@ According to the class diagram above the `Configurator` will decide which `IBlue
 <div style={{ textAlign: "center" }}>
 <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*byOcT_aqXWbPF35CqKqDYg.jpeg" />
 
-<p>
-Fig 7: Cloud Resources</p>
+<p>Fig 7: Cloud Resources</p>
 </div>
 
 
