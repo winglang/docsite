@@ -1,7 +1,7 @@
 ---
 title: AWS CDK
 id: awscdk
-sidebar_label: awscdk
+sidebar_label: AWS CDK (awscdk)
 description: AWS CDK platform
 keywords: [Wing reference, Wing language, language, Wing language spec, Wing programming language, aws, awscdk, amazon web services, cloudformation]
 ---

@@ -1,7 +1,7 @@
 ---
 title: Wing Cloud Simulator
 id: sim
-sidebar_label: sim
+sidebar_label: Wing Cloud Simulator (sim)
 description: Simulator Platform
 keywords: [Wing reference, Wing language, language, Wing language spec, Wing programming language, simulator, sim, wing simulator]
 ---

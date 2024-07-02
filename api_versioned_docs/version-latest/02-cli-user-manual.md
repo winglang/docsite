@@ -1,10 +1,13 @@
 ---
-title: "CLI User Manual: Compile, Test, and Run Wing Programs"
+title: "CLI User Manual"
 id: cli
+slug: /cli
 sidebar_label: CLI User Manual
 description: Wing CLI reference
 keywords: [Wing reference, Wing language, language, Wing language spec, Wing programming language, cli]
 ---
+
+## Compile, Test, and Run Wing Programs
 
 The Wing CLI is a command line interface for Wing. It is used to compile, test, and run Wing
 programs in your terminal, and we hope it will become your best friend.
