@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: main
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Login to private npm registry
         env:
           GITHUB_TOKEN: ${{ secrets.WING_GITHUB_TOKEN }}
@@ -29,4 +29,3 @@ jobs:
           CRAWLER_USER_ID: ${{ secrets.CRAWLER_USER_ID }}
           CRAWLER_ID: ${{ secrets.CRAWLER_ID }}
           CRAWLER_API_BASE_URL: https://crawler.algolia.com/api/1
-
