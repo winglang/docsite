@@ -8,6 +8,8 @@ const discordUrl = "https://t.winglang.io/discord";
 
 const winglangOrgUrl = "https://github.com/winglang";
 
+// const { crete} = require('@docusaurus/plugin-client-redirects')
+
 const keywords = [
   "Wing language",
   "Wing for cloud",
@@ -167,7 +169,21 @@ const config = {
             to: "/api/analytics",
             from: ["/docs/analytics"],
           },
+          // Standard Library
+          {
+            to: "/api/category/standard-library",
+            from: ["/docs/standard-library/aws/api-reference"],
+          },
         ],
+        createRedirects(existingPath) {
+          if (existingPath.includes('/docs/standard-library')) {
+            // Move standard-library old location to the new one.
+            return [
+              existingPath.replace('/docs/standard-library', '/api/standard-library'),
+            ];
+          }
+          return undefined; // Return a falsy value: no redirect created
+        },
       },
     ],
     [
