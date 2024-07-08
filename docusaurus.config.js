@@ -249,12 +249,12 @@ const config = {
         { content: "Wing Programming Language", property: "og:title" },
         {
           content:
-            "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png",
+            "/img/opengraph.png",
           property: "og:image",
         },
         {
           content:
-            "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png",
+            "/img/opengraph.png",
           property: "og:image:secure_url",
         },
         { content: "Wing Programming Language", property: "twitter:title" },
@@ -265,12 +265,12 @@ const config = {
         },
         {
           content:
-            "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png",
+            "/img/opengraph.png",
           property: "twitter:image",
         },
         {
           content:
-            "https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/643fee35043e035a13daa0d5_opengraphv4c.png",
+            "/img/opengraph.png",
           property: "twitter:image:source_url",
         },
         { content: "website", property: "og:type" },
