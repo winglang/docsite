@@ -159,7 +159,7 @@ npm install -g winglang@latest
 Run the following code snippet to ensure that the Winglang CLI is installed and working as expected:
 
 ```bash
-wing -V
+wing --version
 ```
 
 Next, navigate to the `backend` folder and create an empty Wing Typescript project. Ensure you select the `empty` template and Typescript as the language.
