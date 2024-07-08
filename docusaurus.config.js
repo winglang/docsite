@@ -7,6 +7,9 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const discordUrl = "https://t.winglang.io/discord";
 
 const winglangOrgUrl = "https://github.com/winglang";
+const redirects = require('./redirects');
+
+// const { crete} = require('@docusaurus/plugin-client-redirects')
 
 const keywords = [
   "Wing language",
@@ -78,12 +81,14 @@ const config = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        redirects: [
-          {
-            to: "/docs/",
-            from: ["/docs/start-here/installation"],
-          },
-        ],
+        redirects,
+        createRedirects(existingPath) {
+          
+          if (existingPath.includes('/docs/api/standard-library')) {
+            return [existingPath.replace('/docs/api/standard-library', '/docs/standard-library')];
+          }
+          return undefined; // Return a falsy value: no redirect created
+        },
       },
     ],
     [
@@ -98,7 +103,21 @@ const config = {
         includeCurrentVersion: false,
         // sidebarPath: require.resolve('./sidebarsCommunity.js'),
         // ... other options
-      },
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "api",
+        path: "api",
+        routeBasePath: "docs/api",
+        editUrl: (params) =>
+          `${winglangOrgUrl}/wing/tree/main/docs/api/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      }
     ],
   ],
   presets: [
@@ -217,16 +236,30 @@ const config = {
             target: "_self",
           },
           {
-            href: "https://www.winglang.io/play/",
+            to: "docs/why-wing",
             position: "left",
-            label: "Playground",
+            label: "Learn",
             className: "header-text-link",
             target: "_self",
           },
           {
-            to: "docs",
+            to: "docs/api",
             position: "left",
-            label: "Docs",
+            label: "API",
+            className: "header-text-link",
+            target: "_self",
+          },
+          {
+            href: "https://github.com/winglang/examples",
+            position: "left",
+            label: "Examples",
+            className: "header-text-link",
+            target: "_blank",
+          },
+          {
+            href: "https://www.winglang.io/play/",
+            position: "left",
+            label: "Playground",
             className: "header-text-link",
             target: "_self",
           },
@@ -303,11 +336,11 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "/docs/language-reference",
+                to: "/docs/api/language-reference",
               },
               {
                 label: "API Reference",
-                to: "/docs/category/standard-library",
+                to: "/docs/api/standard-library",
               },
             ],
           },

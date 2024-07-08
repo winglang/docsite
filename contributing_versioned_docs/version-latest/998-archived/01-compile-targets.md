@@ -33,7 +33,7 @@ These targets contain a combination of provisioning engine and cloud environment
 
 ## Portability
 
-The [Wing Cloud Library](/docs/category/cloud) has several classes representing abstracted cloud resources, whose APIs are not specific to a single cloud provider.
+The [Wing Cloud Library](/docs/api/category/cloud) has several classes representing abstracted cloud resources, whose APIs are not specific to a single cloud provider.
 This allows you to write code that can be deployed to any supported cloud environment or provisioning engine.
 
 Here's an example of a portable code snippet:
@@ -45,7 +45,7 @@ let bucket = new cloud.Bucket();
 ```
 
 Each resource needs a dedicated implementation to work on a given compiler target.
-A catalog of which resources are supported on each cloud can be found [here](/docs/standard-library/compatibility-matrix).
+A catalog of which resources are supported on each cloud can be found [here](/docs/api/standard-library/compatibility-matrix).
 
 ### Provisioning engines
 

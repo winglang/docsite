@@ -163,7 +163,7 @@ backends for existing resources based on the needs of their environment.
 
 The WCL is a major project and in its early days. You can see the coverage of resources and targets
 through this [compatibility
-matrix](https://www.winglang.io/docs/standard-library/compatibility-matrix) and make sure to "+1"
+matrix](https://www.winglang.io/docs/api/standard-library/compatibility-matrix) and make sure to "+1"
 the relevant GitHub issue if coverage is missing.
 
 <br/>

@@ -189,7 +189,7 @@ This example is quite detailed, so we will break it down section by section to f
 
 This module, by convention named `middleware.w`, features a [Winglang preflight](https://www.winglang.io/docs/concepts/inflights#preflight-code) class called `ServiceFactory`. This class encapsulates the following public resources and methods, which are crucial for the middleware's operation:
 
-- `api: [cloud.Api](https://www.winglang.io/docs/standard-library/cloud/api)`: resource from the [Winglang Standard Library](https://www.winglang.io/docs/category/cloud)
+- `api: [cloud.Api](https://www.winglang.io/docs/standard-library/cloud/api)`: resource from the [Winglang Standard Library](https://www.winglang.io/docs/api/category/cloud)
 - `logger: logging.Logger`: resource, extending the [Winglang libraries](https://www.winglang.io/docs/libraries), which was discussed previously in terms of its utility and possible implementation implementation [here](https://medium.com/itnext/implementing-production-grade-crud-rest-api-in-winglang-7b8f6917efc2)
 - `makeRequestHandler()`: [Factory Method](https://en.wikipedia.org/wiki/Factory_method_pattern) that applies the [Template Method Design Pattern](https://en.wikipedia.org/wiki/Template_method_pattern) tailored to each request handler
 - `getApiBuilder()`: another [Factory Method](https://en.wikipedia.org/wiki/Factory_method_pattern) this time applying the [Builder Design Pattern](https://en.wikipedia.org/wiki/Builder_pattern) to configure specific resource API calls
