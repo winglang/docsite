@@ -5,51 +5,51 @@ export default [
         from: ["/docs/start-here/installation"],
     },
     {
-        to: "/api/cli/",
+        to: "/docs/api/cli/",
         from: ["/docs/tools/cli"],
     },
     {
-        to: "/api/language/variable-declaration",
+        to: "/docs/api/language/variable-declaration",
         from: ["/docs/examples/variable-declaration"],
     },
     {
-        to: "/api/language/primitives",
+        to: "/docs/api/language/primitives",
         from: ["/docs/examples/primitives"],
     },
     {
-        to: "/api/language/functions-example",
+        to: "/docs/api/language/functions-example",
         from: ["/docs/examples/functions-example"],
     },
     {
-        to: "/api/language/flow-control",
+        to: "/docs/api/language/flow-control",
         from: ["/docs/examples/flow-control"],
     },
     {
-        to: "/api/language/optionality",
+        to: "/docs/api/language/optionality",
         from: ["/docs/examples/optionality"],
     },
     {
-        to: "/api/language/json",
+        to: "/docs/api/language/json",
         from: ["/docs/examples/json"],
     },
     {
-        to: "/api/language/structs",
+        to: "/docs/api/language/structs",
         from: ["/docs/examples/structs"],
     },
     {
-        to: "/api/language/classes",
+        to: "/docs/api/language/classes",
         from: ["/docs/examples/classes"],
     },
     {
-        to: "/api/language/using-javascript",
+        to: "/docs/api/language/using-javascript",
         from: ["/docs/examples/using-javascript"],
     },
     {
-        to: "/api/language/api-gateway",
+        to: "/docs/api/language/api-gateway",
         from: ["/docs/examples/api-gateway"],
     },
     {
-        to: "/api/language/singletons",
+        to: "/docs/api/language/singletons",
         from: ["/docs/examples/singletons"],
     },
     {
@@ -57,7 +57,7 @@ export default [
         from: ["/docs/examples/examples-repository"],
     },
     {
-        to: "/api/language-reference",
+        to: "/docs/api/language-reference",
         from: ["/docs/language-reference"],
     },
     {
@@ -85,22 +85,22 @@ export default [
         from: ["/docs/libraries"],
     },
     {
-        to: "/api/analytics",
+        to: "/docs/api/analytics",
         from: ["/docs/analytics"],
     },
-    { to: '/api/language', from: ['/docs/category/examples'] },
+    { to: '/docs/api/language', from: ['/docs/category/examples'] },
     // Standard Library redirects for docs v2
-    { to: '/api/category/aws', from: ['/docs/category/aws'] },
-    { to: '/api/category/cloud', from: ['/docs/category/cloud'] },
-    { to: '/api/category/ex', from: ['/docs/category/ex'] },
-    { to: '/api/category/expect', from: ['/docs/category/expect'] },
-    { to: '/api/category/fs', from: ['/docs/category/fs'] },
-    { to: '/api/category/http', from: ['/docs/category/http'] },
-    { to: '/api/category/math', from: ['/docs/category/math'] },
-    { to: '/api/category/sim', from: ['/docs/category/sim'] },
-    { to: '/api/category/std', from: ['/docs/category/std'] },
-    { to: '/api/category/ui', from: ['/docs/category/ui'] },
-    { to: '/api/category/util', from: ['/docs/category/util'] },
-    { to: '/api/standard-library', from: ['/docs/category/standard-library'] },
+    { to: '/docs/api/category/aws', from: ['/docs/category/aws'] },
+    { to: '/docs/api/category/cloud', from: ['/docs/category/cloud'] },
+    { to: '/docs/api/category/ex', from: ['/docs/category/ex'] },
+    { to: '/docs/api/category/expect', from: ['/docs/category/expect'] },
+    { to: '/docs/api/category/fs', from: ['/docs/category/fs'] },
+    { to: '/docs/api/category/http', from: ['/docs/category/http'] },
+    { to: '/docs/api/category/math', from: ['/docs/category/math'] },
+    { to: '/docs/api/category/sim', from: ['/docs/category/sim'] },
+    { to: '/docs/api/category/std', from: ['/docs/category/std'] },
+    { to: '/docs/api/category/ui', from: ['/docs/category/ui'] },
+    { to: '/docs/api/category/util', from: ['/docs/category/util'] },
+    { to: '/docs/api/standard-library', from: ['/docs/category/standard-library'] },
     
 ]

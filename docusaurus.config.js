@@ -84,8 +84,8 @@ const config = {
         redirects,
         createRedirects(existingPath) {
           
-          if (existingPath.includes('/api/standard-library')) {
-            return [existingPath.replace('/api/standard-library', '/docs/standard-library')];
+          if (existingPath.includes('/docs/api/standard-library')) {
+            return [existingPath.replace('/docs/api/standard-library', '/docs/standard-library')];
           }
           return undefined; // Return a falsy value: no redirect created
         },
@@ -110,7 +110,7 @@ const config = {
       {
         id: "api",
         path: "api",
-        routeBasePath: "api",
+        routeBasePath: "docs/api",
         editUrl: (params) =>
           `${winglangOrgUrl}/wing/tree/main/docs/api/${params.docPath}`,
         breadcrumbs: true,
@@ -243,7 +243,7 @@ const config = {
             target: "_self",
           },
           {
-            to: "api",
+            to: "docs/api",
             position: "left",
             label: "API",
             className: "header-text-link",
