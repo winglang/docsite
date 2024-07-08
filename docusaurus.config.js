@@ -62,6 +62,20 @@ const config = {
     "docusaurus-plugin-sass",
     "docusaurus-plugin-segment",
 
+    function tailwindPlugin(context, options) {
+      return {
+        name: 'tailwind-plugin',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins = [
+            require('postcss-import'),
+            require('tailwindcss'),
+            require('autoprefixer'),
+          ];
+          return postcssOptions;
+        },
+      };
+    },
+    
     // this is needed in order to support symlinked `docs/` directory
     // which is the mechanism we use when we develop locally with the winglang repo.
     // see https://github.com/facebook/docusaurus/issues/3272#issuecomment-876374383

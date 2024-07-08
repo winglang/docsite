@@ -10,6 +10,10 @@
 
 @import url("../../static/fonts/TasaOrbiter/tasa-orbiter.css");
 
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 /* You can override the default Infima variables here. */
 :root {
   font-family: "TasaOrbiterText-Regular";
