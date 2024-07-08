@@ -14,7 +14,7 @@ keywords: [Wing language, api]
     - Learn and explore the Wing Cli
 - [Wing Language](/docs/api/language/variable-declaration)
     - Dive deeper into the Wing Language, learn how to [declare variables](/docs/api/language/variable-declaration), [functions](/docs/api/language/functions-example), [structs](/docs/api/language/structs) and much more.
-- [Standard Library](/docs/api/category/standard-library)
+- [Standard Library](/docs/api/standard-library)
     - API references for the Wing standard library and supported modules 
 - [Language Reference](/docs/api/language-reference)
     - The Wing programming language reference

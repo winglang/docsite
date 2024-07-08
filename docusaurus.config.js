@@ -336,11 +336,11 @@ const config = {
             items: [
               {
                 label: "Language Specification",
-                to: "/docs/language-reference",
+                to: "/docs/api/language-reference",
               },
               {
                 label: "API Reference",
-                to: "/docs/category/standard-library",
+                to: "/docs/api/standard-library",
               },
             ],
           },

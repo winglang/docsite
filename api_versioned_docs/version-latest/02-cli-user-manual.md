@@ -78,11 +78,11 @@ is `sim`.
 
 You can use one of the built-in platform providers:
 
-* [Wing Cloud Simulator](../055-platforms/sim.md) - `sim`
-* [Terraform/AWS](../055-platforms/tf-aws.md) - `tf-aws`
-* [Terraform/Azure](../055-platforms/tf-azure.md) - `tf-azure`
-* [Terraform/GCP](../055-platforms/tf-gcp.md) - `tf-gcp`
-* [AWS CDK](../055-platforms/awscdk.md) - `@winglang/platform-awscdk`
+* [Wing Cloud Simulator](/docs/platforms/sim) - `sim`
+* [Terraform/AWS](/docs/platforms/AWS/tf-aws) - `tf-aws`
+* [Terraform/Azure](/docs/platforms/microsoft-azure/tf-azure) - `tf-azure`
+* [Terraform/GCP](/docs/platforms/google-cloud/tf-gcp) - `tf-gcp`
+* [AWS CDK](/docs/platforms/AWS/awscdk) - `@winglang/platform-awscdk`
 
 ## Test: `wing test`
 
@@ -240,7 +240,7 @@ $ wing pack
 
 This will compile your current Wing directory, and bundle it as a tarball that can be published to [GitHub packages](https://github.com/features/packages) or [npm](https://www.npmjs.com/).
 
-See [Libraries](../05-libraries.md) for more details on packaging and consuming Wing libraries.
+See [Libraries](/docs/category/wing-libraries-winglibs) for more details on packaging and consuming Wing libraries.
 
 :::
 

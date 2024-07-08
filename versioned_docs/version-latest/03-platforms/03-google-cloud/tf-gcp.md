@@ -6,7 +6,7 @@ description: Terraform/GCP platform
 keywords: [Wing reference, Wing language, language, Wing language spec, Wing programming language, cli, terraform, tf-gcp, gcp, google cloud platform, platform]
 ---
 
-The `tf-gcp` [platform](../02-concepts/03-platforms.md) compiles your program for Terraform and run on Google Cloud Platform.
+The `tf-gcp` [platform](/docs/platforms/google-cloud/tf-gcp) compiles your program for Terraform and run on Google Cloud Platform.
 
 ## Usage
 
