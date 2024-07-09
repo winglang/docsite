@@ -75,6 +75,7 @@ const config = {
         },
       };
     },
+   
     
     // this is needed in order to support symlinked `docs/` directory
     // which is the mechanism we use when we develop locally with the winglang repo.

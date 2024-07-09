@@ -9,6 +9,11 @@ module.exports = {
   darkMode: ["class", '[data-theme="dark"]'],
   content: ["./src/**/*.{jsx,tsx,html}"],
   theme: {
+    extend: {
+      colors: {
+        "wing": '#2ad5c1'
+      }
+    }
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

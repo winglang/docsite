@@ -10,9 +10,9 @@
 
 @import url("../../static/fonts/TasaOrbiter/tasa-orbiter.css");
 
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 
 /* You can override the default Infima variables here. */
 :root {
@@ -346,4 +346,12 @@ html[data-theme="dark"] h2[itemprop="headline"] a {
 .sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module,
 .sidebar_re4s {
   top: 0px !important;
+}
+
+#__docusaurus .prose {
+  max-width: none;
+}
+
+.gray-spacer {
+  border-bottom: 1px solid rgb(63, 63, 63);
 }
