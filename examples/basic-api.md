@@ -1,17 +1,15 @@
 ---
-title: "Private API example"
-subtitle: "Build a simple application with React for our frontend"
+title: "Basic API"
+subtitle: "Develop a basic API with Wing and deploy to AWS"
 type: 
-  - "guide"
   - "pattern"
-  - "interactive-tutorial"
 platforms:
   - "awscdk"
   - "tf-aws"
   - "sim"
 language:
   - "wing"
-githubURL: "https://github.com/winglang/examples/tree/main/examples/react-website"
+githubURL: "https://github.com/winglang/examples/tree/main/examples/react-website"  
 resources:
   - label: "Run application locally with the Wing simulator"
     href: "/docs/platforms/sim"

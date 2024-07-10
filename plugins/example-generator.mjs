@@ -26,8 +26,19 @@ export default async (context, options) => {
         },
         async contentLoaded({ content: examples, actions }) {
 
+            // Add the page /examples
+            actions.addRoute({
+                path: `/docs/examples2`,
+                component: require.resolve("../src/components/PageTemplates/Examples.tsx"),
+                exact: true,
+                // you can use this to optionally overwrite certain theme components
+                // see here: https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-plugin-content-blog/src/index.ts#L343
+                modules: {},
+                customData: { examples }
+            });
+
+
             const slugs = examples.map((page) => page.slug);
-            console.log('slugs', slugs)
 
             // optional: use Promise.all to execute multiple async functions at once
             // this will speed things up by creating pages in parallel

@@ -14,42 +14,13 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import TabbedCode from '@site/src/components/TabbedCode';
 import CopyCodeBlock from '@site/src/components/CopyCodeBlock';
 import type { RouteConfig } from '@docusaurus/types'
 // @ts-ignore
 import Markdown from 'react-markdown'
 
-const filters = [
-    {
-        id: 'type',
-        name: 'Type',
-        options: [
-            { value: 'guides', label: 'Guides' },
-            { value: 'patterns', label: 'Patterns' },
-            { value: 'interactive', label: 'Interactive tutorials' },
-        ],
-    },
-    {
-        id: 'platforms',
-        name: 'Platforms',
-        options: [
-            { value: 'aws', label: 'AWS' },
-            { value: 'google', label: 'Google Cloud' },
-            { value: 'azure', label: 'Microsoft Azure' },
-            { value: 'simulator', label: 'Wing simulator' },
-            { value: 'custom', label: 'Custom platforms' },
-        ],
-    },
-    {
-        id: 'language',
-        name: 'programming language',
-        options: [
-            { value: 'wing', label: 'Wing' },
-            { value: 'typescript', label: 'TypeScript' }
-        ],
-    },
-]
 
 const results = [
     {
@@ -115,7 +86,22 @@ export default function Home(props: Props) {
     const { siteConfig } = useDocusaurusContext();
 
     return (
-        <Layout title="" description="Wing Examples">
+        <Layout title={example.title} description={example.subtitle} >
+
+            <Head>
+                <meta property="og:image" content="image.png" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <link rel="preconnect" href="https://example.com" />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org/',
+                        '@type': 'Organization',
+                        name: 'Meta Open Source',
+                        url: 'https://opensource.fb.com/',
+                        logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+                    })}
+                </script>
+            </Head>
 
             <main className="mx-auto max-w-[85em] py-4 pb-40 w-full  ">
                 <div className="border-b border-gray-100 pb-4">

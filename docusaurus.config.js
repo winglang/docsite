@@ -267,11 +267,11 @@ const config = {
             target: "_self",
           },
           {
-            href: "https://github.com/winglang/examples",
+            // href: "https://github.com/winglang/examples",
+            to: "docs/examples",
             position: "left",
             label: "Examples",
             className: "header-text-link",
-            target: "_blank",
           },
           {
             href: "https://www.winglang.io/play/",
