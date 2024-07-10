@@ -355,3 +355,8 @@ html[data-theme="dark"] h2[itemprop="headline"] a {
 .gray-spacer {
   border-bottom: 1px solid rgb(63, 63, 63);
 }
+
+.examples-code-block pre {
+  margin: 0;
+  padding: 0 0 1em 0;
+}

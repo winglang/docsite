@@ -9,6 +9,8 @@ const discordUrl = "https://t.winglang.io/discord";
 const winglangOrgUrl = "https://github.com/winglang";
 const redirects = require('./redirects');
 
+
+
 // const { crete} = require('@docusaurus/plugin-client-redirects')
 
 const keywords = [
@@ -61,7 +63,7 @@ const config = {
   plugins: [
     "docusaurus-plugin-sass",
     "docusaurus-plugin-segment",
-
+    './plugins/example-generator.mjs',
     function tailwindPlugin(context, options) {
       return {
         name: 'tailwind-plugin',
@@ -75,8 +77,8 @@ const config = {
         },
       };
     },
-   
-    
+
+
     // this is needed in order to support symlinked `docs/` directory
     // which is the mechanism we use when we develop locally with the winglang repo.
     // see https://github.com/facebook/docusaurus/issues/3272#issuecomment-876374383
@@ -98,7 +100,7 @@ const config = {
       {
         redirects,
         createRedirects(existingPath) {
-          
+
           if (existingPath.includes('/docs/api/standard-library')) {
             return [existingPath.replace('/docs/api/standard-library', '/docs/standard-library')];
           }

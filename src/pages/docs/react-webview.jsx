@@ -74,8 +74,8 @@ const results = [
 
 ]
 
-export default function Home() {
-    const { siteConfig } = useDocusaurusContext();
+export default function Home(props) {
+    // const { siteConfig } = useDocusaurusContext();
     return (
         <Layout title="" description="Wing Examples">
 
