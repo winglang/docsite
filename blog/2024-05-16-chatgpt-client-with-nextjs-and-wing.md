@@ -56,7 +56,7 @@ npm install -g winglang
 Confirm the installation by checking the version:
 
 ```bash
-wing -V
+wing --version
 ```
 
 
