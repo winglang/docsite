@@ -1,18 +1,20 @@
 ---
-title: "Basic API"
-subtitle: "Develop a basic API with Wing and deploy to AWS"
+title: "HTTP API with Basic Auth"
+subtitle: "Building a HTTP API with Basic Auth"
 type: 
+  - "guide"
   - "pattern"
-platforms:
+platform:
   - "awscdk"
   - "tf-aws"
   - "sim"
 language:
-  - "wing"
-githubURL: "https://github.com/winglang/examples/tree/main/examples/react-website"  
+  - "typescript"
+githubURL: "https://github.com/winglang/examples/tree/main/examples/api-basic-auth"
+coverImage: "https://github.com/winglang/examples/raw/main/examples/api-basic-auth/diagram.png"
 resources:
-  - label: "Run application locally with the Wing simulator"
-    href: "/docs/platforms/sim"
+  - label: "Wing HTTP module"
+    href: "/docs/standard-library/cloud/api"
 authors:
   - name: "David Boyne"
     role: "Developer Advocate, Wing"

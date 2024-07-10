@@ -1,17 +1,16 @@
 ---
-title: "Private API example"
-subtitle: "Build a simple application with React for our frontend"
+title: "Wing, Vite and React"
+subtitle: "Learn how to deploy your react application using Wing."
 type: 
-  - "guide"
   - "pattern"
-  - "interactive-tutorial"
-platforms:
+platform:
   - "awscdk"
   - "tf-aws"
   - "sim"
 language:
   - "wing"
-githubURL: "https://github.com/winglang/examples/tree/main/examples/react-website"
+githubURL: "https://github.com/winglang/examples/tree/main/examples/react-website"  
+coverImage: "https://github.com/winglang/wing/assets/598796/e6e5e8d9-52fc-4fdf-a600-ba00271b6ef6"
 resources:
   - label: "Run application locally with the Wing simulator"
     href: "/docs/platforms/sim"

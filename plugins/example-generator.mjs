@@ -28,7 +28,7 @@ export default async (context, options) => {
 
             // Add the page /examples
             actions.addRoute({
-                path: `/docs/examples2`,
+                path: `/docs/examples`,
                 component: require.resolve("../src/components/PageTemplates/Examples.tsx"),
                 exact: true,
                 // you can use this to optionally overwrite certain theme components
