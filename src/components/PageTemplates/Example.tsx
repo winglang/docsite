@@ -8,7 +8,7 @@ import CopyCodeBlock from '@site/src/components/CopyCodeBlock';
 import type { RouteConfig } from '@docusaurus/types'
 // @ts-ignore
 import Markdown from 'react-markdown'
-import { AWSPlatformIcon, AzurePlatformIcon, GCPPlatformIcon, SimPlatformIcon } from '../../../components/PlatformIcons';
+import { AWSPlatformIcon, AzurePlatformIcon, GCPPlatformIcon, SimPlatformIcon } from '@site/src/components/PlatformIcons';
 
 
 type Platforms = 'awscdk' | 'tf-aws' | 'sim' | 'tf-gcp' | 'tf-azure';
@@ -32,10 +32,6 @@ type Props = {
         customData: Example;
     }
 }
-
-// wing compile --output cdk.out --platform @winglang/platform-awscdk main.w
-// wing compile --platform tf-aws
-// wing compile --platform tf-aws
 
 const commands = {
     'awscdk': {
@@ -161,10 +157,7 @@ export default function Home(props: Props) {
                                     }}
                                 />
                             </div>
-
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque omnis animi soluta, libero eius quam sit voluptatum. Aut quaerat voluptas numquam facilis, quas beatae rerum magni optio similique, qui culpa!
-                            </p>
+                           
                         </section>
                     </div>
                     {/* SideBar */}

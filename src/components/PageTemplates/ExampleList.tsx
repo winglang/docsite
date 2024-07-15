@@ -1,10 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import type { RouteConfig } from '@docusaurus/types'
-
-
 
 type Platforms = 'awscdk' | 'tf-aws' | 'sim' | 'tf-gcp' | 'tf-azure';
 type Language = 'wing' | 'typescript';
@@ -47,7 +44,6 @@ const getFiltersFromExamples = (examples: Example[]) => {
         const options = [...acc.options.map(o => o.value), ...types];
         // @ts-ignore
         const uniqueValues = [...new Set(options)];
-        console.log('uniqueValues', uniqueValues)
         return {
             ...acc,
             options: uniqueValues.map(value => ({
@@ -137,26 +133,16 @@ export default function Home(props: Props) {
     return (
         <Layout title="" description="Wing Examples">
 
-            <main className="mx-auto max-w-[85em]  py-6 pb-40 w-full  ">
-                <div className="border-b border-gray-100 pb-4">
+            <main className="mx-auto max-w-[90em] py-8 lg:pb-40 w-full px-4 md:px-8  ">
+                <div className="border-b border-gray-100 lg:pb-4">
                     <h1 className="text-4xl font-bold tracking-tight text-gray-100">Wing Examples</h1>
-                    <p className="mt-4 text-base text-gray-300">
+                    <p className="hidden lg:block mt-4 text-base text-gray-300">
                         Filter, search, and explore Wing examples easily. Find exactly what you need by using our advanced filtering and search options.
                     </p>
                 </div>
 
                 <div className="lg:grid lg:grid-cols-3 xl:grid-cols-4">
                     <aside>
-                        <h2 className="sr-only">Filters</h2>
-
-                        <button
-                            type="button"
-                            onClick={() => setMobileFiltersOpen(true)}
-                            className="inline-flex items-center lg:hidden"
-                        >
-                            <span className="text-sm font-medium text-gray-300">Filters</span>
-                            {/* <PlusIcon aria-hidden="true" className="ml-1 h-5 w-5 flex-shrink-0 text-gray-400" /> */}
-                        </button>
 
                         <div className="hidden lg:block">
                             <form className="space-y-0 divide-y divide-gray-200">
@@ -238,9 +224,6 @@ export default function Home(props: Props) {
                                                     {example.type.map((type) => {
                                                         return <span key={type} className={`text-xs font-bold px-1 py-0.5 rounded-md capitalize ${badgeStyles[type]}`}>{type.slice(0, 1).toUpperCase() + type.slice(1)}</span>
                                                     })}
-                                                    {/* // <span className='text-xs bg-yellow-500/50 font-bold px-1 py-0.5 rounded-md'>Guide</span> */}
-                                                    {/* // <span className='text-xs bg-red-500/50 font-bold px-1 py-0.5 rounded-md'>Pattern</span> */}
-                                                    {/* // <span className='text-xs bg-cyan-500/50 font-bold px-1 py-0.5 rounded-md'>Interactive tutorial</span> */}
                                                 </div>
                                                 <Link to={`/docs/examples/${example.slug}`} className="text-wing text-sm">
                                                     View {example.type[0]} &rarr;
