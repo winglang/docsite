@@ -8,7 +8,7 @@ platform:
   - "sim"
 language:
   - "wing"
-githubURL: "https://github.com/winglang/examples.git && cd examples/examples/hello-wing"
+githubURL: "https://github.com/winglang/examples.git && cd examples/examples/redis"
 coverImage: "/img/examples/redis.png"
 coverImageInPage: true
 resources:
