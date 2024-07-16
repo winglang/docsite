@@ -105,7 +105,7 @@ export default function Home(props: Props) {
     const badgeStyles = {
         guide: 'bg-yellow-500/50',
         pattern: 'bg-red-500/50',
-        'interactive-tutorial': 'bg-cyan-500/50'
+        'interactive tutorial': 'bg-cyan-500/50'
     }
 
     useEffect(() => {
