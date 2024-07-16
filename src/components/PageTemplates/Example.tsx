@@ -10,6 +10,14 @@ import type { RouteConfig } from '@docusaurus/types'
 import Markdown from 'react-markdown'
 import { AWSPlatformIcon, AzurePlatformIcon, GCPPlatformIcon, SimPlatformIcon } from '@site/src/components/PlatformIcons';
 
+import {
+    parseCodeBlockTitle,
+    parseLanguage,
+    parseLines,
+    containsLineNumbers,
+    useCodeWordWrap,
+} from '@docusaurus/theme-common/internal';
+
 
 type Platforms = 'awscdk' | 'tf-aws' | 'sim' | 'tf-gcp' | 'tf-azure';
 type Language = 'wing' | 'typescript';
@@ -143,16 +151,20 @@ export default function Home(props: Props) {
                                 </p> */}
 
                                 <div className="flex text-base items-center justify-between space-x-2 mb-2 mt-4 ">
-                                    <div className="flex items-center justify-between">
-                                        <span>Platforms:</span>
-                                        {platforms.length > 0 &&
-                                            <ul className='list-none p-0 flex space-x-2 m-0'>
-                                                {(platforms.includes('sim')) && <li><a href="/docs/platforms/sim"><SimPlatformIcon /></a></li>}
-                                                {(platforms.includes('awscdk') || platforms.includes('tf-aws')) && <li><a href="/docs/category/aws"><AWSPlatformIcon /></a></li>}
-                                                {(platforms.includes('tf-azure')) && <li><a href="/docs/category/microsoft-azure"><AzurePlatformIcon /></a></li>}
-                                                {(platforms.includes('tf-gcp')) && <li><a href="/docs/category/google-cloud"><GCPPlatformIcon /></a></li>}
-                                            </ul>
-                                        }
+                                    <div className="flex items-center justify-between w-full ">
+                                        <div className='flex items-center'>
+                                            <span>Platforms:</span>
+                                            {platforms.length > 0 &&
+                                                <ul className='list-none p-0 flex space-x-2 m-0'>
+                                                    {(platforms.includes('sim')) && <li><a href="/docs/platforms/sim"><SimPlatformIcon /></a></li>}
+                                                    {(platforms.includes('awscdk') || platforms.includes('tf-aws')) && <li><a href="/docs/category/aws"><AWSPlatformIcon /></a></li>}
+                                                    {(platforms.includes('tf-azure')) && <li><a href="/docs/category/microsoft-azure"><AzurePlatformIcon /></a></li>}
+                                                    {(platforms.includes('tf-gcp')) && <li><a href="/docs/category/google-cloud"><GCPPlatformIcon /></a></li>}
+                                                </ul>
+                                            }
+                                        </div>
+                                        {/* Portal for playground button if its enabled on this page */}
+                                        <div id='playground-portal'/>
                                     </div>
                                     {/* <div className='space-x-2'>
                                         <label htmlFor="platform-select">Choose platform:</label>
@@ -174,10 +186,10 @@ export default function Home(props: Props) {
                                     <img src={coverImage} alt={example.title} className="w-full  object-cover rounded-lg" />
                                 } */}
                                 <h3>{example.subtitle}</h3>
-                                {renderCoverImage  && 
+                                {renderCoverImage &&
                                     <img src={example.coverImage} alt={example.title} className="w-full mb-0  object-cover rounded-lg" />
                                 }
-                                
+
                                 <Markdown
                                     children={example.content}
                                     className='examples-code-block '
@@ -198,17 +210,23 @@ export default function Home(props: Props) {
                                         code(props) {
                                             const { children, className, node, ...rest } = props
                                             const match = /language-(\w+)/.exec(className || '')
+                                            const metastring = node?.data?.meta || '';
+                                            const renderPlayground = (metastring ?? "").includes("playground");
+                                            const code = String(children).replace(/\n$/, '');
+                                            // {(metastring ?? "").includes("playground") && <button className={clsx('clean-btn')} onClick={ () => window.open(`https://www.winglang.io/play/?code=(${encodeURIComponent(Buffer.from(code).toString('base64'))})`) }>Play</button>}
                                             return match ? (
                                                 <div>
                                                     <CopyCodeBlock
                                                         {...rest}
                                                         PreTag="div"
-                                                        children={String(children).replace(/\n$/, '')}
-                                                        code={String(children).replace(/\n$/, '')}
+                                                        children={code}
+                                                        code={code}
                                                         language={match[1]}
                                                         className="max-h-[30em] overflow-y-auto"
                                                         showLineNumbers
+                                                        renderPlayground={renderPlayground}
                                                     />
+
                                                 </div>
                                             ) : (
                                                 <code {...rest} className={className}>
@@ -224,7 +242,7 @@ export default function Home(props: Props) {
                     </div>
                     {/* SideBar */}
                     <aside className="lg:px-4 space-y-6 lg:pt-8 pt-4">
-                        <hr className="bg-gray-700 p-0 m-0" />
+                        {/* <hr className="bg-gray-700 p-0 m-0" /> */}
                         <h3>Installation </h3>
                         <div className='space-y-8 gray-spacer pb-8 '>
 
@@ -290,14 +308,7 @@ export default function Home(props: Props) {
                         </div>
 
 
-                        <button
-                            type="button"
-                            onClick={() => setMobileFiltersOpen(true)}
-                            className="inline-flex items-center lg:hidden"
-                        >
-                            <span className="text-sm font-medium text-gray-300">Filters</span>
-                            {/* <PlusIcon aria-hidden="true" className="ml-1 h-5 w-5 flex-shrink-0 text-gray-400" /> */}
-                        </button>
+                        
 
                     </aside>
                 </div>

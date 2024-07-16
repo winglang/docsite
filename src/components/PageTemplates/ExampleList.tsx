@@ -18,6 +18,7 @@ type Example = {
     platform: Platforms[]
     language: Language[]
     resources?: Resource[]
+    cloudResources?: string[]
     authors?: Author[]
     content: string
 }
@@ -75,19 +76,30 @@ const getFiltersFromExamples = (examples: Example[]) => {
         }
     }, { id: 'platform', name: 'Platforms', options: [] } as { id: string, name: string, options: any });
 
+    const cloudResources = examples.reduce((acc, example) => {
+        const types = example.cloudResources ?? [];
+        const options = [...acc.options.map(o => o.value), ...types];
+        // @ts-ignore
+        const uniqueValues = [...new Set(options)];
+        return {
+            ...acc,
+            options: uniqueValues.map(value => ({ value, label: platformMap[value] || value }))
+        }
+    }, { id: 'cloudResources', name: 'Cloud Resources', options: [] } as { id: string, name: string, options: any });
 
-    return { types, languages, platforms };
+
+    return { types, languages, platforms, cloudResources };
 };
 
 export default function Home(props: Props) {
 
     const examples = props.route.customData.examples;
-    const { types, languages, platforms } = useMemo(() => getFiltersFromExamples(examples), [examples])
+    const { types, languages, platforms, cloudResources } = useMemo(() => getFiltersFromExamples(examples), [examples])
 
     const [filteredExamples, setFilteredExamples] = useState(examples);
     const [selectedFilters, setSelectedFilters] = useState({});
 
-    const filters = [types, languages, platforms];
+    const filters = [types, languages, platforms, cloudResources];
 
     const badgeStyles = {
         guide: 'bg-yellow-500/50',

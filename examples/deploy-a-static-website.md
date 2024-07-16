@@ -27,6 +27,10 @@ authors:
     role: "Developer Advocate, Wing"
     twitter: "https://twitter.com/boyney123"
     github: "https://github.com/boyney123"
+cloudResources:
+  - website
+  - api
+  - counter
 ---
 
 This example application deploys a static website to the cloud using a [website](/docs/api/standard-library/cloud/website) resource. Additionally, it includes an [API resource](/docs/api/standard-library/cloud/api) featuring a `/hello-static` **POST** endpoint. 
@@ -35,7 +39,7 @@ The deployed website shows a button which makes a POST request to the API to inc
 
 > The `/hello-static` POST endpoint in this example returns an [inflight function](/docs/concepts/inflights#inflight-code). This is runtime code. When a request is received at this endpoint, the inflight code is executed.
 
-```js example
+```js example playground
 bring cloud;
 bring util;
 bring http;
