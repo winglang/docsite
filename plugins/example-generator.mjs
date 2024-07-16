@@ -5,7 +5,10 @@ import matter from 'gray-matter'
 
 const getAllExamples = () => {
     const files = fs.readdirSync(EXAMPLES_DIR);
-    return files.map(file => {
+
+    const markdownFiles = files.filter(file => file.endsWith('.md'));
+
+    return markdownFiles.map(file => {
         const rawFile = fs.readFileSync(`${EXAMPLES_DIR}/${file}`, 'utf-8');
         const { data, content } = matter(rawFile);
         return {

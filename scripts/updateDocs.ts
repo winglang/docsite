@@ -56,6 +56,18 @@ const authorization = `token ${process.env.GITHUB_TOKEN}`;
   });
   await fs.cp("docs/api", "api_versioned_docs/version-latest", {recursive: true});
 
+  // Examples
+  console.log("examples...");
+  await fs.rm("examples", {
+    force: true,
+    recursive: true,
+  });
+  await fs.cp("examples", "examples", {recursive: true});
+
+  // Copy images for examples
+  await fs.cp("examples/img", "static/img", {recursive: true});
+
+
   console.log("Cleaning up...");
   await fs.rm("docs.tgz");
   await fs.rm("docs", {
