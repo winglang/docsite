@@ -9,7 +9,7 @@ platform:
   - "sim"
 language:
   - "wing"
-githubURL: "https://github.com/winglang/examples.git"
+githubURL: "https://github.com/winglang/examples.git && cd examples/examples/static-website"
 coverImage: "/img/examples/static-website.png"
 coverImageInPage: true
 coverImageOptions: 
