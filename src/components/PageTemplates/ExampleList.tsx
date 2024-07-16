@@ -13,6 +13,7 @@ type Example = {
     title: string,
     subtitle: string,
     type: string[]
+    url?: string
     slug: string
     coverImage?: string
     platform: Platforms[]
@@ -42,7 +43,7 @@ const platformMap = {
 const getFiltersFromExamples = (examples: Example[]) => {
 
     const types = examples.reduce((acc, example) => {
-        const types = example.type;
+        const types = example.type ?? [];
         const options = [...acc.options.map(o => o.value), ...types];
         // @ts-ignore
         const uniqueValues = [...new Set(options)];
@@ -55,7 +56,7 @@ const getFiltersFromExamples = (examples: Example[]) => {
     }, { id: 'type', name: 'Types', options: [] } as { id: string, name: string, options: any });
 
     const languages = examples.reduce((acc, example) => {
-        const types = example.language;
+        const types = example.language ?? [];
         const options = [...acc.options.map(o => o.value), ...types];
         // @ts-ignore
         const uniqueValues = [...new Set(options)];
@@ -66,7 +67,7 @@ const getFiltersFromExamples = (examples: Example[]) => {
     }, { id: 'language', name: 'Languages', options: [] } as { id: string, name: string, options: any });
 
     const platforms = examples.reduce((acc, example) => {
-        const types = example.platform;
+        const types = example.platform ?? [];
         const options = [...acc.options.map(o => o.value), ...types];
         // @ts-ignore
         const uniqueValues = [...new Set(options)];
@@ -201,7 +202,7 @@ export default function Home(props: Props) {
                                             <div className='h-52 w-full'>
                                                 <div className="relative w-full h-full">
                                                     <div className='bg-gradient-to-t from-black/10  to-white/10 absolute top-0 h-full w-full z-10'></div>
-                                                    <img src={example.coverImage} alt="" className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] h-full opacity-70" />
+                                                    <img src={example.coverImage} alt="" className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] h-full opacity-90" />
                                                     
                                                     {/* <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div> */}
                                                 </div>
@@ -215,7 +216,7 @@ export default function Home(props: Props) {
                                         {/* IMAGE PLACEHOLDER */}
                                         {/* <img className="mx-auto h-32 w-32 flex-shrink-0 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60" alt="" /> */}
                                         <div className='absolute right-3 bottom-0 opacity-80 z-20'>
-                                            {example.platform.length > 0 &&
+                                            {example.platform && example.platform.length > 0 &&
                                                 <ul className='list-none p-0 flex space-x-4 m-0'>
                                                     {(example.platform.includes('sim')) && <li><SimPlatformIcon /></li>}
                                                     {(example.platform.includes('awscdk') || example.platform.includes('tf-aws')) && <li><AWSPlatformIcon /></li>}
@@ -238,7 +239,7 @@ export default function Home(props: Props) {
                                                         return <span key={type} className={`text-xs font-bold px-1 py-0.5 rounded-md capitalize ${badgeStyles[type]}`}>{type.slice(0, 1).toUpperCase() + type.slice(1)}</span>
                                                     })}
                                                 </div>
-                                                <Link to={`/docs/examples/${example.slug}`} className="text-wing text-sm">
+                                                <Link to={example.url || `/docs/examples/${example.slug}`} className="text-wing text-sm">
                                                     View {example.type[0]} &rarr;
                                                 </Link>
                                             </div>
