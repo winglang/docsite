@@ -92,7 +92,6 @@ export default [
     // Standard Library redirects for docs v2
     { to: '/docs/api/category/aws', from: ['/docs/category/aws'] },
     { to: '/docs/api/category/cloud', from: ['/docs/category/cloud'] },
-    { to: '/docs/api/category/ex', from: ['/docs/category/ex'] },
     { to: '/docs/api/category/expect', from: ['/docs/category/expect'] },
     { to: '/docs/api/category/fs', from: ['/docs/category/fs'] },
     { to: '/docs/api/category/http', from: ['/docs/category/http'] },
