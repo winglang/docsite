@@ -90,7 +90,7 @@ const commands = {
     }
 }
 
-const getCompileList = (platforms: Platforms[]) => {
+const getCompileList = (platforms: Platforms[] = []) => {
     return platforms.map((platform) => {
         return commands[platform]
     });

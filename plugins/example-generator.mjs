@@ -42,18 +42,18 @@ export default async (context, options) => {
 
             const slugs = examples.map((page) => page.slug);
 
-            await Promise.all(slugs.map(async (page) => {
-                const content = examples.find((p) => p.slug === page);
-                return actions.addRoute({
-                    path: `/docs/examples/${page}`,
-                    component: require.resolve("../src/components/PageTemplates/Example.tsx"),
-                    exact: true,
-                    // see here: https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-plugin-content-blog/src/index.ts#L343
-                    modules: {},
-                    customData: { ...content, ...page }
-                });
-            })
-            );
+            // await Promise.all(slugs.map(async (page) => {
+            //     const content = examples.find((p) => p.slug === page);
+            //     return actions.addRoute({
+            //         path: `/docs/examples/${page}`,
+            //         component: require.resolve("../src/components/PageTemplates/Example.tsx"),
+            //         exact: true,
+            //         // see here: https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-plugin-content-blog/src/index.ts#L343
+            //         modules: {},
+            //         customData: { ...content, ...page }
+            //     });
+            // })
+            // );
         },
     }
 };
