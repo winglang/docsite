@@ -113,23 +113,22 @@ export default function Home(props: Props) {
     }, [selectedFilters]);
 
     const applyFilters = () => {
-        console.log('selectedFilters', Object.entries(selectedFilters))
         const filtered = examples.filter(example => {
             return Object.entries(selectedFilters).every(([key, values]) => {
+                // @ts-ignore
                 if (values.length === 0) {
                     return true;
                 }
-                return values.some(value => example[key].includes(value));
+                // @ts-ignore
+                return values.some(value => example[key] && example[key].includes(value));
             });
         });
-        console.log('filtered', filtered)
         setFilteredExamples(filtered);
     };
 
     // Function to update selected filters
     const handleFilterChange = (e) => {
         const { name, value, checked } = e.target;
-        console.log(name);
         if (!checked) {
             setSelectedFilters(prevFilters => ({
                 ...prevFilters,
@@ -149,8 +148,8 @@ export default function Home(props: Props) {
 
             <main className="mx-auto max-w-[90em] py-8 lg:pb-40 w-full px-4 md:px-8  ">
                 <div className="border-b border-gray-100 lg:pb-4">
-                    <h1 className="text-4xl font-bold tracking-tight text-gray-100">Wing Examples</h1>
-                    <p className="hidden lg:block mt-4 text-base text-gray-300">
+                    <h1 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100">Wing Examples</h1>
+                    <p className="hidden lg:block mt-4 text-base text-gray-700 dark:text-gray-300">
                         Filter, search, and explore Wing examples easily. Find exactly what you need by using our advanced filtering and search options.
                     </p>
                 </div>
@@ -163,7 +162,7 @@ export default function Home(props: Props) {
                                 {filters.map((section, sectionIdx) => (
                                     <div key={section.id} className={sectionIdx === 0 ? null : 'pt-10'}>
                                         <fieldset className="border-none">
-                                            <span className="block text-sm font-extrabold uppercase text-wing">{section.name}</span>
+                                            <span className="block text-sm font-extrabold uppercase dark:text-wing">{section.name}</span>
                                             <div className="space-y-3 pt-6">
                                                 {section.options.map((option, optionIdx) => (
                                                     <div key={option.value} className="flex items-center">
@@ -172,10 +171,10 @@ export default function Home(props: Props) {
                                                             id={`${section.id}-${optionIdx}`}
                                                             name={`${section.id}`}
                                                             type="checkbox"
-                                                            className="h-4 w-4 rounded border-teal-300 text-teal-500 focus:ring-teal-500"
+                                                            className="h-4 w-4 rounded bg-white dark:bg-white border-gray-200 dark:border-teal-800  text-teal-500 dark:text-teal-500 focus:ring-teal-500 example-list-checkbox"
                                                             onChange={handleFilterChange}
                                                         />
-                                                        <label htmlFor={`${section.id}-${optionIdx}`} className="ml-3 text-sm text-gray-300 capitalize">
+                                                        <label htmlFor={`${section.id}-${optionIdx}`} className="ml-3 text-sm text-gray-800 dark:text-gray-300 capitalize">
                                                             {option.label}
                                                         </label>
                                                     </div>
@@ -194,9 +193,9 @@ export default function Home(props: Props) {
                         <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 m-0 p-0">
 
                             {filteredExamples.map((example) => {
-                                return (<li key={example.slug} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-gray-900  text-left pb-4 shadow shadow-white/5">
+                                return (<li key={example.slug} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-gray-100/50 dark:bg-gray-900  text-left  shadow shadow-black/10 dark:shadow-white/20">
 
-                                    <div className="  flex justify-center items-center w-full text-gray-500 group-hover:no-underline relative   ">
+                                    <div className=" flex justify-center items-center w-full text-gray-500 group-hover:no-underline relative   ">
 
                                         {example.coverImage &&
                                             <div className='h-52 w-full'>
@@ -226,17 +225,16 @@ export default function Home(props: Props) {
                                             }
                                         </div>
                                     </div>
-                                    <div className='px-4 py-2'>
-                                        <span className='block text-xl text-gray-100 font-bold  group-hover:no-underline'>{example.title}</span>
-                                        <span className='block text-sm pr-12 text-gray-300'>{example.subtitle}</span>
+                                    <div className='px-4 py-2 h-full'>
+                                        <span className='block text-xl text-gray-900 dark:text-gray-100 font-bold  group-hover:no-underline'>{example.title}</span>
+                                        <span className='block text-sm pr-12 text-gray-500 dark:text-gray-300'>{example.subtitle}</span>
                                     </div>
-                                    <div className=''>
-                                        <div className="-mt-px flex justify-end divide-x divide-gray-200">
-                                            <div className="flex w-full justify-between items-center px-4">
-
-                                                <div className='space-x-2'>
+                                    <div className='py-4  flex-col justify-end'>
+                                        <div className="-mt-px flex justify-end h-full divide-x divide-gray-200">
+                                            <div className="flex w-full justify-between items-center px-4 align-bottom">
+                                                <div className=''>
                                                     {example.type.map((type) => {
-                                                        return <span key={type} className={`text-xs font-bold px-1 py-0.5 rounded-md capitalize ${badgeStyles[type]}`}>{type.slice(0, 1).toUpperCase() + type.slice(1)}</span>
+                                                        return <span key={type} className={`text-xs font-bold px-1 py-0.5 rounded-md capitalize text-white/90 dark:text-white ${badgeStyles[type]}`}>{type.slice(0, 1).toUpperCase() + type.slice(1)}</span>
                                                     })}
                                                 </div>
                                                 <Link to={example.url || `/docs/examples/${example.slug}`} className="text-wing text-sm">

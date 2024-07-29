@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import TabbedCode from '@site/src/components/TabbedCode';
@@ -9,14 +8,6 @@ import type { RouteConfig } from '@docusaurus/types'
 // @ts-ignore
 import Markdown from 'react-markdown'
 import { AWSPlatformIcon, AzurePlatformIcon, GCPPlatformIcon, SimPlatformIcon } from '@site/src/components/PlatformIcons';
-
-import {
-    parseCodeBlockTitle,
-    parseLanguage,
-    parseLines,
-    containsLineNumbers,
-    useCodeWordWrap,
-} from '@docusaurus/theme-common/internal';
 
 
 type Platforms = 'awscdk' | 'tf-aws' | 'sim' | 'tf-gcp' | 'tf-azure';
@@ -124,7 +115,6 @@ export default function Home(props: Props) {
         if (selectedPlatform && example.coverImageOptions && renderCoverImage) {
             // Set the cover image to load
             const coverImageToLoad = example.coverImageOptions[selectedPlatform] || example.coverImage;
-            console.log('coverImageToLoad', example.coverImageOptions.awscdk)
             setCoverImage(coverImageToLoad as string);
         }
     }, [selectedPlatform]);
