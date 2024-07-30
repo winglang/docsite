@@ -147,8 +147,9 @@ export default function Home(props: Props) {
         <Layout title="" description="Wing Examples">
 
             <main className="mx-auto max-w-[90em] py-8 lg:pb-40 w-full px-4 md:px-8  ">
-                <div className="border-b border-gray-100 lg:pb-4">
+                <div className="border-b border-gray-100 lg:pb-4 flex justify-between items-center lg:block">
                     <h1 className="text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100">Wing Examples</h1>
+                    <a href="/contributing/start-here/docs" className="lg:hidden submit-new-example -mt-1 dark:bg-white rounded-md px-2 py-1 text-black dark:hover:bg-wing dark:hover:text-white block">Submit a new example</a>
                     <p className="hidden lg:block mt-4 text-base text-gray-700 dark:text-gray-300">
                         Filter, search, and explore Wing examples easily. Find exactly what you need by using our advanced filtering and search options.
                     </p>
@@ -156,8 +157,7 @@ export default function Home(props: Props) {
 
                 <div className="lg:grid lg:grid-cols-3 xl:grid-cols-4">
                     <aside>
-
-                        <div className="hidden lg:block">
+                        <div className="hidden lg:block space-y-8">
                             <form className="space-y-0 divide-y divide-gray-200">
                                 {filters.map((section, sectionIdx) => (
                                     <div key={section.id} className={sectionIdx === 0 ? null : 'pt-10'}>
@@ -184,11 +184,13 @@ export default function Home(props: Props) {
                                     </div>
                                 ))}
                             </form>
+                            <a href="/contributing/start-here/docs" className="submit-new-example dark:bg-white rounded-md px-2 py-1 text-black dark:hover:bg-wing dark:hover:text-white mb-2 inline-block -mt-10">Submit a new example</a>
                         </div>
                     </aside>
 
                     {/* Product grid */}
                     <div className="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3  p-2">
+                        
                         {/* tailwind grid */}
                         <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 m-0 p-0">
 
