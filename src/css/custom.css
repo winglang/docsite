@@ -10,6 +10,10 @@
 
 @import url("../../static/fonts/TasaOrbiter/tasa-orbiter.css");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can override the default Infima variables here. */
 :root {
   font-family: "TasaOrbiterText-Regular";
@@ -342,4 +346,36 @@ html[data-theme="dark"] h2[itemprop="headline"] a {
 .sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module,
 .sidebar_re4s {
   top: 0px !important;
+}
+
+#__docusaurus .prose {
+  max-width: none;
+}
+
+.gray-spacer {
+  border-bottom: 1px solid rgb(63, 63, 63);
+}
+
+.examples-code-block pre {
+  margin: 0;
+  padding: 0 0 1em 0;
+}
+
+.example-quote {
+  border-left: 6px solid rgb(76, 179, 212);
+  background: rgb(25, 60, 71);
+  p {
+    margin: 0;
+    padding: 0.5em 0 0.2em;
+  }
+  strong {
+    color: white;
+  }
+  code {
+    background: rgb(213, 213, 213);
+  }
+}
+
+.example-list-checkbox, .submit-new-example {
+  border: 1px solid rgb(210, 210, 210);
 }
