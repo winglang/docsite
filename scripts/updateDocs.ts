@@ -1,6 +1,7 @@
 import { request } from "@octokit/request";
 import fs from "node:fs/promises";
 import tar from "tar";
+import { existsSync } from 'fs'
 
 const authorization = `token ${process.env.GITHUB_TOKEN}`;
 
@@ -40,32 +41,33 @@ const authorization = `token ${process.env.GITHUB_TOKEN}`;
     force: true,
     recursive: true,
   });
-  await fs.cp("docs/docs", "versioned_docs/version-latest", {recursive: true});
+  await fs.cp("docs/docs", "versioned_docs/version-latest", { recursive: true });
 
   console.log("contributing_versioned_docs/version-latest...");
   await fs.rm("contributing_versioned_docs/version-latest", {
     force: true,
     recursive: true,
   });
-  await fs.cp("docs/contributing", "contributing_versioned_docs/version-latest", {recursive: true});
+  await fs.cp("docs/contributing", "contributing_versioned_docs/version-latest", { recursive: true });
 
   console.log("api_versioned_docs/version-latest...");
   await fs.rm("api_versioned_docs/version-latest", {
     force: true,
     recursive: true,
   });
-  await fs.cp("docs/api", "api_versioned_docs/version-latest", {recursive: true});
+  await fs.cp("docs/api", "api_versioned_docs/version-latest", { recursive: true });
 
   // Examples for /examples page
   console.log("examples...");
+
   await fs.rm("examples", {
     force: true,
     recursive: true,
   });
-  await fs.cp("examples", "examples", {recursive: true});
 
+  await fs.cp("docs/examples", "examples", { recursive: true });
   // Copy images for examples
-  await fs.cp("examples/img", "static/img", {recursive: true});
+  await fs.cp("docs/examples/img", "static/img", { recursive: true });
 
 
   console.log("Cleaning up...");
