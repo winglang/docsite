@@ -23,6 +23,7 @@ type Example = {
     resources?: Resource[]
     authors?: Author[]
     githubURL: string
+    repoDirectory?: string
     coverImage?: string
     coverImageInPage?: boolean
     // Array of options for the cover image, key is a string value is a array
@@ -235,11 +236,11 @@ export default function Home(props: Props) {
                         {/* <hr className="bg-gray-700 p-0 m-0" /> */}
                         <h3>Installation </h3>
                         <div className='space-y-8 gray-spacer pb-8 '>
-
+                        
                             <div className='space-y-1'>
                                 <span className='font-bold '>Clone</span>
                                 <div className='overflow-x-auto'>
-                                    <CopyCodeBlock code={`git clone ${example.githubURL}`} />
+                                    <CopyCodeBlock code={`git clone ${example.githubURL} example && cd example/${example.repoDirectory}`} />
                                 </div>
                             </div>
 

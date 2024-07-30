@@ -9,7 +9,8 @@ platform:
   - "sim"
 language:
   - "wing"
-githubURL: "https://github.com/winglang/examples.git && cd examples/examples/api-basic-auth"
+githubURL: "https://github.com/winglang/examples.git"
+repoDirectory: "examples/api-basic-auth"
 coverImage: "/img/examples/basic-api-auth.png"
 coverImageInPage: true
 resources:
@@ -86,7 +87,7 @@ class BasicAuth {
   }
   // Returns the authorization header
   inflight authHeader(headers: Map<str>?): str {
-    if (this.authHeaderPresent(headers)) {
+    if this.authHeaderPresent(headers) {
       let authHeaderOptional = headers?.tryGet("authorization");
       let var authHeader = headers?.tryGet("Authorization");
 
@@ -121,7 +122,7 @@ let api = new cloud.Api() as "Users API";
 api.get("/user", inflight (req) => {
   let authenticated = auth.verify(req);
 
-  if (!authenticated) {
+  if !authenticated {
     return {
       status: 401,
       headers: {

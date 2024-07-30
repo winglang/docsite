@@ -9,7 +9,8 @@ platform:
   - "sim"
 language:
   - "wing"
-githubURL: "https://github.com/winglang/examples.git && cd examples/examples/static-website"
+githubURL: "https://github.com/winglang/examples.git"
+repoDirectory: "examples/static-website"
 coverImage: "/img/examples/static-website.png"
 coverImageInPage: true
 coverImageOptions: 
@@ -39,7 +40,7 @@ The deployed website shows a button which makes a POST request to the API to inc
 
 > The `/hello-static` POST endpoint in this example returns an [inflight function](/docs/concepts/inflights#inflight-code). This is runtime code. When a request is received at this endpoint, the inflight code is executed.
 
-```js example playground
+```js playground
 bring cloud;
 bring util;
 bring http;

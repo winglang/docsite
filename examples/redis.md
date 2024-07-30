@@ -1,6 +1,6 @@
 ---
 title: "Using Redis with Wing"
-subtitle: "Example application that uses Redis to set cache values from a queue"
+subtitle: "Example application that uses Redis to set values in a Redis cache"
 type: 
   - "pattern"
 platform:
@@ -8,7 +8,8 @@ platform:
   - "sim"
 language:
   - "wing"
-githubURL: "https://github.com/winglang/examples.git && cd examples/examples/redis"
+githubURL: "https://github.com/winglang/examples.git"
+repoDirectory: "examples/redis"
 coverImage: "/img/examples/redis.png"
 coverImageInPage: true
 resources:
@@ -30,7 +31,7 @@ This basic pattern uses the [redis winglib](https://github.com/winglang/winglibs
 When the cloud function is invoked a value is set in the redis database using the redis inflight API.
 
 
-```js example
+```js
 bring redis;
 bring cloud;
 
