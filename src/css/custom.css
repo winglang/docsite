@@ -368,6 +368,12 @@ html[data-theme="dark"] h2[itemprop="headline"] a {
     margin: 0;
     padding: 0.5em 0 0.2em;
   }
+  strong {
+    color: white;
+  }
+  code {
+    background: rgb(213, 213, 213);
+  }
 }
 
 .example-list-checkbox, .submit-new-example {

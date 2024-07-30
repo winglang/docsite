@@ -40,7 +40,9 @@ export default async (context, options) => {
             });
 
 
-            const slugs = examples.map((page) => page.slug);
+            // Don't render example pages for interactice-tutorials
+            const pages = examples.filter((page) => !page.type.includes('interactive tutorial'));
+            const slugs = pages.map((page) => page.slug);
 
             await Promise.all(slugs.map(async (page) => {
                 const content = examples.find((p) => p.slug === page);

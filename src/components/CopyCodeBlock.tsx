@@ -53,7 +53,7 @@ const CopyCodeBlock = ({ language = "typescript", code, showLineNumbers = false,
                         Open in Playground
                     </button>
                     <Portal>
-                        <a href={`https://www.winglang.io/play/?code=(${encodeURIComponent(Buffer.from(code).toString('base64'))})`} target='_blank' className='bg-wing/40 px-2 py-1.5 rounded-md text-white cursor-pointer hover:bg-wing/50'>Try this pattern in the playground &rarr;</a>
+                        <a href={`https://www.winglang.io/play/?code=(${encodeURIComponent(Buffer.from(code).toString('base64'))})`} target='_blank' className='bg-wing/40 px-2 py-1.5 rounded-md text-black/80 dark:text-white cursor-pointer hover:bg-wing/50'>Try this pattern in the playground &rarr;</a>
                     </Portal>
                 </>
             }

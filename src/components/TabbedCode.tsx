@@ -32,7 +32,7 @@ const TabbedCode = ({ options }: Props) => {
 
     return (
         <div className='overflow-x-auto '>
-            <div className="bg-gray-900/30 flex justify-between">
+            <div className=" flex justify-between">
                 <div className='flex items-center align-middle space-x-2'>
                     <span className='font-bold block '>Compile</span>
                     {selectedTab.icon &&
@@ -41,7 +41,7 @@ const TabbedCode = ({ options }: Props) => {
                         </span>
                     }
                 </div>
-                <select defaultValue={defaultValue.value} className='bg-gray-800 text-[10px] px-2 py-0 rounded-md h-7 focus:ring-teal-500 focus:border-teal-500' onChange={handleChange}>
+                <select defaultValue={defaultValue.value} className='bg-gray-800 text-white text-[10px] px-2 py-0 rounded-md h-7 focus:ring-teal-500 focus:border-teal-500' onChange={handleChange}>
                     {options.map(tab => (
                         <option key={tab.label} value={tab.value}>{tab.label}</option>
                     ))}

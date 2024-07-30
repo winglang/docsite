@@ -11,7 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "wing": '#2ad5c1'
+        "wing": '#2ad5c1',
+        "wing-dark": '#2ad5c1',
+        "wing-light": '#1b918a'
       }
     }
   },
