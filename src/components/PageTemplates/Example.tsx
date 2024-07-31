@@ -177,7 +177,7 @@ export default function Home(props: Props) {
                                     className='examples-code-block '
                                     components={{
                                         a: (props) => {
-                                            return <a className='dark:text-wing text-wing-light' {...props}>{props.children}</a>
+                                            return <a className='dark:text-wing text-wing-light font-bold' {...props}>{props.children}</a>
                                         },
                                         h3: (props) => {
                                             return <h3 className='text-gray-800 dark:text-gray-200'>{props.children}</h3>
@@ -187,12 +187,12 @@ export default function Home(props: Props) {
                                         },
                                         // Used a tip
                                         blockquote: (props) => {
-                                            return <div className="bg-teal-500/20 rounded-md my-4 mb-6 border-l-4 border-yellow-500 px-2 py-3 example-quote text-white"> 
+                                            return <div className="bg-[#eef9fd] dark:bg-[#193c47] rounded-md my-4 mb-6 border-l-4 border-yellow-500 px-2 py-3 example-quote text-white"> 
                                                 <div className='flex space-x-2 items-center px-2 font-bold'>
-                                                    <svg className="w-6 h-6 text-white-500 block" viewBox="0 0 14 16"><path fill='currentColor' fill-rule="currentColor" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg>
-                                                    <span className='uppercase text-sm'>INFO</span>
+                                                    <svg className="w-6 h-6 text-blue-900 dark:text-white block" viewBox="0 0 14 16"><path fill='currentColor' fill-rule="currentColor" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg>
+                                                    <span className='uppercase text-sm text-blue-900 dark:text-white'>INFO</span>
                                                 </div>
-                                                <span className='block px-2 p-0'>{props.children}</span>
+                                                <span className='block px-2 p-0 text-blue-900 dark:text-white'>{props.children}</span>
                                             </div>
                                         },
                                         code(props) {
@@ -210,14 +210,14 @@ export default function Home(props: Props) {
                                                         children={code}
                                                         code={code}
                                                         language={match[1]}
-                                                        className="max-h-[30em] overflow-y-auto"
+                                                        className="max-h-[30em] overflow-y-auto dark:bg-gray-800"
                                                         showLineNumbers
                                                         renderPlayground={renderPlayground}
                                                     />
 
                                                 </div>
                                             ) : (
-                                                <code {...rest} className={`text-gray-800 dark:text-gray-200 ${className}`}>
+                                                <code {...rest} className={`text-gray-800 dark:text-gray-200 dark:bg-gray-800 ${className}`}>
                                                     {children}
                                                 </code>
                                             )
