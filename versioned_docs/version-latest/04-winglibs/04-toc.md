@@ -37,7 +37,7 @@ keywords: [winglib, Wing library]
 | [Terraform utilities](/docs/winglibs/winglibs/tf) | [@winglibs/tf](/docs/winglibs/winglibs/tf) |  v0.0.7 | Terraform utilities library for Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [tsoa](/docs/winglibs/winglibs/tsoa) | [@winglibs/tsoa](/docs/winglibs/winglibs/tsoa) |  v0.1.13 | A Wing library for working with [TSOA](https://tsoa-community.github.io/docs/) - An OpenAPI-compliant Web APIs using TypeScript.  | [sim](/docs/platforms/sim) |
 | [Vite](/docs/winglibs/winglibs/vite) | [@winglibs/vite](/docs/winglibs/winglibs/vite) |  v0.2.3 | A Wing library to deploy [Vite applications](https://vitejs.dev/) to the cloud.  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
-| [WebSocket](/docs/winglibs/winglibs/websockets) | [@winglibs/websockets](/docs/winglibs/winglibs/websockets) |  v0.3.10 | A Wing library that enables you to create WebSockets using Wing.  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws), [awscdk](/docs/platforms/AWS/awscdk) |
+| [WebSocket](/docs/winglibs/winglibs/websockets) | [@winglibs/websockets](/docs/winglibs/winglibs/websockets) |  v0.3.11 | A Wing library that enables you to create WebSockets using Wing.  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws), [awscdk](/docs/platforms/AWS/awscdk) |
 
 ## Contributing to winglibs
 
