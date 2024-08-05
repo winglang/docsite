@@ -61,31 +61,6 @@ const buildUrlsForPlatforms = (platforms: string[]) => {
   }).join(', ');
 }
 
-const getCloudProvidersFromPlatforms = (platforms: string[]) => {
-  let providers = platforms.map(platform => {
-    switch (platform) {
-      case 'tf-aws':
-      case 'awscdk':
-        return `[Amazon Web Services](https://aws.amazon.com/)`;
-      case 'tf-gcp':
-        return `[Google Cloud](https://cloud.google.com/)`;
-      case 'tf-azure':
-        return `[Microsoft Azure](https://azure.microsoft.com/)`;
-      case '*':
-        return ['[Amazon Web Services](https://aws.amazon.com/)', '[Google Cloud](https://cloud.google.com/)', '[Microsoft Azure](https://azure.microsoft.com/)'];
-      default:
-        return ''
-    }
-  }).filter(provider => provider !== '').flat();
-
-  // return unique values
-  return providers.filter((provider, index) => providers.indexOf(provider) === index).join(', ');
-
-}
-
-
-
-
 (async () => {
 
   console.log("Getting latest winglibs...");
@@ -145,14 +120,14 @@ description:  Table of all Wing libraries
 keywords: [winglib, Wing library]
 ---
 
-| Library  | Package name  | Version | Description | Supported cloud providers | Supported Wing platforms |
-| -------- | ------- | ------- | ------- | ------- | ------- |`;
+| Library  | Package name  | Version | Description  | Supported Wing platforms |
+| -------- | ------- | ------- | ------- | ------- |`;
 
 
   // Create the table.
   // @ts-ignore
   for (const { title, version, description, platforms, demoURL, packageJson, winglib } of winglibs) {
-    table += `\n| [${title}](/docs/winglibs/winglibs/${winglib}) | [${packageJson.name}](/docs/winglibs/winglibs/${winglib}) |  v${version} | ${description} ${demoURL ? `([Example](${demoURL}))` : ''} | ${getCloudProvidersFromPlatforms(platforms)} | ${buildUrlsForPlatforms(platforms)} |`;
+    table += `\n| [${title}](/docs/winglibs/winglibs/${winglib}) | [${packageJson.name}](/docs/winglibs/winglibs/${winglib}) |  v${version} | ${description} ${demoURL ? `([Example](${demoURL}))` : ''} | ${buildUrlsForPlatforms(platforms)} |`;
   }
 
   // contributing to winglibs
