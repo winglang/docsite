@@ -8,10 +8,10 @@ keywords: [winglib, Wing library]
 
 | Library  | Package name  | Version | Description  | Supported Wing platforms |
 | -------- | ------- | ------- | ------- | ------- |
-| [Amazon Bedrock](/docs/winglibs/winglibs/bedrock) | [@winglibs/bedrock](/docs/winglibs/winglibs/bedrock) |  v0.0.9 | A Wing library for Amazon Bedrock  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
+| [Amazon Bedrock](/docs/winglibs/winglibs/bedrock) | [@winglibs/bedrock](/docs/winglibs/winglibs/bedrock) |  v0.1.0 | A Wing library for Amazon Bedrock  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [AWS Budget](/docs/winglibs/winglibs/budget) | [@winglibs/budget](/docs/winglibs/winglibs/budget) |  v0.1.5 | A Wing library for working with [AWS Budgets]  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [Cloud checks](/docs/winglibs/winglibs/checks) | [@winglibs/checks](/docs/winglibs/winglibs/checks) |  v0.0.16 | A self-validation mechanism for cloud applications  | [*](/docs/platforms/platforms) |
-| [cloudv2](/docs/winglibs/winglibs/cloudv2) | [@winglibs/cloudv2](/docs/winglibs/winglibs/cloudv2) |  v0.0.2 | Standard cloud library for Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
+| [cloudv2](/docs/winglibs/winglibs/cloudv2) | [@winglibs/cloudv2](/docs/winglibs/winglibs/cloudv2) |  v0.1.0 | Standard cloud library for Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [Amazon Cognito](/docs/winglibs/winglibs/cognito) | [@winglibs/cognito](/docs/winglibs/winglibs/cognito) |  v0.0.14 | A wing library to work with Amazon Cognito  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [Containers](/docs/winglibs/winglibs/containers) | [@winglibs/containers](/docs/winglibs/winglibs/containers) |  v0.1.5 | Deploy containers with Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [Amazon DynamoDB](/docs/winglibs/winglibs/dynamodb) | [@winglibs/dynamodb](/docs/winglibs/winglibs/dynamodb) |  v0.2.1 | A Wing library for Amazon DynamoDB  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
