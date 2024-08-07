@@ -10,6 +10,7 @@ import LocalSimulation from '../components/Landing/LocalSimulation';
 import Testimonal from '../components/Landing/Testimonal';
 import Newsletter from '../components/Landing/Newsletter';
 import CTA from '../components/Landing/CTA';
+import ExternalBlogs from '../components/Landing/ExternalBlogs';
 
 const tabs = [
     {
@@ -313,10 +314,11 @@ const LandingPage = () => {
             <CrossCloud />
             {/* <Testimonal /> */}
             <LocalSimulation />
+            <ExternalBlogs />
 
             <Newsletter />
 
-            <CTA />
+            {/* <CTA /> */}
 
 
 
