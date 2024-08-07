@@ -1,48 +1,54 @@
 import React from 'react';
-import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid'
+import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon, CubeIcon, CloudIcon, CodeBracketIcon, ArrowPathRoundedSquareIcon, RectangleGroupIcon, ComputerDesktopIcon } from '@heroicons/react/20/solid'
 
 const features = [
   {
-    name: 'High level cloud abstractions',
+    name: 'Wing Cloud Library',
     description:
-      'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
-    href: '#',
-    icon: CloudArrowUpIcon,
+      'A library of classes that represent common resources for building cloud applications including Queues, Functions, APIs and more.',
+    href: '/docs/api/category/cloud',
+    label: 'Explore the Wing Cloud Library',
+    icon: CubeIcon,
   },
   {
     name: 'Cross-cloud support',
     description:
-      'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
-    href: '#',
-    icon: CloudArrowUpIcon,
+      'Deploy your applications to AWS, Azure, or Google Cloud with Wing, which abstracts cloud provider differences, letting you focus on your application.',
+    href: '/docs/platforms/platforms',
+    label: 'Learn more about Wing platforms',
+    icon: CloudIcon,
   },
   {
     name: 'Extensibility',
     description:
-      'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
-    href: '#',
-    icon: LockClosedIcon,
+      'Wing is built for extensibility, enabling integration with any IaC resources and customization via powerful compiler plugins.',
+    href: '/docs/api/language-reference',
+    label: 'Explore the language reference',
+    icon: CodeBracketIcon,
   },
   {
-    name: 'Phase modifiers',
+    name: 'Unify runtime and compile time code',
     description:
-      'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
-    href: '#',
-    icon: CloudArrowUpIcon,
+      'Wing unifies execution phases with a single programming model using preflight and inflight code concepts.',
+    href: '/docs/concepts/inflights',
+    label: 'Understand preflight and inflight code',
+    icon: ArrowPathRoundedSquareIcon,
   },
   {
-    name: 'Custom plaforms',
+    name: 'Develop custom platforms',
     description:
-      'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
-    href: '#',
-    icon: LockClosedIcon,
+      'Create custom platforms to support unique cloud providers, optimize deployments, or integrate with enterprise systems.',
+    href: '/docs/platforms/platforms#custom-platforms',
+    label: 'Create a custom platform',
+    icon: RectangleGroupIcon,
   },
   {
-    name: 'JavaScript interoperability',
+    name: 'Bring the cloud to your machine',
     description:
-      'Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.',
-    href: '#',
-    icon: ArrowPathIcon,
+      'Enhance your experience with the Wing Console by exploring and interacting with Wing applications on the local cloud simulator.',
+    href: '/docs/tools/wing-console',
+    label: 'Get started with the Wing Console',
+    icon: ComputerDesktopIcon,
   },
 ]
 
@@ -69,9 +75,9 @@ export default function Features() {
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300 ml-0 ">
                   <p className="flex-auto text-gray-400">{feature.description}</p>
-                  <p className="mt-6">
+                  <p className="mt-3">
                     <a href={feature.href} className="text-sm font-semibold leading-6 text-wing">
-                      Learn more <span aria-hidden="true">→</span>
+                      {feature.label} <span aria-hidden="true">→</span>
                     </a>
                   </p>
                 </dd>
