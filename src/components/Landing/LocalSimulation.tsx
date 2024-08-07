@@ -6,38 +6,44 @@ import {
     FingerPrintIcon,
     LockClosedIcon,
     ServerIcon,
+    CubeIcon,
+    GlobeAmericasIcon,
+    CheckCircleIcon,
+    CommandLineIcon,
+    QueueListIcon,
+    UserGroupIcon
 } from '@heroicons/react/20/solid'
 
 const features = [
     {
-        name: 'Push to deploy.',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-        icon: CloudArrowUpIcon,
+        name: 'Developer experience',
+        description: 'User-friendly interface to view, explore and interact with your Wing applications running on the local cloud simulator.',
+        icon: UserGroupIcon,
     },
     {
-        name: 'SSL certificates.',
-        description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-        icon: LockClosedIcon,
+        name: 'Interact with resources',
+        description: 'Send messages to queues, download files from buckets, make API requests and more.',
+        icon: CubeIcon,
     },
     {
-        name: 'Simple queues.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
-        icon: ArrowPathIcon,
+        name: 'Create tunnels for APIs',
+        description: 'Create secure tunnels to expose your API to the internet for testing and sharing.',
+        icon: GlobeAmericasIcon,
     },
     {
-        name: 'Advanced security.',
-        description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-        icon: FingerPrintIcon,
+        name: 'Running tests',
+        description: 'Run tests of your Wing applications and view the results in the Wing Console.',
+        icon: CheckCircleIcon,
     },
     {
-        name: 'Powerful API.',
-        description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-        icon: Cog6ToothIcon,
+        name: 'Logs',
+        description: 'Debug and view logs of your Wing applications running on the local cloud simulator.',
+        icon: QueueListIcon,
     },
     {
-        name: 'Database backups.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
-        icon: ServerIcon,
+        name: 'Wing it',
+        description: <span>Get the console up and running with a single command: <code className='bg-wing/40 text-sm -mt-2 -top-[1px] relative'>wing it</code>.</span>,
+        icon: CommandLineIcon,
     },
 ]
 
