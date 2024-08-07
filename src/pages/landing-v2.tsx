@@ -1,11 +1,8 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import Head from '@docusaurus/Head';
 import { useState } from 'react'
-import MDXContent from '@theme/MDXContent';
 import CodeBlock from '@theme/CodeBlock';
-// import { Dialog, DialogPanel } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon, CalendarDaysIcon, HandRaisedIcon } from '@heroicons/react/24/outline'
+import { CapitalOne, Microsoft, ThoughtWorks, Unity} from '../components/Landing/Companies';
 
 import Features from '../components/Landing/Features';
 import CrossCloud from '../components/Landing/CrossCloud';
@@ -23,9 +20,10 @@ const tabs = [
                 <p>Develop distributed serverless applications in the cloud. </p>
                 <ul>
                     <li>Focus on application logic not infrastructure</li>
-                    <li>Build with primitives (<a className='text-wing' href="/docs/api/standard-library/cloud/api">APIS</a>, <a className='text-wing' href="/docs/api/standard-library/cloud/function">Functions</a>, <a className='text-wing' href="/docs/api/standard-library/cloud/queue">Queues</a> and <a className='text-wing' href="/docs/api/category/cloud">many more.</a>) </li>
-                    <li>Run locally with <a className='text-wing' href='/docs/concepts/simulator'>Wing Simulator</a></li>
+                    <li>Build with primitives (<a className='text-wing' href="/docs/api/standard-library/cloud/api">APIS</a>, <a className='text-wing' href="/docs/api/standard-library/cloud/function">Functions</a>, <a className='text-wing' href="/docs/api/standard-library/cloud/queue">Queues,</a> and <a className='text-wing' href="/docs/api/category/cloud">more.</a>) </li>
+                    <li>Iterate and test locally with <a className='text-wing' href='/docs/concepts/simulator'>Wing Simulator</a></li>
                     <li>Test application with <a className="text-wing" href="/docs/concepts/tests">Wing testing framework</a></li>
+                    <li>End-to-end <a className="text-wing" href="/docs/api/language/variable-declaration">type safety</a></li>
                 </ul>
                 <p></p>
             </div>
@@ -209,12 +207,12 @@ const LandingPage = () => {
                         className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-wing/80 to-wing/50 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                     />
                 </div>
-                <div className="py-24 sm:py-32 lg:pb-24">
+                <div className="py-24 sm:py-32 lg:pb-0">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                        <div className="hidden  sm:flex sm:justify-center">
-                            <div className="relative rounded-full px-3 py-1 text-lg mb-4 leading-6 text-gray-400 ring-1 ring-wing/40 hover:ring-wing/80">
-                                Wing 1.0 Roadmap{'  '}
-                                <a href="#" className="font-semibold text-wing/70">
+                        <div className="hidden sm:flex sm:justify-center">
+                            <div className="relative rounded-full px-3 py-1 text-lg mb-8 leading-6 text-gray-400 ring-1 ring-wing/70 hover:ring-wing">
+                                <span className="mr-3">Wing 1.0 Roadmap</span>
+                                <a href="#" className="font-semibold text-wing/80">
                                     <span aria-hidden="true" className="absolute inset-0" />
                                     Read more <span aria-hidden="true">&rarr;</span>
                                 </a>
@@ -229,12 +227,12 @@ const LandingPage = () => {
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
                                 <a
-                                    href="#"
-                                    className="text-xl rounded-md bg-wing/80 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                                    href="/docs"
+                                    className="text-xl rounded-md bg-wing/80 px-3.5 py-2.5  font-semibold text-white shadow-sm hover:bg-wing hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                                 >
                                     Quick start
                                 </a>
-                                <a href="#" className="text-xl font-semibold leading-6 text-white">
+                                <a href="https://www.winglang.io/play" className="text-xl font-semibold leading-6 text-white hover:text-wing">
                                     Playground <span aria-hidden="true">→</span>
                                 </a>
                             </div>
@@ -265,7 +263,22 @@ const LandingPage = () => {
 
             </div>
 
-            <div className="relative isolate overflow-hidden bg-black/90 pt-8 pb-16 ">
+            {/* Company Logos */}
+            <div className="bg-black pt-12 pb-12">
+                <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                    <h2 className="text-center text-lg font-semibold leading-8 text-gray-400 mb-0">
+                        Sparks the imagination of thousands
+                    </h2>
+                    <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8  sm:max-w-xl lg:mx-0 lg:max-w-none lg:grid-cols-4 -mt-10">
+                        <CapitalOne />
+                        <Microsoft />
+                        <ThoughtWorks />
+                        <Unity/>
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative isolate overflow-hidden bg-gray-900 py-16 pb-24">
                 <div className="mx-auto max-w-6xl lg:px-8">
                     <h4 className='text-gray-100 text-4xl'>New language for a new programming model</h4>
 
@@ -295,7 +308,7 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            
+
             <Features />
             <CrossCloud />
             {/* <Testimonal /> */}
@@ -305,7 +318,7 @@ const LandingPage = () => {
 
             <CTA />
 
-          
+
 
         </Layout>
     );

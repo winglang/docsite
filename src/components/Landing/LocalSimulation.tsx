@@ -60,10 +60,10 @@ export default function Example() {
                         src="/img/simulator.png"
                         width={2432}
                         // height={842}
-                        className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
+                        className="mb-[-2%] rounded-xl shadow-2xl ring-4 ring-wing/35"
                     />
                     <div aria-hidden="true" className="relative">
-                        <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]" />
+                        <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-black pt-[7%]" />
                     </div>
                 </div>
             </div>

@@ -1,11 +1,10 @@
 import React from 'react';
-import { ArrowLeftCircleIcon, ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid'
-import { AWSPlatformIcon, AzurePlatformIcon, GCPPlatformIcon } from '../PlatformIcons';
+import { PlusIcon } from '@heroicons/react/20/solid'
+import { AWSPlatformIcon, AzurePlatformIcon, GCPPlatformIcon, TerraformIcon, CDKIcon } from '../PlatformIcons';
 import CodeBlock from '@theme/CodeBlock';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const classNames = (...classes) => {
-    return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ')
 };
 
 const codeExample = `bring cloud;
@@ -30,11 +29,11 @@ new cloud.Function(inflight () => {
 });`
 
 const platforms = [
-    {
-        name: 'AWS Terraform',
-        platform: 'aws-tf',
-        output: {
-            example: `{
+  {
+    name: 'AWS with Terraform',
+    platform: 'aws-tf',
+    output: {
+      example: `{
   "provider": {
     "aws": [{}]
   },
@@ -223,15 +222,19 @@ const platforms = [
     }
   }
 }`,
-            metastring: 'title="AWS Terraform (main.tf.json)"',
-        },
-        platformIcon: AWSPlatformIcon
+      metastring: 'title="AWS Terraform (main.tf.json)"',
     },
-    {
-        name: 'AWS CDK',
-        platform: 'awscdk',
-        output: {
-            example: `{
+    platformIcon: () => <div className='flex space-x-2 w-full justify-center items-center'>
+      <AWSPlatformIcon className='w-8 h-8' />
+      <PlusIcon className='text-gray-400 w-5 h-5' />
+      <TerraformIcon className='w-8 h-8' />
+    </div>
+  },
+  {
+    name: 'AWS with CDK',
+    platform: 'awscdk',
+    output: {
+      example: `{
  "Resources": {
   "InputsECF79824": {
    "Type": "AWS::S3::Bucket",
@@ -506,15 +509,19 @@ const platforms = [
   }
  }
 }`,
-            metastring: 'title="AWS CDK"',
-        },
-        platformIcon: AWSPlatformIcon
+      metastring: 'title="AWS CDK"',
     },
-    {
-        name: 'Azure Terraform',
-        platform: 'azure-tf',
-        output: {
-            example: `{
+    platformIcon: () => <div className='flex space-x-2 w-full justify-center items-center'>
+      <AWSPlatformIcon className='w-8 h-8' />
+      <PlusIcon className='text-gray-400 w-5 h-5' />
+      <CDKIcon className='!w-10 !h-10' />
+    </div>
+  },
+  {
+    name: 'Azure with Terraform',
+    platform: 'azure-tf',
+    output: {
+      example: `{
   "provider": {
     "azurerm": [
       {
@@ -748,232 +755,267 @@ const platforms = [
     }
   }
 }`,
-            metastring: 'title="Azure Terraform (main.tf.json)"',
-        },
-        metastring: 'platform',
-        platformIcon: AzurePlatformIcon
+      metastring: 'title="Azure Terraform (main.tf.json)"',
     },
-    {
-        name: 'GCP Terraform',
-        platform: 'gcp-tf',
-        output: {
-            example: `{
+    metastring: 'platform',
+    platformIcon: () => <div className='flex space-x-2 w-full justify-center items-center'>
+      <AzurePlatformIcon className='w-8 h-8' />
+      <PlusIcon className='text-gray-400 w-5 h-5' />
+      <TerraformIcon className='w-8 h-8' />
+    </div>
+  },
+  {
+    name: 'GCP with Terraform',
+    platform: 'gcp-tf',
+    output: {
+      example: `{
   "provider": {
-    "azurerm": [
+    "google": [
       {
-        "features": {
-          "resource_group": {
-            "prevent_deletion_if_contains_resources": false
-          }
-        }
+        "project": "my-project-id",
+        "region": "us-west1"
+      }
+    ],
+    "random": [
+      {
       }
     ]
   },
   "resource": {
-    "azurerm_application_insights": {
-      "ApplicationInsights": {
+    "google_cloudfunctions_function": {
+      "Function_DefaultFunction_81B206D7": {
         "//": {
           "metadata": {
-            "path": "root/Default/ApplicationInsights",
-            "uniqueId": "ApplicationInsights"
+            "path": "root/Default/Default/Function/DefaultFunction",
+            "uniqueId": "Function_DefaultFunction_81B206D7"
           }
         },
-        "application_type": "web",
-        "location": "\${azurerm_resource_group.ResourceGroup.location}",
-        "name": "application-insights",
-        "resource_group_name": "\${azurerm_resource_group.ResourceGroup.name}",
-        "workspace_id": "\${azurerm_log_analytics_workspace.LogAnalyticsWorkspace.id}"
-      }
-    },
-    "azurerm_linux_function_app": {
-      "Function_042596DC": {
-        "//": {
-          "metadata": {
-            "path": "root/Default/Default/Function/Function",
-            "uniqueId": "Function_042596DC"
-          }
+        "available_memory_mb": 1024,
+        "description": "This function was created by Wing",
+        "entry_point": "handler",
+        "environment_variables": {
+          "BUCKET_NAME_03e8cb1d": "\${google_storage_bucket.Outputs.name}",
+          "BUCKET_NAME_6d1466a7": "\${google_storage_bucket.Inputs.name}",
+          "FIRESTORE_DATABASE_NAME_6cb5a3a4": "\${google_firestore_database.Counter.name}",
+          "WING_TARGET": "tf-gcp"
         },
-        "app_settings": {
-          "BUCKET_NAME_23e2e49d": "\${azurerm_storage_container.Inputs_Bucket_4FACFAC2.name}",
-          "BUCKET_NAME_b5c65333": "\${azurerm_storage_container.Outputs_Bucket_F94D9F99.name}",
-          "FUNCTIONS_WORKER_RUNTIME": "node",
-          "STORAGE_ACCOUNT_0a1532c6": "\${azurerm_storage_account.StorageAccount.name}",
-          "STORAGE_ACCOUNT_23e2e49d": "\${azurerm_storage_account.StorageAccount.name}",
-          "STORAGE_ACCOUNT_KEY_0a1532c6": "\${azurerm_storage_account.StorageAccount.primary_access_key}",
-          "STORAGE_ACCOUNT_b5c65333": "\${azurerm_storage_account.StorageAccount.name}",
-          "TABLE_NAME_0a1532c6": "\${azurerm_storage_table.Counter_CounterTable_D17407E5.name}",
-          "WEBSITE_RUN_FROM_PACKAGE": "https://\${azurerm_storage_account.StorageAccount.name}.blob.core.windows.net/\${azurerm_storage_container.Function_FunctionBucket_0F705EF9.name}/\${azurerm_storage_blob.Function_CodeBlob_8A9705C9.name}",
-          "WING_TARGET": "tf-azure"
-        },
-        "https_only": true,
-        "identity": {
-          "type": "SystemAssigned"
-        },
-        "location": "\${azurerm_resource_group.ResourceGroup.location}",
+        "https_trigger_security_level": "SECURE_ALWAYS",
         "name": "function-c852aba6",
-        "resource_group_name": "\${azurerm_resource_group.ResourceGroup.name}",
-        "service_plan_id": "\${azurerm_service_plan.ServicePlan.id}",
-        "site_config": {
-          "application_insights_connection_string": "\${azurerm_application_insights.ApplicationInsights.connection_string}",
-          "application_insights_key": "\${azurerm_application_insights.ApplicationInsights.instrumentation_key}",
-          "application_stack": {
-            "node_version": "20"
-          }
-        },
-        "storage_account_access_key": "\${azurerm_storage_account.StorageAccount.primary_access_key}",
-        "storage_account_name": "\${azurerm_storage_account.StorageAccount.name}"
+        "project": "my-project-id",
+        "region": "us-west1",
+        "runtime": "nodejs20",
+        "service_account_email": "\${google_service_account.Function_ServiceAccountc852aba6d7cbe50c86bbedd1463b05db52425574b5_504E4375.email}",
+        "source_archive_bucket": "\${google_storage_bucket.Function_FunctionBucket_CD7D2793.name}",
+        "source_archive_object": "\${google_storage_bucket_object.Function_FunctionObjectBucket_A7CD2097.name}",
+        "timeout": 120,
+        "trigger_http": true
       }
     },
-    "azurerm_log_analytics_workspace": {
-      "LogAnalyticsWorkspace": {
+    "google_firestore_database": {
+      "Counter": {
         "//": {
           "metadata": {
-            "path": "root/Default/LogAnalyticsWorkspace",
-            "uniqueId": "LogAnalyticsWorkspace"
+            "path": "root/Default/Default/Counter/Default",
+            "uniqueId": "Counter"
           }
         },
-        "location": "East US",
-        "name": "Default-c82bf964",
-        "resource_group_name": "\${azurerm_resource_group.ResourceGroup.name}"
+        "app_engine_integration_mode": "DISABLED",
+        "concurrency_mode": "OPTIMISTIC",
+        "delete_protection_state": "DELETE_PROTECTION_DISABLED",
+        "deletion_policy": "DELETE",
+        "depends_on": [
+          "google_project_service.Counter_CloudFirestoreAPI_2119CDFC"
+        ],
+        "location_id": "us-west1",
+        "name": "wing-counter-counter-c824ef62",
+        "point_in_time_recovery_enablement": "POINT_IN_TIME_RECOVERY_DISABLED",
+        "type": "DATASTORE_MODE"
       }
     },
-    "azurerm_resource_group": {
-      "ResourceGroup": {
+    "google_project_iam_member": {
+      "Function_project-iam-member-KEN13_4B223C74": {
         "//": {
           "metadata": {
-            "path": "root/Default/ResourceGroup",
-            "uniqueId": "ResourceGroup"
+            "path": "root/Default/Default/Function/project-iam-member-KEN.13]}",
+            "uniqueId": "Function_project-iam-member-KEN13_4B223C74"
           }
         },
-        "location": "East US",
-        "name": "Default-c82bf964"
+        "member": "serviceAccount:\${google_service_account.Function_ServiceAccountc852aba6d7cbe50c86bbedd1463b05db52425574b5_504E4375.email}",
+        "project": "my-project-id",
+        "role": "roles/datastore.user"
       }
     },
-    "azurerm_role_assignment": {
-      "Function_ReadLambdaCodeAssignment_75049D5E": {
+    "google_project_service": {
+      "Counter_CloudFirestoreAPI_2119CDFC": {
         "//": {
           "metadata": {
-            "path": "root/Default/Default/Function/ReadLambdaCodeAssignment",
-            "uniqueId": "Function_ReadLambdaCodeAssignment_75049D5E"
+            "path": "root/Default/Default/Counter/CloudFirestoreAPI",
+            "uniqueId": "Counter_CloudFirestoreAPI_2119CDFC"
           }
         },
-        "principal_id": "\${azurerm_linux_function_app.Function_042596DC.identity[0].principal_id}",
-        "role_definition_name": "Storage Blob Data Reader",
-        "scope": "\${azurerm_storage_account.StorageAccount.id}"
+        "disable_on_destroy": false,
+        "service": "firestore.googleapis.com"
       },
-      "Function_RoleAssignmentc8e1d35875c13ca650f2fed5dbae08291b89c185ec_StorageBlobDataContributor_56D5F61F": {
+      "Function_FunctionBucket_IamServiceAccountCredentialsApi_EC496DEC": {
         "//": {
           "metadata": {
-            "path": "root/Default/Default/Function/RoleAssignmentc8e1d35875c13ca650f2fed5dbae08291b89c185ec_Storage Blob Data Contributor",
-            "uniqueId": "Function_RoleAssignmentc8e1d35875c13ca650f2fed5dbae08291b89c185ec_StorageBlobDataContributor_56D5F61F"
+            "path": "root/Default/Default/Function/FunctionBucket/IamServiceAccountCredentialsApi",
+            "uniqueId": "Function_FunctionBucket_IamServiceAccountCredentialsApi_EC496DEC"
           }
         },
-        "principal_id": "\${azurerm_linux_function_app.Function_042596DC.identity[0].principal_id}",
-        "role_definition_name": "Storage Blob Data Contributor",
-        "scope": "\${azurerm_storage_account.StorageAccount.id}"
+        "disable_dependent_services": false,
+        "disable_on_destroy": false,
+        "service": "iamcredentials.googleapis.com"
       },
-      "Function_RoleAssignmentc8e1d35875c13ca650f2fed5dbae08291b89c185ec_StorageTableDataContributor_3E18F445": {
+      "Inputs_IamServiceAccountCredentialsApi_8D18659F": {
         "//": {
           "metadata": {
-            "path": "root/Default/Default/Function/RoleAssignmentc8e1d35875c13ca650f2fed5dbae08291b89c185ec_Storage Table Data Contributor",
-            "uniqueId": "Function_RoleAssignmentc8e1d35875c13ca650f2fed5dbae08291b89c185ec_StorageTableDataContributor_3E18F445"
+            "path": "root/Default/Default/Inputs/IamServiceAccountCredentialsApi",
+            "uniqueId": "Inputs_IamServiceAccountCredentialsApi_8D18659F"
           }
         },
-        "principal_id": "\${azurerm_linux_function_app.Function_042596DC.identity[0].principal_id}",
-        "role_definition_name": "Storage Table Data Contributor",
-        "scope": "\${azurerm_storage_account.StorageAccount.id}"
-      }
-    },
-    "azurerm_service_plan": {
-      "ServicePlan": {
-        "//": {
-          "metadata": {
-            "path": "root/Default/ServicePlan",
-            "uniqueId": "ServicePlan"
-          }
-        },
-        "location": "\${azurerm_resource_group.ResourceGroup.location}",
-        "name": "Default-c82bf964",
-        "os_type": "Linux",
-        "resource_group_name": "\${azurerm_resource_group.ResourceGroup.name}",
-        "sku_name": "Y1"
-      }
-    },
-    "azurerm_storage_account": {
-      "StorageAccount": {
-        "//": {
-          "metadata": {
-            "path": "root/Default/StorageAccount",
-            "uniqueId": "StorageAccount"
-          }
-        },
-        "account_replication_type": "LRS",
-        "account_tier": "Standard",
-        "location": "\${azurerm_resource_group.ResourceGroup.location}",
-        "name": "defaultc82bf964",
-        "resource_group_name": "\${azurerm_resource_group.ResourceGroup.name}"
-      }
-    },
-    "azurerm_storage_blob": {
-      "Function_CodeBlob_8A9705C9": {
-        "//": {
-          "metadata": {
-            "path": "root/Default/Default/Function/CodeBlob",
-            "uniqueId": "Function_CodeBlob_8A9705C9"
-          }
-        },
-        "name": "function-c852aba6.zip",
-        "source": "assets/Function_Asset_212D1EED/602A3447EF11790A36EB7B58D92714D1/archive.zip",
-        "storage_account_name": "\${azurerm_storage_account.StorageAccount.name}",
-        "storage_container_name": "\${azurerm_storage_container.Function_FunctionBucket_0F705EF9.name}",
-        "type": "Block"
-      }
-    },
-    "azurerm_storage_container": {
-      "Function_FunctionBucket_0F705EF9": {
-        "//": {
-          "metadata": {
-            "path": "root/Default/Default/Function/FunctionBucket/Bucket",
-            "uniqueId": "Function_FunctionBucket_0F705EF9"
-          }
-        },
-        "container_access_type": "private",
-        "name": "functionbucket-c8ccf7e8",
-        "storage_account_name": "\${azurerm_storage_account.StorageAccount.name}"
+        "disable_dependent_services": false,
+        "disable_on_destroy": false,
+        "service": "iamcredentials.googleapis.com"
       },
-      "Inputs_Bucket_4FACFAC2": {
+      "Outputs_IamServiceAccountCredentialsApi_FA13A158": {
         "//": {
           "metadata": {
-            "path": "root/Default/Default/Inputs/Bucket",
-            "uniqueId": "Inputs_Bucket_4FACFAC2"
+            "path": "root/Default/Default/Outputs/IamServiceAccountCredentialsApi",
+            "uniqueId": "Outputs_IamServiceAccountCredentialsApi_FA13A158"
           }
         },
-        "container_access_type": "private",
-        "name": "inputs-c8676bf7",
-        "storage_account_name": "\${azurerm_storage_account.StorageAccount.name}"
-      },
-      "Outputs_Bucket_F94D9F99": {
-        "//": {
-          "metadata": {
-            "path": "root/Default/Default/Outputs/Bucket",
-            "uniqueId": "Outputs_Bucket_F94D9F99"
-          }
-        },
-        "container_access_type": "private",
-        "name": "outputs-c80efaa7",
-        "storage_account_name": "\${azurerm_storage_account.StorageAccount.name}"
+        "disable_dependent_services": false,
+        "disable_on_destroy": false,
+        "service": "iamcredentials.googleapis.com"
       }
     },
-    "azurerm_storage_table": {
-      "Counter_CounterTable_D17407E5": {
+    "google_service_account": {
+      "Function_ServiceAccountc852aba6d7cbe50c86bbedd1463b05db52425574b5_504E4375": {
         "//": {
           "metadata": {
-            "path": "root/Default/Default/Counter/CounterTable",
-            "uniqueId": "Counter_CounterTable_D17407E5"
+            "path": "root/Default/Default/Function/ServiceAccountc852aba6d7cbe50c86bbedd1463b05db52425574b5",
+            "uniqueId": "Function_ServiceAccountc852aba6d7cbe50c86bbedd1463b05db52425574b5_504E4375"
           }
         },
-        "name": "counterxc824ef62",
-        "storage_account_name": "\${azurerm_storage_account.StorageAccount.name}"
+        "account_id": "function-c852aba6",
+        "display_name": "Custom Service Account for Cloud Function c852aba6d7cbe50c86bbedd1463b05db52425574b5"
+      }
+    },
+    "google_storage_bucket": {
+      "Function_FunctionBucket_CD7D2793": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Function/FunctionBucket/Default",
+            "uniqueId": "Function_FunctionBucket_CD7D2793"
+          }
+        },
+        "depends_on": [
+          "google_project_service.Function_FunctionBucket_IamServiceAccountCredentialsApi_EC496DEC"
+        ],
+        "force_destroy": false,
+        "location": "us-west1",
+        "name": "functionbucket-\${random_id.Function_FunctionBucket_Id_216676D0.hex}",
+        "public_access_prevention": "enforced",
+        "uniform_bucket_level_access": true
+      },
+      "Inputs": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Inputs/Default",
+            "uniqueId": "Inputs"
+          }
+        },
+        "depends_on": [
+          "google_project_service.Inputs_IamServiceAccountCredentialsApi_8D18659F"
+        ],
+        "force_destroy": false,
+        "location": "us-west1",
+        "name": "inputs-\${random_id.Inputs_Id_DC2A568A.hex}",
+        "public_access_prevention": "enforced",
+        "uniform_bucket_level_access": true
+      },
+      "Outputs": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Outputs/Default",
+            "uniqueId": "Outputs"
+          }
+        },
+        "depends_on": [
+          "google_project_service.Outputs_IamServiceAccountCredentialsApi_FA13A158"
+        ],
+        "force_destroy": false,
+        "location": "us-west1",
+        "name": "outputs-\${random_id.Outputs_Id_88D4ADA1.hex}",
+        "public_access_prevention": "enforced",
+        "uniform_bucket_level_access": true
+      }
+    },
+    "google_storage_bucket_iam_member": {
+      "Inputs_bucket-iam-member-KEN17-KEN18_B669AF4A": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Inputs/bucket-iam-member-KEN.17]}-KEN.18]}",
+            "uniqueId": "Inputs_bucket-iam-member-KEN17-KEN18_B669AF4A"
+          }
+        },
+        "bucket": "\${google_storage_bucket.Inputs.name}",
+        "member": "serviceAccount:\${google_cloudfunctions_function.Function_DefaultFunction_81B206D7.service_account_email}",
+        "role": "roles/storage.objectViewer"
+      },
+      "Outputs_bucket-iam-member-KEN23-KEN24_3D9AAE91": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Outputs/bucket-iam-member-KEN.23]}-KEN.24]}",
+            "uniqueId": "Outputs_bucket-iam-member-KEN23-KEN24_3D9AAE91"
+          }
+        },
+        "bucket": "\${google_storage_bucket.Outputs.name}",
+        "member": "serviceAccount:\${google_cloudfunctions_function.Function_DefaultFunction_81B206D7.service_account_email}",
+        "role": "roles/storage.objectCreator"
+      }
+    },
+    "google_storage_bucket_object": {
+      "Function_FunctionObjectBucket_A7CD2097": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Function/FunctionObjectBucket",
+            "uniqueId": "Function_FunctionObjectBucket_A7CD2097"
+          }
+        },
+        "bucket": "\${google_storage_bucket.Function_FunctionBucket_CD7D2793.name}",
+        "name": "objects",
+        "source": "assets/Function_Asset_212D1EED/3696740317AA62CB0AE25CD2D8EC4FB2/archive.zip"
+      }
+    },
+    "random_id": {
+      "Function_FunctionBucket_Id_216676D0": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Function/FunctionBucket/Id",
+            "uniqueId": "Function_FunctionBucket_Id_216676D0"
+          }
+        },
+        "byte_length": 4
+      },
+      "Inputs_Id_DC2A568A": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Inputs/Id",
+            "uniqueId": "Inputs_Id_DC2A568A"
+          }
+        },
+        "byte_length": 4
+      },
+      "Outputs_Id_88D4ADA1": {
+        "//": {
+          "metadata": {
+            "path": "root/Default/Default/Outputs/Id",
+            "uniqueId": "Outputs_Id_88D4ADA1"
+          }
+        },
+        "byte_length": 4
       }
     }
   },
@@ -984,73 +1026,80 @@ const platforms = [
       }
     },
     "required_providers": {
-      "azurerm": {
-        "source": "azurerm",
-        "version": "3.96.0"
+      "google": {
+        "source": "google",
+        "version": "5.10.0"
+      },
+      "random": {
+        "source": "random",
+        "version": "3.5.1"
       }
     }
   }
 }`,
-            metastring: 'title="GCP Terraform (main.tf.json)"',
-        },
-        metastring: 'platform',
-        platformIcon: GCPPlatformIcon
-    }
+      metastring: 'title="GCP Terraform (main.tf.json)"',
+    },
+    metastring: 'platform',
+    platformIcon: () => <div className='flex space-x-2 w-full justify-center items-center'>
+      <GCPPlatformIcon className='w-8 h-8' />
+      <PlusIcon className='text-gray-400 w-5 h-5' />
+      <TerraformIcon className='w-8 h-8' />
+    </div>
+  }
 ]
 
 export default function Example() {
 
-    const [selectedPlatform, setSelectedPlatform] = React.useState(platforms[0])
+  const [selectedPlatform, setSelectedPlatform] = React.useState(platforms[0])
 
-    return (
-        <div className="bg-gray-900 py-16 pb-32 ">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className=" max-w-3xl lg:text-left">
-                    <h2 className="text-xl font-semibold leading-7 text-wing">Wing platforms</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-5xl">
-                        Deploy to any cloud
-                    </p>
-                    <p className="mt-6 text-lg leading-8 text-gray-300">
-                        Wing platforms specify how and where your application is deployed. They determine both the cloud environment and the provisioning engine that the code will be deployed with.
-                    </p>
-                </div>
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
-                    <div className='grid grid-cols-12 gap-8 '>
-                        <div className="col-span-5 bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
-                            <CodeBlock
-                                language="js"
-                                className='h-full w-full p-0 m-0 !rounded-none'
-                                metastring={'title="wing.w" playground'}
-                            >
-                                {codeExample}
-                            </CodeBlock>
-                        </div>
-                        <div className=" col-span-2">
-                            <div className="grid grid-cols-1 gap-4">
-                                {platforms.map((platform, index) => {
-                                    const isSelected = selectedPlatform.platform === platform.platform
-                                    return <div key={index} className={classNames(!isSelected ? '!border-wing/10' : '', isSelected ? '!border-wing/50 bg-black  text-gray-900 border-2' : '!border-gray-800 bg-black/10 ', 'flex flex-col gap-2 p-2 bg-gray-800 rounded-md cursor-pointer relative  !border-2 ')} style={{ border: "solid" }} onClick={() => setSelectedPlatform(platform)}>
-                                        <div className="flex flex-col items-center gap-2 text-center">
-                                            <platform.platformIcon className="h-12 w-12 text-wing" />
-                                            <span className="text-sm font-semibold text-gray-200">{platform.name}</span>
-                                            <span className="text-xs font-semibold text-gray-400">{platform.platform}</span>
-                                        </div>
-                                    </div>
-                                })}
-                            </div>
-                        </div>
-                        <div className="col-span-5 bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
-                            <CodeBlock
-                                language="json"
-                                className='h-full w-full p-0 m-0 !rounded-none overflow-auto '
-                                metastring={selectedPlatform.output.metastring}
-                            >
-                                {selectedPlatform.output.example}
-                            </CodeBlock>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div className="bg-gray-900 py-16 pb-32 ">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className=" max-w-3xl lg:text-left">
+          <h2 className="text-xl font-semibold leading-7 text-wing">Wing platforms</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-5xl">
+            Deploy to any cloud
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-300">
+            Wing platforms specify how and where your application is deployed. They determine both the cloud environment and the provisioning engine that the code will be deployed with.
+          </p>
         </div>
-    )
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
+          <div className='grid grid-cols-12 gap-8 '>
+            <div className="col-span-5 bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
+              <CodeBlock
+                language="js"
+                className='h-full w-full p-0 m-0 !rounded-none'
+                metastring={'title="wing.w" playground'}
+              >
+                {codeExample}
+              </CodeBlock>
+            </div>
+            <div className=" col-span-2">
+              <div className="grid grid-cols-1 gap-4">
+                {platforms.map((platform, index) => {
+                  const isSelected = selectedPlatform.platform === platform.platform
+                  return <div key={index} className={classNames(!isSelected ? '!border-wing/10' : '', isSelected ? '!border-wing/50 bg-black  text-gray-900 border-2' : '!border-gray-800 bg-black/10 ', 'flex flex-col gap-2 p-2 bg-gray-800 rounded-md cursor-pointer relative  !border-2 min-h-[6em] items-center justify-center ')} style={{ border: "solid" }} onClick={() => setSelectedPlatform(platform)}>
+                    <div className="flex flex-col items-center gap-2 text-center">
+                      <platform.platformIcon />
+                      <span className="text-sm font-semibold text-gray-200">{platform.name}</span>
+                    </div>
+                  </div>
+                })}
+              </div>
+            </div>
+            <div className="col-span-5 bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
+              <CodeBlock
+                language="json"
+                className='h-full w-full p-0 m-0 !rounded-none overflow-auto '
+                metastring={selectedPlatform.output.metastring}
+              >
+                {selectedPlatform.output.example}
+              </CodeBlock>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }

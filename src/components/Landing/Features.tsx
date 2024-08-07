@@ -46,9 +46,9 @@ const features = [
   },
 ]
 
-export default function Example() {
+export default function Features() {
   return (
-    <div className="bg-black py-6 pb-16 ">
+    <div className="bg-black py-32 py-16  ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl lg:text-center">
           <h2 className="text-xl font-semibold leading-7 text-wing">Code for the cloud</h2>
