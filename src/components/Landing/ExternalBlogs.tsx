@@ -74,9 +74,9 @@ const posts = [
     // More posts...
 ]
 
-export default function Example() {
+export default function ExternalBlogs() {
     return (
-        <div className="bg-white py-24 sm:py-32">
+        <div className="dark:bg-white bg-gray-100/50 py-24 sm:py-32">
             <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 px-6 sm:gap-y-16 lg:grid-cols-2 lg:px-8">
                 <article className="mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg">
                     <time dateTime={featuredPost.datetime} className="block text-sm leading-6 text-gray-600">
@@ -92,7 +92,7 @@ export default function Example() {
                                 href={featuredPost.href}
                                 target='_blank'
                                 aria-describedby="featured-post"
-                                className="text-sm font-semibold leading-6 text-teal-500"
+                                className="text-sm font-semibold leading-6 text-teal-700  dark:text-teal-500 "
                             >
                                 Continue reading <span aria-hidden="true">&rarr;</span>
                             </a>
@@ -117,7 +117,7 @@ export default function Example() {
                                         {post.date}
                                     </time>
                                     <h2 className="mt-2 text-lg font-semibold text-gray-900 group-hover:text-gray-600">
-                                        <a href={post.href} target='_blank' className='text-wing'>
+                                        <a href={post.href} target='_blank' className='dark:text-wing'>
                                             <span className="absolute inset-0" />
                                             {post.title}
                                         </a>

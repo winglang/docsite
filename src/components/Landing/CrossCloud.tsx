@@ -514,7 +514,7 @@ const platforms = [
     platformIcon: () => <div className='flex space-x-2 w-full justify-center items-center'>
       <AWSPlatformIcon className='w-8 h-8' />
       <PlusIcon className='text-gray-400 w-5 h-5' />
-      <CDKIcon className='!w-10 !h-10' />
+      <CDKIcon className='!w-10 !h-10 dark:text-white text-orange-500' />
     </div>
   },
   {
@@ -1053,20 +1053,20 @@ export default function Example() {
   const [selectedPlatform, setSelectedPlatform] = React.useState(platforms[0])
 
   return (
-    <div className="bg-gray-900 py-16 pb-32 ">
+    <div className="dark:bg-gray-900 bg-gray-100/50 py-16 pb-32 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className=" max-w-3xl lg:text-left">
           <h2 className="text-xl font-semibold leading-7 text-wing">Wing platforms</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-5xl">
+          <p className="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 sm:text-5xl">
             Deploy to any cloud
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+          <p className="mt-6 text-lg leading-8 dark:text-gray-300">
             Wing platforms specify how and where your application is deployed. They determine both the cloud environment and the provisioning engine that the code will be deployed with.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
           <div className='grid grid-cols-12 gap-8 '>
-            <div className="col-span-5 bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
+            <div className="col-span-5 bg-gray-300 dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
               <CodeBlock
                 language="js"
                 className='h-full w-full p-0 m-0 !rounded-none'
@@ -1079,16 +1079,16 @@ export default function Example() {
               <div className="grid grid-cols-1 gap-4">
                 {platforms.map((platform, index) => {
                   const isSelected = selectedPlatform.platform === platform.platform
-                  return <div key={index} className={classNames(!isSelected ? '!border-wing/10' : '', isSelected ? '!border-wing/50 bg-black  text-gray-900 border-2' : '!border-gray-800 bg-black/10 ', 'flex flex-col gap-2 p-2 bg-gray-800 rounded-md cursor-pointer relative  !border-2 min-h-[6em] items-center justify-center ')} style={{ border: "solid" }} onClick={() => setSelectedPlatform(platform)}>
+                  return <div key={index} className={classNames(!isSelected ? '!border-wing/10 bg-gray-100/50' : '', isSelected ? '!border-wing/50 bg-white dark:bg-black  text-gray-900 border-2' : '!border-gray-800 dark:bg-black/10 ', 'flex flex-col gap-2 p-2 dark:bg-gray-800 rounded-md cursor-pointer relative  !border-2 min-h-[6em] items-center justify-center ')} style={{ border: "solid" }} onClick={() => setSelectedPlatform(platform)}>
                     <div className="flex flex-col items-center gap-2 text-center">
                       <platform.platformIcon />
-                      <span className="text-sm font-semibold text-gray-200">{platform.name}</span>
+                      <span className="text-sm font-semibold dark:text-gray-200">{platform.name}</span>
                     </div>
                   </div>
                 })}
               </div>
             </div>
-            <div className="col-span-5 bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
+            <div className="col-span-5 bg-gray-300 dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
               <CodeBlock
                 language="json"
                 className='h-full w-full p-0 m-0 !rounded-none overflow-auto '
