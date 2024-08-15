@@ -8,12 +8,12 @@ keywords: [winglib, Wing library]
 
 | Library  | Package name  | Version | Description  | Supported Wing platforms |
 | -------- | ------- | ------- | ------- | ------- |
-| [Amazon Bedrock](/docs/winglibs/winglibs/bedrock) | [@winglibs/bedrock](/docs/winglibs/winglibs/bedrock) |  v0.0.9 | A Wing library for Amazon Bedrock  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
+| [Amazon Bedrock](/docs/winglibs/winglibs/bedrock) | [@winglibs/bedrock](/docs/winglibs/winglibs/bedrock) |  v0.1.0 | A Wing library for Amazon Bedrock  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [AWS Budget](/docs/winglibs/winglibs/budget) | [@winglibs/budget](/docs/winglibs/winglibs/budget) |  v0.1.5 | A Wing library for working with [AWS Budgets]  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [Cloud checks](/docs/winglibs/winglibs/checks) | [@winglibs/checks](/docs/winglibs/winglibs/checks) |  v0.0.16 | A self-validation mechanism for cloud applications  | [*](/docs/platforms/platforms) |
-| [cloudv2](/docs/winglibs/winglibs/cloudv2) | [@winglibs/cloudv2](/docs/winglibs/winglibs/cloudv2) |  v0.0.2 | Standard cloud library for Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
+| [cloudv2](/docs/winglibs/winglibs/cloudv2) | [@winglibs/cloudv2](/docs/winglibs/winglibs/cloudv2) |  v0.1.0 | Standard cloud library for Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [Amazon Cognito](/docs/winglibs/winglibs/cognito) | [@winglibs/cognito](/docs/winglibs/winglibs/cognito) |  v0.0.14 | A wing library to work with Amazon Cognito  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
-| [Containers](/docs/winglibs/winglibs/containers) | [@winglibs/containers](/docs/winglibs/winglibs/containers) |  v0.1.5 | Deploy containers with Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
+| [Containers](/docs/winglibs/winglibs/containers) | [@winglibs/containers](/docs/winglibs/winglibs/containers) |  v0.1.6 | Deploy containers with Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [Amazon DynamoDB](/docs/winglibs/winglibs/dynamodb) | [@winglibs/dynamodb](/docs/winglibs/winglibs/dynamodb) |  v0.2.1 | A Wing library for Amazon DynamoDB  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [Amazon EventBridge](/docs/winglibs/winglibs/eventbridge) | [@winglibs/eventbridge](/docs/winglibs/winglibs/eventbridge) |  v0.1.6 | A Wing library for working with Amazon EventBridge  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws), [awscdk](/docs/platforms/AWS/awscdk) |
 | [FIFO Queue](/docs/winglibs/winglibs/fifoqueue) | [@winglibs/fifoqueue](/docs/winglibs/winglibs/fifoqueue) |  v0.0.10 | A wing library to work with FIFO (first-in first-out) Queues  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
@@ -37,7 +37,7 @@ keywords: [winglib, Wing library]
 | [Terraform utilities](/docs/winglibs/winglibs/tf) | [@winglibs/tf](/docs/winglibs/winglibs/tf) |  v0.0.7 | Terraform utilities library for Wing  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
 | [tsoa](/docs/winglibs/winglibs/tsoa) | [@winglibs/tsoa](/docs/winglibs/winglibs/tsoa) |  v0.1.13 | A Wing library for working with [TSOA](https://tsoa-community.github.io/docs/) - An OpenAPI-compliant Web APIs using TypeScript.  | [sim](/docs/platforms/sim) |
 | [Vite](/docs/winglibs/winglibs/vite) | [@winglibs/vite](/docs/winglibs/winglibs/vite) |  v0.2.3 | A Wing library to deploy [Vite applications](https://vitejs.dev/) to the cloud.  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws) |
-| [WebSocket](/docs/winglibs/winglibs/websockets) | [@winglibs/websockets](/docs/winglibs/winglibs/websockets) |  v0.3.10 | A Wing library that enables you to create WebSockets using Wing.  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws), [awscdk](/docs/platforms/AWS/awscdk) |
+| [WebSocket](/docs/winglibs/winglibs/websockets) | [@winglibs/websockets](/docs/winglibs/winglibs/websockets) |  v0.3.11 | A Wing library that enables you to create WebSockets using Wing.  | [sim](/docs/platforms/sim), [tf-aws](/docs/platforms/AWS/tf-aws), [awscdk](/docs/platforms/AWS/awscdk) |
 
 ## Contributing to winglibs
 
