@@ -63,7 +63,7 @@ export default function Example() {
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <img
                         alt="App screenshot"
-                        src="/img/simulator.png"
+                        src="/img/simulator2.jpg"
                         width={2432}
                         // height={842}
                         className="mb-[-2%] rounded-xl shadow-2xl ring-4 ring-wing/35"

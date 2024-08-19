@@ -238,14 +238,8 @@ const LandingPage = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="hidden md:block">
-                            <img
-                                alt="App screenshot"
-                                src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-                                width={2432}
-                                height={702}
-                                className="mt-16 rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 sm:mt-24"
-                            />
+                        <div className="hidden md:block mx-auto text-center py-16 " >
+                            <iframe className=' !border-2 !border-wing/40 shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c]' width="80%" height="615" style={{ border: 'solid'}} src="https://www.youtube.com/embed/wzqCXrsKWbo?si=mroVDIDNYhGns3bs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
 
