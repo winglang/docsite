@@ -1048,7 +1048,7 @@ const platforms = [
   }
 ]
 
-export default function Example() {
+export default function CrossCloud() {
 
   const [selectedPlatform, setSelectedPlatform] = React.useState(platforms[0])
 
@@ -1064,9 +1064,12 @@ export default function Example() {
             Wing platforms specify how and where your application is deployed. They determine both the cloud environment and the provisioning engine that the code will be deployed with.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
+        <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
           <div className='grid grid-cols-12 gap-8 '>
-            <div className="col-span-5 bg-gray-300 dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
+            
+            <span className='col-span-12 -mb-4 block md:hidden font-bold'>1. Write your code</span>
+            <div className="col-span-12 md:col-span-5 bg-gray-300 dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
+              
               <CodeBlock
                 language="js"
                 className='h-full w-full p-0 m-0 !rounded-none'
@@ -1075,7 +1078,8 @@ export default function Example() {
                 {codeExample}
               </CodeBlock>
             </div>
-            <div className=" col-span-2">
+            <span className='col-span-12 -mb-4 block md:hidden font-bold'>2. Compile to a Wing platform</span>
+            <div className="col-span-12 md:col-span-2">
               <div className="grid grid-cols-1 gap-4">
                 {platforms.map((platform, index) => {
                   const isSelected = selectedPlatform.platform === platform.platform
@@ -1088,7 +1092,8 @@ export default function Example() {
                 })}
               </div>
             </div>
-            <div className="col-span-5 bg-gray-300 dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
+            <span className='col-span-12 -mb-4 block md:hidden font-bold '>3. Generated output</span>
+            <div className="col-span-12 md:col-span-5 bg-gray-300 dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md max-h-[550px]" >
               <CodeBlock
                 language="json"
                 className='h-full w-full p-0 m-0 !rounded-none overflow-auto '

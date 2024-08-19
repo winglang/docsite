@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
 import { useState } from 'react'
 import CodeBlock from '@theme/CodeBlock';
@@ -9,6 +9,7 @@ import CrossCloud from '../components/Landing/CrossCloud';
 import LocalSimulation from '../components/Landing/LocalSimulation';
 import Newsletter from '../components/Landing/Newsletter';
 import ExternalBlogs from '../components/Landing/ExternalBlogs';
+import Head from '@docusaurus/Head';
 
 const tabs = [
     {
@@ -144,6 +145,7 @@ new cloud.Function(checkEndpoint);
     {
         label: 'Local Testing',
         metastring: 'playground',
+        className: 'hidden md:block',
         left: () => <div className='flex flex-col justify-between h-full'>
             <div>
                 <p>Build cloud applications with confidence.</p>
@@ -185,13 +187,13 @@ const LandingPage = () => {
 
     const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
+
     return (
         <Layout title={"Wing Programming Language for the cloud"} >
 
-            {/* <Head>
-                <meta property="og:image" content={example.coverImage} />
-                <meta name="twitter:image" content={example.coverImage} />
-            </Head> */}
+            <Head>
+                <script type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js" />
+            </Head>
 
             <div className="relative isolate bg-white dark:bg-black/60 ">
                 <div
@@ -206,7 +208,7 @@ const LandingPage = () => {
                         className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr  dark:from-wing/80 dark:to-wing/50 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                     />
                 </div>
-                <div className="py-24 sm:py-32 lg:pb-0">
+                <div className="py-12 sm:py-32 lg:pb-0">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="hidden sm:flex sm:justify-center">
                             <div className="relative rounded-full px-3 py-1 text-lg mb-8 leading-6 dark:text-gray-400 ring-1 ring-wing/70 hover:ring-wing">
@@ -217,11 +219,11 @@ const LandingPage = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="mx-auto max-w-6xl text-center">
+                        <div className="mx-auto md:max-w-6xl text-center">
                             <h1 className="text-4xl font-bold tracking-tight dark:text-white sm:text-7xl">
                                 A programming language for the cloud
                             </h1>
-                            <p className="mt-6 text-lg leading-8 dark:text-gray-200 sm:text-2xl px-20">
+                            <p className="mt-6 text-md  md:leading-8 dark:text-gray-200 sm:text-2xl md:px-20">
                                 Wing combines infrastructure and runtime code in one language, enabling developers to stay in their creative flow, and to deliver better software, faster and more securely.
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -236,7 +238,7 @@ const LandingPage = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="">
+                        <div className="hidden md:block">
                             <img
                                 alt="App screenshot"
                                 src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
@@ -265,12 +267,12 @@ const LandingPage = () => {
             </div>
 
             {/* Company Logos */}
-            <div className="dark:bg-black pt-12 pb-12">
+            <div className="dark:bg-black md:pt-12 pb-12">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <h2 className="text-center text-lg font-semibold leading-8 dark:text-gray-400 mb-0">
+                    <h2 className="text-center text-lg font-semibold leading-8 dark:text-gray-500 dark:md:text-gray-400 mb-0">
                         Sparks the imagination of thousands
                     </h2>
-                    <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8  sm:max-w-xl lg:mx-0 lg:max-w-none lg:grid-cols-4 -mt-10">
+                    <div className="mx-auto grid max-w-lg grid-cols-2 gap-y-0 md:grid-cols-4 items-center md:gap-x-8  sm:max-w-xl lg:mx-0 lg:max-w-none lg:grid-cols-4 ">
                         <CapitalOne />
                         <Microsoft />
                         <ThoughtWorks />
@@ -279,27 +281,33 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            <div className="relative isolate overflow-hidden bg-gray-100/40 dark:bg-gray-900 py-16 pb-24">
+            <div className="relative isolate overflow-hidden bg-gray-100/40 dark:bg-gray-900 px-5 md:px-0 py-16 md:py-16 pb-24">
                 <div className="mx-auto max-w-6xl lg:px-8">
-                    <h4 className='dark:text-gray-100 text-4xl'>New language for a new programming model</h4>
+                    <h2 className="text-xl font-semibold leading-7 text-wing">WingLang</h2>
+                    <p className="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 sm:text-5xl">
+                        New language for a new programming model
+                    </p>
+                    <p className="mt-6 text-lg leading-8 dark:text-gray-300">
+                        Build cloud applications with cloud primitives and test locally on your machine. Wing combines infrastructure and runtime code in one language, enabling developers deliver better software, faster and more securely.
+                    </p>
 
-                    <ul className='list-none flex space-x-8 p-0 text-2xl '>
+                    <ul className='list-none flex md:space-x-8 p-0 text-md leading-5 md:leading-none md:text-xl justify-between items-center text-left pt-3 md:pt-8 '>
                         {tabs.map((tab, index) => (
-                            <li className={classNames(tab.label === selectedTab.label ? 'dark:text-white text-wing font-bold' : '', 'text-gray-400 dark:text-gray-400 !cursor-pointer dark:hover:text-white hover:text-wing')} onClick={() => setSelectedTab(tab)}>
+                            <li key={tab.label} className={classNames(tab.label === selectedTab.label ? 'dark:text-white text-wing font-bold' : '', `text-gray-400 dark:text-gray-400 !cursor-pointer dark:hover:text-white hover:text-wing ${tab.className}  w-full md:w-auto`)} onClick={() => setSelectedTab(tab)}>
                                 {tab.label}
                             </li>
                         ))}
                     </ul>
-                    <div className="mx-auto grid max-wxl lg:max-w-none lg:grid-cols-2 bg-gray-300  dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md" >
-                        <div className="h-full dark:bg-gray-800 bg-white/95 !border-r-wing/30 px-4 !border-2" style={{ "borderRight": 'solid' }}>
+                    <div className="mx-auto grid   lg:max-w-none lg:grid-cols-2 bg-gray-300  dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md" >
+                        <div className="h-full dark:bg-gray-800 bg-white/95 !border-r-wing/30 px-4  " style={{ "borderRight": 'solid' }}>
                             <div className='prose prose-md dark:prose-invert h-full pb-4'>
                                 {selectedTab.left()}
                             </div>
                         </div>
-                        <div className='h-full !rounded-none min-h-[34em]  '>
+                        <div className='h-full !rounded-none min-h-[34em] overflow-hidden md:overflow-auto !border-2 !border-t-gray-700 md:border-none' style={{ "borderTop": 'solid' }}>
                             <CodeBlock
                                 language="js"
-                                className='h-full w-full p-0 m-0 !rounded-none'
+                                className='h-full w-full p-0 m-0 !rounded-none '
                                 metastring={selectedTab.metastring}
                             >
                                 {selectedTab.right}
