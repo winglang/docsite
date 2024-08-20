@@ -173,7 +173,20 @@ html[data-theme="dark"] .navbar--fixed-top {
   align-items: center;
 }
 
-html[data-theme="dark"] .header-text-link {
+.dropdown__link.header-text-link {
+  padding: 1em;
+}
+
+.navbar__item.dropdown .navbar__link {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "TasaOrbiterDisplay-SemiBold";
+  .dropdown__link {
+    padding: 1em;
+  }
+}
+
+html[data-theme="dark"] .header-text-link, html[data-theme="dark"] .navbar__item.dropdown  {
   color: #f1f0f1;
 }
 
