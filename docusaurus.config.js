@@ -252,6 +252,7 @@ const config = {
             className: "header-text-link",
             target: "_self",
           },
+         
           {
             to: "docs/why-wing",
             position: "left",
@@ -280,34 +281,38 @@ const config = {
             className: "header-text-link",
             target: "_self",
           },
+          
           {
-            href: "https://www.winglang.io/community",
-            label: "Community",
-            position: "left",
-            className: "header-text-link",
-            target: "_self",
+            position: 'left',
+            label: 'Community & Support',
+            items: [
+              {
+                to: "blog",
+                label: "Blog",
+                target: "_self",
+                className: "header-text-link",
+              },
+              {
+                to: "contributing",
+                label: "Contributing",
+                target: "_self",
+                className: "header-text-link",
+              },
+              {
+                href: "https://www.winglang.io/community",
+                label: "Community",
+                className: "header-text-link",
+                target: "_self",
+              },
+              {
+                href: "https://www.winglang.io/contact",
+                label: "Contact",
+                target: "_self",
+                className: "header-text-link",
+              },
+            ]
           },
-          {
-            to: "contributing",
-            label: "Contributing",
-            position: "left",
-            target: "_self",
-            className: "header-text-link",
-          },
-          {
-            to: "blog",
-            label: "Blog",
-            target: "_self",
-            position: "left",
-            className: "header-text-link",
-          },
-          {
-            href: "https://www.winglang.io/contact",
-            label: "Contact",
-            position: "left",
-            target: "_self",
-            className: "header-text-link",
-          },
+          
           {
             href: discordUrl,
             "aria-label": "Discord server",
