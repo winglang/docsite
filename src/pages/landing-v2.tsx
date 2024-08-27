@@ -265,7 +265,7 @@ const LandingPage = () => {
                     <h2 className="text-center text-lg font-semibold leading-8 dark:text-gray-500 dark:md:text-gray-400 mb-0">
                         Sparks the imagination of thousands
                     </h2>
-                    <div className="mx-auto grid max-w-lg grid-cols-2 gap-y-0 md:grid-cols-4 items-center md:gap-x-8  sm:max-w-xl lg:mx-0 lg:max-w-none lg:grid-cols-4 ">
+                    <div className="mx-auto grid max-w-lg grid-cols-2 gap-y-0 md:grid-cols-4 items-center md:gap-x-8  sm:max-w-xl lg:mx-0 lg:max-w-none lg:grid-cols-4 pt-4 ">
                         <CapitalOne />
                         <Microsoft />
                         <ThoughtWorks />
