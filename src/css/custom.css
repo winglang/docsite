@@ -394,3 +394,28 @@ html[data-theme="dark"] h2[itemprop="headline"] a {
     display: none;
   }
 }
+
+
+/* Newsletter */
+.hs-form input{ 
+  background-color: white;
+  color: black;
+  /* border: solid 0px #212627; */
+  /* font-size: 16px; */
+  /* color: white; */
+  /* -moz-border-radius: 0px; */
+  /* -webkit-border-radius: 0px; */
+  /* border-radius: 4px; */
+  /* padding: 10px 12px; */
+  /* width: 340px; */
+}
+
+#hubspotForm .actions input[type="submit"] {
+  background: rgb(42 213 193 / 0.8);
+  color:white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 1em 2em;
+  margin: 1em 0;
+}
