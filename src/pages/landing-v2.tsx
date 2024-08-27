@@ -212,7 +212,7 @@ const LandingPage = () => {
                         <div className="hidden sm:flex sm:justify-center">
                             <div className="relative rounded-full px-3 py-1 text-lg mb-8 leading-6 dark:text-gray-400 ring-1 ring-wing/70 hover:ring-wing">
                                 <span className="mr-3">Wing 1.0 Roadmap</span>
-                                <a href="#" className="font-semibold dark:text-wing/80">
+                                <a href="/contributing/roadmap" className="font-semibold dark:text-wing/80">
                                     <span aria-hidden="true" className="absolute inset-0" />
                                     Read more <span aria-hidden="true">&rarr;</span>
                                 </a>
