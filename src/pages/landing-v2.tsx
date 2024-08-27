@@ -276,7 +276,7 @@ const LandingPage = () => {
 
             <div className="relative isolate bg-gray-100/40 dark:bg-gray-900 px-5 md:px-0 py-16 md:py-16 pb-24">
                 <div className="mx-auto max-w-6xl lg:px-8">
-                    <h2 className="text-xl font-semibold leading-7 text-wing">WingLang</h2>
+                    {/* <h2 className="text-xl font-semibold leading-7 text-wing">Winglang</h2> */}
                     <p className="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 sm:text-5xl">
                         New language for a new programming model
                     </p>
