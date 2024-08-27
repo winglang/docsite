@@ -17,13 +17,13 @@ const tabs = [
         metastring: 'playground',
         left: () => <div className='flex flex-col justify-between h-full'>
             <div>
-                <p>Develop distributed serverless applications in the cloud. </p>
+                <p className='text-lg'>Develop distributed serverless applications in the cloud. </p>
                 <ul>
                     <li>Focus on application logic not infrastructure</li>
-                    <li>Build with primitives (<a className='dark:text-wing text-teal-700' href="/docs/api/standard-library/cloud/api">APIS</a>, <a className='dark:text-wing text-teal-700' href="/docs/api/standard-library/cloud/function">Functions</a>, <a className='dark:text-wing text-teal-700' href="/docs/api/standard-library/cloud/queue">Queues,</a> and <a className='dark:text-wing text-teal-700' href="/docs/api/category/cloud">more.</a>) </li>
+                    <li>Build with primitives (<a className='dark:text-wing text-teal-700' href="/docs/api/standard-library/cloud/api">APIs</a>, <a className='dark:text-wing text-teal-700' href="/docs/api/standard-library/cloud/function">functions</a>, <a className='dark:text-wing text-teal-700' href="/docs/api/standard-library/cloud/queue">messaging queues,</a> and <a className='dark:text-wing text-teal-700' href="/docs/api/category/cloud">more.</a>) </li>
                     <li>Iterate and test locally with <a className='dark:text-wing text-teal-700' href='/docs/concepts/simulator'>Wing Simulator</a></li>
-                    <li>Test application with <a className="dark:text-wing text-teal-700" href="/docs/concepts/tests">Wing testing framework</a></li>
-                    <li>End-to-end <a className="dark:text-wing text-teal-700" href="/docs/api/language/variable-declaration">type safety</a></li>
+                    <li>Tests applications end-to-end with the <a className="dark:text-wing text-teal-700" href="/docs/concepts/tests">Wing testing framework</a></li>
+                    <li>Catch errors at compile time with end-to-end <a className="dark:text-wing text-teal-700" href="/docs/api/language/variable-declaration">type safety</a></li>
                 </ul>
                 <p></p>
             </div>
@@ -39,7 +39,7 @@ let api = new cloud.Api();
 let store = new cloud.Bucket();
 
 // create routes for the API 
-api.get("/employees", inflight (request: cloud.ApiRequest): cloud.ApiResponse => {
+api.get("/employees", inflight (req) => {
   let result = MutJson [];
   let var i = 0;
   for employee in store.list() {
@@ -57,13 +57,13 @@ api.get("/employees", inflight (request: cloud.ApiRequest): cloud.ApiResponse =>
         metastring: 'playground',
         left: () => <div className='flex flex-col justify-between h-full'>
             <div>
-                <p>Define your own standards, best practices and abstractions. </p>
-                <p>Wing offers a programming model that lets developers create custom resources, <a className='dark:text-wing text-teal-700' href="/docs/winglibs/what-are-winglibs">libraries</a>, and <a className="dark:text-wing text-teal-700" href="/docs/platforms/platforms#creating-a-custom-platform">platforms</a>. </p>
+                <p className='text-lg'>Define your own standards, best practices and abstractions. </p>
+                <p className='text-lg'>Wing offers a programming model that lets developers create custom resources, <a className='dark:text-wing text-teal-700' href="/docs/winglibs/what-are-winglibs">libraries</a>, and <a className="dark:text-wing text-teal-700" href="/docs/platforms/platforms#creating-a-custom-platform">platforms</a>. </p>
                 <ul>
                     <li>Develop custom abstractions tailored to your teams</li>
-                    <li>Encapsulate company's best practices, including security, logging, and monitoring.</li>
-                    <li>Package code with winglibs</li>
-                    <li>Develop custom platforms for your organization</li>
+                    <li>Encapsulate company's best practices, including security, logging, and monitoring</li>
+                    <li>Package common patterns and golden paths into Wing libraries ("winglibs")</li>
+                    <li>Ensure programs compile Develop custom platforms for your organization</li>
                 </ul>
                 {/* <p>Wing offers a programming model that lets developers create custom resources, <a className='dark:text-wing text-teal-700' href="/docs/winglibs/what-are-winglibs">libraries</a>, and <a className="dark:text-wing text-teal-700" href="/docs/platforms/platforms#creating-a-custom-platform">platforms</a>.</p>
                 <p>This flexibility empowers engineers to build tailored solutions for their teams, ensuring that resources and application code follow your company's best practices, such as security, logging, and monitoring.</p>
@@ -105,12 +105,12 @@ let bucketBased: IKVStore = new BucketBasedKeyValueStore();`
         metastring: 'playground',
         left: () => <div className='flex flex-col justify-between h-full'>
             <div>
-                <p>Wing differentiates between code that executes during compilation and code that executes after the application has been deployed by referring to them as preflight and inflight code respectively.</p>
+                <p className='text-lg'>Wing differentiates between code that executes during compilation and code that executes after the application has been deployed.</p>
                 <ul>
-                    <li><strong>Preflight code</strong> is code that runs once, at compile time and generated by your infrastructure (e.g Terraform, CloudFormation, Kubernetes).</li>
-                    <li><strong>Inflight code</strong> is code that runs at runtime and implemented your application behavior.</li>
-                    <li>Winglib authors can expose preflight/inflight APIs for developers.</li>
+                    <li><strong>Preflight code</strong> is code that runs once at compile time, and is used to generate your application's infrastructure definitions (e.g Terraform, CloudFormation, Kubernetes).</li>
+                    <li><strong>Inflight code</strong> is code that runs in the cloud at runtime, and implements your application behavior, typically running inside containers or FaaS.</li>
                 </ul>
+                <p className='text-lg'>Wing library authors can create abstractions with both preflight and inflight APIs for other developers to use.</p>
             </div>
             <footer>
                 <a href="/docs/concepts/inflights" className='font-bold dark:text-wing text-teal-700'>Understanding preflight vs inflight &rarr;</a>
@@ -123,7 +123,7 @@ bring http;
 let api = new cloud.Api();
 
 // code inside the route is runtime code (inflight)
-api.get("/test", inflight (req: cloud.ApiRequest): cloud.ApiResponse => {
+api.get("/test", inflight (req) => {
   return cloud.ApiResponse {
     status: 200,
     body: "success!"
@@ -143,12 +143,11 @@ new cloud.Function(checkEndpoint);
         `
     },
     {
-        label: 'Local Testing',
+        label: 'Local testing',
         metastring: 'playground',
-        className: 'hidden md:block',
         left: () => <div className='flex flex-col justify-between h-full'>
             <div>
-                <p>Build cloud applications with confidence.</p>
+                <p className='text-lg'>Build cloud applications with confidence.</p>
                 <ul>
                     <li>Write tests with the <a className='text-teal-600 dark:text-wing' href="/docs/concepts/tests">wing testing framework</a>.</li>
                     <li>Run tests <a className='dark:text-wing text-teal-700' href="/docs/concepts/tests#running-tests-in-the-simulator">locally on your computer</a> with the <a className='dark:text-wing text-teal-700' href="/docs/platforms/sim">Wing simulator</a></li>
@@ -275,26 +274,26 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            <div className="relative isolate overflow-hidden bg-gray-100/40 dark:bg-gray-900 px-5 md:px-0 py-16 md:py-16 pb-24">
+            <div className="relative isolate bg-gray-100/40 dark:bg-gray-900 px-5 md:px-0 py-16 md:py-16 pb-24">
                 <div className="mx-auto max-w-6xl lg:px-8">
                     <h2 className="text-xl font-semibold leading-7 text-wing">WingLang</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 sm:text-5xl">
                         New language for a new programming model
                     </p>
                     <p className="mt-6 text-lg leading-8 dark:text-gray-300">
-                        Build cloud applications with cloud primitives and test locally on your machine. Wing combines infrastructure and runtime code in one language, enabling developers deliver better software, faster and more securely.
+                        Build cloud applications with cloud primitives and test locally on your machine. Harness the power of the entire cloud ecosystem and reduce the time it takes to test cloud applications from minutes to seconds.
                     </p>
 
-                    <ul className='list-none flex md:space-x-8 p-0 text-md leading-5 md:leading-none md:text-xl justify-between items-center text-left pt-3 md:pt-8 '>
+                    <ul className='list-none flex flex-wrap p-0 text-md leading-5 md:leading-none md:text-xl justify-between items-center pt-3 md:pt-8 '>
                         {tabs.map((tab, index) => (
-                            <li key={tab.label} className={classNames(tab.label === selectedTab.label ? 'dark:text-white text-wing font-bold' : '', `text-gray-400 dark:text-gray-400 !cursor-pointer dark:hover:text-white hover:text-wing ${tab.className}  w-full md:w-auto`)} onClick={() => setSelectedTab(tab)}>
+                            <li key={tab.label} className={classNames(tab.label === selectedTab.label ? 'dark:text-white text-wing font-bold' : '', `text-gray-400 dark:text-gray-400 !cursor-pointer dark:hover:text-white hover:text-wing ${tab.className} flex-1 text-center`)} onClick={() => setSelectedTab(tab)}>
                                 {tab.label}
                             </li>
                         ))}
                     </ul>
-                    <div className="mx-auto grid   lg:max-w-none lg:grid-cols-2 bg-gray-300  dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md" >
+                    <div className="mx-auto grid lg:max-w-none lg:grid-cols-2 bg-gray-300 dark:bg-gradient-to-tl from-wing via-wing/45 to-wing/80 transition-all shadow-[0_10px_20px_0_#3737373d] dark:shadow-[0_10px_100px_0_#2ad5c15c] p-[2px] rounded-md" >
                         <div className="h-full dark:bg-gray-800 bg-white/95 !border-r-wing/30 px-4  " style={{ "borderRight": 'solid' }}>
-                            <div className='prose prose-md dark:prose-invert h-full pb-4'>
+                            <div className='prose prose-md dark:prose-invert h-full pb-4 text-lg'>
                                 {selectedTab.left()}
                             </div>
                         </div>

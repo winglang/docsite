@@ -1056,7 +1056,7 @@ export default function CrossCloud() {
     <div className="dark:bg-gray-900 bg-gray-100/50 py-16 pb-32 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className=" max-w-3xl lg:text-left">
-          <h2 className="text-xl font-semibold leading-7 text-wing">Wing platforms</h2>
+          {/* <h2 className="text-xl font-semibold leading-7 text-wing">Wing platforms</h2> */}
           <p className="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 sm:text-5xl">
             Deploy to any cloud
           </p>

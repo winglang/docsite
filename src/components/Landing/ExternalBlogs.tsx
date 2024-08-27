@@ -92,7 +92,7 @@ export default function ExternalBlogs() {
                                 href={featuredPost.href}
                                 target='_blank'
                                 aria-describedby="featured-post"
-                                className="text-sm font-semibold leading-6 text-teal-700  dark:text-teal-500 "
+                                className="text-md font-semibold leading-6 text-teal-700  dark:text-teal-500 "
                             >
                                 Continue reading <span aria-hidden="true">&rarr;</span>
                             </a>
@@ -122,7 +122,7 @@ export default function ExternalBlogs() {
                                             {post.title}
                                         </a>
                                     </h2>
-                                    <p className="mt-4 text-sm leading-6 text-gray-600">{post.description}</p>
+                                    <p className="mt-4 text-md leading-6 text-gray-600">{post.description}</p>
                                 </div>
                                 {/* <div className="mt-4 flex">
                                     <a

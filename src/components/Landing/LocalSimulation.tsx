@@ -52,9 +52,9 @@ export default function Example() {
         <div className="dark:bg-black py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl sm:text-center">
-                    <h2 className="text-xl font-semibold leading-7 text-wing">Bring the cloud to your machine</h2>
+                    {/* <h2 className="text-xl font-semibold leading-7 text-wing">Bring the cloud to your machine</h2> */}
                     <p className="mt-2 text-3xl font-bold tracking-tight dark:text-white sm:text-7xl">Local simulation</p>
-                    <p className="mt-6 text-lg leading-8 dark:text-gray-300">
+                    <p className="mt-6 text-2xl leading-8 dark:text-gray-300">
                         Simulate and test cloud applications locally before deploying to the cloud.
                     </p>
                 </div>
