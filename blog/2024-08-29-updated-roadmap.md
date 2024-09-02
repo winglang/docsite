@@ -1,14 +1,16 @@
 ---
-title: Updated Roadmap
-description: Details about the Wing toolchain's recently updated roadmap
+title: The road to Wing 1.0
+description: Our goals and vision of what we want to include in Wing 1.0
 authors:
   - rybickic
+  - dboyne
 tags:
   - cloud-oriented
   - programming
   - winglang
   - roadmap
 hide_table_of_contents: true
+image: ../img/roadmap-1.0-cover-art.png
 ---
 
 Hello Wingnuts!
@@ -96,3 +98,9 @@ We want to stabilize as many of the items below as possible by the end of 2025, 
 - Wing docs need to have content for both the personas of developers writing their own applications and platform engineers aiming to provide simpler abstractions and tools for their teams.
 
 - We want to provide hundreds of [examples and code snippets](/docs/examples) to make it easy to learn the syntax of the language and easy to see how to solve common use cases.
+
+---
+
+If you have any questions, would like to contribute feel free to reach out to us and join us on our mission to make cloud development easier for everyone.
+
+*- The Wing Team*
