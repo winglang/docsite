@@ -268,7 +268,7 @@ const config = {
           },
          
           {
-            to: "docs/why-wing",
+            to: "docs/learn",
             position: "left",
             label: "Learn",
             className: "header-text-link",
