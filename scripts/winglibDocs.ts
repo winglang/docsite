@@ -164,6 +164,7 @@ description:  ${packageJson.wing?.docs?.summary || packageJson.description}
 keywords: [winglib, Wing library]
 ---
 ${contentWithoutImages}
+---
 ${apiFileContent}
 `
 
