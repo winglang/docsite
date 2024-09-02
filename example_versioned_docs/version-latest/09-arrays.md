@@ -12,28 +12,23 @@ Individual array items are accessed using the .at(index: num) method.
 Arrays are similar to dynamically sized arrays or vectors in other languages.
 
 ```js playground example title="main.w"
-let main = () => {
+let a = MutArray<num>[1, 2, 3];
 
-  let a = MutArray<num>[1, 2, 3];
+log("{a[0]}, {a[1]}, {a[2]}");
 
-  log("{a[0]}, {a[1]}, {a[2]}");
+a[2] = 4;
 
-  a[2] = 4;
+log("mutated value: {a[2]}");
+log("len: {a.length}");
 
-  log("mutated value: {a[2]}");
-  log("len: {a.length}");
+let data = MutArray<num>[1, 2, 3];
+let twoD = MutArray<MutArray<num>>[data];
 
-  let data = MutArray<num>[1, 2, 3];
-  let twoD = MutArray<MutArray<num>>[data];
-
-  for array in twoD {
-    for item in array {
-      log(item * 10);
-    }
-  } 
-
-}
-
+for array in twoD {
+  for item in array {
+    log(item * 10);
+  }
+} 
 ```
 
 ```bash title="Wing console output"

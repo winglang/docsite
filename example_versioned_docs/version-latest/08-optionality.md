@@ -12,19 +12,13 @@ Nullity is a primary source of bugs in software. Being able to guarantee that a 
 Optionality requires developers to be more intentional about working with the concept of "lack of value".
 
 ```js playground title="main.w"
-let main = () => {
+let monday:str = "doctor";
+let tuesday: str? = nil;
 
-  let monday:str = "doctor";
-  let tuesday: str? = nil;
+// Set next to tuesday if there is a value otherwise use monday value
+let var next = tuesday ?? monday;
 
-  // Set next to tuesday if there is a value otherwise use monday value
-  let var next = tuesday ?? monday;
-
-  log("{next}");
-
-};
-
-main();
+log("{next}");
 
 ```
 

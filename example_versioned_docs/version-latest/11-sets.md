@@ -12,7 +12,7 @@ Sets are immutable by default `Set<T>`, you can make them immutable using `<MutS
 Sets will store and return unique values.
 
 ```js playground example title="main.w"
-//// mutable set
+// mutable set
 let unqiueNumbers = MutSet<num>[1, 2, 3, 3, 3];
 unqiueNumbers.add(4);
 unqiueNumbers.delete(1);

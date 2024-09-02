@@ -11,11 +11,7 @@ keywords: [Wing language, example]
 
 
 ```js playground title="main.w"
-let main = () => {
-  log("Hello world!");
-};
-
-main();
+log("Hello world!");
 ```
 
 ```bash title="Wing console output"

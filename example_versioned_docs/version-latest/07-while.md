@@ -8,19 +8,12 @@ keywords: [Wing language, example]
 ---
 
 ```js playground title="main.w"
-let main = () => {
+let var i = 0;
 
-  let var i = 0;
-
-  while(i < 2){
-    log("while {i}");
-    i = i + 1;
-  }
-
-};
-
-main();
-
+while(i < 2){
+  log("while {i}");
+  i = i + 1;
+}
 ```
 
 ```bash title="Wing console output"
