@@ -111,7 +111,5 @@ export default [
     { to: "https://learn.winglang.io/learn/topic", from: ["/learn/topic"] },
 
     { to: "https://play.winglang.io/play", from: ["/play"] },
-
-    // /play/?code=YgByAGkAbgBnACAAYwBsAG8AdQBkADsACgAKAGwAZQB0ACAAYgB1AGMAawBlAHQAIAA9ACAAbgBlAHcAIABjAGwAbwB1AGQALgBCAHUAYwBrAGUAdAAoACkAOwAKAAoAbgBlAHcAIABjAGwAbwB1AGQALgBGAHUAbgBjAHQAaQBvAG4AKABpAG4AZgBsAGkAZwBoAHQAIAAoACkAIAA9AD4AIAB7AAoAIAAgAGIAdQBjAGsAZQB0AC4AcAB1AHQAKAAiAGgAZQBsAGwAbwAuAHQAeAB0ACIALAAgACIAdwBvAHIAbABkACEAIgApADsACgB9ACkAOwA%3D
     
 ]
