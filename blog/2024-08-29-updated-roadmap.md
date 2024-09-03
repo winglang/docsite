@@ -17,7 +17,7 @@ Hello Wingnuts!
 
 We recently updated the project's roadmap to share more details about our vision for the project. As the Wing language and toolchain has an ambitious goal, we're hoping this gives you a better idea of what to expect in the coming months.
 
-We want to stabilize as many of the items below as possible by the end of 2025, but we're eagerly interested in you feedback and collaboration, either [through GitHub](https://github.com/winglang/wing) or our [Discord server](https://t.winglang.io/discord).
+We want to stabilize as many of the items below as possible and we're eagerly interested in you feedback and collaboration, either [through GitHub](https://github.com/winglang/wing) or our [Discord server](https://t.winglang.io/discord).
 
 ## Toolchain
 
