@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import tar from "tar";
 import { glob } from "glob";
 import { join, dirname } from 'node:path';
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 
 const authorization = `token ${process.env.GITHUB_TOKEN}`;
 
@@ -143,6 +143,15 @@ keywords: [winglib, Wing library]
   for (const { winglib, readme, packageJson, title } of winglibs) {
 
     const content = await fs.readFile(readme, { encoding: 'utf-8' });
+
+    // This is auto generated files for winglibs, if its there add it in
+    const apiFile = join(dirname(readme), 'API.md');
+    let apiFileContent = '';
+
+    if(existsSync(apiFile)) {
+      apiFileContent = await fs.readFile(apiFile, { encoding: 'utf-8' });
+    }
+
     // remove any markdown images from the content (for now)
     const contentWithoutImages = content.replace(/!\[.*\]\(.*\)/g, '');
     console.log(join(WINGLIB_DIR, `${winglib}.md`))
@@ -155,6 +164,8 @@ description:  ${packageJson.wing?.docs?.summary || packageJson.description}
 keywords: [winglib, Wing library]
 ---
 ${contentWithoutImages}
+---
+${apiFileContent}
 `
 
     await fs.writeFile(join(WINGLIB_DIR, `${winglib}.md`), file);

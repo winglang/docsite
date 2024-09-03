@@ -87,3 +87,5 @@ curl -H "Authorization: ${TOKEN}" https://5b0y949eik.execute-api.us-east-1.amazo
 
 This library is licensed under the [MIT License](./LICENSE).
 
+---
+
