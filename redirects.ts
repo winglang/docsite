@@ -109,7 +109,5 @@ export default [
     { to: "https://learn.winglang.io/learn/counter", from: ["/learn/counter"] },
     { to: "https://learn.winglang.io/learn/queue", from: ["/learn/queue"] },
     { to: "https://learn.winglang.io/learn/topic", from: ["/learn/topic"] },
-
-    { to: "https://play.winglang.io/play", from: ["/play"] },
     
 ]
