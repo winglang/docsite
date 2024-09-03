@@ -103,12 +103,12 @@ export default [
     { to: '/docs/api/standard-library', from: ['/docs/category/standard-library'] },
 
     // redirects for wing.learn section
-    { to: "https://www.learn.winglang.io/learn", from: ["/learn/"] },
-    { to: "https://www.learn.winglang.io/learn/preflight-inflight", from: ["/learn/preflight-inflight"] },
-    { to: "https://www.learn.winglang.io/learn/bucket", from: ["/learn/bucket"] },
-    { to: "https://www.learn.winglang.io/learn/counter", from: ["/learn/counter"] },
-    { to: "https://www.learn.winglang.io/learn/queue", from: ["/learn/queue"] },
-    { to: "https://www.learn.winglang.io/learn/topic", from: ["/learn/topic"] },
+    { to: "https://learn.winglang.io/learn", from: ["/learn/"] },
+    { to: "https://learn.winglang.io/learn/preflight-inflight", from: ["/learn/preflight-inflight"] },
+    { to: "https://learn.winglang.io/learn/bucket", from: ["/learn/bucket"] },
+    { to: "https://learn.winglang.io/learn/counter", from: ["/learn/counter"] },
+    { to: "https://learn.winglang.io/learn/queue", from: ["/learn/queue"] },
+    { to: "https://learn.winglang.io/learn/topic", from: ["/learn/topic"] },
 
     { to: "https://play.winglang.io/play", from: ["/play"] },
 
