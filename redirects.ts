@@ -101,5 +101,17 @@ export default [
     { to: '/docs/api/category/ui', from: ['/docs/category/ui'] },
     { to: '/docs/api/category/util', from: ['/docs/category/util'] },
     { to: '/docs/api/standard-library', from: ['/docs/category/standard-library'] },
+
+    // redirects for wing.learn section
+    { to: "https://www.learn.winglang.io/learn", from: ["/learn/"] },
+    { to: "https://www.learn.winglang.io/learn/preflight-inflight", from: ["/learn/preflight-inflight"] },
+    { to: "https://www.learn.winglang.io/learn/bucket", from: ["/learn/bucket"] },
+    { to: "https://www.learn.winglang.io/learn/counter", from: ["/learn/counter"] },
+    { to: "https://www.learn.winglang.io/learn/queue", from: ["/learn/queue"] },
+    { to: "https://www.learn.winglang.io/learn/topic", from: ["/learn/topic"] },
+
+    { to: "https://play.winglang.io/play", from: ["/play"] },
+
+    // /play/?code=YgByAGkAbgBnACAAYwBsAG8AdQBkADsACgAKAGwAZQB0ACAAYgB1AGMAawBlAHQAIAA9ACAAbgBlAHcAIABjAGwAbwB1AGQALgBCAHUAYwBrAGUAdAAoACkAOwAKAAoAbgBlAHcAIABjAGwAbwB1AGQALgBGAHUAbgBjAHQAaQBvAG4AKABpAG4AZgBsAGkAZwBoAHQAIAAoACkAIAA9AD4AIAB7AAoAIAAgAGIAdQBjAGsAZQB0AC4AcAB1AHQAKAAiAGgAZQBsAGwAbwAuAHQAeAB0ACIALAAgACIAdwBvAHIAbABkACEAIgApADsACgB9ACkAOwA%3D
     
 ]
