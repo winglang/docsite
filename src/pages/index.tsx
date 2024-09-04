@@ -15,7 +15,7 @@ const tabs = [
     {
         label: 'Serverless workloads',
         metastring: 'playground',
-        left: () => <div className='flex flex-col justify-between h-full text-black dark:text-white'>
+        left: () => <div className='flex flex-col justify-between h-full text-black dark:text-gray-300'>
             <div>
                 <p className='text-lg'>Develop distributed serverless applications in the cloud. </p>
                 <ul>
@@ -55,7 +55,7 @@ api.get("/employees", inflight (req) => {
     {
         label: 'Extensible',
         metastring: 'playground',
-        left: () => <div className='flex flex-col justify-between h-full'>
+        left: () => <div className='flex flex-col justify-between h-full text-black dark:text-gray-300'>
             <div>
                 <p className='text-lg'>Define your own standards, best practices and abstractions. </p>
                 <p className='text-lg'>Wing offers a programming model that lets developers create custom resources, <a className='dark:text-wing text-teal-700' href="/docs/winglibs/what-are-winglibs">libraries</a>, and <a className="dark:text-wing text-teal-700" href="/docs/platforms/platforms#creating-a-custom-platform">platforms</a>. </p>
@@ -103,7 +103,7 @@ let bucketBased: IKVStore = new BucketBasedKeyValueStore();`
         // label: 'Preflight/Inflight',
         label: 'Compile/runtime APIs',
         metastring: 'playground',
-        left: () => <div className='flex flex-col justify-between h-full'>
+        left: () => <div className='flex flex-col justify-between h-full text-black dark:text-gray-300'>
             <div>
                 <p className='text-lg'>Wing differentiates between code that executes during compilation and code that executes after the application has been deployed.</p>
                 <ul>
@@ -145,7 +145,7 @@ new cloud.Function(checkEndpoint);
     {
         label: 'Local testing',
         metastring: 'playground',
-        left: () => <div className='flex flex-col justify-between h-full'>
+        left: () => <div className='flex flex-col justify-between h-full text-black dark:text-gray-300'>
             <div>
                 <p className='text-lg'>Build cloud applications with confidence.</p>
                 <ul>
