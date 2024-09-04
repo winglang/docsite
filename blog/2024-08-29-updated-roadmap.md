@@ -10,7 +10,7 @@ tags:
   - winglang
   - roadmap
 hide_table_of_contents: true
-image: ../img/roadmap-1.0-cover-art.png
+image: /img/roadmap-1.0-cover-art.png
 ---
 
 Hello Wingnuts!
