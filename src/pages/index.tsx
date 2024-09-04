@@ -15,7 +15,7 @@ const tabs = [
     {
         label: 'Serverless workloads',
         metastring: 'playground',
-        left: () => <div className='flex flex-col justify-between h-full'>
+        left: () => <div className='flex flex-col justify-between h-full text-black dark:text-white'>
             <div>
                 <p className='text-lg'>Develop distributed serverless applications in the cloud. </p>
                 <ul>
