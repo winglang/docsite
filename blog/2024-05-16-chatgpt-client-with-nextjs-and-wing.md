@@ -5,7 +5,7 @@ authors:
   - nathantarbert
 tags: [cloud-oriented, programming, winglang, platforms]
 hide_table_of_contents: true
-image: ../img/chatgpt-client-cover-art.jpg
+image: /img/chatgpt-client-cover-art.jpg
 ---
 
 ## TL;DR

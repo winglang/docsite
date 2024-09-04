@@ -5,7 +5,7 @@ authors:
   - nathantarbert
 tags: [cloud-oriented, programming, winglang, platforms]
 hide_table_of_contents: true
-image: ../img/qa-bot-cover-art.png
+image: /img/qa-bot-cover-art.png
 ---
 
 
