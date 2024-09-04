@@ -220,9 +220,9 @@ The above example will add a `provider` section to the output Terraform with a s
 This library is licensed under the [MIT License](./LICENSE).
 
 ---
-<h2>API Reference</h2>
+## API Reference
 
-<h3>Table of Contents</h3>
+### Table of Contents
 
 - **Classes**
   - <a href="#@winglibs/tf.Resource">Resource</a>
@@ -232,15 +232,17 @@ This library is licensed under the [MIT License](./LICENSE).
   - <a href="#@winglibs/tf.ResourceProps">ResourceProps</a>
   - <a href="#@winglibs/tf.ProviderProps">ProviderProps</a>
 
-<h3 id="@winglibs/tf.Resource">Resource (preflight class)</h3>
+### Resource (preflight class) <a class="wing-docs-anchor" id="@winglibs/tf.Resource"></a>
 
-<h4>Constructor</h4>
+*No description*
 
-<pre>
+#### Constructor
+
+```
 new(props: ResourceProps): Resource
-</pre>
+```
 
-<h4>Properties</h4>
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -258,7 +260,7 @@ new(props: ResourceProps): Resource
 | <code>fqn</code> | <code>str</code> | *No description* |
 | <code>friendlyUniqueId</code> | <code>str</code> | *No description* |
 
-<h4>Methods</h4>
+#### Methods
 
 | **Signature** | **Description** |
 | --- | --- |
@@ -287,15 +289,17 @@ new(props: ResourceProps): Resource
 | <code>overrideLogicalId(newLogicalId: str): void</code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code>resetOverrideLogicalId(): void</code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
 
-<h3 id="@winglibs/tf.Provider">Provider (preflight class)</h3>
+### Provider (preflight class) <a class="wing-docs-anchor" id="@winglibs/tf.Provider"></a>
 
-<h4>Constructor</h4>
+*No description*
 
-<pre>
+#### Constructor
+
+```
 new(props: ProviderProps): Provider
-</pre>
+```
 
-<h4>Properties</h4>
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -308,7 +312,7 @@ new(props: ProviderProps): Provider
 | <code>cdktfStack</code> | <code>TerraformStack</code> | *No description* |
 | <code>friendlyUniqueId</code> | <code>str</code> | *No description* |
 
-<h4>Methods</h4>
+#### Methods
 
 | **Signature** | **Description** |
 | --- | --- |
@@ -321,15 +325,17 @@ new(props: ProviderProps): Provider
 | <code>overrideLogicalId(newLogicalId: str): void</code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code>resetOverrideLogicalId(): void</code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
 
-<h3 id="@winglibs/tf.Element">Element (preflight class)</h3>
+### Element (preflight class) <a class="wing-docs-anchor" id="@winglibs/tf.Element"></a>
 
-<h4>Constructor</h4>
+*No description*
 
-<pre>
+#### Constructor
+
+```
 new(config: Json): Element
-</pre>
+```
 
-<h4>Properties</h4>
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -337,7 +343,7 @@ new(config: Json): Element
 | <code>fqn</code> | <code>str</code> | *No description* |
 | <code>friendlyUniqueId</code> | <code>str</code> | *No description* |
 
-<h4>Methods</h4>
+#### Methods
 
 | **Signature** | **Description** |
 | --- | --- |
@@ -349,18 +355,22 @@ new(config: Json): Element
 | <code>toHclTerraform(): any</code> | *No description* |
 | <code>toMetadata(): any</code> | *No description* |
 
-<h3 id="@winglibs/tf.ResourceProps">ResourceProps (struct)</h3>
+### ResourceProps (struct) <a class="wing-docs-anchor" id="@winglibs/tf.ResourceProps"></a>
 
-<h4>Properties</h4>
+*No description*
+
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code>attributes</code> | <code>Json?</code> | *No description* |
 | <code>type</code> | <code>str</code> | *No description* |
 
-<h3 id="@winglibs/tf.ProviderProps">ProviderProps (struct)</h3>
+### ProviderProps (struct) <a class="wing-docs-anchor" id="@winglibs/tf.ProviderProps"></a>
 
-<h4>Properties</h4>
+*No description*
+
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
