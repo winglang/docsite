@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon, CubeIcon, CloudIcon, CodeBracketIcon, ArrowPathRoundedSquareIcon, RectangleGroupIcon, ComputerDesktopIcon } from '@heroicons/react/20/solid'
+import { CubeIcon, CloudIcon, CodeBracketIcon, ArrowPathRoundedSquareIcon, RectangleGroupIcon, ComputerDesktopIcon } from '@heroicons/react/20/solid'
 
 const features = [
   {
@@ -52,14 +52,14 @@ const features = [
   },
 ]
 
-export default function Features() {
+export default function Features({ className = "dark:bg-black", title ="Build distributed systems that fully leverage the power of the cloud"}: any) {
   return (
-    <div className="dark:bg-black py-32 py-16  ">
+    <div className={`dark:bg-black py-32 py-16 ${className}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl lg:text-center">
           {/* <h2 className="text-2xl font-semibold leading-7 text-wing">Code for the cloud</h2> */}
           <p className="mt-2 text-3xl font-bold tracking-tight dark:text-gray-100 sm:text-5xl">
-            Build distributed systems that fully leverage the power of the cloud
+            {title}
           </p>
           <p className="mt-6 text-xl leading-8 dark:text-gray-300">
             Wing gives application developers and platform enigneers the tools they need to build and deploy distributed systems without the need to know all the details of the underlying cloud infrastructure.
