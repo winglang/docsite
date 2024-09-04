@@ -107,8 +107,8 @@ let bucketBased: IKVStore = new BucketBasedKeyValueStore();`
             <div>
                 <p className='text-lg'>Wing differentiates between code that executes during compilation and code that executes after the application has been deployed.</p>
                 <ul>
-                    <li><strong>Preflight code</strong> is code that runs once at compile time, and is used to generate your application's infrastructure definitions (e.g Terraform, CloudFormation, Kubernetes).</li>
-                    <li><strong>Inflight code</strong> is code that runs in the cloud at runtime, and implements your application behavior, typically running inside containers or FaaS.</li>
+                    <li><strong className="text-black dark:text-white">Preflight code</strong> is code that runs once at compile time, and is used to generate your application's infrastructure definitions (e.g Terraform, CloudFormation, Kubernetes).</li>
+                    <li><strong className="text-black dark:text-white">Inflight code</strong> is code that runs in the cloud at runtime, and implements your application behavior, typically running inside containers or FaaS.</li>
                 </ul>
                 <p className='text-lg'>Wing library authors can create abstractions with both preflight and inflight APIs for other developers to use.</p>
             </div>
