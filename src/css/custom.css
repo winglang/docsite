@@ -419,3 +419,28 @@ html[data-theme="dark"] h2[itemprop="headline"] a {
   padding: 1em 2em;
   margin: 1em 0;
 }
+
+#hubspotForm-contact input, #hubspotForm-contact textarea {
+  background: light-dark(rgb(249, 249, 249), white);;;
+  color:black;
+  border: none;
+  border-radius: 4px;
+  padding: 1em 2em;
+  margin: 1em 0;
+  font-size: 1em;
+}
+
+.footer--light {
+  background: red;
+}
+
+.footer {
+  background-color: light-dark(rgb(249, 249, 249), black);;
+  .footer__title {
+    color: light-dark(#1b918a, #2ad5c1);;
+  }
+  .footer__copyright {
+    padding: 14px 0;
+    opacity: 0.5;
+  }
+}
