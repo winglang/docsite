@@ -150,3 +150,5 @@ Slack](https://t.winglang.io).
 ## License
 
 Licensed under the [MIT License](./LICENSE).
+---
+

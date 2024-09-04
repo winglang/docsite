@@ -5,7 +5,7 @@ authors:
   - nathantarbert
 tags: [cloud-oriented, programming, winglang, platforms]
 hide_table_of_contents: true
-image: ../img/5-cloud-functions.png
+image: /img/5-cloud-functions.png
 ---
 
 ![Cover Art](../static/img/5-cloud-functions.png)

@@ -5,7 +5,7 @@ authors:
   - ashersterkin
 tags: [cloud-oriented, programming, middleware, platforms]
 hide_table_of_contents: true
-image: ../img/ashers-blog-middleware-pt-two.jpg
+image: /img/ashers-blog-middleware-pt-two.jpg
 ---
 
 <div style={{color: "#E2EAEB", fontSize: "2rem" }}>Part Two: Pipeline Formation with Template Method </div>

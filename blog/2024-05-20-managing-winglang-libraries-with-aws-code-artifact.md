@@ -4,7 +4,7 @@ description: Managing Winglang Libraries with AWS CodeArtifact
 authors:
   - ashersterkin
 tags: [cloud-oriented, programming, middleware, platforms]
-image: ../img/asher-code-artifacts.jpg
+image: /img/asher-code-artifacts.jpg
 hide_table_of_contents: true
 ---
 

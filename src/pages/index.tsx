@@ -212,7 +212,7 @@ const LandingPage = () => {
                         <div className="hidden sm:flex sm:justify-center">
                             <div className="relative rounded-full px-3 py-1 text-lg mb-8 leading-6 dark:text-gray-400 ring-1 ring-wing/70 hover:ring-wing">
                                 <span className="mr-3">Wing 1.0 Roadmap</span>
-                                <a href="#" className="font-semibold dark:text-wing/80">
+                                <a href="/contributing/roadmap" className="font-semibold dark:text-wing/80">
                                     <span aria-hidden="true" className="absolute inset-0" />
                                     Read more <span aria-hidden="true">&rarr;</span>
                                 </a>
@@ -265,7 +265,7 @@ const LandingPage = () => {
                     <h2 className="text-center text-lg font-semibold leading-8 dark:text-gray-500 dark:md:text-gray-400 mb-0">
                         Sparks the imagination of thousands
                     </h2>
-                    <div className="mx-auto grid max-w-lg grid-cols-2 gap-y-0 md:grid-cols-4 items-center md:gap-x-8  sm:max-w-xl lg:mx-0 lg:max-w-none lg:grid-cols-4 ">
+                    <div className="mx-auto grid max-w-lg grid-cols-2 gap-y-0 md:grid-cols-4 items-center md:gap-x-8  sm:max-w-xl lg:mx-0 lg:max-w-none lg:grid-cols-4 pt-4 ">
                         <CapitalOne />
                         <Microsoft />
                         <ThoughtWorks />

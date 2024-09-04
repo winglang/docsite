@@ -4,7 +4,7 @@ description: Ported to Cloud with Winglang (Part One)
 authors:
   - ashersterkin
 tags: [cloud-oriented, programming, middleware, platforms]
-image: ../img/ported_to_cloud_cover_art.png
+image: /img/ported_to_cloud_cover_art.png
 hide_table_of_contents: true
 ---
 
