@@ -37,9 +37,9 @@ test "will sign and verify" {
 This library is licensed under the [MIT License](./LICENSE).
 
 ---
-<h2>API Reference</h2>
+## API Reference
 
-<h3>Table of Contents</h3>
+### Table of Contents
 
 - **Classes**
   - <a href="#@winglibs/jwt.Util">Util</a>
@@ -49,19 +49,21 @@ This library is licensed under the [MIT License](./LICENSE).
   - <a href="#@winglibs/jwt.VerifyJwtOptions">VerifyJwtOptions</a>
   - <a href="#@winglibs/jwt.VerifyOptions">VerifyOptions</a>
 
-<h3 id="@winglibs/jwt.Util">Util (preflight class)</h3>
+### Util (preflight class) <a class="wing-docs-anchor" id="@winglibs/jwt.Util"></a>
 
-<h4>Constructor</h4>
+*No description*
 
-<pre>
+#### Constructor
+
+```
 new(): Util
-</pre>
+```
 
-<h4>Properties</h4>
+#### Properties
 
 *No properties*
 
-<h4>Methods</h4>
+#### Methods
 
 | **Signature** | **Description** |
 | --- | --- |
@@ -69,17 +71,21 @@ new(): Util
 | <code>static inflight sign(data: Json, secret: str, options: SignOptions?): str</code> | *No description* |
 | <code>static inflight verify(token: str, options: VerifyOptions): Json</code> | *No description* |
 
-<h3 id="@winglibs/jwt.DecodeOptions">DecodeOptions (struct)</h3>
+### DecodeOptions (struct) <a class="wing-docs-anchor" id="@winglibs/jwt.DecodeOptions"></a>
 
-<h4>Properties</h4>
+*No description*
+
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code>complete</code> | <code>bool?</code> | *No description* |
 
-<h3 id="@winglibs/jwt.SignOptions">SignOptions (struct)</h3>
+### SignOptions (struct) <a class="wing-docs-anchor" id="@winglibs/jwt.SignOptions"></a>
 
-<h4>Properties</h4>
+*No description*
+
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -93,9 +99,11 @@ new(): Util
 | <code>notBefore</code> | <code>duration?</code> | *No description* |
 | <code>subject</code> | <code>str?</code> | *No description* |
 
-<h3 id="@winglibs/jwt.VerifyJwtOptions">VerifyJwtOptions (struct)</h3>
+### VerifyJwtOptions (struct) <a class="wing-docs-anchor" id="@winglibs/jwt.VerifyJwtOptions"></a>
 
-<h4>Properties</h4>
+*No description*
+
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
@@ -109,9 +117,11 @@ new(): Util
 | <code>nonce</code> | <code>str?</code> | *No description* |
 | <code>subject</code> | <code>str?</code> | *No description* |
 
-<h3 id="@winglibs/jwt.VerifyOptions">VerifyOptions (struct)</h3>
+### VerifyOptions (struct) <a class="wing-docs-anchor" id="@winglibs/jwt.VerifyOptions"></a>
 
-<h4>Properties</h4>
+*No description*
+
+#### Properties
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
