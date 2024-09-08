@@ -187,12 +187,12 @@ const config = {
         { content: "Wing Programming Language", property: "og:title" },
         {
           content:
-            "/img/opengraph.png",
+            "https://winglang.io/img/opengraph.png",
           property: "og:image",
         },
         {
           content:
-            "/img/opengraph.png",
+            "https://winglang.io/img/opengraph.png",
           property: "og:image:secure_url",
         },
         { content: "Wing Programming Language", property: "twitter:title" },
@@ -203,12 +203,12 @@ const config = {
         },
         {
           content:
-            "/img/opengraph.png",
+            "https://winglang.io/img/opengraph.png",
           property: "twitter:image",
         },
         {
           content:
-            "/img/opengraph.png",
+            "https://winglang.io/img/opengraph.png",
           property: "twitter:image:source_url",
         },
         { content: "website", property: "og:type" },
