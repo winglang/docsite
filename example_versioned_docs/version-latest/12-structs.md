@@ -27,7 +27,7 @@ struct MyData {
 // Creating an instance of `MyData` with some fields initialized
 let data = MyData {
   a: "hello",      
-  c: Example {     
+  c: {     
     a: "world",    
     b: 42,         
   }
