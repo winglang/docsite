@@ -7,9 +7,9 @@ description: Using sets with Wing
 keywords: [Wing language, example]
 ---
 
-Sets are immutable by default `Set<T>`, you can make them immutable using `<MutSet<T>>`.
 
-Sets will store and return unique values.
+A set keeps track of collection of unique values - a specific value can only be added to a set once. Sets are immutable by default `Set<T>`, and you can make them immutable using `MutSet<T>`.
+
 
 ```js playground example title="main.w"
 // mutable set
