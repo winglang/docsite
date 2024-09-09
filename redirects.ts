@@ -101,5 +101,13 @@ export default [
     { to: '/docs/api/category/ui', from: ['/docs/category/ui'] },
     { to: '/docs/api/category/util', from: ['/docs/category/util'] },
     { to: '/docs/api/standard-library', from: ['/docs/category/standard-library'] },
+
+    // redirects for wing.learn section
+    { to: "https://learn.winglang.io/learn", from: ["/learn/"] },
+    { to: "https://learn.winglang.io/learn/preflight-inflight", from: ["/learn/preflight-inflight"] },
+    { to: "https://learn.winglang.io/learn/bucket", from: ["/learn/bucket"] },
+    { to: "https://learn.winglang.io/learn/counter", from: ["/learn/counter"] },
+    { to: "https://learn.winglang.io/learn/queue", from: ["/learn/queue"] },
+    { to: "https://learn.winglang.io/learn/topic", from: ["/learn/topic"] },
     
 ]

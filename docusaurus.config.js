@@ -201,12 +201,12 @@ const config = {
         { content: "Wing Programming Language", property: "og:title" },
         {
           content:
-            "/img/opengraph.png",
+            "https://winglang.io/img/opengraph.png",
           property: "og:image",
         },
         {
           content:
-            "/img/opengraph.png",
+            "https://winglang.io/img/opengraph.png",
           property: "og:image:secure_url",
         },
         { content: "Wing Programming Language", property: "twitter:title" },
@@ -217,12 +217,12 @@ const config = {
         },
         {
           content:
-            "/img/opengraph.png",
+            "https://winglang.io/img/opengraph.png",
           property: "twitter:image",
         },
         {
           content:
-            "/img/opengraph.png",
+            "https://winglang.io/img/opengraph.png",
           property: "twitter:image:source_url",
         },
         { content: "website", property: "og:type" },
@@ -313,13 +313,13 @@ const config = {
                 className: "header-text-link",
               },
               {
-                href: "https://www.winglang.io/community",
+                href: "/community",
                 label: "Community",
                 className: "header-text-link",
                 target: "_self",
               },
               {
-                href: "https://www.winglang.io/contact",
+                href: "/contact",
                 label: "Contact",
                 target: "_self",
                 className: "header-text-link",
@@ -378,18 +378,30 @@ const config = {
                 label: "API Reference",
                 to: "/docs/api/standard-library",
               },
+              {
+                label: "1.0 Roadmap",
+                to: "/blog/2024/08/29/updated-roadmap",
+              },
+              {
+                label: "Press Kit",
+                to: "https://drive.google.com/drive/folders/1Qi0v3v638lLxxP9y80i4TyweZbkXFsZ_",
+              },
             ],
           },
           {
             title: "Community",
             items: [
               {
+                label: "Discord",
+                href: discordUrl,
+              },
+              {
                 label: "GitHub",
                 href: winglangOrgUrl,
               },
               {
-                label: "Discord",
-                href: discordUrl,
+                label: "Report an Issue",
+                href: "https://github.com/winglang/wing/issues/new/choose",
               },
               {
                 label: "Contributor's Handbook",
