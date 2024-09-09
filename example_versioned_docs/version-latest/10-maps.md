@@ -7,6 +7,7 @@ description: Using maps with Wing
 keywords: [Wing language, example]
 ---
 
+Maps are key-value data structures that let you associate strings with any kinds of other values.
 
 ```js playground example title="main.w"
 // immutable map
