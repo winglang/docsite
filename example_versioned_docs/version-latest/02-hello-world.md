@@ -9,6 +9,7 @@ keywords: [Wing language, example]
 
 # Hello world
 
+By default, Wing code is executed when it's compiled.
 
 ```js playground title="main.w"
 log("Hello world!");
