@@ -7,7 +7,7 @@ description: Using functions with Wing
 keywords: [Wing language, example]
 ---
 
-Wing supports two function types [preflight and inflight](/docs/concepts/inflights).
+Wing supports two function types, [preflight and inflight](/docs/concepts/inflights).
 
 - Preflight: Code that runs once, at compile time, and generates the infrastructure configuration of your cloud application. For example, setting up databases, queues, storage buckets, API endpoints, etc.
 
