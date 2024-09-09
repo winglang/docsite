@@ -4,7 +4,7 @@ id: json
 slug: /json
 sidebar_label: 23. Json
 description: Create Json values in Wing
-keywords: [Wing language, string, functions]
+keywords: [Wing language, json]
 ---
 
 ```js playground example title="main.w"
