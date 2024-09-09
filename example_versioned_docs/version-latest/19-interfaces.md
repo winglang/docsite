@@ -16,9 +16,9 @@ interface Geometry {
 }
 
 class Rect impl Geometry {
-  width:num;
-  height:num;
-  new(width:num, height: num) {
+  width: num;
+  height: num;
+  new(width: num, height: num) {
     this.width = width;
     this.height = height;
   }
