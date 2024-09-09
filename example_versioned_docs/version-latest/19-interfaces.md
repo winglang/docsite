@@ -33,8 +33,8 @@ class Rect impl Geometry {
 }
 
 class Circle impl Geometry {
-  radius:num;
-  new(radius:num) {
+  radius: num;
+  new(radius: num) {
     this.radius = radius;
   }
 
