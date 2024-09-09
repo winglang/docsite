@@ -8,8 +8,8 @@ keywords: [Wing language, variadic]
 ---
 
 ```js playground example title="main.w"
-let fact = (n: num):num => {
-  if(n == 0){
+let fact = (n: num): num => {
+  if n == 0 {
     return 1;
   }
   return n * fact(n - 1);
