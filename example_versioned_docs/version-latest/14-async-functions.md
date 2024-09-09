@@ -13,7 +13,7 @@ Wing supports two function types, [preflight and inflight](/docs/concepts/inflig
 
 - Inflight: Code that runs at runtime and implements your application's behavior. For example, handling API requests, processing queue messages, etc. Inflight code can be executed on various compute platforms in the cloud, such as function services (such as AWS Lambda or Azure Functions), containers (such as ECS or Kubernetes), VMs or even physical servers.
 
-By default functions are preflight functions.
+By default, most functions are preflight. A function is inflight if it has the `inflight` keyword or if the function is defined inside of another inflight function.
 
 ```js playground example title="main.w"
 bring cloud;
