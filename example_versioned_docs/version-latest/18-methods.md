@@ -34,11 +34,10 @@ log("perim: {perim(r)}");
 
 // Or Rectangle class with public methods
 class Rectangle {
+  height: num;
+  width: num;
 
-  height:num;
-  width:num;
-
-  new (height: num, width: num){
+  new(height: num, width: num) {
     this.height = height;
     this.width = width;
   }
