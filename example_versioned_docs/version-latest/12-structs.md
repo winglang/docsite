@@ -7,7 +7,7 @@ description: Using arrays with Wing
 keywords: [Wing language, example]
 ---
 
-Structs are loosely modeled after typed JSON literals in JavaScript.
+Structs are custom data types you can define to store structured information. They're loosely modeled after typed JSON literals in JavaScript.
 
 ```js playground example title="main.w"
 // Define a simple structure called `Example`
