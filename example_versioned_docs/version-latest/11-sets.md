@@ -17,7 +17,7 @@ let unqiueNumbers = MutSet<num>[1, 2, 3, 3, 3];
 unqiueNumbers.add(4);
 unqiueNumbers.delete(1);
 
-// immutable set, will make values unique
+// immutable set, values cannot be added or removed
 let uniqueStrings = Set<str>["unique", "values", "values"];
 
 
