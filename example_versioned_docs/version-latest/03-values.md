@@ -1,14 +1,13 @@
 ---
-title: Values
-id: values
-slug: /values
-sidebar_label: 2. Values
+title: Primitive values
+id: primitives
+slug: /primitive-values
+sidebar_label: 2. Primitive values
 description: Hello world wing example
-keywords: [Wing language, example]
+keywords: [Wing language, example, primitives, values]
 ---
 
-
-Wing has various value types including strings, integers, floats, booleans, etc. Here are a few basic examples.
+Wing has primitive types including strings, integers, floats, booleans, etc. Here are a few basic examples.
 
 - Strings, which can be added together with +
 - Integers and floats
