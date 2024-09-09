@@ -2,7 +2,7 @@
 title: Recursion
 id: recursion
 slug: /recursion
-sidebar_label: 16. Recursion
+sidebar_label: 17. Recursion
 description: Recursion with Wing
 keywords: [Wing language, variadic]
 ---

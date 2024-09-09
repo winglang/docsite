@@ -2,7 +2,7 @@
 title: Closures
 id: closures
 slug: /closures
-sidebar_label: 15. Closures
+sidebar_label: 16. Closures
 description: Closures with Wing
 keywords: [Wing language, variadic]
 ---
