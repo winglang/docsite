@@ -9,7 +9,7 @@ keywords: [Wing language, HTTP]
 
 The Wing standard library comes with [HTTP support](/docs/api/standard-library/http/api-reference).
 
-In this example we’ll use it to issue simple HTTP request.
+In this example we’ll use it to issue a simple HTTP request.
 
 ```js playground example title="main.w"
 bring http;
