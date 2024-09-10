@@ -7,7 +7,7 @@ description: Functions for string values in Wing
 keywords: [Wing language, string, functions]
 ---
 
-Wing provides many useful string-related functions. Here are some examples to give you a sense of the usage.
+Wing provides many useful [string-related functions](/docs/api/standard-library/std/string#string-). Here are some examples to give you a sense of the usage.
 
 ```js playground example title="main.w"
 log("test".contains("es"));

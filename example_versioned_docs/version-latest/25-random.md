@@ -7,6 +7,11 @@ description: Create random values in Wing
 keywords: [Wing language, random]
 ---
 
+Using the [math standard library](/docs/api/standard-library/math/api-reference) you can generate random numbers.
+
+_Note: The random numbers that are generated are not random enough for sensitive security tasks, such as generating encryption keys, tokens for authentication, or anything requiring unpredictable randomness for security purposes._
+
+
 ```js playground example title="main.w"
 bring math;
 
