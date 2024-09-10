@@ -7,7 +7,7 @@ description: Directories
 keywords: [Wing language, Directories]
 ---
 
-Wing incorporates a [lightweight testing framework](/docs/concepts/tests), which is built around the wing test command and the test keyword.
+Wing incorporates a [lightweight testing framework](/docs/concepts/tests), which is built around the `wing test` command and the `test` keyword.
 
 ```js playground example title="main.w"
 bring math;
