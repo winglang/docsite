@@ -42,11 +42,7 @@ api.put("/note/:name", inflight (request) => {
   }
 
   noteBucket.put(noteName, note ?? "");
-
-  return {
-    status: 200,
-    body: "note: {noteName} saved!"
-  };
+  // handler implicitly returns `status: 200` by default
 });
 
 // Consumer functions (not required for the app to work, but useful for testing)
