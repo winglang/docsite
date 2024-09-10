@@ -10,8 +10,8 @@ keywords: [Wing language, random]
 ```js playground example title="main.w"
 let j = Json { a: 100 };
 
-let x:num = num.fromStr("1");
-let y:num = num.fromJson(j.get("a"));
+let x: num = num.fromStr("1");
+let y: num = num.fromJson(j.get("a"));
 
 log(x);
 log(y);
