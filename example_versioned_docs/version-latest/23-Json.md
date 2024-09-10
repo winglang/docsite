@@ -7,6 +7,8 @@ description: Create Json values in Wing
 keywords: [Wing language, json]
 ---
 
+Wing has a dedicated type named `Json` for representing [JSON](https://www.json.org/json-en.html). A `Json` value can be an object, but it can also be an array, string, boolean, number, or null.
+
 ```js playground example title="main.w"
 let person = Json {
     firstName: "John",
