@@ -7,7 +7,7 @@ description: Directories
 keywords: [Wing language, Directories]
 ---
 
-Use the fs module to make, read, check, remove directories with Wing.
+Use the `fs` ("filesystem") module to make, read, check, remove directories.
 
 ```js playground example title="main.w"
 bring fs;
