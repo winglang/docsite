@@ -10,14 +10,14 @@ keywords: [Wing language, Reading files, Writing files]
 ```js playground example title="main.w"
 bring fs;
 
-let filename:str = "/tmp/test.txt";
+let filename: str = "/tmp/test.txt";
 
 log(fs.exists(filename));
 
 fs.writeFile(filename, "hello world!");
 fs.exists(filename);
 
-let file = fs.readFile(filename);
+let file: str = fs.readFile(filename);
 
 log(file);
 log(fs.extension(filename) ?? "");
