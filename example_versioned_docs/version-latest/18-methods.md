@@ -10,7 +10,7 @@ keywords: [Wing language, variadic]
 ```js playground example title="main.w"
 // Rect type
 struct Rect {
-  width:num;
+  width: num;
   height: num;
 }
 
