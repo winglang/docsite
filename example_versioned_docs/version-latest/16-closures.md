@@ -7,7 +7,7 @@ description: Closures with Wing
 keywords: [Wing language, variadic]
 ---
 
-Closures are functions that captures variables from its surrounding lexical scope, allowing those variables to persist even after the function is executed outside its original context
+[Closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)) are functions that captures variables from its surrounding lexical scope, allowing those variables to persist even after the function is executed outside its original context.
 
 
 ```js playground example title="main.w"
