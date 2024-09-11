@@ -20,7 +20,7 @@ for item in 1..3 {
 // for-in with arrays
 let arr = [1, 2, 3];
 for item in arr {
-  log("{item}");
+  log(item);
 }
 
 // break a loop
