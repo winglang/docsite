@@ -24,8 +24,8 @@ if 8 % 2 == 0 || 7 % 2 == 0 {
   log("either 8 or 7 are even");
 }
 
-let value:num = 9;
-if(value < 0){
+let value = 9;
+if value < 0 {
   log("${value} is negative");
 } else if value < 10 {
   log("${value} has 1 digit");
