@@ -7,7 +7,7 @@ description: Using arrays with Wing
 keywords: [Wing language, example]
 ---
 
-Arrays are dynamically sized in Wing and are defined with the [] syntax.
+Arrays are dynamically sized in Wing and are created with the [] syntax.
 Individual array items are accessed using the .at(index: num) method.
 Arrays are similar to dynamically sized arrays or vectors in other languages.
 
