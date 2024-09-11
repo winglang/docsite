@@ -34,7 +34,7 @@ for item in items {
 
 // continue the next iteration of the loop
 for item in 1..10 {
-  if(item%2 == 0){
+  if item % 2 == 0 {
     continue;
   }
   log(item);
