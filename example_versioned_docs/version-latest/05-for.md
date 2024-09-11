@@ -7,7 +7,7 @@ description: Using for loops with Wing
 keywords: [Wing language, example]
 ---
 
-Wing supports for..in statements.
+Wing supports looping over collections with `for..in` statements.
 
 [for..in](/docs/api/language-reference#26-for) is used to iterate over an array, a set or a range. The loop invariant in for loops is implicitly re-assignable (var).
 
