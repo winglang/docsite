@@ -7,7 +7,7 @@ description: Using if else with Wing
 keywords: [Wing language, example]
 ---
 
-Flow control can be done with if/else statements. The if statement is optionally followed by else if and else.
+Flow control can be done with if/else statements. The `if` statement is optionally followed by any number of `else if` clauses and a final `else` clause.
 
 ```js playground title="main.w"
 if (7 % 2 == 0) {
