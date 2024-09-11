@@ -16,7 +16,7 @@ let monday: str = "doctor";
 let tuesday: str? = nil;
 
 // Set next to tuesday if there is a value otherwise use monday value
-let var next = tuesday ?? monday;
+let next = tuesday ?? monday;
 
 log("{next}");
 
