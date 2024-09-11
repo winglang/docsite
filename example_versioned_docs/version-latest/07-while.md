@@ -12,7 +12,7 @@ While loops repeatedly check a condition and run a block of code until the condi
 ```js playground title="main.w"
 let var i = 0;
 
-while(i < 2){
+whilei < 2 {
   log("while {i}");
   i = i + 1;
 }
