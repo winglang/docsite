@@ -20,7 +20,7 @@ if 8 % 4 == 0 {
   log("8 is divisble by 4");
 }
 
-if(8 % 2 == 0 || 7 % 2 == 0){
+if 8 % 2 == 0 || 7 % 2 == 0 {
   log("either 8 or 7 are even");
 }
 
