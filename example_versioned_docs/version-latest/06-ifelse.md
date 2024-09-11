@@ -10,7 +10,7 @@ keywords: [Wing language, example]
 Flow control can be done with if/else statements. The `if` statement is optionally followed by any number of `else if` clauses and a final `else` clause.
 
 ```js playground title="main.w"
-if (7 % 2 == 0) {
+if 7 % 2 == 0 {
   log("7 is even");
 } else {
   log("7 is odd");
