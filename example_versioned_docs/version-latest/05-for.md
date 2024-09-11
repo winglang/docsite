@@ -5,6 +5,7 @@ slug: /for
 sidebar_label: 5. For
 description: Using for loops with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 Wing supports looping over collections with `for..in` statements.

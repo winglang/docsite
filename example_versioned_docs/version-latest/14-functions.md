@@ -5,6 +5,7 @@ slug: /functions
 sidebar_label: 14. Functions
 description: Using functions with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 Wing supports two function types [preflight and inflight](/docs/concepts/inflights).

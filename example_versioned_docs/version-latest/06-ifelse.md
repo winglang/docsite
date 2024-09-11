@@ -5,6 +5,7 @@ slug: /if-else
 sidebar_label: 6. If/Else
 description: Using if else with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 Flow control can be done with if/else statements. The `if` statement is optionally followed by any number of `else if` clauses and a final `else` clause.

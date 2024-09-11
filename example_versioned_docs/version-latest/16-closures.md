@@ -5,6 +5,7 @@ slug: /closures
 sidebar_label: 16. Closures
 description: Closures with Wing
 keywords: [Wing language, variadic]
+image: /img/wing-by-example.png
 ---
 
 [Closures](https://en.wikipedia.org/wiki/Closure_(computer_programming)) are functions that captures variables from its surrounding lexical scope, allowing those variables to persist even after the function is executed outside its original context.

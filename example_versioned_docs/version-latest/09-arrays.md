@@ -5,6 +5,7 @@ slug: /arrays
 sidebar_label: 9. Arrays
 description: Using arrays with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 Arrays are dynamically sized in Wing and are created with the [] syntax.

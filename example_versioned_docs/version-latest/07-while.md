@@ -5,6 +5,7 @@ slug: /while
 sidebar_label: 7. While
 description: Using while statements with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 While loops repeatedly check a condition and run a block of code until the condition is `false`.

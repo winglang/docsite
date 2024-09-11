@@ -5,6 +5,7 @@ slug: /interfaces
 sidebar_label: 19. Interfaces
 description: Interfaces with Wing
 keywords: [Wing language, interfaces]
+image: /img/wing-by-example.png
 ---
 
 ```js playground example title="main.w"

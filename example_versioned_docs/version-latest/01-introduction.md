@@ -5,6 +5,7 @@ slug: /
 sidebar_label: Introduction
 description: Hands-on introduction to Wing using annotated code
 keywords: [Wing language, api]
+image: /img/wing-by-example.png
 ---
 
 

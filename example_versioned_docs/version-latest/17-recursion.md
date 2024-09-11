@@ -5,6 +5,7 @@ slug: /recursion
 sidebar_label: 17. Recursion
 description: Recursion with Wing
 keywords: [Wing language, variadic]
+image: /img/wing-by-example.png
 ---
 
 ```js playground example title="main.w"

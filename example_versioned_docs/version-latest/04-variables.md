@@ -5,13 +5,14 @@ slug: /Variables
 sidebar_label: 4. Variables
 description: Using variables with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 Variables are declared with the `let` keyword. The type of most variables can be inferred automatically, but you can also add an explicit type annotation if needed.
 
 By default, Wing doesn't let you reassign to variables, unless you add the `var` modifier. See [this blog post](https://www.winglang.io/blog/2023/02/02/good-cognitive-friction) for more details.
 
-```js title="main.w"
+```js title="main.w"p
 
 // var delcares a varaible. Wing infers the type
 let a = "initial";
