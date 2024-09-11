@@ -5,6 +5,7 @@ slug: /optionality
 sidebar_label: 8. Optionality
 description: Using while statements with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 Nullity is a primary source of bugs in software. Being able to guarantee that a value will never be null makes it easier to write safe code without constantly having to take nullity into account.

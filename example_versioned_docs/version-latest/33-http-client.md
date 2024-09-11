@@ -5,6 +5,7 @@ slug: /http-client
 sidebar_label: 33. HTTP Client
 description: Directories
 keywords: [Wing language, HTTP]
+image: /img/wing-by-example.png
 ---
 
 The Wing standard library comes with [HTTP support](/docs/api/standard-library/http/api-reference).

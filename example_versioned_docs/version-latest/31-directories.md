@@ -5,6 +5,7 @@ slug: /directories
 sidebar_label: 31. Directories
 description: Directories
 keywords: [Wing language, Directories]
+image: /img/wing-by-example.png
 ---
 
 Use the `fs` ("filesystem") module to make, read, check, remove directories.

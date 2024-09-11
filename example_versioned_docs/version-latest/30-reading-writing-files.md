@@ -5,6 +5,7 @@ slug: /reading-and-writing-files
 sidebar_label: 30. Reading and writing files
 description: Reading and writing files with Wing
 keywords: [Wing language, Reading files, Writing files]
+image: /img/wing-by-example.png
 ---
 
 ```js playground example title="main.w"

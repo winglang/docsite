@@ -5,6 +5,7 @@ slug: /variadic-functions
 sidebar_label: 15. Variadic Functions
 description: Using variadic functions with Wing
 keywords: [Wing language, variadic]
+image: /img/wing-by-example.png
 ---
 
 
