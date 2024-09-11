@@ -7,11 +7,9 @@ description: Using variables with Wing
 keywords: [Wing language, example]
 ---
 
-Wing has various value types including strings, integers, floats, booleans, etc. Here are a few basic examples.
+Variables are declared with the `let` keyword. The type of most variables can be inferred automatically, but you can also add an explicit type annotation if needed.
 
-- Strings, which can be added together with +
-- Integers and floats
-- Booleans, with boolean operators as you'd expect
+By default, Wing doesn't let you reassign to variables, unless you add the `var` modifier. See [this blog post](https://www.winglang.io/blog/2023/02/02/good-cognitive-friction) for more details.
 
 ```js title="main.w"
 
