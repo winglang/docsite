@@ -9,7 +9,7 @@ keywords: [Wing language, example]
 
 Wing supports looping over collections with `for..in` statements.
 
-[for..in](/docs/api/language-reference#26-for) is used to iterate over an array, a set or a range. The loop invariant in for loops is implicitly re-assignable (var).
+[for..in](/docs/api/language-reference#26-for) is used to iterate over an array, a set or a range.
 
 ```js playground title="main.w"
 // a standard for loop
