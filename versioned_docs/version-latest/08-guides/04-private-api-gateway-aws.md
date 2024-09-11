@@ -117,9 +117,9 @@ api.put("/note/:name", inflight (request) => {
 });
 
 // Consumer functions (not required for the app to work, but useful for testing)
-new cloud.Function(inflight (event: str?) => {
+new cloud.Function(inflight (event: Json?) => {
   if let event = event {
-    let parts = event.split(":");
+    let parts = event.asStr().split(":");
     let name = parts.at(0);
     let note = parts.at(1);
 
@@ -132,7 +132,7 @@ new cloud.Function(inflight (event: str?) => {
   return "event is required `NAME:NOTE`";
 }) as "Consumer-PUT";
 
-new cloud.Function(inflight (event: str?) => {
+new cloud.Function(inflight (event: Json?) => {
   if let event = event {
     return http.get("{api.url}/note?name={event}").body;
   }

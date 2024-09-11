@@ -136,6 +136,20 @@ const config = {
         // ... other options
       }
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "example",
+        path: "example",
+        routeBasePath: "docs/learn",
+        editUrl: (params) =>
+          `${winglangOrgUrl}/wing/tree/main/docs/api/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      }
+    ],
   ],
   presets: [
     [
@@ -254,7 +268,7 @@ const config = {
           },
          
           {
-            to: "docs/why-wing",
+            to: "docs/learn",
             position: "left",
             label: "Learn",
             className: "header-text-link",
