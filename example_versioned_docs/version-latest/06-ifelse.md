@@ -16,7 +16,7 @@ if 7 % 2 == 0 {
   log("7 is odd");
 }
 
-if (8 % 4 == 0) {
+if 8 % 4 == 0 {
   log("8 is divisble by 4");
 }
 
