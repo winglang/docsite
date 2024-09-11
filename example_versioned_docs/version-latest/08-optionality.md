@@ -9,7 +9,7 @@ keywords: [Wing language, example]
 
 Nullity is a primary source of bugs in software. Being able to guarantee that a value will never be null makes it easier to write safe code without constantly having to take nullity into account.
 
-Optionality requires developers to be more intentional about working with the concept of "lack of value".
+An optional value can be either "nil" or a non-nil value. The type of an optional variable is represented by adding a question mark (`?`) to its end.
 
 ```js playground title="main.w"
 let monday:str = "doctor";
