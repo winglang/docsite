@@ -5,6 +5,7 @@ slug: /http-server
 sidebar_label: 33. HTTP Server
 description: Directories
 keywords: [Wing language, HTTP]
+image: /img/wing-by-example.png
 ---
 
 You can create HTTP servers using the [cloud.Api](/docs/api/standard-library/cloud/api) standard library.

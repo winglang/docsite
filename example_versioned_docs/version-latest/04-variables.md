@@ -5,6 +5,7 @@ slug: /Variables
 sidebar_label: 4. Variables
 description: Using variables with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 Variables are declared with the `let` keyword. The type of most variables can be inferred automatically, but you can also add an explicit type annotation if needed.

@@ -5,6 +5,7 @@ slug: /maps
 sidebar_label: 10. Maps
 description: Using maps with Wing
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 Maps are key-value data structures that let you associate strings with any kinds of other values.

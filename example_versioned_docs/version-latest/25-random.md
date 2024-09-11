@@ -5,6 +5,7 @@ slug: /random
 sidebar_label: 25. Random
 description: Create random values in Wing
 keywords: [Wing language, random]
+image: /img/wing-by-example.png
 ---
 
 Using the [math standard library](/docs/api/standard-library/math/api-reference) you can generate random numbers.

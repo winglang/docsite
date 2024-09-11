@@ -5,6 +5,7 @@ slug: /methods
 sidebar_label: 18. Methods
 description: Methods with Wing
 keywords: [Wing language, variadic]
+image: /img/wing-by-example.png
 ---
 
 ```js playground example title="main.w"

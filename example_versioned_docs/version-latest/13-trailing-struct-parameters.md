@@ -5,6 +5,7 @@ slug: /trailing-structs-parameters
 sidebar_label: 13. Trailing struct parameters
 description: Passing fields directly to a function
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 If the last parameter of a function is a struct, then you can pass its fields directly.

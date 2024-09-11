@@ -5,6 +5,7 @@ slug: /time
 sidebar_label: 24. Time
 description: Create time/date values in Wing
 keywords: [Wing language, time, date]
+image: /img/wing-by-example.png
 ---
 
 ```js playground example title="main.w"

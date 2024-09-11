@@ -5,6 +5,7 @@ slug: /hello-world
 sidebar_label: 1. Hello world
 description: Hello world wing example
 keywords: [Wing language, example]
+image: /img/wing-by-example.png
 ---
 
 # Hello world

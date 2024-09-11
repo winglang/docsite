@@ -5,6 +5,7 @@ slug: /exec-processed
 sidebar_label: 35. Exec processes
 description: Exec'ing Processes
 keywords: [Wing language, HTTP]
+image: /img/wing-by-example.png
 ---
 
 ```js playground example title="main.w"
