@@ -18,7 +18,7 @@ let tuesday: str? = nil;
 // Set next to tuesday if there is a value otherwise use monday value
 let next = tuesday ?? monday;
 
-log("{next}");
+log(next);
 
 ```
 
