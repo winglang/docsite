@@ -7,6 +7,8 @@ description: Using while statements with Wing
 keywords: [Wing language, example]
 ---
 
+While loops repeatedly check a condition and run a block of code until the condition is `false`.
+
 ```js playground title="main.w"
 let var i = 0;
 
