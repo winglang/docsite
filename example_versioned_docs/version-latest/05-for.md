@@ -26,7 +26,7 @@ for item in arr {
 // break a loop
 let items = Set<num>[1, 2, 3];
 for item in items {
-  if(item == 1){
+  if item == 1 {
     break;
   }
   log(item);
