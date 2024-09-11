@@ -12,7 +12,7 @@ Nullity is a primary source of bugs in software. Being able to guarantee that a 
 An optional value can be either "nil" or a non-nil value. The type of an optional variable is represented by adding a question mark (`?`) to its end.
 
 ```js playground title="main.w"
-let monday:str = "doctor";
+let monday: str = "doctor";
 let tuesday: str? = nil;
 
 // Set next to tuesday if there is a value otherwise use monday value
