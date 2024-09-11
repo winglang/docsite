@@ -11,11 +11,11 @@ keywords: [Wing language, variadic]
 Variadic functions can be called with any number of trailing arguments.
 
 ```js playground example title="main.w"
-// Function that will take an arbitrary number of ints as arguments.
+// Function that will take an arbitrary number of numbers as arguments.
 let plus = (...numbers: Array<num>) => {
   let var value = 0;
 
-  for number in numbers{
+  for number in numbers {
     value = value + number;
   }
 
