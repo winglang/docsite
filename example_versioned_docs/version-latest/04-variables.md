@@ -27,7 +27,7 @@ log("{b}, {c}");
 let d: str = "Hello";
 // d = "Test"; // error: Variable is not reassignable
 
-// makes variable mutable
+// makes variable reassignable
 let var s = "hello";
 s = "hello world"; // compiles
 log(s);
