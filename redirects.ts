@@ -98,7 +98,7 @@ export default [
     { to: '/docs/api/category/math', from: ['/docs/category/math'] },
     { to: '/docs/api/category/sim', from: ['/docs/category/sim'] },
     { to: '/docs/api/category/std', from: ['/docs/category/std'] },
-    { to: '/docs/api/category/ui', from: ['/docs/category/ui'] },
+    { to: '/docs/api/standard-library/ui/', from: ['/docs/category/ui'] },
     { to: '/docs/api/category/util', from: ['/docs/category/util'] },
     { to: '/docs/api/standard-library', from: ['/docs/category/standard-library'] },
 
