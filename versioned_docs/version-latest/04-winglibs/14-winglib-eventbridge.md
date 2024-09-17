@@ -1,12 +1,10 @@
 ---
 title: Amazon EventBridge
 id: eventbridge
-sidebar_label: Amazon EventBridge
+sidebar_label: Amazon EventBridge (winglib)
 description:  A Wing library for working with Amazon EventBridge
 keywords: [winglib, Wing library]
 ---
-# eventbridge
-
 A Wing library for working with [Amazon EventBridge](https://aws.amazon.com/eventbridge/).
 
 ## Prerequisites
@@ -60,7 +58,6 @@ wing compile -t @winglang/platform-awscdk -v eventBridgeName="my-bus" main.w
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

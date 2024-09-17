@@ -1,12 +1,10 @@
 ---
 title: Amazon DynamoDB
 id: dynamodb
-sidebar_label: Amazon DynamoDB
+sidebar_label: Amazon DynamoDB (winglib)
 description:  A Wing library for Amazon DynamoDB
 keywords: [winglib, Wing library]
 ---
-# dynamodb
-
 ## Prerequisites
 
 - [winglang](https://winglang.io).
@@ -74,7 +72,6 @@ new DynamoDB(table.connection.clientConfig);
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

@@ -1,12 +1,10 @@
 ---
 title: Vite
 id: vite
-sidebar_label: Vite
+sidebar_label: Vite (winglib)
 description:  A Wing library to deploy [Vite applications](https://vitejs.dev/) to the cloud.
 keywords: [winglib, Wing library]
 ---
-# vite
-
 `@winglibs/vite` allows using a [Vite](https://vitejs.dev/) project with Wing.
 
 ## Prerequisites
@@ -45,7 +43,6 @@ let url = website.url;
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

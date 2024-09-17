@@ -1,12 +1,10 @@
 ---
 title: Wing simulator utils
 id: simtools
-sidebar_label: Wing simulator utils
+sidebar_label: Wing simulator utils (winglib)
 description:  '[Wing simulator](https://www.winglang.io/docs/platforms/sim) utility library'
 keywords: [winglib, Wing library]
 ---
-# simtools
-
 This library is a set of tools that are supposed to make the user of the simulator a happier developer. 
 
 For the time being, it contains only one function, `addMacro()`.
@@ -58,7 +56,6 @@ npm i @winglibs/simtools
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

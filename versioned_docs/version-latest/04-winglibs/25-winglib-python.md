@@ -1,12 +1,10 @@
 ---
 title: Python
 id: python
-sidebar_label: Python
+sidebar_label: Python (winglib)
 description:  A Wing library for running [Python](https://www.python.org/) code in [inflight](https://www.winglang.io/docs/concepts/inflights#inflight-code).
 keywords: [winglib, Wing library]
 ---
-# python
-
 A Wing library for running Python code in inflight.
 
 ## Prerequisites
@@ -67,6 +65,5 @@ def handler(event, context):
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: Lock
 id: lock
-sidebar_label: Lock
+sidebar_label: Lock (winglib)
 description:  Wing library for cloud lock
 keywords: [winglib, Wing library]
 ---
-# lock
-
 ## Prerequisites
 
 * [winglang](https://winglang.io).
@@ -82,7 +80,6 @@ test "count with expiry" {
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

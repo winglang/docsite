@@ -1,12 +1,10 @@
 ---
 title: tsoa
 id: tsoa
-sidebar_label: tsoa
+sidebar_label: tsoa (winglib)
 description:  A Wing library for working with [TSOA](https://tsoa-community.github.io/docs/) - An OpenAPI-compliant Web APIs using TypeScript.
 keywords: [winglib, Wing library]
 ---
-# tsoa
-
 A Wing library for working with [TSOA](https://tsoa-community.github.io/docs/) - An OpenAPI-compliant Web APIs using TypeScript.
 
 ## Prerequisites
@@ -72,7 +70,6 @@ public async getUser(
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

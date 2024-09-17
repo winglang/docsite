@@ -262,11 +262,10 @@ const config = {
           {
             to: "docs",
             position: "left",
-            label: "Install",
+            label: "Getting started",
             className: "header-text-link",
             target: "_self",
           },
-         
           {
             to: "docs/learn",
             position: "left",
@@ -282,20 +281,30 @@ const config = {
             target: "_self",
           },
           {
-            // href: "https://github.com/winglang/examples",
-            to: "docs/examples",
+            to: "docs/winglibs/all-winglibs",
             position: "left",
-            label: "Examples",
-            className: "header-text-link",
-          },
-          {
-            href: "https://www.winglang.io/play/",
-            position: "left",
-            label: "Playground",
+            label: "Libraries",
             className: "header-text-link",
             target: "_self",
           },
-          
+          {
+            position: 'left',
+            label: 'Explore',
+            items: [
+              {
+                // href: "https://github.com/winglang/examples",
+                to: "docs/examples",
+                label: "Examples",
+                className: "header-text-link",
+              },
+              {
+                href: "https://www.winglang.io/play/",
+                label: "Playground",
+                className: "header-text-link",
+                target: "_self",
+              },
+            ]
+          },
           {
             position: 'left',
             label: 'Community & Support',

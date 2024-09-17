@@ -1,12 +1,10 @@
 ---
 title: Momento
 id: momento
-sidebar_label: Momento
+sidebar_label: Momento (winglib)
 description:  Wing library for [momento](https://www.gomomento.com/)
 keywords: [winglib, Wing library]
 ---
-# momento
-
 ## Prerequisites
 
 * [winglang](https://winglang.io)
@@ -44,7 +42,6 @@ See the [Momento documentation](https://docs.momentohq.com/cache/develop/authent
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

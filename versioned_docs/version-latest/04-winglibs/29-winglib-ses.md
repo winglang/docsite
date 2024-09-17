@@ -1,12 +1,10 @@
 ---
 title: Amazon SES
 id: ses
-sidebar_label: Amazon SES
+sidebar_label: Amazon SES (winglib)
 description:  Wing library for interacting with Amazon SES.
 keywords: [winglib, Wing library]
 ---
-# ses
-
 This library allows you to interact with the AWS SES Service
 
 ## Prerequisites
@@ -30,7 +28,6 @@ let emailService = new ses.EmailService(emailIdentities: ["bot@wing.cloud"]);
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

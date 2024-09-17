@@ -1,12 +1,10 @@
 ---
 title: Amazon Cognito
 id: cognito
-sidebar_label: Amazon Cognito
+sidebar_label: Amazon Cognito (winglib)
 description:  A wing library to work with Amazon Cognito
 keywords: [winglib, Wing library]
 ---
-# cognito
-
 A wing library to work with AWS Cognito.
 
 ## Prerequisites
@@ -86,6 +84,5 @@ curl -H "Authorization: ${TOKEN}" https://5b0y949eik.execute-api.us-east-1.amazo
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 

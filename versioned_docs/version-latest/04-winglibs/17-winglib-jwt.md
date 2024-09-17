@@ -1,12 +1,10 @@
 ---
 title: JWT authentication
 id: jwt
-sidebar_label: JWT authentication
+sidebar_label: JWT authentication (winglib)
 description:  Wing library for JWT authentication
 keywords: [winglib, Wing library]
 ---
-# jwt
-
 A Wing library for working with JWT authentication.
 
 ## Prerequisites
@@ -35,7 +33,6 @@ test "will sign and verify" {
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

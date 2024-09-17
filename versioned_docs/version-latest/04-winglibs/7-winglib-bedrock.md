@@ -1,12 +1,10 @@
 ---
 title: Amazon Bedrock
 id: bedrock
-sidebar_label: Amazon Bedrock
+sidebar_label: Amazon Bedrock (winglib)
 description:  A Wing library for Amazon Bedrock
 keywords: [winglib, Wing library]
 ---
-# bedrock
-
 A Wing library for working with [Amazon Bedrock](https://aws.amazon.com/bedrock/).
 
 ## Prerequisites
@@ -63,7 +61,6 @@ handled by the mocked service.
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

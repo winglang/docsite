@@ -1,12 +1,10 @@
 ---
 title: Slack
 id: slack
-sidebar_label: Slack
+sidebar_label: Slack (winglib)
 description:  A Wing library for working with [Slack](https://slack.com/)
 keywords: [winglib, Wing library]
 ---
-# slack
-
 This library allows using Slack with Wing.
 
 ## Prerequisites
@@ -138,7 +136,6 @@ let postMessage = new cloud.Function(inflight () => {
 ### Finding a Channel ID
 
 If you prefer to use a channel ID over a channel name, you can find the channel ID by right-clicking on the channel name and select `View channel details`. The channel ID will be at the bottom of the popup modal.
-
 ---
 ## API Reference
 

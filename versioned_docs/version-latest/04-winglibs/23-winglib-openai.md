@@ -1,12 +1,10 @@
 ---
 title: OpenAI
 id: openai
-sidebar_label: OpenAI
+sidebar_label: OpenAI (winglib)
 description:  Wing library for [OpenAI](https://openai.com/)
 keywords: [winglib, Wing library]
 ---
-# openai
-
 An [OpenAI](https://openai.com) library for Winglang.
 
 > This is an initial version of this library which currently exposes a very small subset of the
@@ -84,7 +82,6 @@ Methods:
 ## License
 
 Licensed under the [MIT License](/LICENSE).
-
 ---
 ## API Reference
 

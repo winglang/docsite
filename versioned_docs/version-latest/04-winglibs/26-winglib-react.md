@@ -1,12 +1,10 @@
 ---
 title: React
 id: react
-sidebar_label: React
+sidebar_label: React (winglib)
 description:  A Wing library for [React](https://react.dev/)
 keywords: [winglib, Wing library]
 ---
-# React
-
 Use React in your project.
 
 ## Prerequisites
@@ -104,7 +102,6 @@ export default App;
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

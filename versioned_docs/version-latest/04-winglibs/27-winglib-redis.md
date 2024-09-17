@@ -1,12 +1,10 @@
 ---
 title: Redis
 id: redis
-sidebar_label: Redis
+sidebar_label: Redis (winglib)
 description:  A Wing library for [Redis](https://redis.io/)
 keywords: [winglib, Wing library]
 ---
-# Redis support for Winglang
-
 This library provides a Wing client for Redis.
 
 ## Installation

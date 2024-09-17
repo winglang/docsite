@@ -1,12 +1,10 @@
 ---
 title: Containers
 id: containers
-sidebar_label: Containers
+sidebar_label: Containers (winglib)
 description:  Deploy containers with Wing
 keywords: [winglib, Wing library]
 ---
-# Wing Containers Support
-
 This library allows deploying arbitrary containers with Wing.
 
 ## Installation

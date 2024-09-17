@@ -1,12 +1,10 @@
 ---
 title: Postgres
 id: postgres
-sidebar_label: Postgres
+sidebar_label: Postgres (winglib)
 description:  Wing library for [Postgres](https://www.postgresql.org/)
 keywords: [winglib, Wing library]
 ---
-# postgres
-
 This library allows using postgres with Wing.
 
 ## Prerequisites
@@ -133,7 +131,6 @@ When you deploy Terraform that uses the `Database` class, you will need to have 
 ## License
 
 Licensed under the [MIT License](../LICENSE).
-
 ---
 ## API Reference
 
