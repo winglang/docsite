@@ -1,12 +1,10 @@
 ---
 title: FIFO Queue
 id: fifoqueue
-sidebar_label: FIFO Queue
+sidebar_label: FIFO Queue (winglib)
 description:  A wing library to work with FIFO (first-in first-out) Queues
 keywords: [winglib, Wing library]
 ---
-# fifoqueue
-
 A wing library to work with FIFO (first-in first-out) Queues.
 
 To use the queue, set `groupId` to group messages and process them in an ordered fashion.
@@ -40,7 +38,6 @@ test "will push to queue" {
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

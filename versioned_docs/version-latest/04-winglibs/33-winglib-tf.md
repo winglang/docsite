@@ -1,12 +1,10 @@
 ---
 title: Terraform utilities
 id: tf
-sidebar_label: Terraform utilities
+sidebar_label: Terraform utilities (winglib)
 description:  Terraform utilities library for Wing
 keywords: [winglib, Wing library]
 ---
-# Terraform Utilities
-
 This Wing library includes some useful utilities to work with Terraform.
 
 ## Prerequisites
@@ -219,7 +217,6 @@ The above example will add a `provider` section to the output Terraform with a s
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

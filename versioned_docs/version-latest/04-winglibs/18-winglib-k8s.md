@@ -1,12 +1,10 @@
 ---
 title: Kubernetes (k8s)
 id: k8s
-sidebar_label: Kubernetes (k8s)
+sidebar_label: Kubernetes (k8s) (winglib)
 description:  Wing for Kubernetes
 keywords: [winglib, Wing library]
 ---
-# Wing for Kubernetes
-
 A framework for synthesizing Kubernetes manifests using Winglang.
 
 ## Installation
@@ -133,7 +131,6 @@ deployment.exposeViaService(serviceType: k8s.ServiceType.LOAD_BALANCER);
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

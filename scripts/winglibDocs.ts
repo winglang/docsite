@@ -7,7 +7,9 @@ import { readFileSync, existsSync } from 'fs';
 
 const authorization = `token ${process.env.GITHUB_TOKEN}`;
 
-const WINGLIB_DIR = join(process.cwd(), 'versioned_docs', 'version-latest', '04-winglibs', '05-winglibs');
+const WINGLIB_DIR_TEMP_DIR = join(process.cwd(), 'versioned_docs', 'version-latest', '04-winglibs', '05-winglibs');
+const WINGLIB_DIR = join(WINGLIB_DIR_TEMP_DIR, '../');
+
 const categoryFile = `label: winglibs
 collapsible: true
 collapsed: true
@@ -106,16 +108,24 @@ const buildUrlsForPlatforms = (platforms: string[]) => {
   });
 
   // Write files to WINGLIB_DIR
-  await fs.rm(WINGLIB_DIR, { force: true, recursive: true });
-  await fs.mkdir(WINGLIB_DIR, { recursive: true });
+  await fs.rm(WINGLIB_DIR_TEMP_DIR, { force: true, recursive: true });
+  await fs.mkdir(WINGLIB_DIR_TEMP_DIR, { recursive: true });
+
+  // read all files in teh WINGLIB_DIR and find any that have winglib in the filename and remove it
+  const filesInDir = await fs.readdir(join(WINGLIB_DIR));
+  for (const file of filesInDir) {
+    if(file.includes('-winglib-')) {
+      await fs.rm(join(WINGLIB_DIR, file));
+    }
+  }
 
   // Write required docusuarus file for category
-  await fs.writeFile(join(WINGLIB_DIR, '_category_.yml'), categoryFile);
+  await fs.writeFile(join(WINGLIB_DIR_TEMP_DIR, '_category_.yml'), categoryFile);
 
   let table = `---
 title: List of winglibs
 id: all-winglibs
-sidebar_label: List of winglibs
+sidebar_label: Explore all Wing libraries
 description:  Table of all Wing libraries
 keywords: [winglib, Wing library]
 ---
@@ -127,7 +137,7 @@ keywords: [winglib, Wing library]
   // Create the table.
   // @ts-ignore
   for (const { title, version, description, platforms, demoURL, packageJson, winglib } of winglibs) {
-    table += `\n| [${title}](/docs/winglibs/winglibs/${winglib}) | [${packageJson.name}](/docs/winglibs/winglibs/${winglib}) |  v${version} | ${description} ${demoURL ? `([Example](${demoURL}))` : ''} | ${buildUrlsForPlatforms(platforms)} |`;
+    table += `\n| [${title}](/docs/winglibs/${winglib}) | [${packageJson.name}](/docs/winglibs/${winglib}) |  v${version} | ${description} ${demoURL ? `([Example](${demoURL}))` : ''} | ${buildUrlsForPlatforms(platforms)} |`;
   }
 
   // contributing to winglibs
@@ -137,7 +147,7 @@ keywords: [winglib, Wing library]
 
   `
 
-  await fs.writeFile(join(WINGLIB_DIR, '../04-toc.md'), table);
+  await fs.writeFile(join(WINGLIB_DIR_TEMP_DIR, '../04-toc.md'), table);
 
 
   for (const { winglib, readme, packageJson, title } of winglibs) {
@@ -153,23 +163,38 @@ keywords: [winglib, Wing library]
     }
 
     // remove any markdown images from the content (for now)
-    const contentWithoutImages = content.replace(/!\[.*\]\(.*\)/g, '');
-    console.log(join(WINGLIB_DIR, `${winglib}.md`))
+    let updatedContent = content.replace(/!\[.*\]\(.*\)/g, '');
+    console.log(join(WINGLIB_DIR_TEMP_DIR, `${winglib}.md`))
+
+    // Remove first header from README use docusuarus
+    updatedContent = updatedContent.replace(/^#\s.*$/m, '');
+    updatedContent = updatedContent.trim();
+
 
     const file = `---
 title: ${title}
 id: ${winglib}
-sidebar_label: ${title}
+sidebar_label: ${title} (winglib)
 description:  ${packageJson.wing?.docs?.summary || packageJson.description}
 keywords: [winglib, Wing library]
 ---
-${contentWithoutImages}
+${updatedContent}
 ---
 ${apiFileContent}
 `
 
-    await fs.writeFile(join(WINGLIB_DIR, `${winglib}.md`), file);
+    await fs.writeFile(join(WINGLIB_DIR_TEMP_DIR, `${winglib}.md`), file);
   }
+
+  // Move all the winglibs into the correct directory
+  const filesInWingLib = await fs.readdir(join(WINGLIB_DIR));
+  let fileIndex = filesInWingLib.length;
+  for (const { winglib } of winglibs) {
+    fileIndex =  fileIndex + 1;
+    await fs.rename(join(WINGLIB_DIR_TEMP_DIR, `${winglib}.md`), join(WINGLIB_DIR, `${fileIndex}-winglib-${winglib}.md`));
+  }
+
+  await fs.rm(WINGLIB_DIR_TEMP_DIR, { force: true, recursive: true });
 
   console.log("Cleaning up...");
   await fs.rm("winglibs.tgz");

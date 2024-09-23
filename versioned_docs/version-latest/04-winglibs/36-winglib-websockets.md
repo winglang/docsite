@@ -1,12 +1,10 @@
 ---
 title: WebSocket
 id: websockets
-sidebar_label: WebSocket
+sidebar_label: WebSocket (winglib)
 description:  A Wing library that enables you to create WebSockets using Wing.
 keywords: [winglib, Wing library]
 ---
-# Websockets
-
 This library enables you to create WebSockets using Wing.
 
 WebSockets offer a persistent, bidirectional communication channel between a client and a server, facilitating real-time, low-latency communication.
@@ -88,7 +86,6 @@ To compile to `awscdk`, we need to import the `@winglang/platform-awscdk`.
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

@@ -1,12 +1,10 @@
 ---
 title: GitHub
 id: github
-sidebar_label: GitHub
+sidebar_label: GitHub (winglib)
 description:  A wing library to work with GitHub Probot
 keywords: [winglib, Wing library]
 ---
-# github
-
 A Wing library for working with [GitHub Probot](https://github.com/probot/probot)
 
 
@@ -140,7 +138,6 @@ let markdown = new github.ProbotApp(
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 
