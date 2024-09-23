@@ -102,6 +102,8 @@ export default [
     { to: '/docs/api/category/util', from: ['/docs/category/util'] },
     { to: '/docs/api/standard-library', from: ['/docs/category/standard-library'] },
 
+    { to: '/docs/concepts/platforms', from: ['/docs/platforms/platforms'] },
+
     // redirects for wing.learn section
     { to: "https://learn.winglang.io/learn", from: ["/learn/"] },
     { to: "https://learn.winglang.io/learn/preflight-inflight", from: ["/learn/preflight-inflight"] },
