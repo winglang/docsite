@@ -1,12 +1,10 @@
 ---
 title: AWS Budget
 id: budget
-sidebar_label: AWS Budget
+sidebar_label: AWS Budget (winglib)
 description:  A Wing library for working with [AWS Budgets]
 keywords: [winglib, Wing library]
 ---
-# budget
-
 A Wing library for working with [AWS Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
 
 ## Prerequisites
@@ -47,7 +45,6 @@ You get an alert when your monthly payment goes over your budget.
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

@@ -1,7 +1,7 @@
 ---
 title: List of winglibs
 id: all-winglibs
-sidebar_label: List of winglibs
+sidebar_label: Explore all Wing libraries
 description:  Table of all Wing libraries
 keywords: [winglib, Wing library]
 ---

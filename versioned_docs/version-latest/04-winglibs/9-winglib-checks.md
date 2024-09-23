@@ -1,12 +1,10 @@
 ---
 title: Cloud checks
 id: checks
-sidebar_label: Cloud checks
+sidebar_label: Cloud checks (winglib)
 description:  A self-validation mechanism for cloud applications
 keywords: [winglib, Wing library]
 ---
-# Checks
-
 The `Check` resource is a self-validation mechanism for cloud applications. Checks can be defined at
 any level and can be used to check if the system is healthy at that level.
 

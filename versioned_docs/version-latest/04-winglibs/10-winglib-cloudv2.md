@@ -1,12 +1,10 @@
 ---
 title: cloudv2
 id: cloudv2
-sidebar_label: cloudv2
+sidebar_label: cloudv2 (winglib)
 description:  Standard cloud library for Wing
 keywords: [winglib, Wing library]
 ---
-# cloudv2
-
 This module contains a Wing-based implementation of the built-in `cloud` library. It's a work in progresss as part of a migration for our internal codebase.
 
 Here are the resources available so far:
@@ -33,7 +31,6 @@ let counter = new cloud.Counter();
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

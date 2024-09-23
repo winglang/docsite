@@ -1,12 +1,10 @@
 ---
 title: Message Fanout
 id: messagefanout
-sidebar_label: Message Fanout
+sidebar_label: Message Fanout (winglib)
 description:  Wing library to fan out messages
 keywords: [winglib, Wing library]
 ---
-# messagefanout
-
 ## Prerequisites
 
 * [winglang](https://winglang.io).
@@ -36,7 +34,6 @@ test "push a message to fanout" {
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

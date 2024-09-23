@@ -1,12 +1,10 @@
 ---
 title: ngrok
 id: ngrok
-sidebar_label: ngrok
+sidebar_label: ngrok (winglib)
 description:  Wing library for [ngrok](https://ngrok.com/). Create local tunnels to Wing endpoints.
 keywords: [winglib, Wing library]
 ---
-# Wing ngrok support 
-
 This library can be used to create an [ngrok](https://ngrok.com) tunnel for local development that
 forwards HTTP requests to a localhost endpoint.
 
@@ -70,7 +68,6 @@ endpoint.
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 

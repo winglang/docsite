@@ -1,12 +1,10 @@
 ---
 title: Amazon SageMaker
 id: sagemaker
-sidebar_label: Amazon SageMaker
+sidebar_label: Amazon SageMaker (winglib)
 description:  The library enables owners of a trained sagemaker model, to access its Endpoints from a winglang [inflight](https://www.winglang.io/docs/concepts/inflights#inflight-code) code.
 keywords: [winglib, Wing library]
 ---
-# sagemaker
-
 ## Prerequisites
 
 - [winglang](https://winglang.io).
@@ -76,7 +74,6 @@ new cloud.Function(handler, env: {
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 
