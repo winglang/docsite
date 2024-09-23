@@ -81,10 +81,6 @@ export default [
         from: ["/docs/platforms/tf-azure"],
     },
     {
-        to: "/docs/winglibs/what-are-winglibs",
-        from: ["/docs/libraries"],
-    },
-    {
         to: "/docs/api/analytics",
         from: ["/docs/analytics"],
     },
