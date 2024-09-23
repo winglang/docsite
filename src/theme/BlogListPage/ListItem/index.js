@@ -9,6 +9,8 @@ const ListItem = ({ content }) => {
 
   const {authors} = metadata;
 
+  const formattedDate = new Date(metadata.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
   const imageUrl = frontMatter.image ?? 'https://uploads-ssl.webflow.com/63720940a94e098b4e2a542b/65d32406856a3e7dd9629299_blog-banner-default2.png';
 
   return (
@@ -26,7 +28,7 @@ const ListItem = ({ content }) => {
               </Link>
             </div>
             <div className="card__body">
-              <small>{metadata.formattedDate}</small>
+              <small>{formattedDate}</small>
               <Link to={metadata.permalink}>
                 <h3 className={styles.title}>{metadata.title}</h3>
               </Link>
