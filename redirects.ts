@@ -111,5 +111,11 @@ export default [
     { to: "https://learn.winglang.io/learn/counter", from: ["/learn/counter"] },
     { to: "https://learn.winglang.io/learn/queue", from: ["/learn/queue"] },
     { to: "https://learn.winglang.io/learn/topic", from: ["/learn/topic"] },
+
+    // Redirects for winglibs
+    { to: "/docs/libraries/", from: ["/docs/winglibs/what-are-winglibs"] },
+    { to: "/docs/libraries/using-winglibs", from: ["/docs/winglibs/using-winglibs"] },
+    { to: "/docs/libraries/creating-winglibs", from: ["/docs/winglibs/creating-winglibs"] },
+    { to: "/docs/libraries/all-winglibs", from: ["/docs/winglibs/all-winglibs"] },
     
 ]

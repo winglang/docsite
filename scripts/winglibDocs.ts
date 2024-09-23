@@ -7,8 +7,8 @@ import { readFileSync, existsSync } from 'fs';
 
 const authorization = `token ${process.env.GITHUB_TOKEN}`;
 
-const WINGLIB_DIR_TEMP_DIR = join(process.cwd(), 'versioned_docs', 'version-latest', '04-winglibs', '05-winglibs');
-const WINGLIB_DIR = join(WINGLIB_DIR_TEMP_DIR, '../');
+const WINGLIB_DIR_TEMP_DIR = join(process.cwd(), 'winglibs_versioned_docs', 'version-latest', 'winglibs');
+const WINGLIB_DIR = join(WINGLIB_DIR_TEMP_DIR, '../', '05-winglibs');
 
 const categoryFile = `label: winglibs
 collapsible: true
@@ -137,7 +137,7 @@ keywords: [winglib, Wing library]
   // Create the table.
   // @ts-ignore
   for (const { title, version, description, platforms, demoURL, packageJson, winglib } of winglibs) {
-    table += `\n| [${title}](/docs/winglibs/${winglib}) | [${packageJson.name}](/docs/winglibs/${winglib}) |  v${version} | ${description} ${demoURL ? `([Example](${demoURL}))` : ''} | ${buildUrlsForPlatforms(platforms)} |`;
+    table += `\n| [${title}](/docs/libraries/winglibs/${winglib}) | [${packageJson.name}](/docs/libraries/winglibs/${winglib}) |  v${version} | ${description} ${demoURL ? `([Example](${demoURL}))` : ''} | ${buildUrlsForPlatforms(platforms)} |`;
   }
 
   // contributing to winglibs
@@ -174,7 +174,7 @@ keywords: [winglib, Wing library]
     const file = `---
 title: ${title}
 id: ${winglib}
-sidebar_label: ${title} (winglib)
+sidebar_label: ${title}
 description:  ${packageJson.wing?.docs?.summary || packageJson.description}
 keywords: [winglib, Wing library]
 ---
