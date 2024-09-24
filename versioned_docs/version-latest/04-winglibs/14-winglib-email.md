@@ -1,12 +1,10 @@
 ---
 title: Email
 id: email
-sidebar_label: Email
+sidebar_label: Email (winglib)
 description:  A wing library for sending emails
 keywords: [winglib, Wing library]
 ---
-# email
-
 ## Prerequisites
 
 * [winglang](https://winglang.io).
@@ -52,7 +50,6 @@ By default, new AWS accounts are in the sandbox mode. This means emails can only
 ## License
 
 This library is licensed under the [MIT License](./LICENSE).
-
 ---
 ## API Reference
 
