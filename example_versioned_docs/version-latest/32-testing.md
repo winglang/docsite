@@ -2,7 +2,7 @@
 title: Testing
 id: testing
 slug: /testing
-sidebar_label: 32. Testing
+sidebar_label: Testing
 description: Directories
 keywords: [Wing language, Directories]
 image: /img/wing-by-example.png

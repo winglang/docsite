@@ -2,7 +2,7 @@
 title: Primitive values
 id: primitives
 slug: /primitive-values
-sidebar_label: 2. Primitive values
+sidebar_label: Primitive values
 description: Hello world wing example
 keywords: [Wing language, example, primitives, values]
 image: /img/wing-by-example.png

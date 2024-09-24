@@ -2,7 +2,7 @@
 title: Structs
 id: structs
 slug: /structs
-sidebar_label: 12. Structs
+sidebar_label: Structs
 description: Using arrays with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

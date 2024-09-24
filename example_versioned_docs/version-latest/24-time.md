@@ -2,7 +2,7 @@
 title: Time
 id: time
 slug: /time
-sidebar_label: 24. Time
+sidebar_label: Time
 description: Create time/date values in Wing
 keywords: [Wing language, time, date]
 image: /img/wing-by-example.png
