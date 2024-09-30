@@ -146,8 +146,18 @@ const config = {
           `${winglangOrgUrl}/wing/tree/main/docs/api/${params.docPath}`,
         breadcrumbs: true,
         includeCurrentVersion: false,
-        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
-        // ... other options
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "winglibs",
+        path: "winglibs",
+        routeBasePath: "docs/libraries",
+        editUrl: (params) =>
+          `${winglangOrgUrl}/wing/tree/main/docs/api/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
       }
     ],
   ],
@@ -281,7 +291,7 @@ const config = {
             target: "_self",
           },
           {
-            to: "docs/winglibs/all-winglibs",
+            to: "docs/libraries",
             position: "left",
             label: "Libraries",
             className: "header-text-link",
