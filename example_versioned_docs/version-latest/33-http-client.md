@@ -2,7 +2,7 @@
 title: HTTP Client
 id: http-client
 slug: /http-client
-sidebar_label: 33. HTTP Client
+sidebar_label: HTTP Client
 description: Directories
 keywords: [Wing language, HTTP]
 image: /img/wing-by-example.png

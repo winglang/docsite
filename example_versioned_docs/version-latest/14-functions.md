@@ -2,7 +2,7 @@
 title: Functions
 id: functions
 slug: /functions
-sidebar_label: 14. Functions
+sidebar_label: Functions
 description: Using functions with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

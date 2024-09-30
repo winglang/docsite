@@ -2,7 +2,7 @@
 title: Arrays
 id: arrays
 slug: /arrays
-sidebar_label: 9. Arrays
+sidebar_label: Arrays
 description: Using arrays with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

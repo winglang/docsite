@@ -2,7 +2,7 @@
 title: Optionality
 id: optionality
 slug: /optionality
-sidebar_label: 8. Optionality
+sidebar_label: Optionality
 description: Using while statements with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

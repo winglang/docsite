@@ -2,7 +2,7 @@
 title: Reading and writing files
 id: reading-and-writing-files
 slug: /reading-and-writing-files
-sidebar_label: 30. Reading and writing files
+sidebar_label: Reading and writing files
 description: Reading and writing files with Wing
 keywords: [Wing language, Reading files, Writing files]
 image: /img/wing-by-example.png

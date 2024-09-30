@@ -2,7 +2,7 @@
 title: String functions
 id: string-functions
 slug: /string-functions
-sidebar_label: 21. String functions
+sidebar_label: String functions
 description: Functions for string values in Wing
 keywords: [Wing language, string, functions]
 image: /img/wing-by-example.png

@@ -2,7 +2,7 @@
 title: Directories
 id: directories
 slug: /directories
-sidebar_label: 31. Directories
+sidebar_label: Directories
 description: Directories
 keywords: [Wing language, Directories]
 image: /img/wing-by-example.png

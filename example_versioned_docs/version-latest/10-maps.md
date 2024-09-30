@@ -2,7 +2,7 @@
 title: Maps
 id: maps
 slug: /maps
-sidebar_label: 10. Maps
+sidebar_label: Maps
 description: Using maps with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

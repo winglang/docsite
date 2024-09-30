@@ -2,7 +2,7 @@
 title: HTTP Server
 id: http-server
 slug: /http-server
-sidebar_label: 33. HTTP Server
+sidebar_label: HTTP Server
 description: Directories
 keywords: [Wing language, HTTP]
 image: /img/wing-by-example.png

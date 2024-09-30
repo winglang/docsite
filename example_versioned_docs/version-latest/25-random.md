@@ -2,7 +2,7 @@
 title: Random
 id: random
 slug: /random
-sidebar_label: 25. Random
+sidebar_label: Random
 description: Create random values in Wing
 keywords: [Wing language, random]
 image: /img/wing-by-example.png

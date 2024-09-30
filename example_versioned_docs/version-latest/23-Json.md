@@ -2,7 +2,7 @@
 title: Json
 id: json
 slug: /json
-sidebar_label: 23. Json
+sidebar_label: Json
 description: Create Json values in Wing
 keywords: [Wing language, json]
 image: /img/wing-by-example.png

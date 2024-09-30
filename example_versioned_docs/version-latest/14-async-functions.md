@@ -2,7 +2,7 @@
 title: Inflight functions
 id: inflight-functions
 slug: /inflight-functions
-sidebar_label: 14. Async inflight functions
+sidebar_label: Async inflight functions
 description: Using functions with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png
