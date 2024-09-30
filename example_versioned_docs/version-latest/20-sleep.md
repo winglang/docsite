@@ -2,7 +2,7 @@
 title: Sleep
 id: sleep
 slug: /sleep
-sidebar_label: 20. Sleep
+sidebar_label: Sleep
 description: Suspends execution for a given duration.
 keywords: [Wing language, sleep]
 image: /img/wing-by-example.png

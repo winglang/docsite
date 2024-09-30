@@ -2,7 +2,7 @@
 title: Variables
 id: Variables
 slug: /Variables
-sidebar_label: 4. Variables
+sidebar_label: Variables
 description: Using variables with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

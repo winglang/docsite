@@ -2,7 +2,7 @@
 title: Trailing struct parameters
 id: trailing-structs-parameters
 slug: /trailing-structs-parameters
-sidebar_label: 13. Trailing struct parameters
+sidebar_label: Trailing struct parameters
 description: Passing fields directly to a function
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

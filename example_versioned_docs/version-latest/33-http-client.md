@@ -2,7 +2,7 @@
 title: HTTP Client
 id: http-client
 slug: /http-client
-sidebar_label: 33. HTTP Client
+sidebar_label: HTTP Client
 description: Directories
 keywords: [Wing language, HTTP]
 image: /img/wing-by-example.png
@@ -17,7 +17,7 @@ bring http;
 bring cloud;
 
 struct Pokemon {
-  id: str;
+  id: num;
   name: str;
   order: num;
   weight: num;
@@ -29,18 +29,17 @@ new cloud.Function(inflight () => {
   // response status
   log(x.status);
 
-  // Cast response back into struct
-  let ditto = Pokemon.fromJson(x.body);
-  log(ditto.name);
+  // parse string response as a JSON object
+  let data = Json.parse(x.body);
 
+  // cast JSON response into struct
+  let ditto = Pokemon.fromJson(data);
+  log(ditto.name);
 });
 ```
 
 ```bash title="Wing console output"
 # Run locally with wing console
-No directory found
+200
+ditto
 ```
-
-
-
-

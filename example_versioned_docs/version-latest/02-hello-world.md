@@ -2,7 +2,7 @@
 title: Wing by example
 id: hello-world
 slug: /hello-world
-sidebar_label: 1. Hello world
+sidebar_label: Hello world
 description: Hello world wing example
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

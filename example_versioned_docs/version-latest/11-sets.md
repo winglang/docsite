@@ -2,7 +2,7 @@
 title: Sets
 id: sets
 slug: /sets
-sidebar_label: 11. Sets
+sidebar_label: Sets
 description: Using sets with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

@@ -2,7 +2,7 @@
 title: For
 id: for
 slug: /for
-sidebar_label: 5. For
+sidebar_label: For
 description: Using for loops with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

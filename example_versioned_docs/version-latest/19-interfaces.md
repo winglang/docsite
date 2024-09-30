@@ -2,7 +2,7 @@
 title: Interfaces
 id: interfaces
 slug: /interfaces
-sidebar_label: 19. Interfaces
+sidebar_label: Interfaces
 description: Interfaces with Wing
 keywords: [Wing language, interfaces]
 image: /img/wing-by-example.png
