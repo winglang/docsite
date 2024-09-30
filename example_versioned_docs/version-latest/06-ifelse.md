@@ -2,7 +2,7 @@
 title: If/Else
 id: if-else
 slug: /if-else
-sidebar_label: 6. If/Else
+sidebar_label: If/Else
 description: Using if else with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

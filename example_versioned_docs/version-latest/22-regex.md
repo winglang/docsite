@@ -2,7 +2,7 @@
 title: Regular expressions
 id: regex
 slug: /regex
-sidebar_label: 22. Regular expressions
+sidebar_label: Regular expressions
 description: Functions for string values in Wing
 keywords: [Wing language, string, functions]
 image: /img/wing-by-example.png

@@ -2,7 +2,7 @@
 title: Exec processes
 id: exec-processed
 slug: /exec-processed
-sidebar_label: 35. Exec processes
+sidebar_label: Exec processes
 description: Exec'ing Processes
 keywords: [Wing language, HTTP]
 image: /img/wing-by-example.png

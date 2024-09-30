@@ -2,7 +2,7 @@
 title: Methods
 id: methods
 slug: /methods
-sidebar_label: 18. Methods
+sidebar_label: Methods
 description: Methods with Wing
 keywords: [Wing language, variadic]
 image: /img/wing-by-example.png

@@ -2,7 +2,7 @@
 title: URL parsing
 id: url-parsing
 slug: /url-parsing
-sidebar_label: 27. URL parsing
+sidebar_label: URL parsing
 description: Parse urls in Wing
 keywords: [Wing language, URL]
 image: /img/wing-by-example.png

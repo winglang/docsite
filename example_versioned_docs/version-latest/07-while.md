@@ -2,7 +2,7 @@
 title: While
 id: while
 slug: /while
-sidebar_label: 7. While
+sidebar_label: While
 description: Using while statements with Wing
 keywords: [Wing language, example]
 image: /img/wing-by-example.png

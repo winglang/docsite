@@ -2,7 +2,7 @@
 title: Number parsing
 id: number-parsing
 slug: /number-parsing
-sidebar_label: 26. Number Parsing
+sidebar_label: Number Parsing
 description: Parse values into numbers
 keywords: [Wing language, random]
 image: /img/wing-by-example.png
