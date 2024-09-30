@@ -22,6 +22,19 @@ let base64: bytes = bytes.fromBase64("aGVsbG8=");
 
 // get bytes from hex value
 let hex: bytes = bytes.fromHex("68656c6c6f");
+
+log(Json.stringify(rawData));
+log(Json.stringify(rawString));
+log(Json.stringify(base64));
+log(Json.stringify(hex));
+```
+
+```bash title="Wing console output"
+# Run locally with wing console
+{"_data":{"0":104,"1":101,"2":108,"3":108,"4":111}}
+{"_data":{"0":104,"1":101,"2":108,"3":108,"4":111}}
+{"_data":{"0":104,"1":101,"2":108,"3":108,"4":111}}
+{"_data":{"0":104,"1":101,"2":108,"3":108,"4":111}}
 ```
 
 
