@@ -1,7 +1,7 @@
 ---
 title: Email
 id: email
-sidebar_label: Email (winglib)
+sidebar_label: Email
 description:  A wing library for sending emails
 keywords: [winglib, Wing library]
 ---
