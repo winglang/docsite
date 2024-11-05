@@ -9,48 +9,92 @@ export default [
         from: ["/docs/tools/cli"],
     },
     {
-        to: "/docs/api/language/variable-declaration",
+        to: "/docs/learn/Variables",
         from: ["/docs/examples/variable-declaration"],
     },
     {
-        to: "/docs/api/language/primitives",
+        to: "/docs/learn/Variables",
+        from: ["/docs/api/language/variable-declaration"],
+    },
+    {
+        to: "/docs/learn/primitive-values",
         from: ["/docs/examples/primitives"],
     },
     {
-        to: "/docs/api/language/functions-example",
+        to: "/docs/learn/primitive-values",
+        from: ["/docs/api/language/primitives"],
+    },
+    {
+        to: "/docs/learn/functions",
         from: ["/docs/examples/functions-example"],
     },
     {
-        to: "/docs/api/language/flow-control",
+        to: "/docs/learn/functions",
+        from: ["/docs/api/language/functions-example"],
+    },
+    {
+        to: "/docs/learn/if-else",
         from: ["/docs/examples/flow-control"],
     },
     {
-        to: "/docs/api/language/optionality",
+        to: "/docs/learn/if-else",
+        from: ["/docs/api/language/flow-control"],
+    },
+    {
+        to: "/docs/learn/optionality",
         from: ["/docs/examples/optionality"],
     },
     {
-        to: "/docs/api/language/json",
+        to: "/docs/learn/optionality",
+        from: ["/docs/api/language/optionality"],
+    },
+    {
+        to: "/docs/learn/json",
         from: ["/docs/examples/json"],
     },
     {
-        to: "/docs/api/language/structs",
+        to: "/docs/learn/json",
+        from: ["/docs/api/language/json"],
+    },
+    {
+        to: "/docs/learn/structs",
         from: ["/docs/examples/structs"],
     },
     {
-        to: "/docs/api/language/classes",
+        to: "/docs/learn/structs",
+        from: ["/docs/api/language/structs"],
+    },
+    {
+        to: "/docs/learn/classes",
         from: ["/docs/examples/classes"],
     },
     {
-        to: "/docs/api/language/using-javascript",
+        to: "/docs/learn/classes",
+        from: ["/docs/api/language/classes"],
+    },
+    {
+        to: "/docs/learn/extern",
         from: ["/docs/examples/using-javascript"],
     },
     {
-        to: "/docs/api/language/api-gateway",
+        to: "/docs/learn/extern",
+        from: ["/docs/api/language/using-javascript"],
+    },
+    {
+        to: "/docs/learn/http-server#api-gateway",
         from: ["/docs/examples/api-gateway"],
     },
     {
-        to: "/docs/api/language/singletons",
+        to: "/docs/learn/http-server#api-gateway",
+        from: ["/docs/api/language/api-gateway"],
+    },
+    {
+        to: "/docs/learn/singletons",
         from: ["/docs/examples/singletons"],
+    },
+    {
+        to: "/docs/learn/singletons",
+        from: ["/docs/api/language/singletons"],
     },
     {
         to: "https://github.com/winglang/examples",
@@ -84,7 +128,7 @@ export default [
         to: "/docs/api/analytics",
         from: ["/docs/analytics"],
     },
-    { to: '/docs/api/language', from: ['/docs/category/examples'] },
+    { to: '/docs/learn', from: ['/docs/category/examples'] },
     // Standard Library redirects for docs v2
     { to: '/docs/api/category/aws', from: ['/docs/category/aws'] },
     { to: '/docs/api/category/cloud', from: ['/docs/category/cloud'] },
