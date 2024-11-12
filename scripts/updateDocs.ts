@@ -57,6 +57,13 @@ const authorization = `token ${process.env.GITHUB_TOKEN}`;
   });
   await fs.cp("docs/api", "api_versioned_docs/version-latest", { recursive: true });
 
+  console.log("typescript_versioned_docs/version-latest...");
+  await fs.rm("typescript_versioned_docs/version-latest", {
+    force: true,
+    recursive: true,
+  });
+  await fs.cp("docs/typescript", "typescript_versioned_docs/version-latest", { recursive: true });
+
   console.log("example_versioned_docs/version-latest...");
   await fs.rm("example_versioned_docs/version-latest", {
     force: true,
