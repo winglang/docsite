@@ -272,21 +272,14 @@ const config = {
           {
             to: "docs",
             position: "left",
-            label: "Getting started",
+            label: "Get started",
             className: "header-text-link",
             target: "_self",
           },
           {
-            to: "docs/learn",
+            to: "learn-wing",
             position: "left",
             label: "Learn",
-            className: "header-text-link",
-            target: "_self",
-          },
-          {
-            to: "docs/api",
-            position: "left",
-            label: "API",
             className: "header-text-link",
             target: "_self",
           },
