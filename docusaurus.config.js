@@ -284,9 +284,9 @@ const config = {
         },
         items: [
           {
-            to: "docs",
+            to: "install",
             position: "left",
-            label: "Get started",
+            label: "Install",
             className: "header-text-link",
             target: "_self",
           },

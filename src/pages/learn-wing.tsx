@@ -12,7 +12,7 @@ const features = [
   {
     name: "Build your first Wing app",
     description:
-      "Install Wing, set up your development environment, and build your first Wing application. This guide will walk you installation, IDE setup, creating your first project, simulating the cloud locally and deploying to AWS.",
+      "Build your first Wing application. This guide will walk you installation, IDE setup, creating your first project, simulating the cloud locally and deploying to AWS.",
     href: "/docs",
     label: "Get started",
     icon: BookOpenIcon,
@@ -28,7 +28,7 @@ const features = [
   {
     name: "Step-by-step guide",
     description:
-      "Only got 5 minutes? This step-by-step is designed to walk you through some of the unique aspects of Wing as a cloud programming language and give you a sense of the developer experience we are aiming for.",
+      "Only got 5 minutes? This step-by-step is designed to walk you through some of the unique aspects of Wing.",
     href: "https://www.winglang.io/learn",
     label: "Start the interactive tutorial",
     icon: CommandLineIcon,
@@ -36,7 +36,7 @@ const features = [
   {
     name: "Wing by Example",
     description:
-      "Inspired by Rust and Go, Wing by Example is a list of annotated example codes helping you understand elements of Wing. Learn Wing with bite sized code examples including variables, functions, if/else, classes, encoding, and much more .",
+      "Learn Wing with bite sized code examples including variables, functions, if/else, classes, encoding, and much more .",
     href: "/docs/learn",
     icon: CodeBracketIcon,
     label: "Explore Wing by Example",
@@ -104,7 +104,7 @@ const coreConcepts = [
   },
 ];
 
-const CommunityPage = () => {
+const LearnWingPage = () => {
   return (
     <Layout title={"Community"}>
       <Head>
@@ -150,7 +150,7 @@ const CommunityPage = () => {
         </div>
       </div>
 
-      <div className={`dark:bg-wing/15 bg-gray-100  py-10 `}>
+      <div className="bg-gradient-to-tl from-gray-100 to-gray-50  pt-10 pb-0  dark:bg-wing/40  dark:from-wing/10  dark:to-wing/60 !border-t-2 !border-b-2 !border-gray-200 dark:!border-gray-300 ">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <h2 className="text-3xl px-4 md:px-0 ">
@@ -167,15 +167,15 @@ const CommunityPage = () => {
                     {feature.name}
                   </dt>
                   <dd className="mt-4 flex flex-auto flex-col text-lg leading-7 text-gray-300 ml-0 ">
-                    <p className="flex-auto text-lg text-gray-800 dark:text-gray-400">
+                    <p className="flex-auto text-lg text-gray-800 dark:text-white">
                       {feature.description}
                     </p>
                     <p className="mt-3">
                       <a
                         href={feature.href}
-                        className="text-md rounded-md bg-wing dark:bg-wing/80 px-3.5 py-1.5  font-semibold text-white shadow-sm hover:bg-wing hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                        className="text-md font-bold rounded-md  py-1.5  underline text-black dark:text-white hover:text-gray-600  dark:hover:text-gray-300 "
                       >
-                        {feature.label}
+                        {feature.label} &rarr;
                       </a>
                     </p>
                   </dd>
@@ -193,12 +193,12 @@ const CommunityPage = () => {
             <h4 className="text-2xl">Read the core documentation.</h4>
             <p></p>
             {/* Mobile */}
-            <p className="block md:hidden text-lg text-gray-800 dark:text-gray-400">
+            <p className="block md:hidden text-lg text-gray-800 dark:text-gray-300">
               Reading the documentation is essential to understanding the full
               capabilities of Wing.
             </p>
             {/* Desktop */}
-            <p className="hidden md:block text-lg text-gray-800 dark:text-gray-400">
+            <p className="hidden md:block text-lg text-gray-800 dark:text-gray-300">
               Reading the documentation is essential to understanding the full
               capabilities of Wing. Our comprehensive guides and references will
               help you get up to speed quickly, whether you're a beginner or an
@@ -213,11 +213,11 @@ const CommunityPage = () => {
                 >
                   <a
                     href={doc.href}
-                    className="text-xl block font-semibold leading-7 dark:text-wing !underline w-60 hover:dark:text-wing/80 "
+                    className="text-lg block font-semibold leading-7 dark:text-wing !underline w-60 hover:dark:text-wing/80 "
                   >
                     {doc.name}
                   </a>
-                  <p className="hidden md:block text-lg m-0 p-0 text-gray-800 dark:text-gray-400">
+                  <p className="hidden md:block text-lg m-0 p-0 text-gray-800 dark:text-gray-300">
                     {doc.description}
                   </p>
                   <p className="mt-3"></p>
@@ -229,7 +229,7 @@ const CommunityPage = () => {
           <div className="px-4 md:px-0 ">
             <h2 className="text-5xl">Core concepts</h2>
             <h4 className="text-2xl">Learn the concepts of Wing.</h4>
-            <p className="text-lg text-gray-800 dark:text-gray-400">
+            <p className="text-lg text-gray-800 dark:text-gray-300">
               Understanding the core concepts of Wing is essential to building
               cloud-native applications. Our documentation will help you
               understand the key concepts and features of Wing, so you can build
@@ -243,11 +243,11 @@ const CommunityPage = () => {
                 >
                   <a
                     href={concept.href}
-                    className="text-xl block font-semibold leading-7 dark:text-wing !underline w-60 hover:dark:text-wing/80 "
+                    className="text-lg block font-semibold leading-7 dark:text-wing !underline w-60 hover:dark:text-wing/80 "
                   >
                     {concept.name}
                   </a>
-                  <p className="hidden md:block text-lg m-0 p-0 text-gray-800 dark:text-gray-400">
+                  <p className="hidden md:block text-lg m-0 p-0 text-gray-800 dark:text-gray-300">
                     {concept.description}
                   </p>
                 </li>
@@ -258,10 +258,10 @@ const CommunityPage = () => {
       </div>
 
       <div className={`dark:bg-wing/10  py-10 md:pb-32`}>
-        <div className="mx-auto max-w-7xl px-4 md:px-0 ">
+        <div className="mx-auto max-w-7xl px-4 md:px-0 pt-8 ">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <h2 className="text-3xl">Join the community</h2>
-            <p className="text-lg text-gray-800 dark:text-gray-400">
+            <p className="text-lg text-gray-800 dark:text-gray-300">
               Joining our Discord and GitHub communities is a great way to stay
               connected with other Wing developers, get help with your projects,
               and contribute to the growth of the Wing ecosystem. By joining
@@ -272,7 +272,8 @@ const CommunityPage = () => {
             <div className="mt-10 md:flex items-center justify-center gap-x-6 space-y-4 md:space-y-0">
               <a
                 href="https://github.com/winglang/wing"
-                className="bg-gray-100 dark:bg-wing/50 hover:bg-wing/30 w-full p-8 md:p-10 rounded-sm text-2xl md:text-4xl dark:text-white flex justify-center items-center space-x-8 md:space-x-32  group"
+                className="bg-gray-100 dark:bg-wing/50 hover:bg-wing/30 w-full p-8 md:p-10 rounded-sm text-2xl md:text-4xl dark:text-white flex justify-center items-center space-x-8 md:space-x-32  group !border-wing"
+                style={{ border: "solid" }}
               >
                 <span className="w-10 h-10 md:w-20 md:h-20 inline-block">
                   <svg
@@ -320,7 +321,8 @@ const CommunityPage = () => {
               </a>
               <a
                 href="https://t.winglang.io/discord"
-                className="bg-gray-100 dark:bg-wing/50 hover:bg-wing/30 w-full p-8 md:p-10 rounded-sm text-2xl md:text-4xl dark:text-white flex justify-center items-center space-x-8 md:space-x-32  group"
+                className="bg-gray-100 dark:bg-wing/50 hover:bg-wing/30 w-full p-8 md:p-10 rounded-sm text-2xl md:text-4xl dark:text-white flex justify-center items-center space-x-8 md:space-x-32  group !border-wing"
+                style={{ border: "solid" }}
               >
                 <span className="w-10 h-10 md:w-20 md:h-20 inline-block">
                   <svg
@@ -353,4 +355,4 @@ const CommunityPage = () => {
   );
 };
 
-export default CommunityPage;
+export default LearnWingPage;
