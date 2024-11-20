@@ -128,6 +128,10 @@ export default [
         to: "/docs/api/analytics",
         from: ["/docs/analytics"],
     },
+    {
+        to: "/docs/typescript/intro",
+        from: ["/docs/typescript"],
+    },
     { to: '/docs/learn', from: ['/docs/category/examples'] },
     // Standard Library redirects for docs v2
     { to: '/docs/api/category/aws', from: ['/docs/category/aws'] },
