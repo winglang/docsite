@@ -139,6 +139,20 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
+        id: "typescript",
+        path: "typescript",
+        routeBasePath: "docs/typescript",
+        editUrl: (params) =>
+          `${winglangOrgUrl}/wing/tree/main/docs/typescript/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+        // sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        // ... other options
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
         id: "example",
         path: "example",
         routeBasePath: "docs/learn",
