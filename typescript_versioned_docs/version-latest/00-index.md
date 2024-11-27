@@ -1,6 +1,6 @@
 ---
 title: TypeScript For Wing
-id: 'intro'
+id: intro
 ---
 
 Wing's CLI has experimental support for TypeScript.
