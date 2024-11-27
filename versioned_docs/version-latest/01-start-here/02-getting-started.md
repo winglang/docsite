@@ -51,44 +51,6 @@ queue.setConsumer(inflight (message: str) => {
 });
 ```
 
-<!-- :::info
-
-<details>
-<summary>Experimental TypeScript Support</summary>
-
-If you'd like to use TypeScript instead of winglang, you can add the `--language ts` flag when creating a new project:
-
-```sh
-wing new empty --language ts
-```
-
-Then modify `main.ts` to have the following, equivalent to the above winglang code:
-
-```ts
-import { main, cloud, lift } from "@wingcloud/framework";
-
-main((root) => {
-  const bucket = new cloud.Bucket(root, "Bucket");
-  const counter = new cloud.Counter(root, "Counter");
-  const queue = new cloud.Queue(root, "Queue");
-
-  queue.setConsumer(
-    lift({ bucket, counter }).inflight(async ({ bucket, counter }, message) => {
-      const index = await counter.inc();
-      await bucket.put(`wing-${index}.txt`, `Hello, ${message}`);
-      console.log(`file wing-${index}.txt created`);
-    })
-  );
-});
-```
-
-The rest of the starting guide will be the same!
-See [here](../09-typescript/index.md) for more information on using TypeScript with Wing.
-  
-</details>
-
-::: -->
-
 Here we defined a queue and a counter. Every time a message is added to the queue, a handler is triggered and creates a file named `wing-{counter-index}.txt` with the content `"Hello, {message}!"`, and the counter is incremented by 1.
 
 Now that we've written this program, let's run and test it using the **Wing Console**.
