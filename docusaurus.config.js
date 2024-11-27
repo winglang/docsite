@@ -284,23 +284,16 @@ const config = {
         },
         items: [
           {
-            to: "docs",
+            to: "install",
             position: "left",
-            label: "Getting started",
+            label: "Install",
             className: "header-text-link",
             target: "_self",
           },
           {
-            to: "docs/learn",
+            to: "learn-wing",
             position: "left",
             label: "Learn",
-            className: "header-text-link",
-            target: "_self",
-          },
-          {
-            to: "docs/api",
-            position: "left",
-            label: "API",
             className: "header-text-link",
             target: "_self",
           },
