@@ -1,7 +1,8 @@
 ---
 title: How to get help
 id: help
-keywords: [a, b]
 ---
 
-- Wing community and how they can get help if they get stuck on the guide.
+If you encounter any challenges while following this Wing Guide, the WingLang community is here to help! Join the WingLang team and fellow developers on Discord to ask questions, share your progress, and get support.
+
+- [Join the Wing Discord](https://t.winglang.io/discord)
