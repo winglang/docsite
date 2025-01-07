@@ -117,9 +117,7 @@ new(): MessageFanout_sim
 
 #### Properties
 
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code>node</code> | <code>Node</code> | The tree node. |
+*No properties*
 
 #### Methods
 
