@@ -1,20 +1,50 @@
 queue_rules:
-  - name: default
-    conditions:
+  - name: duplicated default from Automatic merge on approval and successful build
+    queue_conditions:
+      - "#approved-reviews-by>=1"
+      - -label~=(do-not-merge)
+      - status-success=build
+      - status-success=Vercel
+      - -merged
+      - -closed
+      - "#changes-requested-reviews-by=0"
+      - "#review-threads-unresolved=0"
+    merge_conditions:
       - status-success=build
       - status-success=Vercel
       - -label~=(do-not-merge)
+    commit_message_template: |-
+      {{ title }} (#{{ number }})
+
+      {{ body }}
+    merge_method: squash
+  - name: duplicated default from Automatic merge on successful docsite update from
+      bot
+    queue_conditions:
+      - "title=feat(docs): update docs"
+      - "#commits=1"
+      - -label~=(do-not-merge)
+      - status-success=build
+      - status-success=Vercel
+      - author=monadabot
+      - -merged
+      - -closed
+      - "#changes-requested-reviews-by=0"
+      - "#review-threads-unresolved=0"
+    merge_conditions:
+      - status-success=build
+      - status-success=Vercel
+      - -label~=(do-not-merge)
+    commit_message_template: |-
+      {{ title }} (#{{ number }})
+
+      {{ body }}
+    merge_method: squash
+
 pull_request_rules:
   - name: Automatic merge on approval and successful build
     actions:
       delete_head_branch: {}
-      queue:
-        method: squash
-        name: default
-        commit_message_template: |-
-          {{ title }} (#{{ number }})
-
-          {{ body }}
     conditions:
       - "#approved-reviews-by>=1"
       - -label~=(do-not-merge)
@@ -27,13 +57,6 @@ pull_request_rules:
   - name: Automatic merge on successful docsite update from bot
     actions:
       delete_head_branch: {}
-      queue:
-        method: squash
-        name: default
-        commit_message_template: |-
-          {{ title }} (#{{ number }})
-
-          {{ body }}
     conditions:
       - "title=feat(docs): update docs"
       - "#commits=1"
@@ -45,3 +68,8 @@ pull_request_rules:
       - -closed
       - "#changes-requested-reviews-by=0"
       - "#review-threads-unresolved=0"
+  - name: Automatic merge on approval and successful build + Automatic merge on successful
+      docsite update from bot
+    conditions: []
+    actions:
+      queue:
