@@ -165,6 +165,18 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
+        id: "guide",
+        path: "guide",
+        routeBasePath: "docs/guide",
+        editUrl: (params) =>
+          `${winglangOrgUrl}/wing/tree/main/docs/api/${params.docPath}`,
+        breadcrumbs: true,
+        includeCurrentVersion: false,
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
         id: "winglibs",
         path: "winglibs",
         routeBasePath: "docs/libraries",
