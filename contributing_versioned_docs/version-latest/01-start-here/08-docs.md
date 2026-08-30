@@ -107,28 +107,3 @@ new cloud.Function(inflight () => {
 ```
 
 This example would render a new pattern on the [examples page](/docs/examples).
-
-:::info Want to embed the playground in your example?
-
-Wing has an [online playground](https://www.winglang.io/play/) which allows developers to try Wing without installing anything locally. 
-
-You can embed the playground in your examples by including the `playground` keyword against your code snippets.
-
-Example:
-
-```js playground
-```js playground
-bring redis;
-bring cloud;
-
-// Create a reddit resource
-let redisInstance  = new redis.Redis();
-
-new cloud.Function(inflight () => {
-  // Set value in the redis cache
-  redisInstance.set("mykey", "myvalue");
-});
-`` `
-```
-
-:::

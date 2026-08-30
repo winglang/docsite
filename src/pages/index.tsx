@@ -228,9 +228,6 @@ const LandingPage = () => {
                                 >
                                     Quick start
                                 </a>
-                                <a href="https://www.winglang.io/play" className="text-xl font-semibold leading-6 text-wing dark:text-white hover:text-wing">
-                                    Playground <span aria-hidden="true">→</span>
-                                </a>
                             </div>
                         </div>
                         <div className="hidden md:block mx-auto text-center py-16 " >

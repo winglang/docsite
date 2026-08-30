@@ -25,4 +25,4 @@ Wing aims to enhance the developer experience by treating the entire cloud as it
 
 We'd like developers be able to write code with a "pencil" rather than a "pen," iterating quickly and learning from their mistakes. They could make a change and test it within milliseconds, even without WiFi.
 
-You can experience how far Wing has advanced on its journey to solve the above pain points and enhance the cloud development experience in our [playground](/play/).
+You can experience how far Wing has advanced on its journey to solve the above pain points and enhance the cloud development experience by [installing Wing](/install) and running your app in the local simulator.

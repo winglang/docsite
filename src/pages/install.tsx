@@ -182,18 +182,6 @@ const InstallationPage = () => {
                   wing --version
                 </CodeBlock>
               </div>
-
-              <p className=" mb-0">
-                Did you know that you can also take Wing for a spin without
-                installing anything? <br />{" "}
-                <a
-                  href="https://www.winglang.io/play"
-                  target="_blank"
-                  className="text-black dark:text-white underline font-normal"
-                >
-                  Check out the Wing Playground &rarr;
-                </a>
-              </p>
             </div>
           </div>
         </div>
