@@ -36,9 +36,6 @@ Check out our [guides](https://www.winglang.io/docs/category/guides) to learn ho
 Check out our [examples repository](https://github.com/winglang/examples) to see some samples of Wing applications.
 There are also smaller code examples by theme in the [docs](https://www.winglang.io/docs/category/examples).
 
-### Playground
-Put your skills to the test using the [playground](https://docs.winglang.io/getting-started).
-
 ### Community
 We also have a [YouTube channel](https://www.youtube.com/@winglangio) where we share clips of demos and guest interviews on our [Twitch show](https://www.twitch.tv/winglangio), and a [blog](https://www.winglang.io/blog).
 

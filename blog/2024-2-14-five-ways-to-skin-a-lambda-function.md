@@ -88,7 +88,7 @@ Not to mention it generates IAC (TF or CF), plus Javascript that you can deploy 
 
 But while you develop, you can use the local simulator to get instant feedback and shorten the iteration cycles
 
-Wing even has a [playground](https://www.winglang.io/play/?code=YgByAGkAbgBnACAAYwBsAG8AdQBkADsACgAKAGwAZQB0ACAAYgB1AGMAawBlAHQAIAA9ACAAbgBlAHcAIABjAGwAbwB1AGQALgBCAHUAYwBrAGUAdAAoACkAOwAKAAoAbgBlAHcAIABjAGwAbwB1AGQALgBGAHUAbgBjAHQAaQBvAG4AKABpAG4AZgBsAGkAZwBoAHQAIAAoACkAIAA9AD4AIAB7AAoAIAAgAGIAdQBjAGsAZQB0AC4AcAB1AHQAKAAiAGgAZQBsAGwAbwAuAHQAeAB0ACIALAAgACIAdwBvAHIAbABkACEAIgApADsACgB9ACkAOwA%3D) that you can try out in the browser!
+Wing even has a playground that you can try out in the browser!
 
 ## 2. [Pulumi](https://www.pulumi.com)
 

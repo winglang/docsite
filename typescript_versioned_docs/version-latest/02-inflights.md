@@ -3,7 +3,7 @@ title: Inflight Functions
 id: inflights
 ---
 
-The concepts of `preflight` and `inflight` in winglang are described [here](../02-concepts/01-preflight-and-inflight.md).
+The concepts of `preflight` and `inflight` in winglang are described [here](/docs/concepts/inflights).
 In TypeScript, this is analogous to the difference between the `main` function (preflight) and the `inflight` function.
 
 ### Functions and `inflight`

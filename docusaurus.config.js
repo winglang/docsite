@@ -289,81 +289,36 @@ const config = {
             target: "_self",
           },
           {
-            to: "learn-wing",
+            to: "docs",
             position: "left",
-            label: "Learn",
+            label: "Docs",
             className: "header-text-link",
             target: "_self",
           },
           {
-            to: "docs/libraries",
+            to: "docs/examples",
             position: "left",
-            label: "Libraries",
+            label: "Examples",
             className: "header-text-link",
             target: "_self",
           },
           {
-            position: 'left',
-            label: 'Explore',
-            items: [
-              {
-                // href: "https://github.com/winglang/examples",
-                to: "docs/examples",
-                label: "Examples",
-                className: "header-text-link",
-              },
-              {
-                href: "pathname:///play/",
-                label: "Playground",
-                className: "header-text-link",
-                target: "_self",
-              },
-            ]
+            to: "blog",
+            position: "left",
+            label: "Blog",
+            className: "header-text-link",
+            target: "_self",
           },
-          {
-            position: 'left',
-            label: 'Community & Support',
-            items: [
-              {
-                to: "blog",
-                label: "Blog",
-                target: "_self",
-                className: "header-text-link",
-              },
-              {
-                to: "contributing",
-                label: "Contributing",
-                target: "_self",
-                className: "header-text-link",
-              },
-              {
-                href: "pathname:///community",
-                label: "Community",
-                className: "header-text-link",
-                target: "_self",
-              },
-              {
-                href: "pathname:///contact",
-                label: "Contact",
-                target: "_self",
-                className: "header-text-link",
-              },
-            ]
-          },
-          
           {
             href: `${winglangOrgUrl}/wing/`,
-            "aria-label": "Winglang Repo",
-            label: " ",
+            label: "GitHub",
             position: "right",
-            className: "header-github-link nav-git-mobile",
-          },
-          {
-            type: "custom-GitHubButton",
-            position: "right",
+            className: "header-text-link header-github-link",
+            target: "_blank",
           },
         ],
       },
+
       footer: {
         links: [
           {
@@ -371,11 +326,15 @@ const config = {
             items: [
               {
                 label: "Installation",
-                to: "/docs",
+                to: "/install",
               },
               {
                 label: "Getting Started",
                 to: "/docs",
+              },
+              {
+                label: "Learn Wing",
+                to: "/learn-wing",
               },
               {
                 label: "Concepts",
@@ -397,10 +356,6 @@ const config = {
               {
                 label: "1.0 Roadmap",
                 to: "/blog/2024/08/29/updated-roadmap",
-              },
-              {
-                label: "Press Kit",
-                to: "https://drive.google.com/drive/folders/1Qi0v3v638lLxxP9y80i4TyweZbkXFsZ_",
               },
             ],
           },

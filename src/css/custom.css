@@ -16,7 +16,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  font-family: "TasaOrbiterText-Regular";
+  font-family: "TASA Orbiter Text", sans-serif;
   --ifm-color-primary: #1c273d;
   --ifm-color-primary-dark: #192337;
   --ifm-color-primary-darker: #182134;
@@ -26,7 +26,8 @@
   --ifm-color-primary-lightest: #24334f;
   --ifm-code-font-size: 100%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: "TasaOrbiterText-Regular";
+  --ifm-font-family-base: "TASA Orbiter Text", sans-serif;
+  --ifm-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
   --doc-sidebar-width: 250px !important;
   --ifm-navbar-height: 80px;
 }
@@ -36,7 +37,7 @@ html[data-theme="dark"] {
   /*#47aca6*/
   /* 8bded9 */
   /* 8fece6 */
-  font-family: "TasaOrbiterText-Regular";
+  font-family: "TASA Orbiter Text", sans-serif;
   --ifm-color-primary: #2ad5c1;
   --ifm-color-primary-dark: #23bab1;
   --ifm-color-primary-darker: #21b0a7;
@@ -75,52 +76,52 @@ html[data-theme="dark"] {
 }
 
 h1 {
-  font-family: "TasaOrbiterDisplay-SemiBold";
+  font-family: "TASA Orbiter Display", "TASA Orbiter Text", sans-serif;
   font-size: 3rem;
   font-weight: 600;
 }
 
 h2 {
-  font-family: "TasaOrbiterDisplay-SemiBold";
+  font-family: "TASA Orbiter Display", "TASA Orbiter Text", sans-serif;
   font-size: 2rem;
   font-weight: 600;
 }
 
 h3 {
-  font-family: "TASAOrbiterText-Semibold";
+  font-family: "TASA Orbiter Text", sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
 }
 
 h4 {
-  font-family: "TASAOrbiterText-Semibold";
+  font-family: "TASA Orbiter Text", sans-serif;
   font-weight: 600;
   font-size: 1.12rem;
 }
 
 h5 {
-  font-family: "TASAOrbiterText-Semibold";
+  font-family: "TASA Orbiter Text", sans-serif;
   font-weight: 600;
   font-size: 1rem;
   font-style: italic;
 }
 
 h6 {
-  font-family: "TASAOrbiterText-Semibold";
+  font-family: "TASA Orbiter Text", sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
   font-style: italic;
 }
 
 p {
-  font-family: "TasaOrbiterText-Regular";
+  font-family: "TASA Orbiter Text", sans-serif;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 a {
-  font-family: "TasaOrbiterText-Regular";
-  font-weight: 600;
+  font-family: "TASA Orbiter Text", sans-serif;
+  font-weight: 500;
   color: var(--ifm-color-primary-lighter);
 }
 
@@ -165,10 +166,10 @@ html[data-theme="dark"] .navbar--fixed-top {
 }
 
 .header-text-link {
-  font-family: "TasaOrbiterDisplay-SemiBold";
+  font-family: "TASA Orbiter Text", sans-serif;
   padding: 20px 24px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 20px;
   align-items: center;
 }
@@ -179,8 +180,8 @@ html[data-theme="dark"] .navbar--fixed-top {
 
 .navbar__item.dropdown .navbar__link {
   font-size: 16px;
-  font-weight: 600;
-  font-family: "TasaOrbiterDisplay-SemiBold";
+  font-weight: 500;
+  font-family: "TASA Orbiter Text", sans-serif;
   .dropdown__link {
     padding: 1em;
   }
@@ -266,11 +267,18 @@ html[data-theme="dark"] .navbar__title {
   opacity: 0.6;
 }
 
+.header-github-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
 .header-github-link:before {
   content: "";
   width: 24px;
   height: 24px;
-  display: flex;
+  flex: 0 0 24px;
   background: url("../../static/img/github-logo.svg") no-repeat;
 }
 
@@ -385,15 +393,6 @@ html[data-theme="dark"] h2[itemprop="headline"] a {
   border: 1px solid rgb(210, 210, 210);
 }
 
-/* Fix for large navigation bar on desktop, remove the contact and blog links on certain sizes */
-@media (max-width: 1566px) {
-  .navbar__item[href="https://www.winglang.io/contact"] {
-    display: none;
-  }
-  .navbar__item[href="/blog"] {
-    display: none;
-  }
-}
 
 
 /* Newsletter */

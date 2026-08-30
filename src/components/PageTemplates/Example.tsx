@@ -154,8 +154,6 @@ export default function Home(props: Props) {
                                                 </ul>
                                             }
                                         </div>
-                                        {/* Portal for playground button if its enabled on this page */}
-                                        <div id='playground-portal'/>
                                     </div>
                                  
 
@@ -199,9 +197,7 @@ export default function Home(props: Props) {
                                             const { children, className, node, ...rest } = props
                                             const match = /language-(\w+)/.exec(className || '')
                                             const metastring = node?.data?.meta || '';
-                                            const renderPlayground = (metastring ?? "").includes("playground");
                                             const code = String(children).replace(/\n$/, '');
-                                            // {(metastring ?? "").includes("playground") && <button className={clsx('clean-btn')} onClick={ () => window.open(`https://www.winglang.io/play/?code=(${encodeURIComponent(Buffer.from(code).toString('base64'))})`) }>Play</button>}
                                             return match ? (
                                                 <div>
                                                     <CopyCodeBlock
@@ -212,7 +208,6 @@ export default function Home(props: Props) {
                                                         language={match[1]}
                                                         className="max-h-[30em] overflow-y-auto dark:bg-gray-800"
                                                         showLineNumbers
-                                                        renderPlayground={renderPlayground}
                                                     />
 
                                                 </div>
