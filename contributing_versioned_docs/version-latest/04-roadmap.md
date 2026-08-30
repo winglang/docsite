@@ -9,7 +9,7 @@ keywords: [roadmap]
 
 Below, we've listed our goals for what we want to include in **Wing 1.0**.
 
-We want to stabilize as many of the items below as possible by the end of 2025, but we're eagerly interested in feedback and collaboration either [through GitHub](https://github.com/winglang/wing) or our [Discord server](https://t.winglang.io/discord).
+We want to stabilize as many of the items below as possible by the end of 2025, but we're eagerly interested in feedback and collaboration [through GitHub](https://github.com/winglang/wing), either as issues or in [GitHub Discussions](https://github.com/winglang/wing/discussions).
 
 ## Toolchain
 

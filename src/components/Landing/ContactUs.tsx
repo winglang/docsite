@@ -9,8 +9,8 @@ const items = [
     },
     {
         title: 'Ask the community',
-        label: 'Join our discord, and talk to people who have the answers',
-        url: 'https://t.winglang.io/discord'
+        label: 'Join GitHub Discussions, and talk to people who have the answers',
+        url: 'https://github.com/winglang/wing/discussions'
     },
     {
         title: 'Join the conversation',

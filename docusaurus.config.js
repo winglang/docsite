@@ -4,7 +4,6 @@ require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
-const discordUrl = "https://t.winglang.io/discord";
 
 const winglangOrgUrl = "https://github.com/winglang";
 const redirects = require('./redirects');
@@ -39,7 +38,7 @@ const keywords = [
 const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
-  url: process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`,
+  url: process.env.DOCUSAURUS_URL ?? "https://winglang.io",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -62,7 +61,6 @@ const config = {
   },
   plugins: [
     "docusaurus-plugin-sass",
-    "docusaurus-plugin-segment",
     './plugins/example-generator.mjs',
     function tailwindPlugin(context, options) {
       return {
@@ -200,7 +198,7 @@ const config = {
         },
         blog: {
           blogTitle: "What's up? The Wing Blog",
-          blogDescription: "The latest news and updates from the Wing team",
+          blogDescription: "Posts from the Wing project, archived",
           blogSidebarCount: "ALL",
           blogSidebarTitle: "Posts",
           postsPerPage: "ALL",
@@ -277,8 +275,8 @@ const config = {
         title: "",
         logo: {
           alt: "Wing Logo",
-          src: "../img/winglang-logo-dark.svg",
-          srcDark: "../img/winglang-logo-light.svg",
+          src: "/img/winglang-logo-dark.svg",
+          srcDark: "/img/winglang-logo-light.svg",
           href: "https://winglang.io",
           target: "_self",
         },
@@ -315,7 +313,7 @@ const config = {
                 className: "header-text-link",
               },
               {
-                href: "https://www.winglang.io/play/",
+                href: "pathname:///play/",
                 label: "Playground",
                 className: "header-text-link",
                 target: "_self",
@@ -339,13 +337,13 @@ const config = {
                 className: "header-text-link",
               },
               {
-                href: "/community",
+                href: "pathname:///community",
                 label: "Community",
                 className: "header-text-link",
                 target: "_self",
               },
               {
-                href: "/contact",
+                href: "pathname:///contact",
                 label: "Contact",
                 target: "_self",
                 className: "header-text-link",
@@ -353,14 +351,6 @@ const config = {
             ]
           },
           
-          {
-            href: discordUrl,
-            "aria-label": "Discord server",
-            label: " ",
-            position: "right",
-            target: "_self",
-            className: "header-discord-link",
-          },
           {
             href: `${winglangOrgUrl}/wing/`,
             "aria-label": "Winglang Repo",
@@ -418,10 +408,6 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Discord",
-                href: discordUrl,
-              },
-              {
                 label: "GitHub",
                 href: winglangOrgUrl,
               },
@@ -456,14 +442,11 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Wing Cloud, Inc. `,
+        copyright: `Wing is an open source project, released under the MIT License.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-      },
-      segment: {
-        apiKey: "MvkxDOKWzcs7MFrWu1UNaO2bGn1S2RvA",
       },
     }),
 };

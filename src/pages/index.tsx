@@ -9,7 +9,6 @@ import CrossCloud from '../components/Landing/CrossCloud';
 import LocalSimulation from '../components/Landing/LocalSimulation';
 import Newsletter from '../components/Landing/Newsletter';
 import ExternalBlogs from '../components/Landing/ExternalBlogs';
-import Head from '@docusaurus/Head';
 
 const tabs = [
     {
@@ -190,9 +189,6 @@ const LandingPage = () => {
     return (
         <Layout title={"Wing Programming Language for the cloud"} >
 
-            <Head>
-                <script type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js" />
-            </Head>
 
             <div className="relative isolate bg-white dark:bg-black/60 ">
                 <div

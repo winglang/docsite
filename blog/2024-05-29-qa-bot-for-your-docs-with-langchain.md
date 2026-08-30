@@ -507,7 +507,7 @@ Finally, save the OpenAI API key as a secret by running this command in your ter
 
 
 
-![Wing Secrets](https://www.winglang.io/assets/images/qa-bot-wing-secrets-883db5e81515894ae280d77b7f72bb25.gif)
+![Wing Secrets](./assets/qa-bot-wing-secrets.gif)
 
 Great, now our secrets are stored and we can interact with our application. Let's take a look at it in action!
 
