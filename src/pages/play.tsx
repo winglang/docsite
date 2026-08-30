@@ -9,10 +9,10 @@ export default function Home() {
         if (code) {
             // Redirect to the play page with the code
             // @ts-ignore
-            window.location = `https://play.winglang.io/play?code=${code}`;
+            window.location = `/play/?code=${code}`;
             return;
         }
         // @ts-ignore
-        window.location = 'https://play.winglang.io/play';
+        window.location = '/play/';
     }, [])
 }

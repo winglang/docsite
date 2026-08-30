@@ -19,7 +19,6 @@ There are many ways to contribute to Wing:
 * Reporting and fixing [bugs](/contributing/start-here/bugs)
 * Find solutions to common issues in our [troubleshooting guide](/contributing/start-here/troubleshooting)
 * Commenting on [RFCs](/contributing/category/rfcs) or submitting one for major features
-* Asking and answering questions in the [Wing Discord](https://t.winglang.io/discord)
-* Posting or answering questions in [Wing Discussions](https://github.com/winglang/wing/discussions)
+* Asking and answering questions in [GitHub Discussions](https://github.com/winglang/wing/discussions)
 
 ![](./giphy.webp)

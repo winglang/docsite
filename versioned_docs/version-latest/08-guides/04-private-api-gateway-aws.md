@@ -31,7 +31,7 @@ wing --version
 0.58.10
 ```
 
-> Before we get going it would be great if you joined the awesome people hanging out on the [Wing Discord](https://t.winglang.io/discord).
+> Before we get going it would be great if you joined the awesome people hanging out in [GitHub Discussions](https://github.com/winglang/wing/discussions).
 
 
 Ok, now that we have the Wing CLI installed, let's create a new project using the `private-api` quickstart:

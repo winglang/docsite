@@ -149,12 +149,12 @@ export default [
     { to: '/docs/concepts/platforms', from: ['/docs/platforms/platforms'] },
 
     // redirects for wing.learn section
-    { to: "https://learn.winglang.io/learn", from: ["/learn/"] },
-    { to: "https://learn.winglang.io/learn/preflight-inflight", from: ["/learn/preflight-inflight"] },
-    { to: "https://learn.winglang.io/learn/bucket", from: ["/learn/bucket"] },
-    { to: "https://learn.winglang.io/learn/counter", from: ["/learn/counter"] },
-    { to: "https://learn.winglang.io/learn/queue", from: ["/learn/queue"] },
-    { to: "https://learn.winglang.io/learn/topic", from: ["/learn/topic"] },
+    { to: "/docs/learn/hello-world", from: ["/learn/"] },
+    { to: "/docs/concepts/inflights", from: ["/learn/preflight-inflight"] },
+    { to: "/docs/api/standard-library/cloud/bucket", from: ["/learn/bucket"] },
+    { to: "/docs/api/standard-library/cloud/counter", from: ["/learn/counter"] },
+    { to: "/docs/api/standard-library/cloud/queue", from: ["/learn/queue"] },
+    { to: "/docs/api/standard-library/cloud/topic", from: ["/learn/topic"] },
 
     // Redirects for winglibs
     { to: "/docs/libraries/", from: ["/docs/winglibs/what-are-winglibs"] },

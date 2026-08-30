@@ -35,8 +35,8 @@ It will also be possible for platforms to implement workloads using any other co
 orchestration system such as [Amazon ECS](https://aws.amazon.com/ecs/), [fly.io](https://fly.io) or
 [ControlPlane](https://controlplane.com/).
 
-> :warning: This resource is still experimental. Please ping the team on [Wing
-> Discord](https://t.winglang.io/discord) if you encounter any issues or have any questions and let us
+> :warning: This resource is still experimental. Please ask on [GitHub Discussions](https://github.com/winglang/wing/discussions)
+> if you encounter any issues or have any questions and let us
 > know what you think. See [roadmap](#roadmap) below for more details about our plans.
 
 ## Installation
