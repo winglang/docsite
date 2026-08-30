@@ -38,7 +38,7 @@ const keywords = [
 const config = {
   title: "Wing",
   tagline: "Maximum cloud, minimum DevOps",
-  url: process.env.DOCUSAURUS_URL ?? `https://${process.env.VERCEL_URL}`,
+  url: process.env.DOCUSAURUS_URL ?? "https://winglang.io",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
